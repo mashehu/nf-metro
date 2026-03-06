@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -449,6 +449,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug mode
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -658,6 +669,17 @@
     <span class="md-ellipsis">
       
         Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug mode
       
     </span>
   </a>
@@ -954,6 +976,8 @@
 <p>The nf-core/rnaseq example at <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/rnaseq_auto.mmd"><code>examples/rnaseq_auto.mmd</code></a> combines all of these patterns in a real-world pipeline:</p>
 <p><img alt="nf-core/rnaseq" src="../assets/renders/rnaseq_auto.svg" /></p>
 <p>Five analysis routes share preprocessing, fan out to different aligners, reconverge at post-processing (a <code>TB</code> section), and fold back through QC (an <code>RL</code> section that creates a serpentine return path). The layout engine infers section directions, grid positions, and port sides automatically from the graph topology.</p>
+<p>The nf-core/variantbenchmarking example at <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/variantbenchmarking_auto.mmd"><code>examples/variantbenchmarking_auto.mmd</code></a> shows a different topology pattern - seven lines converging at a benchmarking section, with the layout engine automatically splitting into two rows:</p>
+<p><img alt="nf-core/variantbenchmarking" src="assets/renders/variantbenchmarking_auto.svg" /></p>
 <p>See the <a href="../gallery/">Gallery</a> for more rendered examples.</p>
 <hr />
 <h2 id="directive-reference">Directive reference<a class="headerlink" href="#directive-reference" title="Permanent link">&para;</a></h2>
@@ -1036,10 +1060,53 @@
 <ul>
 <li><strong>Start without sections.</strong> Get your stations and line routing right first, then wrap groups in <code>subgraph</code> blocks.</li>
 <li><strong>Omit entry/exit hints.</strong> The auto-layout engine infers them correctly in most cases. Only add hints when you need multi-side exits or want to override the default.</li>
-<li><strong>Use <code>--debug</code></strong> to see ports, hidden stations, and edge waypoints: <code>nf-metro render --debug pipeline.mmd -o debug.svg</code></li>
+<li><strong>Use <code>--debug</code></strong> to see the layout internals (see below).</li>
 <li><strong>Use <code>nf-metro validate</code></strong> to catch errors before rendering.</li>
 <li><strong>Use <code>nf-metro info</code></strong> to inspect the parsed structure (sections, lines, stations, edges).</li>
 </ul>
+<h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
+<p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
+</code></pre></div>
+<p><img alt="Debug overlay" src="assets/renders/rnaseq_auto_debug.svg" /></p>
+<p>The overlay shows:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Appearance</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entry ports</strong></td>
+<td>Green diamonds</td>
+<td>Where lines enter a section, with port ID and side</td>
+</tr>
+<tr>
+<td><strong>Exit ports</strong></td>
+<td>Red diamonds</td>
+<td>Where lines leave a section, with port ID and side</td>
+</tr>
+<tr>
+<td><strong>Hidden stations</strong></td>
+<td>Dashed circles</td>
+<td>Branch points created with <code>[hidden]</code> - invisible in normal rendering</td>
+</tr>
+<tr>
+<td><strong>Edge waypoints</strong></td>
+<td>Small filled circles</td>
+<td>Intermediate routing points along each edge path</td>
+</tr>
+<tr>
+<td><strong>Grid lines</strong></td>
+<td>Yellow dashed lines</td>
+<td>Boundaries between grid columns and rows, labeled with column/row indices</td>
+</tr>
+</tbody>
+</table>
+<p>This is useful for diagnosing routing issues, understanding why lines take a particular path, or verifying that port sides and grid positions are what you expect.</p>
 
 
 
