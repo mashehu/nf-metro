@@ -977,7 +977,7 @@
 <p><img alt="nf-core/rnaseq" src="../assets/renders/rnaseq_auto.svg" /></p>
 <p>Five analysis routes share preprocessing, fan out to different aligners, reconverge at post-processing (a <code>TB</code> section), and fold back through QC (an <code>RL</code> section that creates a serpentine return path). The layout engine infers section directions, grid positions, and port sides automatically from the graph topology.</p>
 <p>The nf-core/variantbenchmarking example at <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/variantbenchmarking_auto.mmd"><code>examples/variantbenchmarking_auto.mmd</code></a> shows a different topology pattern - seven lines converging at a benchmarking section, with the layout engine automatically splitting into two rows:</p>
-<p><img alt="nf-core/variantbenchmarking" src="assets/renders/variantbenchmarking_auto.svg" /></p>
+<p><img alt="nf-core/variantbenchmarking" src="../assets/renders/variantbenchmarking_auto.svg" /></p>
 <p>See the <a href="../gallery/">Gallery</a> for more rendered examples.</p>
 <hr />
 <h2 id="directive-reference">Directive reference<a class="headerlink" href="#directive-reference" title="Permanent link">&para;</a></h2>
@@ -1068,7 +1068,7 @@
 <p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
 </code></pre></div>
-<p><img alt="Debug overlay" src="assets/renders/rnaseq_auto_debug.svg" /></p>
+<p><img alt="Debug overlay" src="../assets/renders/rnaseq_auto_debug.svg" /></p>
 <p>The overlay shows:</p>
 <table>
 <thead>
