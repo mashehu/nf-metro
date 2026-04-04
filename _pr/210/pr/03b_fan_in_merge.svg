@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="880" height="306" viewBox="0 0 880 306">
+     width="880" height="307" viewBox="0 0 880 307">
 <defs>
 </defs>
-<rect x="0" y="0" width="880" height="306" fill="#2b2b2b" />
+<rect x="0" y="0" width="880" height="307" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Fan-In Merge</text>
 <rect x="30.0" y="85.0" width="160.0" height="70.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
 <circle cx="41.0" cy="70.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
@@ -26,7 +26,7 @@
 <path d="M140.0,123.0 L190.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
 <path d="M660.0,123.0 L710.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
 <path d="M190.0,123.0 L200.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
-<path d="M200.0,123.0 L200.0,123.0 Q210.0,123.0,210.0,133.0 L210.0,167.0 Q210.0,180.0,223.0,180.0 L637.0,180.0 Q650.0,180.0,650.0,167.0 L650.0,133.0 Q650.0,123.0,660.0,123.0 L660.0,123.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M200.0,123.0 L200.0,123.0 Q210.0,123.0,210.0,133.0 L210.0,168.0 Q210.0,181.0,223.0,181.0 L637.0,181.0 Q650.0,181.0,650.0,168.0 L650.0,133.0 Q650.0,123.0,660.0,123.0 L660.0,123.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M80.0,120.0 L140.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <path d="M290.0,120.0 L350.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <path d="M500.0,120.0 L560.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
@@ -62,10 +62,10 @@
 <text x="350.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Refine A</text>
 <text x="560.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Refine B</text>
 <text x="770.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Report</text>
-<rect x="30.0" y="210.0" width="129.3" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
-<path d="M42.0,234.0 L66.0,234.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="234.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Main</text>
-<path d="M42.0,258.0 L66.0,258.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="258.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Auxiliary</text>
-<text x="850.0" y="298.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.6.1+dev</text>
+<rect x="30.0" y="211.0" width="129.3" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,235.0 L66.0,235.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="235.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Main</text>
+<path d="M42.0,259.0 L66.0,259.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="259.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Auxiliary</text>
+<text x="850.0" y="299.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.6.1+dev</text>
 </svg>
