@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="496" height="376" viewBox="0 0 496 376">
+     width="496" height="347" viewBox="0 0 496 347">
 <defs>
 </defs>
-<rect x="0" y="0" width="496" height="376" fill="#2b2b2b" />
+<rect x="0" y="0" width="496" height="347" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Multi-line Label Test</text>
-<rect x="30.0" y="68.2" width="196.0" height="182.39999999999998" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
+<rect x="30.0" y="68.2" width="196.0" height="153.6" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
 <circle cx="41.0" cy="53.2" r="11" fill="#333333" class="nf-metro-section-num-circle" />
 <text x="41.0" y="53.2" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">1</text>
 <text x="57.0" y="53.2" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Input Processing</text>
@@ -13,8 +13,8 @@
 <circle cx="287.0" cy="53.2" r="11" fill="#333333" class="nf-metro-section-num-circle" />
 <text x="287.0" y="53.2" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">2</text>
 <text x="303.0" y="53.2" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Quality Control</text>
-<path d="M80.0,201.8 L140.0,201.8" stroke="#d9aa00" stroke-width="3.0" stroke-linecap="round" />
-<path d="M140.0,201.8 L171.0,201.8 Q181.0,201.8,184.55798045495695,192.45437133831308 L207.44201954504305,132.34562866168693 Q211.0,123.0,221.0,123.0 L226.0,123.0" stroke="#d9aa00" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M80.0,173.0 L140.0,173.0" stroke="#d9aa00" stroke-width="3.0" stroke-linecap="round" />
+<path d="M140.0,173.0 L171.0,173.0 Q181.0,173.0,186.14495755427527,164.42507074287457 L205.85504244572473,131.57492925712543 Q211.0,123.0,221.0,123.0 L226.0,123.0" stroke="#d9aa00" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M326.0,123.0 L386.0,123.0" stroke="#d9aa00" stroke-width="3.0" stroke-linecap="round" />
 <path d="M276.0,123.0 L326.0,123.0" stroke="#d9aa00" stroke-width="3.0" stroke-linecap="round" />
 <path d="M226.0,123.0 L276.0,123.0" stroke="#d9aa00" stroke-width="3.0" stroke-linecap="round" />
@@ -24,21 +24,21 @@
 <path d="M276.0,120.0 L326.0,120.0" stroke="#004b86" stroke-width="3.0" stroke-linecap="round" />
 <path d="M226.0,120.0 L276.0,120.0" stroke="#004b86" stroke-width="3.0" stroke-linecap="round" />
 <rect x="75.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
-<rect x="75.0" y="196.8" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="75.0" y="168.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="135.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
-<rect x="135.0" y="196.8" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="135.0" y="168.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="321.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="381.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <text x="80.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">.fq</text>
 <text x="326.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging"><tspan x="326.0" dy="0em">FastQC</tspan><tspan x="326.0" dy="1.2em">falco</tspan></text>
-<text x="80.0" y="212.8" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">.fa</text>
+<text x="80.0" y="184.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">.fa</text>
 <text x="140.0" y="90.4" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto"><tspan x="140.0" dy="0em">fastp</tspan><tspan x="140.0" dy="1.2em">AdapterRemoval</tspan></text>
 <text x="386.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">MultiQC</text>
-<text x="149.6" y="212.8" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging"><tspan x="149.6" dy="0em">Porechop ABI</tspan><tspan x="149.6" dy="1.2em">Porechop</tspan></text>
-<rect x="30.0" y="280.59999999999997" width="144.70000000000002" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
-<path d="M42.0,304.59999999999997 L66.0,304.59999999999997" stroke="#004b86" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="304.59999999999997" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Short reads</text>
-<path d="M42.0,328.59999999999997 L66.0,328.59999999999997" stroke="#d9aa00" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="328.59999999999997" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Long reads</text>
-<text x="466.0" y="368.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.6.1+dev</text>
+<text x="149.6" y="184.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging"><tspan x="149.6" dy="0em">Porechop ABI</tspan><tspan x="149.6" dy="1.2em">Porechop</tspan></text>
+<rect x="30.0" y="251.8" width="144.70000000000002" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,275.8 L66.0,275.8" stroke="#004b86" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="275.8" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Short reads</text>
+<path d="M42.0,299.8 L66.0,299.8" stroke="#d9aa00" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="299.8" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Long reads</text>
+<text x="466.0" y="339.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.6.1+dev</text>
 </svg>
