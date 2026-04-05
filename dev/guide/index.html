@@ -353,6 +353,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Fan-out and fan-in">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-line-convergence-fan-in-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same-line convergence (fan-in merge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -578,6 +595,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. Fan-out and fan-in">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-line-convergence-fan-in-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same-line convergence (fan-in merge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -823,49 +857,92 @@
 </code></pre></div>
 <p><img alt="Fan-out example" src="../assets/renders/03_fan_out.svg" /></p>
 <p>Each line takes a different route through its own analysis section, then all three reconverge at annotation. The layout engine handles junction creation, vertical stacking, and routing automatically. You don't need to specify any positions or port sides.</p>
+<h3 id="same-line-convergence-fan-in-merge">Same-line convergence (fan-in merge)<a class="headerlink" href="#same-line-convergence-fan-in-merge" title="Permanent link">&para;</a></h3>
+<p>When optional processing steps mean the <strong>same line</strong> can reach a destination from multiple sources, nf-metro consolidates the overlapping routes. One bypass carries the full path (the "trunk"), and closer sources drop down to join it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%%metro title: Fan-In Merge
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>%%metro style: dark
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>%%metro line: main | Main | #0570b0
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>%%metro line: aux | Auxiliary | #2db572
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>graph LR
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    subgraph source [Source]
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        s1[Produce]
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        s2[Prepare]
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        s1 --&gt;|main,aux| s2
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    end
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    subgraph step_a [Step A]
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        a1[Process A]
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        a2[Refine A]
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        a1 --&gt;|main| a2
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    end
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    subgraph step_b [Step B]
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        b1[Process B]
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        b2[Refine B]
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        b1 --&gt;|main| b2
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    end
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    subgraph sink [Sink]
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>        t1[Collect]
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>        t2[Report]
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>        t1 --&gt;|main,aux| t2
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    end
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    %% Each section sends main to ALL downstream sections
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    s2 --&gt;|main| a1
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    s2 --&gt;|main| b1
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    s2 --&gt;|main| t1
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    s2 --&gt;|aux| t1
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    a2 --&gt;|main| b1
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    a2 --&gt;|main| t1
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>    b2 --&gt;|main| t1
+</code></pre></div>
+<p><img alt="Fan-in merge example" src="../assets/renders/03b_fan_in_merge.svg" /></p>
+<p>The key pattern: every section sends <code>main</code> not just to the next step, but to <strong>all</strong> subsequent sections. This creates convergent same-line edges at the sink's entry port. The layout engine detects this and routes a single trunk bypass from the farthest source, with branches dropping down to join it from intermediate sections.</p>
 <h2 id="4-section-directions">4. Section directions<a class="headerlink" href="#4-section-directions" title="Permanent link">&para;</a></h2>
 <p>By default every section flows left-to-right (<code>LR</code>). You can change a section's internal flow direction with <code>%%metro direction:</code> to create more compact or visually interesting layouts.</p>
 <p>This example adds a top-to-bottom (<code>TB</code>) section that acts as a vertical connector between the fan-out analysis paths and the final reporting section:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%%metro title: Section Directions
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>%%metro style: dark
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>%%metro line: rna | RNA-seq | #2db572
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>%%metro line: dna | DNA-seq | #e63946
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>%%metro legend: bl
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>graph LR
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    subgraph preprocessing [Pre-processing]
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        fastqc[FastQC]
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        trim[Trimming]
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        fastqc --&gt;|rna,dna| trim
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    end
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    subgraph rna_analysis [RNA Analysis]
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        star[STAR]
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        salmon[Salmon]
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        star --&gt;|rna| salmon
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    end
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    subgraph dna_analysis [DNA Analysis]
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        bwa[BWA-MEM]
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        gatk[GATK]
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        bwa --&gt;|dna| gatk
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    end
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    subgraph postprocessing [Post-processing]
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        %%metro direction: TB
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>        samtools[SAMtools]
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>        picard[Picard]
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>        bedtools[BEDTools]
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>        samtools --&gt;|rna,dna| picard
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>        picard --&gt;|rna,dna| bedtools
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    end
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    subgraph reporting [Reporting]
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>        multiqc[MultiQC]
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>        report[Report]
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>        multiqc --&gt;|rna,dna| report
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    end
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    trim --&gt;|rna| star
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    trim --&gt;|dna| bwa
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>    salmon --&gt;|rna| samtools
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>    gatk --&gt;|dna| samtools
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>    bedtools --&gt;|rna,dna| multiqc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>%%metro title: Section Directions
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>%%metro style: dark
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>%%metro line: rna | RNA-seq | #2db572
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>%%metro line: dna | DNA-seq | #e63946
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>%%metro legend: bl
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>graph LR
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    subgraph preprocessing [Pre-processing]
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        fastqc[FastQC]
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        trim[Trimming]
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        fastqc --&gt;|rna,dna| trim
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    end
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    subgraph rna_analysis [RNA Analysis]
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        star[STAR]
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        salmon[Salmon]
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        star --&gt;|rna| salmon
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    end
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    subgraph dna_analysis [DNA Analysis]
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        bwa[BWA-MEM]
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        gatk[GATK]
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        bwa --&gt;|dna| gatk
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    end
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    subgraph postprocessing [Post-processing]
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        %%metro direction: TB
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        samtools[SAMtools]
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        picard[Picard]
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        bedtools[BEDTools]
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>        samtools --&gt;|rna,dna| picard
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>        picard --&gt;|rna,dna| bedtools
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    end
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>    subgraph reporting [Reporting]
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>        multiqc[MultiQC]
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        report[Report]
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        multiqc --&gt;|rna,dna| report
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>    end
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>    trim --&gt;|rna| star
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>    trim --&gt;|dna| bwa
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>    salmon --&gt;|rna| samtools
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>    gatk --&gt;|dna| samtools
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>    bedtools --&gt;|rna,dna| multiqc
 </code></pre></div>
 <p><img alt="Directions example" src="../assets/renders/04_directions.svg" /></p>
 <p>The Post-processing section flows top-to-bottom, collecting the RNA and DNA lines from the sections above and below, then handing them off horizontally to Reporting. The only change from a normal section is the single <code>%%metro direction: TB</code> directive.</p>
@@ -881,42 +958,42 @@
 <ol>
 <li>
 <p>A <strong><code>%%metro file:</code></strong> directive at the top of the file, mapping a station ID to a label:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>%%metro file: reads_in | FASTQ
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>%%metro file: report_out | HTML
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>%%metro file: reads_in | FASTQ
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>%%metro file: report_out | HTML
 </code></pre></div>
 </li>
 <li>
 <p>A <strong>blank terminus station</strong> (<code>[ ]</code>) inside a section, whose ID matches the directive:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>reads_in[ ]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>reads_in[ ]
 </code></pre></div>
 </li>
 </ol>
 <p>The blank label tells nf-metro to render the document icon (with the label from the directive) instead of a pill-shaped station. Connect it to the pipeline with normal edges like any other station.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>%%metro title: File Icons
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>%%metro style: dark
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>%%metro file: reads_in | FASTQ
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>%%metro file: report_out | HTML
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>%%metro line: main | Main | #4CAF50
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>%%metro line: qc | Quality Control | #2196F3
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>graph LR
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    subgraph analysis [Analysis]
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        reads_in[ ]
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        trim[Trimming]
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        align[Alignment]
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        quant[Quantification]
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        reads_in --&gt;|main,qc| trim
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        trim --&gt;|main| align
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        align --&gt;|main| quant
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    end
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    subgraph reporting [Reporting]
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        multiqc[MultiQC]
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        report_out[ ]
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        trim --&gt;|qc| multiqc
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        quant --&gt;|qc| multiqc
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        multiqc --&gt;|qc| report_out
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    end
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>%%metro title: File Icons
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>%%metro style: dark
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>%%metro file: reads_in | FASTQ
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>%%metro file: report_out | HTML
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>%%metro line: main | Main | #4CAF50
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>%%metro line: qc | Quality Control | #2196F3
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>graph LR
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    subgraph analysis [Analysis]
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        reads_in[ ]
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        trim[Trimming]
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        align[Alignment]
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        quant[Quantification]
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>        reads_in --&gt;|main,qc| trim
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        trim --&gt;|main| align
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        align --&gt;|main| quant
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    end
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    subgraph reporting [Reporting]
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        multiqc[MultiQC]
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        report_out[ ]
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>        trim --&gt;|qc| multiqc
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        quant --&gt;|qc| multiqc
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>        multiqc --&gt;|qc| report_out
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    end
 </code></pre></div>
 <p><img alt="File icons example" src="../assets/renders/05_file_icons.svg" /></p>
 <p>The FASTQ icon at the start of the Analysis section shows the pipeline input. The HTML icon at the end of Reporting shows where the QC report is written. Common labels include FASTQ, BAM, VCF, HTML, and CSV, but you can use any short string.</p>
@@ -925,49 +1002,49 @@
 <p>Sometimes you need a branching or merging point in the graph that doesn't represent a real pipeline step. For example, lines might diverge at a point where no tool is actually run. Adding a visible station there clutters the diagram with a meaningless marker.</p>
 <p><strong>Any station whose ID starts with <code>_</code> (underscore) is hidden.</strong> It participates in layout and routing (lines pass through it), but no marker or label is rendered.</p>
 <p>Here is a pipeline with a visible <code>branch</code> station that serves only as a fork point:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>%%metro title: Visible Branch Point
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>%%metro style: dark
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>%%metro line: dna | DNA | #e63946
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>%%metro line: rna | RNA | #0570b0
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>%%metro line: prot | Protein | #2db572
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>graph LR
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    subgraph input [Input]
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        fetch[Fetch Data]
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        validate[Validate]
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        fetch --&gt;|dna,rna,prot| validate
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    end
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    subgraph processing [Processing]
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        branch[Branch]
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        align[Alignment]
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        quant[Quantification]
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        search[Database Search]
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        branch --&gt;|dna,rna| align
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        branch --&gt;|prot| search
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        align --&gt;|rna| quant
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    end
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    subgraph reporting [Reporting]
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>        multiqc[MultiQC]
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    end
-<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
-<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>    validate --&gt;|dna,rna,prot| branch
-<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>    align --&gt;|dna| multiqc
-<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    quant --&gt;|rna| multiqc
-<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    search --&gt;|prot| multiqc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>%%metro title: Visible Branch Point
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>%%metro style: dark
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>%%metro line: dna | DNA | #e63946
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>%%metro line: rna | RNA | #0570b0
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>%%metro line: prot | Protein | #2db572
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>graph LR
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    subgraph input [Input]
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        fetch[Fetch Data]
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        validate[Validate]
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        fetch --&gt;|dna,rna,prot| validate
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    end
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    subgraph processing [Processing]
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        branch[Branch]
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>        align[Alignment]
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>        quant[Quantification]
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>        search[Database Search]
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        branch --&gt;|dna,rna| align
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>        branch --&gt;|prot| search
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>        align --&gt;|rna| quant
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>    end
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>    subgraph reporting [Reporting]
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>        multiqc[MultiQC]
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>    end
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>    validate --&gt;|dna,rna,prot| branch
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>    align --&gt;|dna| multiqc
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>    quant --&gt;|rna| multiqc
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>    search --&gt;|prot| multiqc
 </code></pre></div>
 <p><img alt="Visible branch point" src="../assets/renders/06a_without_hidden.svg" /></p>
 <p>The "Branch" station is real in the graph but meaningless in the pipeline. Renaming it to <code>_branch</code> hides it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    subgraph processing [Processing]
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        _branch
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        align[Alignment]
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        ...
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        _branch --&gt;|dna,rna| align
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        _branch --&gt;|prot| search
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    end
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    validate --&gt;|dna,rna,prot| _branch
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    subgraph processing [Processing]
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        _branch
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        align[Alignment]
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        ...
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        _branch --&gt;|dna,rna| align
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        _branch --&gt;|prot| search
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    end
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    validate --&gt;|dna,rna,prot| _branch
 </code></pre></div>
 <p><img alt="Hidden branch point" src="../assets/renders/06b_with_hidden.svg" /></p>
 <p>The lines still fork at the same point, but there is no marker or label. This gives you fine control over where splits happen without adding a fake step to the diagram.</p>
@@ -1066,7 +1143,7 @@
 </ul>
 <h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
 <p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
 </code></pre></div>
 <p><img alt="Debug overlay" src="../assets/renders/rnaseq_auto_debug.svg" /></p>
 <p>The overlay shows:</p>
