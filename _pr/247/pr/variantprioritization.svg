@@ -25,14 +25,14 @@
 <circle cx="400.5" cy="270.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
 <text x="400.5" y="270.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">4</text>
 <text x="416.5" y="270.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">CPSR</text>
-<path d="M128.0,360.0 L141.0,360.0 Q151.0,360.0,157.0,352.0 L175.0,328.0 Q181.0,320.0,191.0,320.0 L196.0,320.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M128.0,360.0 L141.0,360.0 Q151.0,360.0,157.61621637086847,352.5016214463491 L174.38378362913153,333.4983785536509 Q181.0,326.0,191.0,326.0 L196.0,326.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M128.0,326.0 L196.0,326.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
 <path d="M389.5,326.0 L439.5,326.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
+<path d="M196.0,326.0 L206.0,326.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
+<path d="M206.0,326.0 L389.5,326.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
+<path d="M206.0,326.0 L206.0,326.0 Q216.0,326.0,216.0,336.0 L216.0,410.0 Q216.0,420.0,226.0,420.0 L735.5,420.0 Q745.5,420.0,745.5,410.0 L745.5,133.0 Q745.5,123.0,755.5,123.0 L757.5,123.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M439.5,323.0 L499.5,323.0" stroke="#9923A0" stroke-width="3.0" stroke-linecap="round" />
 <path d="M389.5,323.0 L439.5,323.0" stroke="#9923A0" stroke-width="3.0" stroke-linecap="round" />
-<path d="M128.0,320.0 L196.0,320.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
-<path d="M196.0,320.0 L206.0,320.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
-<path d="M206.0,320.0 L389.5,326.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
-<path d="M206.0,320.0 L206.0,320.0 Q216.0,320.0,216.0,330.0 L216.0,410.0 Q216.0,420.0,226.0,420.0 L735.5,420.0 Q745.5,420.0,745.5,410.0 L745.5,133.0 Q745.5,123.0,755.5,123.0 L757.5,123.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M447.5,200.0 L561.5,200.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" />
 <path d="M561.5,200.0 L652.5,200.0 Q662.5,200.0,666.0112344158839,190.63670822430956 L688.9887655841161,129.36329177569044 Q692.5,120.0,702.5,120.0 L707.5,120.0" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M621.5,160.0 L652.5,160.0 Q662.5,160.0,668.5,152.0 L686.5,128.0 Q692.5,120.0,702.5,120.0 L707.5,120.0" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
@@ -73,7 +73,7 @@
 <path d="M428.5,184.0 L428.5,192.0 L436.5,192.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
 <text x="422.5" y="201.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">CNA</text>
 <rect x="556.5" y="195.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
-<rect x="123.0" y="315.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="123.0" y="321.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="123.0" y="355.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="802.5" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="862.5" y="115.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
@@ -90,7 +90,7 @@
 <text x="447.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Reformat VCF</text>
 <text x="807.5" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">PCGR</text>
 <text x="439.5" y="337.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">CPSR</text>
-<text x="128.0" y="306.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">PCGR DB</text>
+<text x="128.0" y="312.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">PCGR DB</text>
 <text x="128.0" y="371.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">VEP Cache</text>
 <text x="561.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Intersect VCF</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">tabix</text>
@@ -103,12 +103,12 @@
 <circle cx="581.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="611.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="151.0" cy="360.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="181.0" cy="320.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="181.0" cy="326.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="662.5" cy="200.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="692.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="662.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="692.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="216.0" cy="320.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="216.0" cy="326.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="216.0" cy="420.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="745.5" cy="420.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="745.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
