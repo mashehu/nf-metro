@@ -33,7 +33,6 @@
 <path d="M662.5,160.0 L672.5,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
 <path d="M672.5,160.0 L672.5,160.0 Q682.5,160.0,682.5,150.0 L682.5,130.0 Q682.5,120.0,692.5,120.0 L742.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M908.5,126.0 L958.5,126.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
-<path d="M128.0,123.0 L196.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <path d="M908.5,123.0 L958.5,123.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" />
 <path d="M196.0,123.0 L206.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
 <path d="M206.0,123.0 L206.0,123.0 Q219.0,123.0,219.0,136.0 L219.0,190.0 Q219.0,200.0,229.0,200.0 L236.0,200.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
@@ -41,10 +40,11 @@
 <path d="M800.5,120.0 L858.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
 <path d="M908.5,120.0 L958.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
 <path d="M742.5,120.0 L800.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<path d="M128.0,120.0 L196.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <path d="M858.5,120.0 L908.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
 <path d="M196.0,120.0 L206.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <path d="M206.0,120.0 L206.0,120.0 Q216.0,120.0,216.0,130.0 L216.0,250.0 Q216.0,263.0,229.0,263.0 L885.5,263.0 Q898.5,263.0,898.5,250.0 L898.5,136.0 Q898.5,126.0,908.5,126.0 L908.5,126.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-<rect x="123.0" y="118.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="123.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="123.0" y="155.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="307.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="412.0" y="195.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
@@ -53,7 +53,7 @@
 <rect x="795.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="953.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <text x="312.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Star Genomegener</text>
-<text x="128.0" y="109.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Fastqc</text>
+<text x="128.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Fastqc</text>
 <text x="800.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Salmon Quant</text>
 <text x="958.5" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Multiqc</text>
 <text x="128.0" y="174.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Trimgalore</text>
