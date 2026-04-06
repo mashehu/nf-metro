@@ -748,7 +748,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%%metro title: Simple Pipeline
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>%%metro style: dark
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>%%metro line: main | Main | #4CAF50
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>%%metro line: qc | Quality Control | #2196F3
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>%%metro line: qc | Quality Control | #2196F3 | dashed
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>graph LR
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    input[Input]
@@ -769,7 +769,7 @@
 <p><img alt="Minimal example" src="../assets/renders/01_minimal.svg" /></p>
 <p>A few things to notice:</p>
 <ul>
-<li><strong><code>%%metro line:</code></strong> defines a route as <code>id | Display Name | #hexcolor</code>. Every edge must reference one of these IDs.</li>
+<li><strong><code>%%metro line:</code></strong> defines a route as <code>id | Display Name | #hexcolor</code> with an optional fourth field for style (<code>solid</code>, <code>dashed</code>, or <code>dotted</code>). Every edge must reference one of these IDs.</li>
 <li><strong><code>graph LR</code></strong> starts the Mermaid graph. nf-metro always uses left-to-right flow at the top level.</li>
 <li><strong>Stations</strong> use Mermaid node syntax: <code>node_id[Label]</code>.</li>
 <li><strong>Edges</strong> carry a line ID: <code>source --&gt;|line_id| target</code>. An edge can carry multiple lines at once: <code>a --&gt;|line1,line2| b</code>.</li>
@@ -1081,8 +1081,8 @@
 <td>Theme: <code>dark</code> (default) or <code>light</code></td>
 </tr>
 <tr>
-<td><code>%%metro line: &lt;id&gt; \| &lt;name&gt; \| &lt;color&gt;</code></td>
-<td>Define a metro line with ID, display name, and hex color</td>
+<td><code>%%metro line: &lt;id&gt; \| &lt;name&gt; \| &lt;color&gt; [\| &lt;style&gt;]</code></td>
+<td>Define a metro line. Optional style: <code>solid</code> (default), <code>dashed</code>, or <code>dotted</code></td>
 </tr>
 <tr>
 <td><code>%%metro grid: &lt;section&gt; \| &lt;col&gt;,&lt;row&gt;[,&lt;rowspan&gt;[,&lt;colspan&gt;]]</code></td>
@@ -1103,6 +1103,10 @@
 <tr>
 <td><code>%%metro compact_offsets: true</code></td>
 <td>Compact line offsets within stations (see below)</td>
+</tr>
+<tr>
+<td><code>%%metro legend_min_height: &lt;pixels&gt;</code></td>
+<td>Minimum legend content height in pixels (useful for single-line maps where the logo would otherwise be tiny)</td>
 </tr>
 </tbody>
 </table>
