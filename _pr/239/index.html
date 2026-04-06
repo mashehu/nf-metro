@@ -195,7 +195,7 @@
 </head>
 <body>
 <h1>Render diff - PR #239</h1>
-<p class="summary">7 added, 4 removed out of 51 total renders. Generated 2026-04-06 16:47 UTC.</p>
+<p class="summary">2 changed, 7 added, 4 removed out of 51 total renders. Generated 2026-04-06 16:54 UTC.</p>
 <details class="intro">
 <summary>What is this page?</summary>
 <p>
@@ -231,6 +231,7 @@ switch between side-by-side, base-only, and PR-only views.
 <h3><a href="#section-main-examples">Main Examples</a></h3>
 <ul>
 <li><a href="#genomeassembly">genomeassembly</a><span class="badge badge-removed">removed</span></li>
+<li><a href="#rnaseq_auto">rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#variantprioritization">variantprioritization</a><span class="badge badge-removed">removed</span></li>
 </ul>
 <h3><a href="#section-nf-core-pipelines">nf-core Pipelines</a></h3>
@@ -242,6 +243,10 @@ switch between side-by-side, base-only, and PR-only views.
 <li><a href="#pipeline_rnaseq_auto">pipeline_rnaseq_auto</a><span class="badge badge-added">added</span></li>
 <li><a href="#pipeline_variantbenchmarking">pipeline_variantbenchmarking</a><span class="badge badge-added">added</span></li>
 <li><a href="#pipeline_variantprioritization">pipeline_variantprioritization</a><span class="badge badge-added">added</span></li>
+</ul>
+<h3><a href="#section-guide-examples">Guide Examples</a></h3>
+<ul>
+<li><a href="#rnaseq_auto_debug">rnaseq_auto_debug</a><span class="badge badge-changed">changed</span></li>
 </ul>
 </div>
 <h2 class="section-header" id="section-pipeline-examples">Pipeline Examples</h2>
@@ -261,6 +266,15 @@ switch between side-by-side, base-only, and PR-only views.
 <div class="diff-entry" id="genomeassembly">
 <h3>Genomeassembly <span class="badge badge-removed">removed</span></h3>
 <div class="side-only"><h4>Removed (was in base)</h4><img src="base/genomeassembly.svg" alt="Base: genomeassembly"></div>
+</div>
+
+<div class="diff-entry" id="rnaseq_auto">
+<h3>Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto.svg" alt="Base: rnaseq_auto"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto.svg" alt="PR: rnaseq_auto"></div>
+</div>
 </div>
 
 <div class="diff-entry" id="variantprioritization">
@@ -303,6 +317,17 @@ switch between side-by-side, base-only, and PR-only views.
 <div class="diff-entry" id="pipeline_variantprioritization">
 <h3>Pipeline Variantprioritization <span class="badge badge-added">added</span></h3>
 <div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_variantprioritization.svg" alt="PR: pipeline_variantprioritization"></div>
+</div>
+
+<h2 class="section-header" id="section-guide-examples">Guide Examples</h2>
+
+<div class="diff-entry" id="rnaseq_auto_debug">
+<h3>Rnaseq Auto Debug <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto_debug.svg" alt="Base: rnaseq_auto_debug"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto_debug.svg" alt="PR: rnaseq_auto_debug"></div>
+</div>
 </div>
 <script>
 document.querySelectorAll('.toggle-bar button').forEach(btn => {
