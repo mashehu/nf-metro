@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="406" height="311" viewBox="0 0 406 311">
+<defs>
+</defs>
+<rect x="0" y="0" width="406" height="311" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Pipeline</text>
+<rect x="30.0" y="70.0" width="316.0" height="139.17477534832557" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
+<circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">1</text>
+<text x="57.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Pipeline</text>
+<path d="M80.0,129.175 L224.5,129.175 Q234.5,129.175,243.44427190999915,133.64713595499958 L255.55572809000085,139.70286404500044 Q264.5,144.175,274.5,144.175 L296.0,144.175" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" />
+<path d="M80.0,159.175 L140.0,159.175" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" />
+<path d="M140.0,159.175 L200.0,159.175" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" />
+<path d="M200.0,159.175 L224.5,159.175 Q234.5,159.175,243.44427190999915,154.70286404500044 L255.55572809000085,148.64713595499958 Q264.5,144.175,274.5,144.175 L296.0,144.175" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" />
+<rect x="75.0" y="124.17500000000001" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="75.0" y="154.175" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="135.0" y="154.175" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="195.0" y="154.175" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="291.0" y="139.175" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<text x="80.0" y="115.17500000000001" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Fastqc</text>
+<text x="80.0" y="170.175" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Trim Reads</text>
+<text x="140.0" y="145.175" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Align</text>
+<text x="200.0" y="170.175" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Sort Bam</text>
+<text x="296.0" y="130.175" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Multiqc</text>
+<circle cx="234.5" cy="129.175" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="264.5" cy="144.175" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="234.5" cy="159.175" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="264.5" cy="144.175" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<rect x="30.0" y="239.17477534832557" width="90.80000000000001" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,263.17477534832557 L66.0,263.17477534832557" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="263.17477534832557" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Main</text>
+<text x="376.0" y="303.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.6.1+dev</text>
+</svg>
