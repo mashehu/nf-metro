@@ -708,6 +708,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mismatched-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mismatched Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upward-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upward Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1075,6 +1097,28 @@
     <span class="md-ellipsis">
       
         Fold Stacked Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mismatched-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mismatched Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upward-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upward Bypass
       
     </span>
   </a>
@@ -2625,6 +2669,125 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Fold Stacked Branch" src="../assets/renders/fold_stacked_branch.svg" /></p>
+<h3 id="mismatched-tracks">Mismatched Tracks<a class="headerlink" href="#mismatched-tracks" title="Permanent link">&para;</a></h3>
+<p>Lines with mismatched track counts at shared stations.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/mismatched_tracks.mmd<span class="w"> </span>-o<span class="w"> </span>mismatched_tracks.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>%%metro title: Mismatched Tracks
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>%%metro style: dark
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>%%metro line: a | Alpha | #0570b0
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>%%metro line: b | Beta | #2db572
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>%%metro line: c | Gamma | #e31a1c
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>%%metro line: d | Delta | #ff7f00
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>%%metro line: e | Epsilon | #6a3d9a
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>graph LR
+<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>    subgraph tall [Tall Section]
+<a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a>        t_start[Start]
+<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>        t_a[Path A]
+<a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a>        t_b[Path B]
+<a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a>        t_c[Path C]
+<a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a>        t_d[Path D]
+<a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a>        t_e[Path E]
+<a id="__codelineno-41-17" name="__codelineno-41-17" href="#__codelineno-41-17"></a>        t_end[End]
+<a id="__codelineno-41-18" name="__codelineno-41-18" href="#__codelineno-41-18"></a>        t_start --&gt;|a| t_a
+<a id="__codelineno-41-19" name="__codelineno-41-19" href="#__codelineno-41-19"></a>        t_start --&gt;|b| t_b
+<a id="__codelineno-41-20" name="__codelineno-41-20" href="#__codelineno-41-20"></a>        t_start --&gt;|c| t_c
+<a id="__codelineno-41-21" name="__codelineno-41-21" href="#__codelineno-41-21"></a>        t_start --&gt;|d| t_d
+<a id="__codelineno-41-22" name="__codelineno-41-22" href="#__codelineno-41-22"></a>        t_start --&gt;|e| t_e
+<a id="__codelineno-41-23" name="__codelineno-41-23" href="#__codelineno-41-23"></a>        t_a --&gt;|a| t_end
+<a id="__codelineno-41-24" name="__codelineno-41-24" href="#__codelineno-41-24"></a>        t_b --&gt;|b| t_end
+<a id="__codelineno-41-25" name="__codelineno-41-25" href="#__codelineno-41-25"></a>        t_c --&gt;|c| t_end
+<a id="__codelineno-41-26" name="__codelineno-41-26" href="#__codelineno-41-26"></a>        t_d --&gt;|d| t_end
+<a id="__codelineno-41-27" name="__codelineno-41-27" href="#__codelineno-41-27"></a>        t_e --&gt;|e| t_end
+<a id="__codelineno-41-28" name="__codelineno-41-28" href="#__codelineno-41-28"></a>    end
+<a id="__codelineno-41-29" name="__codelineno-41-29" href="#__codelineno-41-29"></a>
+<a id="__codelineno-41-30" name="__codelineno-41-30" href="#__codelineno-41-30"></a>    subgraph short_a [Short A]
+<a id="__codelineno-41-31" name="__codelineno-41-31" href="#__codelineno-41-31"></a>        sa1[Proc A]
+<a id="__codelineno-41-32" name="__codelineno-41-32" href="#__codelineno-41-32"></a>        sa2[Done A]
+<a id="__codelineno-41-33" name="__codelineno-41-33" href="#__codelineno-41-33"></a>        sa1 --&gt;|a| sa2
+<a id="__codelineno-41-34" name="__codelineno-41-34" href="#__codelineno-41-34"></a>    end
+<a id="__codelineno-41-35" name="__codelineno-41-35" href="#__codelineno-41-35"></a>
+<a id="__codelineno-41-36" name="__codelineno-41-36" href="#__codelineno-41-36"></a>    subgraph short_b [Short B]
+<a id="__codelineno-41-37" name="__codelineno-41-37" href="#__codelineno-41-37"></a>        sb1[Proc B]
+<a id="__codelineno-41-38" name="__codelineno-41-38" href="#__codelineno-41-38"></a>        sb2[Done B]
+<a id="__codelineno-41-39" name="__codelineno-41-39" href="#__codelineno-41-39"></a>        sb1 --&gt;|b| sb2
+<a id="__codelineno-41-40" name="__codelineno-41-40" href="#__codelineno-41-40"></a>    end
+<a id="__codelineno-41-41" name="__codelineno-41-41" href="#__codelineno-41-41"></a>
+<a id="__codelineno-41-42" name="__codelineno-41-42" href="#__codelineno-41-42"></a>    t_end --&gt;|a| sa1
+<a id="__codelineno-41-43" name="__codelineno-41-43" href="#__codelineno-41-43"></a>    t_end --&gt;|b| sb1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Mismatched Tracks" src="../assets/renders/mismatched_tracks.svg" /></p>
+<h3 id="upward-bypass">Upward Bypass<a class="headerlink" href="#upward-bypass" title="Permanent link">&para;</a></h3>
+<p>Tall section bypass where the trunk is above the source (upward gap1).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/upward_bypass.mmd<span class="w"> </span>-o<span class="w"> </span>upward_bypass.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>%%metro title: Upward Bypass Test
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>%%metro style: dark
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>%%metro line: a | Line A | #FF9800
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>%%metro line: b | Line B | #4CAF50
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>%%metro line: c | Line C | #2196F3
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>%%metro line: d | Line D | #E91E63
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>%%metro line: e | Line E | #9C27B0
+<a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>%%metro line: f | Line F | #00BCD4
+<a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>%%metro line: g | Line G | #CDDC39
+<a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a>
+<a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a>graph LR
+<a id="__codelineno-43-12" name="__codelineno-43-12" href="#__codelineno-43-12"></a>    subgraph input [Input]
+<a id="__codelineno-43-13" name="__codelineno-43-13" href="#__codelineno-43-13"></a>        hub[Hub]
+<a id="__codelineno-43-14" name="__codelineno-43-14" href="#__codelineno-43-14"></a>    end
+<a id="__codelineno-43-15" name="__codelineno-43-15" href="#__codelineno-43-15"></a>
+<a id="__codelineno-43-16" name="__codelineno-43-16" href="#__codelineno-43-16"></a>    subgraph wide [Wide Fan-out]
+<a id="__codelineno-43-17" name="__codelineno-43-17" href="#__codelineno-43-17"></a>        w1[Tool 1]
+<a id="__codelineno-43-18" name="__codelineno-43-18" href="#__codelineno-43-18"></a>        w2[Tool 2]
+<a id="__codelineno-43-19" name="__codelineno-43-19" href="#__codelineno-43-19"></a>        w3[Tool 3]
+<a id="__codelineno-43-20" name="__codelineno-43-20" href="#__codelineno-43-20"></a>        w4[Tool 4]
+<a id="__codelineno-43-21" name="__codelineno-43-21" href="#__codelineno-43-21"></a>        w5[Tool 5]
+<a id="__codelineno-43-22" name="__codelineno-43-22" href="#__codelineno-43-22"></a>        w6[Tool 6]
+<a id="__codelineno-43-23" name="__codelineno-43-23" href="#__codelineno-43-23"></a>        w7[Tool 7]
+<a id="__codelineno-43-24" name="__codelineno-43-24" href="#__codelineno-43-24"></a>    end
+<a id="__codelineno-43-25" name="__codelineno-43-25" href="#__codelineno-43-25"></a>
+<a id="__codelineno-43-26" name="__codelineno-43-26" href="#__codelineno-43-26"></a>    subgraph adjacent [Adjacent]
+<a id="__codelineno-43-27" name="__codelineno-43-27" href="#__codelineno-43-27"></a>        adj[Collect]
+<a id="__codelineno-43-28" name="__codelineno-43-28" href="#__codelineno-43-28"></a>    end
+<a id="__codelineno-43-29" name="__codelineno-43-29" href="#__codelineno-43-29"></a>
+<a id="__codelineno-43-30" name="__codelineno-43-30" href="#__codelineno-43-30"></a>    subgraph far [Far Target]
+<a id="__codelineno-43-31" name="__codelineno-43-31" href="#__codelineno-43-31"></a>        out[Output]
+<a id="__codelineno-43-32" name="__codelineno-43-32" href="#__codelineno-43-32"></a>    end
+<a id="__codelineno-43-33" name="__codelineno-43-33" href="#__codelineno-43-33"></a>
+<a id="__codelineno-43-34" name="__codelineno-43-34" href="#__codelineno-43-34"></a>    hub --&gt;|a| w1
+<a id="__codelineno-43-35" name="__codelineno-43-35" href="#__codelineno-43-35"></a>    hub --&gt;|b| w2
+<a id="__codelineno-43-36" name="__codelineno-43-36" href="#__codelineno-43-36"></a>    hub --&gt;|c| w3
+<a id="__codelineno-43-37" name="__codelineno-43-37" href="#__codelineno-43-37"></a>    hub --&gt;|d| w4
+<a id="__codelineno-43-38" name="__codelineno-43-38" href="#__codelineno-43-38"></a>    hub --&gt;|e| w5
+<a id="__codelineno-43-39" name="__codelineno-43-39" href="#__codelineno-43-39"></a>    hub --&gt;|f| w6
+<a id="__codelineno-43-40" name="__codelineno-43-40" href="#__codelineno-43-40"></a>    hub --&gt;|g| w7
+<a id="__codelineno-43-41" name="__codelineno-43-41" href="#__codelineno-43-41"></a>
+<a id="__codelineno-43-42" name="__codelineno-43-42" href="#__codelineno-43-42"></a>    %% Adjacent (L-shape)
+<a id="__codelineno-43-43" name="__codelineno-43-43" href="#__codelineno-43-43"></a>    w1 --&gt;|a| adj
+<a id="__codelineno-43-44" name="__codelineno-43-44" href="#__codelineno-43-44"></a>
+<a id="__codelineno-43-45" name="__codelineno-43-45" href="#__codelineno-43-45"></a>    %% Bypass: bottom of wide -&gt; far (skipping adjacent)
+<a id="__codelineno-43-46" name="__codelineno-43-46" href="#__codelineno-43-46"></a>    w1 --&gt;|a| out
+<a id="__codelineno-43-47" name="__codelineno-43-47" href="#__codelineno-43-47"></a>    w2 --&gt;|b| out
+<a id="__codelineno-43-48" name="__codelineno-43-48" href="#__codelineno-43-48"></a>    w3 --&gt;|c| out
+<a id="__codelineno-43-49" name="__codelineno-43-49" href="#__codelineno-43-49"></a>    w4 --&gt;|d| out
+<a id="__codelineno-43-50" name="__codelineno-43-50" href="#__codelineno-43-50"></a>    w5 --&gt;|e| out
+<a id="__codelineno-43-51" name="__codelineno-43-51" href="#__codelineno-43-51"></a>    w6 --&gt;|f| out
+<a id="__codelineno-43-52" name="__codelineno-43-52" href="#__codelineno-43-52"></a>    w7 --&gt;|g| out
+<a id="__codelineno-43-53" name="__codelineno-43-53" href="#__codelineno-43-53"></a>
+<a id="__codelineno-43-54" name="__codelineno-43-54" href="#__codelineno-43-54"></a>    adj --&gt;|a| out
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Upward Bypass" src="../assets/renders/upward_bypass.svg" /></p>
 
 
 

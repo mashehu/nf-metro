@@ -4,7 +4,7 @@
 <defs>
 </defs>
 <rect x="0" y="0" width="605" height="296" fill="#2b2b2b" />
-<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">File Icons</text>
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Folder Icons</text>
 <rect x="22.0" y="70.0" width="305.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
 <circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
 <text x="33.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">1</text>
@@ -32,10 +32,9 @@
 <rect x="255.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="422.0" y="118.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="482.0" y="118.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
-<path d="M500.0,107.0 L518.0,107.0 L526.0,115.0 L526.0,137.0 Q526.0,139.0,524.0,139.0 L500.0,139.0 Q498.0,139.0,498.0,137.0 L498.0,109.0 Q498.0,107.0,500.0,107.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
-<path d="M518.0,107.0 L518.0,115.0 L526.0,115.0 Z" fill="#333333" opacity="0.15" stroke="none" />
-<path d="M518.0,107.0 L518.0,115.0 L526.0,115.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
-<text x="512.0" y="124.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
+<path d="M500.0,107.0 L507.2,107.0 Q509.2,107.0,509.2,109.0 L509.2,113.4 L498.0,113.4 L498.0,109.0 Q498.0,107.0,500.0,107.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M498.0,113.4 L524.0,113.4 Q526.0,113.4,526.0,115.4 L526.0,137.0 Q526.0,139.0,524.0,139.0 L500.0,139.0 Q498.0,139.0,498.0,137.0 L498.0,113.4 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<text x="512.0" y="126.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">Results</text>
 <text x="427.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">MultiQC</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Trimming</text>
 <text x="200.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Alignment</text>

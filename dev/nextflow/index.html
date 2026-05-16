@@ -900,6 +900,11 @@
 <p><img alt="Variant calling - with file icons" src="../assets/renders/nf_variant_calling_tuned_icons.svg" /></p>
 <p>The FASTQ icon at the start of Pre-processing and the FASTA icon at the start of Alignment show where data enters the pipeline. The VCF icon at the end of Variant Calling and the HTML icon in Reporting show where results are written. This makes the diagram immediately readable to someone unfamiliar with the pipeline.</p>
 <p>For a more complex example with multiple file icons, see the nf-core/rnaseq diagram at <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/rnaseq_sections.mmd"><code>examples/rnaseq_sections.mmd</code></a>, which uses FASTQ input icons and HTML report output icons across several sections.</p>
+<p>Two additional icon variants are available for common Nextflow patterns:</p>
+<ul>
+<li><strong><code>%%metro files:</code></strong> renders a stacked-documents icon, useful for paired-end reads or multi-file inputs (e.g. <code>%%metro files: reads_in | FASTQ</code>)</li>
+<li><strong><code>%%metro dir:</code></strong> renders a folder icon, useful for directory outputs like <code>publishDir</code> results (e.g. <code>%%metro dir: results_out | Results</code>)</li>
+</ul>
 <h2 id="how-the-converter-works">How the converter works<a class="headerlink" href="#how-the-converter-works" title="Permanent link">&para;</a></h2>
 <p>Nextflow's <code>-with-dag</code> output contains three types of nodes: processes (the actual pipeline steps), channels/values (data plumbing), and operators (Nextflow internals like <code>mix</code> and <code>collect</code>). Here is the raw DAG for the flat pipeline example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>flowchart TB
