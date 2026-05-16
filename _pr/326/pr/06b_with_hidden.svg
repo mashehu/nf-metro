@@ -28,10 +28,10 @@
 <path d="M513.5,208.0 L533.5,208.0 Q543.5,208.0,546.9358153126353,198.6087714787968 L570.0641846873647,135.3912285212032 Q573.5,126.0,583.5,126.0 L599.5,126.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-prot" />
 <path d="M80.0,123.0 L140.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
 <path d="M290.0,123.0 L386.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
-<path d="M386.0,123.0 L483.5,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
+<path d="M386.0,123.0 L416.5,123.0 Q426.5,123.0,432.4050999438422,131.0703032565843 L450.5949000561578,155.9296967434157 Q456.5,164.0,466.5,164.0 L513.5,164.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" />
 <path d="M140.0,123.0 L190.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
 <path d="M240.0,123.0 L290.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
-<path d="M483.5,123.0 L599.5,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
+<path d="M513.5,164.0 L544.5,164.0 Q554.5,164.0,560.4050999438422,155.9296967434157 L578.5949000561578,131.0703032565843 Q584.5,123.0,594.5,123.0 L599.5,123.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" />
 <path d="M679.5,123.0 L729.5,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
 <path d="M190.0,123.0 L240.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
 <path d="M599.5,123.0 L679.5,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" />
@@ -46,17 +46,21 @@
 <rect x="75.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="135.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="381.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
-<rect x="478.5" y="118.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="508.5" y="159.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="381.0" y="162.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <rect x="724.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
 <text x="80.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Fetch Data</text>
 <text x="729.5" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">MultiQC</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Validate</text>
-<text x="386.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Alignment</text>
+<text x="386.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Alignment</text>
 <text x="386.0" y="178.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Database Search</text>
-<text x="483.5" y="109.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Quantification</text>
+<text x="518.6" y="175.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Quantification</text>
 <circle cx="321.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="351.5" cy="167.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="426.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="456.5" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="554.5" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="584.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="453.5" cy="167.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="483.5" cy="208.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="543.5" cy="208.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
