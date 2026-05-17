@@ -768,6 +768,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#off-track-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Off Track Convergence
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1168,6 +1179,17 @@
     <span class="md-ellipsis">
       
         Upward Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#off-track-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Off Track Convergence
       
     </span>
   </a>
@@ -3053,6 +3075,54 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Upward Bypass" src="../assets/renders/upward_bypass.svg" /></p>
+<h3 id="off-track-convergence">Off Track Convergence<a class="headerlink" href="#off-track-convergence" title="Permanent link">&para;</a></h3>
+<p>Multiple off-track file inputs converging on a single consumer. The trunk stays horizontal while the inputs stack above the consumer column.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/off_track_convergence.mmd<span class="w"> </span>-o<span class="w"> </span>off_track_convergence.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>%%metro title: Off-Track Convergence
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>%%metro style: dark
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>%%metro line: main | Main | #2db572
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>%%metro file: ref_in | FASTA | Reference
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>%%metro file: gtf_in | GTF | Annotation
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>%%metro file: vcf_in | VCF | Known Variants
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>%%metro file: bed_in | BED | Targets
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>%%metro off_track: ref_in, gtf_in, vcf_in, bed_in
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>
+<a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>graph LR
+<a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a>    subgraph input [Input]
+<a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a>        reads[Reads]
+<a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a>        prep[Prepare]
+<a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a>        reads --&gt;|main| prep
+<a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a>    end
+<a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a>
+<a id="__codelineno-47-17" name="__codelineno-47-17" href="#__codelineno-47-17"></a>    subgraph process [Process]
+<a id="__codelineno-47-18" name="__codelineno-47-18" href="#__codelineno-47-18"></a>        ref_in[ ]
+<a id="__codelineno-47-19" name="__codelineno-47-19" href="#__codelineno-47-19"></a>        gtf_in[ ]
+<a id="__codelineno-47-20" name="__codelineno-47-20" href="#__codelineno-47-20"></a>        vcf_in[ ]
+<a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a>        bed_in[ ]
+<a id="__codelineno-47-22" name="__codelineno-47-22" href="#__codelineno-47-22"></a>        align[Align]
+<a id="__codelineno-47-23" name="__codelineno-47-23" href="#__codelineno-47-23"></a>        annotate[Annotate]
+<a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a>
+<a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a>        ref_in --&gt;|main| align
+<a id="__codelineno-47-26" name="__codelineno-47-26" href="#__codelineno-47-26"></a>        gtf_in --&gt;|main| align
+<a id="__codelineno-47-27" name="__codelineno-47-27" href="#__codelineno-47-27"></a>        vcf_in --&gt;|main| align
+<a id="__codelineno-47-28" name="__codelineno-47-28" href="#__codelineno-47-28"></a>        bed_in --&gt;|main| align
+<a id="__codelineno-47-29" name="__codelineno-47-29" href="#__codelineno-47-29"></a>        align --&gt;|main| annotate
+<a id="__codelineno-47-30" name="__codelineno-47-30" href="#__codelineno-47-30"></a>    end
+<a id="__codelineno-47-31" name="__codelineno-47-31" href="#__codelineno-47-31"></a>
+<a id="__codelineno-47-32" name="__codelineno-47-32" href="#__codelineno-47-32"></a>    subgraph output [Output]
+<a id="__codelineno-47-33" name="__codelineno-47-33" href="#__codelineno-47-33"></a>        report[Report]
+<a id="__codelineno-47-34" name="__codelineno-47-34" href="#__codelineno-47-34"></a>    end
+<a id="__codelineno-47-35" name="__codelineno-47-35" href="#__codelineno-47-35"></a>
+<a id="__codelineno-47-36" name="__codelineno-47-36" href="#__codelineno-47-36"></a>    prep --&gt;|main| align
+<a id="__codelineno-47-37" name="__codelineno-47-37" href="#__codelineno-47-37"></a>    annotate --&gt;|main| report
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Off Track Convergence" src="../assets/renders/off_track_convergence.svg" /></p>
 
 
 
