@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="460" height="534" viewBox="0 0 460 534">
+<defs>
+</defs>
+<rect x="0" y="0" width="460" height="534" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Wide Fan-In</text>
+<rect x="30.0" y="200.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
+<circle cx="41.0" cy="185.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
+<text x="41.0" y="185.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">1</text>
+<text x="57.0" y="185.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Source A</text>
+<rect x="30.0" y="220.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
+<circle cx="41.0" cy="205.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
+<text x="41.0" y="205.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">2</text>
+<text x="57.0" y="205.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Source B</text>
+<rect x="30.0" y="239.8" width="160.0" height="120.19999999999999" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
+<circle cx="41.0" cy="224.8" r="11" fill="#333333" class="nf-metro-section-num-circle" />
+<text x="41.0" y="224.8" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">3</text>
+<text x="57.0" y="224.8" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Source C</text>
+<rect x="30.0" y="260.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
+<circle cx="41.0" cy="245.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
+<text x="41.0" y="245.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">4</text>
+<text x="57.0" y="245.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Source D</text>
+<rect x="240.0" y="200.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" />
+<circle cx="251.0" cy="185.0" r="11" fill="#333333" class="nf-metro-section-num-circle" />
+<text x="251.0" y="185.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">5</text>
+<text x="267.0" y="185.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label">Sink</text>
+<path d="M80.0,289.0 L140.0,289.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-delta" />
+<path d="M290.0,289.0 L350.0,289.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-delta" />
+<path d="M140.0,289.0 L190.0,289.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-delta" />
+<path d="M240.0,289.0 L290.0,289.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-delta" />
+<path d="M190.0,289.0 L240.0,289.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-delta" />
+<path d="M80.0,286.0 L140.0,286.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-gamma" />
+<path d="M290.0,286.0 L350.0,286.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-gamma" />
+<path d="M140.0,286.0 L190.0,286.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-gamma" />
+<path d="M240.0,286.0 L290.0,286.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-gamma" />
+<path d="M190.0,286.0 L240.0,286.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-gamma" />
+<path d="M80.0,283.0 L140.0,283.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-beta" />
+<path d="M290.0,283.0 L350.0,283.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-beta" />
+<path d="M140.0,283.0 L190.0,283.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-beta" />
+<path d="M240.0,283.0 L290.0,283.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-beta" />
+<path d="M190.0,283.0 L240.0,283.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-beta" />
+<path d="M80.0,280.0 L140.0,280.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-alpha" />
+<path d="M290.0,280.0 L350.0,280.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-alpha" />
+<path d="M140.0,280.0 L190.0,280.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-alpha" />
+<path d="M240.0,280.0 L290.0,280.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-alpha" />
+<path d="M190.0,280.0 L240.0,280.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-alpha" />
+<rect x="75.0" y="275.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="135.0" y="275.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="75.0" y="278.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="135.0" y="278.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="75.0" y="281.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="135.0" y="281.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="75.0" y="284.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="135.0" y="284.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="285.0" y="275.0" width="10.0" height="19.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="345.0" y="275.0" width="10.0" height="19.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<text x="80.0" y="269.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Step A1</text>
+<text x="290.0" y="269.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Merge</text>
+<text x="80.0" y="294.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Step B1</text>
+<text x="80.0" y="261.8" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Step C1</text>
+<text x="80.0" y="278.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Step D1</text>
+<text x="145.1" y="266.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Step A2</text>
+<text x="350.0" y="266.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto">Output</text>
+<text x="140.0" y="302.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Step B2</text>
+<text x="140.0" y="310.2" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Step C2</text>
+<text x="140.0" y="313.2" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Step D2</text>
+<path d="M190.0,275.0 L195.0,280.0 L190.0,285.0 L185.0,280.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="190.0" y="272.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">src_a__exit_right_0 (right)</text>
+<path d="M190.0,275.0 L195.0,280.0 L190.0,285.0 L185.0,280.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="190.0" y="272.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">src_b__exit_right_1 (right)</text>
+<path d="M190.0,275.0 L195.0,280.0 L190.0,285.0 L185.0,280.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="190.0" y="272.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">src_c__exit_right_2 (right)</text>
+<path d="M190.0,275.0 L195.0,280.0 L190.0,285.0 L185.0,280.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="190.0" y="272.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">src_d__exit_right_3 (right)</text>
+<path d="M240.0,275.0 L245.0,280.0 L240.0,285.0 L235.0,280.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="240.0" y="272.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">sink__entry_left_4 (left)</text>
+<path d="M215.0,180.0 L215.0,380.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="215.0" y="176.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M10.0,260.0 L420.0,260.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="6.0" y="260.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
+<path d="M10.0,279.9 L420.0,279.9" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="6.0" y="279.9" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 1|2</text>
+<path d="M10.0,310.0 L420.0,310.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="6.0" y="310.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 2|3</text>
+<rect x="30.0" y="390.0" width="98.5" height="120.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,414.0 L66.0,414.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="414.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Alpha</text>
+<path d="M42.0,438.0 L66.0,438.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="438.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Beta</text>
+<path d="M42.0,462.0 L66.0,462.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="462.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Gamma</text>
+<path d="M42.0,486.0 L66.0,486.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="486.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Delta</text>
+<text x="430.0" y="526.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.6.1+dev</text>
+</svg>
