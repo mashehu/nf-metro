@@ -22,7 +22,7 @@
 <path d="M140.0,123.0 L190.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-vertical" data-line-id="vertical" />
 <path d="M240.0,273.0 L290.0,273.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-vertical" data-line-id="vertical" />
 <path d="M190.0,123.0 L214.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-vertical" data-line-id="vertical" />
-<path d="M214.0,123.0 L217.0,123.0 Q227.0,123.0,227.0,133.0 L227.0,263.0 Q227.0,273.0,237.0,273.0 L240.0,273.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vertical" data-line-id="vertical" />
+<path d="M214.0,123.0 L214.0,123.0 Q220.5,123.0,220.5,129.5 L220.5,263.0 Q220.5,273.0,230.5,273.0 L240.0,273.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vertical" data-line-id="vertical" />
 <path d="M80.0,120.0 L140.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-horizontal" data-line-id="horizontal" />
 <path d="M290.0,120.0 L350.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-horizontal" data-line-id="horizontal" />
 <path d="M140.0,120.0 L190.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-horizontal" data-line-id="horizontal" />
@@ -41,8 +41,8 @@
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="fork" class="nf-metro-station-label">Fork</text>
 <text x="350.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="r2" class="nf-metro-station-label">Right B</text>
 <text x="350.0" y="259.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="b2" class="nf-metro-station-label">Bottom B</text>
-<circle cx="227.0" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="227.0" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="220.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="220.5" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M190.0,115.0 L195.0,120.0 L190.0,125.0 L185.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="190.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">origin__exit_right_0 (right)</text>
 <path d="M240.0,115.0 L245.0,120.0 L240.0,125.0 L235.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
