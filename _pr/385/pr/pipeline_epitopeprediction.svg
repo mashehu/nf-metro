@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1337" height="480" viewBox="0 0 1337 480">
+<defs>
+</defs>
+<rect x="0" y="0" width="1337" height="480" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/epitopeprediction</text>
+<rect x="22.0" y="70.0" width="324.0" height="180.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="input_processing" data-section-lines="peptide,protein,vcf" />
+<circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="input_processing" />
+<text x="33.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="input_processing">1</text>
+<text x="49.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="input_processing">Input Processing</text>
+<rect x="396.0" y="70.0" width="504.5" height="260.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="binding_prediction" data-section-lines="peptide,protein,vcf" />
+<circle cx="407.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="binding_prediction" />
+<text x="407.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="binding_prediction">2</text>
+<text x="423.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="binding_prediction">Binding Prediction</text>
+<rect x="950.5" y="70.0" width="327.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="peptide,protein,vcf" />
+<circle cx="961.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="reporting" />
+<text x="961.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="reporting">3</text>
+<text x="977.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="reporting">Reporting</text>
+<path d="M463.0,126.0 L523.0,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M523.0,126.0 L693.5,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M523.0,126.0 L570.0,126.0 Q580.0,126.0,586.0,134.0 L604.0,158.0 Q610.0,166.0,620.0,166.0 L693.5,166.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M523.0,126.0 L570.0,126.0 Q580.0,126.0,583.5112344158839,135.36329177569044 L606.4887655841161,196.63670822430956 Q610.0,206.0,620.0,206.0 L693.5,206.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M523.0,126.0 L570.0,126.0 Q580.0,126.0,582.4253562503633,135.70142500145332 L607.5746437496367,236.29857499854668 Q610.0,246.0,620.0,246.0 L693.5,246.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M523.0,126.0 L570.0,126.0 Q580.0,126.0,581.8428853505019,135.8287218693432 L608.1571146494981,276.1712781306568 Q610.0,286.0,620.0,286.0 L693.5,286.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M693.5,126.0 L850.5,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M693.5,166.0 L767.0,166.0 Q777.0,166.0,783.0,158.0 L801.0,134.0 Q807.0,126.0,817.0,126.0 L850.5,126.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M693.5,206.0 L767.0,206.0 Q777.0,206.0,780.5112344158839,196.63670822430956 L803.4887655841161,135.36329177569044 Q807.0,126.0,817.0,126.0 L850.5,126.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M693.5,246.0 L767.0,246.0 Q777.0,246.0,779.4253562503633,236.29857499854668 L804.5746437496367,135.70142500145332 Q807.0,126.0,817.0,126.0 L850.5,126.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M693.5,286.0 L767.0,286.0 Q777.0,286.0,778.8428853505019,276.1712781306568 L805.1571146494981,135.8287218693432 Q807.0,126.0,817.0,126.0 L850.5,126.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M1031.0,126.0 L1167.5,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M1031.0,126.0 L1096.0,126.0 Q1106.0,126.0,1112.0,134.0 L1130.0,158.0 Q1136.0,166.0,1146.0,166.0 L1167.5,166.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M1167.5,126.0 L1227.5,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M1167.5,166.0 L1227.5,166.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M80.0,200.0 L291.75,200.0 Q301.75,200.0,305.5070510873922,190.73260731776594 L327.9929489126078,135.26739268223406 Q331.75,126.0,341.75,126.0 L346.0,126.0" stroke="#756bb1" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M396.0,126.0 L463.0,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M850.5,126.0 L900.5,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M950.5,126.0 L1031.0,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M346.0,126.0 L396.0,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M900.5,126.0 L950.5,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-peptide" data-line-id="peptide" />
+<path d="M80.0,163.0 L140.0,163.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M463.0,123.0 L523.0,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M523.0,123.0 L693.5,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M523.0,123.0 L571.5,123.0 Q581.5,123.0,587.5,131.0 L605.5,155.0 Q611.5,163.0,621.5,163.0 L693.5,163.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M523.0,123.0 L571.5,123.0 Q581.5,123.0,585.0112344158839,132.36329177569044 L607.9887655841161,193.63670822430956 Q611.5,203.0,621.5,203.0 L693.5,203.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M523.0,123.0 L571.5,123.0 Q581.5,123.0,583.9253562503633,132.70142500145332 L609.0746437496367,233.29857499854668 Q611.5,243.0,621.5,243.0 L693.5,243.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M523.0,123.0 L571.5,123.0 Q581.5,123.0,583.3428853505019,132.8287218693432 L609.6571146494981,273.1712781306568 Q611.5,283.0,621.5,283.0 L693.5,283.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M693.5,123.0 L850.5,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M693.5,163.0 L765.5,163.0 Q775.5,163.0,781.5,155.0 L799.5,131.0 Q805.5,123.0,815.5,123.0 L850.5,123.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M693.5,203.0 L765.5,203.0 Q775.5,203.0,779.0112344158839,193.63670822430956 L801.9887655841161,132.36329177569044 Q805.5,123.0,815.5,123.0 L850.5,123.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M693.5,243.0 L765.5,243.0 Q775.5,243.0,777.9253562503633,233.29857499854668 L803.0746437496367,132.70142500145332 Q805.5,123.0,815.5,123.0 L850.5,123.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M693.5,283.0 L765.5,283.0 Q775.5,283.0,777.3428853505019,273.1712781306568 L803.6571146494981,132.8287218693432 Q805.5,123.0,815.5,123.0 L850.5,123.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1031.0,123.0 L1167.5,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1031.0,123.0 L1097.5,123.0 Q1107.5,123.0,1113.5,131.0 L1131.5,155.0 Q1137.5,163.0,1147.5,163.0 L1167.5,163.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1167.5,123.0 L1227.5,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1167.5,163.0 L1227.5,163.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M140.0,163.0 L290.25,163.0 Q300.25,163.0,306.25,155.0 L324.25,131.0 Q330.25,123.0,340.25,123.0 L346.0,123.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M396.0,123.0 L463.0,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M850.5,123.0 L900.5,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M950.5,123.0 L1031.0,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M346.0,123.0 L396.0,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M900.5,123.0 L950.5,123.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M80.0,120.0 L140.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M140.0,120.0 L200.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M200.0,120.0 L260.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M463.0,120.0 L523.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M523.0,120.0 L693.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M523.0,120.0 L573.0,120.0 Q583.0,120.0,589.0,128.0 L607.0,152.0 Q613.0,160.0,623.0,160.0 L693.5,160.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M523.0,120.0 L573.0,120.0 Q583.0,120.0,586.5112344158839,129.36329177569044 L609.4887655841161,190.63670822430956 Q613.0,200.0,623.0,200.0 L693.5,200.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M523.0,120.0 L573.0,120.0 Q583.0,120.0,585.4253562503633,129.70142500145332 L610.5746437496367,230.29857499854668 Q613.0,240.0,623.0,240.0 L693.5,240.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M523.0,120.0 L573.0,120.0 Q583.0,120.0,584.8428853505019,129.8287218693432 L611.1571146494981,270.1712781306568 Q613.0,280.0,623.0,280.0 L693.5,280.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M693.5,120.0 L850.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M693.5,160.0 L764.0,160.0 Q774.0,160.0,780.0,152.0 L798.0,128.0 Q804.0,120.0,814.0,120.0 L850.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M693.5,200.0 L764.0,200.0 Q774.0,200.0,777.5112344158839,190.63670822430956 L800.4887655841161,129.36329177569044 Q804.0,120.0,814.0,120.0 L850.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M693.5,240.0 L764.0,240.0 Q774.0,240.0,776.4253562503633,230.29857499854668 L801.5746437496367,129.70142500145332 Q804.0,120.0,814.0,120.0 L850.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M693.5,280.0 L764.0,280.0 Q774.0,280.0,775.8428853505019,270.1712781306568 L802.1571146494981,129.8287218693432 Q804.0,120.0,814.0,120.0 L850.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M1031.0,120.0 L1167.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M1031.0,120.0 L1099.0,120.0 Q1109.0,120.0,1115.0,128.0 L1133.0,152.0 Q1139.0,160.0,1149.0,160.0 L1167.5,160.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M1167.5,120.0 L1227.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M1167.5,160.0 L1227.5,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M260.0,120.0 L346.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M396.0,120.0 L463.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M850.5,120.0 L900.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M950.5,120.0 L1031.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M346.0,120.0 L396.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<path d="M900.5,120.0 L950.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-vcf" data-line-id="vcf" />
+<rect x="75.0" y="115.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="VCF_IN" data-station-lines="vcf" data-station-label="VCF_IN" data-section-id="input_processing" data-section-name="Input Processing" />
+<g data-station-id="VCF_IN">
+<path d="M43.0,104.0 L61.0,104.0 L69.0,112.0 L69.0,134.0 Q69.0,136.0,67.0,136.0 L43.0,136.0 Q41.0,136.0,41.0,134.0 L41.0,106.0 Q41.0,104.0,43.0,104.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M61.0,104.0 L61.0,112.0 L69.0,112.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M61.0,104.0 L61.0,112.0 L69.0,112.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="55.0" y="121.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">VCF</text>
+</g>
+<rect x="135.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="gunzip_vcf" data-station-lines="vcf" data-station-label="Gunzip VCF" data-section-id="input_processing" data-section-name="Input Processing" />
+<rect x="195.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="snpsift_split" data-station-lines="vcf" data-station-label="SnpSift Split" data-section-id="input_processing" data-section-name="Input Processing" />
+<rect x="255.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="variant_pred" data-station-lines="vcf" data-station-label="Variant Pred" data-section-id="input_processing" data-section-name="Input Processing" />
+<rect x="75.0" y="158.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="FASTA_IN" data-station-lines="protein" data-station-label="FASTA_IN" data-section-id="input_processing" data-section-name="Input Processing" />
+<g data-station-id="FASTA_IN">
+<path d="M43.0,147.0 L61.0,147.0 L69.0,155.0 L69.0,177.0 Q69.0,179.0,67.0,179.0 L43.0,179.0 Q41.0,179.0,41.0,177.0 L41.0,149.0 Q41.0,147.0,43.0,147.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M61.0,147.0 L61.0,155.0 L69.0,155.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M61.0,147.0 L61.0,155.0 L69.0,155.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="55.0" y="164.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">FASTA</text>
+</g>
+<rect x="135.0" y="158.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fasta2peptides" data-station-lines="protein" data-station-label="Fasta2Peptides" data-section-id="input_processing" data-section-name="Input Processing" />
+<rect x="75.0" y="195.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="TSV_IN" data-station-lines="peptide" data-station-label="TSV_IN" data-section-id="input_processing" data-section-name="Input Processing" />
+<g data-station-id="TSV_IN">
+<path d="M43.0,184.0 L61.0,184.0 L69.0,192.0 L69.0,214.0 Q69.0,216.0,67.0,216.0 L43.0,216.0 Q41.0,216.0,41.0,214.0 L41.0,186.0 Q41.0,184.0,43.0,184.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M61.0,184.0 L61.0,192.0 L69.0,192.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M61.0,184.0 L61.0,192.0 L69.0,192.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="55.0" y="201.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">TSV</text>
+</g>
+<rect x="458.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="split_peptides" data-station-lines="peptide,protein,vcf" data-station-label="Split Peptides" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="518.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="prepare_input" data-station-lines="peptide,protein,vcf" data-station-label="Prepare Input" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="688.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mhcflurry" data-station-lines="peptide,protein,vcf" data-station-label="MHCflurry" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="688.5" y="155.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mhcnuggets" data-station-lines="peptide,protein,vcf" data-station-label="MHCnuggets" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="688.5" y="195.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mhcnuggetsii" data-station-lines="peptide,protein,vcf" data-station-label="MHCnuggetsII" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="688.5" y="235.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="netmhcpan" data-station-lines="peptide,protein,vcf" data-station-label="NetMHCpan" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="688.5" y="275.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="netmhciipan" data-station-lines="peptide,protein,vcf" data-station-label="NetMHCIIpan" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="845.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="merge_pred" data-station-lines="peptide,protein,vcf" data-station-label="Merge Pred" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
+<rect x="1026.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="summarize" data-station-lines="peptide,protein,vcf" data-station-label="Summarize Results" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="1162.5" y="155.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="peptide,protein,vcf" data-station-label="MultiQC" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="1222.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="TSV_OUT" data-station-lines="peptide,protein,vcf" data-station-label="TSV_OUT" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="1222.5" y="155.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="HTML_OUT" data-station-lines="peptide,protein,vcf" data-station-label="HTML_OUT" data-section-id="reporting" data-section-name="Reporting" />
+<text x="463.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="split_peptides" class="nf-metro-station-label">Split Peptides</text>
+<text x="1031.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="summarize" class="nf-metro-station-label">Summarize Results</text>
+<text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="gunzip_vcf" class="nf-metro-station-label">Gunzip VCF</text>
+<text x="523.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="prepare_input" class="nf-metro-station-label">Prepare Input</text>
+<text x="140.0" y="174.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="fasta2peptides" class="nf-metro-station-label">Fasta2Peptides</text>
+<text x="1167.5" y="177.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
+<text x="200.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="snpsift_split" class="nf-metro-station-label">SnpSift Split</text>
+<text x="693.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="mhcflurry" class="nf-metro-station-label">MHCflurry</text>
+<text x="693.5" y="149.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="mhcnuggets" class="nf-metro-station-label">MHCnuggets</text>
+<text x="693.5" y="189.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="mhcnuggetsii" class="nf-metro-station-label">MHCnuggetsII</text>
+<text x="693.5" y="229.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="netmhcpan" class="nf-metro-station-label">NetMHCpan</text>
+<text x="693.5" y="297.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="netmhciipan" class="nf-metro-station-label">NetMHCIIpan</text>
+<text x="260.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="variant_pred" class="nf-metro-station-label">Variant Pred</text>
+<text x="850.5" y="109.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="merge_pred" class="nf-metro-station-label">Merge Pred</text>
+<circle cx="583.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="613.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="581.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="611.5" cy="163.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="580.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="610.0" cy="166.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="583.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="613.0" cy="200.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="581.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="611.5" cy="203.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="580.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="610.0" cy="206.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="583.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="613.0" cy="240.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="581.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="611.5" cy="243.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="580.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="610.0" cy="246.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="583.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="613.0" cy="280.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="581.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="611.5" cy="283.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="580.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="610.0" cy="286.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="774.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="804.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="775.5" cy="163.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="805.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="777.0" cy="166.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="807.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="774.0" cy="200.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="804.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="775.5" cy="203.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="805.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="777.0" cy="206.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="807.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="774.0" cy="240.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="804.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="775.5" cy="243.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="805.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="777.0" cy="246.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="807.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="774.0" cy="280.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="804.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="775.5" cy="283.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="805.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="777.0" cy="286.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="807.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1109.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1139.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1107.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1137.5" cy="163.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1106.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1136.0" cy="166.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="300.25" cy="163.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="330.25" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="301.75" cy="200.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="331.75" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<path d="M346.0,115.0 L351.0,120.0 L346.0,125.0 L341.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="346.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">input_processing__exit_right_0 (right)</text>
+<path d="M900.5,115.0 L905.5,120.0 L900.5,125.0 L895.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="900.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">binding_prediction__exit_right_1 (right)</text>
+<path d="M396.0,115.0 L401.0,120.0 L396.0,125.0 L391.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="396.0" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">binding_prediction__entry_left_2 (left)</text>
+<path d="M950.5,115.0 L955.5,120.0 L950.5,125.0 L945.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="950.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">reporting__entry_left_3 (left)</text>
+<path d="M371.0,50.0 L371.0,350.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="371.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M925.5,50.0 L925.5,350.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="925.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
+<path d="M12.0,120.0 L1287.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="8.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M12.0,160.0 L1287.5,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,200.0 L1287.5,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,240.0 L1287.5,240.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,280.0 L1287.5,280.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<circle cx="1167.5" cy="120.0" r="5" fill="none" stroke="rgba(180, 80, 255, 0.7)" stroke-width="1.5" stroke-dasharray="3,2" />
+<text x="1167.5" y="112.0" font-size="7" fill="rgba(180, 80, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">_tsv_pad</text>
+<rect x="22.0" y="360.0" width="160.10000000000002" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M34.0,384.0 L58.0,384.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<text x="70.0" y="384.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Variant Input</text>
+<path d="M34.0,408.0 L58.0,408.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" />
+<text x="70.0" y="408.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Protein Input</text>
+<path d="M34.0,432.0 L58.0,432.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" />
+<text x="70.0" y="432.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Peptide Input</text>
+<text x="1307.0" y="472.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
