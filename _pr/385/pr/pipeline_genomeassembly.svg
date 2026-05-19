@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="1443" height="452" viewBox="0 0 1443 452">
+     width="1443" height="449" viewBox="0 0 1443 449">
 <defs>
 </defs>
-<rect x="0" y="0" width="1443" height="452" fill="#2b2b2b" />
+<rect x="0" y="0" width="1443" height="449" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">sanger-tol/genomeassembly</text>
 <rect x="22.0" y="70.0" width="204.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="raw_asm" data-section-lines="assemblies,hic_reads,long_reads" />
 <circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="raw_asm" />
@@ -37,7 +37,7 @@
 <path d="M809.0,123.0 L895.0,123.0" stroke="#e6842a" stroke-width="3.0" stroke-linecap="round" class="metro-line-hic_reads" data-line-id="hic_reads" />
 <path d="M809.0,123.0 L813.25,123.0 Q823.25,123.0,829.25,131.0 L847.25,155.0 Q853.25,163.0,863.25,163.0 L895.0,163.0" stroke="#e6842a" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-hic_reads" data-line-id="hic_reads" />
 <path d="M226.0,126.0 L250.0,126.0" stroke="#e6842a" stroke-width="3.0" stroke-linecap="round" class="metro-line-hic_reads" data-line-id="hic_reads" />
-<path d="M250.0,126.0 L250.0,126.0 Q260.0,126.0,260.0,136.0 L260.0,265.0 Q260.0,278.0,273.0,278.0 L786.0,278.0 Q799.0,278.0,799.0,265.0 L799.0,133.0 Q799.0,123.0,809.0,123.0 L809.0,123.0" stroke="#e6842a" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-hic_reads" data-line-id="hic_reads" />
+<path d="M250.0,126.0 L250.0,126.0 Q260.0,126.0,260.0,136.0 L260.0,225.0 Q260.0,238.0,273.0,238.0 L786.0,238.0 Q799.0,238.0,799.0,225.0 L799.0,133.0 Q799.0,123.0,809.0,123.0 L809.0,123.0" stroke="#e6842a" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-hic_reads" data-line-id="hic_reads" />
 <path d="M80.0,123.0 L176.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-long_reads" data-line-id="long_reads" />
 <path d="M326.0,123.0 L386.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-long_reads" data-line-id="long_reads" />
 <path d="M176.0,123.0 L226.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-long_reads" data-line-id="long_reads" />
@@ -69,10 +69,10 @@
 <path d="M759.0,120.0 L783.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-assemblies" data-line-id="assemblies" />
 <path d="M1137.0,160.0 L1187.0,160.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-assemblies" data-line-id="assemblies" />
 <path d="M250.0,120.0 L250.0,120.0 Q266.0,120.0,266.0,136.0 L266.0,265.0 Q266.0,275.0,276.0,275.0 L765.0,275.0 Q775.0,275.0,775.0,265.0 L775.0,133.0 Q775.0,120.0,788.0,120.0 L809.0,120.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-assemblies" data-line-id="assemblies" />
-<path d="M460.0,120.0 L460.0,120.0 Q470.0,120.0,470.0,130.0 L470.0,265.0 Q470.0,275.0,480.0,275.0 L490.0,275.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-assemblies" data-line-id="assemblies" />
+<path d="M460.0,120.0 L460.0,120.0 Q470.0,120.0,470.0,130.0 L470.0,225.0 Q470.0,235.0,480.0,235.0 L490.0,235.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-assemblies" data-line-id="assemblies" />
 <path d="M783.0,120.0 L807.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-assemblies" data-line-id="assemblies" />
 <path d="M807.0,120.0 L809.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-assemblies" data-line-id="assemblies" />
-<path d="M250.0,120.0 L250.0,120.0 Q266.0,120.0,266.0,136.0 L266.0,225.0 Q266.0,235.0,276.0,235.0 L464.0,235.0 Q474.0,235.0,474.0,225.0 L474.0,130.0 Q474.0,120.0,484.0,120.0 L486.0,120.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-assemblies" data-line-id="assemblies" />
+<path d="M250.0,120.0 L250.0,120.0 Q266.0,120.0,266.0,136.0 L266.0,185.0 Q266.0,195.0,276.0,195.0 L464.0,195.0 Q474.0,195.0,474.0,185.0 L474.0,130.0 Q474.0,120.0,484.0,120.0 L486.0,120.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-assemblies" data-line-id="assemblies" />
 <path d="M460.0,120.0 L484.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-assemblies" data-line-id="assemblies" />
 <path d="M484.0,120.0 L486.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-assemblies" data-line-id="assemblies" />
 <path d="M250.0,120.0 L250.0,120.0 Q266.0,120.0,266.0,136.0 L266.0,265.0 Q266.0,275.0,276.0,275.0 L1143.0,275.0 Q1153.0,275.0,1153.0,265.0 L1153.0,170.0 Q1153.0,160.0,1163.0,160.0 L1187.0,160.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-assemblies" data-line-id="assemblies" />
@@ -154,18 +154,18 @@
 <circle cx="824.75" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="854.75" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="260.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="260.0" cy="278.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="799.0" cy="278.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="260.0" cy="238.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="799.0" cy="238.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="799.0" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="266.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="266.0" cy="275.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="775.0" cy="275.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="775.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="470.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="470.0" cy="275.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="470.0" cy="235.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="266.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="266.0" cy="235.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="474.0" cy="235.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="266.0" cy="195.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="474.0" cy="195.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="474.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="266.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="266.0" cy="275.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
@@ -215,14 +215,14 @@
 <text x="8.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
 <path d="M12.0,160.0 L1393.0,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <path d="M12.0,200.0 L1393.0,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<rect x="22.0" y="308.0" width="137.0" height="120.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
-<path d="M34.0,332.0 L58.0,332.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="332.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Assembly</text>
-<path d="M34.0,356.0 L58.0,356.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="356.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Long reads</text>
-<path d="M34.0,380.0 L58.0,380.0" stroke="#e6842a" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="380.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Hi-C reads</text>
-<path d="M34.0,404.0 L58.0,404.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="404.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">10X reads</text>
-<text x="1413.0" y="444.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<rect x="22.0" y="305.0" width="137.0" height="120.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M34.0,329.0 L58.0,329.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
+<text x="70.0" y="329.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Assembly</text>
+<path d="M34.0,353.0 L58.0,353.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<text x="70.0" y="353.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Long reads</text>
+<path d="M34.0,377.0 L58.0,377.0" stroke="#e6842a" stroke-width="3.0" stroke-linecap="round" />
+<text x="70.0" y="377.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Hi-C reads</text>
+<path d="M34.0,401.0 L58.0,401.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" />
+<text x="70.0" y="401.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">10X reads</text>
+<text x="1413.0" y="441.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>

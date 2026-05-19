@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="969" height="615" viewBox="0 0 969 615">
+     width="977" height="615" viewBox="0 0 977 615">
 <defs>
 </defs>
-<rect x="0" y="0" width="969" height="615" fill="#2b2b2b" />
+<rect x="0" y="0" width="977" height="615" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/variantprioritization</text>
 <rect x="22.0" y="70.0" width="309.5" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocessing" data-section-lines="germline,somatic" />
 <circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="preprocessing" />
@@ -17,11 +17,11 @@
 <circle cx="71.0" cy="285.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="get_reference" />
 <text x="71.0" y="285.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="get_reference">2</text>
 <text x="87.0" y="285.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="get_reference">Reference</text>
-<rect x="749.5" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="run_pcgr" data-section-lines="reference,somatic" />
+<rect x="749.5" y="70.0" width="168.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="run_pcgr" data-section-lines="reference,somatic" />
 <circle cx="760.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="run_pcgr" />
 <text x="760.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="run_pcgr">5</text>
 <text x="776.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="run_pcgr">PCGR</text>
-<rect x="381.5" y="300.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="run_cpsr" data-section-lines="germline,reference" />
+<rect x="381.5" y="300.0" width="168.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="run_cpsr" data-section-lines="germline,reference" />
 <circle cx="392.5" cy="285.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="run_cpsr" />
 <text x="392.5" y="285.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="run_cpsr">4</text>
 <text x="408.5" y="285.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="run_cpsr">CPSR</text>
@@ -80,9 +80,21 @@
 <rect x="123.0" y="351.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="get_pcgr" data-station-lines="reference" data-station-label="PCGR DB" data-section-id="get_reference" data-section-name="Reference" />
 <rect x="123.0" y="385.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="get_vep" data-station-lines="reference" data-station-label="VEP Cache" data-section-id="get_reference" data-section-name="Reference" />
 <rect x="794.5" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pcgr" data-station-lines="reference,somatic" data-station-label="PCGR" data-section-id="run_pcgr" data-section-name="PCGR" />
-<rect x="854.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_pcgr" data-station-lines="somatic" data-station-label="report_pcgr" data-section-id="run_pcgr" data-section-name="PCGR" />
+<rect x="854.5" y="115.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_pcgr" data-station-lines="somatic" data-station-label="report_pcgr" data-section-id="run_pcgr" data-section-name="PCGR" />
+<g data-station-id="report_pcgr">
+<path d="M872.5,104.0 L890.5,104.0 L898.5,112.0 L898.5,134.0 Q898.5,136.0,896.5,136.0 L872.5,136.0 Q870.5,136.0,870.5,134.0 L870.5,106.0 Q870.5,104.0,872.5,104.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M890.5,104.0 L890.5,112.0 L898.5,112.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M890.5,104.0 L890.5,112.0 L898.5,112.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="884.5" y="121.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
+</g>
 <rect x="426.5" y="348.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="cpsr" data-station-lines="germline,reference" data-station-label="CPSR" data-section-id="run_cpsr" data-section-name="CPSR" />
-<rect x="486.5" y="348.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_cpsr" data-station-lines="germline" data-station-label="report_cpsr" data-section-id="run_cpsr" data-section-name="CPSR" />
+<rect x="486.5" y="348.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_cpsr" data-station-lines="germline" data-station-label="report_cpsr" data-section-id="run_cpsr" data-section-name="CPSR" />
+<g data-station-id="report_cpsr">
+<path d="M504.5,337.0 L522.5,337.0 L530.5,345.0 L530.5,367.0 Q530.5,369.0,528.5,369.0 L504.5,369.0 Q502.5,369.0,502.5,367.0 L502.5,339.0 Q502.5,337.0,504.5,337.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M522.5,337.0 L522.5,345.0 L530.5,345.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M522.5,337.0 L522.5,345.0 L530.5,345.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="516.5" y="354.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
+</g>
 <text x="439.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="reformat_vcf" class="nf-metro-station-label">Reformat VCF</text>
 <text x="799.5" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="pcgr" class="nf-metro-station-label">PCGR</text>
 <text x="431.5" y="367.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="cpsr" class="nf-metro-station-label">CPSR</text>
@@ -130,15 +142,15 @@
 <text x="356.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
 <path d="M724.5,50.0 L724.5,460.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
 <text x="724.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
-<path d="M2.0,275.0 L929.5,275.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<path d="M2.0,275.0 L937.5,275.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
 <text x="-2.0" y="275.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
-<path d="M12.0,120.0 L919.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,120.0 L927.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="8.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
-<path d="M12.0,160.0 L919.5,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M12.0,200.0 L919.5,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M50.0,350.0 L551.5,350.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,160.0 L927.5,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,200.0 L927.5,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M50.0,350.0 L559.5,350.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="46.0" y="350.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 1 grid</text>
-<path d="M50.0,390.0 L551.5,390.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M50.0,390.0 L559.5,390.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <rect x="22.0" y="495.0" width="129.3" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
 <path d="M34.0,519.0 L58.0,519.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" />
 <text x="70.0" y="519.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Somatic</text>
@@ -146,5 +158,5 @@
 <text x="70.0" y="543.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Germline</text>
 <path d="M34.0,567.0 L58.0,567.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
 <text x="70.0" y="567.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Reference</text>
-<text x="939.0" y="607.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<text x="947.0" y="607.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>

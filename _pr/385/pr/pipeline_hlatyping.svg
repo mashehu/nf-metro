@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="1054" height="376" viewBox="0 0 1054 376">
+     width="1062" height="376" viewBox="0 0 1062 376">
 <defs>
 </defs>
-<rect x="0" y="0" width="1054" height="376" fill="#2b2b2b" />
+<rect x="0" y="0" width="1062" height="376" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/hlatyping</text>
 <rect x="22.0" y="70.0" width="324.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocessing" data-section-lines="bam,fastq" />
 <circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="preprocessing" />
@@ -13,7 +13,7 @@
 <circle cx="407.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="hla_typing" />
 <text x="407.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="hla_typing">2</text>
 <text x="423.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="hla_typing">HLA Typing</text>
-<rect x="798.0" y="70.0" width="196.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="bam,fastq" />
+<rect x="798.0" y="70.0" width="204.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="bam,fastq" />
 <circle cx="809.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="reporting" />
 <text x="809.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="reporting">3</text>
 <text x="825.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="reporting">Reporting</text>
@@ -75,11 +75,23 @@
 <rect x="537.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="yara_mapper" data-station-lines="bam,fastq" data-station-label="Yara Mapper" data-section-id="hla_typing" data-section-name="HLA Typing" />
 <rect x="597.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="optitype_run" data-station-lines="bam,fastq" data-station-label="OptiType" data-section-id="hla_typing" data-section-name="HLA Typing" />
 <rect x="537.0" y="195.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="hlahd_run" data-station-lines="bam,fastq" data-station-label="HLA-HD" data-section-id="hla_typing" data-section-name="HLA Typing" />
-<rect x="879.0" y="155.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_tsv" data-station-lines="bam,fastq" data-station-label="report_tsv" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="879.0" y="155.0" width="10.0" height="13.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_tsv" data-station-lines="bam,fastq" data-station-label="report_tsv" data-section-id="reporting" data-section-name="Reporting" />
+<g data-station-id="report_tsv">
+<path d="M897.0,145.5 L915.0,145.5 L923.0,153.5 L923.0,175.5 Q923.0,177.5,921.0,177.5 L897.0,177.5 Q895.0,177.5,895.0,175.5 L895.0,147.5 Q895.0,145.5,897.0,145.5 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M915.0,145.5 L915.0,153.5 L923.0,153.5 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M915.0,145.5 L915.0,153.5 L923.0,153.5" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="909.0" y="162.7" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">TSV</text>
+</g>
 <rect x="879.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="bam,fastq" data-station-label="MultiQC" data-section-id="reporting" data-section-name="Reporting" />
-<rect x="939.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_html" data-station-lines="bam,fastq" data-station-label="report_html" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="939.0" y="115.0" width="10.0" height="13.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_html" data-station-lines="bam,fastq" data-station-label="report_html" data-section-id="reporting" data-section-name="Reporting" />
+<g data-station-id="report_html">
+<path d="M957.0,105.5 L975.0,105.5 L983.0,113.5 L983.0,135.5 Q983.0,137.5,981.0,137.5 L957.0,137.5 Q955.0,137.5,955.0,135.5 L955.0,107.5 Q955.0,105.5,957.0,105.5 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M975.0,105.5 L975.0,113.5 L983.0,113.5 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M975.0,105.5 L975.0,113.5 L983.0,113.5" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="969.0" y="122.7" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
+</g>
 <text x="482.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="yara_index" class="nf-metro-station-label">Yara Index</text>
-<text x="884.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
+<text x="884.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
 <text x="542.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="yara_mapper" class="nf-metro-station-label">Yara Mapper</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="cat_fastq" class="nf-metro-station-label">cat FASTQ</text>
 <text x="542.0" y="214.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="hlahd_run" class="nf-metro-station-label">HLA-HD</text>
@@ -121,10 +133,10 @@
 <text x="371.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
 <path d="M773.0,50.0 L773.0,270.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
 <text x="773.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
-<path d="M12.0,120.0 L1004.0,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,120.0 L1012.0,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="8.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
-<path d="M12.0,160.0 L1004.0,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M12.0,200.0 L1004.0,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,160.0 L1012.0,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,200.0 L1012.0,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <circle cx="200.0" cy="120.0" r="5" fill="none" stroke="rgba(180, 80, 255, 0.7)" stroke-width="1.5" stroke-dasharray="3,2" />
 <text x="200.0" y="112.0" font-size="7" fill="rgba(180, 80, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">_fastq_delay</text>
 <circle cx="482.0" cy="200.0" r="5" fill="none" stroke="rgba(180, 80, 255, 0.7)" stroke-width="1.5" stroke-dasharray="3,2" />
@@ -138,5 +150,5 @@
 <text x="70.0" y="304.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">FASTQ</text>
 <path d="M34.0,328.0 L58.0,328.0" stroke="#e6842a" stroke-width="3.0" stroke-linecap="round" />
 <text x="70.0" y="328.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">BAM</text>
-<text x="1024.0" y="368.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<text x="1032.0" y="368.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>

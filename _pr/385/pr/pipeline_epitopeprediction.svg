@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="1337" height="480" viewBox="0 0 1337 480">
+     width="1345" height="480" viewBox="0 0 1345 480">
 <defs>
 </defs>
-<rect x="0" y="0" width="1337" height="480" fill="#2b2b2b" />
+<rect x="0" y="0" width="1345" height="480" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/epitopeprediction</text>
 <rect x="22.0" y="70.0" width="324.0" height="180.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="input_processing" data-section-lines="peptide,protein,vcf" />
 <circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="input_processing" />
@@ -13,7 +13,7 @@
 <circle cx="407.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="binding_prediction" />
 <text x="407.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="binding_prediction">2</text>
 <text x="423.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="binding_prediction">Binding Prediction</text>
-<rect x="950.5" y="70.0" width="327.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="peptide,protein,vcf" />
+<rect x="950.5" y="70.0" width="335.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="peptide,protein,vcf" />
 <circle cx="961.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="reporting" />
 <text x="961.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="reporting">3</text>
 <text x="977.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="reporting">Reporting</text>
@@ -119,8 +119,20 @@
 <rect x="845.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="merge_pred" data-station-lines="peptide,protein,vcf" data-station-label="Merge Pred" data-section-id="binding_prediction" data-section-name="Binding Prediction" />
 <rect x="1026.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="summarize" data-station-lines="peptide,protein,vcf" data-station-label="Summarize Results" data-section-id="reporting" data-section-name="Reporting" />
 <rect x="1162.5" y="155.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="peptide,protein,vcf" data-station-label="MultiQC" data-section-id="reporting" data-section-name="Reporting" />
-<rect x="1222.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="TSV_OUT" data-station-lines="peptide,protein,vcf" data-station-label="TSV_OUT" data-section-id="reporting" data-section-name="Reporting" />
-<rect x="1222.5" y="155.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="HTML_OUT" data-station-lines="peptide,protein,vcf" data-station-label="HTML_OUT" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="1222.5" y="115.0" width="10.0" height="16.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="TSV_OUT" data-station-lines="peptide,protein,vcf" data-station-label="TSV_OUT" data-section-id="reporting" data-section-name="Reporting" />
+<g data-station-id="TSV_OUT">
+<path d="M1240.5,107.0 L1258.5,107.0 L1266.5,115.0 L1266.5,137.0 Q1266.5,139.0,1264.5,139.0 L1240.5,139.0 Q1238.5,139.0,1238.5,137.0 L1238.5,109.0 Q1238.5,107.0,1240.5,107.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M1258.5,107.0 L1258.5,115.0 L1266.5,115.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M1258.5,107.0 L1258.5,115.0 L1266.5,115.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="1252.5" y="124.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">TSV</text>
+</g>
+<rect x="1222.5" y="155.0" width="10.0" height="16.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="HTML_OUT" data-station-lines="peptide,protein,vcf" data-station-label="HTML_OUT" data-section-id="reporting" data-section-name="Reporting" />
+<g data-station-id="HTML_OUT">
+<path d="M1240.5,147.0 L1258.5,147.0 L1266.5,155.0 L1266.5,177.0 Q1266.5,179.0,1264.5,179.0 L1240.5,179.0 Q1238.5,179.0,1238.5,177.0 L1238.5,149.0 Q1238.5,147.0,1240.5,147.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M1258.5,147.0 L1258.5,155.0 L1266.5,155.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M1258.5,147.0 L1258.5,155.0 L1266.5,155.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="1252.5" y="164.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
+</g>
 <text x="463.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="split_peptides" class="nf-metro-station-label">Split Peptides</text>
 <text x="1031.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="summarize" class="nf-metro-station-label">Summarize Results</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="gunzip_vcf" class="nf-metro-station-label">Gunzip VCF</text>
@@ -205,12 +217,12 @@
 <text x="371.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
 <path d="M925.5,50.0 L925.5,350.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
 <text x="925.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
-<path d="M12.0,120.0 L1287.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,120.0 L1295.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="8.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
-<path d="M12.0,160.0 L1287.5,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M12.0,200.0 L1287.5,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M12.0,240.0 L1287.5,240.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M12.0,280.0 L1287.5,280.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,160.0 L1295.5,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,200.0 L1295.5,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,240.0 L1295.5,240.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M12.0,280.0 L1295.5,280.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <circle cx="1167.5" cy="120.0" r="5" fill="none" stroke="rgba(180, 80, 255, 0.7)" stroke-width="1.5" stroke-dasharray="3,2" />
 <text x="1167.5" y="112.0" font-size="7" fill="rgba(180, 80, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">_tsv_pad</text>
 <rect x="22.0" y="360.0" width="160.10000000000002" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
@@ -220,5 +232,5 @@
 <text x="70.0" y="408.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Protein Input</text>
 <path d="M34.0,432.0 L58.0,432.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" />
 <text x="70.0" y="432.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Peptide Input</text>
-<text x="1307.0" y="472.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<text x="1315.0" y="472.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
