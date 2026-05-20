@@ -44,7 +44,7 @@
 <path d="M560.0,276.0 L610.0,276.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-long" data-line-id="long" />
 <path d="M660.0,126.0 L710.0,126.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-long" data-line-id="long" />
 <path d="M190.0,126.0 L214.0,126.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-long" data-line-id="long" />
-<path d="M214.0,126.0 L218.5,126.0 Q228.5,126.0,228.5,136.0 L228.5,414.5 Q228.5,426.0,240.0,426.0 L240.0,426.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-long" data-line-id="long" />
+<path d="M203.5,126.0 L203.5,126.0 Q213.5,126.0,213.5,136.0 L213.5,413.0 Q213.5,426.0,226.5,426.0 L240.0,426.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-long" data-line-id="long" />
 <path d="M400.0,426.0 L413.5,426.0 Q426.5,426.0,426.5,413.0 L426.5,286.0 Q426.5,276.0,436.5,276.0 L450.0,276.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-long" data-line-id="long" />
 <path d="M610.0,276.0 L625.0,276.0 Q635.0,276.0,635.0,266.0 L635.0,136.0 Q635.0,126.0,645.0,126.0 L660.0,126.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-long" data-line-id="long" />
 <path d="M80.0,123.0 L140.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-medium" data-line-id="medium" />
@@ -55,7 +55,7 @@
 <path d="M350.0,273.0 L400.0,273.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-medium" data-line-id="medium" />
 <path d="M450.0,123.0 L500.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-medium" data-line-id="medium" />
 <path d="M190.0,123.0 L214.0,123.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-medium" data-line-id="medium" />
-<path d="M214.0,123.0 L218.5,123.0 Q231.5,123.0,231.5,136.0 L231.5,264.5 Q231.5,273.0,240.0,273.0 L240.0,273.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-medium" data-line-id="medium" />
+<path d="M206.5,123.0 L206.5,123.0 Q216.5,123.0,216.5,133.0 L216.5,263.0 Q216.5,273.0,226.5,273.0 L240.0,273.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-medium" data-line-id="medium" />
 <path d="M400.0,273.0 L413.5,273.0 Q423.5,273.0,423.5,263.0 L423.5,136.0 Q423.5,123.0,436.5,123.0 L450.0,123.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-medium" data-line-id="medium" />
 <path d="M80.0,120.0 L140.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-short" data-line-id="short" />
 <path d="M290.0,120.0 L350.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-short" data-line-id="short" />
@@ -91,10 +91,10 @@
 <text x="350.0" y="412.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="l2" class="nf-metro-station-label">Long B</text>
 <text x="560.0" y="262.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="l4" class="nf-metro-station-label">Long D</text>
 <text x="770.0" y="112.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="l6" class="nf-metro-station-label">Long F</text>
-<circle cx="231.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="231.5" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="228.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="228.5" cy="426.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="216.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="216.5" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="213.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="213.5" cy="426.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="423.5" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="423.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="426.5" cy="426.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
