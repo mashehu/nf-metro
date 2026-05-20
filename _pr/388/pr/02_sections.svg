@@ -22,8 +22,8 @@
 <path d="M350.0,273.0 L410.0,273.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-qc" data-line-id="qc" />
 <path d="M200.0,123.0 L250.0,123.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-qc" data-line-id="qc" />
 <path d="M300.0,273.0 L350.0,273.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-qc" data-line-id="qc" />
-<path d="M250.0,123.0 L265.0,123.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-qc" data-line-id="qc" />
-<path d="M265.0,123.0 L265.0,123.0 Q275.0,123.0,275.0,133.0 L275.0,263.0 Q275.0,273.0,285.0,273.0 L300.0,273.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-qc" data-line-id="qc" />
+<path d="M250.0,123.0 L274.0,123.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-qc" data-line-id="qc" />
+<path d="M274.0,123.0 L277.0,123.0 Q287.0,123.0,287.0,133.0 L287.0,263.0 Q287.0,273.0,297.0,273.0 L300.0,273.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-qc" data-line-id="qc" />
 <path d="M80.0,120.0 L140.0,120.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M140.0,120.0 L200.0,120.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M350.0,120.0 L410.0,120.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
@@ -45,8 +45,8 @@
 <text x="410.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="quant" class="nf-metro-station-label">Quantification</text>
 <text x="410.0" y="259.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="report" class="nf-metro-station-label">Report</text>
 <text x="200.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="fastqc" class="nf-metro-station-label">FastQC</text>
-<circle cx="275.0" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="275.0" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="287.0" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="287.0" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M250.0,115.0 L255.0,120.0 L250.0,125.0 L245.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="250.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">preprocessing__exit_right_0 (right)</text>
 <path d="M300.0,115.0 L305.0,120.0 L300.0,125.0 L295.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
