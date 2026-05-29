@@ -21,7 +21,7 @@
 <circle cx="1124.0" cy="38.2" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="filtering" />
 <text x="1124.0" y="38.2" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="filtering">4</text>
 <text x="1140.0" y="38.2" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="filtering">Variant Filtering (Optional)</text>
-<rect x="1451.0" y="363.2" width="245.0" height="476.00000000000017" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="ensembl_truth" data-section-lines="test,truth" />
+<rect x="1451.0" y="359.2" width="245.0" height="480.00000000000017" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="ensembl_truth" data-section-lines="test,truth" />
 <circle cx="1462.0" cy="854.2000000000002" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="ensembl_truth" />
 <text x="1462.0" y="854.2000000000002" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="ensembl_truth">6</text>
 <text x="1478.0" y="854.2000000000002" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="ensembl_truth">Ensembl Truth</text>
@@ -124,7 +124,7 @@
 <path d="M1395.0,143.2 L1400.0,143.2 Q1410.0,143.2,1416.0,135.2 L1434.0,111.2 Q1440.0,103.2,1450.0,103.2 L1481.0,103.2" stroke="#ff9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-test" data-line-id="test" />
 <path d="M1262.25,183.2 L1290.0,183.2 Q1300.0,183.2,1306.0,175.2 L1324.0,151.2 Q1330.0,143.2,1340.0,143.2 L1345.0,143.2" stroke="#ff9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-test" data-line-id="test" />
 <path d="M1395.0,143.2 L1481.0,143.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
-<path d="M1549.0,363.2 L1549.0,409.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
+<path d="M1549.0,359.2 L1549.0,409.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
 <path d="M1163.0,143.2 L1345.0,143.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
 <path d="M1345.0,604.1999999999999 L1295.0,604.1999999999999" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
 <path d="M353.0,103.2 L363.0,103.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
@@ -135,7 +135,7 @@
 <path d="M1027.0,143.2 L1113.0,143.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
 <path d="M1345.0,143.2 L1355.0,143.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
 <path d="M1355.0,143.2 L1395.0,143.2" stroke="#ff9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-test" data-line-id="test" />
-<path d="M1355.0,143.2 L1355.0,143.2 Q1365.0,143.2,1365.0,153.2 L1365.0,313.2 Q1365.0,323.2,1375.0,323.2 L1539.0,323.2 Q1549.0,323.2,1549.0,333.2 L1549.0,363.2" stroke="#ff9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-test" data-line-id="test" />
+<path d="M1355.0,143.2 L1355.0,143.2 Q1365.0,143.2,1365.0,153.2 L1365.0,311.2 Q1365.0,321.2,1375.0,321.2 L1539.0,321.2 Q1549.0,321.2,1549.0,331.2 L1549.0,359.2" stroke="#ff9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-test" data-line-id="test" />
 <path d="M1355.0,143.2 L1358.0,143.2 Q1368.0,143.2,1368.0,153.2 L1368.0,594.1999999999999 Q1368.0,604.1999999999999,1358.0,604.1999999999999 L1345.0,604.1999999999999" stroke="#ff9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-test" data-line-id="test" />
 <rect x="75.0" y="138.2" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="ref_genome_file" data-station-lines="truth" data-station-label="ref_genome_file" data-section-id="inputs" data-section-name="Inputs" />
 <g data-station-id="ref_genome_file">
@@ -391,8 +391,8 @@ stats" data-section-id="stats" data-section-name="Variant Statistics" />
 <circle cx="1361.0" cy="261.2" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1361.0" cy="601.1999999999999" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1365.0" cy="143.2" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="1365.0" cy="323.2" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="1549.0" cy="323.2" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1365.0" cy="321.2" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1549.0" cy="321.2" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1368.0" cy="143.2" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1368.0" cy="604.1999999999999" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1370.0" cy="598.1644937056138" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
@@ -417,8 +417,8 @@ stats" data-section-id="stats" data-section-name="Variant Statistics" />
 <text x="1113.0" y="135.2" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">filtering__entry_left_8 (left)</text>
 <path d="M1395.0,138.2 L1400.0,143.2 L1395.0,148.2 L1390.0,143.2 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
 <text x="1395.0" y="135.2" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">stats__entry_left_9 (left)</text>
-<path d="M1549.0,358.2 L1554.0,363.2 L1549.0,368.2 L1544.0,363.2 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="1549.0" y="355.2" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">ensembl_truth__entry_top_10 (top)</text>
+<path d="M1549.0,354.2 L1554.0,359.2 L1549.0,364.2 L1544.0,359.2 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="1549.0" y="351.2" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">ensembl_truth__entry_top_10 (top)</text>
 <path d="M1345.0,596.1999999999999 L1350.0,601.1999999999999 L1345.0,606.1999999999999 L1340.0,601.1999999999999 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
 <text x="1345.0" y="593.1999999999999" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">benchmarking__entry_right_11 (right)</text>
 <path d="M996.0,502.19999999999993 L1001.0,507.19999999999993 L996.0,512.1999999999999 L991.0,507.19999999999993 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
@@ -437,8 +437,8 @@ stats" data-section-id="stats" data-section-name="Variant Statistics" />
 <text x="1042.0" y="29.200000000000003" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 2|3</text>
 <path d="M1370.0,33.2 L1370.0,859.2000000000002" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
 <text x="1370.0" y="29.200000000000003" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 3|4</text>
-<path d="M2.0,338.2 L1716.0,338.2" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
-<text x="-2.0" y="338.2" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
+<path d="M2.0,336.2 L1716.0,336.2" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="-2.0" y="336.2" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
 <path d="M12.0,103.2 L1669.0,103.2" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="8.0" y="103.2" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
 <path d="M12.0,143.2 L1669.0,143.2" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
