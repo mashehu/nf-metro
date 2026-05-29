@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1276" height="920" viewBox="0 0 1276 920">
+<defs>
+</defs>
+<rect x="0" y="0" width="1276" height="920" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Single-Cell Multi-Omics Pipeline</text>
+<rect x="30.0" y="70.0" width="520.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocessing" data-section-lines="atac,protein,rna" />
+<circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="preprocessing" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="preprocessing">1</text>
+<text x="57.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="preprocessing">Preprocessing</text>
+<rect x="606.0" y="70.0" width="340.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="rna_analysis" data-section-lines="rna" />
+<circle cx="617.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="rna_analysis" />
+<text x="617.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="rna_analysis">2</text>
+<text x="633.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="rna_analysis">RNA Analysis</text>
+<rect x="658.0" y="220.0" width="288.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="atac_analysis" data-section-lines="atac" />
+<circle cx="669.0" cy="205.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="atac_analysis" />
+<text x="669.0" y="205.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="atac_analysis">3</text>
+<text x="685.0" y="205.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="atac_analysis">ATAC Analysis</text>
+<rect x="726.0" y="370.0" width="220.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="protein_analysis" data-section-lines="protein" />
+<circle cx="737.0" cy="355.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="protein_analysis" />
+<text x="737.0" y="355.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="protein_analysis">4</text>
+<text x="753.0" y="355.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="protein_analysis">Protein Analysis</text>
+<rect x="1002.0" y="70.0" width="214.0" height="220.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="integration" data-section-lines="atac,protein,rna" />
+<circle cx="1013.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="integration" />
+<text x="1013.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="integration">5</text>
+<text x="1029.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="integration">Multi-Modal Integration</text>
+<rect x="683.9" y="520.0" width="262.1" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="bio_interp" data-section-lines="atac,rna" />
+<circle cx="694.9" cy="505.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="bio_interp" />
+<text x="694.9" y="505.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="bio_interp">6</text>
+<text x="710.9" y="505.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="bio_interp">Biological Interpretation</text>
+<rect x="692.9" y="670.0" width="253.10000000000002" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="tech_qc" data-section-lines="protein" />
+<circle cx="703.9" cy="655.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="tech_qc" />
+<text x="703.9" y="655.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="tech_qc">7</text>
+<text x="719.9" y="655.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="tech_qc">Technical QC</text>
+<rect x="377.5" y="520.0" width="172.5" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="final_report" data-section-lines="atac,protein,rna" />
+<circle cx="388.5" cy="505.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="final_report" />
+<text x="388.5" y="505.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="final_report">8</text>
+<text x="404.5" y="505.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="final_report">Final Report</text>
+<path d="M80.0,126.0 L140.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M140.0,126.0 L200.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M200.0,126.0 L260.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M260.0,126.0 L320.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M320.0,126.0 L380.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M380.0,126.0 L440.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M440.0,126.0 L500.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M776.0,426.0 L836.0,426.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M836.0,426.0 L896.0,426.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1166.0,160.0 L1166.0,200.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1166.0,200.0 L1166.0,240.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M865.5,726.0 L805.5,726.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M805.5,726.0 L745.5,726.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M500.0,576.0 L440.0,576.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M500.0,126.0 L550.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M726.0,426.0 L776.0,426.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M896.0,426.0 L946.0,426.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1002.0,126.0 L1156.0,126.0 Q1166.0,126.0,1166.0,136.0 L1166.0,160.0" stroke="#f5c542" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1166.0,240.0 L1166.0,290.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M946.0,726.0 L865.5,726.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M745.5,726.0 L695.5,726.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M550.0,576.0 L500.0,576.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M550.0,126.0 L560.0,126.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M560.0,126.0 L566.5,126.0 Q576.5,126.0,576.5,136.0 L576.5,413.0 Q576.5,426.0,589.5,426.0 L726.0,426.0" stroke="#f5c542" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M946.0,426.0 L962.5,426.0 Q975.5,426.0,975.5,413.0 L975.5,136.0 Q975.5,126.0,985.5,126.0 L1002.0,126.0" stroke="#f5c542" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1166.0,290.0 L1166.0,300.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M1166.0,300.0 L1166.0,716.0 Q1166.0,726.0,1156.0,726.0 L946.0,726.0" stroke="#f5c542" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M695.5,726.0 L588.0,726.0 Q578.0,726.0,578.0,716.0 L578.0,586.0 Q578.0,576.0,568.0,576.0 L550.0,576.0" stroke="#f5c542" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-protein" data-line-id="protein" />
+<path d="M80.0,123.0 L140.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M140.0,123.0 L200.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M200.0,123.0 L260.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M260.0,123.0 L320.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M320.0,123.0 L380.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M380.0,123.0 L440.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M440.0,123.0 L500.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M716.0,273.0 L776.0,273.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M776.0,273.0 L836.0,273.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M836.0,273.0 L896.0,273.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M1169.0,160.0 L1169.0,200.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M1169.0,200.0 L1169.0,240.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M892.5,573.0 L832.5,573.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M832.5,573.0 L772.5,573.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M500.0,573.0 L440.0,573.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M500.0,123.0 L550.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M658.0,273.0 L716.0,273.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M896.0,273.0 L946.0,273.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M1002.0,123.0 L1156.0,123.0 Q1169.0,123.0,1169.0,136.0 L1169.0,160.0" stroke="#457b9d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M1169.0,240.0 L1169.0,290.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M946.0,573.0 L892.5,573.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M772.5,573.0 L692.0,573.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M550.0,573.0 L500.0,573.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M550.0,123.0 L560.0,123.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M560.0,123.0 L566.5,123.0 Q579.5,123.0,579.5,136.0 L579.5,263.0 Q579.5,273.0,589.5,273.0 L658.0,273.0" stroke="#457b9d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M946.0,273.0 L962.5,273.0 Q972.5,273.0,972.5,263.0 L972.5,136.0 Q972.5,123.0,985.5,123.0 L1002.0,123.0" stroke="#457b9d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M1169.0,290.0 L1169.0,300.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M1169.0,300.0 L1169.0,560.0 Q1169.0,573.0,1156.0,573.0 L946.0,573.0" stroke="#457b9d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M692.0,573.0 L550.0,573.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" class="metro-line-atac" data-line-id="atac" />
+<path d="M80.0,120.0 L140.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M140.0,120.0 L200.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M200.0,120.0 L260.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M260.0,120.0 L320.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M320.0,120.0 L380.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M380.0,120.0 L440.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M440.0,120.0 L500.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M656.0,120.0 L716.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M716.0,120.0 L776.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M776.0,120.0 L836.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M836.0,120.0 L896.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M1172.0,160.0 L1172.0,200.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M1172.0,200.0 L1172.0,240.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M892.5,570.0 L832.5,570.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M832.5,570.0 L772.5,570.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M500.0,570.0 L440.0,570.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M500.0,120.0 L550.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M606.0,120.0 L656.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M896.0,120.0 L946.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M1002.0,120.0 L1156.0,120.0 Q1172.0,120.0,1172.0,136.0 L1172.0,160.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M1172.0,240.0 L1172.0,290.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M946.0,570.0 L892.5,570.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M772.5,570.0 L692.0,570.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M550.0,570.0 L500.0,570.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M550.0,120.0 L560.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M560.0,120.0 L606.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M946.0,120.0 L1002.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M1172.0,290.0 L1172.0,300.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M1172.0,300.0 L1172.0,554.0 Q1172.0,570.0,1156.0,570.0 L946.0,570.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M692.0,570.0 L550.0,570.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<rect x="75.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_input" data-station-lines="atac,protein,rna" data-station-label="Input" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="135.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_demux" data-station-lines="atac,protein,rna" data-station-label="Demux" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="195.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_qc_raw" data-station-lines="atac,protein,rna" data-station-label="Raw QC" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="255.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_trim" data-station-lines="atac,protein,rna" data-station-label="Trim" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="315.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_filter" data-station-lines="atac,protein,rna" data-station-label="Filter" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="375.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_qc_clean" data-station-lines="atac,protein,rna" data-station-label="Clean QC" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="435.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_classify" data-station-lines="atac,protein,rna" data-station-label="Classify" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="495.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="pp_sort" data-station-lines="atac,protein,rna" data-station-label="Sort" data-section-id="preprocessing" data-section-name="Preprocessing" />
+<rect x="651.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="rna_norm" data-station-lines="rna" data-station-label="Normalize" data-section-id="rna_analysis" data-section-name="RNA Analysis" />
+<rect x="711.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="rna_cluster" data-station-lines="rna" data-station-label="Cluster" data-section-id="rna_analysis" data-section-name="RNA Analysis" />
+<rect x="771.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="rna_markers" data-station-lines="rna" data-station-label="Markers" data-section-id="rna_analysis" data-section-name="RNA Analysis" />
+<rect x="831.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="rna_trajectories" data-station-lines="rna" data-station-label="Trajectories" data-section-id="rna_analysis" data-section-name="RNA Analysis" />
+<rect x="891.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="rna_dge" data-station-lines="rna" data-station-label="DGE" data-section-id="rna_analysis" data-section-name="RNA Analysis" />
+<rect x="711.0" y="268.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="atac_peaks" data-station-lines="atac" data-station-label="Peak Calling" data-section-id="atac_analysis" data-section-name="ATAC Analysis" />
+<rect x="771.0" y="268.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="atac_motif" data-station-lines="atac" data-station-label="Motif Analysis" data-section-id="atac_analysis" data-section-name="ATAC Analysis" />
+<rect x="831.0" y="268.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="atac_footprint" data-station-lines="atac" data-station-label="Footprinting" data-section-id="atac_analysis" data-section-name="ATAC Analysis" />
+<rect x="891.0" y="268.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="atac_coverage" data-station-lines="atac" data-station-label="Coverage" data-section-id="atac_analysis" data-section-name="ATAC Analysis" />
+<rect x="771.0" y="421.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="prot_norm" data-station-lines="protein" data-station-label="Normalize" data-section-id="protein_analysis" data-section-name="Protein Analysis" />
+<rect x="831.0" y="421.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="prot_quant" data-station-lines="protein" data-station-label="Quantify" data-section-id="protein_analysis" data-section-name="Protein Analysis" />
+<rect x="891.0" y="421.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="prot_viz" data-station-lines="protein" data-station-label="Visualize" data-section-id="protein_analysis" data-section-name="Protein Analysis" />
+<rect x="1161.0" y="155.0" width="16.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="int_merge" data-station-lines="atac,protein,rna" data-station-label="Merge Modalities" data-section-id="integration" data-section-name="Multi-Modal Integration" />
+<rect x="1161.0" y="195.0" width="16.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="int_wnn" data-station-lines="atac,protein,rna" data-station-label="WNN" data-section-id="integration" data-section-name="Multi-Modal Integration" />
+<rect x="1161.0" y="235.0" width="16.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="int_umap" data-station-lines="atac,protein,rna" data-station-label="UMAP" data-section-id="integration" data-section-name="Multi-Modal Integration" />
+<rect x="887.5" y="565.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bio_celltype" data-station-lines="atac,rna" data-station-label="Cell Typing" data-section-id="bio_interp" data-section-name="Biological Interpretation" />
+<rect x="827.5" y="565.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bio_trajectory" data-station-lines="atac,rna" data-station-label="Trajectory" data-section-id="bio_interp" data-section-name="Biological Interpretation" />
+<rect x="767.5" y="565.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bio_grn" data-station-lines="atac,rna" data-station-label="Gene Reg. Network" data-section-id="bio_interp" data-section-name="Biological Interpretation" />
+<rect x="860.5" y="721.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="tqc_doublet" data-station-lines="protein" data-station-label="Doublet Detection" data-section-id="tech_qc" data-section-name="Technical QC" />
+<rect x="800.5" y="721.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="tqc_ambient" data-station-lines="protein" data-station-label="Ambient RNA" data-section-id="tech_qc" data-section-name="Technical QC" />
+<rect x="740.5" y="721.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="tqc_metrics" data-station-lines="protein" data-station-label="QC Metrics" data-section-id="tech_qc" data-section-name="Technical QC" />
+<rect x="495.0" y="565.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fr_aggregate" data-station-lines="atac,protein,rna" data-station-label="Aggregate" data-section-id="final_report" data-section-name="Final Report" />
+<rect x="435.0" y="565.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fr_report" data-station-lines="atac,protein,rna" data-station-label="Render Report" data-section-id="final_report" data-section-name="Final Report" />
+<text x="80.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="pp_input" class="nf-metro-station-label">Input</text>
+<text x="656.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="rna_norm" class="nf-metro-station-label">Normalize</text>
+<text x="1152.0" y="160.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="int_merge" class="nf-metro-station-label">Merge Modalities</text>
+<text x="892.5" y="584.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="bio_celltype" class="nf-metro-station-label">Cell Typing</text>
+<text x="500.0" y="587.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="fr_aggregate" class="nf-metro-station-label">Aggregate</text>
+<text x="716.0" y="284.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="atac_peaks" class="nf-metro-station-label">Peak Calling</text>
+<text x="776.0" y="437.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="prot_norm" class="nf-metro-station-label">Normalize</text>
+<text x="865.5" y="737.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="tqc_doublet" class="nf-metro-station-label">Doublet Detection</text>
+<text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="pp_demux" class="nf-metro-station-label">Demux</text>
+<text x="716.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="rna_cluster" class="nf-metro-station-label">Cluster</text>
+<text x="1152.0" y="200.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="int_wnn" class="nf-metro-station-label">WNN</text>
+<text x="832.5" y="556.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="bio_trajectory" class="nf-metro-station-label">Trajectory</text>
+<text x="440.0" y="556.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="fr_report" class="nf-metro-station-label">Render Report</text>
+<text x="776.0" y="259.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="atac_motif" class="nf-metro-station-label">Motif Analysis</text>
+<text x="836.0" y="412.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="prot_quant" class="nf-metro-station-label">Quantify</text>
+<text x="805.5" y="712.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="tqc_ambient" class="nf-metro-station-label">Ambient RNA</text>
+<text x="200.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="pp_qc_raw" class="nf-metro-station-label">Raw QC</text>
+<text x="776.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="rna_markers" class="nf-metro-station-label">Markers</text>
+<text x="1152.0" y="240.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="int_umap" class="nf-metro-station-label">UMAP</text>
+<text x="764.4" y="584.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="bio_grn" class="nf-metro-station-label">Gene Reg. Network</text>
+<text x="836.0" y="284.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="atac_footprint" class="nf-metro-station-label">Footprinting</text>
+<text x="896.0" y="437.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="prot_viz" class="nf-metro-station-label">Visualize</text>
+<text x="741.9" y="737.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="tqc_metrics" class="nf-metro-station-label">QC Metrics</text>
+<text x="260.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="pp_trim" class="nf-metro-station-label">Trim</text>
+<text x="836.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="rna_trajectories" class="nf-metro-station-label">Trajectories</text>
+<text x="896.0" y="259.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="atac_coverage" class="nf-metro-station-label">Coverage</text>
+<text x="320.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="pp_filter" class="nf-metro-station-label">Filter</text>
+<text x="896.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="rna_dge" class="nf-metro-station-label">DGE</text>
+<text x="380.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="pp_qc_clean" class="nf-metro-station-label">Clean QC</text>
+<text x="440.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="pp_classify" class="nf-metro-station-label">Classify</text>
+<text x="500.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="pp_sort" class="nf-metro-station-label">Sort</text>
+<circle cx="1172.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1169.0" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1166.0" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="579.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="579.5" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="576.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="576.5" cy="426.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="972.5" cy="273.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="972.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="975.5" cy="426.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="975.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1172.0" cy="570.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1169.0" cy="573.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="1166.0" cy="726.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="578.0" cy="726.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="578.0" cy="576.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<path d="M550.0,115.0 L555.0,120.0 L550.0,125.0 L545.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="550.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">preprocessing__exit_right_0 (right)</text>
+<path d="M946.0,115.0 L951.0,120.0 L946.0,125.0 L941.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="946.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">rna_analysis__exit_right_1 (right)</text>
+<path d="M946.0,265.0 L951.0,270.0 L946.0,275.0 L941.0,270.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="946.0" y="262.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">atac_analysis__exit_right_2 (right)</text>
+<path d="M946.0,415.0 L951.0,420.0 L946.0,425.0 L941.0,420.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="946.0" y="412.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">protein_analysis__exit_right_3 (right)</text>
+<path d="M1166.0,285.0 L1171.0,290.0 L1166.0,295.0 L1161.0,290.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="1166.0" y="282.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">integration__exit_bottom_4 (bottom)</text>
+<path d="M692.0,565.0 L697.0,570.0 L692.0,575.0 L687.0,570.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="692.0" y="562.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">bio_interp__exit_left_5 (left)</text>
+<path d="M695.5,715.0 L700.5,720.0 L695.5,725.0 L690.5,720.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="695.5" y="712.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">tech_qc__exit_left_6 (left)</text>
+<path d="M606.0,115.0 L611.0,120.0 L606.0,125.0 L601.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="606.0" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">rna_analysis__entry_left_7 (left)</text>
+<path d="M658.0,265.0 L663.0,270.0 L658.0,275.0 L653.0,270.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="658.0" y="262.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">atac_analysis__entry_left_8 (left)</text>
+<path d="M726.0,415.0 L731.0,420.0 L726.0,425.0 L721.0,420.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="726.0" y="412.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">protein_analysis__entry_left_9 (left)</text>
+<path d="M1002.0,115.0 L1007.0,120.0 L1002.0,125.0 L997.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="1002.0" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">integration__entry_left_10 (left)</text>
+<path d="M946.0,565.0 L951.0,570.0 L946.0,575.0 L941.0,570.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="946.0" y="562.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">bio_interp__entry_right_11 (right)</text>
+<path d="M946.0,715.0 L951.0,720.0 L946.0,725.0 L941.0,720.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="946.0" y="712.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">tech_qc__entry_right_12 (right)</text>
+<path d="M550.0,565.0 L555.0,570.0 L550.0,575.0 L545.0,570.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="550.0" y="562.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">final_report__entry_right_13 (right)</text>
+<path d="M560.0,115.0 L565.0,120.0 L560.0,125.0 L555.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="560.0" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_14 (?)</text>
+<path d="M1166.0,295.0 L1171.0,300.0 L1166.0,305.0 L1161.0,300.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="1166.0" y="292.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_15 (?)</text>
+<path d="M578.0,50.0 L578.0,790.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="578.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M974.0,50.0 L974.0,790.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="974.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
+<path d="M10.0,195.0 L1236.0,195.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<path d="M10.0,345.0 L1236.0,345.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<path d="M10.0,495.0 L1236.0,495.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<path d="M10.0,645.0 L1236.0,645.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="6.0" y="195.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
+<text x="6.0" y="345.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 1|2</text>
+<text x="6.0" y="495.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 2|3</text>
+<text x="6.0" y="645.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 3|4</text>
+<rect x="30.0" y="800.0" width="137.0" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,824.0 L66.0,824.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="824.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">scRNA-seq</text>
+<path d="M42.0,848.0 L66.0,848.0" stroke="#457b9d" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="848.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">scATAC-seq</text>
+<path d="M42.0,872.0 L66.0,872.0" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="872.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">CITE-seq</text>
+<text x="1246.0" y="912.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
