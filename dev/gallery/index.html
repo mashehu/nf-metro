@@ -781,6 +781,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#around-section-below" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Around Section Below
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1279,6 +1290,17 @@
     <span class="md-ellipsis">
       
         Off Track Convergence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#around-section-below" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Around Section Below
       
     </span>
   </a>
@@ -3212,6 +3234,48 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Off Track Convergence" src="../assets/renders/off_track_convergence.svg" /></p>
+<h3 id="around-section-below">Around Section Below<a class="headerlink" href="#around-section-below" title="Permanent link">&para;</a></h3>
+<p>Cross-row route to a LEFT-entry target where the natural inter-row channel would cut through an intervening section's bbox. Exercises <code>_route_around_section_below</code> (sarek-style geometry).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/around_section_below.mmd<span class="w"> </span>-o<span class="w"> </span>around_section_below.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>%%metro title: Around Section Below
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>%%metro style: dark
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>%%metro line: b | B | #0570b0
+<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>
+<a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>%%metro grid: source | 2,0
+<a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>%%metro grid: middle | 1,1
+<a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>%%metro grid: target | 0,2
+<a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>
+<a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a>graph LR
+<a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a>    subgraph source [Source]
+<a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a>        s1[Input]
+<a id="__codelineno-49-13" name="__codelineno-49-13" href="#__codelineno-49-13"></a>        s2[Output]
+<a id="__codelineno-49-14" name="__codelineno-49-14" href="#__codelineno-49-14"></a>        s1 --&gt;|a,b| s2
+<a id="__codelineno-49-15" name="__codelineno-49-15" href="#__codelineno-49-15"></a>    end
+<a id="__codelineno-49-16" name="__codelineno-49-16" href="#__codelineno-49-16"></a>
+<a id="__codelineno-49-17" name="__codelineno-49-17" href="#__codelineno-49-17"></a>    subgraph middle [Middle Row]
+<a id="__codelineno-49-18" name="__codelineno-49-18" href="#__codelineno-49-18"></a>        m1[Process]
+<a id="__codelineno-49-19" name="__codelineno-49-19" href="#__codelineno-49-19"></a>        m2[Output]
+<a id="__codelineno-49-20" name="__codelineno-49-20" href="#__codelineno-49-20"></a>        m1 --&gt;|a| m2
+<a id="__codelineno-49-21" name="__codelineno-49-21" href="#__codelineno-49-21"></a>    end
+<a id="__codelineno-49-22" name="__codelineno-49-22" href="#__codelineno-49-22"></a>
+<a id="__codelineno-49-23" name="__codelineno-49-23" href="#__codelineno-49-23"></a>    subgraph target [Target]
+<a id="__codelineno-49-24" name="__codelineno-49-24" href="#__codelineno-49-24"></a>        %%metro entry: left | a, b
+<a id="__codelineno-49-25" name="__codelineno-49-25" href="#__codelineno-49-25"></a>        t1[Process]
+<a id="__codelineno-49-26" name="__codelineno-49-26" href="#__codelineno-49-26"></a>        t2[Output]
+<a id="__codelineno-49-27" name="__codelineno-49-27" href="#__codelineno-49-27"></a>        t1 --&gt;|a,b| t2
+<a id="__codelineno-49-28" name="__codelineno-49-28" href="#__codelineno-49-28"></a>    end
+<a id="__codelineno-49-29" name="__codelineno-49-29" href="#__codelineno-49-29"></a>
+<a id="__codelineno-49-30" name="__codelineno-49-30" href="#__codelineno-49-30"></a>    s2 --&gt;|a,b| t1
+<a id="__codelineno-49-31" name="__codelineno-49-31" href="#__codelineno-49-31"></a>    s2 --&gt;|a| m1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Around Section Below" src="../assets/renders/around_section_below.svg" /></p>
 
 
 
