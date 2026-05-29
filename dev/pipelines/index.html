@@ -1063,15 +1063,15 @@
 <a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>        samplesheet --&gt;|test| _inputs_hub
 <a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>    end
 <a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>
-<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>    subgraph preprocess [Preprocessing (Optional)]
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>    subgraph preprocess [&quot;Preprocessing (Optional)&quot;]
 <a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>        %%metro entry: left | truth, test
 <a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>        %%metro exit: right | truth, test
 <a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>        subsample[Subsample]
-<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>        liftover[Liftover\n(Picard, UCSC)]
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>        liftover[&quot;Liftover\n(Picard, UCSC)&quot;]
 <a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>        subsample --&gt;|test| liftover
 <a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>    end
 <a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>
-<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>    subgraph normalization [Variant Normalization (Optional)]
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>    subgraph normalization [&quot;Variant Normalization (Optional)&quot;]
 <a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>        %%metro entry: left | truth, test
 <a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>        %%metro exit: right | truth, test
 <a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>        sv_processing[SV\nProcessing]
@@ -1079,7 +1079,7 @@
 <a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>        sv_processing --&gt;|test| var_norm
 <a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>    end
 <a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>
-<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>    subgraph filtering [Variant Filtering (Optional)]
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>    subgraph filtering [&quot;Variant Filtering (Optional)&quot;]
 <a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a>        %%metro entry: left | test
 <a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a>        %%metro exit: right | test
 <a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a>        filter_contigs[Filter\nContigs]
