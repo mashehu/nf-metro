@@ -195,7 +195,7 @@
 </head>
 <body>
 <h1>Render diff - PR #390</h1>
-<p class="summary">22 changed out of 57 total renders. Generated 2026-05-29 17:40 UTC.</p>
+<p class="summary">31 changed out of 57 total renders. Generated 2026-05-29 18:01 UTC.</p>
 <details class="intro">
 <summary>What is this page?</summary>
 <p>
@@ -227,6 +227,7 @@ switch between side-by-side, base-only, and PR-only views.
 <ul>
 <li><a href="#02_sections">02_sections</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#03_fan_out">03_fan_out</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#03b_fan_in_merge">03b_fan_in_merge</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#04_directions">04_directions</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#rnaseq_auto_debug">rnaseq_auto_debug</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#rnaseq_sections_manual">rnaseq_sections_manual</a><span class="badge badge-changed">changed</span></li>
@@ -238,26 +239,37 @@ switch between side-by-side, base-only, and PR-only views.
 <li><a href="#asymmetric_tree">asymmetric_tree</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#complex_multipath">complex_multipath</a><span class="badge badge-changed">changed</span></li>
 </ul>
+<h3><a href="#section-main-examples">Main Examples</a></h3>
+<ul>
+<li><a href="#differentialabundance">differentialabundance</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#differentialabundance_default">differentialabundance_default</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_auto">rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_sections">rnaseq_sections</a><span class="badge badge-changed">changed</span></li>
+</ul>
 <h3><a href="#section-fold-topologies">Fold Topologies</a></h3>
 <ul>
 <li><a href="#fold_fan_across">fold_fan_across</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#fold_stacked_branch">fold_stacked_branch</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#mismatched_tracks">mismatched_tracks</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#upward_bypass">upward_bypass</a><span class="badge badge-changed">changed</span></li>
 </ul>
 <h3><a href="#section-multi-line-bundles">Multi-line Bundles</a></h3>
 <ul>
 <li><a href="#mixed_port_sides">mixed_port_sides</a><span class="badge badge-changed">changed</span></li>
 </ul>
+<h3><a href="#section-nextflow-conversions">Nextflow Conversions</a></h3>
+<ul>
+<li><a href="#nf_variant_calling">nf_variant_calling</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_variant_calling_tuned">nf_variant_calling_tuned</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_variant_calling_tuned_icons">nf_variant_calling_tuned_icons</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_with_subworkflows">nf_with_subworkflows</a><span class="badge badge-changed">changed</span></li>
+</ul>
 <h3><a href="#section-nf-core-pipelines">nf-core Pipelines</a></h3>
 <ul>
+<li><a href="#pipeline_genomeassembly">pipeline_genomeassembly</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#pipeline_rnaseq_auto">pipeline_rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#pipeline_variantbenchmarking">pipeline_variantbenchmarking</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#pipeline_variantprioritization">pipeline_variantprioritization</a><span class="badge badge-changed">changed</span></li>
-</ul>
-<h3><a href="#section-main-examples">Main Examples</a></h3>
-<ul>
-<li><a href="#rnaseq_auto">rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
-<li><a href="#rnaseq_sections">rnaseq_sections</a><span class="badge badge-changed">changed</span></li>
 </ul>
 <h3><a href="#section-realistic-pipelines">Realistic Pipelines</a></h3>
 <ul>
@@ -287,6 +299,15 @@ switch between side-by-side, base-only, and PR-only views.
 <div class="comparison">
 <div class="side side-base"><h4>Base (main)</h4><img src="base/03_fan_out.svg" alt="Base: 03_fan_out"></div>
 <div class="side side-pr"><h4>PR</h4><img src="pr/03_fan_out.svg" alt="PR: 03_fan_out"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="03b_fan_in_merge">
+<h3>03B Fan In Merge <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/03b_fan_in_merge.svg" alt="Base: 03b_fan_in_merge"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/03b_fan_in_merge.svg" alt="PR: 03b_fan_in_merge"></div>
 </div>
 </div>
 
@@ -355,6 +376,44 @@ switch between side-by-side, base-only, and PR-only views.
 </div>
 </div>
 
+<h2 class="section-header" id="section-main-examples">Main Examples</h2>
+
+<div class="diff-entry" id="differentialabundance">
+<h3>Differentialabundance <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/differentialabundance.svg" alt="Base: differentialabundance"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/differentialabundance.svg" alt="PR: differentialabundance"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="differentialabundance_default">
+<h3>Differentialabundance Default <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/differentialabundance_default.svg" alt="Base: differentialabundance_default"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/differentialabundance_default.svg" alt="PR: differentialabundance_default"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_auto">
+<h3>Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto.svg" alt="Base: rnaseq_auto"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto.svg" alt="PR: rnaseq_auto"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_sections">
+<h3>Rnaseq Sections <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections.svg" alt="Base: rnaseq_sections"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections.svg" alt="PR: rnaseq_sections"></div>
+</div>
+</div>
+
 <h2 class="section-header" id="section-fold-topologies">Fold Topologies</h2>
 
 <div class="diff-entry" id="fold_fan_across">
@@ -384,6 +443,15 @@ switch between side-by-side, base-only, and PR-only views.
 </div>
 </div>
 
+<div class="diff-entry" id="upward_bypass">
+<h3>Upward Bypass <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/upward_bypass.svg" alt="Base: upward_bypass"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/upward_bypass.svg" alt="PR: upward_bypass"></div>
+</div>
+</div>
+
 <h2 class="section-header" id="section-multi-line-bundles">Multi-line Bundles</h2>
 
 <div class="diff-entry" id="mixed_port_sides">
@@ -395,7 +463,54 @@ switch between side-by-side, base-only, and PR-only views.
 </div>
 </div>
 
+<h2 class="section-header" id="section-nextflow-conversions">Nextflow Conversions</h2>
+
+<div class="diff-entry" id="nf_variant_calling">
+<h3>Nf Variant Calling <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling.svg" alt="Base: nf_variant_calling"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling.svg" alt="PR: nf_variant_calling"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_variant_calling_tuned">
+<h3>Nf Variant Calling Tuned <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling_tuned.svg" alt="Base: nf_variant_calling_tuned"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling_tuned.svg" alt="PR: nf_variant_calling_tuned"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_variant_calling_tuned_icons">
+<h3>Nf Variant Calling Tuned Icons <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling_tuned_icons.svg" alt="Base: nf_variant_calling_tuned_icons"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling_tuned_icons.svg" alt="PR: nf_variant_calling_tuned_icons"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_with_subworkflows">
+<h3>Nf With Subworkflows <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_with_subworkflows.svg" alt="Base: nf_with_subworkflows"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_with_subworkflows.svg" alt="PR: nf_with_subworkflows"></div>
+</div>
+</div>
+
 <h2 class="section-header" id="section-nf-core-pipelines">nf-core Pipelines</h2>
+
+<div class="diff-entry" id="pipeline_genomeassembly">
+<h3>Pipeline Genomeassembly <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_genomeassembly.svg" alt="Base: pipeline_genomeassembly"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_genomeassembly.svg" alt="PR: pipeline_genomeassembly"></div>
+</div>
+</div>
 
 <div class="diff-entry" id="pipeline_rnaseq_auto">
 <h3>Pipeline Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
@@ -421,26 +536,6 @@ switch between side-by-side, base-only, and PR-only views.
 <div class="comparison">
 <div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_variantprioritization.svg" alt="Base: pipeline_variantprioritization"></div>
 <div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_variantprioritization.svg" alt="PR: pipeline_variantprioritization"></div>
-</div>
-</div>
-
-<h2 class="section-header" id="section-main-examples">Main Examples</h2>
-
-<div class="diff-entry" id="rnaseq_auto">
-<h3>Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto.svg" alt="Base: rnaseq_auto"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto.svg" alt="PR: rnaseq_auto"></div>
-</div>
-</div>
-
-<div class="diff-entry" id="rnaseq_sections">
-<h3>Rnaseq Sections <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections.svg" alt="Base: rnaseq_sections"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections.svg" alt="PR: rnaseq_sections"></div>
 </div>
 </div>
 
