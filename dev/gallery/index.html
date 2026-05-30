@@ -825,6 +825,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#inter-row-wrap-clearance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter Row Wrap Clearance
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1367,6 +1378,17 @@
     <span class="md-ellipsis">
       
         Around Section Below
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-row-wrap-clearance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter Row Wrap Clearance
       
     </span>
   </a>
@@ -3457,6 +3479,48 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Around Section Below" src="../assets/renders/around_section_below.svg" /></p>
+<h3 id="inter-row-wrap-clearance">Inter Row Wrap Clearance<a class="headerlink" href="#inter-row-wrap-clearance" title="Permanent link">&para;</a></h3>
+<p>A right-exit bundle wrapping down to a left-entry in the row below. The horizontal run sits centred in the inter-row gap, clear of both the section above and the next row's header.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/inter_row_wrap_clearance.mmd<span class="w"> </span>-o<span class="w"> </span>inter_row_wrap_clearance.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>%%metro title: Inter-row wrap clearance
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>%%metro style: dark
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>%%metro center_ports: true
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>%%metro line: l1 | Line 1 | #0570b0
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>%%metro line: l2 | Line 2 | #d62728
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>%%metro line: l3 | Line 3 | #756bb1
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>%%metro grid: top | 0,0
+<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>%%metro grid: bottom | 0,1
+<a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a>
+<a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a>graph LR
+<a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a>    subgraph top [Top section]
+<a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a>        %%metro exit: right | l1, l2, l3
+<a id="__codelineno-57-13" name="__codelineno-57-13" href="#__codelineno-57-13"></a>        a_in[ ]
+<a id="__codelineno-57-14" name="__codelineno-57-14" href="#__codelineno-57-14"></a>        a1[Step A1]
+<a id="__codelineno-57-15" name="__codelineno-57-15" href="#__codelineno-57-15"></a>        a2[Step A2]
+<a id="__codelineno-57-16" name="__codelineno-57-16" href="#__codelineno-57-16"></a>        a3[Step A3]
+<a id="__codelineno-57-17" name="__codelineno-57-17" href="#__codelineno-57-17"></a>        a_in --&gt;|l1,l2,l3| a1
+<a id="__codelineno-57-18" name="__codelineno-57-18" href="#__codelineno-57-18"></a>        a1 --&gt;|l1,l2,l3| a2
+<a id="__codelineno-57-19" name="__codelineno-57-19" href="#__codelineno-57-19"></a>        a2 --&gt;|l1,l2,l3| a3
+<a id="__codelineno-57-20" name="__codelineno-57-20" href="#__codelineno-57-20"></a>    end
+<a id="__codelineno-57-21" name="__codelineno-57-21" href="#__codelineno-57-21"></a>
+<a id="__codelineno-57-22" name="__codelineno-57-22" href="#__codelineno-57-22"></a>    subgraph bottom [Bottom section]
+<a id="__codelineno-57-23" name="__codelineno-57-23" href="#__codelineno-57-23"></a>        %%metro entry: left | l1, l2, l3
+<a id="__codelineno-57-24" name="__codelineno-57-24" href="#__codelineno-57-24"></a>        b_in[ ]
+<a id="__codelineno-57-25" name="__codelineno-57-25" href="#__codelineno-57-25"></a>        b1[Step B1]
+<a id="__codelineno-57-26" name="__codelineno-57-26" href="#__codelineno-57-26"></a>        b2[Step B2]
+<a id="__codelineno-57-27" name="__codelineno-57-27" href="#__codelineno-57-27"></a>        b_in --&gt;|l1,l2,l3| b1
+<a id="__codelineno-57-28" name="__codelineno-57-28" href="#__codelineno-57-28"></a>        b1 --&gt;|l1,l2,l3| b2
+<a id="__codelineno-57-29" name="__codelineno-57-29" href="#__codelineno-57-29"></a>    end
+<a id="__codelineno-57-30" name="__codelineno-57-30" href="#__codelineno-57-30"></a>
+<a id="__codelineno-57-31" name="__codelineno-57-31" href="#__codelineno-57-31"></a>    a3 --&gt;|l1,l2,l3| b_in
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Inter Row Wrap Clearance" src="../assets/renders/inter_row_wrap_clearance.svg" /></p>
 
 
 
