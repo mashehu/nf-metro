@@ -1283,7 +1283,11 @@
 </tr>
 <tr>
 <td><code>%%metro logo: &lt;path&gt;</code></td>
-<td>Logo image (replaces title text). Use <code>--logo</code> CLI flag to override per-render.</td>
+<td>Logo image, bundled into the legend (or top-left if there is no legend). Use <code>--logo</code> CLI flag to override per-render.</td>
+</tr>
+<tr>
+<td><code>%%metro logo_scale: &lt;factor&gt;</code></td>
+<td>Scale the logo within the legend block (<code>1.0</code> = default auto-size). Values above 1 grow the legend box to contain the logo.</td>
 </tr>
 <tr>
 <td><code>%%metro style: &lt;name&gt;</code></td>
@@ -1299,7 +1303,7 @@
 </tr>
 <tr>
 <td><code>%%metro legend: &lt;position&gt;</code></td>
-<td>Legend position: <code>tl</code>, <code>tr</code>, <code>bl</code>, <code>br</code>, <code>bottom</code>, <code>right</code>, or <code>none</code></td>
+<td>Position the legend (and its embedded logo). Keyword: <code>tl</code>, <code>tr</code>, <code>bl</code>, <code>br</code>, <code>bottom</code>, <code>right</code>, or <code>none</code> (a bare keyword auto-relocates if it would overlap a section or route). Add <code>\| canvas</code> to anchor the keyword to the canvas margin, or <code>\| &lt;dx&gt;,&lt;dy&gt;</code> to nudge it; both pin the block exactly (warning on overlap rather than relocating). Use <code>&lt;x&gt;,&lt;y&gt;</code> for absolute top-left coordinates.</td>
 </tr>
 <tr>
 <td><code>%%metro line_order: &lt;strategy&gt;</code></td>
