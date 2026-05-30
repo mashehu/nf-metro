@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="678" height="470" viewBox="0 0 678 470">
+     width="670" height="489" viewBox="0 0 670 489">
 <defs>
 </defs>
-<rect x="0" y="0" width="678" height="470" fill="#2b2b2b" />
+<rect x="0" y="0" width="670" height="489" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">TB section file outputs</text>
 <rect x="30.0" y="70.0" width="184.5" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="analysis" data-section-lines="dna,rna" />
 <circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="analysis" />
 <text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="analysis">1</text>
 <text x="57.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="analysis">Analysis</text>
-<rect x="264.5" y="70.0" width="353.5" height="274.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="dna,rna" />
+<rect x="264.5" y="70.0" width="345.5" height="293.4" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="dna,rna" />
 <circle cx="275.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="reporting" />
 <text x="275.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="reporting">2</text>
 <text x="291.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="reporting">Reporting</text>
@@ -20,8 +20,8 @@
 <path d="M475.5,174.0 L475.5,254.0" stroke="#2c7fb8" stroke-width="3.0" stroke-linecap="round" class="metro-line-dna" data-line-id="dna" />
 <path d="M475.5,254.0 L475.5,294.0" stroke="#2c7fb8" stroke-width="3.0" stroke-linecap="round" class="metro-line-dna" data-line-id="dna" />
 <path d="M164.5,123.0 L214.5,123.0" stroke="#2c7fb8" stroke-width="3.0" stroke-linecap="round" class="metro-line-dna" data-line-id="dna" />
-<path d="M264.5,137.0 L465.5,137.0 Q475.5,137.0,475.5,147.0 L475.5,174.0" stroke="#2c7fb8" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-dna" data-line-id="dna" />
-<path d="M214.5,123.0 L231.91304347826087,123.0 Q238.0,123.0,238.0,129.08695652173913 L238.0,129.08695652173913 Q238.0,137.0,245.91304347826087,137.0 L264.5,137.0" stroke="#2c7fb8" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-dna" data-line-id="dna" />
+<path d="M264.5,123.0 L465.5,123.0 Q475.5,123.0,475.5,133.0 L475.5,174.0" stroke="#2c7fb8" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-dna" data-line-id="dna" />
+<path d="M214.5,123.0 L264.5,123.0" stroke="#2c7fb8" stroke-width="3.0" stroke-linecap="round" class="metro-line-dna" data-line-id="dna" />
 <path d="M80.0,120.0 L164.5,120.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
 <path d="M478.5,174.0 L478.5,174.0 Q478.5,184.0,487.92371042697613,187.34569600957732 L553.5762895730239,210.65430399042268 Q563.0,214.0,563.0,224.0 L563.0,254.0" stroke="#1f9e89" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
 <path d="M478.5,174.0 L478.5,174.0 Q478.5,184.0,469.07628957302387,187.34569600957732 L403.42371042697613,210.65430399042268 Q394.0,214.0,394.0,224.0 L394.0,254.0" stroke="#1f9e89" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
@@ -29,8 +29,8 @@
 <path d="M478.5,174.0 L478.5,254.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
 <path d="M478.5,254.0 L478.5,294.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
 <path d="M164.5,120.0 L214.5,120.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
-<path d="M264.5,134.0 L465.5,134.0 Q478.5,134.0,478.5,147.0 L478.5,174.0" stroke="#1f9e89" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
-<path d="M214.5,120.0 L233.08695652173913,120.0 Q241.0,120.0,241.0,127.91304347826087 L241.0,127.91304347826087 Q241.0,134.0,247.08695652173913,134.0 L264.5,134.0" stroke="#1f9e89" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M264.5,120.0 L465.5,120.0 Q478.5,120.0,478.5,133.0 L478.5,174.0" stroke="#1f9e89" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M214.5,120.0 L264.5,120.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
 <rect x="75.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="align" data-station-lines="dna,rna" data-station-label="Align" data-section-id="analysis" data-section-name="Analysis" />
 <rect x="159.5" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="call" data-station-lines="dna,rna" data-station-label="Call" data-section-id="analysis" data-section-name="Analysis" />
 <rect x="470.5" y="169.0" width="13.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report" data-station-lines="dna,rna" data-station-label="Build report" data-section-id="reporting" data-section-name="Reporting" />
@@ -73,22 +73,18 @@
 <circle cx="394.0" cy="214.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="475.5" cy="184.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="391.0" cy="214.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="478.5" cy="134.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="475.5" cy="137.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="241.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="241.0" cy="134.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="238.0" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="238.0" cy="137.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="478.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="475.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M214.5,115.0 L219.5,120.0 L214.5,125.0 L209.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="214.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">analysis__exit_right_0 (right)</text>
-<path d="M264.5,129.0 L269.5,134.0 L264.5,139.0 L259.5,134.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="264.5" y="126.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">reporting__entry_left_1 (left)</text>
-<path d="M239.5,50.0 L239.5,364.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<path d="M264.5,115.0 L269.5,120.0 L264.5,125.0 L259.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="264.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">reporting__entry_left_1 (left)</text>
+<path d="M239.5,50.0 L239.5,383.4" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
 <text x="239.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
-<rect x="30.0" y="374.0" width="113.9" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
-<path d="M42.0,398.0 L66.0,398.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="398.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">RNA-seq</text>
-<path d="M42.0,422.0 L66.0,422.0" stroke="#2c7fb8" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="422.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Variant</text>
-<text x="648.0" y="462.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<rect x="30.0" y="393.4" width="113.9" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,417.4 L66.0,417.4" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="417.4" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">RNA-seq</text>
+<path d="M42.0,441.4 L66.0,441.4" stroke="#2c7fb8" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="441.4" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Variant</text>
+<text x="640.0" y="481.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
