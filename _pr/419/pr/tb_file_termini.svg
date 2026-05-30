@@ -36,7 +36,7 @@
 <rect x="470.5" y="169.0" width="13.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report" data-station-lines="dna,rna" data-station-label="Build report" data-section-id="reporting" data-section-name="Reporting" />
 <rect x="386.0" y="249.0" width="13.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bundle" data-station-lines="dna,rna" data-station-label="Zip bundle" data-section-id="reporting" data-section-name="Reporting" />
 <rect x="470.5" y="249.0" width="13.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="dna,rna" data-station-label="MultiQC" data-section-id="reporting" data-section-name="Reporting" />
-<rect x="555.0" y="249.0" width="10.0" height="13.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_html" data-station-lines="dna,rna" data-station-label="report_html" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="555.0" y="249.0" width="13.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_html" data-station-lines="dna,rna" data-station-label="report_html" data-section-id="reporting" data-section-name="Reporting" />
 <g data-station-id="report_html">
 <path d="M549.5,265.0 L567.5,265.0 L575.5,273.0 L575.5,295.0 Q575.5,297.0,573.5,297.0 L549.5,297.0 Q547.5,297.0,547.5,295.0 L547.5,267.0 Q547.5,265.0,549.5,265.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M567.5,265.0 L567.5,273.0 L575.5,273.0 Z" fill="#333333" opacity="0.15" stroke="none" />
@@ -44,7 +44,7 @@
 <text x="561.5" y="282.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
 <text x="561.5" y="301.0" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Report</text>
 </g>
-<rect x="386.0" y="289.0" width="10.0" height="13.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bundle_zip" data-station-lines="dna,rna" data-station-label="bundle_zip" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="386.0" y="289.0" width="13.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bundle_zip" data-station-lines="dna,rna" data-station-label="bundle_zip" data-section-id="reporting" data-section-name="Reporting" />
 <g data-station-id="bundle_zip">
 <path d="M380.5,305.0 L398.5,305.0 L406.5,313.0 L406.5,335.0 Q406.5,337.0,404.5,337.0 L380.5,337.0 Q378.5,337.0,378.5,335.0 L378.5,307.0 Q378.5,305.0,380.5,305.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M398.5,305.0 L398.5,313.0 L406.5,313.0 Z" fill="#333333" opacity="0.15" stroke="none" />
@@ -52,7 +52,7 @@
 <text x="392.5" y="322.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">ZIP</text>
 <text x="392.5" y="341.0" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Bundle</text>
 </g>
-<rect x="470.5" y="289.0" width="10.0" height="13.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc_html" data-station-lines="dna,rna" data-station-label="multiqc_html" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="470.5" y="289.0" width="13.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc_html" data-station-lines="dna,rna" data-station-label="multiqc_html" data-section-id="reporting" data-section-name="Reporting" />
 <g data-station-id="multiqc_html">
 <path d="M465.0,305.0 L483.0,305.0 L491.0,313.0 L491.0,335.0 Q491.0,337.0,489.0,337.0 L465.0,337.0 Q463.0,337.0,463.0,335.0 L463.0,307.0 Q463.0,305.0,465.0,305.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M483.0,305.0 L483.0,313.0 L491.0,313.0 Z" fill="#333333" opacity="0.15" stroke="none" />
