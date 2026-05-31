@@ -1,0 +1,1071 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Metro-map-style SVG diagrams from Mermaid definitions">
+      
+      
+      
+        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/bbox_top_unification_design/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Unifying section bbox-top management into one content-hugging rule (#464) - nf-metro</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unifying-section-bbox-top-management-into-one-content-hugging-rule-464" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="nf-metro" class="md-header__button md-logo" aria-label="nf-metro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nf-metro
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unifying section bbox-top management into one content-hugging rule (#464)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pinin4fjords/nf-metro" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pinin4fjords/nf-metro
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="nf-metro" class="md-nav__button md-logo" aria-label="nf-metro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    nf-metro
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pinin4fjords/nf-metro" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pinin4fjords/nf-metro
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nextflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nextflow Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-core Pipelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Internals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layout_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-characterise-the-current-mechanism-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Characterise the current mechanism (measured)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Characterise the current mechanism (measured)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-every-operation-that-writes-a-sections-bbox-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Every operation that writes a section's bbox top
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-two-corrections-to-the-issues-stated-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Two corrections to the issue's stated mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-why-finished-tops-are-content-hugging-on-fans-but-keep-empty-bands-elsewhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Why finished tops are content-hugging on fans but keep empty bands elsewhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-the-genuine-empty-band-set-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 The genuine empty-band set (measured)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-feasibility-check-group-a-through-the-real-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Feasibility check (Group A, through the real pipeline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-target-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The target rule
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The target rule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-primitive-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The primitive already exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="unifying-section-bbox-top-management-into-one-content-hugging-rule-464">Unifying section bbox-top management into one content-hugging rule (#464)<a class="headerlink" href="#unifying-section-bbox-top-management-into-one-content-hugging-rule-464" title="Permanent link">&para;</a></h1>
+<p>Design doc. No production code change, no behaviour change, no PR. All findings
+are measured against origin/main (<code>9807c85</code>); <code>phases/bbox.py</code> and
+<code>phases/row_align.py</code> are byte-identical between the local checkout and
+origin/main, and #463 (the only behavioural delta on the branch) was gallery
+byte-identical, so the measured layouts equal origin/main's.</p>
+<h2 id="1-characterise-the-current-mechanism-measured">1. Characterise the current mechanism (measured)<a class="headerlink" href="#1-characterise-the-current-mechanism-measured" title="Permanent link">&para;</a></h2>
+<h3 id="11-every-operation-that-writes-a-sections-bbox-top">1.1 Every operation that writes a section's bbox top<a class="headerlink" href="#11-every-operation-that-writes-a-sections-bbox-top" title="Permanent link">&para;</a></h3>
+<p>Traced by wrapping each candidate helper in <code>engine</code> and snapshotting <code>bbox_y</code>
+per section across the whole pipeline. Two distinct families emerge.</p>
+<p><strong>Top SIZING family</strong> (changes the top edge relative to content - in scope for #464):</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Helper</th>
+<th>Direction</th>
+<th>Effect on top edge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.2</td>
+<td><code>_align_row_y_grids</code></td>
+<td>set</td>
+<td><code>bbox_y = min(content) - max_y_pad</code> (local coords, construction)</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td><code>_recompute_grid_group_bboxes</code></td>
+<td>set</td>
+<td>resets grid-group bbox to symmetric <code>max_y_pad</code> around content, then expands for stray ports</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td><code>_top_align_row_bboxes_only</code></td>
+<td>grow-only</td>
+<td>flush row tops up to the row group's min <code>bbox_y</code>; content left in place</td>
+</tr>
+<tr>
+<td>6.9</td>
+<td><code>_top_align_row_bboxes_only</code></td>
+<td>grow-only</td>
+<td>same helper, re-run after off-track recenter (gated on <code>center_ports</code>)</td>
+</tr>
+<tr>
+<td>6.15a</td>
+<td><code>_grow_bboxes_to_content_top</code></td>
+<td>grow-only</td>
+<td>raise top to <code>content_top - padding</code> where content rose above the current top</td>
+</tr>
+<tr>
+<td>6.6 / 6.8</td>
+<td><code>_reanchor_off_track_to_consumer</code> -&gt; <code>_off_track_fit_top</code> + <code>_set_section_bbox_top</code></td>
+<td>grow AND shrink</td>
+<td>off-track sections only; bidirectional fit (added by #463)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Whole-section SHIFT family</strong> (translates content + box together, top padding preserved - OUT of scope):</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Helper</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.5 / 4.7</td>
+<td><code>_top_align_row_sections</code></td>
+<td>shifts stations AND bbox up to row min top</td>
+</tr>
+<tr>
+<td>4.8</td>
+<td><code>_align_row_trunk_ys</code></td>
+<td>shifts content + grows <code>bbox_h</code> downward (top fixed)</td>
+</tr>
+<tr>
+<td>6.13 phase 2</td>
+<td><code>_tighten_lower_rows_after_shrink</code></td>
+<td>translates whole lower rows up</td>
+</tr>
+</tbody>
+</table>
+<p>The task's framing of two "top-align families" is correct: <code>_top_align_row_sections</code>
+(3.5 / 4.7) shifts stations with the box and is construction-time scaffolding, not
+top sizing. It is OUT of scope. The bbox-top sizing family in scope is
+{5.3, 6.9} (flush) and {6.15a} (grow-to-content), with {1.2, 4.6} as construction
+seeds and {6.6, 6.8} as the off-track precedent #463 already converted.</p>
+<h3 id="12-two-corrections-to-the-issues-stated-mechanism">1.2 Two corrections to the issue's stated mechanism<a class="headerlink" href="#12-two-corrections-to-the-issues-stated-mechanism" title="Permanent link">&para;</a></h3>
+<p>The issue names a "trio": flush (5.3 / 6.9), grow-to-content (6.15a), and
+"the top-shrink half of <code>_shrink_and_tighten_rows</code> (6.13)". Measurement refutes
+two parts of this:</p>
+<ul>
+<li>
+<p><strong>6.13 has no top-shrink.</strong> <code>_shrink_and_tighten_rows</code> = <code>_shrink_bboxes_to_content_bottom</code>
+  (bottom edge only, <code>bbox_y</code> untouched) + <code>_tighten_lower_rows_after_shrink</code>
+  (whole-row translation). Where 6.13's top edge moves at all (differentialabundance
+  67px, genomic_pipeline 749px, variantbenchmarking 50px), top == content == bottom
+  move identically: a translation, not a top resize. CONTRACT.md's own 6.13 entry
+  lists "Bbox tops" under invariants preserved. The trio is really a <strong>duo</strong>:
+  {flush 5.3/6.9} + {grow-only 6.15a}.</p>
+</li>
+<li>
+<p><strong>The flush is not transient scaffolding that gets re-established as content-hug.</strong>
+  It survives untouched to the final pass. On <code>terminal_symmetric_fan</code> the two
+  sections' tops are flush at <code>bbox_y=70</code> through every stage from 3.5 to 6.9; the
+  final non-flush 40px state is <em>created</em> by 6.15a, which raises <code>reporting</code>'s top
+  from 70 to 30 to restore a padding band over its (high) content, while <code>source</code>
+  (content lower) is left. The flush is overridden by grow only, not "re-established".</p>
+</li>
+</ul>
+<h3 id="13-why-finished-tops-are-content-hugging-on-fans-but-keep-empty-bands-elsewhere">1.3 Why finished tops are content-hugging on fans but keep empty bands elsewhere<a class="headerlink" href="#13-why-finished-tops-are-content-hugging-on-fans-but-keep-empty-bands-elsewhere" title="Permanent link">&para;</a></h3>
+<p>The mechanism is entirely the grow-only nature of 6.15a:</p>
+<ul>
+<li>content sits <strong>above</strong> the flushed top (crowded, gap &lt; padding) -&gt; 6.15a grows
+  the top up to <code>content - padding</code> -&gt; content-hug, flush broken
+  (terminal_symmetric_fan: both end at exactly 50px padding, 40px row-top spread).</li>
+<li>content sits <strong>below</strong> the flushed top (gap &gt; padding) -&gt; 6.15a cannot lower the
+  top -&gt; the flush band persists as empty space.</li>
+</ul>
+<p>So the engine is already <em>inconsistent</em>: it content-hugs in the grow direction and
+keeps flush bands in the shrink direction. CONTRACT.md tags 6.15a "invariant - each
+bbox top sits a full section_y_padding above its highest marker". That is true only
+as a <strong>floor</strong> (&gt;= padding); <code>test_section_bbox_has_top_padding</code> is a <code>&gt;=</code> check
+(<code>gap + tol &lt; padding</code> is the only offender), so a 116px band passes it. #464 tightens
+the floor to an <strong>equality</strong> (gap == padding, no excess band), which requires the
+shrink direction 6.15a lacks.</p>
+<h3 id="14-the-genuine-empty-band-set-measured">1.4 The genuine empty-band set (measured)<a class="headerlink" href="#14-the-genuine-empty-band-set-measured" title="Permanent link">&para;</a></h3>
+<p>Comparing each section's final <code>bbox_y</code> to a content-only hug target
+(<code>min(content) - padding</code>, clamped to contain ports / bypass, no row-above clamp):</p>
+<p><strong>Group A - pure flush bands (nothing above content):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Fixture</th>
+<th>Section(s)</th>
+<th>Empty band</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>differentialabundance</td>
+<td>reporting</td>
+<td>58px</td>
+</tr>
+<tr>
+<td>differentialabundance_default</td>
+<td>differential, reporting</td>
+<td>116px each</td>
+</tr>
+<tr>
+<td>off_track_convergence</td>
+<td>input, output</td>
+<td>233px each</td>
+</tr>
+</tbody>
+</table>
+<p>These boxes are stretched up to flush with a tall row-mate (a fan or off-track
+section) and have genuinely empty space above their topmost station.</p>
+<p><strong>Group B - band occupied by a LEFT/RIGHT entry port above content (40-54px):</strong>
+rnaseq_auto/sections/manual <code>postprocessing</code>, tb_file_termini <code>reporting</code>,
+fold_double <code>calling</code>/<code>integration</code>, fold_fan_across <code>normalize</code>,
+fold_stacked_branch <code>integration</code>, u_turn_fold <code>sec6</code>. Here a side entry port sits
+in the band (e.g. port at y=120, content at y=160). Shrinking interacts with port
+headroom and the station-as-elbow constraint, so this group is higher risk.</p>
+<p><strong>A naive symmetric application would over-tighten.</strong> Applying the existing
+<code>_section_content_top_target</code> (bbox.py) bidirectionally flags ~60 sections for a
+~26px top drop. That 26px is exactly <code>SECTION_HEADER_PROTRUSION</code>: the function's
+row-above clamp (<code>above_bot + section_y_gap + SECTION_HEADER_PROTRUSION</code>) is a
+GROW bound ("don't grow the top up into the badge"), not a content-hug position.
+For a section that already sits above that clamp (e.g. <code>wide_fan_out.target_b</code>:
+<code>bbox_y=220</code> already hugs content at 270 with exactly 50px), using the clamp as the
+equality target would push the top DOWN to 246, cutting content padding to 24px.
+So <code>_section_content_top_target</code> cannot be the bidirectional target as written; its
+row-above clamp must constrain the grow direction only.</p>
+<h3 id="15-feasibility-check-group-a-through-the-real-pipeline">1.5 Feasibility check (Group A, through the real pipeline)<a class="headerlink" href="#15-feasibility-check-group-a-through-the-real-pipeline" title="Permanent link">&para;</a></h3>
+<p>A runtime monkeypatch making 6.15a also shrink pure-flush bands (sections with no
+port / bypass above content), run with <code>compute_layout(validate=True)</code> so all
+phase-boundary guards fire:</p>
+<ul>
+<li>differentialabundance_default: differential / reporting drop to <code>bbox_y=183.6</code>,
+  exactly 50px above content (total height 730px honoured), guards pass.</li>
+<li>off_track_convergence: input / output drop to <code>bbox_y=300.4</code>, 50px padding,
+  guards pass.</li>
+<li>differentialabundance: reporting hugs at 50px, guards pass.</li>
+</ul>
+<p>The minimal change is viable end-to-end including the guard suite. The off-track
+<code>process</code> section is untouched, so off_track_convergence's row 0 becomes one tall
+box (process) plus two short content-hugging boxes - a staggered-top row.</p>
+<h2 id="2-the-target-rule">2. The target rule<a class="headerlink" href="#2-the-target-rule" title="Permanent link">&para;</a></h2>
+<h3 id="21-statement">2.1 Statement<a class="headerlink" href="#21-statement" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>A section's bbox top sits exactly <code>section_y_padding</code> above its highest
+in-section marker (real station centre, off-track input, or bypass-curve
+clearance), and never lower (no higher <code>bbox_y</code>) than the inclusion bound set
+by its TOP / side ports. The row above is honoured as a grow-direction bound
+only: the top is never raised <em>above</em> <code>row_above_bottom + section_y_gap +
+SECTION_HEADER_PROTRUSION</code>, but that bound never pushes the top <em>below</em> its
+content-hug position.</p>
+</blockquote>
+<p>This is the equality version of 6.15a's current floor, applied in both directions.</p>
+<h3 id="22-the-primitive-already-exists">2.2 The primitive already exists<a class="headerlink" href="#22-the-primitive-already-exists" title="Permanent link">&para;</a></h3>
+<h1 id="463-built-exactly-the-right-shape-for-off-track-sections-and-464-generalises-it">463 built exactly the right shape for off-track sections and #464 generalises it:<a class="headerlink" href="#463-built-exactly-the-right-shape-for-off-track-sections-and-464-generalises-it" title="Permanent link">&para;</a></h1>
+<ul>
+<li><code>_set_section_bbox_top(graph, section, new_top)</code> (<code>phases/_common.py</code>) - moves the
+  top in either direction, pulls TOP ports to the new edge, leaves BOTTOM ports.
+  This is the reversible primitive the issue names.</li>
+<li><code>_off_track_fit_top(graph, section, highest_off_track_y, padding)</code>
+  (<code>phases/off_track.py</code>) - content-hug target = <code>highest - padding</code>, clamped by
+  other content (<code>st.y - padding</code>) and non-TOP ports (<code>port.y</code>, hard-contain, no
+  pad). It has NO row-above clamp. This is precisely the calibration the unified
+  rule needs; #464 widens its input from "off-track band" to "all content".</li>
+</ul>
+<p>The unified target is therefore a generalisation of <code>_off_track_fit_top</code>, applied
+to every section via <code>_set_section_bbox_top</code>, with the row-above protrusion clamp
+re-added as a grow-only ceiling (taken from <code>_section_content_top_target</code>).</p>
+<h3 id="23-content-set-consistency-a-known-footgun">2.3 Content-set consistency (a known footgun)<a class="headerlink" href="#23-content-set-consistency-a-known-footgun" title="Permanent link">&para;</a></h3>
+<p>The target helper and any new test must use the SAME content set. The off-track
+helpers exclude <code>is_port</code> + <code>__bypass_</code> prefix and KEEP hidden phantoms (12 of them);
+<code>test_section_bbox_has_top_padding</code> excludes ports and uses <code>is_hidden</code>. #463's notes
+flag that swapping <code>__bypass_</code>/<code>is_port</code> for <code>is_hidden</code> diverges (is_hidden is a
+superset). The new rule must mirror <code>_section_content_top_target</code> / <code>_off_track_fit_top</code>
+(port + bypass prefix), not the test's <code>is_hidden</code>, to avoid drift.</p>
+<h3 id="24-is-band-alignment-a-genuine-final-boundary-requirement">2.4 Is band-alignment a genuine final-boundary requirement?<a class="headerlink" href="#24-is-band-alignment-a-genuine-final-boundary-requirement" title="Permanent link">&para;</a></h3>
+<p>Evidence says <strong>no</strong>. Row-top flush is tagged transient at 3.5, 5.3 and 6.9 in
+CONTRACT.md, and it is not a final property anywhere: 6.15a already breaks it on
+every fan (terminal_symmetric_fan, trunk_through_fan). No fixture was found where
+pure content-hug misaligns a band that the current code keeps aligned AND a route
+or bundle runs along that aligned top edge (tops are decorative box edges; shared
+horizontal bundles run at trunk Y, governed by <code>_align_row_trunk_ys</code> at 4.8, which
+is unaffected). The persistent flush bands (Group A) are exactly the empty space
+the #461 experiment set out to remove.</p>
+<p>The "genuine conflict" the issue anticipates does exist, but it is not band vs
+content - it is <strong>content-position vs box-top</strong>: you cannot raise one section's
+content into its band without breaking the shared trunk Y (compaction is bounded by
+the tightest row-mate, see section 3), so the only way to remove a band is to lower
+the box top. The unified rule resolves it by lowering the box (decoupling box-top
+from row alignment) rather than raising content. No explicit band-vs-content
+priority constant is needed; the priority is simply "hug content, bounded by ports
+above and by the row-above badge below in the grow direction only".</p>
+<h2 id="3-compaction-interaction-stage-54">3. Compaction interaction (Stage 5.4)<a class="headerlink" href="#3-compaction-interaction-stage-54" title="Permanent link">&para;</a></h2>
+<p><code>_compact_row_content_to_bbox_top</code> does two things:</p>
+<ul>
+<li><strong>Step 1 (content pull-up):</strong> shift each row column-group's content up by the
+  group-minimum of <code>content_min - bbox_y - padding</code>, keeping <code>bbox_y</code> fixed. This
+  reads the flushed top and pulls content toward it, uniformly to preserve trunk Y.</li>
+<li><strong>Step 2 (bottom shrink):</strong> shrink each <code>bbox_h</code> so the bottom is <code>padding</code> below
+  content. Independent of the top.</li>
+</ul>
+<p><strong>Measured:</strong> step 1's content move is effectively dead - it is non-zero only on
+variantbenchmarking and variantbenchmarking_auto (16.8px); zero on every other
+fixture. The reason is the group-minimum: when any row-mate is already tight
+(content at top), the allowable shift is ~0 and the whole group stays, which is why
+the differentialabundance_default band is not closed by compaction.</p>
+<p><strong>Under content-hug:</strong> if the flush at 5.3 is replaced by per-section content-hug,
+<code>bbox_y == content_min - padding</code>, so step 1's shift is identically 0 everywhere.
+Step 1 becomes redundant. Step 2 (bottom shrink) is top-independent and unaffected.
+CONTRACT.md already tags 5.4 transient (superseded by 6.1 / 6.13).</p>
+<p><strong>Dependency to verify, not assume:</strong> 5.4 currently runs at Stage 5.4, well before
+the final top pass (6.15a). Stages 6.1 / 6.2 / 6.11 ("fan content into the empty top
+band", tests <code>test_section_top_band_filled</code>) read the <em>current</em> band to decide
+whether to fan siblings up. If the band is removed earlier (top hugged at 5.x), those
+fans see no band and skip - which is the desired outcome (no band to fill) but is a
+behaviour change that must be vetted on the fixtures those stages target. The safe
+sequencing is to keep the band-producing flush until after 6.1 / 6.2 / 6.11 and do
+the bidirectional hug at the 6.15a slot (the existing final top pass), so the
+band-fill fans still run against the transient flush band exactly as today, and only
+the <em>final</em> top is hugged. This makes the first increments behaviour-preserving for
+the fan-fill stages.</p>
+<h2 id="4-staging-plan-smallest-first-each-separately-vettable">4. Staging plan (smallest-first, each separately vettable)<a class="headerlink" href="#4-staging-plan-smallest-first-each-separately-vettable" title="Permanent link">&para;</a></h2>
+<p>The decomposition keeps the flush (5.3 / 6.9) and fan-fill (6.1 / 6.2 / 6.11) in
+place and changes only the FINAL top pass (6.15a), so each increment's render delta
+is isolated to "bands that survive to the end".</p>
+<p><strong>PR1 - introduce the bidirectional primitive, behaviour-preserving.</strong>
+Generalise <code>_off_track_fit_top</code> into a <code>_section_fit_top</code> content-hug target
+(all content, ports/bypass clamps, plus the row-above protrusion ceiling as a
+grow-only bound) and re-express <code>_grow_bboxes_to_content_top</code> to call it via
+<code>_set_section_bbox_top</code> but STILL grow-only (skip when the target would lower the
+top). Expected render impact: <strong>none</strong> (byte-identical gallery). Verification: full
+gallery hash diff == main; existing top/bottom-padding + lifecycle tests green.</p>
+<p><strong>PR2 - enable shrink for Group A (pure flush bands).</strong>
+Allow the final pass to also lower the top for sections with no port / bypass above
+content. Expected render impact: differentialabundance, differentialabundance_default,
+off_track_convergence lose their empty bands (boxes drop to content-hug; row tops
+become staggered). 5 sections, 3 fixtures. Highest-risk fixture here is
+off_track_convergence (233px change, adjacent to #463's off-track machinery).
+Verification: gallery diff shows only those 3 fixtures; off-track invariant tests
+(<code>test_off_track_inputs_above_consumer</code>) and lifecycle tests green; new equality test
+(see PR4) added scoped to Group A.</p>
+<p><strong>PR3 - enable shrink for Group B (port-bearing bands), conditionally and per-case.</strong>
+Group B is NOT a blanket "shrink all six". Some of those port-bearing bands are
+intentional vertical runway for a side entry port's approach; shrinking them would
+starve the port and risk a station-as-elbow violation. PR3 shrinks only the
+genuinely-empty port-bearing bands and keeps the port-approach-clearance ones, vetted
+case by case. It is fine for PR3 to shrink a subset or to be dropped entirely.
+Candidate set to triage: fold_double, fold_fan_across, fold_stacked_branch,
+u_turn_fold, rnaseq_* postprocessing, tb_file_termini reporting (40-54px each).
+Verification: <code>check_station_as_elbow</code>, port-on-boundary, no-kink tests; gallery diff
+limited to the retained subset; eyeball each (fold + port interaction).</p>
+<p><strong>PR4 - retire the dead phases and lock the invariant. The flush stays.</strong>
+Once the final pass hugs content in both directions: remove 5.4 step 1 (content
+pull-up, dead), and collapse the grow-only 6.15a into the single bidirectional pass.
+<strong>Do NOT drop the 5.3 / 6.9 flush</strong> - it is load-bearing: it creates the transient
+band that the fan-fill stages (6.1 / 6.2 / 6.11) fan content into, so removing it
+would regress those. Keep it; only the dead 5.4 step-1 is retired and the grow-only
+6.15a is folded into the bidirectional pass. Add <code>test_section_bbox_top_hugs_content</code>
+(equality: <code>abs(gap - padding) &lt;= tol</code> for sections with no port above content),
+keeping the existing <code>&gt;=</code> <code>test_section_bbox_has_top_padding</code>. Update CONTRACT.md:
+retag 6.15a's lifecycle from floor to equality, mark the retired step, and note
+band-alignment is not a maintained property. Verification: gallery diff == union of
+PR2 + PR3 deltas only; new equality test green; lifecycle completeness test
+(<code>test_contract_lifecycle</code>) updated.</p>
+<p><strong>Highest-risk fixtures across the whole change:</strong> off_track_convergence (PR2) and
+the fold_* / u_turn_fold port-fed bands (PR3). Verification approach throughout:
+full-gallery SVG hash/diff via <code>scripts/build_gallery.py</code> + render-diff against main,
+the off-track and lifecycle invariant suites, and the new equality test. The change
+is render-visible by design, so the PR-render CI preview
+(<code>https://pinin4fjords.github.io/nf-metro/_pr/&lt;N&gt;/</code>) is the authoritative gate on
+each of PR2 / PR3.</p>
+<h2 id="5-decisions-for-the-user-and-risk">5. Decisions for the user, and risk<a class="headerlink" href="#5-decisions-for-the-user-and-risk" title="Permanent link">&para;</a></h2>
+<p><strong>Decisions (recommendation in bold):</strong></p>
+<ol>
+<li>
+<p><strong>Band-alignment: drop it (no explicit priority).</strong> No load-bearing case found;
+   flush is already transient and broken on fans. The rule is "hug content". If the
+   user wants tidy aligned row tops as an aesthetic, that is a separate opt-in, not
+   a final-boundary requirement, and should not block #464.</p>
+</li>
+<li>
+<p><strong>Group B scope: ship Group A first (PR2), then decide on Group B (PR3) after
+   seeing the PR2 preview.</strong> Group A is a clean win; Group B touches port headroom
+   and station-as-elbow and may have cases where the current band is intentional
+   port-approach clearance.</p>
+</li>
+<li>
+<p><strong>3.5 / 4.7 station-shifting top-align: OUT of scope.</strong> They translate content
+   with the box (no empty band) and feed downstream alignment; leave them.</p>
+</li>
+<li>
+<p><strong>Row-above badge clearance vs content padding (the latent 26px / <code>target_b</code>
+   case): keep current behaviour - the protrusion clamp bounds the GROW direction
+   only and never pushes a top below its content-hug position.</strong> This deliberately
+   does NOT "fix" sections that currently sit closer than <code>gap + protrusion</code> to the
+   row above, to avoid cutting content padding. If the user wants that enforced, it
+   is a separate, larger render change (independent of #464).</p>
+</li>
+<li>
+<p><strong>Staging boundaries:</strong> as in section 4 (PR1 no-op refactor, PR2 Group A, PR3
+   Group B, PR4 retire + lock). Each PR's gallery delta is pre-stated and small.</p>
+</li>
+</ol>
+<p><strong>Risk assessment:</strong> the change is cleanly stageable and the per-increment render
+churn is bounded and pre-enumerated (Group A: 3 fixtures; Group B: 6 fixtures;
+PR1 / PR4: byte-identical apart from the already-vetted deltas). The minimal change
+passes the full guard suite (section 1.5). The main residual risks are (a) the
+fan-fill stages (6.1 / 6.2 / 6.11) reading the band - mitigated by hugging only at
+the final pass so they still see the transient flush band, and (b) off-track
+adjacency at off_track_convergence - mitigated by Group A reusing #463's exact
+<code>_set_section_bbox_top</code> / fit-top pattern. #464 is worth doing now, staged; it is
+not forced into one large unavoidable diff.</p>
+<h3 id="decisions-taken-review-of-this-doc">Decisions taken (review of this doc)<a class="headerlink" href="#decisions-taken-review-of-this-doc" title="Permanent link">&para;</a></h3>
+<p>Recommendations 1-4 above adopted as-is: band-alignment dropped (no explicit
+priority, the rule is "hug content"); 3.5 / 4.7 station-shifting out of scope;
+the row-above protrusion clamp stays a grow-direction bound only and the latent
+under-clearance / 26px <code>target_b</code> cases are deliberately not "fixed" here (separate
+change); Group A before Group B, with Group A as PR2.</p>
+<p>Two adjustments to the staging plan (folded into section 4 above):</p>
+<ul>
+<li><strong>Group B (PR3) is conditional and per-case, not "shrink all six."</strong> Some
+  port-bearing bands are intentional runway for a side entry port's approach;
+  shrinking them would starve the port and risk station-as-elbow. PR3 shrinks only
+  the genuinely-empty port-bearing bands, keeps the port-approach-clearance ones, and
+  may ship a subset or be dropped.</li>
+<li><strong>PR4 keeps the 5.3 / 6.9 flush.</strong> It is load-bearing (it creates the band the
+  fan-fill stages 6.1 / 6.2 / 6.11 fan content into). PR4 retires only the dead 5.4
+  step-1 and folds the grow-only 6.15a into the bidirectional pass; the flush stays.</li>
+</ul>
+<h3 id="implementation-status">Implementation status<a class="headerlink" href="#implementation-status" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>PR1 (this change): done.</strong> <code>_section_content_top_target</code> generalised to
+  <code>_section_fit_top</code> (the content-hug top target, generalising the off-track fit to
+  all content), and <code>_grow_bboxes_to_content_top</code> routed through the bidirectional
+  <code>_set_section_bbox_top</code> while still gated grow-only. Gallery byte-identical (63/63
+  SVGs). Added unit tests exercising the bypass, port and row-above clamps of
+  <code>_section_fit_top</code> (those branches never bind at the current grow-only call site,
+  the same coverage gap #463 closed for <code>_off_track_fit_top</code>).</li>
+<li><strong>PR2 onward: pending.</strong> They change renders and need preview review; PR3/Group B
+  needs the per-case judgement above.</li>
+</ul>
+<h2 id="verification-for-the-implementation-phase-not-this-design-task">Verification (for the implementation phase, not this design task)<a class="headerlink" href="#verification-for-the-implementation-phase-not-this-design-task" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>python -m nf_metro render &lt;fixture&gt; -o /tmp/x.svg</code> + cairosvg PNG for local
+  iteration (nf-metro micromamba env).</li>
+<li><code>scripts/build_gallery.py</code> + render-diff vs main for each PR; PR-render CI preview
+  is authoritative.</li>
+<li><code>pytest tests/test_layout_invariants.py tests/test_contract_lifecycle.py
+  tests/test_topology_validation.py</code>; add <code>test_section_bbox_top_hugs_content</code>.</li>
+<li><code>compute_layout(validate=True)</code> on all fixtures so phase-boundary guards run.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
