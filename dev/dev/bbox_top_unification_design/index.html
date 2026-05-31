@@ -887,15 +887,47 @@ grow-only bound) and re-express <code>_grow_bboxes_to_content_top</code> to call
 <code>_set_section_bbox_top</code> but STILL grow-only (skip when the target would lower the
 top). Expected render impact: <strong>none</strong> (byte-identical gallery). Verification: full
 gallery hash diff == main; existing top/bottom-padding + lifecycle tests green.</p>
-<p><strong>PR2 - enable shrink for Group A (pure flush bands).</strong>
-Allow the final pass to also lower the top for sections with no port / bypass above
-content. Expected render impact: differentialabundance, differentialabundance_default,
-off_track_convergence lose their empty bands (boxes drop to content-hug; row tops
-become staggered). 5 sections, 3 fixtures. Highest-risk fixture here is
-off_track_convergence (233px change, adjacent to #463's off-track machinery).
-Verification: gallery diff shows only those 3 fixtures; off-track invariant tests
-(<code>test_off_track_inputs_above_consumer</code>) and lifecycle tests green; new equality test
-(see PR4) added scoped to Group A.</p>
+<p><strong>PR2 - enable shrink for Group A (pure flush bands).</strong></p>
+<p>Step 0 (implementation note, from the #470 review): the shrink target is
+ceiling-free, and <code>_section_fit_top</code> does NOT change. <code>_section_fit_top</code> folds the
+row-above grow ceiling (<code>above_bottom + section_y_gap + SECTION_HEADER_PROTRUSION</code>)
+into its single return, and is shared by the grow pass (6.15a) AND
+<code>_guard_section_top_padding</code>. Leave it alone. The row-above ceiling is a GROW bound
+only and cannot bind when shrinking: lowering a too-tall top moves it away from the
+row above, so the ceiling is never the active constraint in the shrink direction.
+Therefore PR2's Group A shrink target is the PURE content-hug (content + port/bypass
+clamps, NO row-above ceiling) - exactly <code>_off_track_fit_top</code>'s shape. Implement the
+final top pass as: compute content-hug; if it sits above the current top -&gt; apply the
+ceiling and grow (unchanged, byte-identical); if it sits below the current top AND the
+section is Group A (no port/bypass above content) -&gt; shrink to the ceiling-free
+content-hug. This keeps <code>_section_fit_top</code>, its grow path, <code>_guard_section_top_padding</code>,
+and PR1's clamp tests (incl. <code>test_section_fit_top_bounded_by_row_above</code>) all unchanged;
+only the new Group A shrink branch is render-visible.</p>
+<p>Allow the final pass to also lower the top for sections with no port / bypass above
+content. Implemented as a new ceiling-free <code>_section_content_hug_top</code> + a
+<code>_section_band_is_empty</code> (Group A) gate + a shrink branch in
+<code>_grow_bboxes_to_content_top</code>; <code>_section_fit_top</code> untouched.</p>
+<p>DONE. Confirmed gallery delta - 6 fixtures, every changed section now hugs
+content at exactly <code>section_y_padding</code>:</p>
+<ul>
+<li>differentialabundance: <code>reporting</code> -58px.</li>
+<li>differentialabundance_default: <code>differential</code>, <code>reporting</code> -116px each.</li>
+<li>off_track_convergence: <code>input</code>, <code>output</code> -233px each.</li>
+<li>genomeassembly_staggered: <code>scaffolding</code> -8.2px.</li>
+<li>nf_flat_pipeline: <code>pipeline</code> -12.2px.</li>
+<li>nf_unquoted_labels: <code>pipeline</code> -12.2px.</li>
+</ul>
+<p>The last three were under-stated in the original prediction: the section 1.4
+diagnostic scanned only <code>examples/</code> + <code>examples/topologies/</code>, missing the
+<code>tests/fixtures/nextflow/</code> conversions (the two <code>nf_*</code>) and rounding off the 8.2px
+<code>scaffolding</code> case. All six are genuine empty-band reclamations on the same gate.
+<code>differentialabundance_default/plots</code> keeps its band (ceiling-bound, pre-existing
+xfail). The synthetic <code>test_compute_layout_rowspan_section_compacts_content</code> was
+updated: it asserted the now-dropped row-top flush; it now asserts each section hugs
+its own content (trunk-Y assertions unchanged).</p>
+<p>Verification: gallery diff shows only those 6 fixtures; new equality test
+<code>test_section_bbox_top_hugs_content</code> green; <code>test_off_track_inputs_above_consumer</code>,
+the off-track suite, <code>test_contract_lifecycle</code>, and PR1's clamp tests all green.</p>
 <p><strong>PR3 - enable shrink for Group B (port-bearing bands), conditionally and per-case.</strong>
 Group B is NOT a blanket "shrink all six". Some of those port-bearing bands are
 intentional vertical runway for a side entry port's approach; shrinking them would
@@ -993,8 +1025,13 @@ change); Group A before Group B, with Group A as PR2.</p>
   SVGs). Added unit tests exercising the bypass, port and row-above clamps of
   <code>_section_fit_top</code> (those branches never bind at the current grow-only call site,
   the same coverage gap #463 closed for <code>_off_track_fit_top</code>).</li>
-<li><strong>PR2 onward: pending.</strong> They change renders and need preview review; PR3/Group B
-  needs the per-case judgement above.</li>
+<li><strong>PR2 (Group A shrink): done.</strong> New ceiling-free <code>_section_content_hug_top</code></li>
+<li><code>_section_band_is_empty</code> gate + a shrink branch in <code>_grow_bboxes_to_content_top</code>;
+  <code>_section_fit_top</code> and the guard untouched. Render-changing: 6 fixtures lose genuinely
+  empty top bands (deltas recorded under PR2 in section 4). New equality test
+  <code>test_section_bbox_top_hugs_content</code>.</li>
+<li><strong>PR3 onward: pending.</strong> PR3/Group B needs the per-case judgement above; PR4 retires
+  the dead 5.4 step-1 and folds the grow-only pass in (flush stays).</li>
 </ul>
 <h2 id="verification-for-the-implementation-phase-not-this-design-task">Verification (for the implementation phase, not this design task)<a class="headerlink" href="#verification-for-the-implementation-phase-not-this-design-task" title="Permanent link">&para;</a></h2>
 <ul>
