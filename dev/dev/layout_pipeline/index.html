@@ -494,6 +494,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-anchor-content-placement-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The anchor / content-placement split
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-six-stages" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -656,6 +667,17 @@
     <span class="md-ellipsis">
       
         What "layout" means here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-anchor-content-placement-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The anchor / content-placement split
       
     </span>
   </a>
@@ -828,6 +850,45 @@ naturally local (each section's internal layout) and some are global
 (trunk Y alignment across an entire row).  The pipeline solves this by
 chaining many small passes, each of which mutates the graph and
 preserves the invariants of preceding passes.</p>
+<h2 id="the-anchor-content-placement-split">The anchor / content-placement split<a class="headerlink" href="#the-anchor-content-placement-split" title="Permanent link">&para;</a></h2>
+<p>The passes are not an unstructured sequence of mutators.  They divide
+into two kinds, and the division is the organizing principle of the
+whole pipeline:</p>
+<ul>
+<li><strong>Structural (anchor-setting) phases</strong> decide where the
+  inter-section line bundle runs.  A section's <strong>anchors</strong> are its
+  port stations - the synthetic points on the section boundary where
+  the bundle crosses.  Port positioning, the row trunk alignment
+  (Stage 4.8), grid snapping, the inter-row cascade, and uniform
+  canvas/row translation are the only phases allowed to move an
+  anchor.</li>
+<li><strong>Content-placement phases</strong> position everything else <em>around</em> the
+  resolved anchors - fan-out / full-bundle redistribution (4.9, 4.10),
+  band-fill (6.1, 6.2), the symfan half-grid (6.3), full-bundle
+  recenter (6.7), balance-around-trunk (6.11), loop-side recenter
+  (6.12).  A content phase must <strong>never</strong> move an anchor.</li>
+</ul>
+<p>This split is what makes the layout <strong>forward-resolvable</strong>: once the
+structural phases have frozen the anchors, every content-placement
+phase is a <em>pure function of (frozen anchors + section structure)</em>.  Its
+output depends only on the anchors and the section's tracks/edges/columns,
+never on the mutable intermediate Y or bbox state an earlier phase
+happened to leave behind.  This is stronger than mere idempotence:
+re-running, re-ordering, or perturbing the non-anchor state cannot
+change a content phase's result.  Both properties are machine-checked
+- <code>_guard_anchors_frozen_during_placement</code> (runtime, via the
+<code>_run_placement</code> wrapper under <code>validate=True</code>) plus
+<code>test_content_placement_idempotent</code> (#488) and
+<code>test_content_placement_pure.py</code> (#491).</p>
+<p>When reading the stage walkthrough below, keep the two kinds apart: a
+structural phase that looks like it "moved content" is really moving an
+anchor and letting content follow; a content phase that looks
+order-dependent is, by construction, not.  The rigorous treatment -
+which phases set which anchors, how the frozen <em>placement reference</em>
+lets a content phase read an intermediate quantity without breaking
+purity - is in CONTRACT.md's
+<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>## Anchor invariant</code></a>
+and <code>### Content-placement purity</code> sections.</p>
 <h2 id="the-six-stages">The six stages<a class="headerlink" href="#the-six-stages" title="Permanent link">&para;</a></h2>
 <p>The pipeline groups into six stages.  Stage boundaries align with
 coord-regime transitions (when station coordinates become global,
@@ -1035,9 +1096,15 @@ Each sub-stage exists because:</p>
 <p>Some sub-stages exist purely to <strong>restore</strong> an invariant that an
 earlier sub-stage broke (e.g. Stages 6.8 and 6.9 restore the
 off-track-above-consumer and row-top-align invariants that Stage 6.7's
-full-bundle recenter breaks).  These "repair-only" sub-stages are
-candidates for being folded back into the breaking stage, but each
-fold is per-pair investigation and risks regressing other pipelines.</p>
+full-bundle recenter breaks).  These "repair-only" sub-stages are a
+residue of the pre-declarative structure: a content phase that broke a
+sibling's placement needed an explicit fix-up afterwards.  The
+anchor / content-placement split now bounds this - the anchor-frozen
+guard guarantees a content phase can't move an anchor, so the only
+repairs that remain are between two content phases that touch the same
+non-anchor stations.  They are candidates for being folded back into
+the breaking stage, but each fold is per-pair investigation and risks
+regressing other pipelines.</p>
 <p>The flat Stage.N numbering replaces an earlier organic suffix tree
 (<code>Phase 13</code>, <code>13a</code>, <code>13d2</code>, <code>13h.1</code>, <code>13k2</code>, ...) that grew suffixes
 each time a sub-stage was inserted between two existing ones.  The new
