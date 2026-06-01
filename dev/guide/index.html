@@ -1322,8 +1322,16 @@
 <td>Mark a station with a folder icon (e.g. output directory). Optional <code>name</code> caption.</td>
 </tr>
 <tr>
+<td><code>%%metro off_track: &lt;station&gt;[, &lt;station&gt;...]</code></td>
+<td>Lift the listed stations above the section's main track (see below)</td>
+</tr>
+<tr>
 <td><code>%%metro compact_offsets: true</code></td>
 <td>Compact line offsets within stations (see below)</td>
+</tr>
+<tr>
+<td><code>%%metro center_ports: true</code></td>
+<td>Centre inter-section ports on the shorter of the two connected sections, so lines enter/exit at the visual midpoint. Overridden by the <code>--center-ports</code> / <code>--no-center-ports</code> CLI flag.</td>
 </tr>
 <tr>
 <td><code>%%metro legend_min_height: &lt;pixels&gt;</code></td>
@@ -1333,6 +1341,12 @@
 </table>
 <p><strong>Compact offsets.</strong> By default, each line reserves a fixed vertical slot across the whole map based on its declaration order. If you define three lines, every station that carries even one of them is sized to fit all three. This keeps bundles visually consistent but wastes space when most stations only carry one or two lines.</p>
 <p>With <code>%%metro compact_offsets: true</code>, stations are only as wide as the lines actually passing through them. A station where one line enters and a different line exits renders as a dot (zero offset) rather than a pill. This works well for maps with few lines but many stations, like the <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/variantbenchmarking.mmd">variantbenchmarking</a> example.</p>
+<p><strong>Off-track inputs.</strong> Pipelines often have reference or auxiliary inputs (a FASTA, a GTF, a known-variants VCF) that feed <em>into</em> a processing step partway through a section rather than flowing along the main route. By default such an input station would claim a line-track slot on the trunk, pushing the layout around. List its station ID in <code>%%metro off_track:</code> and nf-metro lifts it above the section's main track, dropping it down into its consumer:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>%%metro file: ref_in | FASTA | Reference
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>%%metro file: gtf_in | GTF | Annotation
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>%%metro off_track: ref_in, gtf_in
+</code></pre></div>
+<p>This pairs naturally with the <code>file:</code> / <code>files:</code> / <code>dir:</code> icon directives - the lifted stations are usually file terminals. The <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/topologies/off_track_convergence.mmd"><code>off_track_convergence</code></a> topology and the <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/differentialabundance.mmd">differentialabundance</a> example both use it.</p>
 <h3 id="section-directives">Section directives<a class="headerlink" href="#section-directives" title="Permanent link">&para;</a></h3>
 <p>These go inside <code>subgraph</code> blocks.</p>
 <table>
@@ -1368,7 +1382,7 @@
 </ul>
 <h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
 <p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
 </code></pre></div>
 <p><img alt="Debug overlay" src="../assets/renders/rnaseq_auto_debug.svg" /></p>
 <p>The overlay shows:</p>

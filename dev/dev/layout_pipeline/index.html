@@ -917,10 +917,10 @@ their consumers, then a few post-lift fixups.</p>
   junctions to follow.</li>
 </ul>
 <h3 id="stage-6-pass-c-vertical-settling-finishing">Stage 6 - Pass C: vertical settling &amp; finishing<a class="headerlink" href="#stage-6-pass-c-vertical-settling-finishing" title="Permanent link">&para;</a></h3>
-<p>The long settle.  15 sub-stages clean up the consequences of Stages 1
-through 5, snap everything to the grid, restore invariants broken by
-each cleanup pass, then handle the final geometric details (loop-side
-X recenter, bbox shrink, captioned-icon spacing).</p>
+<p>The long settle.  Seventeen sub-stages clean up the consequences of
+Stages 1 through 5, snap everything to the grid, restore invariants
+broken by each cleanup pass, then handle the final geometric details
+(loop-side X recenter, bbox shrink/grow, canvas snap, port re-align).</p>
 <ul>
 <li><strong>Stages 6.1 to 6.3</strong>: Fan free content / source inputs upward into
   empty top bands; collapse 2-branch symmetric fans onto half-grid
@@ -942,8 +942,23 @@ X recenter, bbox shrink, captioned-icon spacing).</p>
   loop-side stations onto half-pitch Ys to clear bundle
   pass-throughs (the same helper pushes lower rows down internally
   when a shift grew a bbox).</li>
-<li><strong>Stage 6.15</strong>: Pad stacked captioned file-icon columns so
-  under-icon captions don't overlap the icon below.</li>
+<li><strong>Stage 6.15a</strong>: Fit bbox tops to content, symmetric with the
+  bottom shrink in Stage 6.13.  Grows a bbox top to a full
+  <code>section_y_padding</code> above its highest marker when fan
+  re-distribution lifted a branch above the line the box was sized
+  for (#406); shrinks an empty band that the transient row-top flush
+  left above content.  The upward growth re-fits the graph into the
+  canvas.</li>
+<li><strong>Stage 6.15</strong>: Snap the whole canvas back onto the <code>y_spacing</code>
+  grid.  Stage 6.4 snapped per-row, but the Stage 6.15a re-fit can
+  shift everything by a non-grid amount; when every station shares one
+  residue, shift back to integer multiples.</li>
+<li><strong>Stage 6.16</strong>: Re-align LEFT / RIGHT entry ports on TB / BT
+  sections with their feeders.  The late vertical settling drags a
+  perpendicular entry port off the feeder Y it was snapped to in
+  Stage 3.2, re-introducing an inter-section S-kink; re-run the
+  alignment (TB / BT only) and re-anchor junctions to the settled
+  port Ys.</li>
 </ul>
 <p>Stage 6 is where most of the historical organic-suffix sprawl (the old
 13d / 13d2 / 13h.1 / 13k2 names) lived.  The flat Stage.N scheme makes
@@ -1008,7 +1023,7 @@ each one's necessity.</p>
   sub-stage entry in CONTRACT.md.</li>
 </ul>
 <h2 id="why-so-many-sub-stages">Why so many sub-stages<a class="headerlink" href="#why-so-many-sub-stages" title="Permanent link">&para;</a></h2>
-<p>The Pass C tail (Stages 6.1 to 6.15) looks excessive at first glance.
+<p>The Pass C tail (Stages 6.1 to 6.16) looks excessive at first glance.
 Each sub-stage exists because:</p>
 <ol>
 <li>A bug was found in some real-world fixture.</li>
