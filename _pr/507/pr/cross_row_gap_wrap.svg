@@ -48,7 +48,7 @@
 <path d="M200.0,120.0 L240.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M200.0,120.0 L200.0,120.0 Q210.0,120.0,210.0,130.0 L210.0,326.0 Q210.0,339.0,223.0,339.0 L571.0,339.0 Q581.0,339.0,581.0,349.0 L581.0,381.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M400.0,120.0 L537.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
-<path d="M599.0,320.0 L581.0,381.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M599.0,320.0 L599.0,328.5 Q599.0,337.5,590.0,337.5 L590.0,337.5 Q581.0,337.5,581.0,346.5 L581.0,381.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M459.0,434.0 L400.0,434.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <rect x="75.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="i1" data-station-lines="feed,main" data-station-label="Read" data-section-id="ingest" data-section-name="Ingest" />
 <rect x="135.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="i2" data-station-lines="feed,main" data-station-label="QC" data-section-id="ingest" data-section-name="Ingest" />
@@ -79,6 +79,8 @@
 <circle cx="210.0" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="210.0" cy="336.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="581.0" cy="336.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="599.0" cy="337.5" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="581.0" cy="337.5" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M190.0,115.0 L195.0,120.0 L190.0,125.0 L185.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="190.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">ingest__exit_right_0 (right)</text>
 <path d="M400.0,115.0 L405.0,120.0 L400.0,125.0 L395.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
