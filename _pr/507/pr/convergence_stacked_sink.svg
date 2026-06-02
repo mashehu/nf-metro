@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="706" height="725" viewBox="0 0 706 725">
+     width="706" height="700" viewBox="0 0 706 700">
 <defs>
 </defs>
-<rect x="0" y="0" width="706" height="725" fill="#2b2b2b" />
+<rect x="0" y="0" width="706" height="700" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Convergence Stacked Sink</text>
 <rect x="30.0" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="prep" data-section-lines="main" />
 <circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="prep" />
@@ -56,7 +56,7 @@
 <path d="M200.0,120.0 L206.0,120.0 Q216.0,120.0,216.0,130.0 L216.0,185.0 Q216.0,195.0,226.0,195.0 L406.0,195.0 Q416.0,195.0,416.0,205.0 L416.0,538.0 Q416.0,548.0,406.0,548.0 L400.0,548.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M190.0,406.0 L190.0,406.0 Q200.0,406.0,200.0,416.0 L200.0,446.0 Q200.0,456.0,210.0,456.0 L568.0,456.0 Q578.0,456.0,578.0,466.0 L578.0,498.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M400.0,120.0 L534.0,120.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
-<path d="M534.0,216.0 L450.0,216.0 Q440.0,216.0,440.0,226.0 L440.0,617.0 Q440.0,623.0,434.0,623.0 L434.0,623.0 Q428.0,623.0,428.0,617.0 L428.0,558.0 Q428.0,548.0,418.0,548.0 L400.0,548.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M534.0,216.0 L477.0,216.0 Q467.0,216.0,467.0,226.0 L467.0,446.0 Q467.0,456.0,457.0,456.0 L438.0,456.0 Q428.0,456.0,428.0,466.0 L428.0,538.0 Q428.0,548.0,418.0,548.0 L400.0,548.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M456.0,548.0 L400.0,548.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M240.0,548.0 L190.0,548.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <rect x="75.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="p1" data-station-lines="main" data-station-label="Input" data-section-id="prep" data-section-name="Prep" />
@@ -98,9 +98,9 @@
 <circle cx="200.0" cy="406.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="200.0" cy="456.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="578.0" cy="456.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="440.0" cy="216.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="440.0" cy="623.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="428.0" cy="623.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="467.0" cy="216.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="467.0" cy="456.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="428.0" cy="456.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="428.0" cy="548.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M190.0,115.0 L195.0,120.0 L190.0,125.0 L185.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="190.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">prep__exit_right_0 (right)</text>
@@ -134,8 +134,8 @@
 <path d="M10.0,469.0 L666.0,469.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
 <text x="6.0" y="275.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
 <text x="6.0" y="469.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 1|2</text>
-<rect x="30.0" y="653.0" width="90.80000000000001" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
-<path d="M42.0,677.0 L66.0,677.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="677.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Main</text>
-<text x="676.0" y="717.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<rect x="30.0" y="628.0" width="90.80000000000001" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,652.0 L66.0,652.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="652.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Main</text>
+<text x="676.0" y="692.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
