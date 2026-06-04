@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="815" height="320" viewBox="0 0 815 320">
+<defs>
+</defs>
+<rect x="0" y="0" width="815" height="320" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Striped line demo (#529)</text>
+<rect x="30.0" y="70.0" width="228.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="qc" data-section-lines="normal,tumor" />
+<circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="qc" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="qc">1</text>
+<text x="57.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="qc">QC &amp; Trimming</text>
+<rect x="308.0" y="70.0" width="177.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="align" data-section-lines="normal,pair,tumor" />
+<circle cx="319.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="align" />
+<text x="319.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="align">2</text>
+<text x="335.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="align">Alignment</text>
+<rect x="535.0" y="70.0" width="220.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="calling" data-section-lines="pair" />
+<circle cx="546.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="calling" />
+<text x="546.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="calling">3</text>
+<text x="562.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="calling">Somatic Variant Calling</text>
+<path d="M585.0,124.8 L645.0,124.8" stroke="#d62728" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M585.0,127.2 L645.0,127.2" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M645.0,124.8 L705.0,124.8" stroke="#d62728" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M645.0,127.2 L705.0,127.2" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M418.0,124.8 L485.0,124.8" stroke="#d62728" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M418.0,127.2 L485.0,127.2" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M535.0,124.8 L585.0,124.8" stroke="#d62728" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M535.0,127.2 L585.0,127.2" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M485.0,124.8 L535.0,124.8" stroke="#d62728" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M485.0,127.2 L535.0,127.2" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="round" class="metro-line-pair" data-line-id="pair" />
+<path d="M80.0,123.0 L140.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M140.0,123.0 L200.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M358.0,123.0 L418.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M200.0,123.0 L258.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M308.0,123.0 L358.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M258.0,123.0 L308.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M80.0,120.0 L140.0,120.0" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M140.0,120.0 L200.0,120.0" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M358.0,120.0 L418.0,120.0" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M200.0,120.0 L258.0,120.0" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M308.0,120.0 L358.0,120.0" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M258.0,120.0 L308.0,120.0" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<rect x="75.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="cat_fastq" data-station-lines="normal,tumor" data-station-label="cat fastq" data-section-id="qc" data-section-name="QC &amp; Trimming" />
+<rect x="135.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastqc" data-station-lines="normal,tumor" data-station-label="FastQC" data-section-id="qc" data-section-name="QC &amp; Trimming" />
+<rect x="195.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="trim" data-station-lines="normal,tumor" data-station-label="Trim Galore!" data-section-id="qc" data-section-name="QC &amp; Trimming" />
+<rect x="353.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bwa" data-station-lines="normal,tumor" data-station-label="BWA-MEM" data-section-id="align" data-section-name="Alignment" />
+<rect x="413.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="markdup" data-station-lines="normal,pair,tumor" data-station-label="MarkDuplicates" data-section-id="align" data-section-name="Alignment" />
+<rect x="580.0" y="121.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mutect2" data-station-lines="pair" data-station-label="Mutect2" data-section-id="calling" data-section-name="Somatic Variant Calling" />
+<rect x="640.0" y="121.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="filter" data-station-lines="pair" data-station-label="FilterMutectCalls" data-section-id="calling" data-section-name="Somatic Variant Calling" />
+<rect x="700.0" y="121.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="annotate" data-station-lines="pair" data-station-label="VEP" data-section-id="calling" data-section-name="Somatic Variant Calling" />
+<text x="80.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="cat_fastq" class="nf-metro-station-label">cat fastq</text>
+<text x="358.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="bwa" class="nf-metro-station-label">BWA-MEM</text>
+<text x="585.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="mutect2" class="nf-metro-station-label">Mutect2</text>
+<text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="fastqc" class="nf-metro-station-label">FastQC</text>
+<text x="418.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="markdup" class="nf-metro-station-label">MarkDuplicates</text>
+<text x="645.0" y="112.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="filter" class="nf-metro-station-label">FilterMutectCalls</text>
+<text x="200.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="trim" class="nf-metro-station-label">Trim Galore!</text>
+<text x="705.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="annotate" class="nf-metro-station-label">VEP</text>
+<path d="M258.0,115.0 L263.0,120.0 L258.0,125.0 L253.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="258.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">qc__exit_right_0 (right)</text>
+<path d="M485.0,115.0 L490.0,120.0 L485.0,125.0 L480.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="485.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">align__exit_right_1 (right)</text>
+<path d="M308.0,115.0 L313.0,120.0 L308.0,125.0 L303.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="308.0" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">align__entry_left_2 (left)</text>
+<path d="M535.0,115.0 L540.0,120.0 L535.0,125.0 L530.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="535.0" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">calling__entry_left_3 (left)</text>
+<path d="M283.0,50.0 L283.0,190.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="283.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M510.0,50.0 L510.0,190.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="510.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
+<rect x="30.0" y="200.0" width="190.9" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,224.0 L66.0,224.0" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="224.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Tumor (somatic)</text>
+<path d="M42.0,248.0 L66.0,248.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="248.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Normal (germline)</text>
+<path d="M42.0,270.8 L66.0,270.8" stroke="#d62728" stroke-width="2.4000000000000004" stroke-linecap="butt" />
+<path d="M42.0,273.2 L66.0,273.2" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="butt" />
+<text x="78.0" y="272.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Tumor-normal pair</text>
+<text x="785.0" y="312.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
