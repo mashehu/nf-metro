@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="849" height="326" viewBox="0 0 849 326">
+<defs>
+</defs>
+<rect x="0" y="0" width="849" height="326" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Tumor-Normal Calling</text>
+<path d="M80.0,126.0 L92.5,126.0 Q102.5,126.0,108.5,134.0 L126.5,158.0 Q132.5,166.0,142.5,166.0 L252.0,166.0" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-qc" data-line-id="qc" stroke-dasharray="8,4" />
+<path d="M252.0,166.0 L718.0,166.0 Q728.0,166.0,734.0,174.0 L752.0,198.0 Q758.0,206.0,768.0,206.0 L789.5,206.0" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-qc" data-line-id="qc" stroke-dasharray="8,4" />
+<path d="M685.625,166.0 L718.0,166.0 Q728.0,166.0,734.0,174.0 L752.0,198.0 Q758.0,206.0,768.0,206.0 L789.5,206.0" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-qc" data-line-id="qc" stroke-dasharray="8,4" />
+<path d="M80.0,123.0 L252.0,123.0" stroke="#E53935" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M252.0,123.0 L359.5,123.0" stroke="#E53935" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M359.5,123.0 L467.0,123.0" stroke="#E53935" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M467.0,123.0 L574.5,123.0" stroke="#E53935" stroke-width="3.0" stroke-linecap="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M574.5,123.0 L603.25,123.0 Q613.25,123.0,619.25,131.0 L637.25,155.0 Q643.25,163.0,653.25,163.0 L685.625,163.0" stroke="#E53935" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-tumor" data-line-id="tumor" />
+<path d="M80.0,120.0 L252.0,120.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M252.0,120.0 L359.5,120.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M359.5,120.0 L467.0,120.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<path d="M467.0,120.0 L574.5,120.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" class="metro-line-normal" data-line-id="normal" />
+<rect x="75.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastq" data-station-lines="normal,qc,tumor" data-station-label="FASTQ" />
+<rect x="247.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="align" data-station-lines="normal,tumor" data-station-label="Alignment" />
+<rect x="354.5" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="markdup" data-station-lines="normal,tumor" data-station-label="MarkDuplicates" />
+<rect x="462.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bqsr" data-station-lines="normal,tumor" data-station-label="BQSR" />
+<rect x="247.0" y="161.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastqc" data-station-lines="qc" data-station-label="FastQC" />
+<rect x="569.5" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="call" data-station-lines="normal,tumor" data-station-label="Somatic Calling" />
+<rect x="680.625" y="158.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="annotate" data-station-lines="qc,tumor" data-station-label="Annotate" />
+<rect x="784.5" y="201.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="qc" data-station-label="MultiQC" />
+<text x="80.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="fastq" class="nf-metro-station-label">FASTQ</text>
+<text x="252.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="align" class="nf-metro-station-label">Alignment</text>
+<text x="252.0" y="152.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="fastqc" class="nf-metro-station-label">FastQC</text>
+<text x="359.5" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="markdup" class="nf-metro-station-label">MarkDuplicates</text>
+<text x="467.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="bqsr" class="nf-metro-station-label">BQSR</text>
+<text x="574.5" y="109.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="call" class="nf-metro-station-label">Somatic Calling</text>
+<text x="685.625" y="149.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="annotate" class="nf-metro-station-label">Annotate</text>
+<text x="789.5" y="217.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
+<circle cx="613.25" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="643.25" cy="163.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="102.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="132.5" cy="166.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="728.0" cy="166.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="758.0" cy="206.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="728.0" cy="166.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="758.0" cy="206.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<rect x="60.0" y="230.0" width="190.9" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M72.0,254.0 L96.0,254.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" stroke-dasharray="8,4" />
+<text x="108.0" y="254.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Quality Control</text>
+<path d="M72.0,276.0 L96.0,276.0" stroke="#2196F3" stroke-width="2.4000000000000004" stroke-linecap="butt" />
+<path d="M72.0,280.0 L96.0,280.0" stroke="#E53935" stroke-width="2.4000000000000004" stroke-linecap="butt" />
+<text x="108.0" y="278.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Tumor-normal pair</text>
+<text x="819.0" y="318.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
