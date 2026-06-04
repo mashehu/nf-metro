@@ -195,7 +195,7 @@
 </head>
 <body>
 <h1>Render diff - PR #540</h1>
-<p class="summary">2 changed, 10 added out of 78 total renders. Generated 2026-06-04 14:11 UTC.</p>
+<p class="summary">3 changed, 11 added out of 79 total renders. Generated 2026-06-04 14:30 UTC.</p>
 <details class="intro">
 <summary>What is this page?</summary>
 <p>
@@ -231,6 +231,7 @@ switch between side-by-side, base-only, and PR-only views.
 <ul>
 <li><a href="#centered_tracks">centered_tracks</a><span class="badge badge-added">added</span></li>
 <li><a href="#diagonal_labels">diagonal_labels</a><span class="badge badge-added">added</span></li>
+<li><a href="#disconnected_components">disconnected_components</a><span class="badge badge-added">added</span></li>
 <li><a href="#file_icons">file_icons</a><span class="badge badge-added">added</span></li>
 <li><a href="#group_labels">group_labels</a><span class="badge badge-added">added</span></li>
 <li><a href="#legend_combo">legend_combo</a><span class="badge badge-added">added</span></li>
@@ -240,6 +241,10 @@ switch between side-by-side, base-only, and PR-only views.
 <li><a href="#rail_section">rail_section</a><span class="badge badge-added">added</span></li>
 <li><a href="#sarek_metro">sarek_metro</a><span class="badge badge-added">added</span></li>
 <li><a href="#striped_line">striped_line</a><span class="badge badge-added">added</span></li>
+</ul>
+<h3><a href="#section-simple-topologies">Simple Topologies</a></h3>
+<ul>
+<li><a href="#parallel_independent">parallel_independent</a><span class="badge badge-changed">changed</span></li>
 </ul>
 </div>
 <h2 class="section-header" id="section-guide-examples">Guide Examples</h2>
@@ -263,6 +268,11 @@ switch between side-by-side, base-only, and PR-only views.
 <div class="diff-entry" id="diagonal_labels">
 <h3>Diagonal Labels <span class="badge badge-added">added</span></h3>
 <div class="side-only"><h4>New in PR</h4><img src="pr/diagonal_labels.svg" alt="PR: diagonal_labels"></div>
+</div>
+
+<div class="diff-entry" id="disconnected_components">
+<h3>Disconnected Components <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/disconnected_components.svg" alt="PR: disconnected_components"></div>
 </div>
 
 <div class="diff-entry" id="file_icons">
@@ -312,6 +322,17 @@ switch between side-by-side, base-only, and PR-only views.
 <div class="diff-entry" id="striped_line">
 <h3>Striped Line <span class="badge badge-added">added</span></h3>
 <div class="side-only"><h4>New in PR</h4><img src="pr/striped_line.svg" alt="PR: striped_line"></div>
+</div>
+
+<h2 class="section-header" id="section-simple-topologies">Simple Topologies</h2>
+
+<div class="diff-entry" id="parallel_independent">
+<h3>Parallel Independent <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/parallel_independent.svg" alt="Base: parallel_independent"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/parallel_independent.svg" alt="PR: parallel_independent"></div>
+</div>
 </div>
 <script>
 document.querySelectorAll('.toggle-bar button').forEach(btn => {
