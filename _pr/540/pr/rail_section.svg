@@ -75,22 +75,38 @@
 <path d="M865.0,105.5 L865.0,113.5 L873.0,113.5" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
 <text x="859.0" y="122.7" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">Report</text>
 </g>
-<path d="M80.0,270.0 L80.0,350.0" stroke="#333333" stroke-width="3.0" class="nf-metro-rail-connector" data-station-id="gene_in" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Gene sets" data-section-id="pathways" data-section-name="Pathway analysis" />
-<circle cx="80.0" cy="270.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="gene_in" data-line-id="deepvariant" />
-<circle cx="80.0" cy="310.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="gene_in" data-line-id="haplotypecaller" />
-<circle cx="80.0" cy="350.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="gene_in" data-line-id="strelka" />
-<path d="M174.0,270.0 L174.0,350.0" stroke="#333333" stroke-width="3.0" class="nf-metro-rail-connector" data-station-id="score" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Score" data-section-id="pathways" data-section-name="Pathway analysis" />
-<circle cx="174.0" cy="270.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="score" data-line-id="deepvariant" />
-<circle cx="174.0" cy="310.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="score" data-line-id="haplotypecaller" />
-<circle cx="174.0" cy="350.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="score" data-line-id="strelka" />
-<path d="M268.0,270.0 L268.0,350.0" stroke="#333333" stroke-width="3.0" class="nf-metro-rail-connector" data-station-id="enrich" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Enrichment" data-section-id="pathways" data-section-name="Pathway analysis" />
-<circle cx="268.0" cy="270.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="enrich" data-line-id="deepvariant" />
-<circle cx="268.0" cy="310.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="enrich" data-line-id="haplotypecaller" />
-<circle cx="268.0" cy="350.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="enrich" data-line-id="strelka" />
-<path d="M362.0,270.0 L362.0,350.0" stroke="#333333" stroke-width="3.0" class="nf-metro-rail-connector" data-station-id="summary" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Summary" data-section-id="pathways" data-section-name="Pathway analysis" />
-<circle cx="362.0" cy="270.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="summary" data-line-id="deepvariant" />
-<circle cx="362.0" cy="310.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="summary" data-line-id="haplotypecaller" />
-<circle cx="362.0" cy="350.0" r="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-rail-knob" data-station-id="summary" data-line-id="strelka" />
+<path d="M80.0,270.0 L80.0,350.0" stroke="#333333" stroke-width="11.5" stroke-linecap="round" class="nf-metro-rail-connector" data-station-id="gene_in" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Gene sets" data-section-id="pathways" data-section-name="Pathway analysis" />
+<circle cx="80.0" cy="270.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="gene_in" data-line-id="deepvariant" />
+<circle cx="80.0" cy="310.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="gene_in" data-line-id="haplotypecaller" />
+<circle cx="80.0" cy="350.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="gene_in" data-line-id="strelka" />
+<path d="M80.0,270.0 L80.0,350.0" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" />
+<circle cx="80.0" cy="270.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="gene_in" data-line-id="deepvariant" />
+<circle cx="80.0" cy="310.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="gene_in" data-line-id="haplotypecaller" />
+<circle cx="80.0" cy="350.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="gene_in" data-line-id="strelka" />
+<path d="M174.0,270.0 L174.0,350.0" stroke="#333333" stroke-width="11.5" stroke-linecap="round" class="nf-metro-rail-connector" data-station-id="score" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Score" data-section-id="pathways" data-section-name="Pathway analysis" />
+<circle cx="174.0" cy="270.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="score" data-line-id="deepvariant" />
+<circle cx="174.0" cy="310.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="score" data-line-id="haplotypecaller" />
+<circle cx="174.0" cy="350.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="score" data-line-id="strelka" />
+<path d="M174.0,270.0 L174.0,350.0" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" />
+<circle cx="174.0" cy="270.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="score" data-line-id="deepvariant" />
+<circle cx="174.0" cy="310.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="score" data-line-id="haplotypecaller" />
+<circle cx="174.0" cy="350.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="score" data-line-id="strelka" />
+<path d="M268.0,270.0 L268.0,350.0" stroke="#333333" stroke-width="11.5" stroke-linecap="round" class="nf-metro-rail-connector" data-station-id="enrich" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Enrichment" data-section-id="pathways" data-section-name="Pathway analysis" />
+<circle cx="268.0" cy="270.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="enrich" data-line-id="deepvariant" />
+<circle cx="268.0" cy="310.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="enrich" data-line-id="haplotypecaller" />
+<circle cx="268.0" cy="350.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="enrich" data-line-id="strelka" />
+<path d="M268.0,270.0 L268.0,350.0" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" />
+<circle cx="268.0" cy="270.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="enrich" data-line-id="deepvariant" />
+<circle cx="268.0" cy="310.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="enrich" data-line-id="haplotypecaller" />
+<circle cx="268.0" cy="350.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="enrich" data-line-id="strelka" />
+<path d="M362.0,270.0 L362.0,350.0" stroke="#333333" stroke-width="11.5" stroke-linecap="round" class="nf-metro-rail-connector" data-station-id="summary" data-station-lines="deepvariant,haplotypecaller,strelka" data-station-label="Summary" data-section-id="pathways" data-section-name="Pathway analysis" />
+<circle cx="362.0" cy="270.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="summary" data-line-id="deepvariant" />
+<circle cx="362.0" cy="310.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="summary" data-line-id="haplotypecaller" />
+<circle cx="362.0" cy="350.0" r="7.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="summary" data-line-id="strelka" />
+<path d="M362.0,270.0 L362.0,350.0" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" />
+<circle cx="362.0" cy="270.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="summary" data-line-id="deepvariant" />
+<circle cx="362.0" cy="310.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="summary" data-line-id="haplotypecaller" />
+<circle cx="362.0" cy="350.0" r="6.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="summary" data-line-id="strelka" />
 <text x="431.5" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="markdup" class="nf-metro-station-label">Mark duplicates</text>
 <text x="714.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="norm" class="nf-metro-station-label">Normalize</text>
 <text x="80.0" y="361.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="gene_in" class="nf-metro-station-label">Gene sets</text>
