@@ -5,11 +5,11 @@
 </defs>
 <rect x="0" y="0" width="633" height="964" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Rail mode: variant-calling sample routes</text>
-<rect x="80.0" y="146.0" width="493.90306627407983" height="346.1594154601839" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="calling" data-section-lines="germline,pair_n,pair_t,tumor_only" />
-<circle cx="91.0" cy="131.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="calling" />
-<text x="91.0" y="131.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="calling">1</text>
-<text x="107.0" y="131.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="calling">Variant calling</text>
-<rect x="80.0" y="565.0589103967956" width="220.0" height="249.5756492761103" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="annotate" data-section-lines="germline,pair_n,pair_t,tumor_only" />
+<rect x="79.0" y="143.0" width="494.90306627407983" height="349.1594154601839" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="calling" data-section-lines="germline,pair_n,pair_t,tumor_only" />
+<circle cx="90.0" cy="128.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="calling" />
+<text x="90.0" y="128.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="calling">1</text>
+<text x="106.0" y="128.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="calling">Variant calling</text>
+<rect x="80.0" y="565.0589103967956" width="221.0" height="249.5756492761103" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="annotate" data-section-lines="germline,pair_n,pair_t,tumor_only" />
 <circle cx="91.0" cy="550.0589103967956" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="annotate" />
 <text x="91.0" y="550.0589103967956" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="annotate">2</text>
 <text x="107.0" y="550.0589103967956" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="annotate">Annotation and output</text>
@@ -166,13 +166,13 @@
 <circle cx="235.0" cy="674.2089103967955" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="205.0" cy="733.3589103967955" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="235.0" cy="674.2089103967955" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<rect x="80.0" y="844.6345596729059" width="198.60000000000002" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
-<path d="M92.0,868.6345596729059 L116.0,868.6345596729059" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
-<text x="128.0" y="868.6345596729059" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Germline</text>
-<path d="M92.0,892.6345596729059 L116.0,892.6345596729059" stroke="#f4a300" stroke-width="3.0" stroke-linecap="round" />
-<text x="128.0" y="892.6345596729059" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Tumour-only</text>
-<path d="M92.0,914.6345596729059 L116.0,914.6345596729059" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="butt" />
-<path d="M92.0,918.6345596729059 L116.0,918.6345596729059" stroke="#e63946" stroke-width="2.4000000000000004" stroke-linecap="butt" />
-<text x="128.0" y="916.6345596729059" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Tumour-normal pair</text>
+<rect x="79.0" y="844.6345596729059" width="198.60000000000002" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M91.0,868.6345596729059 L115.0,868.6345596729059" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<text x="127.0" y="868.6345596729059" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Germline</text>
+<path d="M91.0,892.6345596729059 L115.0,892.6345596729059" stroke="#f4a300" stroke-width="3.0" stroke-linecap="round" />
+<text x="127.0" y="892.6345596729059" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Tumour-only</text>
+<path d="M91.0,914.6345596729059 L115.0,914.6345596729059" stroke="#0570b0" stroke-width="2.4000000000000004" stroke-linecap="butt" />
+<path d="M91.0,918.6345596729059 L115.0,918.6345596729059" stroke="#e63946" stroke-width="2.4000000000000004" stroke-linecap="butt" />
+<text x="127.0" y="916.6345596729059" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Tumour-normal pair</text>
 <text x="603.0" y="956.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
