@@ -9,10 +9,10 @@
 <circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="preprocessing" />
 <text x="33.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="preprocessing">1</text>
 <text x="49.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="preprocessing">Pre-processing</text>
-<rect x="30.0" y="351.27922061357856" width="440.0" height="266.9114676318528" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="variant_calling" data-section-lines="germline,somatic,tumor_only" />
-<circle cx="41.0" cy="336.27922061357856" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="variant_calling" />
-<text x="41.0" y="336.27922061357856" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="variant_calling">2</text>
-<text x="57.0" y="336.27922061357856" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="variant_calling">Variant calling</text>
+<rect x="30.0" y="341.9236609406726" width="440.0" height="276.26702730475876" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="variant_calling" data-section-lines="germline,somatic,tumor_only" />
+<circle cx="41.0" cy="326.9236609406726" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="variant_calling" />
+<text x="41.0" y="326.9236609406726" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="variant_calling">2</text>
+<text x="57.0" y="326.9236609406726" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="variant_calling">Variant calling</text>
 <path d="M80.0,126.0 L140.0,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-somatic" data-line-id="somatic" />
 <path d="M140.0,126.0 L200.0,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-somatic" data-line-id="somatic" />
 <path d="M200.0,126.0 L260.0,126.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" class="metro-line-somatic" data-line-id="somatic" />
@@ -92,7 +92,7 @@
 </g>
 <text x="110.5" y="427.279" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="start" dominant-baseline="auto" transform="rotate(45.0,110.5,427.279)" data-station-id="split" class="nf-metro-station-label">split by analysis</text>
 <text x="140.0" y="146.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="start" dominant-baseline="auto" transform="rotate(45.0,140.0,146.0)" data-station-id="fastqc" class="nf-metro-station-label">FastQC</text>
-<text x="247.0" y="421.279" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="start" dominant-baseline="auto" transform="rotate(45.0,247.0,421.279)" data-station-id="deepvariant" class="nf-metro-station-label">GATK</text>
+<text x="247.0" y="381.279" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="start" dominant-baseline="auto" transform="rotate(-45.0,247.0,381.279)" data-station-id="deepvariant" class="nf-metro-station-label">GATK</text>
 <text x="247.0" y="492.279" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="start" dominant-baseline="auto" transform="rotate(45.0,247.0,492.279)" data-station-id="mutect" class="nf-metro-station-label">Mutect2</text>
 <text x="247.0" y="563.279" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="start" dominant-baseline="auto" transform="rotate(45.0,247.0,563.279)" data-station-id="strelka" class="nf-metro-station-label">Strelka2</text>
 <text x="200.0" y="146.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="start" dominant-baseline="auto" transform="rotate(45.0,200.0,146.0)" data-station-id="fastp" class="nf-metro-station-label">FastP</text>
@@ -129,8 +129,8 @@
 <text x="770.2670273047588" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">preprocessing__exit_right_0 (right)</text>
 <path d="M30.0,396.279 L35.0,401.279 L30.0,406.279 L25.0,401.279 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
 <text x="30.0" y="393.279" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">variant_calling__entry_left_1 (left)</text>
-<path d="M2.0,314.27922061357856 L790.2670273047588,314.27922061357856" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
-<text x="-2.0" y="314.27922061357856" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
+<path d="M2.0,309.6014407771256 L790.2670273047588,309.6014407771256" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="-2.0" y="309.6014407771256" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
 <rect x="22.0" y="648.1906882454314" width="190.9" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
 <path d="M34.0,672.1906882454314 L58.0,672.1906882454314" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <text x="70.0" y="672.1906882454314" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Germline</text>
