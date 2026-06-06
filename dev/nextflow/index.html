@@ -1019,6 +1019,7 @@
 <li><strong><code>%%metro files:</code></strong> renders a stacked-documents icon, useful for paired-end reads or multi-file inputs (e.g. <code>%%metro files: reads_in | FASTQ</code>)</li>
 <li><strong><code>%%metro dir:</code></strong> renders a folder icon, useful for directory outputs like <code>publishDir</code> results (e.g. <code>%%metro dir: results_out | Results</code>)</li>
 </ul>
+<p>Add <code>banner</code> as a fourth field to a <code>file:</code> or <code>files:</code> directive to draw the format label on a dark strip across the icon, for when the format should stand out (e.g. <code>%%metro files: aln_out | BAM | Alignments | banner</code>).</p>
 <h2 id="how-the-converter-works">How the converter works<a class="headerlink" href="#how-the-converter-works" title="Permanent link">&para;</a></h2>
 <p>Nextflow's <code>-with-dag</code> output contains three types of nodes: processes (the actual pipeline steps), channels/values (data plumbing), and operators (Nextflow internals like <code>mix</code> and <code>collect</code>). Here is the raw DAG for the flat pipeline example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>flowchart TB
