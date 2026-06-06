@@ -28,8 +28,10 @@
 <path d="M327.0,175.2 L377.0,175.2" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <rect x="75.0" y="111.8" width="10.0" height="13.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="reads_in" data-station-lines="main,qc" data-station-label="reads_in" data-section-id="analysis" data-section-name="Analysis" />
 <g data-station-id="reads_in">
-<rect x="36.8" y="108.7" width="36.4" height="19.2" rx="9.6" ry="9.6" fill="#222222" stroke="none" />
-<text x="55.0" y="118.3" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">FASTQ</text>
+<path d="M43.0,102.3 L61.0,102.3 L69.0,110.3 L69.0,132.3 Q69.0,134.3,67.0,134.3 L43.0,134.3 Q41.0,134.3,41.0,132.3 L41.0,104.3 Q41.0,102.3,43.0,102.3 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M61.0,102.3 L61.0,110.3 L69.0,110.3 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M61.0,102.3 L61.0,110.3 L69.0,110.3" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="55.0" y="119.5" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">FASTQ</text>
 <text x="55.0" y="138.3" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Reads</text>
 </g>
 <rect x="135.0" y="111.8" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="trim" data-station-lines="main,qc" data-station-label="Trimming" data-section-id="analysis" data-section-name="Analysis" />
@@ -38,14 +40,22 @@
 <rect x="458.0" y="114.8" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="qc" data-station-label="MultiQC" data-section-id="reporting" data-section-name="Reporting" />
 <rect x="458.0" y="170.2" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="aln_out" data-station-lines="main" data-station-label="aln_out" data-section-id="reporting" data-section-name="Reporting" />
 <g data-station-id="aln_out">
-<rect x="471.425" y="165.6" width="33.15" height="19.2" rx="9.6" ry="9.6" fill="#222222" stroke="none" />
-<text x="488.0" y="175.2" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">BAM</text>
+<path d="M471.8,155.0 L489.8,155.0 L497.8,163.0 L497.8,185.0 Q497.8,187.0,495.8,187.0 L471.8,187.0 Q469.8,187.0,469.8,185.0 L469.8,157.0 Q469.8,155.0,471.8,155.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M489.8,155.0 L489.8,163.0 L497.8,163.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M489.8,155.0 L489.8,163.0 L497.8,163.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<path d="M480.2,163.39999999999998 L498.2,163.39999999999998 L506.2,171.39999999999998 L506.2,193.39999999999998 Q506.2,195.39999999999998,504.2,195.39999999999998 L480.2,195.39999999999998 Q478.2,195.39999999999998,478.2,193.39999999999998 L478.2,165.39999999999998 Q478.2,163.39999999999998,480.2,163.39999999999998 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M498.2,163.39999999999998 L498.2,171.39999999999998 L506.2,171.39999999999998 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M498.2,163.39999999999998 L498.2,171.39999999999998 L506.2,171.39999999999998" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<rect x="478.2" y="178.11999999999998" width="28.0" height="12.16" fill="#222222" stroke="none" />
+<text x="492.2" y="184.2" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">BAM</text>
 <text x="488.0" y="195.2" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Alignments</text>
 </g>
 <rect x="518.0" y="114.8" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_out" data-station-lines="qc" data-station-label="report_out" data-section-id="reporting" data-section-name="Reporting" />
 <g data-station-id="report_out">
-<rect x="529.8" y="110.2" width="36.4" height="19.2" rx="9.6" ry="9.6" fill="#222222" stroke="none" />
-<text x="548.0" y="119.8" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
+<path d="M536.0,103.8 L554.0,103.8 L562.0,111.8 L562.0,133.8 Q562.0,135.8,560.0,135.8 L536.0,135.8 Q534.0,135.8,534.0,133.8 L534.0,105.8 Q534.0,103.8,536.0,103.8 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M554.0,103.8 L554.0,111.8 L562.0,111.8 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M554.0,103.8 L554.0,111.8 L562.0,111.8" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="548.0" y="121.0" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
 <text x="548.0" y="139.8" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Report</text>
 </g>
 <text x="463.0" y="105.8" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
