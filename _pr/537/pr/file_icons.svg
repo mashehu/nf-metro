@@ -44,14 +44,8 @@
 <rect x="321.0" y="170.2" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="collect" data-station-lines="main" data-station-label="Collect" data-section-id="outputs" data-section-name="Outputs" />
 <rect x="417.0" y="111.8" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="aln_out" data-station-lines="main" data-station-label="aln_out" data-section-id="outputs" data-section-name="Outputs" />
 <g data-station-id="aln_out">
-<path d="M430.8,96.6 L448.8,96.6 L456.8,104.6 L456.8,126.6 Q456.8,128.6,454.8,128.6 L430.8,128.6 Q428.8,128.6,428.8,126.6 L428.8,98.6 Q428.8,96.6,430.8,96.6 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
-<path d="M448.8,96.6 L448.8,104.6 L456.8,104.6 Z" fill="#333333" opacity="0.15" stroke="none" />
-<path d="M448.8,96.6 L448.8,104.6 L456.8,104.6" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
-<path d="M439.2,105.0 L457.2,105.0 L465.2,113.0 L465.2,135.0 Q465.2,137.0,463.2,137.0 L439.2,137.0 Q437.2,137.0,437.2,135.0 L437.2,107.0 Q437.2,105.0,439.2,105.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
-<path d="M457.2,105.0 L457.2,113.0 L465.2,113.0 Z" fill="#333333" opacity="0.15" stroke="none" />
-<path d="M457.2,105.0 L457.2,113.0 L465.2,113.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
-<rect x="440.1225" y="124.2" width="22.155" height="9.6" rx="4.8" ry="4.8" fill="#222222" stroke="none" />
-<text x="451.2" y="129.0" font-size="6.75" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">BAM</text>
+<rect x="430.425" y="107.2" width="33.15" height="19.2" rx="9.6" ry="9.6" fill="#222222" stroke="none" />
+<text x="447.0" y="116.8" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">BAM</text>
 <text x="447.0" y="136.8" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Alignments</text>
 </g>
 <rect x="417.0" y="170.2" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_out" data-station-lines="main" data-station-label="report_out" data-section-id="outputs" data-section-name="Outputs" />
@@ -59,9 +53,8 @@
 <path d="M435.0,159.2 L453.0,159.2 L461.0,167.2 L461.0,189.2 Q461.0,191.2,459.0,191.2 L435.0,191.2 Q433.0,191.2,433.0,189.2 L433.0,161.2 Q433.0,159.2,435.0,159.2 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M453.0,159.2 L453.0,167.2 L461.0,167.2 Z" fill="#333333" opacity="0.15" stroke="none" />
 <path d="M453.0,159.2 L453.0,167.2 L461.0,167.2" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
-<path d="M439.16,171.075 L448.568,171.075" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
-<path d="M439.16,171.95 L454.84,171.95" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
-<path d="M439.16,172.825 L454.84,172.825" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
+<path d="M439.16,171.36666666666665 L448.568,171.36666666666665" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
+<path d="M439.16,172.53333333333333 L454.84,172.53333333333333" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
 <text x="447.0" y="181.89999999999998" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
 <text x="447.0" y="195.2" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Report</text>
 </g>
