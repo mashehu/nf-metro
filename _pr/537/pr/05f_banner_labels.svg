@@ -31,8 +31,8 @@
 <path d="M43.0,102.3 L61.0,102.3 L69.0,110.3 L69.0,132.3 Q69.0,134.3,67.0,134.3 L43.0,134.3 Q41.0,134.3,41.0,132.3 L41.0,104.3 Q41.0,102.3,43.0,102.3 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M61.0,102.3 L61.0,110.3 L69.0,110.3 Z" fill="#333333" opacity="0.15" stroke="none" />
 <path d="M61.0,102.3 L61.0,110.3 L69.0,110.3" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
-<rect x="41.0" y="112.78" width="28.0" height="13.44" fill="#222222" stroke="none" />
-<text x="55.0" y="119.5" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">FASTQ</text>
+<rect x="41.56" y="121.50000000000003" width="26.88" height="9.6" rx="4.8" ry="4.8" fill="#222222" stroke="none" />
+<text x="55.0" y="126.30000000000003" font-size="6.75" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">FASTQ</text>
 <text x="55.0" y="138.3" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Reads</text>
 </g>
 <rect x="135.0" y="111.8" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="trim" data-station-lines="main,qc" data-station-label="Trimming" data-section-id="analysis" data-section-name="Analysis" />
@@ -47,8 +47,8 @@
 <path d="M480.2,163.39999999999998 L498.2,163.39999999999998 L506.2,171.39999999999998 L506.2,193.39999999999998 Q506.2,195.39999999999998,504.2,195.39999999999998 L480.2,195.39999999999998 Q478.2,195.39999999999998,478.2,193.39999999999998 L478.2,165.39999999999998 Q478.2,163.39999999999998,480.2,163.39999999999998 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M498.2,163.39999999999998 L498.2,171.39999999999998 L506.2,171.39999999999998 Z" fill="#333333" opacity="0.15" stroke="none" />
 <path d="M498.2,163.39999999999998 L498.2,171.39999999999998 L506.2,171.39999999999998" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
-<rect x="478.2" y="173.87999999999997" width="28.0" height="13.44" fill="#222222" stroke="none" />
-<text x="492.2" y="180.59999999999997" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">BAM</text>
+<rect x="481.1225" y="182.59999999999997" width="22.155" height="9.6" rx="4.8" ry="4.8" fill="#222222" stroke="none" />
+<text x="492.2" y="187.39999999999998" font-size="6.75" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">BAM</text>
 <text x="488.0" y="195.2" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Alignments</text>
 </g>
 <rect x="518.0" y="114.8" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="report_out" data-station-lines="qc" data-station-label="report_out" data-section-id="reporting" data-section-name="Reporting" />
@@ -59,8 +59,8 @@
 <path d="M540.16,115.675 L549.568,115.675" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
 <path d="M540.16,116.55 L555.84,116.55" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
 <path d="M540.16,117.425 L555.84,117.425" stroke="#333333" stroke-width="1.35" stroke-linecap="round" />
-<rect x="534.0" y="119.78" width="28.0" height="13.44" fill="#222222" stroke="none" />
-<text x="548.0" y="126.5" font-size="7.5" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
+<rect x="534.83" y="123.00000000000003" width="26.339999999999996" height="9.6" rx="4.8" ry="4.8" fill="#222222" stroke="none" />
+<text x="548.0" y="127.80000000000003" font-size="6.75" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">HTML</text>
 <text x="548.0" y="139.8" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Report</text>
 </g>
 <text x="463.0" y="105.8" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
