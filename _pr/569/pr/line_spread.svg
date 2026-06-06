@@ -59,7 +59,7 @@
 <rect x="513.0" y="159.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="c_rna" data-station-lines="rna" data-station-label="RNA" data-section-id="centered_sec" data-section-name="centered" />
 <rect x="513.0" y="203.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="c_cf" data-station-lines="cfdna" data-station-label="cfDNA" data-section-id="centered_sec" data-section-name="centered" />
 <rect x="609.0" y="156.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="c_out" data-station-lines="cfdna,dna,rna" data-station-label="Merge" data-section-id="centered_sec" data-section-name="centered" />
-<rect x="752.5" y="157.0" width="7.0" height="6.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="751.0" y="152.0" width="10.0" height="16.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="r_in" data-station-lines="cfdna,dna,rna" data-station-label="r_in" data-section-id="rails_sec" data-section-name="rails" />
 <g data-station-id="r_in">
 <path d="M719.0,144.0 L737.0,144.0 L745.0,152.0 L745.0,174.0 Q745.0,176.0,743.0,176.0 L719.0,176.0 Q717.0,176.0,717.0,174.0 L717.0,146.0 Q717.0,144.0,719.0,144.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M737.0,144.0 L737.0,152.0 L745.0,152.0 Z" fill="#333333" opacity="0.15" stroke="none" />
@@ -88,7 +88,7 @@
 <circle cx="984.0" cy="120.0" r="6.75" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="r_annotate" data-line-id="dna" />
 <circle cx="984.0" cy="160.0" r="6.75" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="r_annotate" data-line-id="rna" />
 <circle cx="984.0" cy="200.0" r="6.75" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="r_annotate" data-line-id="cfdna" />
-<rect x="1056.5" y="157.0" width="7.0" height="6.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" />
+<rect x="1055.0" y="152.0" width="10.0" height="16.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="r_out" data-station-lines="cfdna,dna,rna" data-station-label="r_out" data-section-id="rails_sec" data-section-name="rails" />
 <g data-station-id="r_out">
 <path d="M1073.0,144.0 L1091.0,144.0 L1099.0,152.0 L1099.0,174.0 Q1099.0,176.0,1097.0,176.0 L1073.0,176.0 Q1071.0,176.0,1071.0,174.0 L1071.0,146.0 Q1071.0,144.0,1073.0,144.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <path d="M1091.0,144.0 L1091.0,152.0 L1099.0,152.0 Z" fill="#333333" opacity="0.15" stroke="none" />
