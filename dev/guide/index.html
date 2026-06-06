@@ -434,10 +434,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-hidden-stations" class="md-nav__link">
+  <a href="#6-per-station-markers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Hidden stations
+        6. Per-station markers
       
     </span>
   </a>
@@ -445,10 +445,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-putting-it-all-together" class="md-nav__link">
+  <a href="#7-hidden-stations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Putting it all together
+        7. Hidden stations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Putting it all together
       
     </span>
   </a>
@@ -830,10 +841,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-hidden-stations" class="md-nav__link">
+  <a href="#6-per-station-markers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Hidden stations
+        6. Per-station markers
       
     </span>
   </a>
@@ -841,10 +852,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-putting-it-all-together" class="md-nav__link">
+  <a href="#7-hidden-stations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Putting it all together
+        7. Hidden stations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Putting it all together
       
     </span>
   </a>
@@ -1207,58 +1229,119 @@
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>%%metro file: contrasts_in | YAML | Contrasts
 </code></pre></div>
 <p>The name is rendered as a caption directly below the icon. If multiple labels are listed (<code>FASTQ, BAM</code>), the same name applies to all of them.</p>
-<h2 id="6-hidden-stations">6. Hidden stations<a class="headerlink" href="#6-hidden-stations" title="Permanent link">&para;</a></h2>
+<h2 id="6-per-station-markers">6. Per-station markers<a class="headerlink" href="#6-per-station-markers" title="Permanent link">&para;</a></h2>
+<p>By default every station is drawn as a uniform pill. The <code>%%metro marker:</code> directive overrides one station's marker so it can encode a tool attribute - mandatory vs optional, hardware-accelerated, expanded in another diagram - through its shape and fill:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>%%metro marker: node_id | shape, fill
+</code></pre></div>
+<ul>
+<li><strong><code>shape</code></strong> is <code>circle</code> (fully rounded), <code>square</code> (sharp corners), or <code>pill</code> (a flat-edged capsule running along the line, handy for flagging a step whose detail is shown in a separate diagram). Every shape still spans the line bundle, so it covers all the lines passing through the station.</li>
+<li><strong><code>fill</code></strong> is <code>open</code> (a hollow marker in the background colour), <code>solid</code> (the default station fill), or any literal colour - a name (<code>red</code>) or hex (<code>#4CAF50</code>).</li>
+</ul>
+<p><code>shape</code> defaults to <code>circle</code> and <code>fill</code> to <code>solid</code>, so <code>%%metro marker: node_id |</code> gives a solid circle. The directive may appear before or after the node is defined.</p>
+<p>To explain the markers, add a key below the line legend with <code>%%metro marker_legend:</code>, one row per shape/fill combination:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>%%metro marker_legend: shape, fill | Caption
+</code></pre></div>
+<p>Here a two-line variant-calling pipeline uses square (mandatory), open-circle (optional), pill (expanded elsewhere) and coloured-square (hardware-accelerated) markers, with a matching key:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>%%metro title: Per-station marker styles
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>%%metro style: dark
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>%%metro line: germline | Germline calling | #0570b0
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>%%metro line: somatic | Somatic calling | #e63946
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>%%metro legend: bl
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>%%metro marker: bwa | square, solid
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>%%metro marker: markdup | square, solid
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>%%metro marker: bqsr | square, #4CAF50
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>%%metro marker: haplotypecaller | square, #4CAF50
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>%%metro marker: mutect2 | square, #1f4e79
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>%%metro marker: cnvkit | pill, open
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>%%metro marker: vep | circle, open
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>%%metro marker: snpeff | circle, open
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>%%metro marker_legend: square, solid | Mandatory
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>%%metro marker_legend: circle, open | Optional
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>%%metro marker_legend: pill, open | Expanded elsewhere
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>%%metro marker_legend: square, #4CAF50 | Parabricks accelerated
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>%%metro marker_legend: square, #1f4e79 | Sentieon accelerated
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>graph LR
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>    subgraph alignment [Alignment &amp; preprocessing]
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>        bwa[BWA-MEM]
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>        markdup[MarkDuplicates]
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>        bqsr[BQSR]
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>        bwa --&gt;|germline,somatic| markdup
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>        markdup --&gt;|germline,somatic| bqsr
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>    end
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>    subgraph calling [Variant calling &amp; annotation]
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>        haplotypecaller[HaplotypeCaller]
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>        mutect2[Mutect2]
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>        cnvkit[CNVkit]
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>        snpeff[SnpEff]
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>        vep[VEP]
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>        haplotypecaller --&gt;|germline| snpeff
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>        mutect2 --&gt;|somatic| vep
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>        mutect2 --&gt;|somatic| cnvkit
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>    end
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>    bqsr --&gt;|germline| haplotypecaller
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>    bqsr --&gt;|somatic| mutect2
+</code></pre></div>
+<p><img alt="Per-station markers" src="../assets/renders/marker_styles.svg" /></p>
+<p>Stations with no <code>%%metro marker:</code> keep the default pill, so the feature is entirely opt-in.</p>
+<h2 id="7-hidden-stations">7. Hidden stations<a class="headerlink" href="#7-hidden-stations" title="Permanent link">&para;</a></h2>
 <p>Sometimes you need a branching or merging point in the graph that doesn't represent a real pipeline step. For example, lines might diverge at a point where no tool is actually run. Adding a visible station there clutters the diagram with a meaningless marker.</p>
 <p><strong>Any station whose ID starts with <code>_</code> (underscore) is hidden.</strong> It participates in layout and routing (lines pass through it), but no marker or label is rendered.</p>
 <p>Here is a pipeline with a visible <code>branch</code> station that serves only as a fork point:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>%%metro title: Visible Branch Point
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>%%metro style: dark
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>%%metro line: dna | DNA | #e63946
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>%%metro line: rna | RNA | #0570b0
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>%%metro line: prot | Protein | #2db572
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>graph LR
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    subgraph input [Input]
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        fetch[Fetch Data]
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        validate[Validate]
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        fetch --&gt;|dna,rna,prot| validate
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    end
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    subgraph processing [Processing]
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        branch[Branch]
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>        align[Alignment]
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>        quant[Quantification]
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>        search[Database Search]
-<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>        branch --&gt;|dna,rna| align
-<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>        branch --&gt;|prot| search
-<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>        align --&gt;|rna| quant
-<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    end
-<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>
-<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>    subgraph reporting [Reporting]
-<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>        multiqc[MultiQC]
-<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>    end
-<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
-<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>    validate --&gt;|dna,rna,prot| branch
-<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>    align --&gt;|dna| multiqc
-<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>    quant --&gt;|rna| multiqc
-<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>    search --&gt;|prot| multiqc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>%%metro title: Visible Branch Point
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>%%metro style: dark
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>%%metro line: dna | DNA | #e63946
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>%%metro line: rna | RNA | #0570b0
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>%%metro line: prot | Protein | #2db572
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>graph LR
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    subgraph input [Input]
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        fetch[Fetch Data]
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>        validate[Validate]
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>        fetch --&gt;|dna,rna,prot| validate
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    end
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    subgraph processing [Processing]
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>        branch[Branch]
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>        align[Alignment]
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>        quant[Quantification]
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>        search[Database Search]
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>        branch --&gt;|dna,rna| align
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>        branch --&gt;|prot| search
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>        align --&gt;|rna| quant
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>    end
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>    subgraph reporting [Reporting]
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>        multiqc[MultiQC]
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>    end
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>    validate --&gt;|dna,rna,prot| branch
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>    align --&gt;|dna| multiqc
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>    quant --&gt;|rna| multiqc
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>    search --&gt;|prot| multiqc
 </code></pre></div>
 <p><img alt="Visible branch point" src="../assets/renders/06a_without_hidden.svg" /></p>
 <p>The "Branch" station is real in the graph but meaningless in the pipeline. Renaming it to <code>_branch</code> hides it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>    subgraph processing [Processing]
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>        _branch
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>        align[Alignment]
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        ...
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        _branch --&gt;|dna,rna| align
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        _branch --&gt;|prot| search
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    end
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    validate --&gt;|dna,rna,prot| _branch
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>    subgraph processing [Processing]
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>        _branch
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        align[Alignment]
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>        ...
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        _branch --&gt;|dna,rna| align
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>        _branch --&gt;|prot| search
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    end
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    validate --&gt;|dna,rna,prot| _branch
 </code></pre></div>
 <p><img alt="Hidden branch point" src="../assets/renders/06b_with_hidden.svg" /></p>
 <p>The lines still fork at the same point, but there is no marker or label. This gives you fine control over where splits happen without adding a fake step to the diagram.</p>
 <p>Use <code>--debug</code> to see hidden stations as dashed circles: <code>nf-metro render --debug pipeline.mmd -o debug.svg</code></p>
-<h2 id="7-putting-it-all-together">7. Putting it all together<a class="headerlink" href="#7-putting-it-all-together" title="Permanent link">&para;</a></h2>
+<h2 id="8-putting-it-all-together">8. Putting it all together<a class="headerlink" href="#8-putting-it-all-together" title="Permanent link">&para;</a></h2>
 <p>The nf-core/rnaseq example at <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/rnaseq_auto.mmd"><code>examples/rnaseq_auto.mmd</code></a> combines all of these patterns in a real-world pipeline:</p>
 <p><img alt="nf-core/rnaseq" src="../assets/renders/rnaseq_auto.svg" /></p>
 <p>Five analysis routes share preprocessing, fan out to different aligners, reconverge at post-processing (a <code>TB</code> section), and fold back through QC (an <code>RL</code> section that creates a serpentine return path). The layout engine infers section directions, grid positions, and port sides automatically from the graph topology.</p>
@@ -1342,9 +1425,9 @@
 <p><strong>Compact offsets.</strong> By default, each line reserves a fixed vertical slot across the whole map based on its declaration order. If you define three lines, every station that carries even one of them is sized to fit all three. This keeps bundles visually consistent but wastes space when most stations only carry one or two lines.</p>
 <p>With <code>%%metro compact_offsets: true</code>, stations are only as wide as the lines actually passing through them. A station where one line enters and a different line exits renders as a dot (zero offset) rather than a pill. This works well for maps with few lines but many stations, like the <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/variantbenchmarking.mmd">variantbenchmarking</a> example.</p>
 <p><strong>Off-track inputs.</strong> Pipelines often have reference or auxiliary inputs (a FASTA, a GTF, a known-variants VCF) that feed <em>into</em> a processing step partway through a section rather than flowing along the main route. By default such an input station would claim a line-track slot on the trunk, pushing the layout around. List its station ID in <code>%%metro off_track:</code> and nf-metro lifts it above the section's main track, dropping it down into its consumer:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>%%metro file: ref_in | FASTA | Reference
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>%%metro file: gtf_in | GTF | Annotation
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>%%metro off_track: ref_in, gtf_in
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>%%metro file: ref_in | FASTA | Reference
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>%%metro file: gtf_in | GTF | Annotation
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>%%metro off_track: ref_in, gtf_in
 </code></pre></div>
 <p>This pairs naturally with the <code>file:</code> / <code>files:</code> / <code>dir:</code> icon directives - the lifted stations are usually file terminals. The <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/topologies/off_track_convergence.mmd"><code>off_track_convergence</code></a> topology and the <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/differentialabundance.mmd">differentialabundance</a> example both use it.</p>
 <h3 id="section-directives">Section directives<a class="headerlink" href="#section-directives" title="Permanent link">&para;</a></h3>
@@ -1382,7 +1465,7 @@
 </ul>
 <h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
 <p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
 </code></pre></div>
 <p><img alt="Debug overlay" src="../assets/renders/rnaseq_auto_debug.svg" /></p>
 <p>The overlay shows:</p>
