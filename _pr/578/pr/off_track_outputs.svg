@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="438" height="312" viewBox="0 0 438 312">
+<defs>
+</defs>
+<rect x="0" y="0" width="438" height="312" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Off-track outputs</text>
+<rect x="30.0" y="70.0" width="348.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocess" data-section-lines="main" />
+<circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="preprocess" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="preprocess">1</text>
+<text x="57.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="preprocess">Pre-processing</text>
+<path d="M80.0,160.0 L140.0,160.0" stroke="#3b82f6" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M140.0,160.0 L200.0,160.0" stroke="#3b82f6" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M200.0,160.0 L260.0,160.0" stroke="#3b82f6" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M260.0,160.0 L320.0,160.0" stroke="#3b82f6" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M140.0,160.0 L140.0,160.0 Q150.0,160.0,156.0,152.0 L174.0,128.0 Q180.0,120.0,190.0,120.0 L200.0,120.0" stroke="#3b82f6" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M200.0,160.0 L200.0,160.0 Q210.0,160.0,216.0,152.0 L234.0,128.0 Q240.0,120.0,250.0,120.0 L260.0,120.0" stroke="#3b82f6" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M260.0,160.0 L268.0,160.0 Q278.0,160.0,284.0,152.0 L302.0,128.0 Q308.0,120.0,318.0,120.0 L320.0,120.0" stroke="#3b82f6" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<rect x="75.0" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastq" data-station-lines="main" data-station-label="FASTQ" data-section-id="preprocess" data-section-name="Pre-processing" />
+<rect x="135.0" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bwa" data-station-lines="main" data-station-label="BWA-MEM" data-section-id="preprocess" data-section-name="Pre-processing" />
+<rect x="195.0" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="markdup" data-station-lines="main" data-station-label="MarkDup" data-section-id="preprocess" data-section-name="Pre-processing" />
+<rect x="255.0" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bqsr" data-station-lines="main" data-station-label="BQSR" data-section-id="preprocess" data-section-name="Pre-processing" />
+<rect x="315.0" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="ready" data-station-lines="main" data-station-label="Ready" data-section-id="preprocess" data-section-name="Pre-processing" />
+<rect x="195.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bam_mapped" data-station-lines="main" data-station-label="mapped BAM" data-section-id="preprocess" data-section-name="Pre-processing" />
+<g data-station-id="bam_mapped">
+<path d="M213.0,104.0 L231.0,104.0 L239.0,112.0 L239.0,134.0 Q239.0,136.0,237.0,136.0 L213.0,136.0 Q211.0,136.0,211.0,134.0 L211.0,106.0 Q211.0,104.0,213.0,104.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M231.0,104.0 L231.0,112.0 L239.0,112.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M231.0,104.0 L231.0,112.0 L239.0,112.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="225.0" y="121.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">BAM</text>
+</g>
+<rect x="255.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="cram_md" data-station-lines="main" data-station-label="dedup CRAM" data-section-id="preprocess" data-section-name="Pre-processing" />
+<g data-station-id="cram_md">
+<path d="M273.0,104.0 L291.0,104.0 L299.0,112.0 L299.0,134.0 Q299.0,136.0,297.0,136.0 L273.0,136.0 Q271.0,136.0,271.0,134.0 L271.0,106.0 Q271.0,104.0,273.0,104.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M291.0,104.0 L291.0,112.0 L299.0,112.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M291.0,104.0 L291.0,112.0 L299.0,112.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="285.0" y="121.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">CRAM</text>
+</g>
+<rect x="315.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="cram_recal" data-station-lines="main" data-station-label="recal CRAM" data-section-id="preprocess" data-section-name="Pre-processing" />
+<g data-station-id="cram_recal">
+<path d="M333.0,104.0 L351.0,104.0 L359.0,112.0 L359.0,134.0 Q359.0,136.0,357.0,136.0 L333.0,136.0 Q331.0,136.0,331.0,134.0 L331.0,106.0 Q331.0,104.0,333.0,104.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M351.0,104.0 L351.0,112.0 L359.0,112.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M351.0,104.0 L351.0,112.0 L359.0,112.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="345.0" y="121.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">CRAM</text>
+</g>
+<text x="80.0" y="171.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="fastq" class="nf-metro-station-label">FASTQ</text>
+<text x="140.0" y="146.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="bwa" class="nf-metro-station-label">BWA-MEM</text>
+<text x="200.0" y="171.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="markdup" class="nf-metro-station-label">MarkDup</text>
+<text x="260.0" y="171.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="bqsr" class="nf-metro-station-label">BQSR</text>
+<text x="320.0" y="171.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="ready" class="nf-metro-station-label">Ready</text>
+<circle cx="150.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="180.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="210.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="240.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="278.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="308.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<rect x="30.0" y="240.0" width="167.8" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,264.0 L66.0,264.0" stroke="#3b82f6" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="264.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Pre-processing</text>
+<text x="408.0" y="304.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
