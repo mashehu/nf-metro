@@ -1438,7 +1438,7 @@
 </tr>
 <tr>
 <td><code>%%metro off_track: &lt;station&gt;[, &lt;station&gt;...]</code></td>
-<td>Lift the listed stations above the section's main track (see below)</td>
+<td>Lift the listed stations above the section's main track, anchored to their consumer (inputs) or producer (output artefacts) (see below)</td>
 </tr>
 <tr>
 <td><code>%%metro compact_offsets: true</code></td>
@@ -1466,6 +1466,11 @@
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>%%metro off_track: ref_in, gtf_in
 </code></pre></div>
 <p>This pairs naturally with the <code>file:</code> / <code>files:</code> / <code>dir:</code> icon directives - the lifted stations are usually file terminals. The <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/topologies/off_track_convergence.mmd"><code>off_track_convergence</code></a> topology and the <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/differentialabundance.mmd">differentialabundance</a> example both use it.</p>
+<p><strong>Off-track outputs.</strong> The same directive works for file <em>artefacts</em> written part-way through a section (a <code>bam</code>/<code>cram</code> dumped after a mapping step, say). A producer-fed sink - a station with an incoming edge from an on-track step and no on-track consumer - is anchored above its <strong>producer</strong> rather than the section top, so the artefact hangs off the trunk right where it is written:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>%%metro file: bam_mapped | BAM
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>%%metro off_track: bam_mapped
+</code></pre></div>
+<p>The <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/off_track_outputs.mmd">off_track_outputs</a> example hangs several such artefacts above a pre-processing trunk.</p>
 <p><strong>Line spread.</strong> <code>%%metro line_spread:</code> controls how lines that share a station relate to each other vertically. It has three modes:</p>
 <ul>
 <li><strong><code>bundle</code></strong> (the default) merges every line sharing a station onto a single trunk track; a line that detours to its own station dips off the trunk and back. Line base-tracks stack downward from the first line, so the shared trunk sits at the top and detours cascade below it.</li>
@@ -1473,11 +1478,11 @@
 <li><strong><code>rails</code></strong> keeps co-travelling lines on separate parallel rails rather than bundling them onto a trunk. Each line gets a fixed, evenly-spaced horizontal rail, and a station several lines <em>pass through</em> renders as the classic metro interchange: a white circle on each rail the station uses, joined by a straight connector segment (the nf-core/sarek "Example analysis pathways" subway idiom). Lines converge only at a genuine single-node fan-in/out - e.g. a file terminus all lines reach - where the rails ease together with 45-degree diagonals. Station labels alternate above and below the rails so dense runs stay readable.</li>
 </ul>
 <p>The bare directive sets the graph-wide default:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>%%metro line_spread: rails
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>%%metro line_spread: rails
 </code></pre></div>
 <p>Append <code>| &lt;section&gt;, ...</code> to override individual sections, so one map can mix modes - a <code>bundle</code> trunk feeding a <code>rails</code> analysis panel, say:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>%%metro line_spread: centered
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>%%metro line_spread: rails | pathways
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>%%metro line_spread: centered
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>%%metro line_spread: rails | pathways
 </code></pre></div>
 <p>Here every section defaults to <code>centered</code> while <code>pathways</code> is laid out as parallel rails; ordinary section placement positions both. The <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/line_spread.mmd"><code>line_spread</code></a> example shows all three modes in one map via per-section overrides. For <code>rails</code>, inter-section edges into or out of a rail section are not yet supported - a rail section should be self-contained.</p>
 <h3 id="section-directives">Section directives<a class="headerlink" href="#section-directives" title="Permanent link">&para;</a></h3>
@@ -1515,7 +1520,7 @@
 </ul>
 <h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
 <p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
 </code></pre></div>
 <p><img alt="Debug overlay" src="../assets/renders/rnaseq_auto_debug.svg" /></p>
 <p>The overlay shows:</p>
