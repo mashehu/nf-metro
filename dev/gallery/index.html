@@ -2945,32 +2945,34 @@
 <summary>Mermaid source</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>%%metro title: Off-track outputs
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>%%metro line: main | Pre-processing | #3b82f6
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>%%metro off_track: bam_mapped, dedup_cram, dup_metrics, recal_cram
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>%%metro off_track: bam_mapped, dedup_cram, recal_cram
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>%%metro file: bam_mapped | BAM
 <a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>%%metro file: dedup_cram | CRAM
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>%%metro file: dup_metrics | TXT
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>%%metro file: recal_cram | CRAM
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>graph LR
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    subgraph preprocess [Pre-processing]
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>        fastq[FASTQ]
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>        bwa[BWA-MEM]
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>%%metro file: recal_cram | CRAM
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>graph LR
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    subgraph preprocess [Pre-processing]
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>        fastq[FASTQ]
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>        bwa[BWA-MEM]
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>        convert[convert]
 <a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>        markdup[MarkDup]
 <a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>        bqsr[BQSR]
 <a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>        ready[Ready]
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>        fastq --&gt;|main| bwa
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>        bwa --&gt;|main| markdup
-<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>        markdup --&gt;|main| bqsr
-<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>        bqsr --&gt;|main| ready
-<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>        bwa --&gt;|main| bam_mapped
-<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>        bam_mapped[ ]
-<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>        markdup --&gt;|main| dedup_cram
-<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>        dedup_cram[ ]
-<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>        markdup --&gt;|main| dup_metrics
-<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>        dup_metrics[ ]
-<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>        bqsr --&gt;|main| recal_cram
-<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>        recal_cram[ ]
-<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>    end
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>        bam_mapped[ ]
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>        dedup_cram[ ]
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>        recal_cram[ ]
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>        fastq --&gt;|main| bwa
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>        bwa --&gt;|main| convert
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>        bwa --&gt;|main| markdup
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>        convert --&gt;|main| bqsr
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>        markdup --&gt;|main| bqsr
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>        bqsr --&gt;|main| ready
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>        bwa --&gt;|main| bam_mapped
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>        markdup --&gt;|main| dedup_cram
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>        bqsr --&gt;|main| recal_cram
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>    end
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
