@@ -3659,61 +3659,58 @@
 <a id="__codelineno-35-190" name="__codelineno-35-190" href="#__codelineno-35-190"></a>        cnvkit[CNVkit]
 <a id="__codelineno-35-191" name="__codelineno-35-191" href="#__codelineno-35-191"></a>        msisensor2[MSIsensor2]
 <a id="__codelineno-35-192" name="__codelineno-35-192" href="#__codelineno-35-192"></a>        msisensorpro[MSIsensor-pro]
-<a id="__codelineno-35-193" name="__codelineno-35-193" href="#__codelineno-35-193"></a>        collect[ ]
-<a id="__codelineno-35-194" name="__codelineno-35-194" href="#__codelineno-35-194"></a>        out[ ]
-<a id="__codelineno-35-195" name="__codelineno-35-195" href="#__codelineno-35-195"></a>
-<a id="__codelineno-35-196" name="__codelineno-35-196" href="#__codelineno-35-196"></a>        %% Germline route (top rail): deepvariant, haplotypecaller, haplotyper,
-<a id="__codelineno-35-197" name="__codelineno-35-197" href="#__codelineno-35-197"></a>        %% dnascope are germline-only; freebayes/mpileup/strelka2/manta/tiddit/
-<a id="__codelineno-35-198" name="__codelineno-35-198" href="#__codelineno-35-198"></a>        %% cnvkit/indexcov are shared.
-<a id="__codelineno-35-199" name="__codelineno-35-199" href="#__codelineno-35-199"></a>        cram_call --&gt;|germline| deepvariant
-<a id="__codelineno-35-200" name="__codelineno-35-200" href="#__codelineno-35-200"></a>        deepvariant --&gt;|germline| freebayes
-<a id="__codelineno-35-201" name="__codelineno-35-201" href="#__codelineno-35-201"></a>        freebayes --&gt;|germline| haplotypecaller
-<a id="__codelineno-35-202" name="__codelineno-35-202" href="#__codelineno-35-202"></a>        haplotypecaller --&gt;|germline| haplotyper
-<a id="__codelineno-35-203" name="__codelineno-35-203" href="#__codelineno-35-203"></a>        haplotyper --&gt;|germline| dnascope
-<a id="__codelineno-35-204" name="__codelineno-35-204" href="#__codelineno-35-204"></a>        dnascope --&gt;|germline| mpileup
-<a id="__codelineno-35-205" name="__codelineno-35-205" href="#__codelineno-35-205"></a>        mpileup --&gt;|germline| strelka2
-<a id="__codelineno-35-206" name="__codelineno-35-206" href="#__codelineno-35-206"></a>        strelka2 --&gt;|germline| indexcov
-<a id="__codelineno-35-207" name="__codelineno-35-207" href="#__codelineno-35-207"></a>        indexcov --&gt;|germline| manta
-<a id="__codelineno-35-208" name="__codelineno-35-208" href="#__codelineno-35-208"></a>        manta --&gt;|germline| tiddit
-<a id="__codelineno-35-209" name="__codelineno-35-209" href="#__codelineno-35-209"></a>        tiddit --&gt;|germline| cnvkit
-<a id="__codelineno-35-210" name="__codelineno-35-210" href="#__codelineno-35-210"></a>        cnvkit --&gt;|germline| collect
-<a id="__codelineno-35-211" name="__codelineno-35-211" href="#__codelineno-35-211"></a>
-<a id="__codelineno-35-212" name="__codelineno-35-212" href="#__codelineno-35-212"></a>        %% Tumour-only route (middle rail): tnscope, lofreq, mutect2, msisensor2
-<a id="__codelineno-35-213" name="__codelineno-35-213" href="#__codelineno-35-213"></a>        %% join here; mpileup/indexcov run tumour but not the combined pair.
-<a id="__codelineno-35-214" name="__codelineno-35-214" href="#__codelineno-35-214"></a>        cram_call --&gt;|tumor_only| freebayes
-<a id="__codelineno-35-215" name="__codelineno-35-215" href="#__codelineno-35-215"></a>        freebayes --&gt;|tumor_only| tnscope
-<a id="__codelineno-35-216" name="__codelineno-35-216" href="#__codelineno-35-216"></a>        tnscope --&gt;|tumor_only| lofreq
-<a id="__codelineno-35-217" name="__codelineno-35-217" href="#__codelineno-35-217"></a>        lofreq --&gt;|tumor_only| mpileup
-<a id="__codelineno-35-218" name="__codelineno-35-218" href="#__codelineno-35-218"></a>        mpileup --&gt;|tumor_only| mutect2
-<a id="__codelineno-35-219" name="__codelineno-35-219" href="#__codelineno-35-219"></a>        mutect2 --&gt;|tumor_only| indexcov
-<a id="__codelineno-35-220" name="__codelineno-35-220" href="#__codelineno-35-220"></a>        indexcov --&gt;|tumor_only| manta
-<a id="__codelineno-35-221" name="__codelineno-35-221" href="#__codelineno-35-221"></a>        manta --&gt;|tumor_only| tiddit
-<a id="__codelineno-35-222" name="__codelineno-35-222" href="#__codelineno-35-222"></a>        tiddit --&gt;|tumor_only| controlfreec
-<a id="__codelineno-35-223" name="__codelineno-35-223" href="#__codelineno-35-223"></a>        controlfreec --&gt;|tumor_only| cnvkit
-<a id="__codelineno-35-224" name="__codelineno-35-224" href="#__codelineno-35-224"></a>        cnvkit --&gt;|tumor_only| msisensor2
-<a id="__codelineno-35-225" name="__codelineno-35-225" href="#__codelineno-35-225"></a>        msisensor2 --&gt;|tumor_only| collect
-<a id="__codelineno-35-226" name="__codelineno-35-226" href="#__codelineno-35-226"></a>
-<a id="__codelineno-35-227" name="__codelineno-35-227" href="#__codelineno-35-227"></a>        %% Tumour-normal pair route (bottom rail): muse, ascat, msisensorpro are
-<a id="__codelineno-35-228" name="__codelineno-35-228" href="#__codelineno-35-228"></a>        %% combined-only; strelka2 runs germline + combined (not tumour-only).
-<a id="__codelineno-35-229" name="__codelineno-35-229" href="#__codelineno-35-229"></a>        cram_call --&gt;|pair_n,pair_t| freebayes
-<a id="__codelineno-35-230" name="__codelineno-35-230" href="#__codelineno-35-230"></a>        freebayes --&gt;|pair_n,pair_t| tnscope
-<a id="__codelineno-35-231" name="__codelineno-35-231" href="#__codelineno-35-231"></a>        tnscope --&gt;|pair_n,pair_t| muse
-<a id="__codelineno-35-232" name="__codelineno-35-232" href="#__codelineno-35-232"></a>        muse --&gt;|pair_n,pair_t| mutect2
-<a id="__codelineno-35-233" name="__codelineno-35-233" href="#__codelineno-35-233"></a>        mutect2 --&gt;|pair_n,pair_t| strelka2
-<a id="__codelineno-35-234" name="__codelineno-35-234" href="#__codelineno-35-234"></a>        strelka2 --&gt;|pair_n,pair_t| manta
-<a id="__codelineno-35-235" name="__codelineno-35-235" href="#__codelineno-35-235"></a>        manta --&gt;|pair_n,pair_t| tiddit
-<a id="__codelineno-35-236" name="__codelineno-35-236" href="#__codelineno-35-236"></a>        tiddit --&gt;|pair_n,pair_t| ascat
-<a id="__codelineno-35-237" name="__codelineno-35-237" href="#__codelineno-35-237"></a>        ascat --&gt;|pair_n,pair_t| controlfreec
-<a id="__codelineno-35-238" name="__codelineno-35-238" href="#__codelineno-35-238"></a>        controlfreec --&gt;|pair_n,pair_t| cnvkit
-<a id="__codelineno-35-239" name="__codelineno-35-239" href="#__codelineno-35-239"></a>        cnvkit --&gt;|pair_n,pair_t| msisensorpro
-<a id="__codelineno-35-240" name="__codelineno-35-240" href="#__codelineno-35-240"></a>        msisensorpro --&gt;|pair_n,pair_t| collect
+<a id="__codelineno-35-193" name="__codelineno-35-193" href="#__codelineno-35-193"></a>        out[ ]
+<a id="__codelineno-35-194" name="__codelineno-35-194" href="#__codelineno-35-194"></a>
+<a id="__codelineno-35-195" name="__codelineno-35-195" href="#__codelineno-35-195"></a>        %% Germline route (top rail): deepvariant, haplotypecaller, haplotyper,
+<a id="__codelineno-35-196" name="__codelineno-35-196" href="#__codelineno-35-196"></a>        %% dnascope are germline-only; freebayes/mpileup/strelka2/manta/tiddit/
+<a id="__codelineno-35-197" name="__codelineno-35-197" href="#__codelineno-35-197"></a>        %% cnvkit/indexcov are shared.
+<a id="__codelineno-35-198" name="__codelineno-35-198" href="#__codelineno-35-198"></a>        cram_call --&gt;|germline| deepvariant
+<a id="__codelineno-35-199" name="__codelineno-35-199" href="#__codelineno-35-199"></a>        deepvariant --&gt;|germline| freebayes
+<a id="__codelineno-35-200" name="__codelineno-35-200" href="#__codelineno-35-200"></a>        freebayes --&gt;|germline| haplotypecaller
+<a id="__codelineno-35-201" name="__codelineno-35-201" href="#__codelineno-35-201"></a>        haplotypecaller --&gt;|germline| haplotyper
+<a id="__codelineno-35-202" name="__codelineno-35-202" href="#__codelineno-35-202"></a>        haplotyper --&gt;|germline| dnascope
+<a id="__codelineno-35-203" name="__codelineno-35-203" href="#__codelineno-35-203"></a>        dnascope --&gt;|germline| mpileup
+<a id="__codelineno-35-204" name="__codelineno-35-204" href="#__codelineno-35-204"></a>        mpileup --&gt;|germline| strelka2
+<a id="__codelineno-35-205" name="__codelineno-35-205" href="#__codelineno-35-205"></a>        strelka2 --&gt;|germline| indexcov
+<a id="__codelineno-35-206" name="__codelineno-35-206" href="#__codelineno-35-206"></a>        indexcov --&gt;|germline| manta
+<a id="__codelineno-35-207" name="__codelineno-35-207" href="#__codelineno-35-207"></a>        manta --&gt;|germline| tiddit
+<a id="__codelineno-35-208" name="__codelineno-35-208" href="#__codelineno-35-208"></a>        tiddit --&gt;|germline| cnvkit
+<a id="__codelineno-35-209" name="__codelineno-35-209" href="#__codelineno-35-209"></a>        cnvkit --&gt;|germline| out
+<a id="__codelineno-35-210" name="__codelineno-35-210" href="#__codelineno-35-210"></a>
+<a id="__codelineno-35-211" name="__codelineno-35-211" href="#__codelineno-35-211"></a>        %% Tumour-only route (middle rail): tnscope, lofreq, mutect2, msisensor2
+<a id="__codelineno-35-212" name="__codelineno-35-212" href="#__codelineno-35-212"></a>        %% join here; mpileup/indexcov run tumour but not the combined pair.
+<a id="__codelineno-35-213" name="__codelineno-35-213" href="#__codelineno-35-213"></a>        cram_call --&gt;|tumor_only| freebayes
+<a id="__codelineno-35-214" name="__codelineno-35-214" href="#__codelineno-35-214"></a>        freebayes --&gt;|tumor_only| tnscope
+<a id="__codelineno-35-215" name="__codelineno-35-215" href="#__codelineno-35-215"></a>        tnscope --&gt;|tumor_only| lofreq
+<a id="__codelineno-35-216" name="__codelineno-35-216" href="#__codelineno-35-216"></a>        lofreq --&gt;|tumor_only| mpileup
+<a id="__codelineno-35-217" name="__codelineno-35-217" href="#__codelineno-35-217"></a>        mpileup --&gt;|tumor_only| mutect2
+<a id="__codelineno-35-218" name="__codelineno-35-218" href="#__codelineno-35-218"></a>        mutect2 --&gt;|tumor_only| indexcov
+<a id="__codelineno-35-219" name="__codelineno-35-219" href="#__codelineno-35-219"></a>        indexcov --&gt;|tumor_only| manta
+<a id="__codelineno-35-220" name="__codelineno-35-220" href="#__codelineno-35-220"></a>        manta --&gt;|tumor_only| tiddit
+<a id="__codelineno-35-221" name="__codelineno-35-221" href="#__codelineno-35-221"></a>        tiddit --&gt;|tumor_only| controlfreec
+<a id="__codelineno-35-222" name="__codelineno-35-222" href="#__codelineno-35-222"></a>        controlfreec --&gt;|tumor_only| cnvkit
+<a id="__codelineno-35-223" name="__codelineno-35-223" href="#__codelineno-35-223"></a>        cnvkit --&gt;|tumor_only| msisensor2
+<a id="__codelineno-35-224" name="__codelineno-35-224" href="#__codelineno-35-224"></a>        msisensor2 --&gt;|tumor_only| out
+<a id="__codelineno-35-225" name="__codelineno-35-225" href="#__codelineno-35-225"></a>
+<a id="__codelineno-35-226" name="__codelineno-35-226" href="#__codelineno-35-226"></a>        %% Tumour-normal pair route (bottom rail): muse, ascat, msisensorpro are
+<a id="__codelineno-35-227" name="__codelineno-35-227" href="#__codelineno-35-227"></a>        %% combined-only; strelka2 runs germline + combined (not tumour-only).
+<a id="__codelineno-35-228" name="__codelineno-35-228" href="#__codelineno-35-228"></a>        cram_call --&gt;|pair_n,pair_t| freebayes
+<a id="__codelineno-35-229" name="__codelineno-35-229" href="#__codelineno-35-229"></a>        freebayes --&gt;|pair_n,pair_t| tnscope
+<a id="__codelineno-35-230" name="__codelineno-35-230" href="#__codelineno-35-230"></a>        tnscope --&gt;|pair_n,pair_t| muse
+<a id="__codelineno-35-231" name="__codelineno-35-231" href="#__codelineno-35-231"></a>        muse --&gt;|pair_n,pair_t| mutect2
+<a id="__codelineno-35-232" name="__codelineno-35-232" href="#__codelineno-35-232"></a>        mutect2 --&gt;|pair_n,pair_t| strelka2
+<a id="__codelineno-35-233" name="__codelineno-35-233" href="#__codelineno-35-233"></a>        strelka2 --&gt;|pair_n,pair_t| manta
+<a id="__codelineno-35-234" name="__codelineno-35-234" href="#__codelineno-35-234"></a>        manta --&gt;|pair_n,pair_t| tiddit
+<a id="__codelineno-35-235" name="__codelineno-35-235" href="#__codelineno-35-235"></a>        tiddit --&gt;|pair_n,pair_t| ascat
+<a id="__codelineno-35-236" name="__codelineno-35-236" href="#__codelineno-35-236"></a>        ascat --&gt;|pair_n,pair_t| controlfreec
+<a id="__codelineno-35-237" name="__codelineno-35-237" href="#__codelineno-35-237"></a>        controlfreec --&gt;|pair_n,pair_t| cnvkit
+<a id="__codelineno-35-238" name="__codelineno-35-238" href="#__codelineno-35-238"></a>        cnvkit --&gt;|pair_n,pair_t| msisensorpro
+<a id="__codelineno-35-239" name="__codelineno-35-239" href="#__codelineno-35-239"></a>        msisensorpro --&gt;|pair_n,pair_t| out
+<a id="__codelineno-35-240" name="__codelineno-35-240" href="#__codelineno-35-240"></a>    end
 <a id="__codelineno-35-241" name="__codelineno-35-241" href="#__codelineno-35-241"></a>
-<a id="__codelineno-35-242" name="__codelineno-35-242" href="#__codelineno-35-242"></a>        collect --&gt;|germline,tumor_only,pair_n,pair_t| out
-<a id="__codelineno-35-243" name="__codelineno-35-243" href="#__codelineno-35-243"></a>    end
-<a id="__codelineno-35-244" name="__codelineno-35-244" href="#__codelineno-35-244"></a>
-<a id="__codelineno-35-245" name="__codelineno-35-245" href="#__codelineno-35-245"></a>    %% Inter-section: core workflow flows through the top three sections.
-<a id="__codelineno-35-246" name="__codelineno-35-246" href="#__codelineno-35-246"></a>    ngscheckmate --&gt;|core| vc_anchor
-<a id="__codelineno-35-247" name="__codelineno-35-247" href="#__codelineno-35-247"></a>    _vc_merge --&gt;|core| snpeff
+<a id="__codelineno-35-242" name="__codelineno-35-242" href="#__codelineno-35-242"></a>    %% Inter-section: core workflow flows through the top three sections.
+<a id="__codelineno-35-243" name="__codelineno-35-243" href="#__codelineno-35-243"></a>    ngscheckmate --&gt;|core| vc_anchor
+<a id="__codelineno-35-244" name="__codelineno-35-244" href="#__codelineno-35-244"></a>    _vc_merge --&gt;|core| snpeff
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
