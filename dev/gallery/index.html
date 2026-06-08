@@ -5369,44 +5369,45 @@
 <a id="__codelineno-93-2" name="__codelineno-93-2" href="#__codelineno-93-2"></a>%%metro style: dark
 <a id="__codelineno-93-3" name="__codelineno-93-3" href="#__codelineno-93-3"></a>%%metro line: main | Main | #0570b0
 <a id="__codelineno-93-4" name="__codelineno-93-4" href="#__codelineno-93-4"></a>%%metro line: feed | Feed | #e63946
-<a id="__codelineno-93-5" name="__codelineno-93-5" href="#__codelineno-93-5"></a>
-<a id="__codelineno-93-6" name="__codelineno-93-6" href="#__codelineno-93-6"></a>graph LR
-<a id="__codelineno-93-7" name="__codelineno-93-7" href="#__codelineno-93-7"></a>    subgraph ingest [Ingest]
-<a id="__codelineno-93-8" name="__codelineno-93-8" href="#__codelineno-93-8"></a>        i1[Read]
-<a id="__codelineno-93-9" name="__codelineno-93-9" href="#__codelineno-93-9"></a>        i2[QC]
-<a id="__codelineno-93-10" name="__codelineno-93-10" href="#__codelineno-93-10"></a>        i1 --&gt;|main,feed| i2
-<a id="__codelineno-93-11" name="__codelineno-93-11" href="#__codelineno-93-11"></a>    end
-<a id="__codelineno-93-12" name="__codelineno-93-12" href="#__codelineno-93-12"></a>
-<a id="__codelineno-93-13" name="__codelineno-93-13" href="#__codelineno-93-13"></a>    subgraph align [Align]
-<a id="__codelineno-93-14" name="__codelineno-93-14" href="#__codelineno-93-14"></a>        a1[Map]
-<a id="__codelineno-93-15" name="__codelineno-93-15" href="#__codelineno-93-15"></a>        a2[Sort]
-<a id="__codelineno-93-16" name="__codelineno-93-16" href="#__codelineno-93-16"></a>        a1 --&gt;|main| a2
-<a id="__codelineno-93-17" name="__codelineno-93-17" href="#__codelineno-93-17"></a>    end
-<a id="__codelineno-93-18" name="__codelineno-93-18" href="#__codelineno-93-18"></a>
-<a id="__codelineno-93-19" name="__codelineno-93-19" href="#__codelineno-93-19"></a>    subgraph dedup [Dedup]
-<a id="__codelineno-93-20" name="__codelineno-93-20" href="#__codelineno-93-20"></a>        d1[Mark]
-<a id="__codelineno-93-21" name="__codelineno-93-21" href="#__codelineno-93-21"></a>        d2[Recal]
-<a id="__codelineno-93-22" name="__codelineno-93-22" href="#__codelineno-93-22"></a>        d1 --&gt;|main| d2
-<a id="__codelineno-93-23" name="__codelineno-93-23" href="#__codelineno-93-23"></a>    end
-<a id="__codelineno-93-24" name="__codelineno-93-24" href="#__codelineno-93-24"></a>
-<a id="__codelineno-93-25" name="__codelineno-93-25" href="#__codelineno-93-25"></a>    subgraph merge_pt [Merge]
-<a id="__codelineno-93-26" name="__codelineno-93-26" href="#__codelineno-93-26"></a>        g1[Combine]
-<a id="__codelineno-93-27" name="__codelineno-93-27" href="#__codelineno-93-27"></a>        g2[Refine]
-<a id="__codelineno-93-28" name="__codelineno-93-28" href="#__codelineno-93-28"></a>        g1 --&gt;|main,feed| g2
-<a id="__codelineno-93-29" name="__codelineno-93-29" href="#__codelineno-93-29"></a>    end
-<a id="__codelineno-93-30" name="__codelineno-93-30" href="#__codelineno-93-30"></a>
-<a id="__codelineno-93-31" name="__codelineno-93-31" href="#__codelineno-93-31"></a>    subgraph report [Report]
-<a id="__codelineno-93-32" name="__codelineno-93-32" href="#__codelineno-93-32"></a>        rp1[Summarise]
-<a id="__codelineno-93-33" name="__codelineno-93-33" href="#__codelineno-93-33"></a>        rp2[Publish]
-<a id="__codelineno-93-34" name="__codelineno-93-34" href="#__codelineno-93-34"></a>        rp1 --&gt;|main| rp2
-<a id="__codelineno-93-35" name="__codelineno-93-35" href="#__codelineno-93-35"></a>    end
-<a id="__codelineno-93-36" name="__codelineno-93-36" href="#__codelineno-93-36"></a>
-<a id="__codelineno-93-37" name="__codelineno-93-37" href="#__codelineno-93-37"></a>    i2 --&gt;|main| a1
-<a id="__codelineno-93-38" name="__codelineno-93-38" href="#__codelineno-93-38"></a>    a2 --&gt;|main| d1
-<a id="__codelineno-93-39" name="__codelineno-93-39" href="#__codelineno-93-39"></a>    d2 --&gt;|main| g1
-<a id="__codelineno-93-40" name="__codelineno-93-40" href="#__codelineno-93-40"></a>    i2 --&gt;|main| g1
-<a id="__codelineno-93-41" name="__codelineno-93-41" href="#__codelineno-93-41"></a>    g2 --&gt;|main| rp1
-<a id="__codelineno-93-42" name="__codelineno-93-42" href="#__codelineno-93-42"></a>    i2 --&gt;|feed| g1
+<a id="__codelineno-93-5" name="__codelineno-93-5" href="#__codelineno-93-5"></a>%%metro fold_threshold: 8
+<a id="__codelineno-93-6" name="__codelineno-93-6" href="#__codelineno-93-6"></a>
+<a id="__codelineno-93-7" name="__codelineno-93-7" href="#__codelineno-93-7"></a>graph LR
+<a id="__codelineno-93-8" name="__codelineno-93-8" href="#__codelineno-93-8"></a>    subgraph ingest [Ingest]
+<a id="__codelineno-93-9" name="__codelineno-93-9" href="#__codelineno-93-9"></a>        i1[Read]
+<a id="__codelineno-93-10" name="__codelineno-93-10" href="#__codelineno-93-10"></a>        i2[QC]
+<a id="__codelineno-93-11" name="__codelineno-93-11" href="#__codelineno-93-11"></a>        i1 --&gt;|main,feed| i2
+<a id="__codelineno-93-12" name="__codelineno-93-12" href="#__codelineno-93-12"></a>    end
+<a id="__codelineno-93-13" name="__codelineno-93-13" href="#__codelineno-93-13"></a>
+<a id="__codelineno-93-14" name="__codelineno-93-14" href="#__codelineno-93-14"></a>    subgraph align [Align]
+<a id="__codelineno-93-15" name="__codelineno-93-15" href="#__codelineno-93-15"></a>        a1[Map]
+<a id="__codelineno-93-16" name="__codelineno-93-16" href="#__codelineno-93-16"></a>        a2[Sort]
+<a id="__codelineno-93-17" name="__codelineno-93-17" href="#__codelineno-93-17"></a>        a1 --&gt;|main| a2
+<a id="__codelineno-93-18" name="__codelineno-93-18" href="#__codelineno-93-18"></a>    end
+<a id="__codelineno-93-19" name="__codelineno-93-19" href="#__codelineno-93-19"></a>
+<a id="__codelineno-93-20" name="__codelineno-93-20" href="#__codelineno-93-20"></a>    subgraph dedup [Dedup]
+<a id="__codelineno-93-21" name="__codelineno-93-21" href="#__codelineno-93-21"></a>        d1[Mark]
+<a id="__codelineno-93-22" name="__codelineno-93-22" href="#__codelineno-93-22"></a>        d2[Recal]
+<a id="__codelineno-93-23" name="__codelineno-93-23" href="#__codelineno-93-23"></a>        d1 --&gt;|main| d2
+<a id="__codelineno-93-24" name="__codelineno-93-24" href="#__codelineno-93-24"></a>    end
+<a id="__codelineno-93-25" name="__codelineno-93-25" href="#__codelineno-93-25"></a>
+<a id="__codelineno-93-26" name="__codelineno-93-26" href="#__codelineno-93-26"></a>    subgraph merge_pt [Merge]
+<a id="__codelineno-93-27" name="__codelineno-93-27" href="#__codelineno-93-27"></a>        g1[Combine]
+<a id="__codelineno-93-28" name="__codelineno-93-28" href="#__codelineno-93-28"></a>        g2[Refine]
+<a id="__codelineno-93-29" name="__codelineno-93-29" href="#__codelineno-93-29"></a>        g1 --&gt;|main,feed| g2
+<a id="__codelineno-93-30" name="__codelineno-93-30" href="#__codelineno-93-30"></a>    end
+<a id="__codelineno-93-31" name="__codelineno-93-31" href="#__codelineno-93-31"></a>
+<a id="__codelineno-93-32" name="__codelineno-93-32" href="#__codelineno-93-32"></a>    subgraph report [Report]
+<a id="__codelineno-93-33" name="__codelineno-93-33" href="#__codelineno-93-33"></a>        rp1[Summarise]
+<a id="__codelineno-93-34" name="__codelineno-93-34" href="#__codelineno-93-34"></a>        rp2[Publish]
+<a id="__codelineno-93-35" name="__codelineno-93-35" href="#__codelineno-93-35"></a>        rp1 --&gt;|main| rp2
+<a id="__codelineno-93-36" name="__codelineno-93-36" href="#__codelineno-93-36"></a>    end
+<a id="__codelineno-93-37" name="__codelineno-93-37" href="#__codelineno-93-37"></a>
+<a id="__codelineno-93-38" name="__codelineno-93-38" href="#__codelineno-93-38"></a>    i2 --&gt;|main| a1
+<a id="__codelineno-93-39" name="__codelineno-93-39" href="#__codelineno-93-39"></a>    a2 --&gt;|main| d1
+<a id="__codelineno-93-40" name="__codelineno-93-40" href="#__codelineno-93-40"></a>    d2 --&gt;|main| g1
+<a id="__codelineno-93-41" name="__codelineno-93-41" href="#__codelineno-93-41"></a>    i2 --&gt;|main| g1
+<a id="__codelineno-93-42" name="__codelineno-93-42" href="#__codelineno-93-42"></a>    g2 --&gt;|main| rp1
+<a id="__codelineno-93-43" name="__codelineno-93-43" href="#__codelineno-93-43"></a>    i2 --&gt;|feed| g1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
