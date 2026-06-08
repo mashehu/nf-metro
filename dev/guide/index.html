@@ -517,6 +517,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-flags-and-directive-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI flags and directive precedence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tips" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1047,6 +1058,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-flags-and-directive-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI flags and directive precedence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tips" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1510,7 +1532,7 @@
 </tr>
 <tr>
 <td><code>%%metro logo: &lt;path&gt;</code></td>
-<td>Logo image, bundled into the legend (or top-left if there is no legend). Use <code>--logo</code> CLI flag to override per-render.</td>
+<td>Logo image, bundled into the legend (or top-left if there is no legend).</td>
 </tr>
 <tr>
 <td><code>%%metro logo_scale: &lt;factor&gt;</code></td>
@@ -1518,7 +1540,7 @@
 </tr>
 <tr>
 <td><code>%%metro style: &lt;name&gt;</code></td>
-<td>Theme: <code>dark</code> (default) or <code>light</code></td>
+<td>Theme: <code>dark</code> (default, the nfcore theme) or <code>light</code>. Selects the render theme unless <code>--theme</code> is passed.</td>
 </tr>
 <tr>
 <td><code>%%metro line: &lt;id&gt; \| &lt;name&gt; \| &lt;color&gt; [\| &lt;style&gt;]</code></td>
@@ -1537,8 +1559,52 @@
 <td>Line ordering for track assignment: <code>definition</code> (default, preserves <code>.mmd</code> order) or <code>span</code> (longest-spanning lines get inner tracks)</td>
 </tr>
 <tr>
+<td><code>%%metro diamond_style: &lt;mode&gt;</code></td>
+<td>Fork-join (diamond) layout: <code>straight</code> (default) keeps the top branch on the main track; <code>symmetric</code> fans the branches evenly</td>
+</tr>
+<tr>
 <td><code>%%metro fold_threshold: &lt;columns&gt;</code></td>
-<td>Max station-columns a section row may reach before the auto-layout wraps it onto the next row (default 15). Raise it to keep a long horizontal trunk of sections on a single row. Overridden by the <code>--max-layers-per-row</code> CLI flag.</td>
+<td>Max station-columns a section row may reach before the auto-layout wraps it onto the next row (default 15). Raise it to keep a long horizontal trunk of sections on a single row.</td>
+</tr>
+<tr>
+<td><code>%%metro x_spacing: &lt;pixels&gt;</code></td>
+<td>Horizontal spacing between layers (default: auto - widened from 60 only when wide labels would collide)</td>
+</tr>
+<tr>
+<td><code>%%metro y_spacing: &lt;pixels&gt;</code></td>
+<td>Vertical spacing between tracks (default: auto - derived from the map's content)</td>
+</tr>
+<tr>
+<td><code>%%metro section_x_gap: &lt;pixels&gt;</code></td>
+<td>Horizontal gap between sections (default: 50)</td>
+</tr>
+<tr>
+<td><code>%%metro section_y_gap: &lt;pixels&gt;</code></td>
+<td>Vertical gap between sections (default: 50)</td>
+</tr>
+<tr>
+<td><code>%%metro label_angle: &lt;degrees&gt;</code></td>
+<td>Station-label angle (0 = horizontal). Overrides the theme default</td>
+</tr>
+<tr>
+<td><code>%%metro font_scale: &lt;factor&gt;</code></td>
+<td>Scale every text size and the label-width metrics that drive layout spacing (<code>1.0</code> = default)</td>
+</tr>
+<tr>
+<td><code>%%metro legend_logo_gap: &lt;pixels&gt;</code></td>
+<td>Horizontal gap between the logo and the legend entries</td>
+</tr>
+<tr>
+<td><code>%%metro width: &lt;pixels&gt;</code></td>
+<td>Output width in pixels (default: auto from content)</td>
+</tr>
+<tr>
+<td><code>%%metro height: &lt;pixels&gt;</code></td>
+<td>Output height in pixels (default: auto from content)</td>
+</tr>
+<tr>
+<td><code>%%metro animate: true</code></td>
+<td>Add animated balls traveling along the metro lines</td>
 </tr>
 <tr>
 <td><code>%%metro file: &lt;station&gt; \| &lt;label&gt; [\| &lt;name&gt;] [\| banner]</code></td>
@@ -1562,11 +1628,11 @@
 </tr>
 <tr>
 <td><code>%%metro center_ports: true</code></td>
-<td>Centre inter-section ports on the shorter of the two connected sections, so lines enter/exit at the visual midpoint. Overridden by the <code>--center-ports</code> / <code>--no-center-ports</code> CLI flag.</td>
+<td>Centre inter-section ports on the shorter of the two connected sections, so lines enter/exit at the visual midpoint.</td>
 </tr>
 <tr>
 <td><code>%%metro line_spread: &lt;mode&gt;[ \| &lt;id&gt;...]</code></td>
-<td>How lines sharing a station relate vertically (see below). <code>&lt;mode&gt;</code> is <code>bundle</code> (default), <code>centered</code>, or <code>rails</code>. The bare form sets the graph default; <code>&lt;mode&gt; \| sectionA, sectionB</code> overrides those sections. Overridden by the <code>--line-spread</code> CLI flag.</td>
+<td>How lines sharing a station relate vertically (see below). <code>&lt;mode&gt;</code> is <code>bundle</code> (default), <code>centered</code>, or <code>rails</code>. The bare form sets the graph default; <code>&lt;mode&gt; \| sectionA, sectionB</code> overrides those sections.</td>
 </tr>
 <tr>
 <td><code>%%metro legend_min_height: &lt;pixels&gt;</code></td>
@@ -1626,6 +1692,134 @@
 </tbody>
 </table>
 <p>Entry/exit hints tell the layout engine which side of the section box lines should enter or leave from. Most of the time you can <strong>omit these entirely</strong> and let the auto-layout engine figure it out. They are useful when you want lines to exit from different sides of the same section (e.g., right for some lines, bottom for others).</p>
+<h2 id="cli-flags-and-directive-precedence">CLI flags and directive precedence<a class="headerlink" href="#cli-flags-and-directive-precedence" title="Permanent link">&para;</a></h2>
+<p>Every layout and render option can be set two ways: a <code>%%metro</code> directive in the file, or the matching <code>nf-metro render</code> CLI flag. They share one precedence rule:</p>
+<blockquote>
+<p><strong>CLI flag (when passed) → <code>%%metro</code> directive → built-in default.</strong></p>
+</blockquote>
+<p>Set the directive in your committed <code>.mmd</code> so the map reproduces from the file alone, and reach for the flag only to tweak a single render without editing the file. The two planes always use the same name (the flag is the kebab-cased directive); a directive and its flag are defined from one registry, so they cannot drift apart.</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>CLI flag</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title:</code></td>
+<td><code>--title</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>style:</code></td>
+<td><code>--theme</code></td>
+<td><code>nfcore</code></td>
+</tr>
+<tr>
+<td><code>logo:</code></td>
+<td><code>--logo</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>x_spacing:</code></td>
+<td><code>--x-spacing</code></td>
+<td>auto</td>
+</tr>
+<tr>
+<td><code>y_spacing:</code></td>
+<td><code>--y-spacing</code></td>
+<td>auto</td>
+</tr>
+<tr>
+<td><code>section_x_gap:</code></td>
+<td><code>--section-x-gap</code></td>
+<td>50</td>
+</tr>
+<tr>
+<td><code>section_y_gap:</code></td>
+<td><code>--section-y-gap</code></td>
+<td>50</td>
+</tr>
+<tr>
+<td><code>fold_threshold:</code></td>
+<td><code>--fold-threshold</code></td>
+<td>auto (15)</td>
+</tr>
+<tr>
+<td><code>diamond_style:</code></td>
+<td><code>--diamond-style</code></td>
+<td><code>straight</code></td>
+</tr>
+<tr>
+<td><code>line_order:</code></td>
+<td><code>--line-order</code></td>
+<td><code>definition</code></td>
+</tr>
+<tr>
+<td><code>center_ports:</code></td>
+<td><code>--center-ports</code> / <code>--no-center-ports</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>compact_offsets:</code></td>
+<td><code>--compact-offsets</code> / <code>--no-compact-offsets</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>line_spread:</code></td>
+<td><code>--line-spread</code></td>
+<td><code>bundle</code></td>
+</tr>
+<tr>
+<td><code>label_angle:</code></td>
+<td><code>--label-angle</code></td>
+<td>theme default (0)</td>
+</tr>
+<tr>
+<td><code>font_scale:</code></td>
+<td><code>--font-scale</code></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>logo_scale:</code></td>
+<td><code>--logo-scale</code></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>legend:</code></td>
+<td><code>--legend</code></td>
+<td>auto</td>
+</tr>
+<tr>
+<td><code>legend_min_height:</code></td>
+<td><code>--legend-min-height</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>legend_logo_gap:</code></td>
+<td><code>--legend-logo-gap</code></td>
+<td>auto</td>
+</tr>
+<tr>
+<td><code>width:</code></td>
+<td><code>--width</code></td>
+<td>auto</td>
+</tr>
+<tr>
+<td><code>height:</code></td>
+<td><code>--height</code></td>
+<td>auto</td>
+</tr>
+<tr>
+<td><code>animate:</code></td>
+<td><code>--animate</code> / <code>--no-animate</code></td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<p><code>--output</code>, <code>--format</code>, <code>--from-nextflow</code>, and <code>--debug</code> have no directive: they select the output target or a diagnostic overlay rather than describing the diagram.</p>
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Start without sections.</strong> Get your stations and line routing right first, then wrap groups in <code>subgraph</code> blocks.</li>

@@ -1070,6 +1070,16 @@ more than the value alone: <code>entry</code> / <code>exit</code> / <code>direct
 enclosing section, and the icon keys <code>file</code> / <code>files</code> / <code>dir</code> need the
 key itself to choose the icon type. A key matching none of these is
 ignored with a <code>UserWarning</code>.</p>
+<p>The simple scalar / bool / enum knobs that also have a CLI flag (spacing,
+gaps, <code>diamond_style</code>, scales, <code>width</code> / <code>height</code> / <code>animate</code>, ...) are not
+hand-written handlers. They are declared once in <code>nf_metro.options</code>
+(<code>LayoutOption</code> / <code>LAYOUT_OPTIONS</code>); <code>_make_layout_option_handler</code> generates a
+directive handler from each entry (parsing via <code>coerce</code>, writing the named
+<code>MetroGraph</code> field), and <code>nf_metro.cli</code> generates the matching <code>click</code> flag
+from the same registry. Adding such an option means one registry entry, not a
+handler plus a flag plus a docs row. <code>tests/test_options_parity.py</code> guards that
+every registry option exists in both planes. The bespoke handlers below carry
+grammar (fields, sections, coordinates) the generic registry can't express.</p>
 <p>The directives <code>_apply_directive</code> recognises:</p>
 <table>
 <thead>
@@ -1108,12 +1118,24 @@ ignored with a <code>UserWarning</code>.</p>
 <td>bundle layout toggles</td>
 </tr>
 <tr>
+<td><code>diamond_style:</code></td>
+<td>fork-join layout <code>straight</code> / <code>symmetric</code></td>
+</tr>
+<tr>
 <td><code>line_spread:</code></td>
 <td>how shared lines relate vertically (<code>bundle</code> / <code>centered</code> / <code>rails</code>), graph-wide or per-section</td>
 </tr>
 <tr>
 <td><code>fold_threshold:</code></td>
 <td>station count at which long chains wrap into serpentine rows</td>
+</tr>
+<tr>
+<td><code>x_spacing:</code> / <code>y_spacing:</code> / <code>section_x_gap:</code> / <code>section_y_gap:</code></td>
+<td>layout spacing and section gaps</td>
+</tr>
+<tr>
+<td><code>width:</code> / <code>height:</code> / <code>animate:</code></td>
+<td>render output size and animation toggle</td>
 </tr>
 <tr>
 <td><code>off_track:</code></td>

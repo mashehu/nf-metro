@@ -1028,6 +1028,7 @@
 <p>Render a Mermaid metro map definition to SVG or interactive HTML.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>nf-metro render [OPTIONS] INPUT_FILE
 </code></pre></div>
+<p>Every layout/render option below also has a <code>%%metro</code> directive twin; an explicitly-passed flag overrides the directive (see the <a href="guide/#cli-flags-and-directive-precedence">precedence table</a> in the guide).</p>
 <table>
 <thead>
 <tr>
@@ -1049,18 +1050,38 @@
 </tr>
 <tr>
 <td><code>--theme [nfcore\|light]</code></td>
-<td><code>nfcore</code></td>
+<td>from <code>style:</code>, else <code>nfcore</code></td>
 <td>Visual theme</td>
 </tr>
 <tr>
-<td><code>--width INTEGER</code></td>
-<td>auto</td>
-<td>SVG width in pixels</td>
+<td><code>--debug / --no-debug</code></td>
+<td>off</td>
+<td>Show debug overlay</td>
 </tr>
 <tr>
-<td><code>--height INTEGER</code></td>
+<td><code>--from-nextflow</code></td>
+<td>off</td>
+<td>Convert Nextflow <code>-with-dag</code> input before rendering</td>
+</tr>
+<tr>
+<td><code>--logo PATH</code></td>
+<td>none</td>
+<td>Logo image path</td>
+</tr>
+<tr>
+<td><code>--title TEXT</code></td>
+<td>none</td>
+<td>Pipeline title</td>
+</tr>
+<tr>
+<td><code>--legend TEXT</code></td>
 <td>auto</td>
-<td>SVG height in pixels</td>
+<td>Legend+logo position (keyword, <code>keyword \| canvas</code>, <code>keyword \| dx,dy</code>, or <code>x,y</code>)</td>
+</tr>
+<tr>
+<td><code>--line-spread [bundle\|centered\|rails]</code></td>
+<td><code>bundle</code></td>
+<td>How shared lines relate vertically</td>
 </tr>
 <tr>
 <td><code>--x-spacing FLOAT</code></td>
@@ -1073,39 +1094,79 @@
 <td>Vertical spacing between tracks</td>
 </tr>
 <tr>
-<td><code>--max-layers-per-row INTEGER</code></td>
+<td><code>--section-x-gap FLOAT</code></td>
+<td>50</td>
+<td>Horizontal gap between sections</td>
+</tr>
+<tr>
+<td><code>--section-y-gap FLOAT</code></td>
+<td>50</td>
+<td>Vertical gap between sections</td>
+</tr>
+<tr>
+<td><code>--fold-threshold INTEGER</code></td>
+<td>auto (15)</td>
+<td>Max station-columns per row before folding</td>
+</tr>
+<tr>
+<td><code>--diamond-style [straight\|symmetric]</code></td>
+<td><code>straight</code></td>
+<td>Fork-join layout</td>
+</tr>
+<tr>
+<td><code>--line-order [definition\|span]</code></td>
+<td><code>definition</code></td>
+<td>Line ordering for track assignment</td>
+</tr>
+<tr>
+<td><code>--center-ports / --no-center-ports</code></td>
+<td>off</td>
+<td>Centre inter-section ports on the shorter section</td>
+</tr>
+<tr>
+<td><code>--compact-offsets / --no-compact-offsets</code></td>
+<td>off</td>
+<td>Size stations only for the lines passing through</td>
+</tr>
+<tr>
+<td><code>--label-angle FLOAT</code></td>
+<td>theme default</td>
+<td>Station-label angle in degrees</td>
+</tr>
+<tr>
+<td><code>--font-scale FLOAT</code></td>
+<td>1.0</td>
+<td>Scale text and label-driven layout spacing</td>
+</tr>
+<tr>
+<td><code>--logo-scale FLOAT</code></td>
+<td>1.0</td>
+<td>Scale the logo within the legend</td>
+</tr>
+<tr>
+<td><code>--legend-min-height FLOAT</code></td>
+<td>0</td>
+<td>Minimum legend content height in pixels</td>
+</tr>
+<tr>
+<td><code>--legend-logo-gap FLOAT</code></td>
 <td>auto</td>
-<td>Max layers before folding to next row</td>
+<td>Gap between logo and legend entries</td>
+</tr>
+<tr>
+<td><code>--width INTEGER</code></td>
+<td>auto</td>
+<td>Output width in pixels</td>
+</tr>
+<tr>
+<td><code>--height INTEGER</code></td>
+<td>auto</td>
+<td>Output height in pixels</td>
 </tr>
 <tr>
 <td><code>--animate / --no-animate</code></td>
 <td>off</td>
 <td>Add animated balls traveling along lines</td>
-</tr>
-<tr>
-<td><code>--debug / --no-debug</code></td>
-<td>off</td>
-<td>Show debug overlay</td>
-</tr>
-<tr>
-<td><code>--logo PATH</code></td>
-<td>none</td>
-<td>Logo image path (overrides <code>%%metro logo:</code> directive)</td>
-</tr>
-<tr>
-<td><code>--center-ports / --no-center-ports</code></td>
-<td>off</td>
-<td>Centre inter-section ports on the shorter of the two connected sections</td>
-</tr>
-<tr>
-<td><code>--from-nextflow</code></td>
-<td>off</td>
-<td>Convert Nextflow <code>-with-dag</code> input before rendering</td>
-</tr>
-<tr>
-<td><code>--title TEXT</code></td>
-<td>none</td>
-<td>Pipeline title (used with <code>--from-nextflow</code>)</td>
 </tr>
 </tbody>
 </table>
