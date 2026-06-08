@@ -569,6 +569,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-parsing-means-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What "parsing" means here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#input-format" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -580,10 +591,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directive-model" class="md-nav__link">
+  <a href="#what-a-grammar-is-and-why-we-use-one" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Directive model
+        What a grammar is, and why we use one
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-text-to-metrograph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From text to MetroGraph
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From text to MetroGraph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-simplification-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One simplification worth knowing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leniency-and-error-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leniency and error policy
       
     </span>
   </a>
@@ -615,6 +676,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding things
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-equivalence-is-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How equivalence is verified
+      
+    </span>
+  </a>
   
 </li>
       
@@ -689,6 +772,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-parsing-means-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What "parsing" means here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#input-format" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -700,10 +794,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directive-model" class="md-nav__link">
+  <a href="#what-a-grammar-is-and-why-we-use-one" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Directive model
+        What a grammar is, and why we use one
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-text-to-metrograph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From text to MetroGraph
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From text to MetroGraph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-simplification-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One simplification worth knowing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leniency-and-error-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leniency and error policy
       
     </span>
   </a>
@@ -738,6 +882,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adding-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding things
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-equivalence-is-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How equivalence is verified
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -759,12 +925,38 @@
 
 
 <h1 id="parser">Parser<a class="headerlink" href="#parser" title="Permanent link">&para;</a></h1>
-<p>The parser reads a Mermaid <code>graph LR</code> definition plus <code>%%metro</code>
-directives and produces a <code>MetroGraph</code>.  The entry point is
-<code>parse_metro_mermaid</code> in
+<p>A walkthrough of how nf-metro turns <code>.mmd</code> text into a <code>MetroGraph</code>. If
+you're adding a node shape, a <code>%%metro</code> directive, or a new statement
+form - or just trying to understand the grammar - start here.</p>
+<p>The entry point is <code>parse_metro_mermaid</code> in
 <a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/parser/mermaid.py"><code>src/nf_metro/parser/mermaid.py</code></a>;
-the data model is in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/parser/model.py"><code>src/nf_metro/parser/model.py</code></a>.</p>
+the data model it builds is in
+<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/parser/model.py"><code>src/nf_metro/parser/model.py</code></a>.
+The parser package is split by job: <code>grammar.py</code> (grammar, statement types,
+transformer), <code>directives.py</code> (directive parsing and dispatch), <code>resolve.py</code>
+(the post-parse graph rewrites), and <code>mermaid.py</code> (the public entry point and
+statement-application driver).
+Parsing is the first of the three stages (<strong>Parse -&gt; Layout -&gt; Render</strong>);
+the <a href="../layout_pipeline/">layout pipeline</a> takes over from the <code>MetroGraph</code>
+this stage produces.</p>
+<h2 id="what-parsing-means-here">What "parsing" means here<a class="headerlink" href="#what-parsing-means-here" title="Permanent link">&para;</a></h2>
+<p>The input is a subset of Mermaid <code>graph LR</code> syntax plus <code>%%metro</code>
+directives. Parsing reads that text and produces a <code>MetroGraph</code> of
+sections, stations, edges, lines, and ports - with no coordinates yet
+(those are the layout stage's job).</p>
+<p>The work splits in two:</p>
+<ol>
+<li><strong>Front-end</strong> - recognise each line's shape (a node? an edge? a
+   directive?) and pull out its pieces. The grammar recognises statement
+   <em>shapes and boundaries</em>; directive <em>payloads</em> and graph <em>semantics</em> are
+   handled by Python (see <a href="#directives">Directives</a> and
+   <a href="#parse-then-resolve-flow">Parse-then-resolve flow</a>).</li>
+<li><strong>Post-parse</strong> - rewrite the raw graph into the form layout expects:
+   resolve inter-section edges into ports and junctions, insert bypass
+   and convergence stations, create the implicit section for loose
+   nodes. These are plain functions operating on the model, covered in
+   <a href="#parse-then-resolve-flow">Parse-then-resolve flow</a> below.</li>
+</ol>
 <h2 id="input-format">Input format<a class="headerlink" href="#input-format" title="Permanent link">&para;</a></h2>
 <p><code>.mmd</code> files use a subset of Mermaid <code>graph LR</code> syntax:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%%metro title: Pipeline Name
@@ -784,16 +976,101 @@ the data model is in
 <li>A Mermaid <code>subgraph</code> becomes a <code>Section</code>.</li>
 <li>A node (<code>node_id[Label]</code>) becomes a <code>Station</code>.</li>
 <li>An edge (<code>a --&gt;|line1,line2| b</code>) becomes one <code>Edge</code> per line id; the
-  pipe-delimited label lists the lines the edge carries.</li>
-<li>Lines must be declared with <code>%%metro line:</code> before use; an undeclared
-  line id on an edge raises a parse error.</li>
+  pipe-delimited label lists the lines the edge carries. An endpoint may
+  also be written with an inline shape (<code>a[A] --&gt;|line1| b[B]</code>), which
+  declares that node's label as well as the edge.</li>
+<li>Lines must be declared with <code>%%metro line:</code> before use; an edge with no
+  line annotation, or one naming an undeclared line, is rejected as a
+  semantic error (see <a href="#leniency-and-error-policy">Leniency and error policy</a>).</li>
 <li>A primary graph direction other than <code>LR</code> is warned about
   (<code>_warn_if_non_lr_primary</code>); per-section flow is controlled by
   <code>%%metro direction:</code> and is independent of the header.</li>
 </ul>
-<h2 id="directive-model">Directive model<a class="headerlink" href="#directive-model" title="Permanent link">&para;</a></h2>
-<p>Every <code>%%metro</code> line is dispatched by <code>_parse_directive</code>.  The directives
-it recognises:</p>
+<h2 id="what-a-grammar-is-and-why-we-use-one">What a grammar is, and why we use one<a class="headerlink" href="#what-a-grammar-is-and-why-we-use-one" title="Permanent link">&para;</a></h2>
+<p>The naive way to read a line-oriented format is to write the
+<em>instructions</em> for recognising each line: "does this line start with
+<code>graph</code>? else is it a <code>subgraph</code>? else does it contain an arrow? else
+try these six node-shape patterns in this exact order...". That works,
+but the order of the checks becomes load-bearing, and every new shape or
+directive means finding the right slot in the chain.</p>
+<p>A <strong>grammar</strong> flips this around: instead of writing the recognising
+instructions, you write down <em>the rules of what a valid line is</em> and let
+a library do the recognising. nf-metro uses <a href="https://lark-parser.readthedocs.io/"><code>lark</code></a>
+for this. The grammar lives as a string in <code>grammar.py</code> (<code>_GRAMMAR</code>),
+and reads roughly:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>node:  NAME SHAPE?
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>edge:  NAME SHAPE? ARROW EDGELABEL? NAME SHAPE?
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>SHAPE: /\(\[...\]\)|\[\[...\]\]|\(\(...\)\)|\[...\]|\(...\)|\{...\}/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ARROW: /--&gt;|---|==&gt;/
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>NAME:  /[a-zA-Z_][a-zA-Z0-9_]*/
+</code></pre></div>
+<p>An edge endpoint may carry an inline shape: <code>x[X] --&gt;|a| y[Y]</code> declares
+node <code>x</code> with label "X", node <code>y</code> with label "Y", and the edge between
+them, all in one line. The <code>SHAPE</code> terminal's inner pattern
+(<code>_SHAPE_INNER</code>) excludes the arrow sequences so a source shape like
+<code>[X]</code> stops at the arrow rather than greedily swallowing it.</p>
+<p>You describe the shapes; lark works out how to match them. Adding a node
+shape is one more alternative in the <code>SHAPE</code> rule, not a new regex
+slotted into a hand-ordered chain, and the order of the rules stops
+mattering for correctness.</p>
+<p>It helps to think of it like describing the structure of a sentence
+("a sentence is a subject, a verb, then an object") rather than writing
+out, character by character, how to scan one.</p>
+<h2 id="from-text-to-metrograph">From text to <code>MetroGraph</code><a class="headerlink" href="#from-text-to-metrograph" title="Permanent link">&para;</a></h2>
+<p>Three steps:</p>
+<ol>
+<li><strong>Parse.</strong> <code>_PARSER.parse(text)</code> turns the whole document into a
+   parse tree using the grammar.</li>
+<li><strong>Transform.</strong> <code>_StatementTransformer</code> walks that tree and flattens
+   it into an ordered list of <strong>typed statements</strong> - one small dataclass
+   per source line, from a fixed union: <code>_GraphHeader</code>, <code>_Subgraph</code>,
+   <code>_Directive</code>, <code>_Node</code>, <code>_Edge</code>, <code>_End</code>, <code>_Comment</code>, and <code>_Junk</code>. The
+   transformer does the normalisation here, so each statement carries
+   structured fields rather than raw tokens: <code>_Subgraph</code> already splits
+   the section id from its display name, <code>_Directive</code> splits the body on
+   the first colon into <code>key</code>/<code>value</code>, and <code>_Edge</code> carries its line ids
+   as a list plus any inline endpoint labels.</li>
+<li><strong>Drive.</strong> <code>parse_metro_mermaid</code> iterates those statements <em>in source
+   order</em> and dispatches each by <code>isinstance</code>, applying it to the graph
+   while tracking which <code>subgraph</code> it's currently inside
+   (<code>current_section_id</code>). A <code>_Subgraph</code> opens a section, an <code>_End</code>
+   closes it, and the nodes/edges/directives in between are attached to
+   it.</li>
+</ol>
+<p>Because the appliers receive structured fields, the driver stays a thin
+dispatch: a <code>_Node</code> registers a station, an <code>_Edge</code> registers one edge
+per line id (declaring any inline-shaped endpoints), a <code>_Directive</code> is
+routed to a handler, and so on.</p>
+<p>Keeping the driver a simple in-order loop is deliberate: source order
+matters (e.g. dictionary insertion order of stations affects downstream
+layout), so the grammar handles <em>recognising</em> lines while the driver
+handles <em>applying</em> them in sequence.</p>
+<h3 id="one-simplification-worth-knowing">One simplification worth knowing<a class="headerlink" href="#one-simplification-worth-knowing" title="Permanent link">&para;</a></h3>
+<p>The model records only a node's <strong>id and label</strong> - never which shape it
+was drawn as. So all six Mermaid shapes collapse to a single <code>SHAPE</code>
+terminal plus a tiny "strip the delimiters" helper (<code>_shape_label</code>),
+instead of six separate regexes that each had to be tried in the right
+order.</p>
+<h2 id="directives">Directives<a class="headerlink" href="#directives" title="Permanent link">&para;</a></h2>
+<p>The <code>%%metro</code> directive <em>bodies</em> are not described by the grammar - they
+keep their own handler functions, because a grammar can't express
+behaviour like "warn about this and ignore it", which several directives
+need. What the grammar gives us is the directive line as a unit; the
+transformer splits its body once on the first colon into a <strong>key</strong> and a
+<strong>value</strong> (a <code>%%metro</code> line with no colon becomes a <code>_Comment</code> and is
+ignored).</p>
+<p>Dispatch on the key happens in <code>_apply_directive</code>. Most directives are
+graph-wide and live in the <code>_GLOBAL_DIRECTIVE_HANDLERS</code> dict, keyed by <strong>exact
+name</strong> and mapping to a <code>(value, graph) -&gt; None</code> handler. Exact-key
+lookup means handler order is irrelevant and a key that is a prefix of
+another (<code>legend</code> vs <code>legend_combo</code>, <code>logo</code> vs <code>logo_scale</code>) cannot
+shadow it. Three families are dispatched separately because they need
+more than the value alone: <code>entry</code> / <code>exit</code> / <code>direction</code> need the
+enclosing section, and the icon keys <code>file</code> / <code>files</code> / <code>dir</code> need the
+key itself to choose the icon type. A key matching none of these is
+ignored with a <code>UserWarning</code>.</p>
+<p>The directives <code>_apply_directive</code> recognises:</p>
 <table>
 <thead>
 <tr>
@@ -873,12 +1150,70 @@ it recognises:</p>
 </tbody>
 </table>
 <p>Note that <code>entry:</code> / <code>exit:</code> do <strong>not</strong> create <code>Port</code> objects at parse
-time.  <code>_parse_port_hint</code> records them as <code>entry_hints</code> / <code>exit_hints</code>
+time. <code>_parse_port_hint</code> records them as <code>entry_hints</code> / <code>exit_hints</code>
 (a <code>(side, [line_ids])</code> list) on the <code>Section</code>; the actual ports are
 created later, driven by real inter-section edges.</p>
+<h2 id="leniency-and-error-policy">Leniency and error policy<a class="headerlink" href="#leniency-and-error-policy" title="Permanent link">&para;</a></h2>
+<p>The split is deliberate: the <strong>grammar/parse layer is lenient</strong> about
+syntax it doesn't recognise (it warns rather than crashing), while
+<strong>semantic validity is a separate, stricter phase</strong>. A typo in a node
+line should not abort a render of an otherwise-fine diagram, but an edge
+that names no metro line is a real modelling error.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank line, <code>%%</code> comment, or <code>%%metro</code> line with no colon</td>
+<td>ignored silently</td>
+</tr>
+<tr>
+<td>Unrecognised non-blank line (the grammar <code>junk</code> rule)</td>
+<td>dropped, with a <code>UserWarning</code> ("Ignored unrecognised line: ...")</td>
+</tr>
+<tr>
+<td>Unknown <code>%%metro</code> directive key</td>
+<td>ignored, with a <code>UserWarning</code> ("Ignored unknown %%metro directive: ...")</td>
+</tr>
+<tr>
+<td>Malformed directive <em>payload</em> (too few <code>\|</code> fields, an unusable enum/number/bool, a section-scoped directive outside a subgraph)</td>
+<td>warned about and ignored, uniformly across handlers (<code>_warn_directive</code>)</td>
+</tr>
+<tr>
+<td>Foreign/unsupported syntax (Mermaid <code>flowchart</code>)</td>
+<td>raises <code>ValueError</code> with guidance, via <code>_check_unsupported_input</code>, before the grammar runs</td>
+</tr>
+<tr>
+<td>Edge with no line annotation, or an undeclared line id</td>
+<td>raised by <code>_validate_edge_annotations</code> after parsing</td>
+</tr>
+</tbody>
+</table>
+<p>Broader graph-semantic checks (beyond edge annotations) live in the
+separate <code>validate</code> phase, <code>nf_metro.parser.validate.validate_graph</code>.</p>
+<p>The unrecognised-line case is handled in the grammar by a low-priority
+catch-all:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>JUNK.-10: /[^\n]+/
+</code></pre></div>
+<p><code>JUNK</code> matches any line, but its negative priority means it only wins
+when nothing more specific does. The transformer turns the match into a
+<code>_Junk</code> statement, and the driver warns when it applies one.</p>
+<p>This <code>junk</code> fallback is why the parser is configured as
+<code>Lark(..., parser="earley", lexer="dynamic")</code> rather than the faster
+<code>lalr</code>. A line that <em>begins</em> like a valid statement but then hits an
+unexpected token must be able to fall back to <code>junk</code> and be dropped. An
+earley parser can explore that fallback; a committing <code>lalr</code> parser
+cannot backtrack a partly-matched line, so it would turn such a line
+into a fatal error instead. <strong>Do not switch the parser to <code>lalr</code></strong>
+without accepting that behaviour change. The parse runs once per render,
+so earley's extra cost over <code>lalr</code> is not worth optimising away.</p>
 <h2 id="parse-then-resolve-flow">Parse-then-resolve flow<a class="headerlink" href="#parse-then-resolve-flow" title="Permanent link">&para;</a></h2>
-<p><code>parse_metro_mermaid</code> scans the input line by line, then runs a
-post-parse sequence (only when the graph has sections):</p>
+<p>After the grammar parse and statement application, <code>parse_metro_mermaid</code>
+runs a post-parse sequence (only when the graph has sections):</p>
 <ol>
 <li><code>_validate_edge_annotations</code> - reject malformed edges.</li>
 <li><code>_remove_empty_sections</code> and <code>_create_implicit_section</code> - drop empty
@@ -891,14 +1226,14 @@ post-parse sequence (only when the graph has sections):</p>
 <li><code>_resolve_sections</code> - the core rewrite (below).</li>
 <li><code>_insert_bypass_stations</code>.</li>
 </ol>
-<p>Finally the parser applies pending terminus icons and <code>off_track</code> marks
-that were buffered during the line scan.</p>
+<p>Finally the parser applies pending terminus icons, <code>off_track</code> marks,
+and per-station markers that were buffered during the statement scan.</p>
 <h3 id="_resolve_sections"><code>_resolve_sections</code><a class="headerlink" href="#_resolve_sections" title="Permanent link">&para;</a></h3>
 <p><code>_resolve_sections</code> rewrites inter-section edges into port/junction
-chains.  It is split into three helpers:</p>
+chains. It is split into three helpers:</p>
 <ul>
 <li><code>_build_entry_side_mapping</code> - per-line entry-side lookup from the
-  <code>entry_hints</code>.  A section gets <strong>one</strong> entry side: if all hints agree,
+  <code>entry_hints</code>. A section gets <strong>one</strong> entry side: if all hints agree,
   that side is used; otherwise they collapse to the natural entry for the
   section direction (LEFT for LR, RIGHT for RL, TOP for TB).</li>
 <li><code>_classify_edges</code> - split edges into internal (both endpoints in one
@@ -906,15 +1241,40 @@ chains.  It is split into three helpers:</p>
   <code>internal_edges</code>.</li>
 <li><code>_create_ports_and_junctions</code> - create <code>Port</code> objects and rewrite each
   inter-section edge into a chain: <code>source -&gt; exit_port -&gt; entry_port -&gt;
-  target</code>.  The design rule is <strong>one exit port per source section</strong>
-  (all lines leave together for consistent ordering) and <strong>one entry
-  port per target section per side</strong>; junction stations handle fan-out
-  to multiple target sections.</li>
+  target</code>. The design rule is <strong>one exit port per source section</strong> (all
+  lines leave together for consistent ordering) and <strong>one entry port per
+  target section per side</strong>; junction stations handle fan-out to multiple
+  target sections.</li>
 </ul>
 <p>After ports and junctions exist, <code>_insert_merge_junctions</code> adds merge
 junctions and <code>_assign_section_numbers</code> numbers any unnumbered sections.</p>
 <p>The result is a <code>MetroGraph</code> whose edges all live within a section or
 run port-to-port, ready for the layout stage.</p>
+<h2 id="adding-things">Adding things<a class="headerlink" href="#adding-things" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>A node shape</strong> - add one alternative to the <code>SHAPE</code> terminal in
+  <code>_GRAMMAR</code>; if its delimiters are two characters per side, add the
+  opener to <code>two_char_opens</code> in <code>_shape_label</code>.</li>
+<li><strong>A <code>%%metro</code> directive</strong> - write a <code>(value, graph) -&gt; None</code> handler
+  and add an entry to the <code>_GLOBAL_DIRECTIVE_HANDLERS</code> dict keyed by the exact
+  directive name. No ordering concerns. (A directive that needs the
+  enclosing section or the key itself is dispatched in <code>_apply_directive</code>
+  instead of the dict.) On an unusable payload, call <code>_warn_malformed</code>
+  (or <code>_warn_directive</code> for a more specific message) and return, rather
+  than failing silently - that is the leniency policy above.</li>
+<li><strong>A new statement form</strong> - add a rule and its terminal to <code>_GRAMMAR</code>,
+  a typed statement dataclass (added to the <code>_Statement</code> union), a method
+  to <code>_StatementTransformer</code> returning that dataclass, and an <code>isinstance</code>
+  branch to the driver loop in <code>parse_metro_mermaid</code>.</li>
+</ul>
+<h2 id="how-equivalence-is-verified">How equivalence is verified<a class="headerlink" href="#how-equivalence-is-verified" title="Permanent link">&para;</a></h2>
+<p>The grammar must produce exactly the same <code>MetroGraph</code> as the input
+implies, so changes here are checked by <strong>comparing parsed model objects</strong>
+(not rendered SVGs): parse every fixture in <code>tests/fixtures/</code>,
+<code>examples/</code>, and <code>examples/topologies/</code> and assert the model matches.
+Because identical models render identically, this keeps the gallery
+byte-identical without chasing sub-pixel render drift. The grammar's
+coverage and behaviour are pinned by <code>tests/test_parser_grammar.py</code>.</p>
 
 
 

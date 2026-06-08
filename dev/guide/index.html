@@ -1122,6 +1122,10 @@
 <li><strong>Stations</strong> use Mermaid node syntax: <code>node_id[Label]</code>.</li>
 <li><strong>Edges</strong> carry a line ID: <code>source --&gt;|line_id| target</code>. An edge can carry multiple lines at once: <code>a --&gt;|line1,line2| b</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Declare each station on its own line</p>
+<p>Give every station one labelled line of its own (<code>fastqc[FastQC]</code>) and use <strong>bare ids</strong> in edges (<code>fastqc --&gt;|qc| multiqc</code>). Because most stations are shared by several edges, this keeps each label in exactly one place, and it gives <code>%%metro</code> directives (<code>file:</code>, <code>marker:</code>, <code>off_track:</code>, ...) a clear node to anchor to. nf-metro also accepts inline-shaped endpoints (<code>fastqc[FastQC] --&gt;|qc| multiqc[MultiQC]</code>) for Mermaid compatibility, but avoid them in committed maps: a station can only carry its inline label on one of its edges, so mixing the two styles fragments where a label lives.</p>
+</div>
 <p>Without sections, all stations sit on a single track. That works for simple pipelines, but real workflows have logical groupings.</p>
 <h2 id="2-grouping-stations-into-sections">2. Grouping stations into sections<a class="headerlink" href="#2-grouping-stations-into-sections" title="Permanent link">&para;</a></h2>
 <p>Sections wrap related stations in visual boxes using Mermaid <code>subgraph</code> blocks. This makes the diagram easier to read and lets the layout engine route lines between groups automatically.</p>
