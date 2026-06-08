@@ -2331,165 +2331,160 @@
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>%%metro line: germline | Germline | #0570b0
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>%%metro line: tumor_only | Tumor only | #d62728
 <a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>%%metro line: somatic | Tumor-normal pair | #756bb1
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>%%metro grid: preprocessing | 0,0,1,2
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>%%metro grid: variant_calling | 0,1,3,1
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>%%metro grid: post_vc | 1,1,1,1
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>%%metro grid: annotation | 1,2,1,1
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>%%metro grid: reporting | 1,3,1,1
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>graph LR
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    subgraph preprocessing [Pre-processing]
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>        %%metro exit: right | germline, tumor_only, somatic
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        fastq_in[ ]
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        bam_in[ ]
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        fastqc[FastQC]
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        fastp[FastP]
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        umi[UMI consensus]
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>        bwa[BWA-MEM]
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>        bwa2[BWA-MEM2]
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>        dragmap[DragMap]
-<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>        sentieon_bwa[Sentieon BWA]
-<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        merge_index[samtools merge/index]
-<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>        markdup[MarkDuplicates]
-<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>        sentieon_dedup[Sentieon Dedup]
-<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>        bqsr[BaseRecalibrator]
-<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>        applybqsr[ApplyBQSR]
-<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>        mosdepth[mosdepth]
-<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        ngscheckmate[NGSCheckmate]
-<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
-<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>        fastq_in --&gt;|germline,tumor_only,somatic| fastqc
-<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>        fastq_in --&gt;|germline,tumor_only,somatic| fastp
-<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>        bam_in --&gt;|germline,tumor_only,somatic| fastp
-<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        fastp --&gt;|germline,tumor_only,somatic| umi
-<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>        umi --&gt;|germline,tumor_only,somatic| bwa
-<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>        umi --&gt;|germline,tumor_only,somatic| bwa2
-<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>        umi --&gt;|germline,tumor_only,somatic| dragmap
-<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>        umi --&gt;|germline,tumor_only,somatic| sentieon_bwa
-<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>        bwa --&gt;|germline,tumor_only,somatic| merge_index
-<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>        bwa2 --&gt;|germline,tumor_only,somatic| merge_index
-<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>        dragmap --&gt;|germline,tumor_only,somatic| merge_index
-<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>        sentieon_bwa --&gt;|germline,tumor_only,somatic| merge_index
-<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>        merge_index --&gt;|germline,tumor_only,somatic| markdup
-<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>        merge_index --&gt;|germline,tumor_only,somatic| sentieon_dedup
-<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>        markdup --&gt;|germline,tumor_only,somatic| bqsr
-<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>        sentieon_dedup --&gt;|germline,tumor_only,somatic| bqsr
-<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>        bqsr --&gt;|germline,tumor_only,somatic| applybqsr
-<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>        applybqsr --&gt;|germline,tumor_only,somatic| mosdepth
-<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>        applybqsr --&gt;|germline,tumor_only,somatic| ngscheckmate
-<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>    end
-<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>
-<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>    subgraph variant_calling [Variant calling]
-<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>        %%metro entry: left | germline, tumor_only, somatic
-<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>        %%metro exit: right | germline, tumor_only, somatic
-<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>        cram_in[ ]
-<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>        haplotypecaller[HaplotypeCaller]
-<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>        deepvariant[DeepVariant]
-<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>        sentieon_dnascope[Sentieon DNAscope]
-<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>        sentieon_haplotyper[Sentieon Haplotyper]
-<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>        freebayes[FreeBayes]
-<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>        strelka[Strelka]
-<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>        mpileup[bcftools mpileup]
-<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>        mutect2[Mutect2]
-<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>        lofreq[LoFreq]
-<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>        muse[MuSE]
-<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>        sentieon_tnscope[Sentieon TNscope]
-<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>        manta[Manta]
-<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>        tiddit[TIDDIT]
-<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>        ascat[ASCAT]
-<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>        cnvkit[CNVkit]
-<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>        controlfreec[Control-FREEC]
-<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>        indexcov[indexcov]
-<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>        msisensor2[MSIsensor2]
-<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>        msisensorpro[MSIsensor-pro]
-<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>        vcfs[ ]
-<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>
-<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>        cram_in --&gt;|germline| haplotypecaller
-<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>        cram_in --&gt;|germline| deepvariant
-<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>        cram_in --&gt;|germline| sentieon_dnascope
-<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>        cram_in --&gt;|germline| sentieon_haplotyper
-<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>        cram_in --&gt;|germline,tumor_only,somatic| freebayes
-<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>        cram_in --&gt;|germline,somatic| strelka
-<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>        cram_in --&gt;|germline,tumor_only,somatic| mpileup
-<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>        cram_in --&gt;|tumor_only,somatic| mutect2
-<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a>        cram_in --&gt;|tumor_only| lofreq
-<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a>        cram_in --&gt;|somatic| muse
-<a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a>        cram_in --&gt;|tumor_only,somatic| sentieon_tnscope
-<a id="__codelineno-9-98" name="__codelineno-9-98" href="#__codelineno-9-98"></a>        cram_in --&gt;|germline,tumor_only,somatic| manta
-<a id="__codelineno-9-99" name="__codelineno-9-99" href="#__codelineno-9-99"></a>        cram_in --&gt;|germline,tumor_only,somatic| tiddit
-<a id="__codelineno-9-100" name="__codelineno-9-100" href="#__codelineno-9-100"></a>        cram_in --&gt;|somatic| ascat
-<a id="__codelineno-9-101" name="__codelineno-9-101" href="#__codelineno-9-101"></a>        cram_in --&gt;|germline,tumor_only,somatic| cnvkit
-<a id="__codelineno-9-102" name="__codelineno-9-102" href="#__codelineno-9-102"></a>        cram_in --&gt;|tumor_only,somatic| controlfreec
-<a id="__codelineno-9-103" name="__codelineno-9-103" href="#__codelineno-9-103"></a>        cram_in --&gt;|germline,somatic| indexcov
-<a id="__codelineno-9-104" name="__codelineno-9-104" href="#__codelineno-9-104"></a>        cram_in --&gt;|tumor_only| msisensor2
-<a id="__codelineno-9-105" name="__codelineno-9-105" href="#__codelineno-9-105"></a>        cram_in --&gt;|somatic| msisensorpro
-<a id="__codelineno-9-106" name="__codelineno-9-106" href="#__codelineno-9-106"></a>
-<a id="__codelineno-9-107" name="__codelineno-9-107" href="#__codelineno-9-107"></a>        haplotypecaller --&gt;|germline| vcfs
-<a id="__codelineno-9-108" name="__codelineno-9-108" href="#__codelineno-9-108"></a>        deepvariant --&gt;|germline| vcfs
-<a id="__codelineno-9-109" name="__codelineno-9-109" href="#__codelineno-9-109"></a>        sentieon_dnascope --&gt;|germline| vcfs
-<a id="__codelineno-9-110" name="__codelineno-9-110" href="#__codelineno-9-110"></a>        sentieon_haplotyper --&gt;|germline| vcfs
-<a id="__codelineno-9-111" name="__codelineno-9-111" href="#__codelineno-9-111"></a>        freebayes --&gt;|germline,tumor_only,somatic| vcfs
-<a id="__codelineno-9-112" name="__codelineno-9-112" href="#__codelineno-9-112"></a>        strelka --&gt;|germline,somatic| vcfs
-<a id="__codelineno-9-113" name="__codelineno-9-113" href="#__codelineno-9-113"></a>        mpileup --&gt;|germline,tumor_only,somatic| vcfs
-<a id="__codelineno-9-114" name="__codelineno-9-114" href="#__codelineno-9-114"></a>        mutect2 --&gt;|tumor_only,somatic| vcfs
-<a id="__codelineno-9-115" name="__codelineno-9-115" href="#__codelineno-9-115"></a>        lofreq --&gt;|tumor_only| vcfs
-<a id="__codelineno-9-116" name="__codelineno-9-116" href="#__codelineno-9-116"></a>        muse --&gt;|somatic| vcfs
-<a id="__codelineno-9-117" name="__codelineno-9-117" href="#__codelineno-9-117"></a>        sentieon_tnscope --&gt;|tumor_only,somatic| vcfs
-<a id="__codelineno-9-118" name="__codelineno-9-118" href="#__codelineno-9-118"></a>        manta --&gt;|germline,tumor_only,somatic| vcfs
-<a id="__codelineno-9-119" name="__codelineno-9-119" href="#__codelineno-9-119"></a>        tiddit --&gt;|germline,tumor_only,somatic| vcfs
-<a id="__codelineno-9-120" name="__codelineno-9-120" href="#__codelineno-9-120"></a>        ascat --&gt;|somatic| vcfs
-<a id="__codelineno-9-121" name="__codelineno-9-121" href="#__codelineno-9-121"></a>        cnvkit --&gt;|germline,tumor_only,somatic| vcfs
-<a id="__codelineno-9-122" name="__codelineno-9-122" href="#__codelineno-9-122"></a>        controlfreec --&gt;|tumor_only,somatic| vcfs
-<a id="__codelineno-9-123" name="__codelineno-9-123" href="#__codelineno-9-123"></a>        indexcov --&gt;|germline,somatic| vcfs
-<a id="__codelineno-9-124" name="__codelineno-9-124" href="#__codelineno-9-124"></a>        msisensor2 --&gt;|tumor_only| vcfs
-<a id="__codelineno-9-125" name="__codelineno-9-125" href="#__codelineno-9-125"></a>        msisensorpro --&gt;|somatic| vcfs
-<a id="__codelineno-9-126" name="__codelineno-9-126" href="#__codelineno-9-126"></a>    end
-<a id="__codelineno-9-127" name="__codelineno-9-127" href="#__codelineno-9-127"></a>
-<a id="__codelineno-9-128" name="__codelineno-9-128" href="#__codelineno-9-128"></a>    subgraph post_vc [Post-processing]
-<a id="__codelineno-9-129" name="__codelineno-9-129" href="#__codelineno-9-129"></a>        filter_vcfs[Filter VCFs]
-<a id="__codelineno-9-130" name="__codelineno-9-130" href="#__codelineno-9-130"></a>        normalize[Normalize]
-<a id="__codelineno-9-131" name="__codelineno-9-131" href="#__codelineno-9-131"></a>        concatenate[Concatenate]
-<a id="__codelineno-9-132" name="__codelineno-9-132" href="#__codelineno-9-132"></a>        consensus[Consensus]
-<a id="__codelineno-9-133" name="__codelineno-9-133" href="#__codelineno-9-133"></a>        varlociraptor[Varlociraptor]
-<a id="__codelineno-9-134" name="__codelineno-9-134" href="#__codelineno-9-134"></a>        bcftools_stats[bcftools stats]
-<a id="__codelineno-9-135" name="__codelineno-9-135" href="#__codelineno-9-135"></a>        vcftools[VCFtools]
-<a id="__codelineno-9-136" name="__codelineno-9-136" href="#__codelineno-9-136"></a>
-<a id="__codelineno-9-137" name="__codelineno-9-137" href="#__codelineno-9-137"></a>        filter_vcfs --&gt;|germline,tumor_only,somatic| normalize
-<a id="__codelineno-9-138" name="__codelineno-9-138" href="#__codelineno-9-138"></a>        normalize --&gt;|germline,tumor_only,somatic| concatenate
-<a id="__codelineno-9-139" name="__codelineno-9-139" href="#__codelineno-9-139"></a>        concatenate --&gt;|germline,tumor_only,somatic| consensus
-<a id="__codelineno-9-140" name="__codelineno-9-140" href="#__codelineno-9-140"></a>        consensus --&gt;|germline,tumor_only,somatic| varlociraptor
-<a id="__codelineno-9-141" name="__codelineno-9-141" href="#__codelineno-9-141"></a>        varlociraptor --&gt;|germline,tumor_only,somatic| bcftools_stats
-<a id="__codelineno-9-142" name="__codelineno-9-142" href="#__codelineno-9-142"></a>        bcftools_stats --&gt;|germline,tumor_only,somatic| vcftools
-<a id="__codelineno-9-143" name="__codelineno-9-143" href="#__codelineno-9-143"></a>    end
-<a id="__codelineno-9-144" name="__codelineno-9-144" href="#__codelineno-9-144"></a>
-<a id="__codelineno-9-145" name="__codelineno-9-145" href="#__codelineno-9-145"></a>    subgraph annotation [Annotation]
-<a id="__codelineno-9-146" name="__codelineno-9-146" href="#__codelineno-9-146"></a>        snpeff[snpEff]
-<a id="__codelineno-9-147" name="__codelineno-9-147" href="#__codelineno-9-147"></a>        vep[VEP]
-<a id="__codelineno-9-148" name="__codelineno-9-148" href="#__codelineno-9-148"></a>        bcftools_ann[bcftools annotate]
-<a id="__codelineno-9-149" name="__codelineno-9-149" href="#__codelineno-9-149"></a>        snpsift[SnpSift]
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>graph LR
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    subgraph preprocessing [Pre-processing]
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        %%metro exit: right | germline, tumor_only, somatic
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>        fastq_in[ ]
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>        bam_in[ ]
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        fastqc[FastQC]
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        fastp[FastP]
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>        umi[UMI consensus]
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        bwa[BWA-MEM]
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        bwa2[BWA-MEM2]
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        dragmap[DragMap]
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        sentieon_bwa[Sentieon BWA]
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        merge_index[samtools merge/index]
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>        markdup[MarkDuplicates]
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>        sentieon_dedup[Sentieon Dedup]
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>        bqsr[BaseRecalibrator]
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>        applybqsr[ApplyBQSR]
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        mosdepth[mosdepth]
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>        ngscheckmate[NGSCheckmate]
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>        fastq_in --&gt;|germline,tumor_only,somatic| fastqc
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>        fastq_in --&gt;|germline,tumor_only,somatic| fastp
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>        bam_in --&gt;|germline,tumor_only,somatic| fastp
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        fastp --&gt;|germline,tumor_only,somatic| umi
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>        umi --&gt;|germline,tumor_only,somatic| bwa
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>        umi --&gt;|germline,tumor_only,somatic| bwa2
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>        umi --&gt;|germline,tumor_only,somatic| dragmap
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>        umi --&gt;|germline,tumor_only,somatic| sentieon_bwa
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        bwa --&gt;|germline,tumor_only,somatic| merge_index
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>        bwa2 --&gt;|germline,tumor_only,somatic| merge_index
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>        dragmap --&gt;|germline,tumor_only,somatic| merge_index
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>        sentieon_bwa --&gt;|germline,tumor_only,somatic| merge_index
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>        merge_index --&gt;|germline,tumor_only,somatic| markdup
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>        merge_index --&gt;|germline,tumor_only,somatic| sentieon_dedup
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>        markdup --&gt;|germline,tumor_only,somatic| bqsr
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>        sentieon_dedup --&gt;|germline,tumor_only,somatic| bqsr
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>        bqsr --&gt;|germline,tumor_only,somatic| applybqsr
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>        applybqsr --&gt;|germline,tumor_only,somatic| mosdepth
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>        applybqsr --&gt;|germline,tumor_only,somatic| ngscheckmate
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>    end
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>    subgraph variant_calling [Variant calling]
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>        %%metro entry: left | germline, tumor_only, somatic
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>        %%metro exit: right | germline, tumor_only, somatic
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>        cram_in[ ]
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>        haplotypecaller[HaplotypeCaller]
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>        deepvariant[DeepVariant]
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>        sentieon_dnascope[Sentieon DNAscope]
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>        sentieon_haplotyper[Sentieon Haplotyper]
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>        freebayes[FreeBayes]
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>        strelka[Strelka]
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>        mpileup[bcftools mpileup]
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>        mutect2[Mutect2]
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>        lofreq[LoFreq]
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>        muse[MuSE]
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>        sentieon_tnscope[Sentieon TNscope]
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>        manta[Manta]
+<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>        tiddit[TIDDIT]
+<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>        ascat[ASCAT]
+<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>        cnvkit[CNVkit]
+<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>        controlfreec[Control-FREEC]
+<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>        indexcov[indexcov]
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>        msisensor2[MSIsensor2]
+<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>        msisensorpro[MSIsensor-pro]
+<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>        vcfs[ ]
+<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>
+<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>        cram_in --&gt;|germline| haplotypecaller
+<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>        cram_in --&gt;|germline| deepvariant
+<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>        cram_in --&gt;|germline| sentieon_dnascope
+<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>        cram_in --&gt;|germline| sentieon_haplotyper
+<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>        cram_in --&gt;|germline,tumor_only,somatic| freebayes
+<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>        cram_in --&gt;|germline,somatic| strelka
+<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>        cram_in --&gt;|germline,tumor_only,somatic| mpileup
+<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>        cram_in --&gt;|tumor_only,somatic| mutect2
+<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>        cram_in --&gt;|tumor_only| lofreq
+<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>        cram_in --&gt;|somatic| muse
+<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>        cram_in --&gt;|tumor_only,somatic| sentieon_tnscope
+<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>        cram_in --&gt;|germline,tumor_only,somatic| manta
+<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>        cram_in --&gt;|germline,tumor_only,somatic| tiddit
+<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a>        cram_in --&gt;|somatic| ascat
+<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a>        cram_in --&gt;|germline,tumor_only,somatic| cnvkit
+<a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a>        cram_in --&gt;|tumor_only,somatic| controlfreec
+<a id="__codelineno-9-98" name="__codelineno-9-98" href="#__codelineno-9-98"></a>        cram_in --&gt;|germline,somatic| indexcov
+<a id="__codelineno-9-99" name="__codelineno-9-99" href="#__codelineno-9-99"></a>        cram_in --&gt;|tumor_only| msisensor2
+<a id="__codelineno-9-100" name="__codelineno-9-100" href="#__codelineno-9-100"></a>        cram_in --&gt;|somatic| msisensorpro
+<a id="__codelineno-9-101" name="__codelineno-9-101" href="#__codelineno-9-101"></a>
+<a id="__codelineno-9-102" name="__codelineno-9-102" href="#__codelineno-9-102"></a>        haplotypecaller --&gt;|germline| vcfs
+<a id="__codelineno-9-103" name="__codelineno-9-103" href="#__codelineno-9-103"></a>        deepvariant --&gt;|germline| vcfs
+<a id="__codelineno-9-104" name="__codelineno-9-104" href="#__codelineno-9-104"></a>        sentieon_dnascope --&gt;|germline| vcfs
+<a id="__codelineno-9-105" name="__codelineno-9-105" href="#__codelineno-9-105"></a>        sentieon_haplotyper --&gt;|germline| vcfs
+<a id="__codelineno-9-106" name="__codelineno-9-106" href="#__codelineno-9-106"></a>        freebayes --&gt;|germline,tumor_only,somatic| vcfs
+<a id="__codelineno-9-107" name="__codelineno-9-107" href="#__codelineno-9-107"></a>        strelka --&gt;|germline,somatic| vcfs
+<a id="__codelineno-9-108" name="__codelineno-9-108" href="#__codelineno-9-108"></a>        mpileup --&gt;|germline,tumor_only,somatic| vcfs
+<a id="__codelineno-9-109" name="__codelineno-9-109" href="#__codelineno-9-109"></a>        mutect2 --&gt;|tumor_only,somatic| vcfs
+<a id="__codelineno-9-110" name="__codelineno-9-110" href="#__codelineno-9-110"></a>        lofreq --&gt;|tumor_only| vcfs
+<a id="__codelineno-9-111" name="__codelineno-9-111" href="#__codelineno-9-111"></a>        muse --&gt;|somatic| vcfs
+<a id="__codelineno-9-112" name="__codelineno-9-112" href="#__codelineno-9-112"></a>        sentieon_tnscope --&gt;|tumor_only,somatic| vcfs
+<a id="__codelineno-9-113" name="__codelineno-9-113" href="#__codelineno-9-113"></a>        manta --&gt;|germline,tumor_only,somatic| vcfs
+<a id="__codelineno-9-114" name="__codelineno-9-114" href="#__codelineno-9-114"></a>        tiddit --&gt;|germline,tumor_only,somatic| vcfs
+<a id="__codelineno-9-115" name="__codelineno-9-115" href="#__codelineno-9-115"></a>        ascat --&gt;|somatic| vcfs
+<a id="__codelineno-9-116" name="__codelineno-9-116" href="#__codelineno-9-116"></a>        cnvkit --&gt;|germline,tumor_only,somatic| vcfs
+<a id="__codelineno-9-117" name="__codelineno-9-117" href="#__codelineno-9-117"></a>        controlfreec --&gt;|tumor_only,somatic| vcfs
+<a id="__codelineno-9-118" name="__codelineno-9-118" href="#__codelineno-9-118"></a>        indexcov --&gt;|germline,somatic| vcfs
+<a id="__codelineno-9-119" name="__codelineno-9-119" href="#__codelineno-9-119"></a>        msisensor2 --&gt;|tumor_only| vcfs
+<a id="__codelineno-9-120" name="__codelineno-9-120" href="#__codelineno-9-120"></a>        msisensorpro --&gt;|somatic| vcfs
+<a id="__codelineno-9-121" name="__codelineno-9-121" href="#__codelineno-9-121"></a>    end
+<a id="__codelineno-9-122" name="__codelineno-9-122" href="#__codelineno-9-122"></a>
+<a id="__codelineno-9-123" name="__codelineno-9-123" href="#__codelineno-9-123"></a>    subgraph post_vc [Post-processing]
+<a id="__codelineno-9-124" name="__codelineno-9-124" href="#__codelineno-9-124"></a>        filter_vcfs[Filter VCFs]
+<a id="__codelineno-9-125" name="__codelineno-9-125" href="#__codelineno-9-125"></a>        normalize[Normalize]
+<a id="__codelineno-9-126" name="__codelineno-9-126" href="#__codelineno-9-126"></a>        concatenate[Concatenate]
+<a id="__codelineno-9-127" name="__codelineno-9-127" href="#__codelineno-9-127"></a>        consensus[Consensus]
+<a id="__codelineno-9-128" name="__codelineno-9-128" href="#__codelineno-9-128"></a>        varlociraptor[Varlociraptor]
+<a id="__codelineno-9-129" name="__codelineno-9-129" href="#__codelineno-9-129"></a>        bcftools_stats[bcftools stats]
+<a id="__codelineno-9-130" name="__codelineno-9-130" href="#__codelineno-9-130"></a>        vcftools[VCFtools]
+<a id="__codelineno-9-131" name="__codelineno-9-131" href="#__codelineno-9-131"></a>
+<a id="__codelineno-9-132" name="__codelineno-9-132" href="#__codelineno-9-132"></a>        filter_vcfs --&gt;|germline,tumor_only,somatic| normalize
+<a id="__codelineno-9-133" name="__codelineno-9-133" href="#__codelineno-9-133"></a>        normalize --&gt;|germline,tumor_only,somatic| concatenate
+<a id="__codelineno-9-134" name="__codelineno-9-134" href="#__codelineno-9-134"></a>        concatenate --&gt;|germline,tumor_only,somatic| consensus
+<a id="__codelineno-9-135" name="__codelineno-9-135" href="#__codelineno-9-135"></a>        consensus --&gt;|germline,tumor_only,somatic| varlociraptor
+<a id="__codelineno-9-136" name="__codelineno-9-136" href="#__codelineno-9-136"></a>        varlociraptor --&gt;|germline,tumor_only,somatic| bcftools_stats
+<a id="__codelineno-9-137" name="__codelineno-9-137" href="#__codelineno-9-137"></a>        bcftools_stats --&gt;|germline,tumor_only,somatic| vcftools
+<a id="__codelineno-9-138" name="__codelineno-9-138" href="#__codelineno-9-138"></a>    end
+<a id="__codelineno-9-139" name="__codelineno-9-139" href="#__codelineno-9-139"></a>
+<a id="__codelineno-9-140" name="__codelineno-9-140" href="#__codelineno-9-140"></a>    subgraph annotation [Annotation]
+<a id="__codelineno-9-141" name="__codelineno-9-141" href="#__codelineno-9-141"></a>        snpeff[snpEff]
+<a id="__codelineno-9-142" name="__codelineno-9-142" href="#__codelineno-9-142"></a>        vep[VEP]
+<a id="__codelineno-9-143" name="__codelineno-9-143" href="#__codelineno-9-143"></a>        bcftools_ann[bcftools annotate]
+<a id="__codelineno-9-144" name="__codelineno-9-144" href="#__codelineno-9-144"></a>        snpsift[SnpSift]
+<a id="__codelineno-9-145" name="__codelineno-9-145" href="#__codelineno-9-145"></a>
+<a id="__codelineno-9-146" name="__codelineno-9-146" href="#__codelineno-9-146"></a>        snpeff --&gt;|germline,tumor_only,somatic| vep
+<a id="__codelineno-9-147" name="__codelineno-9-147" href="#__codelineno-9-147"></a>        vep --&gt;|germline,tumor_only,somatic| bcftools_ann
+<a id="__codelineno-9-148" name="__codelineno-9-148" href="#__codelineno-9-148"></a>        bcftools_ann --&gt;|germline,tumor_only,somatic| snpsift
+<a id="__codelineno-9-149" name="__codelineno-9-149" href="#__codelineno-9-149"></a>    end
 <a id="__codelineno-9-150" name="__codelineno-9-150" href="#__codelineno-9-150"></a>
-<a id="__codelineno-9-151" name="__codelineno-9-151" href="#__codelineno-9-151"></a>        snpeff --&gt;|germline,tumor_only,somatic| vep
-<a id="__codelineno-9-152" name="__codelineno-9-152" href="#__codelineno-9-152"></a>        vep --&gt;|germline,tumor_only,somatic| bcftools_ann
-<a id="__codelineno-9-153" name="__codelineno-9-153" href="#__codelineno-9-153"></a>        bcftools_ann --&gt;|germline,tumor_only,somatic| snpsift
-<a id="__codelineno-9-154" name="__codelineno-9-154" href="#__codelineno-9-154"></a>    end
+<a id="__codelineno-9-151" name="__codelineno-9-151" href="#__codelineno-9-151"></a>    subgraph reporting [Reporting]
+<a id="__codelineno-9-152" name="__codelineno-9-152" href="#__codelineno-9-152"></a>        multiqc[MultiQC]
+<a id="__codelineno-9-153" name="__codelineno-9-153" href="#__codelineno-9-153"></a>        vcf_out[ ]
+<a id="__codelineno-9-154" name="__codelineno-9-154" href="#__codelineno-9-154"></a>        report_out[ ]
 <a id="__codelineno-9-155" name="__codelineno-9-155" href="#__codelineno-9-155"></a>
-<a id="__codelineno-9-156" name="__codelineno-9-156" href="#__codelineno-9-156"></a>    subgraph reporting [Reporting]
-<a id="__codelineno-9-157" name="__codelineno-9-157" href="#__codelineno-9-157"></a>        multiqc[MultiQC]
-<a id="__codelineno-9-158" name="__codelineno-9-158" href="#__codelineno-9-158"></a>        vcf_out[ ]
-<a id="__codelineno-9-159" name="__codelineno-9-159" href="#__codelineno-9-159"></a>        report_out[ ]
+<a id="__codelineno-9-156" name="__codelineno-9-156" href="#__codelineno-9-156"></a>        multiqc --&gt;|germline,tumor_only,somatic| report_out
+<a id="__codelineno-9-157" name="__codelineno-9-157" href="#__codelineno-9-157"></a>        snpsift_to_vcf[ ]
+<a id="__codelineno-9-158" name="__codelineno-9-158" href="#__codelineno-9-158"></a>        snpsift_to_vcf --&gt;|germline,tumor_only,somatic| vcf_out
+<a id="__codelineno-9-159" name="__codelineno-9-159" href="#__codelineno-9-159"></a>    end
 <a id="__codelineno-9-160" name="__codelineno-9-160" href="#__codelineno-9-160"></a>
-<a id="__codelineno-9-161" name="__codelineno-9-161" href="#__codelineno-9-161"></a>        multiqc --&gt;|germline,tumor_only,somatic| report_out
-<a id="__codelineno-9-162" name="__codelineno-9-162" href="#__codelineno-9-162"></a>        snpsift_to_vcf[ ]
-<a id="__codelineno-9-163" name="__codelineno-9-163" href="#__codelineno-9-163"></a>        snpsift_to_vcf --&gt;|germline,tumor_only,somatic| vcf_out
-<a id="__codelineno-9-164" name="__codelineno-9-164" href="#__codelineno-9-164"></a>    end
-<a id="__codelineno-9-165" name="__codelineno-9-165" href="#__codelineno-9-165"></a>
-<a id="__codelineno-9-166" name="__codelineno-9-166" href="#__codelineno-9-166"></a>    %% Inter-section edges
-<a id="__codelineno-9-167" name="__codelineno-9-167" href="#__codelineno-9-167"></a>    applybqsr --&gt;|germline,tumor_only,somatic| cram_in
-<a id="__codelineno-9-168" name="__codelineno-9-168" href="#__codelineno-9-168"></a>    vcfs --&gt;|germline,tumor_only,somatic| filter_vcfs
-<a id="__codelineno-9-169" name="__codelineno-9-169" href="#__codelineno-9-169"></a>    vcftools --&gt;|germline,tumor_only,somatic| snpeff
-<a id="__codelineno-9-170" name="__codelineno-9-170" href="#__codelineno-9-170"></a>    snpsift --&gt;|germline,tumor_only,somatic| snpsift_to_vcf
-<a id="__codelineno-9-171" name="__codelineno-9-171" href="#__codelineno-9-171"></a>    fastqc --&gt;|germline,tumor_only,somatic| multiqc
-<a id="__codelineno-9-172" name="__codelineno-9-172" href="#__codelineno-9-172"></a>    mosdepth --&gt;|germline,tumor_only,somatic| multiqc
-<a id="__codelineno-9-173" name="__codelineno-9-173" href="#__codelineno-9-173"></a>    bcftools_stats --&gt;|germline,tumor_only,somatic| multiqc
+<a id="__codelineno-9-161" name="__codelineno-9-161" href="#__codelineno-9-161"></a>    %% Inter-section edges
+<a id="__codelineno-9-162" name="__codelineno-9-162" href="#__codelineno-9-162"></a>    applybqsr --&gt;|germline,tumor_only,somatic| cram_in
+<a id="__codelineno-9-163" name="__codelineno-9-163" href="#__codelineno-9-163"></a>    vcfs --&gt;|germline,tumor_only,somatic| filter_vcfs
+<a id="__codelineno-9-164" name="__codelineno-9-164" href="#__codelineno-9-164"></a>    vcftools --&gt;|germline,tumor_only,somatic| snpeff
+<a id="__codelineno-9-165" name="__codelineno-9-165" href="#__codelineno-9-165"></a>    snpsift --&gt;|germline,tumor_only,somatic| snpsift_to_vcf
+<a id="__codelineno-9-166" name="__codelineno-9-166" href="#__codelineno-9-166"></a>    fastqc --&gt;|germline,tumor_only,somatic| multiqc
+<a id="__codelineno-9-167" name="__codelineno-9-167" href="#__codelineno-9-167"></a>    mosdepth --&gt;|germline,tumor_only,somatic| multiqc
+<a id="__codelineno-9-168" name="__codelineno-9-168" href="#__codelineno-9-168"></a>    bcftools_stats --&gt;|germline,tumor_only,somatic| multiqc
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
