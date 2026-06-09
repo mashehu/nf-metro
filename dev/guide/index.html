@@ -16,7 +16,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../nextflow/">
+        <link rel="next" href="../live/">
       
       
         
@@ -564,6 +564,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../live/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nextflow/" class="md-nav__link">
         
   
@@ -658,10 +685,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -679,8 +706,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1637,6 +1664,10 @@
 <tr>
 <td><code>%%metro legend_min_height: &lt;pixels&gt;</code></td>
 <td>Minimum legend content height in pixels (useful for single-line maps where the logo would otherwise be tiny)</td>
+</tr>
+<tr>
+<td><code>%%metro process: &lt;station&gt; \| &lt;regex&gt;</code></td>
+<td><em>Experimental.</em> Tie a station to the Nextflow process(es) it represents, for live progress (see <a href="../live/">Live progress</a>). The regex matches the fully-qualified process name; repeat the directive to attach several patterns to one station. Pure metadata - it never affects the rendered map.</td>
 </tr>
 </tbody>
 </table>
