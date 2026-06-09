@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="332" height="286" viewBox="0 0 332 286">
+<defs>
+</defs>
+<metadata id="nf-metro-manifest" data-nf-metro-schema="1.0"><![CDATA[{"height":286,"lines":[{"color":"#ff0000","id":"main","label":"Main"},{"color":"#0000ff","id":"alt","label":"Alternative"}],"match":{"flags":"i","target":"fqProcessName","type":"regex"},"sections":[],"stations":[{"id":"a","label":"Input","lines":["alt","main"],"processes":[],"r":5.0,"x":80.0,"y":120.0},{"id":"b","label":"Process A","lines":["main"],"processes":[],"r":5.0,"x":176.0,"y":120.0},{"id":"c","label":"Process B","lines":["alt"],"processes":[],"r":5.0,"x":176.0,"y":160.0},{"id":"d","label":"Output","lines":["alt","main"],"processes":[],"r":5.0,"x":272.0,"y":120.0}],"title":"Test Pipeline","version":"1.0","width":332}]]></metadata>
+<rect x="0" y="0" width="332" height="286" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Test Pipeline</text>
+<path d="M80.0,123.0 L94.75,123.0 Q104.75,123.0,110.75,131.0 L128.75,155.0 Q134.75,163.0,144.75,163.0 L176.0,163.0" stroke="#0000ff" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-alt" data-line-id="alt" />
+<path d="M176.0,163.0 L207.25,163.0 Q217.25,163.0,223.25,155.0 L241.25,131.0 Q247.25,123.0,257.25,123.0 L272.0,123.0" stroke="#0000ff" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-alt" data-line-id="alt" />
+<path d="M80.0,120.0 L176.0,120.0" stroke="#ff0000" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M176.0,120.0 L272.0,120.0" stroke="#ff0000" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<g class="nf-metro-station-group" data-metro-station="a" data-metro-cx="80.0" data-metro-cy="120.0" data-metro-r="5.0" data-metro-lines="alt,main">
+<rect x="75.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="a" data-station-lines="alt,main" data-station-label="Input" />
+</g>
+<g class="nf-metro-station-group" data-metro-station="b" data-metro-cx="176.0" data-metro-cy="120.0" data-metro-r="5.0" data-metro-lines="main">
+<rect x="171.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="b" data-station-lines="main" data-station-label="Process A" />
+</g>
+<g class="nf-metro-station-group" data-metro-station="c" data-metro-cx="176.0" data-metro-cy="160.0" data-metro-r="5.0" data-metro-lines="alt">
+<rect x="171.0" y="158.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="c" data-station-lines="alt" data-station-label="Process B" />
+</g>
+<g class="nf-metro-station-group" data-metro-station="d" data-metro-cx="272.0" data-metro-cy="120.0" data-metro-r="5.0" data-metro-lines="alt,main">
+<rect x="267.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="d" data-station-lines="alt,main" data-station-label="Output" />
+</g>
+<text x="80.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="a" class="nf-metro-station-label">Input</text>
+<text x="176.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="b" class="nf-metro-station-label">Process A</text>
+<text x="176.0" y="149.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="c" class="nf-metro-station-label">Process B</text>
+<text x="272.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="d" class="nf-metro-station-label">Output</text>
+<circle cx="104.75" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="134.75" cy="163.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="217.25" cy="163.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="247.25" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<rect x="60.0" y="190.0" width="144.70000000000002" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M72.0,214.0 L96.0,214.0" stroke="#ff0000" stroke-width="3.0" stroke-linecap="round" />
+<text x="108.0" y="214.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Main</text>
+<path d="M72.0,238.0 L96.0,238.0" stroke="#0000ff" stroke-width="3.0" stroke-linecap="round" />
+<text x="108.0" y="238.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Alternative</text>
+<text x="302.0" y="278.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
