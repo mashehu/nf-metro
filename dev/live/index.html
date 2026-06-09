@@ -361,6 +361,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-embedded-data-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The embedded data manifest
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The embedded data manifest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-matching-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process matching semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-it-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading it back
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-serve-the-map" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -786,6 +836,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-embedded-data-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The embedded data manifest
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The embedded data manifest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-matching-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process matching semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-it-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading it back
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-serve-the-map" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -956,16 +1056,86 @@ matched against the <strong>fully-qualified</strong> process name:</p>
   <code>NFCORE_RNASEQ:RNASEQ:ALIGN:...</code>, when a tool recurs).</li>
 <li>The directive is pure metadata: it never affects the rendered map.</li>
 </ul>
+<h2 id="the-embedded-data-manifest">The embedded data manifest<a class="headerlink" href="#the-embedded-data-manifest" title="Permanent link">&para;</a></h2>
+<p><code>nf-metro serve</code> lights up a map because it holds the in-memory graph - it knows
+each station's coordinates and the <code>process:</code> mapping. A tool that has only the
+<strong>committed SVG file</strong> (no Python, no graph) needs that information carried
+inside the file. Every rendered SVG therefore embeds a machine-readable manifest
+so it is a self-contained, durable contract: an overlay can be positioned,
+stations restyled, and process mappings looked up with no re-render.</p>
+<p>It is <strong>embedded by default</strong> (it is small and adds no external dependencies),
+and carried two redundant, sanitization-safe ways (no <code>&lt;script&gt;</code>):</p>
+<ol>
+<li>A JSON manifest inside a <code>&lt;metadata id="nf-metro-manifest"&gt;</code> element.</li>
+<li><code>data-metro-*</code> attributes on each station's <code>&lt;g&gt;</code> element.</li>
+</ol>
+<p>Set <code>%%metro manifest: false</code> to emit the drawn map only, with no manifest, no
+<code>data-metro-*</code> attributes, and no station-group wrapper - byte-for-byte the same
+SVG as a build that predates the manifest.</p>
+<h3 id="schema">Schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;match&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fqProcessName&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nf-core/rnaseq&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1829</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">724</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">&quot;lines&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;star_salmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STAR + Salmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#e64949&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&quot;sections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preprocessing&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pre-processing&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">&quot;stations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fastqc&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FastQC&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">120.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">80.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="nt">&quot;lines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;star_salmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;star_rsem&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="nt">&quot;section&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preprocessing&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">      </span><span class="nt">&quot;processes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;FASTQC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong><code>id</code> is the join key.</strong> A station's <code>id</code> in the manifest equals
+  <code>data-metro-station="&lt;id&gt;"</code> on its <code>&lt;g&gt;</code> element, so a consumer can go
+  manifest→element and element→manifest without guessing.</li>
+<li><strong>Coordinate space.</strong> <code>x</code>/<code>y</code>/<code>r</code> are absolute SVG user units inside the
+  <code>viewBox="0 0 width height"</code> (the renderer emits no outer transform), so an
+  overlay sharing that viewBox lines up exactly. <code>r</code> is a single nominal marker
+  radius. Coordinates are rounded to one decimal place.</li>
+<li><strong>Stations</strong> are every non-port, non-hidden station - unmapped ones simply
+  carry an empty <code>processes</code> list, so the manifest is a complete inventory of
+  addressable stations, not only the subset that lights up.</li>
+<li><strong>Forward compatibility.</strong> Consumers must ignore unknown fields; additive
+  fields keep the same major <code>version</code>.</li>
+</ul>
+<h3 id="process-matching-semantics">Process matching semantics<a class="headerlink" href="#process-matching-semantics" title="Permanent link">&para;</a></h3>
+<p><code>station.processes</code> are regular expressions matched <strong>case-insensitively</strong>
+against the <strong>fully-qualified</strong> Nextflow process name - exactly the rule the
+live server's <code>stations_for_process</code> uses (the <code>match</code> block states this
+explicitly so a non-Python consumer can reproduce it). To keep Python <code>re</code> and,
+say, JavaScript <code>RegExp</code> from diverging, keep patterns within a portable regex
+subset: character classes, anchors, <code>.</code>/<code>*</code>/<code>+</code>/<code>?</code>, bounded <code>{m,n}</code>,
+alternation, and groups. Avoid Python-only constructs (named groups <code>(?P&lt;&gt;)</code>,
+inline flags <code>(?i)</code>, possessive quantifiers, <code>\Z</code>).</p>
+<p>A process may legitimately match <strong>more than one</strong> station (the <code>check-mapping</code>
+"ambiguous" case below); how to resolve that is a consumer-side policy decision,
+not a schema error.</p>
+<h3 id="reading-it-back">Reading it back<a class="headerlink" href="#reading-it-back" title="Permanent link">&para;</a></h3>
+<p><code>nf_metro.render</code> ships the canonical reader and matcher:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.render</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_manifest</span><span class="p">,</span> <span class="n">match_station_ids</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">manifest</span> <span class="o">=</span> <span class="n">read_manifest</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pipeline.svg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">match_station_ids</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="s2">&quot;NFCORE_RNASEQ:RNASEQ:FASTQC&quot;</span><span class="p">)</span>   <span class="c1"># -&gt; [&quot;fastqc&quot;]</span>
+</code></pre></div>
 <h2 id="2-serve-the-map">2. Serve the map<a class="headerlink" href="#2-serve-the-map" title="Permanent link">&para;</a></h2>
 <p><code>serve</code> hosts <strong>one</strong> map at a stable URL. Each run's <code>started</code> event resets it,
 so it's the mode for iterating on a single pipeline - re-run and watch the same
 page - and it's the server the plugin's managed mode spawns. For many pipelines
 or runs side by side, use the dashboard in §2b instead.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nf-metro<span class="w"> </span>serve<span class="w"> </span>path/to/map.mmd<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nf-metro<span class="w"> </span>serve<span class="w"> </span>path/to/map.mmd<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
 </code></pre></div>
 <p>Then open <a href="http://localhost:8080/">http://localhost:8080/</a> and start the pipeline with its weblog
 pointed at the server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w"> </span>-with-weblog<span class="w"> </span>http://localhost:8080/events
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w"> </span>-with-weblog<span class="w"> </span>http://localhost:8080/events
 </code></pre></div>
 <p>Stations light up as tasks are submitted, run, and complete. A browser that
 connects mid-run receives the current state immediately, so you never see a
@@ -1029,11 +1199,11 @@ is a long-lived <strong>dashboard</strong>: each registered run is its own <code
 so many pipelines - or a history of runs - sit side by side. It starts with
 <strong>no</strong> map; a pipeline registers its map by POSTing the <code>.mmd</code> to <code>/maps</code>, then
 sends weblog events to the run's own endpoint:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nf-metro<span class="w"> </span>serve-multi<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span><span class="w">        </span><span class="c1"># index at http://localhost:8080/</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># a pipeline registers its map (returns {&quot;id&quot;,&quot;view&quot;,&quot;events&quot;})</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>curl<span class="w"> </span>-s<span class="w"> </span>--data-binary<span class="w"> </span>@map.mmd<span class="w"> </span><span class="s2">&quot;http://localhost:8080/maps?name=myrun&quot;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># then POST weblog events to the returned /r/&lt;id&gt;/events</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>nf-metro<span class="w"> </span>serve-multi<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span><span class="w">        </span><span class="c1"># index at http://localhost:8080/</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># a pipeline registers its map (returns {&quot;id&quot;,&quot;view&quot;,&quot;events&quot;})</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>curl<span class="w"> </span>-s<span class="w"> </span>--data-binary<span class="w"> </span>@map.mmd<span class="w"> </span><span class="s2">&quot;http://localhost:8080/maps?name=myrun&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># then POST weblog events to the returned /r/&lt;id&gt;/events</span>
 </code></pre></div>
 <p><code>GET /</code> lists every run with a live status; <code>GET /r/&lt;id&gt;/</code> is that run's live
 map. Endpoints mirror the single-map server under a <code>/r/&lt;id&gt;/</code> prefix
@@ -1044,17 +1214,17 @@ map. Endpoints mirror the single-map server under a <code>/r/&lt;id&gt;/</code> 
 <code>metro.server</code> mode does the register-and-emit automatically, so a plain
 <code>nextflow run</code> shows up on the dashboard:</p>
 <p>Start one persistent server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nf-metro<span class="w"> </span>serve-multi<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span><span class="w">            </span><span class="c1"># dashboard at http://localhost:8080/</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nf-metro<span class="w"> </span>serve-multi<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span><span class="w">            </span><span class="c1"># dashboard at http://localhost:8080/</span>
 </code></pre></div>
 <p>Point any pipeline at it via the plugin's <code>metro</code> config (in <code>nextflow.config</code>
 or a <code>-c</code> overlay), then run it normally:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;nf-metro@0.1.0&#39;</span><span class="w"> </span><span class="o">}</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">metro</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://localhost:8080&#39;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">map</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;assets/metro_map.mmd&#39;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="o">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;nf-metro@0.1.0&#39;</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">metro</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://localhost:8080&#39;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">map</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;assets/metro_map.mmd&#39;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="o">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w">      </span><span class="c1"># repeat for as many pipelines as you like</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w">      </span><span class="c1"># repeat for as many pipelines as you like</span>
 </code></pre></div>
 <p>Each run prints <code>registered on ...; live map: http://localhost:8080/r/&lt;id&gt;/</code>.
 Open <code>http://localhost:8080/</code> to watch every run light up on one page; the
@@ -1110,16 +1280,16 @@ attach, managed, central - documented in its
 invisible), a station pattern that matches nothing (stale), or a process whose
 patterns match more than one station (duplicated progress). <code>check-mapping</code>
 makes all three loud so CI can gate on them:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Export the pipeline&#39;s process graph, then lint the map against it</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w"> </span>-with-dag<span class="w"> </span>dag.mmd<span class="w"> </span>-preview
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>nf-metro<span class="w"> </span>check-mapping<span class="w"> </span>path/to/map.mmd<span class="w"> </span>--dag<span class="w"> </span>dag.mmd
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Export the pipeline&#39;s process graph, then lint the map against it</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w"> </span>-with-dag<span class="w"> </span>dag.mmd<span class="w"> </span>-preview
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>nf-metro<span class="w"> </span>check-mapping<span class="w"> </span>path/to/map.mmd<span class="w"> </span>--dag<span class="w"> </span>dag.mmd
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Processes with no station (invisible): 1
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  - BWA_MEM
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Station patterns matching no process (stale): 1
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  - align: NFCORE_RNASEQ:RNASEQ:OLD_ALIGNER
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Processes matching more than one station (duplicates progress): 1
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  - FASTQC: align, qc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Processes with no station (invisible): 1
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  - BWA_MEM
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Station patterns matching no process (stale): 1
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  - align: NFCORE_RNASEQ:RNASEQ:OLD_ALIGNER
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Processes matching more than one station (duplicates progress): 1
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  - FASTQC: align, qc
 </code></pre></div>
 <p>It exits non-zero when it finds drift. Options:</p>
 <table>
