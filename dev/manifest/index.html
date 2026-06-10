@@ -1,0 +1,1896 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Metro-map-style SVG diagrams from Mermaid definitions">
+      
+      
+      
+        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/manifest/">
+      
+      
+        <link rel="prev" href="../live/">
+      
+      
+        <link rel="next" href="../nextflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Data manifest - nf-metro</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-data-manifest" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="nf-metro" class="md-header__button md-logo" aria-label="nf-metro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nf-metro
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data manifest
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pinin4fjords/nf-metro" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pinin4fjords/nf-metro
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="nf-metro" class="md-nav__button md-logo" aria-label="nf-metro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    nf-metro
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pinin4fjords/nf-metro" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pinin4fjords/nf-metro
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../live/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data manifest
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-nf-metro-maps-onto-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How nf-metro maps onto it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-in-the-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's in the file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s in the file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manifest-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-node-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-node attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matching semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-to-be-conforming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum to be conforming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#produce-a-conforming-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Produce a conforming SVG
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Produce a conforming SVG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-python-any-diagram-not-just-metro-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Python (any diagram, not just metro maps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-any-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In any language
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-and-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read and match
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drive-a-live-overlay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drive a live overlay
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-light-up-a-diagram-as-a-job-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial: light up a diagram as a job runs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: light up a diagram as a job runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-draw-the-diagram-and-embed-a-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 - draw the diagram and embed a manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-connect-the-diagram-to-the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 - connect the diagram to the work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-show-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 - show progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-plug-in-a-real-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 - plug in a real runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-complete-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The complete script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nextflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nextflow Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-core Pipelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gallery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Internals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/layout_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-nf-metro-maps-onto-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How nf-metro maps onto it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-in-the-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's in the file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s in the file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manifest-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-node-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-node attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matching semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-to-be-conforming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum to be conforming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#produce-a-conforming-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Produce a conforming SVG
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Produce a conforming SVG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-python-any-diagram-not-just-metro-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Python (any diagram, not just metro maps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-any-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In any language
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-and-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read and match
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drive-a-live-overlay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drive a live overlay
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-light-up-a-diagram-as-a-job-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial: light up a diagram as a job runs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: light up a diagram as a job runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-draw-the-diagram-and-embed-a-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 - draw the diagram and embed a manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-connect-the-diagram-to-the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 - connect the diagram to the work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-show-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 - show progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-plug-in-a-real-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 - plug in a real runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-complete-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The complete script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-data-manifest">The data manifest<a class="headerlink" href="#the-data-manifest" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Experimental - pre-1.0, not yet stable</p>
+<p>The manifest is new and still being shaped: the schema, the
+<code>diagram-manifest</code> element id, and the <code>data-node-*</code> attribute names may
+change without notice before the format is declared stable. There is no
+backward-compatibility guarantee yet, so the <code>version</code> stays <code>1.0</code> (the
+first, not-yet-frozen schema) rather than incrementing per change. Pin to a
+specific nf-metro release if you depend on the exact bytes.</p>
+</div>
+<p>Every SVG nf-metro renders is a <strong>self-describing, addressable artifact</strong>: a
+downstream tool can drive it - position overlays, restyle nodes, look up which
+processes a node represents - from the <strong>committed file alone</strong>, without
+re-running whatever drew it.</p>
+<p>That contract is not specific to metro maps. This page documents the format as a
+standalone standard and the tooling nf-metro ships to produce and consume it, so
+<strong>any</strong> diagram tool can emit a conforming SVG. nf-metro is just the first
+producer.</p>
+<div class="admonition tip">
+<p class="admonition-title">Just want to make one? Start with the tutorial</p>
+<p>If your goal is simply to produce an SVG and drive it from events, skip the
+spec and jump to the <a href="#tutorial-light-up-a-diagram-as-a-job-runs">tutorial</a>:
+it builds one end to end and finishes with a single script you can copy and
+run. The sections in between are the format reference, aimed at implementers.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Headed for its own package</p>
+<p>The tooling lives in <code>nf_metro.manifest</code>, a dependency-free module (Python
+standard library only, no other nf-metro imports). It is structured so it can
+later be lifted into its own distribution as-is; until then, import it from
+nf-metro.</p>
+</div>
+<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
+<p>The format is <strong>tool-neutral</strong>, so its vocabulary is generic rather than
+metro-flavoured:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>manifest</strong></td>
+<td>The JSON description of the diagram, embedded in the SVG.</td>
+</tr>
+<tr>
+<td><strong>node</strong></td>
+<td>An addressable point on the diagram - the thing a consumer locates, restyles, or lights up. Has an <code>id</code>, a centre (<code>x</code>/<code>y</code>), a radius (<code>r</code>), and an optional label.</td>
+</tr>
+<tr>
+<td><strong>group</strong></td>
+<td>An optional <strong>multi-membership</strong> category a node can belong to several of, each with a display <code>color</code> (e.g. a colour-coded series).</td>
+</tr>
+<tr>
+<td><strong>region</strong></td>
+<td>An optional <strong>single-membership</strong> container a node sits inside (e.g. a labelled box).</td>
+</tr>
+<tr>
+<td><strong>pattern</strong></td>
+<td>A regex on a node that identifies it against a runtime string. A node carries zero or more.</td>
+</tr>
+<tr>
+<td><strong>target</strong></td>
+<td>What the patterns are matched against, named in the manifest's <code>match</code> block (for a Nextflow run, the fully-qualified process name).</td>
+</tr>
+</tbody>
+</table>
+<p>A producer with no grouping concept uses <code>nodes</code> alone and leaves <code>groups</code> and
+<code>regions</code> empty.</p>
+<h3 id="how-nf-metro-maps-onto-it">How nf-metro maps onto it<a class="headerlink" href="#how-nf-metro-maps-onto-it" title="Permanent link">&para;</a></h3>
+<p>nf-metro draws metro maps, so its own code, <code>.mmd</code> files, and live server speak
+metro: <strong>stations, lines, sections, processes</strong>. The renderer's adapter
+translates those into the neutral wire vocabulary, so the SVG you get is in the
+generic terms above:</p>
+<table>
+<thead>
+<tr>
+<th>nf-metro (metro)</th>
+<th>Manifest (neutral)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>station</td>
+<td>node</td>
+</tr>
+<tr>
+<td>line</td>
+<td>group</td>
+</tr>
+<tr>
+<td>section</td>
+<td>region</td>
+</tr>
+<tr>
+<td><code>%%metro process:</code> patterns</td>
+<td>node <code>patterns</code></td>
+</tr>
+</tbody>
+</table>
+<p>So if you author a metro map but read the rendered SVG, you'll find <code>nodes</code>, not
+<code>stations</code> - that is expected, and it's what makes the file portable.</p>
+<h2 id="whats-in-the-file">What's in the file<a class="headerlink" href="#whats-in-the-file" title="Permanent link">&para;</a></h2>
+<p>The data is carried two redundant, sanitization-safe ways - <strong>no <code>&lt;script&gt;</code></strong>, so
+it survives the inline-SVG sanitizers a host web app typically runs:</p>
+<ol>
+<li>A JSON manifest in a <code>&lt;metadata id="diagram-manifest"&gt;</code> element.</li>
+<li><code>data-node-*</code> attributes on each node's wrapping <code>&lt;g&gt;</code>.</li>
+</ol>
+<p>A node's <code>id</code> is the <strong>join key</strong>: it equals <code>data-node-id="&lt;id&gt;"</code> on the
+element, so a consumer can go manifest→element and element→manifest without
+guessing.</p>
+<h3 id="manifest-schema">Manifest schema<a class="headerlink" href="#manifest-schema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;match&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fqProcessName&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nf-core/rnaseq&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1829</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">724</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;groups&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;star_salmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STAR + Salmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#e64949&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;regions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preprocessing&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pre-processing&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fastqc&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FastQC&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">120.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">80.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">&quot;groups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;star_salmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;star_rsem&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preprocessing&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;FASTQC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong><code>nodes</code> are the addressable points</strong> - every node in the diagram. Unmapped
+  ones carry an empty <code>patterns</code> list, so the manifest is a complete inventory,
+  not only the subset that lights up.</li>
+<li><strong><code>id</code> join key</strong> - equals <code>data-node-id="&lt;id&gt;"</code> on the element.</li>
+<li><strong>Coordinate space</strong> - <code>x</code>/<code>y</code>/<code>r</code> are absolute SVG user units inside
+  <code>viewBox="0 0 width height"</code> (the producer must emit no outer transform), so an
+  overlay sharing that viewBox lines up exactly. <code>r</code> is a single nominal marker
+  radius. Coordinates are rounded to one decimal place.</li>
+<li><strong><code>groups</code> / <code>regions</code></strong> are optional metadata; a node references them by id
+  (<code>node.groups</code>, <code>node.region</code>).</li>
+<li><strong>Forward compatibility</strong> - consumers MUST ignore unknown fields; additive
+  fields keep the same major <code>version</code>.</li>
+</ul>
+<p>A machine-readable <strong>JSON Schema</strong> (draft 2020-12) ships with the package
+(<code>nf_metro/manifest/schema.json</code>); <code>manifest_schema()</code> returns it as a dict. Its
+required fields are exactly the <a href="#minimum-to-be-conforming">minimum-conforming</a>
+set.</p>
+<p>To validate an SVG, read its manifest out and check it against the schema. In
+Python (<code>pip install jsonschema</code> - it is not an nf-metro runtime dependency):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">jsonschema</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.manifest</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_manifest</span><span class="p">,</span> <span class="n">manifest_schema</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">manifest</span> <span class="o">=</span> <span class="n">read_manifest</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pipeline.svg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">if</span> <span class="n">manifest</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="s2">&quot;no diagram manifest embedded in this SVG&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">jsonschema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">manifest_schema</span><span class="p">())</span>   <span class="c1"># raises ValidationError if it doesn&#39;t conform</span>
+</code></pre></div>
+<p>Or from the command line, without writing any code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nf-metro<span class="w"> </span>validate-svg<span class="w"> </span>pipeline.svg
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Valid: 42 nodes, schema version 1.0   (exits non-zero if it doesn&#39;t conform)</span>
+</code></pre></div>
+<p>(<code>validate-svg</code> uses <code>jsonschema</code>; install it with <code>pip install jsonschema</code> if it
+isn't already present.)</p>
+<p>In another language, extract the <code>&lt;metadata id="diagram-manifest"&gt;</code> JSON the same
+way and feed it, with the shipped <code>schema.json</code>, to any standard JSON Schema
+validator.</p>
+<h3 id="per-node-attributes">Per-node attributes<a class="headerlink" href="#per-node-attributes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">g</span> <span class="na">data-node-id</span><span class="o">=</span><span class="s">&quot;fastqc&quot;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="na">data-node-cx</span><span class="o">=</span><span class="s">&quot;120.0&quot;</span> <span class="na">data-node-cy</span><span class="o">=</span><span class="s">&quot;80.0&quot;</span> <span class="na">data-node-r</span><span class="o">=</span><span class="s">&quot;5.0&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>   <span class="na">data-node-groups</span><span class="o">=</span><span class="s">&quot;star_salmon,star_rsem&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>   <span class="na">data-node-region</span><span class="o">=</span><span class="s">&quot;preprocessing&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  ...the node&#39;s drawn glyph...
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The geometry attributes mirror the manifest's <code>x</code>/<code>y</code>/<code>r</code>, so a consumer can
+position against either half interchangeably. <code>data-node-region</code> is omitted when
+the node belongs to no region. (A producer may add its own attributes or classes
+alongside these - nf-metro tags the group <code>nf-metro-station-group</code>, for example -
+but only the <code>data-node-*</code> set is part of the contract.)</p>
+<h3 id="matching-semantics">Matching semantics<a class="headerlink" href="#matching-semantics" title="Permanent link">&para;</a></h3>
+<p><code>patterns</code> are regular expressions matched <strong>case-insensitively</strong> against a
+runtime target string. The <code>match</code> block names the target so a non-Python (and
+non-Nextflow) consumer can reproduce the rule: for a Nextflow run the target is
+the <strong>fully-qualified process name</strong> (<code>NFCORE_RNASEQ:RNASEQ:FASTQC</code>); another
+producer sets <code>target</code> to whatever identifier its runtime emits.</p>
+<p>Keep patterns within a portable regex subset common to Python <code>re</code> and
+JavaScript <code>RegExp</code> - character classes, anchors, <code>.</code>/<code>*</code>/<code>+</code>/<code>?</code>, bounded
+<code>{m,n}</code>, alternation, groups - so two implementations cannot diverge. Avoid
+Python-only constructs (named groups <code>(?P&lt;&gt;)</code>, inline flags <code>(?i)</code>, possessive
+quantifiers, <code>\Z</code>).</p>
+<p>A target may legitimately match <strong>more than one</strong> node; how to resolve that is a
+consumer-side policy decision, not a schema error.</p>
+<h2 id="minimum-to-be-conforming">Minimum to be conforming<a class="headerlink" href="#minimum-to-be-conforming" title="Permanent link">&para;</a></h2>
+<p>The shortest path to a file a consumer can drive:</p>
+<p><strong>Required</strong> - an overlay positions itself from these alone:</p>
+<ul>
+<li>An SVG root with <code>viewBox="0 0 width height"</code> and no outer transform.</li>
+<li>Exactly one <code>&lt;metadata id="diagram-manifest"&gt;</code> holding the JSON, with at least
+  <code>version</code>, <code>width</code>, <code>height</code>, and <code>nodes</code> - each node carrying an <code>id</code> and
+  <code>x</code>/<code>y</code>/<code>r</code>.</li>
+</ul>
+<p><strong>Required only for matching</strong> (e.g. lighting up nodes from a running job):</p>
+<ul>
+<li>The <code>match</code> block (<code>target</code>/<code>type</code>/<code>flags</code>) and a <code>patterns</code> list on each node
+  that represents something.</li>
+</ul>
+<p><strong>Recommended</strong> - lets a consumer find and restyle the <em>drawn</em> node in place
+(rather than only overlaying on top):</p>
+<ul>
+<li>Wrap each node's glyph in a <code>&lt;g&gt;</code> with <code>data-node-id="&lt;id&gt;"</code> (matching the
+  manifest <code>id</code>) and <code>data-node-cx</code>/<code>-cy</code>/<code>-r</code>.</li>
+</ul>
+<p>Everything else (<code>label</code>, <code>groups</code>, <code>regions</code>, the live state model below) is
+optional.</p>
+<h2 id="the-functions">The functions<a class="headerlink" href="#the-functions" title="Permanent link">&para;</a></h2>
+<p>The whole toolkit is a handful of small functions, all importable from
+<code>nf_metro.manifest</code> (and re-exported from <code>nf_metro.render</code>). Grouped by job:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>build_manifest_data(*, title, width, height, nodes, groups=(), regions=(), match_target="fqProcessName")</code></td>
+<td>Assemble the manifest dict from plain node data. Rounds coordinates; fills the <code>match</code> block.</td>
+</tr>
+<tr>
+<td><code>node_data_attrs(*, id, x, y, r, groups=(), region=None)</code></td>
+<td>Return the <code>data-node-*</code> attributes for one node's element, as a dict to spread onto your <code>&lt;g&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>manifest_metadata_svg(manifest)</code></td>
+<td>Return just the <code>&lt;metadata&gt;</code> element (as a string) - use it when you assemble the SVG yourself.</td>
+</tr>
+<tr>
+<td><code>inject_manifest(svg, manifest)</code></td>
+<td>Insert that <code>&lt;metadata&gt;</code> into an existing SVG string, right after the opening <code>&lt;svg&gt;</code> tag. Returns the new SVG.</td>
+</tr>
+<tr>
+<td><code>read_manifest(svg)</code></td>
+<td>Parse the embedded manifest back out of an SVG string; returns the dict, or <code>None</code> if there's no manifest.</td>
+</tr>
+<tr>
+<td><code>match_node_ids(manifest, target)</code></td>
+<td>Node ids whose <code>patterns</code> match <code>target</code> (case-insensitive) - "which node does this runtime name light up?".</td>
+</tr>
+<tr>
+<td><code>matching_node_ids(target, patterns_by_id)</code></td>
+<td>The same matcher over a plain <code>{id: [pattern]}</code> map, when your data isn't a full manifest.</td>
+</tr>
+<tr>
+<td><code>overlay_svg(manifest, body="", *, extra_attrs="")</code></td>
+<td>A transparent overlay <code>&lt;svg&gt;</code> sized to the manifest's <code>viewBox</code>, to stack over the base so coordinates line up.</td>
+</tr>
+<tr>
+<td><code>manifest_json(manifest)</code></td>
+<td>Deterministic JSON serialization of a manifest (sorted keys); rarely needed directly.</td>
+</tr>
+<tr>
+<td><code>manifest_schema()</code></td>
+<td>Return the JSON Schema (draft 2020-12) for a manifest, to validate a producer's output in any language.</td>
+</tr>
+</tbody>
+</table>
+<p>Producing a file uses the first four; consuming one uses <code>read_manifest</code> +
+<code>match_node_ids</code>; a live overlay adds <code>overlay_svg</code>. The two constants
+<code>MANIFEST_SCHEMA_VERSION</code> and <code>MANIFEST_ELEMENT_ID</code> (<code>"diagram-manifest"</code>) are
+exported too. The rest of this page shows them in context.</p>
+<h2 id="produce-a-conforming-svg">Produce a conforming SVG<a class="headerlink" href="#produce-a-conforming-svg" title="Permanent link">&para;</a></h2>
+<h3 id="in-python-any-diagram-not-just-metro-maps">In Python (any diagram, not just metro maps)<a class="headerlink" href="#in-python-any-diagram-not-just-metro-maps" title="Permanent link">&para;</a></h3>
+<p><code>nf_metro.manifest</code> builds a manifest from plain node data and embeds it into an
+SVG you drew by any means - it never needs a <code>MetroGraph</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.manifest</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">build_manifest_data</span><span class="p">,</span> <span class="n">node_data_attrs</span><span class="p">,</span> <span class="n">inject_manifest</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">manifest</span> <span class="o">=</span> <span class="n">build_manifest_data</span><span class="p">(</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;My Tool&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">nodes</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;trim&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;TRIM.*&quot;</span><span class="p">]},</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="p">],</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Decorate the node&#39;s element with the addressable mirror...</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">attrs</span> <span class="o">=</span> <span class="n">node_data_attrs</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;trim&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">attr_str</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">=&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&quot;&#39;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">attrs</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="n">svg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;svg viewBox=&quot;0 0 100 100&quot;&gt;&lt;g </span><span class="si">{</span><span class="n">attr_str</span><span class="si">}</span><span class="s1">&gt;&lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;4&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;&#39;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1"># ...and splice the manifest in after the opening &lt;svg&gt; tag.</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="n">svg</span> <span class="o">=</span> <span class="n">inject_manifest</span><span class="p">(</span><span class="n">svg</span><span class="p">,</span> <span class="n">manifest</span><span class="p">)</span>
+</code></pre></div>
+<p>Each <code>nodes</code> entry takes required <code>id</code>, <code>x</code>, <code>y</code>, <code>r</code> and optional <code>label</code>
+(defaults to <code>id</code>), <code>groups</code>, <code>region</code>, and <code>patterns</code>. Coordinates are rounded
+for you. <code>groups</code> and <code>regions</code> are optional grouping metadata.</p>
+<p>A node is addressed as a <strong>centre point plus a nominal radius</strong> (overlay-shaped,
+not the full glyph outline). If your nodes are boxes, pass the box centre as
+<code>x</code>/<code>y</code> and a representative radius for <code>r</code> - an overlay only needs somewhere to
+anchor, not your exact geometry.</p>
+<p>If your runtime doesn't emit Nextflow process names, set <code>match_target</code> to the
+identifier it does emit, so the file honestly describes what its <code>patterns</code>
+match:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">build_manifest_data</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">match_target</span><span class="o">=</span><span class="s2">&quot;stepName&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># -&gt; &quot;match&quot;: { &quot;target&quot;: &quot;stepName&quot;, &quot;type&quot;: &quot;regex&quot;, &quot;flags&quot;: &quot;i&quot; }</span>
+</code></pre></div>
+<h3 id="in-any-language">In any language<a class="headerlink" href="#in-any-language" title="Permanent link">&para;</a></h3>
+<p>You don't need this library to produce a conforming file - emit the bytes
+directly:</p>
+<ol>
+<li>Draw your SVG with <code>viewBox="0 0 width height"</code> and no outer transform.</li>
+<li>Insert a <code>&lt;metadata id="diagram-manifest"&gt;</code> element holding the JSON above as
+   CDATA. (CDATA cannot contain <code>]]&gt;</code>; if a regex does, split it as
+   <code>]]]]&gt;&lt;![CDATA[&gt;</code>.)</li>
+<li><em>(Recommended)</em> For each node, wrap its glyph in a <code>&lt;g&gt;</code> carrying
+   <code>data-node-id</code> (a stable id) and <code>data-node-cx</code>/<code>-cy</code>/<code>-r</code> (its centre and
+   radius, 1dp). Keep this geometry in agreement with the manifest - <code>id</code> is the
+   join key between them.</li>
+</ol>
+<h2 id="read-and-match">Read and match<a class="headerlink" href="#read-and-match" title="Permanent link">&para;</a></h2>
+<p><code>nf_metro.render</code> re-exports the canonical reader and matcher (also available
+from <code>nf_metro.manifest</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.render</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_manifest</span><span class="p">,</span> <span class="n">match_node_ids</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">manifest</span> <span class="o">=</span> <span class="n">read_manifest</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pipeline.svg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">match_node_ids</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="s2">&quot;NFCORE_RNASEQ:RNASEQ:FASTQC&quot;</span><span class="p">)</span>   <span class="c1"># -&gt; [&quot;fastqc&quot;]</span>
+</code></pre></div>
+<p><code>read_manifest</code> is a plain regex extract (no XML library needed); a consumer in
+another language reproduces the matcher by walking <code>nodes[].patterns</code> and testing
+each regex case-insensitively against the target, collecting the <code>id</code>s that hit.</p>
+<p><code>match_node_ids</code> takes a whole manifest (keyed on the schema's <code>nodes</code>).
+<code>matching_node_ids</code> is the same matcher over a plain <code>id -&gt; [pattern]</code> mapping,
+for a producer whose data isn't manifest-shaped.</p>
+<h2 id="drive-a-live-overlay">Drive a live overlay<a class="headerlink" href="#drive-a-live-overlay" title="Permanent link">&para;</a></h2>
+<p>Everything above defines the compatibility contract; the state model below is
+optional convention. A consumer that only needs static addressing can stop here.</p>
+<div class="admonition tip">
+<p class="admonition-title">Worked example</p>
+<p>The <a href="#tutorial-light-up-a-diagram-as-a-job-runs">tutorial</a> at the end of this
+page builds a tiny pipeline diagram and lights it up from a progress snapshot,
+end to end, in ~40 lines.</p>
+</div>
+<p>The manifest gives an overlay everything it needs without a re-render: the
+<code>viewBox</code> to share, and each node's <code>id</code>, centre, and radius. <strong>The standard
+fixes the geometry and the addressing, not the visual style</strong> - how you draw
+"running" vs "done" is yours.</p>
+<p>A common shape for progress is a small per-node state model:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>state</code></td>
+<td>One of <code>pending</code>, <code>queued</code>, <code>running</code>, <code>done</code>, <code>failed</code>.</td>
+</tr>
+<tr>
+<td><code>done</code> / <code>total</code></td>
+<td>Tasks finished vs seen so far for that node. Nextflow's task count is dynamic, so this is "done / submitted so far", not a fixed percentage.</td>
+</tr>
+</tbody>
+</table>
+<p>plus a run-level <code>{ name, state }</code> where <code>state</code> is <code>idle</code> / <code>running</code> /
+<code>complete</code> / <code>error</code>.</p>
+<p>nf-metro's <code>serve</code> is <strong>one reference implementation</strong> of this: it draws a glowing
+LED halo per node and recolours it by state (see <a href="../live/">Live progress</a>). A
+host application is free to map the same state vocabulary onto its own visual
+language - filled badges, a progress bar, a colour change on the node itself.
+Take the geometry and the state model from the standard; bring your own paint.</p>
+<p>To turn a specific runtime's events into that state model, write a binding.
+nf-metro ships one for Nextflow's <code>-with-weblog</code> stream; that path, the server,
+and the Nextflow plugin are documented under <a href="../live/">Live progress</a>.</p>
+<h2 id="tutorial-light-up-a-diagram-as-a-job-runs">Tutorial: light up a diagram as a job runs<a class="headerlink" href="#tutorial-light-up-a-diagram-as-a-job-runs" title="Permanent link">&para;</a></h2>
+<p>A complete, self-contained example for a tool that is <strong>not</strong> nf-metro. By the
+end you'll have a small pipeline diagram that shows progress as work happens -
+and you can run every snippet here as-is, with <strong>no pipeline, no server, and no
+Nextflow</strong> (we'll fake the progress). About 50 lines, only <code>nf_metro.manifest</code>.</p>
+<p><strong>The idea.</strong> Draw the diagram <em>once</em> and embed a manifest in it. Then, whenever
+progress changes, draw a thin <strong>overlay</strong> of status markers on top. The diagram
+itself never re-flows; only the lightweight overlay updates. The mental model:
+the base SVG is the <strong>map</strong> - drawn once and durable - and the overlay is a
+cheap, <strong>disposable status layer</strong> you redraw as things change. We'll model a
+three-step pipeline - <strong>Fetch → Align → Report</strong>.</p>
+<p><strong>What's doing the work.</strong> The only library is <code>nf_metro.manifest</code> - the
+standard-library-only module described above. No <code>MetroGraph</code>, no nf-metro
+renderer, no drawing or templating library: we assemble the SVG as plain Python
+strings and use <code>nf_metro.manifest</code> for the four manifest-specific jobs - build
+it (<code>build_manifest_data</code>), embed it (<code>node_data_attrs</code>, <code>inject_manifest</code>), read
+it back (<code>read_manifest</code>), and match runtime names to nodes (<code>match_node_ids</code>).</p>
+<h3 id="step-1-draw-the-diagram-and-embed-a-manifest">Step 1 - draw the diagram and embed a manifest<a class="headerlink" href="#step-1-draw-the-diagram-and-embed-a-manifest" title="Permanent link">&para;</a></h3>
+<p>We hand-draw three circles (one per step), wrap each in a <code>&lt;g&gt;</code> carrying its
+<code>data-node-*</code> attributes, and splice in the manifest. Don't worry about absorbing
+every field; the only new ideas here are that each node needs coordinates, and
+that the manifest gets embedded into an otherwise ordinary SVG.</p>
+<ul>
+<li><strong>For now</strong>, the fields that matter are <code>id</code> and <code>x</code>/<code>y</code>/<code>r</code> - the node's name,
+  and where it sits and how big it is (an overlay anchors here).</li>
+<li><strong>Later</strong>: <code>patterns</code> (the names this node answers to) and <code>match_target</code> are
+  for Step 2's matching; you can ignore them until then. We'll match against step
+  names, so <code>match_target="stepName"</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.manifest</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">build_manifest_data</span><span class="p">,</span> <span class="n">node_data_attrs</span><span class="p">,</span> <span class="n">inject_manifest</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">read_manifest</span><span class="p">,</span> <span class="n">match_node_ids</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">NODES</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fetch&quot;</span><span class="p">,</span>  <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Fetch&quot;</span><span class="p">,</span>  <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>  <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;FETCH&quot;</span><span class="p">]},</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;align&quot;</span><span class="p">,</span>  <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Align&quot;</span><span class="p">,</span>  <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;BWA.*&quot;</span><span class="p">,</span> <span class="s2">&quot;STAR.*&quot;</span><span class="p">]},</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;report&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Report&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">290</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">]},</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">]</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">92</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">node_svg</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">attrs</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">=&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node_data_attrs</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">r</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="p">)</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">return</span> <span class="p">(</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;g </span><span class="si">{</span><span class="n">attrs</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;circle cx=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; cy=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; r=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; fill=&quot;#dfe3ee&quot; stroke=&quot;#333&quot;/&gt;&#39;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;text x=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; y=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">30</span><span class="si">}</span><span class="s1">&quot; text-anchor=&quot;middle&quot; font-size=&quot;13&quot;&gt;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&lt;/text&gt;&#39;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;/g&gt;&#39;</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    <span class="p">)</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    <span class="s1">&#39;&lt;line x1=&quot;83&quot; y1=&quot;42&quot; x2=&quot;167&quot; y2=&quot;42&quot; stroke=&quot;#aaa&quot;/&gt;&#39;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    <span class="s1">&#39;&lt;line x1=&quot;193&quot; y1=&quot;42&quot; x2=&quot;277&quot; y2=&quot;42&quot; stroke=&quot;#aaa&quot;/&gt;&#39;</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="p">)</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="n">base</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    <span class="sa">f</span><span class="s1">&#39;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 </span><span class="si">{</span><span class="n">W</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">H</span><span class="si">}</span><span class="s1">&quot; width=&quot;</span><span class="si">{</span><span class="n">W</span><span class="si">}</span><span class="s1">&quot; height=&quot;</span><span class="si">{</span><span class="n">H</span><span class="si">}</span><span class="s1">&quot;&gt;&#39;</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">edges</span><span class="si">}{</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">node_svg</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">NODES</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/svg&gt;&#39;</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="p">)</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="n">svg</span> <span class="o">=</span> <span class="n">inject_manifest</span><span class="p">(</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>    <span class="n">base</span><span class="p">,</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>    <span class="n">build_manifest_data</span><span class="p">(</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Toy pipeline&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">W</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">NODES</span><span class="p">,</span> <span class="n">match_target</span><span class="o">=</span><span class="s2">&quot;stepName&quot;</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>    <span class="p">),</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="p">)</span>
+</code></pre></div>
+<p>Three functions did the work: <code>node_data_attrs</code> produced each node's
+<code>data-node-*</code> attributes, <code>build_manifest_data</code> assembled the manifest from the
+node list, and <code>inject_manifest</code> placed that manifest inside the SVG. <code>svg</code> is now
+a self-describing file - three labelled nodes plus a <code>&lt;metadata
+id="diagram-manifest"&gt;</code> block and <code>data-node-*</code> attributes. Save it to a <code>.svg</code> if
+you like; everything below works from that file alone.</p>
+<p><img alt="A three-node pipeline diagram: Fetch, Align, Report" src="../assets/manifest_diagram.svg" /></p>
+<h3 id="step-2-connect-the-diagram-to-the-work">Step 2 - connect the diagram to the work<a class="headerlink" href="#step-2-connect-the-diagram-to-the-work" title="Permanent link">&para;</a></h3>
+<p>Something has to actually <em>run</em> your pipeline's steps - a workflow engine, a CI
+job, a plain script. Call it the <strong>runtime</strong>. As it works, it announces each step
+by a <strong>name</strong>: it might log that a step called <code>BWA_MEM</code> has started, then that it
+finished, and so on.</p>
+<p>Two snags: you usually don't choose those names (a tool may call your "Align" step
+<code>BWA_MEM</code> or <code>STAR_ALIGN</code>), and they rarely equal your node ids. That's exactly
+what each node's <code>patterns</code> are for - regexes that match the names <em>your</em> runtime
+uses. <code>match_node_ids</code> answers the question "which node does this name belong
+to?":</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">manifest</span> <span class="o">=</span> <span class="n">read_manifest</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">match_node_ids</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="s2">&quot;BWA_MEM&quot;</span><span class="p">)</span>   <span class="c1"># -&gt; [&#39;align&#39;]</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">match_node_ids</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="s2">&quot;multiqc&quot;</span><span class="p">)</span>   <span class="c1"># -&gt; [&#39;report&#39;]  (matching is case-insensitive)</span>
+</code></pre></div>
+<p>Nothing is running yet - this just queries the file. Matching is the bridge from
+"a name the runtime mentioned" to "a node on the diagram".</p>
+<h3 id="step-3-show-progress">Step 3 - show progress<a class="headerlink" href="#step-3-show-progress" title="Permanent link">&para;</a></h3>
+<p>Give each node a <strong>state</strong> - one of <code>pending</code>, <code>queued</code>, <code>running</code>, <code>done</code>,
+<code>failed</code> - and draw a coloured ring per node at its manifest position. The colours
+are your choice; the standard only tells you <em>where</em> each node is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">COLORS</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="s2">&quot;pending&quot;</span><span class="p">:</span> <span class="s2">&quot;#b8c0d0&quot;</span><span class="p">,</span> <span class="s2">&quot;queued&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffb020&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="s2">&quot;running&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffc23a&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="p">:</span> <span class="s2">&quot;#2bee92&quot;</span><span class="p">,</span> <span class="s2">&quot;failed&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff4d4d&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">progress_halos</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">states</span><span class="p">):</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;One status ring per node, positioned from the manifest geometry.&quot;&quot;&quot;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;circle cx=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; cy=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; r=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s1">&quot; fill=&quot;none&quot; &#39;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="sa">f</span><span class="s1">&#39;stroke=&quot;</span><span class="si">{</span><span class="n">COLORS</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">)]</span><span class="si">}</span><span class="s1">&quot; stroke-width=&quot;3.5&quot;/&gt;&#39;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">]</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="p">)</span>
+</code></pre></div>
+<p>We have no real runtime in a tutorial, so let's <strong>simulate</strong> one. Here is a list
+of <code>(step_name, new_state)</code> announcements - the kind of thing a real engine sends
+as a run progresses. We fold each into a <code>{node_id: state}</code> map (using Step 2's
+matcher) and redraw the overlay; that sequence of redraws <em>is</em> the animation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># A real runtime would send these live; we hard-code them so the tutorial runs</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># on its own.</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">events</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="p">(</span><span class="s2">&quot;FETCH&quot;</span><span class="p">,</span>   <span class="s2">&quot;running&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;FETCH&quot;</span><span class="p">,</span>   <span class="s2">&quot;done&quot;</span><span class="p">),</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="p">(</span><span class="s2">&quot;BWA_MEM&quot;</span><span class="p">,</span> <span class="s2">&quot;running&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;BWA_MEM&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="p">),</span>   <span class="c1"># the Align step, by its tool name</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="p">(</span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">,</span> <span class="s2">&quot;running&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="p">),</span>   <span class="c1"># the Report step</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">]</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">states</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_state</span> <span class="ow">in</span> <span class="n">events</span><span class="p">:</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="k">for</span> <span class="n">node_id</span> <span class="ow">in</span> <span class="n">match_node_ids</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        <span class="n">states</span><span class="p">[</span><span class="n">node_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_state</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="n">frame</span> <span class="o">=</span> <span class="n">svg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/svg&gt;&quot;</span><span class="p">,</span> <span class="n">progress_halos</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">states</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&lt;/svg&gt;&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="c1"># draw `frame`: write it to a file, or update the page in a browser</span>
+</code></pre></div>
+<p>A single frame - say just after Fetch finished and Align started, when <code>states</code>
+is <code>{"fetch": "done", "align": "running"}</code> - looks like this (green = done,
+amber = running, grey = still pending):</p>
+<p><img alt="Progress snapshot: Fetch done (green), Align running (amber), Report pending (grey)" src="../assets/manifest_progress.svg" /></p>
+<p>Replaying the whole <code>events</code> list redraws the overlay step by step, which
+animates the run from start to finish:</p>
+<p><img alt="The diagram lighting up step by step as the pipeline runs" src="../assets/manifest_progress_animated.svg" /></p>
+<p>The rings are deliberately plain - swap in pulses, fills, per-node counts, or your
+own palette without touching the contract.</p>
+<h3 id="step-4-plug-in-a-real-runtime">Step 4 - plug in a real runtime<a class="headerlink" href="#step-4-plug-in-a-real-runtime" title="Permanent link">&para;</a></h3>
+<p>Up to now everything ran in one Python script; in a real system the same logic is
+split between an <strong>event source</strong> (whatever runs your pipeline) and a <strong>UI</strong>
+(usually a browser). The good news is that only one thing in this tutorial was
+fake: the hard-coded <code>events</code> list. Replace it with announcements from a real run
+and nothing else changes - you still <code>match_node_ids</code> each name to a node
+(Step 2) and fold it into the <code>states</code> map that <code>progress_halos</code> draws (Step 3).</p>
+<p><strong>What Nextflow does, in the tutorial's terms.</strong> Run a pipeline with
+<code>nextflow run ... -with-weblog http://localhost:8080/events</code> and Nextflow becomes
+the source of that <code>events</code> list: every time a task is submitted, starts, or
+finishes it POSTs a small JSON message to that URL carrying the process name and
+its status - i.e. it sends you <code>("BWA_MEM", "running")</code>, then <code>("BWA_MEM", "done")</code>,
+live, instead of you writing them out.</p>
+<p><strong>What <code>nf-metro serve</code> is.</strong> It's this exact tutorial running as a small web
+server, so you don't write any of the Python yourself:</p>
+<ol>
+<li>it renders the diagram's SVG once and builds an overlay of one ring per node,
+   positioned from each node's coordinates - the same idea as <code>progress_halos</code>;</li>
+<li>it listens on <code>http://localhost:8080/</code>; <code>/events</code> is the URL Nextflow POSTs to;</li>
+<li>on each message it runs <strong>Step 2</strong> (<code>match_node_ids</code> on the process name) and
+   <strong>Step 3</strong> (fold the result into a per-node <code>states</code> map);</li>
+<li>it pushes the updated <code>states</code> to the open browser page over
+   <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events">Server-Sent Events</a>,
+   and the page recolours the matching overlay ring.</li>
+</ol>
+<p><img alt="Data flow: nextflow run POSTs name and status to nf-metro serve, which matches and folds into per-node state (Steps 2 and 3) and streams it over Server-Sent Events to the browser, which recolours the overlay" src="../assets/manifest_serve_flow.svg" /></p>
+<p>So <code>nf-metro serve</code> is the tutorial wired to a live event source and a browser.
+See <a href="../live/">Live progress</a> to actually run it (it also has a multi-run
+dashboard and an optional Nextflow plugin), and note the glowing-LED styling
+there is just its choice - yours can differ.</p>
+<p><strong>Doing it yourself in a browser</strong> is the same three steps client-side:
+<code>read_manifest</code> on the committed SVG, <code>match_node_ids</code> per incoming event, and
+restyle the matched node. Keep the overlay as a separate
+layer over the base so you never redraw the diagram - <code>overlay_svg</code> builds one
+sized to match, so coordinates line up:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.manifest</span><span class="w"> </span><span class="kn">import</span> <span class="n">overlay_svg</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># a transparent layer the same size/viewBox as the base, holding the rings:</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">layer</span> <span class="o">=</span> <span class="n">overlay_svg</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">progress_halos</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">states</span><span class="p">),</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>                    <span class="n">extra_attrs</span><span class="o">=</span><span class="s1">&#39;style=&quot;pointer-events:none&quot;&#39;</span><span class="p">)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># stack `layer` directly over the base SVG; on each event, update its rings.</span>
+</code></pre></div>
+<h3 id="the-complete-script">The complete script<a class="headerlink" href="#the-complete-script" title="Permanent link">&para;</a></h3>
+<p>Everything above as one file. It needs only nf-metro installed
+(<code>pip install nf-metro</code>); it writes the diagram and one frame per event, with no
+pipeline or server. Save it as <code>demo.py</code>, run <code>python demo.py</code>, then open
+<code>toy_pipeline.svg</code> and the <code>progress_*.svg</code> frames in order. If it worked, you'll
+have one static diagram plus six frames that turn Fetch, then Align, then Report
+from grey through amber to green - and the terminal prints each event as it maps
+to a node.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="sd">&quot;&quot;&quot;Make a conforming SVG and drive it from a stream of (step, state) events.</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="sd">Uses only nf_metro.manifest (Python standard library only) - no pipeline, no</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="sd">server. Run `python demo.py`, then open toy_pipeline.svg and progress_*.svg.</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.manifest</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="n">build_manifest_data</span><span class="p">,</span> <span class="n">node_data_attrs</span><span class="p">,</span> <span class="n">inject_manifest</span><span class="p">,</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="n">read_manifest</span><span class="p">,</span> <span class="n">match_node_ids</span><span class="p">,</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">)</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="c1"># --- the diagram: one node per pipeline step --------------------------------</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="n">NODES</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fetch&quot;</span><span class="p">,</span>  <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Fetch&quot;</span><span class="p">,</span>  <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>  <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;FETCH&quot;</span><span class="p">]},</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;align&quot;</span><span class="p">,</span>  <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Align&quot;</span><span class="p">,</span>  <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;BWA.*&quot;</span><span class="p">,</span> <span class="s2">&quot;STAR.*&quot;</span><span class="p">]},</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;report&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Report&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">290</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">]},</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="p">]</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">92</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="k">def</span><span class="w"> </span><span class="nf">node_svg</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="n">attrs</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">=&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node_data_attrs</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">r</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>    <span class="p">)</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>    <span class="k">return</span> <span class="p">(</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;g </span><span class="si">{</span><span class="n">attrs</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;circle cx=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; cy=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; r=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; fill=&quot;#dfe3ee&quot; stroke=&quot;#333&quot;/&gt;&#39;</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;text x=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; y=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">30</span><span class="si">}</span><span class="s1">&quot; text-anchor=&quot;middle&quot; font-size=&quot;13&quot;&gt;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&lt;/text&gt;&#39;</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;/g&gt;&#39;</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>    <span class="p">)</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>    <span class="s1">&#39;&lt;line x1=&quot;83&quot; y1=&quot;42&quot; x2=&quot;167&quot; y2=&quot;42&quot; stroke=&quot;#aaa&quot;/&gt;&#39;</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>    <span class="s1">&#39;&lt;line x1=&quot;193&quot; y1=&quot;42&quot; x2=&quot;277&quot; y2=&quot;42&quot; stroke=&quot;#aaa&quot;/&gt;&#39;</span>
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="p">)</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="n">base</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>    <span class="sa">f</span><span class="s1">&#39;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 </span><span class="si">{</span><span class="n">W</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">H</span><span class="si">}</span><span class="s1">&quot; width=&quot;</span><span class="si">{</span><span class="n">W</span><span class="si">}</span><span class="s1">&quot; height=&quot;</span><span class="si">{</span><span class="n">H</span><span class="si">}</span><span class="s1">&quot;&gt;&#39;</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">edges</span><span class="si">}{</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">node_svg</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">NODES</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/svg&gt;&#39;</span>
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="p">)</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="n">svg</span> <span class="o">=</span> <span class="n">inject_manifest</span><span class="p">(</span>
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>    <span class="n">base</span><span class="p">,</span>
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>    <span class="n">build_manifest_data</span><span class="p">(</span>
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Toy pipeline&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">W</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">NODES</span><span class="p">,</span> <span class="n">match_target</span><span class="o">=</span><span class="s2">&quot;stepName&quot;</span>
+<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>    <span class="p">),</span>
+<a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a><span class="p">)</span>
+<a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;toy_pipeline.svg&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;wrote toy_pipeline.svg  (the conforming diagram)&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>
+<a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a><span class="c1"># --- drive it from a stream of events ---------------------------------------</span>
+<a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a><span class="n">COLORS</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>    <span class="s2">&quot;pending&quot;</span><span class="p">:</span> <span class="s2">&quot;#b8c0d0&quot;</span><span class="p">,</span> <span class="s2">&quot;queued&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffb020&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>    <span class="s2">&quot;running&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffc23a&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="p">:</span> <span class="s2">&quot;#2bee92&quot;</span><span class="p">,</span> <span class="s2">&quot;failed&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff4d4d&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a><span class="p">}</span>
+<a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a>
+<a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a><span class="k">def</span><span class="w"> </span><span class="nf">progress_halos</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">states</span><span class="p">):</span>
+<a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;circle cx=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; cy=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; r=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s1">&quot; fill=&quot;none&quot; &#39;</span>
+<a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>        <span class="sa">f</span><span class="s1">&#39;stroke=&quot;</span><span class="si">{</span><span class="n">COLORS</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">)]</span><span class="si">}</span><span class="s1">&quot; stroke-width=&quot;3.5&quot;/&gt;&#39;</span>
+<a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a>        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">]</span>
+<a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a>    <span class="p">)</span>
+<a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a>
+<a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a><span class="c1"># In a real run these arrive live (e.g. from Nextflow&#39;s -with-weblog); here we</span>
+<a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a><span class="c1"># hard-code them so the demo runs on its own.</span>
+<a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a><span class="n">events</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a>    <span class="p">(</span><span class="s2">&quot;FETCH&quot;</span><span class="p">,</span>   <span class="s2">&quot;running&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;FETCH&quot;</span><span class="p">,</span>   <span class="s2">&quot;done&quot;</span><span class="p">),</span>
+<a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a>    <span class="p">(</span><span class="s2">&quot;BWA_MEM&quot;</span><span class="p">,</span> <span class="s2">&quot;running&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;BWA_MEM&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="p">),</span>   <span class="c1"># the Align step, by its tool name</span>
+<a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a>    <span class="p">(</span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">,</span> <span class="s2">&quot;running&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;MULTIQC&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="p">),</span>   <span class="c1"># the Report step</span>
+<a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a><span class="p">]</span>
+<a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a>
+<a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a><span class="n">manifest</span> <span class="o">=</span> <span class="n">read_manifest</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+<a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a><span class="n">states</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">events</span><span class="p">):</span>
+<a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a>    <span class="n">hits</span> <span class="o">=</span> <span class="n">match_node_ids</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>        <span class="c1"># which node(s) does this name light up?</span>
+<a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a>    <span class="k">for</span> <span class="n">node_id</span> <span class="ow">in</span> <span class="n">hits</span><span class="p">:</span>
+<a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a>        <span class="n">states</span><span class="p">[</span><span class="n">node_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span>
+<a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a>    <span class="n">frame</span> <span class="o">=</span> <span class="n">svg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/svg&gt;&quot;</span><span class="p">,</span> <span class="n">progress_halos</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">states</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&lt;/svg&gt;&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;progress_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.svg&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+<a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  event </span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">state</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">hits</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a>
+<a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;wrote progress_0.svg .. progress_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">events</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">.svg  (open them in order)&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Swap the hard-coded <code>events</code> for messages from your real runtime (or let
+<code>nf-metro serve</code> do it, per Step 4) and the same loop drives a live diagram.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
