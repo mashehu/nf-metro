@@ -195,7 +195,7 @@
 </head>
 <body>
 <h1>Render diff - PR #637</h1>
-<p class="summary">1 added out of 82 total renders. Generated 2026-06-11 13:40 UTC.</p>
+<p class="summary">3 changed, 1 added out of 82 total renders. Generated 2026-06-11 15:01 UTC.</p>
 <details class="intro">
 <summary>What is this page?</summary>
 <p>
@@ -227,12 +227,57 @@ switch between side-by-side, base-only, and PR-only views.
 <ul>
 <li><a href="#funcprofiler_upstream">funcprofiler_upstream</a><span class="badge badge-added">added</span></li>
 </ul>
+<h3><a href="#section-main-examples">Main Examples</a></h3>
+<ul>
+<li><a href="#rnaseq_sections">rnaseq_sections</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-guide-examples">Guide Examples</a></h3>
+<ul>
+<li><a href="#rnaseq_sections_manual">rnaseq_sections_manual</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-realistic-pipelines">Realistic Pipelines</a></h3>
+<ul>
+<li><a href="#variant_calling">variant_calling</a><span class="badge badge-changed">changed</span></li>
+</ul>
 </div>
 <h2 class="section-header" id="section-fan-out-and-fan-in">Fan-out and Fan-in</h2>
 
 <div class="diff-entry" id="funcprofiler_upstream">
 <h3>Funcprofiler Upstream <span class="badge badge-added">added</span></h3>
 <div class="side-only"><h4>New in PR</h4><img src="pr/funcprofiler_upstream.svg" alt="PR: funcprofiler_upstream"></div>
+</div>
+
+<h2 class="section-header" id="section-main-examples">Main Examples</h2>
+
+<div class="diff-entry" id="rnaseq_sections">
+<h3>Rnaseq Sections <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections.svg" alt="Base: rnaseq_sections"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections.svg" alt="PR: rnaseq_sections"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-guide-examples">Guide Examples</h2>
+
+<div class="diff-entry" id="rnaseq_sections_manual">
+<h3>Rnaseq Sections Manual <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections_manual.svg" alt="Base: rnaseq_sections_manual"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections_manual.svg" alt="PR: rnaseq_sections_manual"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-realistic-pipelines">Realistic Pipelines</h2>
+
+<div class="diff-entry" id="variant_calling">
+<h3>Variant Calling <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/variant_calling.svg" alt="Base: variant_calling"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/variant_calling.svg" alt="PR: variant_calling"></div>
+</div>
 </div>
 <script>
 document.querySelectorAll('.toggle-bar button').forEach(btn => {
