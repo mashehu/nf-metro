@@ -1,267 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="1085" height="783" viewBox="0 0 1085 783">
+     width="1194" height="783" viewBox="0 0 1194 783">
 <defs>
 </defs>
-<rect x="0" y="0" width="1085" height="783" fill="#2b2b2b" />
+<rect x="0" y="0" width="1194" height="783" fill="#2b2b2b" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/funcprofiler (upstream)</text>
-<rect x="30.0" y="70.0" width="322.5" height="182.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="input" data-section-lines="concat,db,diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,qc,rgi" />
+<rect x="30.0" y="70.0" width="377.5" height="182.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="input" data-section-lines="concat,db,diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,qc,rgi" />
 <circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="input" />
 <text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="input">1</text>
 <text x="57.0" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="input">Input</text>
-<rect x="432.5" y="70.0" width="172.0" height="346.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="profiling" data-section-lines="db,diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,rgi" />
-<circle cx="443.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="profiling" />
-<text x="443.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="profiling">2</text>
-<text x="459.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="profiling">Functional Profiling</text>
-<rect x="684.5" y="70.0" width="100.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="QC" data-section-lines="multiqc" />
-<circle cx="695.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="QC" />
-<text x="695.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="QC">3</text>
-<text x="711.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="QC">Quality Check</text>
-<rect x="864.5" y="70.0" width="161.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="Output" data-section-lines="diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,rgi" />
-<circle cx="875.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="Output" />
-<text x="875.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="Output">4</text>
-<text x="891.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="Output">Output</text>
-<path d="M161.5,120.0 L352.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M684.5,120.0 L734.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M518.5,132.0 L604.5,132.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M518.5,161.0 L549.5,161.0 Q559.5,161.0,566.6898837604912,154.04977903152525 L582.3101162395088,138.95022096847475 Q589.5,132.0,599.5,132.0 L604.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M518.5,202.0 L549.5,202.0 Q559.5,202.0,563.4391929857917,192.80854969981942 L585.5608070142083,141.19145030018058 Q589.5,132.0,599.5,132.0 L604.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M518.5,243.0 L549.5,243.0 Q559.5,243.0,562.1090902514278,233.34636606971733 L586.8909097485722,141.65363393028267 Q589.5,132.0,599.5,132.0 L604.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M518.5,284.0 L549.5,284.0 Q559.5,284.0,561.4363303189666,274.18925971723587 L587.5636696810334,141.81074028276413 Q589.5,132.0,599.5,132.0 L604.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M518.5,325.0 L549.5,325.0 Q559.5,325.0,561.0359591858061,315.11866257131464 L587.9640408141939,141.88133742868536 Q589.5,132.0,599.5,132.0 L604.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M518.5,366.0 L549.5,366.0 Q559.5,366.0,560.7716431598536,356.0811833531415 L588.2283568401464,141.91881664685852 Q589.5,132.0,599.5,132.0 L604.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M734.5,120.0 L784.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M864.5,141.0 L945.0,141.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M352.5,120.0 L362.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M604.5,132.0 L614.5,132.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M784.5,120.0 L864.5,141.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M362.5,120.0 L370.5,120.0 Q380.5,120.0,380.5,130.0 L380.5,431.0 Q380.5,441.0,390.5,441.0 L619.5,441.0 Q629.5,441.0,629.5,431.0 L629.5,130.0 Q629.5,120.0,639.5,120.0 L684.5,120.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M614.5,132.0 L624.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M624.5,120.0 L684.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
-<path d="M266.5,179.0 L302.5,179.0 Q312.5,179.0,318.6964428857902,171.15117234466572 L336.3035571142098,148.84882765533428 Q342.5,141.0,352.5,141.0 L352.5,141.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M432.5,141.0 L432.5,141.0 Q442.5,141.0,443.8045451257139,150.91454295542545 L471.1954548742861,359.0854570445746 Q472.5,369.0,482.5,369.0 L518.5,369.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M518.5,369.0 L554.0666314305292,369.0 Q564.0666314305292,369.0,565.3711765562431,359.0854570445746 L592.7620863048154,150.91454295542545 Q594.0666314305292,141.0,604.0666314305292,141.0 L604.5,141.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M864.5,138.0 L945.0,138.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M352.5,141.0 L362.5,141.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M362.5,141.0 L432.5,141.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M604.5,141.0 L614.5,141.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M614.5,141.0 L631.5,141.0 Q641.5,141.0,641.5,151.0 L641.5,185.0 Q641.5,213.0,669.5,213.0 L805.5,213.0 Q833.5,213.0,833.5,185.0 L833.5,148.0 Q833.5,138.0,843.5,138.0 L864.5,138.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
-<path d="M266.5,176.0 L300.64536389210946,176.0 Q310.64536389210946,176.0,316.84180677789965,168.15117234466572 L334.44892100631927,145.84882765533428 Q340.64536389210946,138.0,350.64536389210946,138.0 L352.5,138.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M432.5,138.0 L432.5,138.0 Q442.5,138.0,444.0596257347301,147.87762965329068 L470.9403742652699,318.1223703467093 Q472.5,328.0,482.5,328.0 L518.5,328.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M518.5,328.0 L552.5444209536862,328.0 Q562.5444209536862,328.0,564.1040466884164,318.1223703467093 L590.984795218956,147.87762965329068 Q592.5444209536862,138.0,602.5444209536862,138.0 L604.5,138.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M864.5,135.0 L945.0,135.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M352.5,138.0 L362.5,138.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M362.5,138.0 L432.5,138.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M604.5,138.0 L614.5,138.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M614.5,138.0 L631.5,138.0 Q644.5,138.0,644.5,151.0 L644.5,185.0 Q644.5,210.0,669.5,210.0 L805.5,210.0 Q830.5,210.0,830.5,185.0 L830.5,148.0 Q830.5,135.0,843.5,135.0 L864.5,135.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
-<path d="M266.5,173.0 L298.54845463070313,173.0 Q308.54845463070313,173.0,314.7448975164933,165.15117234466572 L332.35201174491294,142.84882765533428 Q338.54845463070313,135.0,348.54845463070313,135.0 L352.5,135.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M432.5,135.0 L432.5,135.0 Q442.5,135.0,444.4363303189666,144.81074028276413 L470.5636696810334,277.18925971723587 Q472.5,287.0,482.5,287.0 L518.5,287.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M518.5,287.0 L551.022210476843,287.0 Q561.022210476843,287.0,562.9585407958097,277.18925971723587 L589.0858801578764,144.81074028276413 Q591.022210476843,135.0,601.022210476843,135.0 L604.5,135.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M864.5,132.0 L945.0,132.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M352.5,135.0 L362.5,135.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M362.5,135.0 L432.5,135.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M604.5,135.0 L614.5,135.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M614.5,135.0 L631.5,135.0 Q647.5,135.0,647.5,151.0 L647.5,185.0 Q647.5,207.0,669.5,207.0 L805.5,207.0 Q827.5,207.0,827.5,185.0 L827.5,148.0 Q827.5,132.0,843.5,132.0 L864.5,132.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
-<path d="M266.5,170.0 L296.45154536929687,170.0 Q306.45154536929687,170.0,312.64798825508706,162.15117234466572 L330.2551024835067,139.84882765533428 Q336.45154536929687,132.0,346.45154536929687,132.0 L352.5,132.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M432.5,129.0 L435.2166842847354,129.0 Q445.2166842847354,129.0,447.7004377874124,138.68663866044045 L472.73293078205836,236.31336133955955 Q475.2166842847354,246.0,485.2166842847354,246.0 L518.5,246.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M518.5,246.0 L547.977789523157,246.0 Q557.977789523157,246.0,560.461543025834,236.31336133955955 L585.4940360204799,138.68663866044045 Q587.977789523157,129.0,597.977789523157,129.0 L604.5,129.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M864.5,129.0 L945.0,129.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M352.5,132.0 L362.5,132.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M362.5,132.0 L432.5,129.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M604.5,129.0 L614.5,129.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M614.5,129.0 L631.5,129.0 Q650.5,129.0,650.5,148.0 L650.5,185.0 Q650.5,204.0,669.5,204.0 L805.5,204.0 Q824.5,204.0,824.5,185.0 L824.5,148.0 Q824.5,129.0,843.5,129.0 L864.5,129.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
-<path d="M266.5,167.0 L294.35463610789054,167.0 Q304.35463610789054,167.0,310.55107899368073,159.15117234466572 L328.15819322210035,136.84882765533428 Q334.35463610789054,129.0,344.35463610789054,129.0 L352.5,129.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M432.5,126.0 L436.7388947615785,126.0 Q446.7388947615785,126.0,450.2890041756644,135.34862145709295 L473.18878534749257,195.65137854290705 Q476.7388947615785,205.0,486.7388947615785,205.0 L518.5,205.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M518.5,205.0 L546.4555790463138,205.0 Q556.4555790463138,205.0,560.0056884603997,195.65137854290705 L582.9054696322279,135.34862145709295 Q586.4555790463138,126.0,596.4555790463138,126.0 L604.5,126.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M864.5,126.0 L945.0,126.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M352.5,129.0 L362.5,129.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M362.5,129.0 L432.5,126.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M604.5,126.0 L614.5,126.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M614.5,126.0 L631.5,126.0 Q653.5,126.0,653.5,148.0 L653.5,185.0 Q653.5,201.0,669.5,201.0 L805.5,201.0 Q821.5,201.0,821.5,185.0 L821.5,148.0 Q821.5,126.0,843.5,126.0 L864.5,126.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
-<path d="M266.5,164.0 L292.2577268464842,164.0 Q302.2577268464842,164.0,308.4541697322744,156.15117234466572 L326.061283960694,133.84882765533428 Q332.2577268464842,126.0,342.2577268464842,126.0 L352.5,126.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M432.5,123.0 L438.2611052384215,123.0 Q448.2611052384215,123.0,454.1662051822637,131.0703032565843 L472.35600529457935,155.9296967434157 Q478.2611052384215,164.0,488.2611052384215,164.0 L518.5,164.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M518.5,164.0 L544.9333685694708,164.0 Q554.9333685694708,164.0,560.8384685133129,155.9296967434157 L579.0282686256286,131.0703032565843 Q584.9333685694708,123.0,594.9333685694708,123.0 L604.5,123.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M864.5,123.0 L945.0,123.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M352.5,126.0 L362.5,126.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M362.5,126.0 L432.5,123.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M604.5,123.0 L614.5,123.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M614.5,123.0 L631.5,123.0 Q656.5,123.0,656.5,148.0 L656.5,185.0 Q656.5,198.0,669.5,198.0 L805.5,198.0 Q818.5,198.0,818.5,185.0 L818.5,148.0 Q818.5,123.0,843.5,123.0 L864.5,123.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
-<path d="M266.5,161.0 L290.16081758507795,161.0 Q300.16081758507795,161.0,306.35726047086814,153.15117234466572 L323.96437469928776,130.84882765533428 Q330.16081758507795,123.0,340.16081758507795,123.0 L352.5,123.0" stroke="#FF9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M432.5,120.0 L518.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M518.5,120.0 L604.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M864.5,120.0 L945.0,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M352.5,123.0 L362.5,123.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M362.5,123.0 L432.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M604.5,120.0 L614.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M614.5,120.0 L631.5,120.0 Q659.5,120.0,659.5,148.0 L659.5,185.0 Q659.5,195.0,669.5,195.0 L805.5,195.0 Q815.5,195.0,815.5,185.0 L815.5,148.0 Q815.5,120.0,843.5,120.0 L864.5,120.0" stroke="#FF9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann3" data-line-id="humann3" />
-<path d="M101.5,202.0 L302.5,202.0 Q312.5,202.0,317.09422918873764,193.1178235684405 L337.90577081126236,152.8821764315595 Q342.5,144.0,352.5,144.0 L352.5,144.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
-<path d="M432.5,117.0 L518.5,117.0" stroke="#607D8B" stroke-width="3.0" stroke-linecap="round" class="metro-line-db" data-line-id="db" />
-<path d="M432.5,117.0 L441.3055261921077,117.0 Q451.3055261921077,117.0,456.9388944385228,125.26227342807547 L475.6721579456926,152.73772657192453 Q481.3055261921077,161.0,491.3055261921077,161.0 L518.5,161.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
-<path d="M432.5,117.0 L441.3055261921077,117.0 Q451.3055261921077,117.0,454.6337273694591,126.4299033358289 L477.97732501475633,192.5700966641711 Q481.3055261921077,202.0,491.3055261921077,202.0 L518.5,202.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
-<path d="M432.5,117.0 L441.3055261921077,117.0 Q451.3055261921077,117.0,453.6217314651681,126.72806214685367 L478.9893209190473,233.27193785314634 Q481.3055261921077,243.0,491.3055261921077,243.0 L518.5,243.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
-<path d="M432.5,117.0 L441.3055261921077,117.0 Q451.3055261921077,117.0,453.073630836195,126.8424491854191 L479.53742154802046,274.15755081458093 Q481.3055261921077,284.0,491.3055261921077,284.0 L518.5,284.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
-<path d="M432.5,117.0 L441.3055261921077,117.0 Q451.3055261921077,117.0,452.73306214247583,126.89758258921877 L479.8779902417396,315.10241741078124 Q481.3055261921077,325.0,491.3055261921077,325.0 L518.5,325.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
-<path d="M432.5,117.0 L441.3055261921077,117.0 Q451.3055261921077,117.0,452.50169501789264,126.92820125401477 L480.1093573663228,356.07179874598523 Q481.3055261921077,366.0,491.3055261921077,366.0 L518.5,366.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
-<path d="M352.5,144.0 L362.5,144.0" stroke="#607D8B" stroke-width="3.0" stroke-linecap="round" class="metro-line-db" data-line-id="db" />
-<path d="M362.5,144.0 L432.5,117.0" stroke="#607D8B" stroke-width="3.0" stroke-linecap="round" class="metro-line-db" data-line-id="db" />
-<path d="M161.5,117.0 L196.5,117.0 Q206.5,117.0,212.1333682464151,125.26227342807547 L230.8666317535849,152.73772657192453 Q236.5,161.0,246.5,161.0 L266.5,161.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-concat" data-line-id="concat" />
-<path d="M101.5,117.0 L161.5,117.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" class="metro-line-qc" data-line-id="qc" />
+<rect x="497.5" y="70.0" width="196.0" height="346.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="profiling" data-section-lines="db,diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,rgi" />
+<circle cx="508.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="profiling" />
+<text x="508.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="profiling">2</text>
+<text x="524.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="profiling">Functional Profiling</text>
+<rect x="783.5" y="70.0" width="100.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="QC" data-section-lines="multiqc" />
+<circle cx="794.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="QC" />
+<text x="794.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="QC">3</text>
+<text x="810.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="QC">Quality Check</text>
+<rect x="973.5" y="70.0" width="161.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="Output" data-section-lines="diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,rgi" />
+<circle cx="984.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="Output" />
+<text x="984.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="Output">4</text>
+<text x="1000.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="Output">Output</text>
+<path d="M181.5,120.0 L407.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M783.5,120.0 L833.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M595.5,132.0 L693.5,132.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M595.5,161.0 L638.5,161.0 Q648.5,161.0,655.6898837604912,154.04977903152525 L671.3101162395088,138.95022096847475 Q678.5,132.0,688.5,132.0 L693.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M595.5,202.0 L638.5,202.0 Q648.5,202.0,652.4391929857917,192.80854969981942 L674.5608070142083,141.19145030018058 Q678.5,132.0,688.5,132.0 L693.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M595.5,243.0 L638.5,243.0 Q648.5,243.0,651.1090902514278,233.34636606971733 L675.8909097485722,141.65363393028267 Q678.5,132.0,688.5,132.0 L693.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M595.5,284.0 L638.5,284.0 Q648.5,284.0,650.4363303189666,274.18925971723587 L676.5636696810334,141.81074028276413 Q678.5,132.0,688.5,132.0 L693.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M595.5,325.0 L638.5,325.0 Q648.5,325.0,650.0359591858061,315.11866257131464 L676.9640408141939,141.88133742868536 Q678.5,132.0,688.5,132.0 L693.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M595.5,366.0 L638.5,366.0 Q648.5,366.0,649.7716431598536,356.0811833531415 L677.2283568401464,141.91881664685852 Q678.5,132.0,688.5,132.0 L693.5,132.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M833.5,120.0 L883.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M973.5,141.0 L1054.0,141.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M407.5,120.0 L417.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M693.5,132.0 L703.5,132.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M883.5,120.0 L973.5,141.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M417.5,120.0 L430.5,120.0 Q440.5,120.0,440.5,130.0 L440.5,431.0 Q440.5,441.0,450.5,441.0 L713.5,441.0 Q723.5,441.0,723.5,431.0 L723.5,130.0 Q723.5,120.0,733.5,120.0 L783.5,120.0" stroke="#795548" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M703.5,132.0 L713.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M713.5,120.0 L783.5,120.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" class="metro-line-multiqc" data-line-id="multiqc" />
+<path d="M309.5,179.0 L357.5,179.0 Q367.5,179.0,373.6964428857902,171.15117234466572 L391.3035571142098,148.84882765533428 Q397.5,141.0,407.5,141.0 L407.5,141.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M497.5,141.0 L497.5,141.0 Q507.5,141.0,508.8045451257139,150.91454295542545 L536.1954548742862,359.0854570445746 Q537.5,369.0,547.5,369.0 L595.5,369.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M595.5,369.0 L643.0666314305292,369.0 Q653.0666314305292,369.0,654.3711765562431,359.0854570445746 L681.7620863048154,150.91454295542545 Q683.0666314305292,141.0,693.0666314305292,141.0 L693.5,141.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M973.5,138.0 L1054.0,138.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M407.5,141.0 L417.5,141.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M417.5,141.0 L497.5,141.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M693.5,141.0 L703.5,141.0" stroke="#3F51B5" stroke-width="3.0" stroke-linecap="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M703.5,141.0 L725.5,141.0 Q735.5,141.0,735.5,151.0 L735.5,185.0 Q735.5,213.0,763.5,213.0 L909.5,213.0 Q937.5,213.0,937.5,185.0 L937.5,148.0 Q937.5,138.0,947.5,138.0 L973.5,138.0" stroke="#3F51B5" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-eggnog" data-line-id="eggnog" />
+<path d="M309.5,176.0 L355.64536389210946,176.0 Q365.64536389210946,176.0,371.84180677789965,168.15117234466572 L389.44892100631927,145.84882765533428 Q395.64536389210946,138.0,405.64536389210946,138.0 L407.5,138.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M497.5,138.0 L497.5,138.0 Q507.5,138.0,509.0596257347301,147.87762965329068 L535.9403742652698,318.1223703467093 Q537.5,328.0,547.5,328.0 L595.5,328.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M595.5,328.0 L641.5444209536862,328.0 Q651.5444209536862,328.0,653.1040466884164,318.1223703467093 L679.984795218956,147.87762965329068 Q681.5444209536862,138.0,691.5444209536862,138.0 L693.5,138.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M973.5,135.0 L1054.0,135.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M407.5,138.0 L417.5,138.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M417.5,138.0 L497.5,138.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M693.5,138.0 L703.5,138.0" stroke="#9C27B0" stroke-width="3.0" stroke-linecap="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M703.5,138.0 L725.5,138.0 Q738.5,138.0,738.5,151.0 L738.5,185.0 Q738.5,210.0,763.5,210.0 L909.5,210.0 Q934.5,210.0,934.5,185.0 L934.5,148.0 Q934.5,135.0,947.5,135.0 L973.5,135.0" stroke="#9C27B0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-diamond" data-line-id="diamond" />
+<path d="M309.5,173.0 L353.54845463070313,173.0 Q363.54845463070313,173.0,369.7448975164933,165.15117234466572 L387.35201174491294,142.84882765533428 Q393.54845463070313,135.0,403.54845463070313,135.0 L407.5,135.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M497.5,135.0 L497.5,135.0 Q507.5,135.0,509.4363303189666,144.81074028276413 L535.5636696810334,277.18925971723587 Q537.5,287.0,547.5,287.0 L595.5,287.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M595.5,287.0 L640.022210476843,287.0 Q650.022210476843,287.0,651.9585407958097,277.18925971723587 L678.0858801578764,144.81074028276413 Q680.022210476843,135.0,690.022210476843,135.0 L693.5,135.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M973.5,132.0 L1054.0,132.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M407.5,135.0 L417.5,135.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M417.5,135.0 L497.5,135.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M693.5,135.0 L703.5,135.0" stroke="#00BCD4" stroke-width="3.0" stroke-linecap="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M703.5,135.0 L725.5,135.0 Q741.5,135.0,741.5,151.0 L741.5,185.0 Q741.5,207.0,763.5,207.0 L909.5,207.0 Q931.5,207.0,931.5,185.0 L931.5,148.0 Q931.5,132.0,947.5,132.0 L973.5,132.0" stroke="#00BCD4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mifaser" data-line-id="mifaser" />
+<path d="M309.5,170.0 L351.45154536929687,170.0 Q361.45154536929687,170.0,367.64798825508706,162.15117234466572 L385.2551024835067,139.84882765533428 Q391.45154536929687,132.0,401.45154536929687,132.0 L407.5,132.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M497.5,129.0 L500.2166842847354,129.0 Q510.2166842847354,129.0,512.7004377874124,138.68663866044045 L537.7329307820584,236.31336133955955 Q540.2166842847354,246.0,550.2166842847354,246.0 L595.5,246.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M595.5,246.0 L636.977789523157,246.0 Q646.977789523157,246.0,649.461543025834,236.31336133955955 L674.4940360204799,138.68663866044045 Q676.977789523157,129.0,686.977789523157,129.0 L693.5,129.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M973.5,129.0 L1054.0,129.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M407.5,132.0 L417.5,132.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M417.5,132.0 L497.5,129.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M693.5,129.0 L703.5,129.0" stroke="#CDDC39" stroke-width="3.0" stroke-linecap="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M703.5,129.0 L725.5,129.0 Q744.5,129.0,744.5,148.0 L744.5,185.0 Q744.5,204.0,763.5,204.0 L909.5,204.0 Q928.5,204.0,928.5,185.0 L928.5,148.0 Q928.5,129.0,947.5,129.0 L973.5,129.0" stroke="#CDDC39" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rgi" data-line-id="rgi" />
+<path d="M309.5,167.0 L349.35463610789054,167.0 Q359.35463610789054,167.0,365.55107899368073,159.15117234466572 L383.15819322210035,136.84882765533428 Q389.35463610789054,129.0,399.35463610789054,129.0 L407.5,129.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M497.5,126.0 L501.7388947615785,126.0 Q511.7388947615785,126.0,515.2890041756644,135.34862145709295 L538.1887853474925,195.65137854290705 Q541.7388947615784,205.0,551.7388947615784,205.0 L595.5,205.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M595.5,205.0 L635.4555790463138,205.0 Q645.4555790463138,205.0,649.0056884603997,195.65137854290705 L671.9054696322279,135.34862145709295 Q675.4555790463138,126.0,685.4555790463138,126.0 L693.5,126.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M973.5,126.0 L1054.0,126.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M407.5,129.0 L417.5,129.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M417.5,129.0 L497.5,126.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M693.5,126.0 L703.5,126.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M703.5,126.0 L725.5,126.0 Q747.5,126.0,747.5,148.0 L747.5,185.0 Q747.5,201.0,763.5,201.0 L909.5,201.0 Q925.5,201.0,925.5,185.0 L925.5,148.0 Q925.5,126.0,947.5,126.0 L973.5,126.0" stroke="#E91E63" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-fmhfunprofiler" data-line-id="fmhfunprofiler" />
+<path d="M309.5,164.0 L347.2577268464842,164.0 Q357.2577268464842,164.0,363.4541697322744,156.15117234466572 L381.061283960694,133.84882765533428 Q387.2577268464842,126.0,397.2577268464842,126.0 L407.5,126.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M497.5,123.0 L503.2611052384216,123.0 Q513.2611052384216,123.0,519.1662051822638,131.0703032565843 L537.3560052945794,155.9296967434157 Q543.2611052384216,164.0,553.2611052384216,164.0 L595.5,164.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M595.5,164.0 L633.9333685694708,164.0 Q643.9333685694708,164.0,649.8384685133129,155.9296967434157 L668.0282686256286,131.0703032565843 Q673.9333685694708,123.0,683.9333685694708,123.0 L693.5,123.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M973.5,123.0 L1054.0,123.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M407.5,126.0 L417.5,126.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M417.5,126.0 L497.5,123.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M693.5,123.0 L703.5,123.0" stroke="#FF5722" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M703.5,123.0 L725.5,123.0 Q750.5,123.0,750.5,148.0 L750.5,185.0 Q750.5,198.0,763.5,198.0 L909.5,198.0 Q922.5,198.0,922.5,185.0 L922.5,148.0 Q922.5,123.0,947.5,123.0 L973.5,123.0" stroke="#FF5722" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann4" data-line-id="humann4" />
+<path d="M309.5,161.0 L345.16081758507795,161.0 Q355.16081758507795,161.0,361.35726047086814,153.15117234466572 L378.96437469928776,130.84882765533428 Q385.16081758507795,123.0,395.16081758507795,123.0 L407.5,123.0" stroke="#FF9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M497.5,120.0 L595.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M595.5,120.0 L693.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M973.5,120.0 L1054.0,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M407.5,123.0 L417.5,123.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M417.5,123.0 L497.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M693.5,120.0 L703.5,120.0" stroke="#FF9800" stroke-width="3.0" stroke-linecap="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M703.5,120.0 L725.5,120.0 Q753.5,120.0,753.5,148.0 L753.5,185.0 Q753.5,195.0,763.5,195.0 L909.5,195.0 Q919.5,195.0,919.5,185.0 L919.5,148.0 Q919.5,120.0,947.5,120.0 L973.5,120.0" stroke="#FF9800" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-humann3" data-line-id="humann3" />
+<path d="M101.5,202.0 L357.5,202.0 Q367.5,202.0,372.09422918873764,193.1178235684405 L392.90577081126236,152.8821764315595 Q397.5,144.0,407.5,144.0 L407.5,144.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
+<path d="M497.5,117.0 L595.5,117.0" stroke="#607D8B" stroke-width="3.0" stroke-linecap="round" class="metro-line-db" data-line-id="db" />
+<path d="M497.5,117.0 L506.30552619210766,117.0 Q516.3055261921077,117.0,521.9388944385228,125.26227342807547 L540.6721579456926,152.73772657192453 Q546.3055261921077,161.0,556.3055261921077,161.0 L595.5,161.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
+<path d="M497.5,117.0 L506.30552619210766,117.0 Q516.3055261921077,117.0,519.633727369459,126.4299033358289 L542.9773250147563,192.5700966641711 Q546.3055261921077,202.0,556.3055261921077,202.0 L595.5,202.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
+<path d="M497.5,117.0 L506.30552619210766,117.0 Q516.3055261921077,117.0,518.6217314651681,126.72806214685367 L543.9893209190473,233.27193785314634 Q546.3055261921077,243.0,556.3055261921077,243.0 L595.5,243.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
+<path d="M497.5,117.0 L506.30552619210766,117.0 Q516.3055261921077,117.0,518.073630836195,126.8424491854191 L544.5374215480203,274.15755081458093 Q546.3055261921077,284.0,556.3055261921077,284.0 L595.5,284.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
+<path d="M497.5,117.0 L506.30552619210766,117.0 Q516.3055261921077,117.0,517.7330621424758,126.89758258921877 L544.8779902417396,315.10241741078124 Q546.3055261921077,325.0,556.3055261921077,325.0 L595.5,325.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
+<path d="M497.5,117.0 L506.30552619210766,117.0 Q516.3055261921077,117.0,517.5016950178925,126.92820125401477 L545.1093573663228,356.07179874598523 Q546.3055261921077,366.0,556.3055261921077,366.0 L595.5,366.0" stroke="#607D8B" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-db" data-line-id="db" />
+<path d="M407.5,144.0 L417.5,144.0" stroke="#607D8B" stroke-width="3.0" stroke-linecap="round" class="metro-line-db" data-line-id="db" />
+<path d="M417.5,144.0 L497.5,117.0" stroke="#607D8B" stroke-width="3.0" stroke-linecap="round" class="metro-line-db" data-line-id="db" />
+<path d="M181.5,117.0 L216.5,117.0 Q226.5,117.0,232.1333682464151,125.26227342807547 L250.8666317535849,152.73772657192453 Q256.5,161.0,266.5,161.0 L309.5,161.0" stroke="#2196F3" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-concat" data-line-id="concat" />
+<path d="M101.5,117.0 L181.5,117.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" class="metro-line-qc" data-line-id="qc" />
 <rect x="96.5" y="112.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="input_short" data-station-lines="qc" data-station-label="Short Reads" data-section-id="input" data-section-name="Input" />
 <rect x="96.5" y="197.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="input_dbs" data-station-lines="db" data-station-label="Input Databases" data-section-id="input" data-section-name="Input" />
-<rect x="156.5" y="112.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="sr_qc" data-station-lines="concat,multiqc,qc" data-station-label="Preprocess" data-section-id="input" data-section-name="Input" />
-<rect x="261.5" y="156.0" width="10.0" height="28.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="merge" data-station-lines="concat,diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,rgi" data-station-label="MERGE_RUNS" data-section-id="input" data-section-name="Input" />
-<rect x="513.5" y="112.0" width="10.0" height="25.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="humann3" data-station-lines="db,humann3,multiqc" data-station-label="HUMAnN v3" data-section-id="profiling" data-section-name="Functional Profiling" />
-<rect x="513.5" y="156.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="humann4" data-station-lines="db,humann4,multiqc" data-station-label="HUMAnN v4" data-section-id="profiling" data-section-name="Functional Profiling" />
-<rect x="513.5" y="197.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fmhfunprofiler" data-station-lines="db,fmhfunprofiler,multiqc" data-station-label="FMH FunProfiler" data-section-id="profiling" data-section-name="Functional Profiling" />
-<rect x="513.5" y="238.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="RGI" data-station-lines="db,multiqc,rgi" data-station-label="RGI" data-section-id="profiling" data-section-name="Functional Profiling" />
-<rect x="513.5" y="279.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mifaser" data-station-lines="db,mifaser,multiqc" data-station-label="mifaser" data-section-id="profiling" data-section-name="Functional Profiling" />
-<rect x="513.5" y="320.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="diamond" data-station-lines="db,diamond,multiqc" data-station-label="DIAMOND" data-section-id="profiling" data-section-name="Functional Profiling" />
-<rect x="513.5" y="361.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="eggnog_mapper" data-station-lines="db,eggnog,multiqc" data-station-label="eggNOG-mapper" data-section-id="profiling" data-section-name="Functional Profiling" />
-<rect x="729.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="multiqc" data-station-label="MultiQC" data-section-id="QC" data-section-name="Quality Check" />
-<rect x="940.0" y="115.0" width="10.0" height="31.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="output" data-station-lines="diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,rgi" data-station-label="Results Directory" data-section-id="Output" data-section-name="Output" />
+<rect x="176.5" y="112.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="sr_qc" data-station-lines="concat,multiqc,qc" data-station-label="Preprocess" data-section-id="input" data-section-name="Input" />
+<rect x="304.5" y="156.0" width="10.0" height="28.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="merge" data-station-lines="concat,diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,rgi" data-station-label="MERGE_RUNS" data-section-id="input" data-section-name="Input" />
+<rect x="590.5" y="112.0" width="10.0" height="25.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="humann3" data-station-lines="db,humann3,multiqc" data-station-label="HUMAnN v3" data-section-id="profiling" data-section-name="Functional Profiling" />
+<rect x="590.5" y="156.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="humann4" data-station-lines="db,humann4,multiqc" data-station-label="HUMAnN v4" data-section-id="profiling" data-section-name="Functional Profiling" />
+<rect x="590.5" y="197.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fmhfunprofiler" data-station-lines="db,fmhfunprofiler,multiqc" data-station-label="FMH FunProfiler" data-section-id="profiling" data-section-name="Functional Profiling" />
+<rect x="590.5" y="238.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="RGI" data-station-lines="db,multiqc,rgi" data-station-label="RGI" data-section-id="profiling" data-section-name="Functional Profiling" />
+<rect x="590.5" y="279.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mifaser" data-station-lines="db,mifaser,multiqc" data-station-label="mifaser" data-section-id="profiling" data-section-name="Functional Profiling" />
+<rect x="590.5" y="320.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="diamond" data-station-lines="db,diamond,multiqc" data-station-label="DIAMOND" data-section-id="profiling" data-section-name="Functional Profiling" />
+<rect x="590.5" y="361.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="eggnog_mapper" data-station-lines="db,eggnog,multiqc" data-station-label="eggNOG-mapper" data-section-id="profiling" data-section-name="Functional Profiling" />
+<rect x="828.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="multiqc" data-station-label="MultiQC" data-section-id="QC" data-section-name="Quality Check" />
+<rect x="1049.0" y="115.0" width="10.0" height="31.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="output" data-station-lines="diamond,eggnog,fmhfunprofiler,humann3,humann4,mifaser,multiqc,rgi" data-station-label="Results Directory" data-section-id="Output" data-section-name="Output" />
 <text x="101.5" y="103.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="input_short" class="nf-metro-station-label">Short Reads</text>
 <text x="101.5" y="213.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="input_dbs" class="nf-metro-station-label">Input Databases</text>
-<text x="518.5" y="103.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="humann3" class="nf-metro-station-label">HUMAnN v3</text>
-<text x="734.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
-<text x="945.0" y="152.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="output" class="nf-metro-station-label">Results Directory</text>
-<text x="518.5" y="150.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="humann4" class="nf-metro-station-label">HUMAnN v4</text>
-<text x="518.5" y="191.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="fmhfunprofiler" class="nf-metro-station-label">FMH FunProfiler</text>
-<text x="518.5" y="255.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="RGI" class="nf-metro-station-label">RGI</text>
-<text x="518.5" y="296.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="mifaser" class="nf-metro-station-label">mifaser</text>
-<text x="518.5" y="337.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="diamond" class="nf-metro-station-label">DIAMOND</text>
-<text x="518.5" y="380.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="eggnog_mapper" class="nf-metro-station-label">eggNOG-mapper</text>
-<text x="161.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="sr_qc" class="nf-metro-station-label">Preprocess</text>
-<text x="266.5" y="150.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="merge" class="nf-metro-station-label">MERGE_RUNS</text>
-<circle cx="206.5" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="236.5" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="312.5" cy="202.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="342.5" cy="144.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="451.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="481.3055261921077" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="451.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="481.3055261921077" cy="202.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="451.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="481.3055261921077" cy="243.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="451.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="481.3055261921077" cy="284.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="451.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="481.3055261921077" cy="325.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="451.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="481.3055261921077" cy="366.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="300.16081758507795" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="330.16081758507795" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="302.2577268464842" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="332.2577268464842" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="448.2611052384215" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="478.2611052384215" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="304.35463610789054" cy="167.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="334.35463610789054" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="446.7388947615785" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="476.7388947615785" cy="205.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="306.45154536929687" cy="170.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="336.45154536929687" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="445.2166842847354" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="475.2166842847354" cy="246.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="308.54845463070313" cy="173.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="338.54845463070313" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="442.5" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="472.5" cy="287.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="310.64536389210946" cy="176.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="340.64536389210946" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="442.5" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="472.5" cy="328.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="312.5" cy="179.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="342.5" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="442.5" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="472.5" cy="369.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="559.5" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="589.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="559.5" cy="202.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="589.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="559.5" cy="243.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="589.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="559.5" cy="284.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="589.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="559.5" cy="325.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="589.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="559.5" cy="366.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="589.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="554.9333685694708" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="584.9333685694708" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="556.4555790463138" cy="205.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="586.4555790463138" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="557.977789523157" cy="246.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="587.977789523157" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="561.022210476843" cy="287.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="591.022210476843" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="562.5444209536862" cy="328.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="592.5444209536862" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="564.0666314305292" cy="369.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="594.0666314305292" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="659.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="659.5" cy="195.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="815.5" cy="195.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="815.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="656.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="656.5" cy="198.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="818.5" cy="198.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="818.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="653.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="653.5" cy="201.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="821.5" cy="201.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="821.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="650.5" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="650.5" cy="204.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="824.5" cy="204.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="824.5" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="647.5" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="647.5" cy="207.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="827.5" cy="207.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="827.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="644.5" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="644.5" cy="210.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="830.5" cy="210.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="830.5" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="641.5" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="641.5" cy="213.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="833.5" cy="213.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="833.5" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="380.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="380.5" cy="441.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="629.5" cy="441.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="629.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<path d="M352.5,115.0 L357.5,120.0 L352.5,125.0 L347.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
-<text x="352.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">input__exit_right_0 (right)</text>
-<path d="M604.5,115.0 L609.5,120.0 L604.5,125.0 L599.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
-<text x="604.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">profiling__exit_right_1 (right)</text>
-<path d="M784.5,115.0 L789.5,120.0 L784.5,125.0 L779.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
-<text x="784.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">QC__exit_right_2 (right)</text>
-<path d="M432.5,115.0 L437.5,120.0 L432.5,125.0 L427.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="432.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">profiling__entry_left_3 (left)</text>
-<path d="M684.5,115.0 L689.5,120.0 L684.5,125.0 L679.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="684.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">QC__entry_left_4 (left)</text>
-<path d="M864.5,115.0 L869.5,120.0 L864.5,125.0 L859.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="864.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">Output__entry_left_5 (left)</text>
-<path d="M362.5,115.0 L367.5,120.0 L362.5,125.0 L357.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="362.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_6 (?)</text>
-<path d="M614.5,115.0 L619.5,120.0 L614.5,125.0 L609.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="614.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_7 (?)</text>
-<path d="M624.5,115.0 L629.5,120.0 L624.5,125.0 L619.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
-<text x="624.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__merge_2 (?)</text>
-<path d="M392.5,50.0 L392.5,436.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
-<text x="392.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
-<path d="M644.5,50.0 L644.5,436.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
-<text x="644.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
-<path d="M824.5,50.0 L824.5,436.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
-<text x="824.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 2|3</text>
-<path d="M20.0,120.0 L1035.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="595.5" y="103.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="humann3" class="nf-metro-station-label">HUMAnN v3</text>
+<text x="833.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
+<text x="1054.0" y="152.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="output" class="nf-metro-station-label">Results Directory</text>
+<text x="595.5" y="173.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="humann4" class="nf-metro-station-label">HUMAnN v4</text>
+<text x="595.5" y="214.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="fmhfunprofiler" class="nf-metro-station-label">FMH FunProfiler</text>
+<text x="595.5" y="255.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="RGI" class="nf-metro-station-label">RGI</text>
+<text x="595.5" y="296.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="mifaser" class="nf-metro-station-label">mifaser</text>
+<text x="595.5" y="337.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="diamond" class="nf-metro-station-label">DIAMOND</text>
+<text x="595.5" y="380.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="eggnog_mapper" class="nf-metro-station-label">eggNOG-mapper</text>
+<text x="181.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="sr_qc" class="nf-metro-station-label">Preprocess</text>
+<text x="309.5" y="150.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="merge" class="nf-metro-station-label">MERGE_RUNS</text>
+<circle cx="226.5" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="256.5" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="367.5" cy="202.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="397.5" cy="144.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="516.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="546.3055261921077" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="516.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="546.3055261921077" cy="202.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="516.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="546.3055261921077" cy="243.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="516.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="546.3055261921077" cy="284.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="516.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="546.3055261921077" cy="325.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="516.3055261921077" cy="117.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="546.3055261921077" cy="366.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="355.16081758507795" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="385.16081758507795" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="357.2577268464842" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="387.2577268464842" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="513.2611052384216" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="543.2611052384216" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="359.35463610789054" cy="167.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="389.35463610789054" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="511.7388947615785" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="541.7388947615784" cy="205.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="361.45154536929687" cy="170.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="391.45154536929687" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="510.2166842847354" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="540.2166842847354" cy="246.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="363.54845463070313" cy="173.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="393.54845463070313" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="507.5" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="537.5" cy="287.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="365.64536389210946" cy="176.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="395.64536389210946" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="507.5" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="537.5" cy="328.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="367.5" cy="179.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="397.5" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="507.5" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="537.5" cy="369.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="648.5" cy="161.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="678.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="648.5" cy="202.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="678.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="648.5" cy="243.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="678.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="648.5" cy="284.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="678.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="648.5" cy="325.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="678.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="648.5" cy="366.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="678.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="643.9333685694708" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="673.9333685694708" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="645.4555790463138" cy="205.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="675.4555790463138" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="646.977789523157" cy="246.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="676.977789523157" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="650.022210476843" cy="287.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="680.022210476843" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="651.5444209536862" cy="328.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="681.5444209536862" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="653.0666314305292" cy="369.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="683.0666314305292" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="753.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="753.5" cy="195.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="919.5" cy="195.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="919.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="750.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="750.5" cy="198.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="922.5" cy="198.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="922.5" cy="123.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="747.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="747.5" cy="201.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="925.5" cy="201.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="925.5" cy="126.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="744.5" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="744.5" cy="204.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="928.5" cy="204.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="928.5" cy="129.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="741.5" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="741.5" cy="207.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="931.5" cy="207.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="931.5" cy="132.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="738.5" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="738.5" cy="210.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="934.5" cy="210.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="934.5" cy="135.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="735.5" cy="141.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="735.5" cy="213.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="937.5" cy="213.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="937.5" cy="138.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="440.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="440.5" cy="441.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="723.5" cy="441.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="723.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<path d="M407.5,115.0 L412.5,120.0 L407.5,125.0 L402.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="407.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">input__exit_right_0 (right)</text>
+<path d="M693.5,115.0 L698.5,120.0 L693.5,125.0 L688.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="693.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">profiling__exit_right_1 (right)</text>
+<path d="M883.5,115.0 L888.5,120.0 L883.5,125.0 L878.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="883.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">QC__exit_right_2 (right)</text>
+<path d="M497.5,115.0 L502.5,120.0 L497.5,125.0 L492.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="497.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">profiling__entry_left_3 (left)</text>
+<path d="M783.5,115.0 L788.5,120.0 L783.5,125.0 L778.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="783.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">QC__entry_left_4 (left)</text>
+<path d="M973.5,115.0 L978.5,120.0 L973.5,125.0 L968.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="973.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">Output__entry_left_5 (left)</text>
+<path d="M417.5,115.0 L422.5,120.0 L417.5,125.0 L412.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="417.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_6 (?)</text>
+<path d="M703.5,115.0 L708.5,120.0 L703.5,125.0 L698.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="703.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_7 (?)</text>
+<path d="M713.5,115.0 L718.5,120.0 L713.5,125.0 L708.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="713.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__merge_2 (?)</text>
+<path d="M452.5,50.0 L452.5,436.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="452.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M738.5,50.0 L738.5,436.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="738.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|2</text>
+<path d="M928.5,50.0 L928.5,436.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="928.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 2|3</text>
+<path d="M20.0,120.0 L1144.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="16.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
-<path d="M20.0,161.0 L1035.5,161.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M20.0,202.0 L1035.5,202.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M20.0,243.0 L1035.5,243.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M20.0,284.0 L1035.5,284.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M20.0,325.0 L1035.5,325.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<path d="M20.0,366.0 L1035.5,366.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M20.0,161.0 L1144.5,161.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M20.0,202.0 L1144.5,202.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M20.0,243.0 L1144.5,243.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M20.0,284.0 L1144.5,284.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M20.0,325.0 L1144.5,325.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M20.0,366.0 L1144.5,366.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <rect x="30.0" y="471.0" width="198.60000000000002" height="288.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
 <path d="M42.0,495.0 L66.0,495.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" />
 <text x="78.0" y="495.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Preprocessing &amp; QC</text>
@@ -285,5 +285,5 @@
 <text x="78.0" y="711.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">eggNOG-mapper</text>
 <path d="M42.0,735.0 L66.0,735.0" stroke="#795548" stroke-width="3.0" stroke-linecap="round" />
 <text x="78.0" y="735.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Reporting</text>
-<text x="1055.0" y="775.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<text x="1164.0" y="775.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
