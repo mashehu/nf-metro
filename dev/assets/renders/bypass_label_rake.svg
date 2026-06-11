@@ -4,7 +4,7 @@
 <defs>
 </defs>
 <rect x="0" y="0" width="839" height="372" fill="#2b2b2b" />
-<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Hidden Stations</text>
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Bypass V Past A Wide Label</text>
 <rect x="30.0" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="input" data-section-lines="dna,prot,rna" />
 <circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="input" />
 <text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="input">1</text>
@@ -18,13 +18,13 @@
 <text x="690.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="reporting">3</text>
 <text x="706.5" y="55.0" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="reporting">Reporting</text>
 <path d="M80.0,126.0 L140.0,126.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-prot" data-line-id="prot" />
-<path d="M290.0,126.0 L290.0,126.0 Q300.0,126.0,305.9050999438422,134.0703032565843 L324.0949000561578,158.9296967434157 Q330.0,167.0,340.0,167.0 L386.0,167.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-prot" data-line-id="prot" />
+<path d="M290.0,126.0 L290.0,126.0 Q297.75,126.0,302.3264524564777,132.25448502385282 L321.8449000561578,158.9296967434157 Q327.75,167.0,337.75,167.0 L386.0,167.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-prot" data-line-id="prot" />
 <path d="M140.0,126.0 L190.0,126.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-prot" data-line-id="prot" />
 <path d="M240.0,126.0 L290.0,126.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-prot" data-line-id="prot" />
 <path d="M679.5,126.0 L729.5,126.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-prot" data-line-id="prot" />
 <path d="M190.0,126.0 L240.0,126.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-prot" data-line-id="prot" />
 <path d="M599.5,126.0 L679.5,126.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-prot" data-line-id="prot" />
-<path d="M386.0,167.0 L442.75,167.0 Q452.75,167.0,458.6550999438422,175.0703032565843 L476.8449000561578,199.9296967434157 Q482.75,208.0,492.75,208.0 L513.5,208.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-prot" data-line-id="prot" />
+<path d="M386.0,167.0 L443.875,167.0 Q453.875,167.0,459.7800999438422,175.0703032565843 L477.9699000561578,199.9296967434157 Q483.875,208.0,493.875,208.0 L513.5,208.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-prot" data-line-id="prot" />
 <path d="M513.5,208.0 L556.2995000000001,208.0 Q566.2995000000001,208.0,568.4663400937987,198.23758206139962 L582.3331599062013,135.76241793860038 Q584.5,126.0,594.5,126.0 L599.5,126.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-prot" data-line-id="prot" />
 <path d="M80.0,123.0 L140.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
 <path d="M290.0,123.0 L386.0,123.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
@@ -46,14 +46,16 @@
 <path d="M513.5,120.0 L599.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-dna" data-line-id="dna" />
 <rect x="75.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fetch" data-station-lines="dna,prot,rna" data-station-label="Fetch Data" data-section-id="input" data-section-name="Input" />
 <rect x="135.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="validate" data-station-lines="dna,prot,rna" data-station-label="Validate" data-section-id="input" data-section-name="Input" />
+<rect x="285.0" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="branch" data-station-lines="dna,prot,rna" data-station-label="Branch" data-section-id="processing" data-section-name="Processing" />
 <rect x="381.0" y="115.0" width="10.0" height="13.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="align" data-station-lines="dna,rna" data-station-label="Alignment" data-section-id="processing" data-section-name="Processing" />
 <rect x="508.5" y="159.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="quant" data-station-lines="rna" data-station-label="Quantification" data-section-id="processing" data-section-name="Processing" />
 <rect x="381.0" y="162.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="search" data-station-lines="prot" data-station-label="Database Search" data-section-id="processing" data-section-name="Processing" />
 <rect x="724.5" y="115.0" width="10.0" height="16.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="dna,prot,rna" data-station-label="MultiQC" data-section-id="reporting" data-section-name="Reporting" />
 <text x="80.0" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="fetch" class="nf-metro-station-label">Fetch Data</text>
+<text x="290.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="branch" class="nf-metro-station-label">Branch</text>
 <text x="729.5" y="137.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="validate" class="nf-metro-station-label">Validate</text>
-<text x="386.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="align" class="nf-metro-station-label">Alignment</text>
+<text x="386.0" y="134.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="align" class="nf-metro-station-label">Alignment</text>
 <text x="386.0" y="178.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="search" class="nf-metro-station-label">Database Search</text>
 <text x="518.6" y="175.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="quant" class="nf-metro-station-label">Quantification</text>
 <rect x="30.0" y="252.0" width="113.9" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
