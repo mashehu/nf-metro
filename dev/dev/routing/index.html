@@ -16,7 +16,7 @@
         <link rel="prev" href="../layout_pipeline/">
       
       
-        <link rel="next" href="../parser/">
+        <link rel="next" href="../routing_gate_coverage/">
       
       
         
@@ -649,10 +649,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gate-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gate coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routing_gate_coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing gate coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -796,6 +835,17 @@
     <span class="md-ellipsis">
       
         Module map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gate-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gate coverage
       
     </span>
   </a>
@@ -954,6 +1004,16 @@ dispatcher handles those degenerate cases directly.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="gate-coverage">Gate coverage<a class="headerlink" href="#gate-coverage" title="Permanent link">&para;</a></h2>
+<p>Each handler and post-pass is a chain of topology-conditional gates (direction
+checks, port-side checks, row/column relations, geometric thresholds). The
+<a href="../routing_gate_coverage/">routing gate coverage matrix</a> enumerates every gate
+and records which corpus fixtures exercise each arm, so an un-exercised arm -
+an assumption no shipped topology probes - is a visible, enumerated entry
+rather than a latent surprise. Regenerate it with
+<code>python scripts/routing_gate_coverage.py --write</code>; <code>tests/test_routing_gate_coverage.py</code>
+ratchets the gap set so new conditionals must ship with a fixture hitting both
+arms.</p>
 
 
 
