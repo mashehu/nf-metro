@@ -1242,6 +1242,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compact-hidden-passthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compact Hidden Passthrough
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compact-gap-peer-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compact Gap Peer Conflict
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2287,6 +2309,28 @@
     <span class="md-ellipsis">
       
         Terminus Join
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compact-hidden-passthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compact Hidden Passthrough
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compact-gap-peer-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compact Gap Peer Conflict
       
     </span>
   </a>
@@ -6533,6 +6577,87 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Terminus Join" src="../assets/renders/terminus_join.svg" /></p>
+<h3 id="compact-hidden-passthrough">Compact Hidden Passthrough<a class="headerlink" href="#compact-hidden-passthrough" title="Permanent link">&para;</a></h3>
+<p>Compact mode keeps a hidden single-line pass-through station on its bundle slot so the two lines weave consistently through the section.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/compact_hidden_passthrough.mmd<span class="w"> </span>-o<span class="w"> </span>compact_hidden_passthrough.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a>%%metro title: Hidden Pass-through Compact
+<a id="__codelineno-123-2" name="__codelineno-123-2" href="#__codelineno-123-2"></a>%%metro style: dark
+<a id="__codelineno-123-3" name="__codelineno-123-3" href="#__codelineno-123-3"></a>%%metro compact_offsets: true
+<a id="__codelineno-123-4" name="__codelineno-123-4" href="#__codelineno-123-4"></a>%%metro line: a | Line A | #e63946
+<a id="__codelineno-123-5" name="__codelineno-123-5" href="#__codelineno-123-5"></a>%%metro line: b | Line B | #0570b0
+<a id="__codelineno-123-6" name="__codelineno-123-6" href="#__codelineno-123-6"></a>
+<a id="__codelineno-123-7" name="__codelineno-123-7" href="#__codelineno-123-7"></a>graph LR
+<a id="__codelineno-123-8" name="__codelineno-123-8" href="#__codelineno-123-8"></a>    subgraph src [Source]
+<a id="__codelineno-123-9" name="__codelineno-123-9" href="#__codelineno-123-9"></a>        s1[Input A]
+<a id="__codelineno-123-10" name="__codelineno-123-10" href="#__codelineno-123-10"></a>        s2[Input B]
+<a id="__codelineno-123-11" name="__codelineno-123-11" href="#__codelineno-123-11"></a>    end
+<a id="__codelineno-123-12" name="__codelineno-123-12" href="#__codelineno-123-12"></a>
+<a id="__codelineno-123-13" name="__codelineno-123-13" href="#__codelineno-123-13"></a>    subgraph process [Process]
+<a id="__codelineno-123-14" name="__codelineno-123-14" href="#__codelineno-123-14"></a>        _pass[hidden]
+<a id="__codelineno-123-15" name="__codelineno-123-15" href="#__codelineno-123-15"></a>        p1[Step A]
+<a id="__codelineno-123-16" name="__codelineno-123-16" href="#__codelineno-123-16"></a>        p2[Step B]
+<a id="__codelineno-123-17" name="__codelineno-123-17" href="#__codelineno-123-17"></a>        _pass --&gt;|a| p1
+<a id="__codelineno-123-18" name="__codelineno-123-18" href="#__codelineno-123-18"></a>        p1 --&gt;|a,b| p2
+<a id="__codelineno-123-19" name="__codelineno-123-19" href="#__codelineno-123-19"></a>    end
+<a id="__codelineno-123-20" name="__codelineno-123-20" href="#__codelineno-123-20"></a>
+<a id="__codelineno-123-21" name="__codelineno-123-21" href="#__codelineno-123-21"></a>    subgraph report [Report]
+<a id="__codelineno-123-22" name="__codelineno-123-22" href="#__codelineno-123-22"></a>        r1[Report]
+<a id="__codelineno-123-23" name="__codelineno-123-23" href="#__codelineno-123-23"></a>    end
+<a id="__codelineno-123-24" name="__codelineno-123-24" href="#__codelineno-123-24"></a>
+<a id="__codelineno-123-25" name="__codelineno-123-25" href="#__codelineno-123-25"></a>    s1 --&gt;|a| _pass
+<a id="__codelineno-123-26" name="__codelineno-123-26" href="#__codelineno-123-26"></a>    s2 --&gt;|b| p1
+<a id="__codelineno-123-27" name="__codelineno-123-27" href="#__codelineno-123-27"></a>    p2 --&gt;|a,b| r1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Compact Hidden Passthrough" src="../assets/renders/compact_hidden_passthrough.svg" /></p>
+<h3 id="compact-gap-peer-conflict">Compact Gap Peer Conflict<a class="headerlink" href="#compact-gap-peer-conflict" title="Permanent link">&para;</a></h3>
+<p>A fork-join whose hub carries non-consecutive offset slots safely abandons gap-compaction when a visible same-layer peer carries the intervening line, rather than cascading the reorder.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/compact_gap_peer_conflict.mmd<span class="w"> </span>-o<span class="w"> </span>compact_gap_peer_conflict.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a>%%metro title: Compaction Gap Peer Conflict
+<a id="__codelineno-125-2" name="__codelineno-125-2" href="#__codelineno-125-2"></a>%%metro style: dark
+<a id="__codelineno-125-3" name="__codelineno-125-3" href="#__codelineno-125-3"></a>%%metro line: alpha | Alpha | #e63946
+<a id="__codelineno-125-4" name="__codelineno-125-4" href="#__codelineno-125-4"></a>%%metro line: beta | Beta | #2db572
+<a id="__codelineno-125-5" name="__codelineno-125-5" href="#__codelineno-125-5"></a>%%metro line: gamma | Gamma | #0570b0
+<a id="__codelineno-125-6" name="__codelineno-125-6" href="#__codelineno-125-6"></a>
+<a id="__codelineno-125-7" name="__codelineno-125-7" href="#__codelineno-125-7"></a>graph LR
+<a id="__codelineno-125-8" name="__codelineno-125-8" href="#__codelineno-125-8"></a>    subgraph src [Source]
+<a id="__codelineno-125-9" name="__codelineno-125-9" href="#__codelineno-125-9"></a>        s1[Input]
+<a id="__codelineno-125-10" name="__codelineno-125-10" href="#__codelineno-125-10"></a>        s1 --&gt;|alpha,beta,gamma| s2
+<a id="__codelineno-125-11" name="__codelineno-125-11" href="#__codelineno-125-11"></a>        s2[Prepare]
+<a id="__codelineno-125-12" name="__codelineno-125-12" href="#__codelineno-125-12"></a>    end
+<a id="__codelineno-125-13" name="__codelineno-125-13" href="#__codelineno-125-13"></a>
+<a id="__codelineno-125-14" name="__codelineno-125-14" href="#__codelineno-125-14"></a>    subgraph proc [Process]
+<a id="__codelineno-125-15" name="__codelineno-125-15" href="#__codelineno-125-15"></a>        %%metro entry: left | alpha, beta, gamma
+<a id="__codelineno-125-16" name="__codelineno-125-16" href="#__codelineno-125-16"></a>        %%metro exit: right | alpha, beta, gamma
+<a id="__codelineno-125-17" name="__codelineno-125-17" href="#__codelineno-125-17"></a>        p1[Fork]
+<a id="__codelineno-125-18" name="__codelineno-125-18" href="#__codelineno-125-18"></a>        p2[Alpha Gamma]
+<a id="__codelineno-125-19" name="__codelineno-125-19" href="#__codelineno-125-19"></a>        p3[Beta Node]
+<a id="__codelineno-125-20" name="__codelineno-125-20" href="#__codelineno-125-20"></a>        p4[Merge]
+<a id="__codelineno-125-21" name="__codelineno-125-21" href="#__codelineno-125-21"></a>        p1 --&gt;|alpha,gamma| p2
+<a id="__codelineno-125-22" name="__codelineno-125-22" href="#__codelineno-125-22"></a>        p1 --&gt;|beta| p3
+<a id="__codelineno-125-23" name="__codelineno-125-23" href="#__codelineno-125-23"></a>        p2 --&gt;|alpha,gamma| p4
+<a id="__codelineno-125-24" name="__codelineno-125-24" href="#__codelineno-125-24"></a>        p3 --&gt;|beta| p4
+<a id="__codelineno-125-25" name="__codelineno-125-25" href="#__codelineno-125-25"></a>    end
+<a id="__codelineno-125-26" name="__codelineno-125-26" href="#__codelineno-125-26"></a>
+<a id="__codelineno-125-27" name="__codelineno-125-27" href="#__codelineno-125-27"></a>    subgraph sink [Sink]
+<a id="__codelineno-125-28" name="__codelineno-125-28" href="#__codelineno-125-28"></a>        t1[End]
+<a id="__codelineno-125-29" name="__codelineno-125-29" href="#__codelineno-125-29"></a>    end
+<a id="__codelineno-125-30" name="__codelineno-125-30" href="#__codelineno-125-30"></a>
+<a id="__codelineno-125-31" name="__codelineno-125-31" href="#__codelineno-125-31"></a>    s2 --&gt;|alpha,beta,gamma| p1
+<a id="__codelineno-125-32" name="__codelineno-125-32" href="#__codelineno-125-32"></a>    p4 --&gt;|alpha,beta,gamma| t1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Compact Gap Peer Conflict" src="../assets/renders/compact_gap_peer_conflict.svg" /></p>
 
 
 
