@@ -1297,6 +1297,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#peeloff-riser-respace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peeloff Riser Respace
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2397,6 +2408,17 @@
     <span class="md-ellipsis">
       
         Junction Entry Align
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peeloff-riser-respace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peeloff Riser Respace
       
     </span>
   </a>
@@ -6899,6 +6921,57 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Junction Entry Align" src="../assets/renders/junction_entry_align.svg" /></p>
+<h3 id="peeloff-riser-respace">Peeloff Riser Respace<a class="headerlink" href="#peeloff-riser-respace" title="Permanent link">&para;</a></h3>
+<p>Four lines from two sources ride one shared bypass trunk and rise into a common destination entry port, where the trunk-Y order and the entry-port slot order disagree. Each source bundle keeps its declaration order at the peel-off corner instead of inverting (issue #695).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/peeloff_riser_respace.mmd<span class="w"> </span>-o<span class="w"> </span>peeloff_riser_respace.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-133-1" name="__codelineno-133-1" href="#__codelineno-133-1"></a>%%metro title: Peel-off Riser Respace
+<a id="__codelineno-133-2" name="__codelineno-133-2" href="#__codelineno-133-2"></a>%%metro style: dark
+<a id="__codelineno-133-3" name="__codelineno-133-3" href="#__codelineno-133-3"></a>%%metro line: l1 | Line 1 | #e63946
+<a id="__codelineno-133-4" name="__codelineno-133-4" href="#__codelineno-133-4"></a>%%metro line: l2 | Line 2 | #2db572
+<a id="__codelineno-133-5" name="__codelineno-133-5" href="#__codelineno-133-5"></a>%%metro line: l3 | Line 3 | #0570b0
+<a id="__codelineno-133-6" name="__codelineno-133-6" href="#__codelineno-133-6"></a>%%metro line: l4 | Line 4 | #f5c542
+<a id="__codelineno-133-7" name="__codelineno-133-7" href="#__codelineno-133-7"></a>%%metro grid: src_a | 0,0
+<a id="__codelineno-133-8" name="__codelineno-133-8" href="#__codelineno-133-8"></a>%%metro grid: src_b | 1,0
+<a id="__codelineno-133-9" name="__codelineno-133-9" href="#__codelineno-133-9"></a>%%metro grid: mid | 2,0
+<a id="__codelineno-133-10" name="__codelineno-133-10" href="#__codelineno-133-10"></a>%%metro grid: dst | 3,0
+<a id="__codelineno-133-11" name="__codelineno-133-11" href="#__codelineno-133-11"></a>
+<a id="__codelineno-133-12" name="__codelineno-133-12" href="#__codelineno-133-12"></a>graph LR
+<a id="__codelineno-133-13" name="__codelineno-133-13" href="#__codelineno-133-13"></a>    subgraph src_a [Source A]
+<a id="__codelineno-133-14" name="__codelineno-133-14" href="#__codelineno-133-14"></a>        %%metro exit: right | l1,l2
+<a id="__codelineno-133-15" name="__codelineno-133-15" href="#__codelineno-133-15"></a>        sa_in[Input A]
+<a id="__codelineno-133-16" name="__codelineno-133-16" href="#__codelineno-133-16"></a>        sa_out[Output A]
+<a id="__codelineno-133-17" name="__codelineno-133-17" href="#__codelineno-133-17"></a>        sa_in --&gt;|l1,l2| sa_out
+<a id="__codelineno-133-18" name="__codelineno-133-18" href="#__codelineno-133-18"></a>    end
+<a id="__codelineno-133-19" name="__codelineno-133-19" href="#__codelineno-133-19"></a>
+<a id="__codelineno-133-20" name="__codelineno-133-20" href="#__codelineno-133-20"></a>    subgraph src_b [Source B]
+<a id="__codelineno-133-21" name="__codelineno-133-21" href="#__codelineno-133-21"></a>        %%metro entry: left | l3,l4
+<a id="__codelineno-133-22" name="__codelineno-133-22" href="#__codelineno-133-22"></a>        %%metro exit: right | l3,l4
+<a id="__codelineno-133-23" name="__codelineno-133-23" href="#__codelineno-133-23"></a>        sb_in[Input B]
+<a id="__codelineno-133-24" name="__codelineno-133-24" href="#__codelineno-133-24"></a>        sb_out[Output B]
+<a id="__codelineno-133-25" name="__codelineno-133-25" href="#__codelineno-133-25"></a>        sb_in --&gt;|l3,l4| sb_out
+<a id="__codelineno-133-26" name="__codelineno-133-26" href="#__codelineno-133-26"></a>    end
+<a id="__codelineno-133-27" name="__codelineno-133-27" href="#__codelineno-133-27"></a>
+<a id="__codelineno-133-28" name="__codelineno-133-28" href="#__codelineno-133-28"></a>    subgraph mid [Mid]
+<a id="__codelineno-133-29" name="__codelineno-133-29" href="#__codelineno-133-29"></a>        m1[Mid Process]
+<a id="__codelineno-133-30" name="__codelineno-133-30" href="#__codelineno-133-30"></a>    end
+<a id="__codelineno-133-31" name="__codelineno-133-31" href="#__codelineno-133-31"></a>
+<a id="__codelineno-133-32" name="__codelineno-133-32" href="#__codelineno-133-32"></a>    subgraph dst [Destination]
+<a id="__codelineno-133-33" name="__codelineno-133-33" href="#__codelineno-133-33"></a>        %%metro entry: left | l1,l2,l3,l4
+<a id="__codelineno-133-34" name="__codelineno-133-34" href="#__codelineno-133-34"></a>        d1[Process D1]
+<a id="__codelineno-133-35" name="__codelineno-133-35" href="#__codelineno-133-35"></a>        d2[Process D2]
+<a id="__codelineno-133-36" name="__codelineno-133-36" href="#__codelineno-133-36"></a>        d1 --&gt;|l1,l2,l3,l4| d2
+<a id="__codelineno-133-37" name="__codelineno-133-37" href="#__codelineno-133-37"></a>    end
+<a id="__codelineno-133-38" name="__codelineno-133-38" href="#__codelineno-133-38"></a>
+<a id="__codelineno-133-39" name="__codelineno-133-39" href="#__codelineno-133-39"></a>    sa_out --&gt;|l1,l2| d1
+<a id="__codelineno-133-40" name="__codelineno-133-40" href="#__codelineno-133-40"></a>    sb_out --&gt;|l3,l4| d1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Peeloff Riser Respace" src="../assets/renders/peeloff_riser_respace.svg" /></p>
 
 
 
