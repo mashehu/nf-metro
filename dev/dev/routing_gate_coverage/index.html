@@ -2432,7 +2432,7 @@
 <td style="text-align: right;">1707</td>
 <td><code>if lo &lt;= s.grid_col &lt;= hi:</code></td>
 <td><code>-&gt;L1704</code></td>
-<td><strong>needs-review</strong> -- The out-of-range-section skip arm of _has_other_row_section_in_col_range is reachable, but the only minimal merge topology found that reaches it triggers the merge-trunk route-through-section defect in #696 (a merge source sitting right of the target). Minimal forward-edge merge fixtures either miss the predicate or trip _guard_routes_enter_sections_at_ports. Exercise via a clean fixture once #696 is resolved.</td>
+<td><strong>needs-review</strong> -- The out-of-range-section skip arm of _has_other_row_section_in_col_range is reachable. The minimal merge topology that reaches it (a merge source sitting right of the target in the same row) is now rejected at layout time as a backward feed (#696, BackwardFlowError), so it can no longer exercise the arm. A clean forward-edge merge fixture (source left of target, same row, intervening sections, no other-row section in the column range) is still needed to hit the False branch; minimal attempts either miss the predicate or trip _guard_routes_enter_sections_at_ports.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1733</td>
