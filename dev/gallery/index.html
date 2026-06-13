@@ -1265,6 +1265,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#merge-port-above-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge Port Above Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#junction-entry-collision" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2353,6 +2364,17 @@
     <span class="md-ellipsis">
       
         Compact Gap Peer Conflict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-port-above-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge Port Above Approach
       
     </span>
   </a>
@@ -6702,57 +6724,108 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Compact Gap Peer Conflict" src="../assets/renders/compact_gap_peer_conflict.svg" /></p>
-<h3 id="junction-entry-collision">Junction Entry Collision<a class="headerlink" href="#junction-entry-collision" title="Permanent link">&para;</a></h3>
-<p>A three-line fan-out where one line continues straight to its own destination while the other two branch away: the straight line keeps a constant bundle slot across the source exit so its trunk stays horizontal (issue #704).</p>
+<h3 id="merge-port-above-approach">Merge Port Above Approach<a class="headerlink" href="#merge-port-above-approach" title="Permanent link">&para;</a></h3>
+<p>A line descending into a multi-feeder merge port from a section above keeps the above-trunk slot all the way to the output, so its riser joins the bundle without crossing the trunk on the outgoing run (issue #704).</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/junction_entry_collision.mmd<span class="w"> </span>-o<span class="w"> </span>junction_entry_collision.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/merge_port_above_approach.mmd<span class="w"> </span>-o<span class="w"> </span>merge_port_above_approach.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>%%metro title: Junction Entry Collision Skip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>%%metro title: Above Approach Merge
 <a id="__codelineno-127-2" name="__codelineno-127-2" href="#__codelineno-127-2"></a>%%metro style: dark
-<a id="__codelineno-127-3" name="__codelineno-127-3" href="#__codelineno-127-3"></a>%%metro line_order: span
-<a id="__codelineno-127-4" name="__codelineno-127-4" href="#__codelineno-127-4"></a>%%metro line: beta | Beta | #2db572
-<a id="__codelineno-127-5" name="__codelineno-127-5" href="#__codelineno-127-5"></a>%%metro line: alpha | Alpha | #e63946
-<a id="__codelineno-127-6" name="__codelineno-127-6" href="#__codelineno-127-6"></a>%%metro line: gamma | Gamma | #0570b0
-<a id="__codelineno-127-7" name="__codelineno-127-7" href="#__codelineno-127-7"></a>
-<a id="__codelineno-127-8" name="__codelineno-127-8" href="#__codelineno-127-8"></a>%%metro grid: pre | 0,0
-<a id="__codelineno-127-9" name="__codelineno-127-9" href="#__codelineno-127-9"></a>%%metro grid: src | 1,0
-<a id="__codelineno-127-10" name="__codelineno-127-10" href="#__codelineno-127-10"></a>%%metro grid: dst_a | 2,0
-<a id="__codelineno-127-11" name="__codelineno-127-11" href="#__codelineno-127-11"></a>%%metro grid: dst_bg | 3,0
-<a id="__codelineno-127-12" name="__codelineno-127-12" href="#__codelineno-127-12"></a>
-<a id="__codelineno-127-13" name="__codelineno-127-13" href="#__codelineno-127-13"></a>graph LR
-<a id="__codelineno-127-14" name="__codelineno-127-14" href="#__codelineno-127-14"></a>    subgraph pre [Pre]
-<a id="__codelineno-127-15" name="__codelineno-127-15" href="#__codelineno-127-15"></a>        pre1[Start]
-<a id="__codelineno-127-16" name="__codelineno-127-16" href="#__codelineno-127-16"></a>        pre2[Prep]
-<a id="__codelineno-127-17" name="__codelineno-127-17" href="#__codelineno-127-17"></a>        pre1 --&gt;|alpha,beta,gamma| pre2
-<a id="__codelineno-127-18" name="__codelineno-127-18" href="#__codelineno-127-18"></a>    end
-<a id="__codelineno-127-19" name="__codelineno-127-19" href="#__codelineno-127-19"></a>
-<a id="__codelineno-127-20" name="__codelineno-127-20" href="#__codelineno-127-20"></a>    subgraph src [Source]
-<a id="__codelineno-127-21" name="__codelineno-127-21" href="#__codelineno-127-21"></a>        %%metro exit: right | alpha,beta,gamma
-<a id="__codelineno-127-22" name="__codelineno-127-22" href="#__codelineno-127-22"></a>        s_a[Alpha Tool]
-<a id="__codelineno-127-23" name="__codelineno-127-23" href="#__codelineno-127-23"></a>        s_b[Beta Tool]
-<a id="__codelineno-127-24" name="__codelineno-127-24" href="#__codelineno-127-24"></a>        s_g[Gamma Tool]
-<a id="__codelineno-127-25" name="__codelineno-127-25" href="#__codelineno-127-25"></a>    end
-<a id="__codelineno-127-26" name="__codelineno-127-26" href="#__codelineno-127-26"></a>
-<a id="__codelineno-127-27" name="__codelineno-127-27" href="#__codelineno-127-27"></a>    subgraph dst_a [Dest Alpha]
-<a id="__codelineno-127-28" name="__codelineno-127-28" href="#__codelineno-127-28"></a>        %%metro entry: left | alpha
-<a id="__codelineno-127-29" name="__codelineno-127-29" href="#__codelineno-127-29"></a>        da1[Output A]
-<a id="__codelineno-127-30" name="__codelineno-127-30" href="#__codelineno-127-30"></a>    end
-<a id="__codelineno-127-31" name="__codelineno-127-31" href="#__codelineno-127-31"></a>
-<a id="__codelineno-127-32" name="__codelineno-127-32" href="#__codelineno-127-32"></a>    subgraph dst_bg [Dest Beta+Gamma]
-<a id="__codelineno-127-33" name="__codelineno-127-33" href="#__codelineno-127-33"></a>        %%metro entry: left | beta,gamma
-<a id="__codelineno-127-34" name="__codelineno-127-34" href="#__codelineno-127-34"></a>        dbg1[Output B+G]
-<a id="__codelineno-127-35" name="__codelineno-127-35" href="#__codelineno-127-35"></a>        dbg2[Report]
-<a id="__codelineno-127-36" name="__codelineno-127-36" href="#__codelineno-127-36"></a>        dbg1 --&gt;|beta,gamma| dbg2
-<a id="__codelineno-127-37" name="__codelineno-127-37" href="#__codelineno-127-37"></a>    end
-<a id="__codelineno-127-38" name="__codelineno-127-38" href="#__codelineno-127-38"></a>
-<a id="__codelineno-127-39" name="__codelineno-127-39" href="#__codelineno-127-39"></a>    pre2 --&gt;|alpha| s_a
-<a id="__codelineno-127-40" name="__codelineno-127-40" href="#__codelineno-127-40"></a>    pre2 --&gt;|beta| s_b
-<a id="__codelineno-127-41" name="__codelineno-127-41" href="#__codelineno-127-41"></a>    pre2 --&gt;|gamma| s_g
-<a id="__codelineno-127-42" name="__codelineno-127-42" href="#__codelineno-127-42"></a>    s_a --&gt;|alpha| da1
-<a id="__codelineno-127-43" name="__codelineno-127-43" href="#__codelineno-127-43"></a>    s_b --&gt;|beta| dbg1
-<a id="__codelineno-127-44" name="__codelineno-127-44" href="#__codelineno-127-44"></a>    s_g --&gt;|gamma| dbg1
+<a id="__codelineno-127-3" name="__codelineno-127-3" href="#__codelineno-127-3"></a>%%metro line: trunk | Trunk | #2db572
+<a id="__codelineno-127-4" name="__codelineno-127-4" href="#__codelineno-127-4"></a>%%metro line: bypass | Bypass | #e63946
+<a id="__codelineno-127-5" name="__codelineno-127-5" href="#__codelineno-127-5"></a>
+<a id="__codelineno-127-6" name="__codelineno-127-6" href="#__codelineno-127-6"></a>%%metro grid: above_src | 0,0
+<a id="__codelineno-127-7" name="__codelineno-127-7" href="#__codelineno-127-7"></a>%%metro grid: horiz_src | 0,1
+<a id="__codelineno-127-8" name="__codelineno-127-8" href="#__codelineno-127-8"></a>%%metro grid: sink | 1,1
+<a id="__codelineno-127-9" name="__codelineno-127-9" href="#__codelineno-127-9"></a>%%metro grid: out | 2,1
+<a id="__codelineno-127-10" name="__codelineno-127-10" href="#__codelineno-127-10"></a>
+<a id="__codelineno-127-11" name="__codelineno-127-11" href="#__codelineno-127-11"></a>graph LR
+<a id="__codelineno-127-12" name="__codelineno-127-12" href="#__codelineno-127-12"></a>    subgraph above_src [Above Source]
+<a id="__codelineno-127-13" name="__codelineno-127-13" href="#__codelineno-127-13"></a>        %%metro exit: right | bypass
+<a id="__codelineno-127-14" name="__codelineno-127-14" href="#__codelineno-127-14"></a>        a1[Start A]
+<a id="__codelineno-127-15" name="__codelineno-127-15" href="#__codelineno-127-15"></a>        a2[Prep A]
+<a id="__codelineno-127-16" name="__codelineno-127-16" href="#__codelineno-127-16"></a>        a1 --&gt;|bypass| a2
+<a id="__codelineno-127-17" name="__codelineno-127-17" href="#__codelineno-127-17"></a>    end
+<a id="__codelineno-127-18" name="__codelineno-127-18" href="#__codelineno-127-18"></a>
+<a id="__codelineno-127-19" name="__codelineno-127-19" href="#__codelineno-127-19"></a>    subgraph horiz_src [Horizontal Source]
+<a id="__codelineno-127-20" name="__codelineno-127-20" href="#__codelineno-127-20"></a>        %%metro exit: right | trunk
+<a id="__codelineno-127-21" name="__codelineno-127-21" href="#__codelineno-127-21"></a>        h1[Start B]
+<a id="__codelineno-127-22" name="__codelineno-127-22" href="#__codelineno-127-22"></a>        h2[Prep B]
+<a id="__codelineno-127-23" name="__codelineno-127-23" href="#__codelineno-127-23"></a>        h1 --&gt;|trunk| h2
+<a id="__codelineno-127-24" name="__codelineno-127-24" href="#__codelineno-127-24"></a>    end
+<a id="__codelineno-127-25" name="__codelineno-127-25" href="#__codelineno-127-25"></a>
+<a id="__codelineno-127-26" name="__codelineno-127-26" href="#__codelineno-127-26"></a>    subgraph sink [Sink]
+<a id="__codelineno-127-27" name="__codelineno-127-27" href="#__codelineno-127-27"></a>        %%metro entry: left | trunk,bypass
+<a id="__codelineno-127-28" name="__codelineno-127-28" href="#__codelineno-127-28"></a>        %%metro exit: right | trunk,bypass
+<a id="__codelineno-127-29" name="__codelineno-127-29" href="#__codelineno-127-29"></a>        s1[Merge]
+<a id="__codelineno-127-30" name="__codelineno-127-30" href="#__codelineno-127-30"></a>        s2[Combine]
+<a id="__codelineno-127-31" name="__codelineno-127-31" href="#__codelineno-127-31"></a>        s1 --&gt;|trunk,bypass| s2
+<a id="__codelineno-127-32" name="__codelineno-127-32" href="#__codelineno-127-32"></a>    end
+<a id="__codelineno-127-33" name="__codelineno-127-33" href="#__codelineno-127-33"></a>
+<a id="__codelineno-127-34" name="__codelineno-127-34" href="#__codelineno-127-34"></a>    subgraph out [Output]
+<a id="__codelineno-127-35" name="__codelineno-127-35" href="#__codelineno-127-35"></a>        o1[Report]
+<a id="__codelineno-127-36" name="__codelineno-127-36" href="#__codelineno-127-36"></a>    end
+<a id="__codelineno-127-37" name="__codelineno-127-37" href="#__codelineno-127-37"></a>
+<a id="__codelineno-127-38" name="__codelineno-127-38" href="#__codelineno-127-38"></a>    a2 --&gt;|bypass| s1
+<a id="__codelineno-127-39" name="__codelineno-127-39" href="#__codelineno-127-39"></a>    h2 --&gt;|trunk| s1
+<a id="__codelineno-127-40" name="__codelineno-127-40" href="#__codelineno-127-40"></a>    s2 --&gt;|trunk,bypass| o1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Merge Port Above Approach" src="../assets/renders/merge_port_above_approach.svg" /></p>
+<h3 id="junction-entry-collision">Junction Entry Collision<a class="headerlink" href="#junction-entry-collision" title="Permanent link">&para;</a></h3>
+<p>A three-line fan-out where one line continues straight to its own destination while the other two branch away: the straight line keeps a constant bundle slot across the source exit so its trunk stays horizontal (issue #704).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/junction_entry_collision.mmd<span class="w"> </span>-o<span class="w"> </span>junction_entry_collision.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>%%metro title: Junction Entry Collision Skip
+<a id="__codelineno-129-2" name="__codelineno-129-2" href="#__codelineno-129-2"></a>%%metro style: dark
+<a id="__codelineno-129-3" name="__codelineno-129-3" href="#__codelineno-129-3"></a>%%metro line_order: span
+<a id="__codelineno-129-4" name="__codelineno-129-4" href="#__codelineno-129-4"></a>%%metro line: beta | Beta | #2db572
+<a id="__codelineno-129-5" name="__codelineno-129-5" href="#__codelineno-129-5"></a>%%metro line: alpha | Alpha | #e63946
+<a id="__codelineno-129-6" name="__codelineno-129-6" href="#__codelineno-129-6"></a>%%metro line: gamma | Gamma | #0570b0
+<a id="__codelineno-129-7" name="__codelineno-129-7" href="#__codelineno-129-7"></a>
+<a id="__codelineno-129-8" name="__codelineno-129-8" href="#__codelineno-129-8"></a>%%metro grid: pre | 0,0
+<a id="__codelineno-129-9" name="__codelineno-129-9" href="#__codelineno-129-9"></a>%%metro grid: src | 1,0
+<a id="__codelineno-129-10" name="__codelineno-129-10" href="#__codelineno-129-10"></a>%%metro grid: dst_a | 2,0
+<a id="__codelineno-129-11" name="__codelineno-129-11" href="#__codelineno-129-11"></a>%%metro grid: dst_bg | 3,0
+<a id="__codelineno-129-12" name="__codelineno-129-12" href="#__codelineno-129-12"></a>
+<a id="__codelineno-129-13" name="__codelineno-129-13" href="#__codelineno-129-13"></a>graph LR
+<a id="__codelineno-129-14" name="__codelineno-129-14" href="#__codelineno-129-14"></a>    subgraph pre [Pre]
+<a id="__codelineno-129-15" name="__codelineno-129-15" href="#__codelineno-129-15"></a>        pre1[Start]
+<a id="__codelineno-129-16" name="__codelineno-129-16" href="#__codelineno-129-16"></a>        pre2[Prep]
+<a id="__codelineno-129-17" name="__codelineno-129-17" href="#__codelineno-129-17"></a>        pre1 --&gt;|alpha,beta,gamma| pre2
+<a id="__codelineno-129-18" name="__codelineno-129-18" href="#__codelineno-129-18"></a>    end
+<a id="__codelineno-129-19" name="__codelineno-129-19" href="#__codelineno-129-19"></a>
+<a id="__codelineno-129-20" name="__codelineno-129-20" href="#__codelineno-129-20"></a>    subgraph src [Source]
+<a id="__codelineno-129-21" name="__codelineno-129-21" href="#__codelineno-129-21"></a>        %%metro exit: right | alpha,beta,gamma
+<a id="__codelineno-129-22" name="__codelineno-129-22" href="#__codelineno-129-22"></a>        s_a[Alpha Tool]
+<a id="__codelineno-129-23" name="__codelineno-129-23" href="#__codelineno-129-23"></a>        s_b[Beta Tool]
+<a id="__codelineno-129-24" name="__codelineno-129-24" href="#__codelineno-129-24"></a>        s_g[Gamma Tool]
+<a id="__codelineno-129-25" name="__codelineno-129-25" href="#__codelineno-129-25"></a>    end
+<a id="__codelineno-129-26" name="__codelineno-129-26" href="#__codelineno-129-26"></a>
+<a id="__codelineno-129-27" name="__codelineno-129-27" href="#__codelineno-129-27"></a>    subgraph dst_a [Dest Alpha]
+<a id="__codelineno-129-28" name="__codelineno-129-28" href="#__codelineno-129-28"></a>        %%metro entry: left | alpha
+<a id="__codelineno-129-29" name="__codelineno-129-29" href="#__codelineno-129-29"></a>        da1[Output A]
+<a id="__codelineno-129-30" name="__codelineno-129-30" href="#__codelineno-129-30"></a>    end
+<a id="__codelineno-129-31" name="__codelineno-129-31" href="#__codelineno-129-31"></a>
+<a id="__codelineno-129-32" name="__codelineno-129-32" href="#__codelineno-129-32"></a>    subgraph dst_bg [Dest Beta+Gamma]
+<a id="__codelineno-129-33" name="__codelineno-129-33" href="#__codelineno-129-33"></a>        %%metro entry: left | beta,gamma
+<a id="__codelineno-129-34" name="__codelineno-129-34" href="#__codelineno-129-34"></a>        dbg1[Output B+G]
+<a id="__codelineno-129-35" name="__codelineno-129-35" href="#__codelineno-129-35"></a>        dbg2[Report]
+<a id="__codelineno-129-36" name="__codelineno-129-36" href="#__codelineno-129-36"></a>        dbg1 --&gt;|beta,gamma| dbg2
+<a id="__codelineno-129-37" name="__codelineno-129-37" href="#__codelineno-129-37"></a>    end
+<a id="__codelineno-129-38" name="__codelineno-129-38" href="#__codelineno-129-38"></a>
+<a id="__codelineno-129-39" name="__codelineno-129-39" href="#__codelineno-129-39"></a>    pre2 --&gt;|alpha| s_a
+<a id="__codelineno-129-40" name="__codelineno-129-40" href="#__codelineno-129-40"></a>    pre2 --&gt;|beta| s_b
+<a id="__codelineno-129-41" name="__codelineno-129-41" href="#__codelineno-129-41"></a>    pre2 --&gt;|gamma| s_g
+<a id="__codelineno-129-42" name="__codelineno-129-42" href="#__codelineno-129-42"></a>    s_a --&gt;|alpha| da1
+<a id="__codelineno-129-43" name="__codelineno-129-43" href="#__codelineno-129-43"></a>    s_b --&gt;|beta| dbg1
+<a id="__codelineno-129-44" name="__codelineno-129-44" href="#__codelineno-129-44"></a>    s_g --&gt;|gamma| dbg1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -6760,68 +6833,68 @@
 <h3 id="junction-entry-align">Junction Entry Align<a class="headerlink" href="#junction-entry-align" title="Permanent link">&para;</a></h3>
 <p>A two-line bundle whose order is preserved across the junction-to-entry-port boundary, so the straight-through line stays horizontal instead of slanting to swap slots (issue #704).</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/junction_entry_align.mmd<span class="w"> </span>-o<span class="w"> </span>junction_entry_align.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/junction_entry_align.mmd<span class="w"> </span>-o<span class="w"> </span>junction_entry_align.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>%%metro title: Junction Entry Port Align
-<a id="__codelineno-129-2" name="__codelineno-129-2" href="#__codelineno-129-2"></a>%%metro style: dark
-<a id="__codelineno-129-3" name="__codelineno-129-3" href="#__codelineno-129-3"></a>%%metro line_order: span
-<a id="__codelineno-129-4" name="__codelineno-129-4" href="#__codelineno-129-4"></a>%%metro line: alpha | Alpha | #e63946
-<a id="__codelineno-129-5" name="__codelineno-129-5" href="#__codelineno-129-5"></a>%%metro line: beta | Beta | #2db572
-<a id="__codelineno-129-6" name="__codelineno-129-6" href="#__codelineno-129-6"></a>
-<a id="__codelineno-129-7" name="__codelineno-129-7" href="#__codelineno-129-7"></a>%%metro grid: pre | 0,0
-<a id="__codelineno-129-8" name="__codelineno-129-8" href="#__codelineno-129-8"></a>%%metro grid: src | 1,0
-<a id="__codelineno-129-9" name="__codelineno-129-9" href="#__codelineno-129-9"></a>%%metro grid: dst_a | 2,0
-<a id="__codelineno-129-10" name="__codelineno-129-10" href="#__codelineno-129-10"></a>%%metro grid: dst_b | 3,0
-<a id="__codelineno-129-11" name="__codelineno-129-11" href="#__codelineno-129-11"></a>%%metro grid: beta_extra_1 | 0,1
-<a id="__codelineno-129-12" name="__codelineno-129-12" href="#__codelineno-129-12"></a>%%metro grid: beta_extra_2 | 1,1
-<a id="__codelineno-129-13" name="__codelineno-129-13" href="#__codelineno-129-13"></a>
-<a id="__codelineno-129-14" name="__codelineno-129-14" href="#__codelineno-129-14"></a>graph LR
-<a id="__codelineno-129-15" name="__codelineno-129-15" href="#__codelineno-129-15"></a>    subgraph pre [Pre]
-<a id="__codelineno-129-16" name="__codelineno-129-16" href="#__codelineno-129-16"></a>        pre1[Start]
-<a id="__codelineno-129-17" name="__codelineno-129-17" href="#__codelineno-129-17"></a>        pre2[Prep]
-<a id="__codelineno-129-18" name="__codelineno-129-18" href="#__codelineno-129-18"></a>        pre1 --&gt;|alpha,beta| pre2
-<a id="__codelineno-129-19" name="__codelineno-129-19" href="#__codelineno-129-19"></a>    end
-<a id="__codelineno-129-20" name="__codelineno-129-20" href="#__codelineno-129-20"></a>
-<a id="__codelineno-129-21" name="__codelineno-129-21" href="#__codelineno-129-21"></a>    subgraph beta_extra_1 [Beta Extra 1]
-<a id="__codelineno-129-22" name="__codelineno-129-22" href="#__codelineno-129-22"></a>        be1_1[Step]
-<a id="__codelineno-129-23" name="__codelineno-129-23" href="#__codelineno-129-23"></a>        be1_2[Step 2]
-<a id="__codelineno-129-24" name="__codelineno-129-24" href="#__codelineno-129-24"></a>        be1_1 --&gt;|beta| be1_2
-<a id="__codelineno-129-25" name="__codelineno-129-25" href="#__codelineno-129-25"></a>    end
-<a id="__codelineno-129-26" name="__codelineno-129-26" href="#__codelineno-129-26"></a>
-<a id="__codelineno-129-27" name="__codelineno-129-27" href="#__codelineno-129-27"></a>    subgraph beta_extra_2 [Beta Extra 2]
-<a id="__codelineno-129-28" name="__codelineno-129-28" href="#__codelineno-129-28"></a>        be2_1[Step]
-<a id="__codelineno-129-29" name="__codelineno-129-29" href="#__codelineno-129-29"></a>        be2_2[Step 2]
-<a id="__codelineno-129-30" name="__codelineno-129-30" href="#__codelineno-129-30"></a>        be2_1 --&gt;|beta| be2_2
-<a id="__codelineno-129-31" name="__codelineno-129-31" href="#__codelineno-129-31"></a>    end
-<a id="__codelineno-129-32" name="__codelineno-129-32" href="#__codelineno-129-32"></a>
-<a id="__codelineno-129-33" name="__codelineno-129-33" href="#__codelineno-129-33"></a>    subgraph src [Source]
-<a id="__codelineno-129-34" name="__codelineno-129-34" href="#__codelineno-129-34"></a>        %%metro exit: right | alpha,beta
-<a id="__codelineno-129-35" name="__codelineno-129-35" href="#__codelineno-129-35"></a>        s_a[Tool Alpha]
-<a id="__codelineno-129-36" name="__codelineno-129-36" href="#__codelineno-129-36"></a>        s_b[Tool Beta]
-<a id="__codelineno-129-37" name="__codelineno-129-37" href="#__codelineno-129-37"></a>    end
-<a id="__codelineno-129-38" name="__codelineno-129-38" href="#__codelineno-129-38"></a>
-<a id="__codelineno-129-39" name="__codelineno-129-39" href="#__codelineno-129-39"></a>    subgraph dst_a [Dest Alpha]
-<a id="__codelineno-129-40" name="__codelineno-129-40" href="#__codelineno-129-40"></a>        %%metro entry: left | alpha
-<a id="__codelineno-129-41" name="__codelineno-129-41" href="#__codelineno-129-41"></a>        da1[Process A]
-<a id="__codelineno-129-42" name="__codelineno-129-42" href="#__codelineno-129-42"></a>        da2[Output A]
-<a id="__codelineno-129-43" name="__codelineno-129-43" href="#__codelineno-129-43"></a>        da1 --&gt;|alpha| da2
-<a id="__codelineno-129-44" name="__codelineno-129-44" href="#__codelineno-129-44"></a>    end
-<a id="__codelineno-129-45" name="__codelineno-129-45" href="#__codelineno-129-45"></a>
-<a id="__codelineno-129-46" name="__codelineno-129-46" href="#__codelineno-129-46"></a>    subgraph dst_b [Dest Beta]
-<a id="__codelineno-129-47" name="__codelineno-129-47" href="#__codelineno-129-47"></a>        %%metro entry: left | beta
-<a id="__codelineno-129-48" name="__codelineno-129-48" href="#__codelineno-129-48"></a>        db1[Process B]
-<a id="__codelineno-129-49" name="__codelineno-129-49" href="#__codelineno-129-49"></a>        db2[Output B]
-<a id="__codelineno-129-50" name="__codelineno-129-50" href="#__codelineno-129-50"></a>        db1 --&gt;|beta| db2
-<a id="__codelineno-129-51" name="__codelineno-129-51" href="#__codelineno-129-51"></a>    end
-<a id="__codelineno-129-52" name="__codelineno-129-52" href="#__codelineno-129-52"></a>
-<a id="__codelineno-129-53" name="__codelineno-129-53" href="#__codelineno-129-53"></a>    pre2 --&gt;|alpha| s_a
-<a id="__codelineno-129-54" name="__codelineno-129-54" href="#__codelineno-129-54"></a>    pre2 --&gt;|beta| s_b
-<a id="__codelineno-129-55" name="__codelineno-129-55" href="#__codelineno-129-55"></a>    pre2 --&gt;|beta| be1_1
-<a id="__codelineno-129-56" name="__codelineno-129-56" href="#__codelineno-129-56"></a>    be1_2 --&gt;|beta| be2_1
-<a id="__codelineno-129-57" name="__codelineno-129-57" href="#__codelineno-129-57"></a>    s_a --&gt;|alpha| da1
-<a id="__codelineno-129-58" name="__codelineno-129-58" href="#__codelineno-129-58"></a>    s_b --&gt;|beta| db1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a>%%metro title: Junction Entry Port Align
+<a id="__codelineno-131-2" name="__codelineno-131-2" href="#__codelineno-131-2"></a>%%metro style: dark
+<a id="__codelineno-131-3" name="__codelineno-131-3" href="#__codelineno-131-3"></a>%%metro line_order: span
+<a id="__codelineno-131-4" name="__codelineno-131-4" href="#__codelineno-131-4"></a>%%metro line: alpha | Alpha | #e63946
+<a id="__codelineno-131-5" name="__codelineno-131-5" href="#__codelineno-131-5"></a>%%metro line: beta | Beta | #2db572
+<a id="__codelineno-131-6" name="__codelineno-131-6" href="#__codelineno-131-6"></a>
+<a id="__codelineno-131-7" name="__codelineno-131-7" href="#__codelineno-131-7"></a>%%metro grid: pre | 0,0
+<a id="__codelineno-131-8" name="__codelineno-131-8" href="#__codelineno-131-8"></a>%%metro grid: src | 1,0
+<a id="__codelineno-131-9" name="__codelineno-131-9" href="#__codelineno-131-9"></a>%%metro grid: dst_a | 2,0
+<a id="__codelineno-131-10" name="__codelineno-131-10" href="#__codelineno-131-10"></a>%%metro grid: dst_b | 3,0
+<a id="__codelineno-131-11" name="__codelineno-131-11" href="#__codelineno-131-11"></a>%%metro grid: beta_extra_1 | 0,1
+<a id="__codelineno-131-12" name="__codelineno-131-12" href="#__codelineno-131-12"></a>%%metro grid: beta_extra_2 | 1,1
+<a id="__codelineno-131-13" name="__codelineno-131-13" href="#__codelineno-131-13"></a>
+<a id="__codelineno-131-14" name="__codelineno-131-14" href="#__codelineno-131-14"></a>graph LR
+<a id="__codelineno-131-15" name="__codelineno-131-15" href="#__codelineno-131-15"></a>    subgraph pre [Pre]
+<a id="__codelineno-131-16" name="__codelineno-131-16" href="#__codelineno-131-16"></a>        pre1[Start]
+<a id="__codelineno-131-17" name="__codelineno-131-17" href="#__codelineno-131-17"></a>        pre2[Prep]
+<a id="__codelineno-131-18" name="__codelineno-131-18" href="#__codelineno-131-18"></a>        pre1 --&gt;|alpha,beta| pre2
+<a id="__codelineno-131-19" name="__codelineno-131-19" href="#__codelineno-131-19"></a>    end
+<a id="__codelineno-131-20" name="__codelineno-131-20" href="#__codelineno-131-20"></a>
+<a id="__codelineno-131-21" name="__codelineno-131-21" href="#__codelineno-131-21"></a>    subgraph beta_extra_1 [Beta Extra 1]
+<a id="__codelineno-131-22" name="__codelineno-131-22" href="#__codelineno-131-22"></a>        be1_1[Step]
+<a id="__codelineno-131-23" name="__codelineno-131-23" href="#__codelineno-131-23"></a>        be1_2[Step 2]
+<a id="__codelineno-131-24" name="__codelineno-131-24" href="#__codelineno-131-24"></a>        be1_1 --&gt;|beta| be1_2
+<a id="__codelineno-131-25" name="__codelineno-131-25" href="#__codelineno-131-25"></a>    end
+<a id="__codelineno-131-26" name="__codelineno-131-26" href="#__codelineno-131-26"></a>
+<a id="__codelineno-131-27" name="__codelineno-131-27" href="#__codelineno-131-27"></a>    subgraph beta_extra_2 [Beta Extra 2]
+<a id="__codelineno-131-28" name="__codelineno-131-28" href="#__codelineno-131-28"></a>        be2_1[Step]
+<a id="__codelineno-131-29" name="__codelineno-131-29" href="#__codelineno-131-29"></a>        be2_2[Step 2]
+<a id="__codelineno-131-30" name="__codelineno-131-30" href="#__codelineno-131-30"></a>        be2_1 --&gt;|beta| be2_2
+<a id="__codelineno-131-31" name="__codelineno-131-31" href="#__codelineno-131-31"></a>    end
+<a id="__codelineno-131-32" name="__codelineno-131-32" href="#__codelineno-131-32"></a>
+<a id="__codelineno-131-33" name="__codelineno-131-33" href="#__codelineno-131-33"></a>    subgraph src [Source]
+<a id="__codelineno-131-34" name="__codelineno-131-34" href="#__codelineno-131-34"></a>        %%metro exit: right | alpha,beta
+<a id="__codelineno-131-35" name="__codelineno-131-35" href="#__codelineno-131-35"></a>        s_a[Tool Alpha]
+<a id="__codelineno-131-36" name="__codelineno-131-36" href="#__codelineno-131-36"></a>        s_b[Tool Beta]
+<a id="__codelineno-131-37" name="__codelineno-131-37" href="#__codelineno-131-37"></a>    end
+<a id="__codelineno-131-38" name="__codelineno-131-38" href="#__codelineno-131-38"></a>
+<a id="__codelineno-131-39" name="__codelineno-131-39" href="#__codelineno-131-39"></a>    subgraph dst_a [Dest Alpha]
+<a id="__codelineno-131-40" name="__codelineno-131-40" href="#__codelineno-131-40"></a>        %%metro entry: left | alpha
+<a id="__codelineno-131-41" name="__codelineno-131-41" href="#__codelineno-131-41"></a>        da1[Process A]
+<a id="__codelineno-131-42" name="__codelineno-131-42" href="#__codelineno-131-42"></a>        da2[Output A]
+<a id="__codelineno-131-43" name="__codelineno-131-43" href="#__codelineno-131-43"></a>        da1 --&gt;|alpha| da2
+<a id="__codelineno-131-44" name="__codelineno-131-44" href="#__codelineno-131-44"></a>    end
+<a id="__codelineno-131-45" name="__codelineno-131-45" href="#__codelineno-131-45"></a>
+<a id="__codelineno-131-46" name="__codelineno-131-46" href="#__codelineno-131-46"></a>    subgraph dst_b [Dest Beta]
+<a id="__codelineno-131-47" name="__codelineno-131-47" href="#__codelineno-131-47"></a>        %%metro entry: left | beta
+<a id="__codelineno-131-48" name="__codelineno-131-48" href="#__codelineno-131-48"></a>        db1[Process B]
+<a id="__codelineno-131-49" name="__codelineno-131-49" href="#__codelineno-131-49"></a>        db2[Output B]
+<a id="__codelineno-131-50" name="__codelineno-131-50" href="#__codelineno-131-50"></a>        db1 --&gt;|beta| db2
+<a id="__codelineno-131-51" name="__codelineno-131-51" href="#__codelineno-131-51"></a>    end
+<a id="__codelineno-131-52" name="__codelineno-131-52" href="#__codelineno-131-52"></a>
+<a id="__codelineno-131-53" name="__codelineno-131-53" href="#__codelineno-131-53"></a>    pre2 --&gt;|alpha| s_a
+<a id="__codelineno-131-54" name="__codelineno-131-54" href="#__codelineno-131-54"></a>    pre2 --&gt;|beta| s_b
+<a id="__codelineno-131-55" name="__codelineno-131-55" href="#__codelineno-131-55"></a>    pre2 --&gt;|beta| be1_1
+<a id="__codelineno-131-56" name="__codelineno-131-56" href="#__codelineno-131-56"></a>    be1_2 --&gt;|beta| be2_1
+<a id="__codelineno-131-57" name="__codelineno-131-57" href="#__codelineno-131-57"></a>    s_a --&gt;|alpha| da1
+<a id="__codelineno-131-58" name="__codelineno-131-58" href="#__codelineno-131-58"></a>    s_b --&gt;|beta| db1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
