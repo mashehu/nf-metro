@@ -1176,6 +1176,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rl-entry-runway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rl Entry Runway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminus-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminus Join
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2155,6 +2177,28 @@
     <span class="md-ellipsis">
       
         Cross Row Gap Wrap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-entry-runway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rl Entry Runway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminus-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminus Join
       
     </span>
   </a>
@@ -6156,6 +6200,72 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Cross Row Gap Wrap" src="../assets/renders/cross_row_gap_wrap.svg" /></p>
+<h3 id="rl-entry-runway">Rl Entry Runway<a class="headerlink" href="#rl-entry-runway" title="Permanent link">&para;</a></h3>
+<p>A right-to-left section whose flow-side entry skips ahead to a deep off-track target, compressing the diagonal into the entry region and running a horizontal runway past the bypassed stations.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/rl_entry_runway.mmd<span class="w"> </span>-o<span class="w"> </span>rl_entry_runway.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>%%metro title: RL Entry Runway
+<a id="__codelineno-111-2" name="__codelineno-111-2" href="#__codelineno-111-2"></a>%%metro style: dark
+<a id="__codelineno-111-3" name="__codelineno-111-3" href="#__codelineno-111-3"></a>%%metro line: l1 | L1 | #2db572
+<a id="__codelineno-111-4" name="__codelineno-111-4" href="#__codelineno-111-4"></a>%%metro line: l2 | L2 | #e63946
+<a id="__codelineno-111-5" name="__codelineno-111-5" href="#__codelineno-111-5"></a>%%metro grid: rl_sec | 0,0
+<a id="__codelineno-111-6" name="__codelineno-111-6" href="#__codelineno-111-6"></a>%%metro grid: src_sec | 1,0
+<a id="__codelineno-111-7" name="__codelineno-111-7" href="#__codelineno-111-7"></a>
+<a id="__codelineno-111-8" name="__codelineno-111-8" href="#__codelineno-111-8"></a>graph LR
+<a id="__codelineno-111-9" name="__codelineno-111-9" href="#__codelineno-111-9"></a>    subgraph src_sec [Source]
+<a id="__codelineno-111-10" name="__codelineno-111-10" href="#__codelineno-111-10"></a>        %%metro exit: left | l1,l2
+<a id="__codelineno-111-11" name="__codelineno-111-11" href="#__codelineno-111-11"></a>        s1[Start]
+<a id="__codelineno-111-12" name="__codelineno-111-12" href="#__codelineno-111-12"></a>        s2[Prep A]
+<a id="__codelineno-111-13" name="__codelineno-111-13" href="#__codelineno-111-13"></a>        s3[Prep B]
+<a id="__codelineno-111-14" name="__codelineno-111-14" href="#__codelineno-111-14"></a>        s1 --&gt;|l1| s2
+<a id="__codelineno-111-15" name="__codelineno-111-15" href="#__codelineno-111-15"></a>        s1 --&gt;|l2| s3
+<a id="__codelineno-111-16" name="__codelineno-111-16" href="#__codelineno-111-16"></a>    end
+<a id="__codelineno-111-17" name="__codelineno-111-17" href="#__codelineno-111-17"></a>
+<a id="__codelineno-111-18" name="__codelineno-111-18" href="#__codelineno-111-18"></a>    subgraph rl_sec [RL Section]
+<a id="__codelineno-111-19" name="__codelineno-111-19" href="#__codelineno-111-19"></a>        %%metro direction: RL
+<a id="__codelineno-111-20" name="__codelineno-111-20" href="#__codelineno-111-20"></a>        %%metro entry: right | l1,l2
+<a id="__codelineno-111-21" name="__codelineno-111-21" href="#__codelineno-111-21"></a>        r1[Stage One]
+<a id="__codelineno-111-22" name="__codelineno-111-22" href="#__codelineno-111-22"></a>        r2[Stage Two]
+<a id="__codelineno-111-23" name="__codelineno-111-23" href="#__codelineno-111-23"></a>        r3[Stage Three]
+<a id="__codelineno-111-24" name="__codelineno-111-24" href="#__codelineno-111-24"></a>        r4[Deep Target]
+<a id="__codelineno-111-25" name="__codelineno-111-25" href="#__codelineno-111-25"></a>        r1 --&gt;|l1| r2
+<a id="__codelineno-111-26" name="__codelineno-111-26" href="#__codelineno-111-26"></a>        r2 --&gt;|l1| r3
+<a id="__codelineno-111-27" name="__codelineno-111-27" href="#__codelineno-111-27"></a>        r3 --&gt;|l1| r4
+<a id="__codelineno-111-28" name="__codelineno-111-28" href="#__codelineno-111-28"></a>        r1 --&gt;|l2| r2
+<a id="__codelineno-111-29" name="__codelineno-111-29" href="#__codelineno-111-29"></a>    end
+<a id="__codelineno-111-30" name="__codelineno-111-30" href="#__codelineno-111-30"></a>
+<a id="__codelineno-111-31" name="__codelineno-111-31" href="#__codelineno-111-31"></a>    s2 --&gt;|l1| r4
+<a id="__codelineno-111-32" name="__codelineno-111-32" href="#__codelineno-111-32"></a>    s3 --&gt;|l2| r1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Rl Entry Runway" src="../assets/renders/rl_entry_runway.svg" /></p>
+<h3 id="terminus-join">Terminus Join<a class="headerlink" href="#terminus-join" title="Permanent link">&para;</a></h3>
+<p>Two lines converge on a single file-icon terminus in a sectionless flat graph, so the join lands directly on the terminus rather than a synthesised convergence junction.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/terminus_join.mmd<span class="w"> </span>-o<span class="w"> </span>terminus_join.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>%%metro title: Terminus Join
+<a id="__codelineno-113-2" name="__codelineno-113-2" href="#__codelineno-113-2"></a>%%metro style: dark
+<a id="__codelineno-113-3" name="__codelineno-113-3" href="#__codelineno-113-3"></a>%%metro line: l1 | Line 1 | #e63946
+<a id="__codelineno-113-4" name="__codelineno-113-4" href="#__codelineno-113-4"></a>%%metro line: l2 | Line 2 | #2db572
+<a id="__codelineno-113-5" name="__codelineno-113-5" href="#__codelineno-113-5"></a>%%metro file: sink_out | OUT | Results
+<a id="__codelineno-113-6" name="__codelineno-113-6" href="#__codelineno-113-6"></a>
+<a id="__codelineno-113-7" name="__codelineno-113-7" href="#__codelineno-113-7"></a>graph LR
+<a id="__codelineno-113-8" name="__codelineno-113-8" href="#__codelineno-113-8"></a>    src_a[Process A]
+<a id="__codelineno-113-9" name="__codelineno-113-9" href="#__codelineno-113-9"></a>    src_b[Process B]
+<a id="__codelineno-113-10" name="__codelineno-113-10" href="#__codelineno-113-10"></a>    sink_out[ ]
+<a id="__codelineno-113-11" name="__codelineno-113-11" href="#__codelineno-113-11"></a>    src_a --&gt;|l1| sink_out
+<a id="__codelineno-113-12" name="__codelineno-113-12" href="#__codelineno-113-12"></a>    src_b --&gt;|l2| sink_out
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Terminus Join" src="../assets/renders/terminus_join.svg" /></p>
 
 
 
