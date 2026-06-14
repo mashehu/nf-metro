@@ -528,6 +528,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bridge-glyphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge glyphs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tips" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1172,6 +1183,17 @@
     <span class="md-ellipsis">
       
         CLI flags and directive precedence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-glyphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge glyphs
       
     </span>
   </a>
@@ -1934,6 +1956,17 @@
 </tbody>
 </table>
 <p><code>--output</code>, <code>--format</code>, <code>--from-nextflow</code>, and <code>--debug</code> have no directive: they select the output target or a diagnostic overlay rather than describing the diagram.</p>
+<h2 id="bridge-glyphs">Bridge glyphs<a class="headerlink" href="#bridge-glyphs" title="Permanent link">&para;</a></h2>
+<p>When two distinct lines cross at a point that is neither a shared station nor a
+merge/junction, nf-metro automatically draws a <strong>bridge glyph</strong>: a short gap in
+the under-route where it passes beneath the over-route.  This disambiguates a
+crossing from an interchange (where a gap would mean the lines genuinely share a
+node).</p>
+<p>Bridge glyphs are computed automatically — there is no directive to enable them.
+If your diagram has a visual crossing that you do not expect, check whether the
+two lines genuinely share an endpoint.  If they should converge, connect them
+with a shared station; if the crossing is unavoidable layout-wise, the bridge
+glyph is the correct rendering.</p>
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Start without sections.</strong> Get your stations and line routing right first, then wrap groups in <code>subgraph</code> blocks.</li>

@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/architecture/">
+        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/render/">
       
       
-        <link rel="prev" href="../../gallery/">
-      
-      
-        <link rel="next" href="../layout_pipeline/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Architecture - nf-metro</title>
+        <title>Render - nf-metro</title>
       
     
     
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture" class="md-skip">
+        <a href="#render" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture
+              Render
             
           </span>
         </div>
@@ -422,8 +418,6 @@
       
   
   
-    
-  
   
   
     
@@ -436,11 +430,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
@@ -461,7 +455,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -476,37 +470,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -522,98 +489,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stages
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parse-srcnf_metroparser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parse (src/nf_metro/parser/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layout-srcnf_metrolayout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layout (src/nf_metro/layout/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-srcnf_metrorender" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Render (src/nf_metro/render/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference docs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -821,44 +696,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stages" class="md-nav__link">
+  <a href="#svg-generation-svgpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stages
+        SVG generation (svg.py)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Stages">
+    <nav class="md-nav" aria-label="SVG generation (svg.py)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parse-srcnf_metroparser" class="md-nav__link">
+  <a href="#what-gets-drawn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parse (src/nf_metro/parser/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layout-srcnf_metrolayout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layout (src/nf_metro/layout/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-srcnf_metrorender" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Render (src/nf_metro/render/)
+        What gets drawn
       
     </span>
   </a>
@@ -871,10 +724,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference-docs" class="md-nav__link">
+  <a href="#bridges-bridgespy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reference docs
+        Bridges (bridges.py)
       
     </span>
   </a>
@@ -882,10 +735,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#interactive-html-htmlpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data model
+        Interactive HTML (html.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manifest-manifestpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest (manifest.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animation-animatepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animation (animate.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theming-stylepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theming (style.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module map
       
     </span>
   </a>
@@ -912,105 +809,171 @@
   
 
 
-<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
-<p>nf-metro turns a Mermaid <code>graph LR</code> definition (augmented with <code>%%metro</code>
-directives) into a metro-map-style SVG.  The pipeline has three stages:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Parse  -&gt;  Layout  -&gt;  Render
-</code></pre></div>
-<p>Each stage hands a single <code>MetroGraph</code> (defined in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/parser/model.py"><code>src/nf_metro/parser/model.py</code></a>)
-to the next.  The graph is mutated in place: parsing fills in stations,
-edges, lines, sections, and ports; layout writes coordinates onto those
-objects; rendering reads them.</p>
-<h2 id="stages">Stages<a class="headerlink" href="#stages" title="Permanent link">&para;</a></h2>
-<h3 id="parse-srcnf_metroparser">Parse (<code>src/nf_metro/parser/</code>)<a class="headerlink" href="#parse-srcnf_metroparser" title="Permanent link">&para;</a></h3>
-<p><code>parse_metro_mermaid</code> in <code>parser/mermaid.py</code> is a line-by-line regex
-parser.  It reads Mermaid subgraphs (sections), nodes (stations), and
-edges, plus the <code>%%metro</code> directive extensions.  After the line scan it
-runs a post-parse pass that auto-infers layout, then rewrites
-inter-section edges into port/junction chains via <code>_resolve_sections</code>.</p>
-<p>See <a href="../parser/">Parser</a> for the directive model and the
-parse-then-resolve flow.</p>
-<h3 id="layout-srcnf_metrolayout">Layout (<code>src/nf_metro/layout/</code>)<a class="headerlink" href="#layout-srcnf_metrolayout" title="Permanent link">&para;</a></h3>
-<p><code>compute_layout</code> in <code>layout/engine.py</code> assigns every station, port,
-junction, and section bbox an <code>(x, y)</code>.  It chains many small phases,
-split into an anchor-setting (structural) layer and a content-placement
-layer.  The phase implementations live in <code>layout/phases/</code>; the
-per-phase preconditions, postconditions, and invariants are documented
-in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>src/nf_metro/layout/CONTRACT.md</code></a>.</p>
-<p>Edge routing (horizontal runs plus 45-degree diagonal transitions, with
-L-shaped inter-section routing) lives in <code>layout/routing/</code>.</p>
-<p>See <a href="../layout_pipeline/">Layout pipeline</a> for the full phase-by-phase
-walkthrough and <a href="../routing/">Routing</a> for the route families.</p>
-<h3 id="render-srcnf_metrorender">Render (<code>src/nf_metro/render/</code>)<a class="headerlink" href="#render-srcnf_metrorender" title="Permanent link">&para;</a></h3>
-<p><code>render_svg</code> in <code>render/svg.py</code> draws section boxes, routed edges (with
-curved corners), pill-shaped station markers, labels, and the legend
-using the <code>drawsvg</code> library.  Visual properties come from a <code>Theme</code>
-(<code>render/style.py</code>); themes are registered in <code>themes/__init__.py</code>.
-<code>render/animate.py</code> adds travelling balls along the routed paths (the
-<code>--animate</code> CLI flag).</p>
-<h2 id="reference-docs">Reference docs<a class="headerlink" href="#reference-docs" title="Permanent link">&para;</a></h2>
+<h1 id="render">Render<a class="headerlink" href="#render" title="Permanent link">&para;</a></h1>
+<p>Rendering turns a laid-out <code>MetroGraph</code> (stations, ports, junctions, and
+sections with coordinates, plus routed <code>RoutedPath</code> polylines) into output
+files.  The primary entry point is <code>render_svg</code> in
+<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/render/svg.py"><code>src/nf_metro/render/svg.py</code></a>,
+which returns an SVG string.  From there, <code>render_html</code> wraps that SVG in
+an interactive HTML page, and <code>build_manifest</code> embeds a data manifest into
+the SVG for downstream tooling.</p>
+<h2 id="svg-generation-svgpy">SVG generation (<code>svg.py</code>)<a class="headerlink" href="#svg-generation-svgpy" title="Permanent link">&para;</a></h2>
+<p><code>render_svg(graph, theme, ...)</code> is the top-level call.  It:</p>
+<ol>
+<li>Scales theme fonts by <code>graph.font_scale</code> (set by the <code>%%metro font_scale:</code>
+   directive or the <code>--font-scale</code> CLI flag).</li>
+<li>Calls <code>_render_svg_scaled</code>, which does the actual drawing via the
+   <code>drawsvg</code> library.</li>
+<li>If <code>graph.animate</code> is set (or <code>--animate</code> was passed), calls
+   <code>render_animation</code> from <code>animate.py</code> to add travelling balls.</li>
+<li>If a manifest is requested, calls <code>build_manifest</code> from <code>manifest.py</code>
+   and injects it into the SVG element.</li>
+</ol>
+<p><code>apply_route_offsets(routes, station_offsets)</code> is also exported from
+<code>svg.py</code>.  It fans a bundle of co-travelling routes into parallel tracks
+by applying the per-station Y offsets computed by <code>compute_station_offsets</code>
+in <code>routing/offsets.py</code>.  This is a separate function (not called inside
+<code>render_svg</code>) so that <code>animate.py</code> can share the same offset-applied paths
+rather than recomputing them.</p>
+<h3 id="what-gets-drawn">What gets drawn<a class="headerlink" href="#what-gets-drawn" title="Permanent link">&para;</a></h3>
+<p><code>_render_svg_scaled</code> draws in layers:</p>
+<ol>
+<li><strong>Section boxes</strong> - rounded rectangles with optional section labels and
+   tick marks for group labels.</li>
+<li><strong>Edges</strong> - polylines from <code>RoutedPath.waypoints</code>, with quadratic Bézier
+   curves at corners (radius computed by <code>routing/corners.py</code>).  Where
+   <code>compute_bridges</code> identifies a non-merging crossing, <code>_render_bridged_edge</code>
+   draws the under-route with a gap (see <a href="#bridges">Bridges</a> below).</li>
+<li><strong>Station markers</strong> - pill-shaped rectangles (or circles/squares for
+   alternative marker styles).  Rail-mode interchange stations span multiple
+   rails and are drawn by <code>_render_rail_pill</code>.</li>
+<li><strong>Icons</strong> - file, files, and folder icons for off-track input nodes (drawn
+   by <code>icons.py</code>).</li>
+<li><strong>Labels</strong> - placed by <code>layout/labels.py</code> and rendered with optional
+   line-wrapping; positioned above or beside their station.</li>
+<li><strong>Legend</strong> - drawn by <code>legend.py</code>, auto-positioned to avoid overlapping
+   section boxes and routes.  Position can be overridden via
+   <code>%%metro legend_position:</code> or set to <code>"none"</code> (suppressed) for the HTML
+   output mode.</li>
+</ol>
+<h2 id="bridges-bridgespy">Bridges (<code>bridges.py</code>)<a class="headerlink" href="#bridges-bridgespy" title="Permanent link">&para;</a></h2>
+<p>Two distinct metro lines may cross at a point that is not a shared station,
+port, junction, or merge.  Drawn naively that reads as an interchange.
+<code>compute_bridges</code> resolves the ambiguity by inserting a short gap in the
+under-route where it passes beneath the over-route.</p>
+<p><code>compute_bridges(graph, routes)</code> takes the assembled polylines (with offsets
+already applied) and:</p>
+<ol>
+<li>Identifies all genuine pairwise crossings: ignores crossings between the
+   same line, crossings at shared endpoints, and crossings within
+   <code>BRIDGE_NODE_TOLERANCE</code> of any node.</li>
+<li>For same-line crossings, distinguishes a fan-in/out (two legs that share a
+   common ancestor and rejoin at a common descendant) from an independent
+   self-crossing that genuinely needs a bridge.</li>
+<li>Groups nearby crossings into clusters and assigns "over" and "under" by
+   2-colouring the cluster graph.</li>
+<li>Returns a list of <code>BridgeBreak</code> objects, one per under-route segment,
+   recording the <code>t_start</code>/<code>t_end</code> parametric range on that segment to omit.</li>
+</ol>
+<p>The drawing half lives in <code>svg.py</code>: <code>_render_bridged_edge</code> splits the
+polyline at the gap span and renders each piece separately.</p>
+<h2 id="interactive-html-htmlpy">Interactive HTML (<code>html.py</code>)<a class="headerlink" href="#interactive-html-htmlpy" title="Permanent link">&para;</a></h2>
+<p><code>render_html(graph, theme, ...)</code> wraps <code>render_svg</code> in a self-contained
+HTML page.  It suppresses the SVG legend (the side panel takes its place)
+and returns a full HTML string.</p>
+<p>The HTML output has two delivery modes:</p>
+<ul>
+<li><strong>Standalone page</strong> (<code>_STANDALONE_TEMPLATE</code>): a full <code>&lt;!DOCTYPE html&gt;</code>
+  document with a two-column layout (canvas left, legend panel right).
+  Supports pan/zoom, per-line focus (click a line chip to dim everything
+  else and zoom to visible), station tooltips, and an embed modal that
+  generates copy-paste snippets.</li>
+<li><strong>Inline embed snippet</strong> (<code>_INLINE_TEMPLATE</code>, via <code>_build_inline_snippet</code>):
+  a <code>&lt;div&gt;</code> with scoped CSS and an IIFE — paste into any HTML host (MkDocs,
+  Confluence, blog templates) without hosting a separate file.</li>
+</ul>
+<p>Both modes share a single <code>_SHARED_JS</code> block (<code>attachMetroMap</code>) so the
+interaction behaviour is identical.  The embed snippet scopes CSS under a
+per-render hash (<code>.nfmm-&lt;sha1[:8]&gt;</code>) so multiple maps can coexist on one
+page.</p>
+<h2 id="manifest-manifestpy">Manifest (<code>manifest.py</code>)<a class="headerlink" href="#manifest-manifestpy" title="Permanent link">&para;</a></h2>
+<p><code>build_manifest(graph)</code> maps the laid-out <code>MetroGraph</code> onto the
+<a href="../../docs/manifest.md">embedded-manifest standard</a>: stations become nodes,
+sections become groups, and visual regions (section bboxes) become regions.
+The manifest is serialised to JSON and injected as a <code>&lt;metadata&gt;</code> element
+inside the SVG, keyed by <code>MANIFEST_ELEMENT_ID</code>.</p>
+<p>The tool-neutral serialisation/deserialisation logic lives in
+<code>nf_metro.manifest</code> (a dependency-free package built to be lifted into its
+own distribution).  <code>render/manifest.py</code> is the thin nf-metro-specific
+adapter: it imports from <code>nf_metro.manifest</code> and re-exports the public API
+so that existing <code>nf_metro.render.manifest</code> import paths keep working.</p>
+<p><code>manifest_metadata_svg(graph)</code> returns the raw SVG <code>&lt;metadata&gt;</code> XML string
+for cases where the caller assembles the SVG element manually.</p>
+<h2 id="animation-animatepy">Animation (<code>animate.py</code>)<a class="headerlink" href="#animation-animatepy" title="Permanent link">&para;</a></h2>
+<p><code>render_animation(d, graph, routes, station_offsets, theme)</code> appends
+animated <code>&lt;circle&gt;</code> elements with <code>&lt;animateMotion&gt;</code> to an existing
+<code>drawsvg.Drawing</code>.  It is called by <code>_render_svg_scaled</code> when <code>animate</code> is
+<code>True</code>.</p>
+<p>Each metro line gets one ball.  All balls are synchronised to the same
+cycle duration (<code>max_dur</code>, chosen so the slowest ball just finishes one
+lap per cycle) via <code>keyTimes</code>/<code>keyPoints</code>, so no ball restarts while
+another is still mid-track.</p>
+<h2 id="theming-stylepy">Theming (<code>style.py</code>)<a class="headerlink" href="#theming-stylepy" title="Permanent link">&para;</a></h2>
+<p><code>Theme</code> is a frozen dataclass of visual properties: colours, font sizes,
+line widths, station radii, animation speed, and legend layout.</p>
+<p>Built-in themes live in <code>src/nf_metro/themes/</code>:
+- <code>nfcore.py</code> — dark theme (default), matching nf-core visual style.
+- <code>light.py</code> — light theme variant.</p>
+<p>To add a theme: create a <code>Theme</code> instance and register it in
+<code>themes/__init__.py</code>'s <code>THEMES</code> dict under a string key; it then becomes
+selectable via <code>%%metro style: &lt;key&gt;</code> or <code>--style</code>.</p>
+<h2 id="module-map">Module map<a class="headerlink" href="#module-map" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Topic</th>
-<th>Where</th>
+<th>Module</th>
+<th>Responsibility</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Layout phase-by-phase</td>
-<td><a href="../layout_pipeline/">layout_pipeline.md</a></td>
+<td><code>svg.py</code></td>
+<td><code>render_svg</code> entry point; <code>apply_route_offsets</code>; all drawing passes (sections, edges, stations, icons, labels, legend)</td>
 </tr>
 <tr>
-<td>Per-phase contract (preconditions/postconditions/invariants)</td>
-<td><a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>CONTRACT.md</code></a></td>
+<td><code>bridges.py</code></td>
+<td><code>compute_bridges</code> — detects genuine non-merging crossings and returns <code>BridgeBreak</code> gap spans; drawing is in <code>svg.py</code></td>
 </tr>
 <tr>
-<td>Edge routing families</td>
-<td><a href="../routing/">routing.md</a></td>
+<td><code>html.py</code></td>
+<td><code>render_html</code> — standalone HTML page and inline embed snippet around the SVG</td>
 </tr>
 <tr>
-<td>Routing gate-arm coverage matrix (auto-generated)</td>
-<td><a href="../routing_gate_coverage/">routing_gate_coverage.md</a></td>
+<td><code>manifest.py</code></td>
+<td>nf-metro adapter for the embedded-manifest standard; <code>build_manifest</code>, <code>manifest_metadata_svg</code></td>
 </tr>
 <tr>
-<td>Routing gate-arm triage process</td>
-<td><a href="../routing_gate_triage/">routing_gate_triage.md</a></td>
+<td><code>animate.py</code></td>
+<td><code>render_animation</code> — animated balls via <code>&lt;animateMotion&gt;</code></td>
 </tr>
 <tr>
-<td>Parser and <code>%%metro</code> model</td>
-<td><a href="../parser/">parser.md</a></td>
+<td><code>style.py</code></td>
+<td><code>Theme</code> dataclass</td>
 </tr>
 <tr>
-<td>SVG, HTML, bridges, manifest, animation</td>
-<td><a href="../render/">render.md</a></td>
+<td><code>legend.py</code></td>
+<td><code>render_legend</code>, <code>compute_legend_dimensions</code></td>
 </tr>
 <tr>
-<td>Adding fixtures, tests, invariants</td>
-<td><a href="../testing/">testing.md</a></td>
+<td><code>icons.py</code></td>
+<td><code>render_file_icon</code>, <code>render_files_icon</code>, <code>render_folder_icon</code></td>
 </tr>
 <tr>
-<td>Topology stress fixtures (inventory + known issues)</td>
-<td><a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/topologies/README.md"><code>examples/topologies/README.md</code></a></td>
+<td><code>constants.py</code></td>
+<td>render magic numbers (canvas padding, legend sizing, animation params, debug overlay); theme-dependent values remain in <code>style.py</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="data-model">Data model<a class="headerlink" href="#data-model" title="Permanent link">&para;</a></h2>
-<p>The central structure is <code>MetroGraph</code> (<code>parser/model.py</code>), holding:</p>
-<ul>
-<li><code>lines</code> (<code>MetroLine</code>): coloured routes, with an optional <code>style</code>
-  (<code>solid</code> / <code>dashed</code> / <code>dotted</code>).</li>
-<li><code>stations</code> (<code>Station</code>): mutable dataclasses; layout writes <code>x</code>, <code>y</code>,
-  <code>layer</code>, <code>track</code> directly onto them.  <code>is_port</code> stations participate
-  in layout but are invisible at render time.</li>
-<li><code>edges</code> (<code>Edge</code>): directed, each tagged with a <code>line_id</code>.</li>
-<li><code>sections</code> (<code>Section</code>): subgraph groupings with a <code>direction</code>
-  (<code>LR</code> / <code>RL</code> / <code>TB</code>), grid position, and bbox.</li>
-<li><code>ports</code> (<code>Port</code>): synthetic entry/exit points on section boundaries,
-  created during <code>_resolve_sections</code>.</li>
-</ul>
 
 
 

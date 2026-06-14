@@ -649,17 +649,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#gate-coverage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gate coverage
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -869,17 +858,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#gate-coverage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gate coverage
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1000,7 +978,31 @@ dispatcher handles those degenerate cases directly.</p>
 <tbody>
 <tr>
 <td><code>core.py</code></td>
-<td><code>route_edges</code> dispatcher and all handler functions</td>
+<td><code>route_edges</code> dispatcher; re-exports handlers from sibling modules for backward-compatible imports</td>
+</tr>
+<tr>
+<td><code>context.py</code></td>
+<td><code>_RoutingCtx</code> dataclass and <code>_build_routing_context</code>; per-station offset helpers; shared section-geometry helpers (<code>_resolve_section_col</code>, <code>_has_intervening_sections</code>, <code>compute_junction_fan_info</code>, …)</td>
+</tr>
+<tr>
+<td><code>inter_section_handlers.py</code></td>
+<td>handler 1 family: bypass, left/right entry wraps, around-section, inter-row corridors, stepped descent, L-shape</td>
+</tr>
+<tr>
+<td><code>tb_handlers.py</code></td>
+<td>TB section handlers (<code>_route_tb_internal</code>, <code>_route_tb_lr_exit</code>, <code>_route_tb_lr_entry</code>, <code>_route_perp_entry</code>) and <code>_compute_diagonal_placement</code></td>
+</tr>
+<tr>
+<td><code>intra_handlers.py</code></td>
+<td><code>_route_entry_runway</code> and <code>_route_intra_section</code> (the general intra-section fallback)</td>
+</tr>
+<tr>
+<td><code>postprocess.py</code></td>
+<td>post-routing passes: diagonal bundle spread and bubble-station centring</td>
+</tr>
+<tr>
+<td><code>normalize.py</code></td>
+<td>channel and trunk normalization passes (<code>_normalize_gap_channels</code>, htrunk restacking, riser/port-approach alignment, …)</td>
 </tr>
 <tr>
 <td><code>common.py</code></td>
@@ -1012,7 +1014,7 @@ dispatcher handles those degenerate cases directly.</p>
 </tr>
 <tr>
 <td><code>inter_section.py</code></td>
-<td><code>WRAP_TABLE</code> descriptor catalogue</td>
+<td><code>WRAP_TABLE</code> descriptor catalogue (documentation reference; not used at runtime)</td>
 </tr>
 <tr>
 <td><code>offsets.py</code></td>
@@ -1024,7 +1026,7 @@ dispatcher handles those degenerate cases directly.</p>
 </tr>
 <tr>
 <td><code>invariants.py</code></td>
-<td>runtime routing guards</td>
+<td>runtime routing guards (<code>check_bundle_order_preserved</code>)</td>
 </tr>
 <tr>
 <td><code>rail.py</code></td>
@@ -1032,16 +1034,6 @@ dispatcher handles those degenerate cases directly.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="gate-coverage">Gate coverage<a class="headerlink" href="#gate-coverage" title="Permanent link">&para;</a></h2>
-<p>Each handler and post-pass is a chain of topology-conditional gates (direction
-checks, port-side checks, row/column relations, geometric thresholds). The
-<a href="../routing_gate_coverage/">routing gate coverage matrix</a> enumerates every gate
-and records which corpus fixtures exercise each arm, so an un-exercised arm -
-an assumption no shipped topology probes - is a visible, enumerated entry
-rather than a latent surprise. Regenerate it with
-<code>python scripts/routing_gate_coverage.py --write</code>; <code>tests/test_routing_gate_coverage.py</code>
-ratchets the gap set so new conditionals must ship with a fixture hitting both
-arms.</p>
 
 
 
