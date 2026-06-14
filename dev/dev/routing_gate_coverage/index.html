@@ -1031,7 +1031,7 @@
 <p>Each row is a branch point (a <em>gate</em>) in a <code>layout/routing/</code> dispatch handler or post-pass. A gate has two or more arms; the cells list how many corpus fixtures exercise each arm. An arm reached by <strong>0 fixtures</strong> is an un-exercised gate arm: either no shipped topology takes that path (author a fixture, or confirm it is defensive/dead).</p>
 <p><strong>627/956</strong> gates fully exercised (both/all arms hit by some fixture); <strong>329</strong> gates have at least one un-exercised arm.</p>
 <p>Modules scoped to routing decision gates; <code>invariants.py</code> (the <code>validate=True</code> checker) and <code>__init__.py</code> are excluded.</p>
-<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>230</strong> gaps carry a triage verdict.</p>
+<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>257</strong> gaps carry a triage verdict.</p>
 <h2 id="commonpy"><code>common.py</code><a class="headerlink" href="#commonpy" title="Permanent link">&para;</a></h2>
 <p>42/81 gates fully exercised.</p>
 <p>Gates with an un-exercised arm:</p>
@@ -1298,163 +1298,163 @@
 <td style="text-align: right;">113</td>
 <td><code>if succ_port and succ_port.is_entry:</code></td>
 <td><code>-&gt;L107</code></td>
-<td></td>
+<td><strong>defensive</strong> -- A merge junction is defined as one whose single successor is the section entry port it was inserted before, so succ_port is always a present entry port; the reject arm (successor absent or non-entry) never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">122</td>
 <td><code>if st is None:</code></td>
 <td><code>-&gt;L123</code></td>
-<td></td>
+<td><strong>defensive</strong> -- _col_for_id looks up junction and predecessor IDs that are always present in graph.stations; the missing-station early-return never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">128</td>
 <td><code>if not mst:</code></td>
 <td><code>-&gt;L129</code></td>
-<td></td>
+<td><strong>defensive</strong> -- mjid ranges over junctions, a subset of junction_ids all present in graph.stations; the missing-station continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">131</td>
 <td><code>if tgt_col is None:</code></td>
 <td><code>-&gt;L132</code></td>
-<td></td>
+<td><strong>defensive</strong> -- A merge junction always resolves to a grid column (it sits adjacent to its entry-port section); the unresolved-column continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">135</td>
 <td><code>for e in graph.edges_from(mjid):</code></td>
 <td><code>-&gt;L147</code></td>
-<td></td>
+<td><strong>defensive</strong> -- The entry-port search finds the merge junction's sole entry-port successor on the first edge and breaks (real exit arc 139-&gt;147), so the loop never runs to exhaustion and the for-completion arm never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">137</td>
 <td><code>if ep and ep.is_entry:</code></td>
 <td><code>-&gt;L135</code></td>
-<td></td>
+<td><strong>defensive</strong> -- The merge junction's only outgoing edge targets its entry port, so the first iteration matches and breaks; the loop-back arm (a non-entry edge before the entry port) never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">152</td>
 <td><code>if not pred:</code></td>
 <td><code>-&gt;L153</code></td>
-<td></td>
+<td><strong>defensive</strong> -- edge.source for an edge into the junction is always a present station; the missing-predecessor continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">155</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L150</code>, <code>-&gt;L160</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Multi-line <code>and</code> condition: CPython records both real arms from the operand lines (157-&gt;150 reject, 157-&gt;160 enter), so the static arcs attributed to the opening <code>if (</code> at L155 are never taken though both arms are exercised. Coverage attribution artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">189</td>
 <td><code>if m_col is not None:</code></td>
 <td><code>-&gt;L199</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Reached only for junctions in trunk_source, which by construction resolved a column, so m_col is never None and the no-column skip arm never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">202</td>
 <td><code>if ep and ep.is_entry:</code></td>
 <td><code>-&gt;L200</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Same merge-junction invariant in the skip-edge pass: the junction's lone successor is its entry port, so the loop-back over a non-entry edge never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">206</td>
 <td><code>if m_col is not None:</code></td>
 <td><code>-&gt;L181</code></td>
-<td></td>
+<td><strong>defensive</strong> -- As the first occurrence, in the index-exclude pass: a trunk-source junction always has a resolved column, so the no-column skip arm never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">259</td>
 <td><code>for port in graph.ports.values():</code></td>
 <td><code>-&gt;L260</code></td>
-<td></td>
+<td><strong>defensive</strong> -- The loop body is entered via the multi-line <code>if (</code> whose first operand line records the real arc (259-&gt;261), so the static body-enter arc to L260 is a phantom; the loop body is exercised.</td>
 </tr>
 <tr>
 <td style="text-align: right;">260</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L265</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Multi-line <code>and</code> condition: the real enter-body arc fires from the last operand line (263-&gt;265) and tb_right_entry is populated, so the static arc from the opening <code>if (</code> at L260 is never taken. Coverage attribution artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">322</td>
 <td><code>for e in graph.edges:</code></td>
 <td><code>-&gt;L323</code>, <code>-&gt;L325</code></td>
-<td></td>
+<td><strong>defensive</strong> -- In the public compute_junction_fan_info, called only from _guard_fan_bundles_coincide_or_separate (a validate=True guard). The coverage sweep renders with validate=False, so this function never runs on the render path; it is exercised by the layout-invariant test surface instead.</td>
 </tr>
 <tr>
 <td style="text-align: right;">350</td>
 <td><code>if port_st is None:</code></td>
 <td><code>-&gt;L351</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Ports listed in a section's entry_ports/exit_ports always have a backing station; the missing-station continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">363</td>
 <td><code>if ctx.station_offsets:</code></td>
 <td><code>-&gt;L365</code></td>
-<td></td>
+<td><strong>defensive</strong> -- compute_station_offsets returns a 0.0 entry for every (station, line) of any graph with edges, so the render path always passes a non-empty dict; the falsy-return arm guards only the route_edges(station_offsets=None) call path used by tests, which the sweep never exercises.</td>
 </tr>
 <tr>
 <td style="text-align: right;">370</td>
 <td><code>if not ctx.station_offsets:</code></td>
 <td><code>-&gt;L371</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Pairs with _get_offset's guard: compute_station_offsets is never empty on the render path, so _max_offset_at's early-return arm guards only the route_edges(station_offsets=None) call path used by tests.</td>
 </tr>
 <tr>
 <td style="text-align: right;">395</td>
 <td><code>if sec and sec.grid_col &gt;= 0:</code></td>
 <td><code>-&gt;L397</code></td>
-<td></td>
+<td><strong>defensive</strong> -- After section placement every resolved section carries a non-negative grid_col, so the None-return for an unplaced/missing column never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">403</td>
 <td><code>if sec and sec.grid_row &gt;= 0:</code></td>
 <td><code>-&gt;L405</code></td>
-<td></td>
+<td><strong>defensive</strong> -- After section placement every resolved section carries a non-negative grid_row, so the None-return for an unplaced/missing row never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">417</td>
 <td><code>if sec is None:</code></td>
 <td><code>-&gt;L418</code></td>
-<td></td>
+<td><strong>defensive</strong> -- _resolve_section_colrow is called for ports/junctions that always resolve to a section; the None-section early-return never fires (mirrors the grid-sentinel guards at L395/L403).</td>
 </tr>
 <tr>
 <td style="text-align: right;">472</td>
 <td><code>if not src or not tgt:</code></td>
 <td><code>-&gt;L473</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Edge endpoints are always present stations; the missing-endpoint continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">483</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L489</code>, <code>-&gt;L491</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Multi-line <code>or</code> condition: both real arms fire from the operand line (486-&gt;489 reject, 486-&gt;491 continue), so the static arcs attributed to the opening <code>if (</code> at L483 are never taken though both arms are exercised. Coverage attribution artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">566</td>
 <td><code>if not jst:</code></td>
 <td><code>-&gt;L567</code></td>
-<td></td>
+<td><strong>defensive</strong> -- jid ranges over junction_ids, all present in graph.stations; the missing-station continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">569</td>
 <td><code>if src_col is None:</code></td>
 <td><code>-&gt;L570</code></td>
-<td></td>
+<td><strong>defensive</strong> -- A fan-out junction always resolves to a grid column; the unresolved-column continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">600</td>
 <td><code>if not tgt or not (tgt.is_port or edge.target in junction_ids):</code></td>
 <td><code>-&gt;L601</code></td>
-<td></td>
+<td><strong>defensive</strong> -- A junction's outgoing inter-section edges always target a port or another junction (junctions are synthesised only on exit-port -&gt; entry-port chains); the skip arm for a plain-station target never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">603</td>
 <td><code>if tgt_col is None:</code></td>
 <td><code>-&gt;L604</code></td>
-<td></td>
+<td><strong>defensive</strong> -- A junction's port/junction target always resolves to a grid column; the unresolved-column continue never fires.</td>
 </tr>
 <tr>
 <td style="text-align: right;">685</td>
 <td><code>if edge.line_id in line_pos:</code></td>
 <td><code>-&gt;L684</code>, <code>-&gt;L686</code></td>
-<td></td>
+<td><strong>candidate-dead</strong> -- line_pos is built from the line IDs of the very all_outgoing list this loop iterates, so the membership test is always true: the reject/loop-back arm (684) is an unreachable tautology and the enter-body static arc (686) is a phantom of the real 685-&gt;687. Vestigial guard; pending deletion review in #689.</td>
 </tr>
 </tbody>
 </table>
