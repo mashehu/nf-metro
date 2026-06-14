@@ -1031,7 +1031,7 @@
 <p>Each row is a branch point (a <em>gate</em>) in a <code>layout/routing/</code> dispatch handler or post-pass. A gate has two or more arms; the cells list how many corpus fixtures exercise each arm. An arm reached by <strong>0 fixtures</strong> is an un-exercised gate arm: either no shipped topology takes that path (author a fixture, or confirm it is defensive/dead).</p>
 <p><strong>627/956</strong> gates fully exercised (both/all arms hit by some fixture); <strong>329</strong> gates have at least one un-exercised arm.</p>
 <p>Modules scoped to routing decision gates; <code>invariants.py</code> (the <code>validate=True</code> checker) and <code>__init__.py</code> are excluded.</p>
-<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>267</strong> gaps carry a triage verdict.</p>
+<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>277</strong> gaps carry a triage verdict.</p>
 <h2 id="commonpy"><code>common.py</code><a class="headerlink" href="#commonpy" title="Permanent link">&para;</a></h2>
 <p>42/81 gates fully exercised.</p>
 <p>Gates with an un-exercised arm:</p>
@@ -1475,25 +1475,25 @@
 <td style="text-align: right;">167</td>
 <td><code>if src is None or tgt is None or src.is_port or tgt.is_port:</code></td>
 <td><code>-&gt;L169</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Per-section rail-mode edge filter. The True/continue arm (skip port or missing-station edges) IS exercised: rail fixtures carry inter-section port chains past this loop. When the guard is False, execution falls through to the inner rail-section if and is recorded as the arc to that if's first operand line, so the static fall-through arc to the bare opening-paren line is a phantom no execution takes. Both real branches are covered.</td>
 </tr>
 <tr>
 <td style="text-align: right;">169</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L164</code>, <code>-&gt;L174</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Multiline if(...) opening-paren line for the rail-section internal-edge test (src.section_id == tgt.section_id and ... is not None and is_rail_section(...)). Python attributes the branch decisions to the operand lines, all of which have executed arcs including the is-not-None short-circuit exit and the rail_edges.append body. The static arcs from the opening-paren line are phantoms no execution traverses.</td>
 </tr>
 <tr>
 <td style="text-align: right;">189</td>
 <td><code>if not src or not tgt:</code></td>
 <td><code>-&gt;L190</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Main edge-loop guard against a missing endpoint station. After section resolution every edge endpoint exists in graph.stations (parse _ensure_station's all referenced nodes; resolved chains insert their own ports/junctions), so the guard never fires and only the proceed-to-routing arm is reachable.</td>
 </tr>
 <tr>
 <td style="text-align: right;">208</td>
 <td><code>if result is not None:</code></td>
 <td><code>-&gt;L181</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Append-guard after the priority-ordered handler chain. The final handler _route_intra_section is total: its three early returns and its _route_diagonal fallback (annotated -&gt; RoutedPath, single return statement) always yield a RoutedPath, so result is never None and every edge appends. The None arm is unreachable.</td>
 </tr>
 </tbody>
 </table>
@@ -1514,13 +1514,13 @@
 <td style="text-align: right;">84</td>
 <td><code>if i &gt; 1:</code></td>
 <td><code>-&gt;L85</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Proportional segment-budget allocation for a corner sharing its incoming segment with a previous corner. The True branch IS taken on multi-corner paths (&gt;=2 corners are common in the corpus): the executed true arc lands on the prev_r conditional-expression condition line, not the static arc to the assignment-target line, because the ternary evaluates its condition first. The static true arc is a phantom of the multiline ternary.</td>
 </tr>
 <tr>
 <td style="text-align: right;">95</td>
 <td><code>if i &lt; len(points) - 2:</code></td>
 <td><code>-&gt;L96</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Mirror of the i&gt;1 split for a corner sharing its outgoing segment with a following corner. The True branch is exercised on multi-corner paths via the next_r conditional-expression condition line; the static true arc to the assignment-target line is a phantom of the multiline ternary (condition evaluates before the assignment target).</td>
 </tr>
 </tbody>
 </table>
@@ -1541,25 +1541,25 @@
 <td style="text-align: right;">98</td>
 <td><code>if pair not in _CW_TURNS and pair not in _CCW_TURNS:</code></td>
 <td><code>-&gt;L-96</code>, <code>-&gt;L99</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Corner.<strong>post_init</strong> turn-validity check. inter_section.py is the descriptor/documentation module (distinct from inter_section_handlers.py); no src module imports it, so it never loads during the render-corpus sweep (confirmed absent from sys.modules after rendering the whole corpus) and both arms show 0 hits. Corner instances are module-level constants built from valid right-angle turns, so the raise can only fire on a source edit. Exercised by test_inter_section_descriptor.py.</td>
 </tr>
 <tr>
 <td style="text-align: right;">107</td>
 <td><code>if (self.in_tangent, self.out_tangent) in _CW_TURNS:</code></td>
 <td><code>-&gt;L108</code>, <code>-&gt;L109</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Corner.handedness property. Same module-load story: inter_section.py is never imported on the render path, so neither the CW nor the CCW arm is reachable by any render topology. Both branches are exercised by test_inter_section_descriptor.py.</td>
 </tr>
 <tr>
 <td style="text-align: right;">155</td>
 <td><code>for prev, curr in zip(self.corners, self.corners[1:]):</code></td>
 <td><code>-&gt;L156</code>, <code>-&gt;L158</code></td>
-<td></td>
+<td><strong>defensive</strong> -- TurnSequence.parity loop over consecutive corners. parity is descriptor-level documentation (runtime wrap handlers preserve bundle ordering via per-corner offset propagation regardless of this value); nothing on the render path reads it, and the module is never imported during the sweep. Exercised by test_inter_section_descriptor.py.</td>
 </tr>
 <tr>
 <td style="text-align: right;">156</td>
 <td><code>if prev.handedness != curr.handedness:</code></td>
 <td><code>-&gt;L155</code>, <code>-&gt;L157</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Handedness-change counter inside TurnSequence.parity. Off the render path for the same reason (inter_section.py never loaded during rendering); both arms are exercised by test_inter_section_descriptor.py's parity-contract tests.</td>
 </tr>
 </tbody>
 </table>
