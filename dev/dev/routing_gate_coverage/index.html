@@ -1031,7 +1031,7 @@
 <p>Each row is a branch point (a <em>gate</em>) in a <code>layout/routing/</code> dispatch handler or post-pass. A gate has two or more arms; the cells list how many corpus fixtures exercise each arm. An arm reached by <strong>0 fixtures</strong> is an un-exercised gate arm: either no shipped topology takes that path (author a fixture, or confirm it is defensive/dead).</p>
 <p><strong>627/956</strong> gates fully exercised (both/all arms hit by some fixture); <strong>329</strong> gates have at least one un-exercised arm.</p>
 <p>Modules scoped to routing decision gates; <code>invariants.py</code> (the <code>validate=True</code> checker) and <code>__init__.py</code> are excluded.</p>
-<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>257</strong> gaps carry a triage verdict.</p>
+<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>267</strong> gaps carry a triage verdict.</p>
 <h2 id="commonpy"><code>common.py</code><a class="headerlink" href="#commonpy" title="Permanent link">&para;</a></h2>
 <p>42/81 gates fully exercised.</p>
 <p>Gates with an un-exercised arm:</p>
@@ -3050,61 +3050,61 @@
 <td style="text-align: right;">95</td>
 <td><code>if not src or not src.is_port:</code></td>
 <td><code>-&gt;L96</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Phase 1a (_detect_tb_bottom_top_entries) iterates edges feeding a TOP entry port. Entry ports are synthetic nodes created by section resolution; the only edges targeting them are the resolved chain's exit_port-&gt;entry_port and junction-&gt;entry_port links, so edge.source is always a registered port or junction station (both is_port=True). The continue (missing or non-port source) is a structural-contract guard no valid topology reaches.</td>
 </tr>
 <tr>
 <td style="text-align: right;">98</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L104</code></td>
-<td></td>
+<td><strong>defensive</strong> -- PHANTOM multi-line short-circuit arc. CPython emits no branch bytecode at the opening <code>if (</code> line, so the static arc into the body L104 never executes; the Phase 1a reversal mark is exercised via the last-operand arc L102-&gt;104 (a TOP entry fed by a TB BOTTOM exit). Not an un-taken branch.</td>
 </tr>
 <tr>
 <td style="text-align: right;">136</td>
 <td><code>if not src or not tgt:</code></td>
 <td><code>-&gt;L137</code></td>
-<td></td>
+<td><strong>defensive</strong> -- _build_section_adjacency iterates graph.edges; every edge endpoint is a registered station, so graph.stations.get never returns None for edge.source or edge.target. The continue is a defensive null guard no valid graph reaches.</td>
 </tr>
 <tr>
 <td style="text-align: right;">142</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L133</code>, <code>-&gt;L150</code></td>
-<td></td>
+<td><strong>defensive</strong> -- PHANTOM multi-line short-circuit arc. No branch bytecode at the opening <code>if (</code> line, so both static arms (-&gt;150 body, -&gt;133 loop-back) are phantom; the horizontal_succ_pairs body is exercised via the last-operand arc L148-&gt;150 and the negative case via operand short-circuit. Not un-taken branches.</td>
 </tr>
 <tr>
 <td style="text-align: right;">175</td>
 <td><code>if not section:</code></td>
 <td><code>-&gt;L176</code></td>
-<td></td>
+<td><strong>defensive</strong> -- _propagate_reversal_along_rows iterates sec_id values drawn from reversed_secs, which only ever holds real section ids added from graph.sections. graph.sections.get(sec_id) is never None; the continue is a defensive null guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">186</td>
 <td><code>if not succ:</code></td>
 <td><code>-&gt;L187</code>, <code>-&gt;L188</code></td>
-<td></td>
+<td><strong>defensive</strong> -- succ_id comes from sec_successors, built only from real tgt.section_id values, so graph.sections.get(succ_id) is never None and the continue (-&gt;187) is a defensive null guard. The fall-through static arm (-&gt;188) is phantom: control falls into the following multi-line <code>if (</code>, whose first operand line carries the real arc L186-&gt;189.</td>
 </tr>
 <tr>
 <td style="text-align: right;">188</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L182</code>, <code>-&gt;L192</code></td>
-<td></td>
+<td><strong>defensive</strong> -- PHANTOM multi-line short-circuit arc. No branch bytecode at the opening <code>if (</code> line, so both static arms (-&gt;192 body, -&gt;182 loop-back) are phantom; the reversal-propagation body is exercised via the operand arcs L189-&gt;192 and L190-&gt;192. Not un-taken branches.</td>
 </tr>
 <tr>
 <td style="text-align: right;">225</td>
 <td><code>if not src:</code></td>
 <td><code>-&gt;L226</code></td>
-<td></td>
+<td><strong>defensive</strong> -- _section_fed_by_tb_lr_exit iterates edges feeding a LEFT/RIGHT entry port; edge.source is always a registered station, so graph.stations.get is never None. Defensive null guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">231</td>
 <td><code>if not s2 or not s2.is_port:</code></td>
 <td><code>-&gt;L232</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Junction look-through: s2 is the source of an edge feeding a fold junction. Junctions are synthetic resolution nodes fed only by exit ports or upstream junctions (both is_port=True), so s2 is always present and port-like. The continue is a structural-contract guard no valid topology reaches.</td>
 </tr>
 <tr>
 <td style="text-align: right;">236</td>
 <td><code>elif src.is_port:</code></td>
 <td><code>-&gt;L223</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Edge feeding a LEFT/RIGHT entry port whose source is not a junction; src is then always an exit port (is_port=True), because resolved chains feed entry ports only from exit ports or junctions. The elif is always true, so the implicit fall-through to the loop (-&gt;223) is a structural-contract guard no valid topology reaches.</td>
 </tr>
 </tbody>
 </table>
