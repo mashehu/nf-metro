@@ -1059,7 +1059,7 @@
 <p>Each row is a branch point (a <em>gate</em>) in a <code>layout/routing/</code> dispatch handler or post-pass. A gate has two or more arms; the cells list how many corpus fixtures exercise each arm. An arm reached by <strong>0 fixtures</strong> is an un-exercised gate arm: either no shipped topology takes that path (author a fixture, or confirm it is defensive/dead).</p>
 <p><strong>661/956</strong> gates fully exercised (both/all arms hit by some fixture); <strong>295</strong> gates have at least one un-exercised arm.</p>
 <p>Modules scoped to routing decision gates; <code>invariants.py</code> (the <code>validate=True</code> checker) and <code>__init__.py</code> are excluded.</p>
-<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>282</strong> gaps carry a triage verdict.</p>
+<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>295</strong> gaps carry a triage verdict.</p>
 <h2 id="commonpy"><code>common.py</code><a class="headerlink" href="#commonpy" title="Permanent link">&para;</a></h2>
 <p>43/81 gates fully exercised.</p>
 <p>Gates with an un-exercised arm:</p>
@@ -2034,19 +2034,19 @@
 <td style="text-align: right;">482</td>
 <td><code>if abs(y4 - y3) &gt; COORD_TOLERANCE or abs(x4 - x3) &lt;= COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L483</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Trunk-not-horizontal guard in _port_peeloff_tail, reached only after the port lead is horizontal and the riser vertical (L478/L480 returned early otherwise). In an orthogonal route segments alternate H/V, so the segment preceding a vertical riser is always horizontal; instrumenting the corpus the guard is reached 866 times and the non-horizontal-trunk arm never fires. Defensive against a degenerate collinear tail the router does not produce.</td>
 </tr>
 <tr>
 <td style="text-align: right;">538</td>
 <td><code>if len(signs) != 1:</code></td>
 <td><code>-&gt;L539</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Mixed-peel-end guard in _reorder_convergence_peeloff: a concentric peel-off bundle into a LEFT entry port is always fed from the left, so every member's trunk traverses toward the peel corner with the same trunk_sign. Lines approaching from the right of the port form an entry-wrap route, not a peel-off tail (verified: a right-side source produces zero peel tails), so the bundle never mixes signs. Belt-and-suspenders beyond the L535 contiguity check.</td>
 </tr>
 <tr>
 <td style="text-align: right;">555</td>
 <td><code>if not _section_reorderable(ctx, port_id, set(per_line)):</code></td>
 <td><code>-&gt;L556</code></td>
-<td></td>
+<td><strong>needs-review</strong> -- Reorder-decline arm of _reorder_convergence_peeloff, taken when the consumer section is not a plain single-row LR-only section. Reachable by valid topology (consumer with an internal branch, extra line, multiple rows, or non-LR flow), but every reaching topology re-exposes the #695 crossing the pass exists to fix: it declines and leaves declaration order. Reachable-but-defective; see #751. Not defensive.</td>
 </tr>
 <tr>
 <td style="text-align: right;">596</td>
@@ -2070,31 +2070,31 @@
 <td style="text-align: right;">623</td>
 <td><code>if ctx.station_offsets is None:</code></td>
 <td><code>-&gt;L624</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Null-offsets guard in _section_reorderable: station_offsets is built for every graph carrying edges, and the peel-off pass runs only when routes exist; instrumented across the corpus the guard never sees None. Defensive null guard (cf. #728 context.py precedent).</td>
 </tr>
 <tr>
 <td style="text-align: right;">626</td>
 <td><code>if sec is None or sec.direction != "LR":</code></td>
 <td><code>-&gt;L627</code></td>
-<td></td>
+<td><strong>needs-review</strong> -- Non-LR-consumer arm of _section_reorderable, taken when the converging bundle's consumer section flows non-LR (or resolves to no section). Reachable (a TB destination with a LEFT entry port) but the reaching topology re-exposes the #695 crossing at the same coordinates as the L555/L634 decline. Reachable-but-defective; see #751.</td>
 </tr>
 <tr>
 <td style="text-align: right;">634</td>
 <td><code>if any(lid not in bundle_lines for lid in ctx.graph.station_lines(sid)):</code></td>
 <td><code>-&gt;L635</code></td>
-<td></td>
+<td><strong>needs-review</strong> -- Extra-line arm of _section_reorderable, taken when the consumer section carries any line outside the peel-off bundle (e.g. its own internal branch). Reachable by valid topology but re-exposes the #695 crossing because the reorder declines: same root cause as the L555/L626 decline. Reachable-but-defective; see #751.</td>
 </tr>
 <tr>
 <td style="text-align: right;">649</td>
 <td><code>if ctx.station_offsets is None:</code></td>
 <td><code>-&gt;L650</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Null-offsets guard in _apply_section_bundle_order, the twin of the L623 guard. _apply_section_bundle_order runs only after _section_reorderable returned True, which already requires non-None offsets, so this guard never sees None. Defensive null guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">654</td>
 <td><code>if lid in port_rank:</code></td>
 <td><code>-&gt;L653</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Membership guard in _apply_section_bundle_order: port_rank is keyed by the bundle's lines, and the function runs only when _section_reorderable returned True, which guarantees every non-port station line is in bundle_lines = port_rank. Instrumented across the corpus, all 36 calls take the in-rank arm and the skip arm never fires. Defensive, guaranteed by the L555/L634 precondition.</td>
 </tr>
 <tr>
 <td style="text-align: right;">674</td>
@@ -2130,7 +2130,7 @@
 <td style="text-align: right;">1115</td>
 <td><code>if len(trunks) &lt; 2:</code></td>
 <td><code>-&gt;L1116</code>, <code>-&gt;L1117</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Early-return in <em>suboptimal_trunk_bands, called only from the _guard</em>* validator (phases/guards.py) and a unit test, never on the production render path. The coverage sweep renders with validate=False, so neither arm registers. Defensive (exercised via the validate=True guard / test surface; cf. #728 validate-only precedent).</td>
 </tr>
 <tr>
 <td style="text-align: right;">1119</td>
@@ -2142,7 +2142,7 @@
 <td style="text-align: right;">1120</td>
 <td><code>if len({id(t.route) for t in grp}) &lt; 2:</code></td>
 <td><code>-&gt;L1121</code>, <code>-&gt;L1122</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Single-route-group skip in <em>suboptimal_trunk_bands, validate-only: called from the _guard</em>* validator and a unit test, not the production render path the validate=False sweep exercises. Defensive.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1122</td>
@@ -2268,19 +2268,19 @@
 <td style="text-align: right;">1603</td>
 <td><code>if rp.curve_radii is None:</code></td>
 <td><code>-&gt;L1604</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Null-radii guard in _restack_channel: routes built by the router always carry a curve_radii list; instrumented across the corpus, all 804 _restack_channel calls have non-None radii. Defensive null guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1612</td>
 <td><code>if 0 &lt;= k - 1 &lt; len(rp.curve_radii):</code></td>
 <td><code>-&gt;L1614</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Lead-corner bounds guard in _restack_channel: a gap-channel vertical is never the route's first segment, so its index k is at least 1 (instrumented k range across the corpus is [1,3]); the lower-bound skip arm never fires. Defensive bounds guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1614</td>
 <td><code>if k &lt; len(rp.curve_radii) and k + 2 &lt; len(pts):</code></td>
 <td><code>-&gt;L1624</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Trail-corner bounds guard in _restack_channel: the restacked vertical always has a following segment (k+2 &lt; len(pts)) and a radius slot, so across the corpus (804 calls) the skip arm never fires. Defensive bounds guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1626</td>
