@@ -1031,7 +1031,7 @@
 <p>Each row is a branch point (a <em>gate</em>) in a <code>layout/routing/</code> dispatch handler or post-pass. A gate has two or more arms; the cells list how many corpus fixtures exercise each arm. An arm reached by <strong>0 fixtures</strong> is an un-exercised gate arm: either no shipped topology takes that path (author a fixture, or confirm it is defensive/dead).</p>
 <p><strong>627/956</strong> gates fully exercised (both/all arms hit by some fixture); <strong>329</strong> gates have at least one un-exercised arm.</p>
 <p>Modules scoped to routing decision gates; <code>invariants.py</code> (the <code>validate=True</code> checker) and <code>__init__.py</code> are excluded.</p>
-<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>277</strong> gaps carry a triage verdict.</p>
+<p>The Triage column carries a curated verdict for gaps no fixture can close: <strong>defensive</strong> (a guard arm a valid topology never violates), <strong>candidate-dead</strong> (no constructible topology reaches it; left in place pending a separate deletion review), or <strong>needs-review</strong> (not yet classified). A blank cell means the gap is still open for a fixture. <strong>290</strong> gaps carry a triage verdict.</p>
 <h2 id="commonpy"><code>common.py</code><a class="headerlink" href="#commonpy" title="Permanent link">&para;</a></h2>
 <p>42/81 gates fully exercised.</p>
 <p>Gates with an un-exercised arm:</p>
@@ -3125,79 +3125,79 @@
 <td style="text-align: right;">49</td>
 <td><code>if not (</code></td>
 <td><code>-&gt;L58</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Phantom multi-line arc. The 49-&gt;58 fall-through (route a TB internal edge) is recorded by CPython from the last operand line (52-&gt;58), not the opening <code>if not (</code>. _route_tb_internal returns a routed path 487x across the corpus; the route arm IS exercised, the static 49-&gt;58 arc is a coverage-attribution artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">116</td>
 <td><code>if diag_end &lt; diag_start:</code></td>
 <td><code>-&gt;L117</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Degenerate-collapse clamp for an ascending diagonal: fires only when the run is shorter than 2*MIN_STRAIGHT_EDGE (20px). Every caller feeds grid-placed station coordinates whose run-axis separation is at least one grid pitch (Y_SPACING=40 / X_SPACING=60); _route_entry_runway additionally pre-guards with <code>room &lt; src_min + diagonal_run</code>. The 20px collapse threshold is never reached.</td>
 </tr>
 <tr>
 <td style="text-align: right;">122</td>
 <td><code>if diag_end &gt; diag_start:</code></td>
 <td><code>-&gt;L123</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Descending-run mirror of the ascending collapse clamp (#1 of <code>if diag_end &lt; diag_start:</code>): fires only when |run| &lt; 2*MIN_STRAIGHT_EDGE (20px), but connected diagonal endpoints are always &gt;= one grid pitch (40/60px) apart on the run axis. Unreachable degenerate-geometry guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">167</td>
 <td><code>if not (</code></td>
 <td><code>-&gt;L174</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Phantom multi-line arc. The 167-&gt;174 fall-through (route internal station -&gt; LR exit port in a TB section) is recorded from operand line 171 (171-&gt;174). _route_tb_lr_exit routes 31x across the corpus; the route arm IS exercised, the static 167-&gt;174 arc is an attribution artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">213</td>
 <td><code>if not (</code></td>
 <td><code>-&gt;L222</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Phantom multi-line arc. The 213-&gt;222 fall-through (route LR entry port -&gt; internal station in a TB section) is recorded from operand line 218 (218-&gt;222). _route_tb_lr_entry routes 120x across the corpus; the route arm IS exercised, the static 213-&gt;222 arc is an attribution artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">251</td>
 <td><code>if not (</code></td>
 <td><code>-&gt;L258</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Phantom multi-line arc. The 251-&gt;258 fall-through (route TOP/BOTTOM port -&gt; internal station) is recorded from operand line 253 (253-&gt;258). _route_perp_entry routes 76x across the corpus; the route arm IS exercised, the static 251-&gt;258 arc is an attribution artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">268</td>
 <td><code>if upstream_st is not None:</code></td>
 <td><code>-&gt;L269</code></td>
-<td></td>
+<td><strong>needs-review</strong> -- Reachable-but-defective (#688 pattern, filed as #740). The perp-entry merge (_route_perp_entry_merged) fires only when a cross-column producer feeds an LR section's TOP/BOTTOM entry port, which makes _align_tb_entry_port drag the port off the section boundary (a _guard_ports_on_boundaries failure). No robust clean topology reaches it; not fixtured until #740 is fixed.</td>
 </tr>
 <tr>
 <td style="text-align: right;">291</td>
 <td><code>if abs(drop_delta) &lt; COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L292</code>, <code>-&gt;L299</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Phantom list-literal arcs. The flagged dsts 292 and 299 are <code>pts = [</code> assignment lines; CPython records the branch landings from the first list-element lines instead (291-&gt;293 true arm, 291-&gt;300 false arm). Both real arms of the gate ARE exercised; 291-&gt;292 / 291-&gt;299 are attribution artifacts.</td>
 </tr>
 <tr>
 <td style="text-align: right;">365</td>
 <td><code>if not ctx.station_offsets:</code></td>
 <td><code>-&gt;L366</code></td>
-<td></td>
+<td><strong>defensive</strong> -- compute_station_offsets returns a 0.0 entry for every (station,line) of any graph with edges, so ctx.station_offsets is never empty on the render path (76/76 _find_upstream_for_merge calls pass this guard). The falsy arm guards only a test-only route_edges(station_offsets=None) call. Same precedent as context.py L363/370 (#728).</td>
 </tr>
 <tr>
 <td style="text-align: right;">373</td>
 <td><code>if not u:</code></td>
 <td><code>-&gt;L374</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Null/contract guard: u = graph.stations.get(e2.source) where e2 is an edge in graph.edges, so e2.source is always a resolvable station id. The None arm never fires on the render path (u found in all corpus iterations); a defensive dict-lookup guard.</td>
 </tr>
 <tr>
 <td style="text-align: right;">377</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L383</code></td>
-<td></td>
+<td><strong>defensive</strong> -- Phantom multi-line arc. The 377-&gt;383 <code>continue</code> (skip a TB BOTTOM-exit upstream when merging) is recorded from operand line 381 (381-&gt;383). The continue IS taken in the corpus; the static 377-&gt;383 arc attributed to the opening <code>if (</code> is an artifact.</td>
 </tr>
 <tr>
 <td style="text-align: right;">385</td>
 <td><code>if abs(u.y - src.y) &gt; COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L387</code></td>
-<td></td>
+<td><strong>needs-review</strong> -- Reachable-but-defective (#740). The 385-&gt;387 merge-enabling arm (upstream at the same Y as the entry port) fires only when a cross-column producer drags an LR section's TOP/BOTTOM port off its boundary; in the corpus the upstream is always at a different Y (385-&gt;386 continue). Parked until #740 is fixed; see <code>if upstream_st is not None:</code>.</td>
 </tr>
 <tr>
 <td style="text-align: right;">407</td>
 <td><code>if abs(upstream_st.x - src.x) &lt; COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L409</code>, <code>-&gt;L436</code></td>
-<td></td>
+<td><strong>needs-review</strong> -- Reachable-but-defective (#740): both arms are behind the defective merge (_route_perp_entry_merged is never called cleanly). The different-X arm (-&gt;L436) is reached only by the off-boundary repro; the same-X arm (-&gt;L409) is additionally unreachable because the upstream exit port / junction and the entry port are always in different columns (section X-separation &gt;= SECTION_X_PADDING). Parked until #740 is fixed.</td>
 </tr>
 </tbody>
 </table>
