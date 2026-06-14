@@ -1101,13 +1101,13 @@
 <td style="text-align: right;">286</td>
 <td><code>if abs(pts[k - 1][0] - x0) &gt; COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L287</code></td>
-<td><strong>candidate-dead</strong> -- Interior horizontal segments only occur in 6-point bypass U-shapes whose flanking legs are always vertical (same x on each side); routes with non-vertical flanks are normalize_exempt and filtered out. The prev-flank-non-vertical reject in iter_horizontal_trunks is unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Interior horizontal segments only occur in 6-point bypass U-shapes whose flanking legs are always vertical (same x on each side); routes with non-vertical flanks are normalize_exempt and filtered out. The prev-flank-non-vertical reject in iter_horizontal_trunks is unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">288</td>
 <td><code>if abs(pts[k + 2][0] - x1) &gt; COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L289</code></td>
-<td><strong>candidate-dead</strong> -- Mirror of the prev-flank guard: a bypass trunk's trailing flank is always vertical, so the next-flank-non-vertical reject in iter_horizontal_trunks is unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Mirror of the prev-flank guard: a bypass trunk's trailing flank is always vertical, so the next-flank-non-vertical reject in iter_horizontal_trunks is unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">344</td>
@@ -1119,7 +1119,7 @@
 <td style="text-align: right;">397</td>
 <td><code>elif tgt_sec:</code></td>
 <td><code>-&gt;L405</code></td>
-<td><strong>candidate-dead</strong> -- The else (col_key=round(sx)) needs an L-shaped (dx!=0,dy!=0) inter edge whose target resolves to no section. Only exit_port-&gt;junction edges lack a target section, and junction positioning makes those axis-aligned (same-X RIGHT exit or same-Y BOTTOM exit), never L-shaped, so the else is unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- The else (col_key=round(sx)) needs an L-shaped (dx!=0,dy!=0) inter edge whose target resolves to no section. Only exit_port-&gt;junction edges lack a target section, and junction positioning makes those axis-aligned (same-X RIGHT exit or same-Y BOTTOM exit), never L-shaped, so the else is unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">492</td>
@@ -1428,7 +1428,7 @@
 <td style="text-align: right;">685</td>
 <td><code>if edge.line_id in line_pos:</code></td>
 <td><code>-&gt;L684</code></td>
-<td><strong>candidate-dead</strong> -- line_pos is built from the line IDs of the very all_outgoing list this loop iterates, so the membership test is always true: the reject/loop-back arm (684) is an unreachable tautology and the enter-body static arc (686) is a phantom of the real 685-&gt;687. Vestigial guard; pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- line_pos is built from the line IDs of the very all_outgoing list this loop iterates, so the membership test is always true: the reject/loop-back arm (L684) is an unreachable tautology and the enter-body static arc (L686) is a phantom of the real 685-&gt;687. Vestigial tautological guard. The deliberate gap is pinned by test_genuine_dead_arm_not_masked_as_covered (arc normalization must not merge the never-taken branch onto the live one). Reclassified defensive (#762).</td>
 </tr>
 </tbody>
 </table>
@@ -1524,13 +1524,13 @@
 <td style="text-align: right;">198</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L207</code></td>
-<td><strong>candidate-dead</strong> -- CPython 3.11 coverage multiline-<code>if</code> artifact: FileReporter sources the branch arc at the if-keyword line but the runtime tracer records it from the last condition line, so this arc is never recordable. The handler is exercised; static-vs-runtime arc-model mismatch, not dead code. Matches the #691 offsets.py phantom precedent.</td>
+<td><strong>defensive</strong> -- Multiline <code>if (</code> gate in _route_inter_section: translate_arcs recovers the taken gap-above arm, but the fall-back arm to _route_right_entry_around_below (L207) is never taken because the gap-above corridor is clear whenever src_row&lt;tgt_row across the corpus. Instrumentation: arm target L207 never executes (0/128). Defensive fallback for a blocked gap-above; the earlier 'phantom' note was inaccurate (the arm is never taken, not merely unrecordable). Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">238</td>
 <td><code>if horizontal is Direction.L:</code></td>
 <td><code>-&gt;L241</code></td>
-<td><strong>candidate-dead</strong> -- Near-vertical junction channel push: the junction always sits right of a same-column LEFT entry, so horizontal is always Direction.L; the Direction.R arm never fires.</td>
+<td><strong>defensive</strong> -- Near-vertical junction channel push: the junction always sits right of a same-column LEFT entry, so horizontal is always Direction.L; the Direction.R arm never fires. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">288</td>
@@ -1542,25 +1542,25 @@
 <td style="text-align: right;">299</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L312</code></td>
-<td><strong>candidate-dead</strong> -- CPython 3.11 coverage multiline-<code>if</code> artifact: FileReporter sources the branch arc at the if-keyword line but the runtime tracer records it from the last condition line, so this arc is never recordable. The handler is exercised; static-vs-runtime arc-model mismatch, not dead code. Matches the #691 offsets.py phantom precedent.</td>
+<td><strong>defensive</strong> -- Multiline <code>if (</code> gate in _route_inter_section guarding _route_left_exit_left_entry_drop: the left-exit + left-entry + same-column topology is absent from the corpus, so the body (L312) never executes (0/128). Defensive guard for that channel-overlap case; the earlier 'phantom' note was inaccurate (the body is never entered, not merely unrecordable). Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">319</td>
 <td><code>if ep:</code></td>
 <td><code>-&gt;L350</code></td>
-<td><strong>candidate-dead</strong> -- CPython 3.11 coverage multiline-<code>if</code> artifact: FileReporter sources the branch arc at the if-keyword line but the runtime tracer records it from the last condition line, so this arc is never recordable. The handler is exercised; static-vs-runtime arc-model mismatch, not dead code. Matches the #691 offsets.py phantom precedent.</td>
+<td><strong>defensive</strong> -- Single-line null guard in _route_inter_section: ep_id comes from ctx.merge.entry_port_for so the entry-port station always exists; ep is always truthy and the skip arm (L350) never fires (0/128). The earlier 'multiline phantom' note was inaccurate -- this is a recorded single-line gate whose false arm is simply never taken. Defensive null guard. Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">320</td>
 <td><code>if abs(ep.y - sy) &lt; ctx.curve_radius:</code></td>
 <td><code>-&gt;L321</code></td>
-<td><strong>candidate-dead</strong> -- The merge entry-port Y tracks the source/junction Y, so a sub-curve_radius gap between exit and entry never arises (the same-Y shortcut at L120 already handles dy&lt;curve_radius); real topologies give a larger gap.</td>
+<td><strong>defensive</strong> -- The merge entry-port Y tracks the source/junction Y, so a sub-curve_radius gap between exit and entry never arises (the same-Y shortcut at L120 already handles dy<curve_radius); real topologies give a larger gap. Reclassified candidate-dead -> defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">333</td>
 <td><code>if ep_port and ep_port.side == PortSide.LEFT:</code></td>
 <td><code>-&gt;L344</code></td>
-<td><strong>candidate-dead</strong> -- CPython 3.11 coverage multiline-<code>if</code> artifact: FileReporter sources the branch arc at the if-keyword line but the runtime tracer records it from the last condition line, so this arc is never recordable. The handler is exercised; static-vs-runtime arc-model mismatch, not dead code. Matches the #691 offsets.py phantom precedent.</td>
+<td><strong>defensive</strong> -- Contract guard in _route_inter_section: a merge entry port always resolves to a Port on the LEFT side here, so the non-LEFT/None arm (fall through to _route_l_shape at L344) is never taken (0/128). The earlier 'multiline phantom' note was inaccurate -- this is a recorded gate whose arm is never taken. Defensive guard. Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">339</td>
@@ -1584,7 +1584,7 @@
 <td style="text-align: right;">423</td>
 <td><code>if ctx.station_offsets:</code></td>
 <td><code>-&gt;L428</code></td>
-<td><strong>candidate-dead</strong> -- _run_pass_c_guards always populates ctx.station_offsets before route_edges, and RAILS mode returns earlier; the empty-offsets arm never fires.</td>
+<td><strong>defensive</strong> -- _run_pass_c_guards always populates ctx.station_offsets before route_edges, and RAILS mode returns earlier; the empty-offsets arm never fires. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">467</td>
@@ -1614,7 +1614,7 @@
 <td style="text-align: right;">543</td>
 <td><code>if _h_segment_crosses_other_section(graph, other_src.x, ep.x, ep.y, exclude):</code></td>
 <td><code>-&gt;L544</code></td>
-<td><strong>candidate-dead</strong> -- The L545 filter only skips bypass siblings; a non-bypass sibling is in an adjacent column or a gap with no same-row intervening section, so its horizontal at ep.y never crosses another section.</td>
+<td><strong>defensive</strong> -- The L545 filter only skips bypass siblings; a non-bypass sibling is in an adjacent column or a gap with no same-row intervening section, so its horizontal at ep.y never crosses another section. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">755</td>
@@ -1626,7 +1626,7 @@
 <td style="text-align: right;">793</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L797</code>, <code>-&gt;L798</code></td>
-<td><strong>candidate-dead</strong> -- CPython 3.11 coverage multiline-<code>if</code> artifact: FileReporter sources the branch arc at the if-keyword line but the runtime tracer records it from the last condition line, so this arc is never recordable. The handler is exercised; static-vs-runtime arc-model mismatch, not dead code. Matches the #691 offsets.py phantom precedent.</td>
+<td><strong>defensive</strong> -- Multiline <code>if (</code> gate in _route_bypass: the SECTION_ROUTE_CLEARANCE enter-body arm (L797, pull gap2 toward its candidate) is never taken in the corpus (the clearance condition is never satisfied, 0/128), and the skip arc (793-&gt;798) is a translate_arcs residue the matrix cannot attribute back to the if-keyword line. Defensive clearance guard. Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">823</td>
@@ -1812,7 +1812,7 @@
 <td style="text-align: right;">2096</td>
 <td><code>if cross_row:</code></td>
 <td><code>-&gt;L2104</code></td>
-<td><strong>candidate-dead</strong> -- _route_right_entry_wrap is dispatched only for cross-row pairs (same-Y returns at L120), so cross_row is always True; the same-row else arm never fires.</td>
+<td><strong>defensive</strong> -- _route_right_entry_wrap is dispatched only for cross-row pairs (same-Y returns at L120), so cross_row is always True; the same-row else arm never fires. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">2192</td>
@@ -1857,7 +1857,7 @@
 <td style="text-align: right;">62</td>
 <td><code>if section.direction not in ("LR", "RL"):</code></td>
 <td><code>-&gt;L63</code></td>
-<td><strong>candidate-dead</strong> -- No TB/BT entry reaches _route_entry_runway: TB LEFT/RIGHT entries are consumed by _route_tb_lr_entry and TB/BT TOP/BOTTOM entries by _route_perp_entry (both earlier in the dispatch chain), and a BT section is never produced (the direction directive accepts only LR/RL/TB; 0/391 corpus sections are BT). Left in place as a cheap backstop pending the deletion review in #689.</td>
+<td><strong>defensive</strong> -- No TB/BT entry reaches _route_entry_runway: TB LEFT/RIGHT entries are consumed by _route_tb_lr_entry and TB/BT TOP/BOTTOM entries by _route_perp_entry (both earlier in the dispatch chain), and a BT section is never produced (the direction directive accepts only LR/RL/TB; 0/391 corpus sections are BT). Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">79</td>
@@ -1869,25 +1869,25 @@
 <td style="text-align: right;">98</td>
 <td><code>if room &lt; src_min + ctx.diagonal_run:</code></td>
 <td><code>-&gt;L99</code></td>
-<td><strong>candidate-dead</strong> -- The entry-runway 'too tight' return cannot fire: room = |first_x - entry_port_x| is floored at SECTION_X_PADDING (50px, the entry port sits at section.bbox_x = min(internal_station_x) - SECTION_X_PADDING), while the threshold src_min + diagonal_run = CURVE_RADIUS(10) + MIN_STRAIGHT_PORT(5) + DIAGONAL_RUN(30) = 45px. Since 50 &gt;= 45 the guard is always False; SECTION_X_PADDING is not exposed as a directive. Left in place pending the deletion review in #689.</td>
+<td><strong>defensive</strong> -- The entry-runway 'too tight' return cannot fire: room = |first_x - entry_port_x| is floored at SECTION_X_PADDING (50px, the entry port sits at section.bbox_x = min(internal_station_x) - SECTION_X_PADDING), while the threshold src_min + diagonal_run = CURVE_RADIUS(10) + MIN_STRAIGHT_PORT(5) + DIAGONAL_RUN(30) = 45px. Since 50 &gt;= 45 the guard is always False; SECTION_X_PADDING is not exposed as a directive. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">129</td>
 <td><code>if dx &lt;= 0 and abs(dy) &gt; CROSS_ROW_THRESHOLD and not same_section:</code></td>
 <td><code>-&gt;L130</code></td>
-<td><strong>candidate-dead</strong> -- The not-same_section precondition is never satisfied at _route_intra_section: cross-section edges are consumed by _route_inter_section upstream (0/391 corpus fixtures reach this branch with differing sections), and a sectionless flat graph's serpentine fold is routed before this handler too (verified: a flat fold over the threshold does not reach the arm). The cross-row fold branch is shadowed. Left in place pending the deletion review in #689.</td>
+<td><strong>defensive</strong> -- The not-same_section precondition is never satisfied at _route_intra_section: cross-section edges are consumed by _route_inter_section upstream (0/391 corpus fixtures reach this branch with differing sections), and a sectionless flat graph's serpentine fold is routed before this handler too (verified: a flat fold over the threshold does not reach the arm). The cross-row fold branch is shadowed. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">146</td>
 <td><code>if abs(dx) &lt; COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L147</code></td>
-<td><strong>candidate-dead</strong> -- A same-section, non-TB intra edge with |dx| &lt; COORD_TOLERANCE (1px) and non-zero dy is not constructible: layering assigns increasing X along edges so the minimum |dx| at _route_intra_section across the corpus is 50px (port spacing / off-track output lead). TB same-track edges that could reach |dx|=0 are intercepted by _route_tb_internal before this handler. Left in place pending the deletion review in #689.</td>
+<td><strong>defensive</strong> -- A same-section, non-TB intra edge with |dx| &lt; COORD_TOLERANCE (1px) and non-zero dy is not constructible: layering assigns increasing X along edges so the minimum |dx| at _route_intra_section across the corpus is 50px (port spacing / off-track output lead). TB same-track edges that could reach |dx|=0 are intercepted by _route_tb_internal before this handler. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">190</td>
 <td><code>if not (same_sec or is_exit_port):</code></td>
 <td><code>-&gt;L191</code></td>
-<td><strong>candidate-dead</strong> -- _is_side_branch_ascent reaches this classification (44/391 corpus fixtures) but no fixture takes the reject arm: a target sitting within offset_step*2 of the source section's trunk Y is always a same-section internal station or that section's exit port. The arm needs a target at the source's trunk Y that belongs to a different section or is a non-exit port, which the trunk-alignment geometry does not produce. Left in place pending the deletion review in #689.</td>
+<td><strong>defensive</strong> -- _is_side_branch_ascent reaches this classification (44/391 corpus fixtures) but no fixture takes the reject arm: a target sitting within offset_step*2 of the source section's trunk Y is always a same-section internal station or that section's exit port. The arm needs a target at the source's trunk Y that belongs to a different section or is a non-exit port, which the trunk-alignment geometry does not produce. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 </tbody>
 </table>
@@ -1914,7 +1914,7 @@
 <td style="text-align: right;">178</td>
 <td><code>if left - COORD_TOLERANCE &lt;= x &lt;= right + COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L179</code></td>
-<td><strong>candidate-dead</strong> -- Row-agnostic union-gap fallback in _match_channel_gap is provably unreachable: the union gap [max(col_lo right edges), min(col_hi left edges)] is a subset of every per-row gap that brackets a channel, so overlap_match/bracket_match always resolve first and the union fallback is never reached. Left in place pending the deletion review in #689.</td>
+<td><strong>defensive</strong> -- Row-agnostic union-gap fallback in _match_channel_gap is provably unreachable: the union gap [max(col_lo right edges), min(col_hi left edges)] is a subset of every per-row gap that brackets a channel, so overlap_match/bracket_match always resolve first and the union fallback is never reached. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">213</td>
@@ -2004,7 +2004,7 @@
 <td style="text-align: right;">674</td>
 <td><code>if abs(x3 - x2) &gt; COORD_TOLERANCE or abs(y3 - y2) &lt;= COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L675</code></td>
-<td><strong>candidate-dead</strong> -- Every non-exempt inter-section route ends with a vertical descent into the target Y then a short horizontal port lead (V-&gt;H tail); routes with non-V tails are normalize_exempt. The second-to-last-not-vertical reject in _final_port_approach is unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Every non-exempt inter-section route ends with a vertical descent into the target Y then a short horizontal port lead (V-&gt;H tail); routes with non-V tails are normalize_exempt. The second-to-last-not-vertical reject in _final_port_approach is unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">759</td>
@@ -2130,7 +2130,7 @@
 <td style="text-align: right;">1368</td>
 <td><code>if sg[0].sign_x != t.sign_x:</code></td>
 <td><code>-&gt;L1369</code></td>
-<td><strong>candidate-dead</strong> -- Both callers of _coincident_trunk_slots pre-filter input to a single traversal direction (band = [t for t in grp if t.sign_x == sign]), so within the function sg[0].sign_x != t.sign_x is always False; the opposing-direction continue is unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Both callers of _coincident_trunk_slots pre-filter input to a single traversal direction (band = [t for t in grp if t.sign_x == sign]), so within the function sg[0].sign_x != t.sign_x is always False; the opposing-direction continue is unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1399</td>
@@ -2154,13 +2154,13 @@
 <td style="text-align: right;">1464</td>
 <td><code>if down is None or len(up.points) &lt; 2:</code></td>
 <td><code>-&gt;L1465</code></td>
-<td><strong>candidate-dead</strong> -- Every line entering a fan-out junction also exits it to an entry port, so _fanout_route_maps always pairs a downstream route for each (jid, line_id) upstream; all handlers emit &gt;=2-point routes. The skip arm in _join_fanout_upstream_tails is unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Every line entering a fan-out junction also exits it to an entry port, so _fanout_route_maps always pairs a downstream route for each (jid, line_id) upstream; all handlers emit &gt;=2-point routes. The skip arm in _join_fanout_upstream_tails is unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1569</td>
 <td><code>if rep_x[a] != rep_x[b]:</code></td>
 <td><code>-&gt;L1571</code></td>
-<td><strong>candidate-dead</strong> -- The routing system assigns distinct x offsets to every line sharing a column gap, so two distinct lines in one gap-bundle corridor never share a representative x; the equal-rep_x tiebreak fall-through in _distinct_line_order is unreachable (exhaustive corpus scan confirms). Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- The routing system assigns distinct x offsets to every line sharing a column gap, so two distinct lines in one gap-bundle corridor never share a representative x; the equal-rep_x tiebreak fall-through in _distinct_line_order is unreachable (exhaustive corpus scan confirms). Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1603</td>
@@ -2184,19 +2184,19 @@
 <td style="text-align: right;">1626</td>
 <td><code>if abs(ly - pts[1][1]) &lt; COORD_TOLERANCE:</code></td>
 <td><code>-&gt;L-1576</code></td>
-<td><strong>candidate-dead</strong> -- A re-stacked gap channel at points-index 1 always has a horizontal lead-in (L-shape and bypass routes open with a horizontal segment); routes opening non-horizontally are normalize_exempt and excluded from _collect_vchannels. The non-horizontal-lead return in _restack_channel is unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- A re-stacked gap channel at points-index 1 always has a horizontal lead-in (L-shape and bypass routes open with a horizontal segment); routes opening non-horizontally are normalize_exempt and excluded from _collect_vchannels. The non-horizontal-lead return in _restack_channel is unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1677</td>
 <td><code>for _ in range(8):</code></td>
 <td><code>-&gt;L1702</code></td>
-<td><strong>candidate-dead</strong> -- The 8-iteration exhaustion arm of _clear_channel_x_in_band requires 9+ sections chained across a single column band to shift the channel x eight times without resolving, which no constructible topology produces. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- The 8-iteration exhaustion arm of _clear_channel_x_in_band requires 9+ sections chained across a single column band to shift the channel x eight times without resolving, which no constructible topology produces. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1698</td>
 <td><code>elif right_ok:</code></td>
 <td><code>-&gt;L1701</code></td>
-<td><strong>candidate-dead</strong> -- The both-bounds-fail return of _clear_channel_x_in_band requires a blocking section spanning the entire inter-column gap (so neither cleared edge fits within bound_left/bound_right); a cross-row section cannot span a gap defined as the space between same-row sections. Unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- The both-bounds-fail return of _clear_channel_x_in_band requires a blocking section spanning the entire inter-column gap (so neither cleared edge fits within bound_left/bound_right); a cross-row section cannot span a gap defined as the space between same-row sections. Unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1751</td>
@@ -2277,7 +2277,7 @@
 <td style="text-align: right;">413</td>
 <td><code>if not target_id:</code></td>
 <td><code>-&gt;L414</code></td>
-<td><strong>candidate-dead</strong> -- An exit-only line at station sid is identified by being present in station_lines(sid) but absent from ctx.inbound[sid]. station_lines() returns lines appearing in any edge whose source or target is sid. For a line to be exit-only at sid, it must appear in at least one outbound edge from sid; otherwise it would not appear in station_lines(sid) at all. If an outbound edge exists, outbound_target[(sid, lid)] is always set, so target_id is never None when execution reaches L422.</td>
+<td><strong>defensive</strong> -- An exit-only line at station sid is identified by being present in station_lines(sid) but absent from ctx.inbound[sid]. station_lines() returns lines appearing in any edge whose source or target is sid. For a line to be exit-only at sid, it must appear in at least one outbound edge from sid; otherwise it would not appear in station_lines(sid) at all. If an outbound edge exists, outbound_target[(sid, lid)] is always set, so target_id is never None when execution reaches L422. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">416</td>
@@ -2289,13 +2289,13 @@
 <td style="text-align: right;">433</td>
 <td><code>for other in lines:</code></td>
 <td><code>-&gt;L441</code></td>
-<td><strong>candidate-dead</strong> -- Arc (442,443) is a CPython 3.11 phantom: the static FileReporter.arcs() model reports the for-body arc as (442,443), but the runtime data.arcs() generates (442,444) because the multi-line <code>if (</code> body begins at L444 in bytecode. Arc (442,450) (for-loop exhausted without finding swap) is candidate-dead: desired_off equals min or max of all_offs, which is by definition held by some other line in <code>lines</code>, and since cur_off != desired_off is already confirmed at L437, that slot must be occupied by a different line -- so the swap is always found before the loop exhausts.</td>
+<td><strong>defensive</strong> -- In _reorder_one_exit_line, the loop over <code>lines</code> always finds the swap partner: desired_off is the min or max of all_offs, which by construction is held by another line, so the loop-exhausted-without-match arm is never taken (0/128). Defensive. Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">441</td>
 <td><code>if swap_lid is None:</code></td>
 <td><code>-&gt;L442</code></td>
-<td><strong>candidate-dead</strong> -- swap_lid can only be None if the for-loop over <code>lines</code> exhausts without finding a match. As argued for the (442,450) arc in the <code>for other in lines</code> card: desired_off = min or max of all_offs is always held by some other line, so the loop always finds a match. The early-return guard at L450 is therefore candidate-dead under any valid parsed graph.</td>
+<td><strong>defensive</strong> -- In _reorder_one_exit_line, swap_lid is None only if the loop over <code>lines</code> exhausts without a match, but desired_off (min or max of all_offs) is always held by another line, so the early-return guard never fires (0/128). Defensive. Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">486</td>
@@ -2325,13 +2325,13 @@
 <td style="text-align: right;">510</td>
 <td><code>if other_lid == cur_lid:</code></td>
 <td><code>-&gt;L511</code>, <code>-&gt;L512</code></td>
-<td><strong>candidate-dead</strong> -- Arc (519,521) is a CPython 3.11 phantom: the false-branch of <code>if other_lid == cur_lid: continue</code> generates runtime arc (519,522) (falling through to the <code>if (</code> inner check at L522 bytecode start) not (519,521). Static analysis incorrectly attributes the false-branch to the <code>if (</code> opening line L521. Arc (519,520) (the <code>continue</code> self-skip) is also candidate-dead because it is only reachable when L514-&gt;L518 is taken (multi-line neighbor) AND cur_lid appears in nbr_lines, and all such topologies currently trigger the TOP-exit-port engine defect (see L514 card).</td>
+<td><strong>defensive</strong> -- Inside _propagate_offset_swap's same-Y collision-swap block: across the corpus no same-Y adjacent multi-line neighbour needs an offset swap, so the loop body (incl. this self-skip guard) never executes (0/128). Defensive guard for a same-Y multi-line offset collision absent from current topologies. Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">512</td>
 <td><code>if (</code></td>
 <td><code>-&gt;L509</code>, <code>-&gt;L516</code></td>
-<td><strong>candidate-dead</strong> -- Both arcs are CPython 3.11 phantoms. The <code>if ( abs(ctx.offsets.get(...) - new_off) &lt; tol ):</code> condition at L521-L524 generates bytecode starting at L522; the false-branch arc is (522, FOR_ITER_line) and the true-branch arc is (522,525). Static analysis incorrectly attributes both to L521 as (521,518) and (521,525). Runtime data.arcs() never produces (521,518) or (521,525); internal_origin_main.mmd confirms the real arcs are (519,522) and (522,525).</td>
+<td><strong>defensive</strong> -- Inside _propagate_offset_swap's same-Y collision-swap block: across the corpus no same-Y adjacent multi-line neighbour needs an offset swap, so the inner collision check never executes (0/128). Defensive guard for a same-Y multi-line offset collision absent from current topologies. Reclassified defensive (#762).</td>
 </tr>
 <tr>
 <td style="text-align: right;">520</td>
@@ -2343,7 +2343,7 @@
 <td style="text-align: right;">548</td>
 <td><code>if lid not in seen:</code></td>
 <td><code>-&gt;L545</code></td>
-<td><strong>candidate-dead</strong> -- The iterator at L554 is <code>sorted(set(sec_entry_lines), ...)</code>. The outer <code>set()</code> deduplicates the list before iteration, so each <code>lid</code> appears exactly once and <code>seen</code> never contains it when processed. The false arm (lid already in seen) is logically unreachable — the dedup happens at set construction, making the <code>seen</code> guard dead code.</td>
+<td><strong>defensive</strong> -- The iterator at L554 is <code>sorted(set(sec_entry_lines), ...)</code>. The outer <code>set()</code> deduplicates the list before iteration, so each <code>lid</code> appears exactly once and <code>seen</code> never contains it when processed. The false arm (lid already in seen) is logically unreachable — the dedup happens at set construction, making the <code>seen</code> guard dead code. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">618</td>
@@ -2445,19 +2445,19 @@
 <td style="text-align: right;">1062</td>
 <td><code>if sec_a is None and id_a in graph.ports:</code></td>
 <td><code>-&gt;L1063</code></td>
-<td><strong>candidate-dead</strong> -- The true arm requires sec_a is None AND id_a in graph.ports simultaneously. Junction stations (section_id=None) are added only via graph.add_junction() which calls graph.add_station() but NOT graph.add_port(). graph.add_port() (model.py:483) requires a Port object with a non-None section_id (Port.section_id is typed str, not Optional[str], per model.py:218). Therefore no station with section_id=None can ever be in graph.ports; the conjunction sec_a is None AND id_a in graph.ports is unsatisfiable.</td>
+<td><strong>defensive</strong> -- The true arm requires sec_a is None AND id_a in graph.ports simultaneously. Junction stations (section_id=None) are added only via graph.add_junction() which calls graph.add_station() but NOT graph.add_port(). graph.add_port() (model.py:483) requires a Port object with a non-None section_id (Port.section_id is typed str, not Optional[str], per model.py:218). Therefore no station with section_id=None can ever be in graph.ports; the conjunction sec_a is None AND id_a in graph.ports is unsatisfiable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1064</td>
 <td><code>if sec_b is None and id_b in graph.ports:</code></td>
 <td><code>-&gt;L1065</code></td>
-<td><strong>candidate-dead</strong> -- Same argument as L1084: id_b in graph.ports requires the station to have been registered via graph.add_port(), which always supplies a non-None section_id for the created station. A station with section_id=None (sec_b is None) is a junction created by add_junction(), which never calls add_port(). The precondition sec_b is None AND id_b in graph.ports is therefore unsatisfiable.</td>
+<td><strong>defensive</strong> -- Same argument as L1084: id_b in graph.ports requires the station to have been registered via graph.add_port(), which always supplies a non-None section_id for the created station. A station with section_id=None (sec_b is None) is a junction created by add_junction(), which never calls add_port(). The precondition sec_b is None AND id_b in graph.ports is therefore unsatisfiable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1127</td>
 <td><code>if (tgt_id, lid) not in ctx.offsets:</code></td>
 <td><code>-&gt;L1128</code></td>
-<td><strong>candidate-dead</strong> -- The True branch (missing entry-port offset -&gt; ok=False) is unreachable because phase 7 (_compute_entry_port_offsets) runs before this function (phase 8a) and assigns an offset for every (entry_port_id, line_id) pair in the graph. By the time _align_junction_to_entry_port runs, ctx.offsets is populated for all entry ports, so the guard never fires.</td>
+<td><strong>defensive</strong> -- The True branch (missing entry-port offset -&gt; ok=False) is unreachable because phase 7 (_compute_entry_port_offsets) runs before this function (phase 8a) and assigns an offset for every (entry_port_id, line_id) pair in the graph. By the time _align_junction_to_entry_port runs, ctx.offsets is populated for all entry ports, so the guard never fires. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1138</td>
@@ -2487,7 +2487,7 @@
 <td style="text-align: right;">1150</td>
 <td><code>elif feeding_exit != edge.source:</code></td>
 <td><code>-&gt;L1145</code>, <code>-&gt;L1151</code></td>
-<td><strong>candidate-dead</strong> -- This arm (single_exit=False due to multiple distinct exit ports feeding one junction) requires one junction to receive edges from two different exit ports. But _rewrite_edges_with_junctions in resolve.py creates exactly one junction per exit port fan-out, wired exclusively from that exit port's edges. A junction always has a single upstream exit port; the elif is structurally unreachable.</td>
+<td><strong>defensive</strong> -- This arm (single_exit=False due to multiple distinct exit ports feeding one junction) requires one junction to receive edges from two different exit ports. But _rewrite_edges_with_junctions in resolve.py creates exactly one junction per exit port fan-out, wired exclusively from that exit port's edges. A junction always has a single upstream exit port; the elif is structurally unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">1157</td>
@@ -2556,37 +2556,37 @@
 <td style="text-align: right;">290</td>
 <td><code>if not is_fork_join and (</code></td>
 <td><code>-&gt;L299</code></td>
-<td><strong>candidate-dead</strong> -- Enters the multi_diag block, which needs a non-fork-join station (&lt;=1 distinct predecessor and successor) carrying both a 4-point diagonal and a 2-point flat incoming route. Raw route shape is a pure function of endpoint coordinates, so all lines on one edge share one shape: n_unique_in and n_unique_flat_in can never both be &gt;=1 for a single-predecessor station, and n_unique_in/out are &lt;=1 when not fork-join. multi_diag is unsatisfiable (0 of 6173 corpus calls). Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Enters the multi_diag block, which needs a non-fork-join station (&lt;=1 distinct predecessor and successor) carrying both a 4-point diagonal and a 2-point flat incoming route. Raw route shape is a pure function of endpoint coordinates, so all lines on one edge share one shape: n_unique_in and n_unique_flat_in can never both be &gt;=1 for a single-predecessor station, and n_unique_in/out are &lt;=1 when not fork-join. multi_diag is unsatisfiable (0 of 6173 corpus calls). Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">340</td>
 <td><code>if multi_diag:</code></td>
 <td><code>-&gt;L341</code></td>
-<td><strong>candidate-dead</strong> -- multi_diag branch of _flat_connects_to_internal_chain; multi_diag is structurally unsatisfiable (see the _classify_centering_routes gate at the same line text), so the function is only ever called with multi_diag False. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- multi_diag branch of _flat_connects_to_internal_chain; multi_diag is structurally unsatisfiable (see the _classify_centering_routes gate at the same line text), so the function is only ever called with multi_diag False. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">341</td>
 <td><code>if any(_is_chain_predecessor(graph, ctx, r.edge.source) for r in flat_in):</code></td>
 <td><code>-&gt;L342</code>, <code>-&gt;L343</code></td>
-<td><strong>candidate-dead</strong> -- Inside the multi_diag block of _flat_connects_to_internal_chain, which is never entered because multi_diag is structurally unsatisfiable. Both arms unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Inside the multi_diag block of _flat_connects_to_internal_chain, which is never entered because multi_diag is structurally unsatisfiable. Both arms unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">343</td>
 <td><code>if any(_is_internal_station(graph, r.edge.target) for r in flat_out):</code></td>
 <td><code>-&gt;L344</code>, <code>-&gt;L345</code></td>
-<td><strong>candidate-dead</strong> -- Inside the multi_diag block of _flat_connects_to_internal_chain, never entered because multi_diag is structurally unsatisfiable. Both arms unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Inside the multi_diag block of _flat_connects_to_internal_chain, never entered because multi_diag is structurally unsatisfiable. Both arms unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">386</td>
 <td><code>if multi_diag:</code></td>
 <td><code>-&gt;L387</code></td>
-<td><strong>candidate-dead</strong> -- multi_diag branch selecting the flat-segment X extent in _centering_candidate; multi_diag is structurally unsatisfiable (see the _classify_centering_routes gate). Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- multi_diag branch selecting the flat-segment X extent in _centering_candidate; multi_diag is structurally unsatisfiable (see the _classify_centering_routes gate). Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">398</td>
 <td><code>if not multi_diag:</code></td>
 <td><code>-&gt;L405</code></td>
-<td><strong>candidate-dead</strong> -- The skip-this-block arm fires only when multi_diag is True, which is structurally unsatisfiable (see the _classify_centering_routes gate). Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- The skip-this-block arm fires only when multi_diag is True, which is structurally unsatisfiable (see the _classify_centering_routes gate). Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">502</td>
@@ -2616,13 +2616,13 @@
 <td style="text-align: right;">570</td>
 <td><code>if majority_count &lt;= len(moved) / 2:</code></td>
 <td><code>-&gt;L571</code></td>
-<td><strong>candidate-dead</strong> -- The no-clear-majority arm. Movers in a column either converge to one consensus x or sit off it only via hub/exit-port collinearity at a fixed &gt;=20px quantum; the consensus cluster is always the strict majority, so majority_count is never &lt;= half (0 of corpus, no probe topology reproduces a split). Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- The no-clear-majority arm. Movers in a column either converge to one consensus x or sit off it only via hub/exit-port collinearity at a fixed &gt;=20px quantum; the consensus cluster is always the strict majority, so majority_count is never &lt;= half (0 of corpus, no probe topology reproduces a split). Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">577</td>
 <td><code>if not outliers:</code></td>
 <td><code>-&gt;L578</code></td>
-<td><strong>candidate-dead</strong> -- The no-outliers arm in the movers-disagree branch. Disagreement only arises from hub/exit-port collinearity at a &gt;=20px quantum, never sub-pixel, so whenever spread exceeds 1px at least one mover rounds &gt;1px from the majority x. outliers is never empty here. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- The no-outliers arm in the movers-disagree branch. Disagreement only arises from hub/exit-port collinearity at a &gt;=20px quantum, never sub-pixel, so whenever spread exceeds 1px at least one mover rounds &gt;1px from the majority x. outliers is never empty here. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">582</td>
@@ -2634,7 +2634,7 @@
 <td style="text-align: right;">584</td>
 <td><code>if len(moved) &lt;= len(unmoved):</code></td>
 <td><code>-&gt;L585</code>, <code>-&gt;L586</code></td>
-<td><strong>candidate-dead</strong> -- Reached only from the has-unmoved arm of the agree branch, which is unreachable because a column never mixes moved and unmoved visible stations (all-or-nothing companion consensus). Both arms unreachable. Pending deletion review in #689.</td>
+<td><strong>defensive</strong> -- Reached only from the has-unmoved arm of the agree branch, which is unreachable because a column never mixes moved and unmoved visible stations (all-or-nothing companion consensus). Both arms unreachable. Reclassified candidate-dead -&gt; defensive (#762): corpus instrumentation across 128 fixtures confirms the un-exercised arm is never taken.</td>
 </tr>
 <tr>
 <td style="text-align: right;">592</td>
