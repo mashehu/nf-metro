@@ -1462,6 +1462,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lr-perp-top-exit-side-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Top Exit Side Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-bottom-exit-side-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Bottom Exit Side Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2755,6 +2777,28 @@
     <span class="md-ellipsis">
       
         Lr To Tb Top Two Lines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-top-exit-side-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Top Exit Side Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-bottom-exit-side-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Bottom Exit Side Entry
       
     </span>
   </a>
@@ -7886,6 +7930,74 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Lr To Tb Top Two Lines" src="../assets/renders/lr_to_tb_top_two_lines.svg" /></p>
+<h3 id="lr-perp-top-exit-side-entry">Lr Perp Top Exit Side Entry<a class="headerlink" href="#lr-perp-top-exit-side-entry" title="Permanent link">&para;</a></h3>
+<p>Two co-travelling lines leave an LR section through an explicit TOP exit and feed the LEFT entry of a same-row neighbour. The exit port sits past the last station, and the bundle rises into the header band, runs across, and descends to the consumer's row to enter straight, staying parallel through every concentric corner.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_side_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_side_entry.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a>%%metro title: LR Perp Top Exit into Side Entry
+<a id="__codelineno-163-2" name="__codelineno-163-2" href="#__codelineno-163-2"></a>%%metro style: dark
+<a id="__codelineno-163-3" name="__codelineno-163-3" href="#__codelineno-163-3"></a>%%metro line: a | Line A | #e63946
+<a id="__codelineno-163-4" name="__codelineno-163-4" href="#__codelineno-163-4"></a>%%metro line: b | Line B | #0570b0
+<a id="__codelineno-163-5" name="__codelineno-163-5" href="#__codelineno-163-5"></a>
+<a id="__codelineno-163-6" name="__codelineno-163-6" href="#__codelineno-163-6"></a>graph LR
+<a id="__codelineno-163-7" name="__codelineno-163-7" href="#__codelineno-163-7"></a>    subgraph src [Source]
+<a id="__codelineno-163-8" name="__codelineno-163-8" href="#__codelineno-163-8"></a>        s1[Start]
+<a id="__codelineno-163-9" name="__codelineno-163-9" href="#__codelineno-163-9"></a>    end
+<a id="__codelineno-163-10" name="__codelineno-163-10" href="#__codelineno-163-10"></a>
+<a id="__codelineno-163-11" name="__codelineno-163-11" href="#__codelineno-163-11"></a>    subgraph mid [Middle]
+<a id="__codelineno-163-12" name="__codelineno-163-12" href="#__codelineno-163-12"></a>        %%metro exit: top | a, b
+<a id="__codelineno-163-13" name="__codelineno-163-13" href="#__codelineno-163-13"></a>        m1[Step 1]
+<a id="__codelineno-163-14" name="__codelineno-163-14" href="#__codelineno-163-14"></a>        m2[Step 2]
+<a id="__codelineno-163-15" name="__codelineno-163-15" href="#__codelineno-163-15"></a>        m1 --&gt;|a,b| m2
+<a id="__codelineno-163-16" name="__codelineno-163-16" href="#__codelineno-163-16"></a>    end
+<a id="__codelineno-163-17" name="__codelineno-163-17" href="#__codelineno-163-17"></a>
+<a id="__codelineno-163-18" name="__codelineno-163-18" href="#__codelineno-163-18"></a>    subgraph dst [Destination]
+<a id="__codelineno-163-19" name="__codelineno-163-19" href="#__codelineno-163-19"></a>        d1[Finish]
+<a id="__codelineno-163-20" name="__codelineno-163-20" href="#__codelineno-163-20"></a>    end
+<a id="__codelineno-163-21" name="__codelineno-163-21" href="#__codelineno-163-21"></a>
+<a id="__codelineno-163-22" name="__codelineno-163-22" href="#__codelineno-163-22"></a>    s1 --&gt;|a,b| m1
+<a id="__codelineno-163-23" name="__codelineno-163-23" href="#__codelineno-163-23"></a>    m2 --&gt;|a,b| d1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Lr Perp Top Exit Side Entry" src="../assets/renders/lr_perp_top_exit_side_entry.svg" /></p>
+<h3 id="lr-perp-bottom-exit-side-entry">Lr Perp Bottom Exit Side Entry<a class="headerlink" href="#lr-perp-bottom-exit-side-entry" title="Permanent link">&para;</a></h3>
+<p>The BOTTOM-exit mirror of lr_perp_top_exit_side_entry: the bundle drops below the source section, runs across the under-row band, and rises back to the consumer's row to enter straight.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-164-1" name="__codelineno-164-1" href="#__codelineno-164-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_bottom_exit_side_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_bottom_exit_side_entry.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-165-1" name="__codelineno-165-1" href="#__codelineno-165-1"></a>%%metro title: LR Perp Bottom Exit into Side Entry
+<a id="__codelineno-165-2" name="__codelineno-165-2" href="#__codelineno-165-2"></a>%%metro style: dark
+<a id="__codelineno-165-3" name="__codelineno-165-3" href="#__codelineno-165-3"></a>%%metro line: a | Line A | #e63946
+<a id="__codelineno-165-4" name="__codelineno-165-4" href="#__codelineno-165-4"></a>%%metro line: b | Line B | #0570b0
+<a id="__codelineno-165-5" name="__codelineno-165-5" href="#__codelineno-165-5"></a>
+<a id="__codelineno-165-6" name="__codelineno-165-6" href="#__codelineno-165-6"></a>graph LR
+<a id="__codelineno-165-7" name="__codelineno-165-7" href="#__codelineno-165-7"></a>    subgraph src [Source]
+<a id="__codelineno-165-8" name="__codelineno-165-8" href="#__codelineno-165-8"></a>        s1[Start]
+<a id="__codelineno-165-9" name="__codelineno-165-9" href="#__codelineno-165-9"></a>    end
+<a id="__codelineno-165-10" name="__codelineno-165-10" href="#__codelineno-165-10"></a>
+<a id="__codelineno-165-11" name="__codelineno-165-11" href="#__codelineno-165-11"></a>    subgraph mid [Middle]
+<a id="__codelineno-165-12" name="__codelineno-165-12" href="#__codelineno-165-12"></a>        %%metro exit: bottom | a, b
+<a id="__codelineno-165-13" name="__codelineno-165-13" href="#__codelineno-165-13"></a>        m1[Step 1]
+<a id="__codelineno-165-14" name="__codelineno-165-14" href="#__codelineno-165-14"></a>        m2[Step 2]
+<a id="__codelineno-165-15" name="__codelineno-165-15" href="#__codelineno-165-15"></a>        m1 --&gt;|a,b| m2
+<a id="__codelineno-165-16" name="__codelineno-165-16" href="#__codelineno-165-16"></a>    end
+<a id="__codelineno-165-17" name="__codelineno-165-17" href="#__codelineno-165-17"></a>
+<a id="__codelineno-165-18" name="__codelineno-165-18" href="#__codelineno-165-18"></a>    subgraph dst [Destination]
+<a id="__codelineno-165-19" name="__codelineno-165-19" href="#__codelineno-165-19"></a>        d1[Finish]
+<a id="__codelineno-165-20" name="__codelineno-165-20" href="#__codelineno-165-20"></a>    end
+<a id="__codelineno-165-21" name="__codelineno-165-21" href="#__codelineno-165-21"></a>
+<a id="__codelineno-165-22" name="__codelineno-165-22" href="#__codelineno-165-22"></a>    s1 --&gt;|a,b| m1
+<a id="__codelineno-165-23" name="__codelineno-165-23" href="#__codelineno-165-23"></a>    m2 --&gt;|a,b| d1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Lr Perp Bottom Exit Side Entry" src="../assets/renders/lr_perp_bottom_exit_side_entry.svg" /></p>
 
 
 
