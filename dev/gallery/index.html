@@ -1506,6 +1506,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lr-perp-top-exit-perp-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Top Exit Perp Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-bottom-exit-perp-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Bottom Exit Perp Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-top-exit-perp-entry-diverging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Top Exit Perp Entry Diverging
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2843,6 +2876,39 @@
     <span class="md-ellipsis">
       
         Lr Perp Bottom Exit Side Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-top-exit-perp-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Top Exit Perp Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-bottom-exit-perp-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Bottom Exit Perp Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-perp-top-exit-perp-entry-diverging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lr Perp Top Exit Perp Entry Diverging
       
     </span>
   </a>
@@ -8152,6 +8218,115 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Lr Perp Bottom Exit Side Entry" src="../assets/renders/lr_perp_bottom_exit_side_entry.svg" /></p>
+<h3 id="lr-perp-top-exit-perp-entry">Lr Perp Top Exit Perp Entry<a class="headerlink" href="#lr-perp-top-exit-perp-entry" title="Permanent link">&para;</a></h3>
+<p>Two co-travelling lines leave an LR section through a TOP exit and feed the TOP entry of a same-row neighbour in another column. The bundle rises over the header band and drops into the consumer trunk, keeping a single left/right order across the shared entry port so it stays parallel without crossing at the drop.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_perp_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_perp_entry.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a>%%metro title: Cross-Column Perp Entry
+<a id="__codelineno-171-2" name="__codelineno-171-2" href="#__codelineno-171-2"></a>%%metro style: dark
+<a id="__codelineno-171-3" name="__codelineno-171-3" href="#__codelineno-171-3"></a>%%metro line: main | Main | #e63946
+<a id="__codelineno-171-4" name="__codelineno-171-4" href="#__codelineno-171-4"></a>%%metro line: branch | Branch | #2db572
+<a id="__codelineno-171-5" name="__codelineno-171-5" href="#__codelineno-171-5"></a>
+<a id="__codelineno-171-6" name="__codelineno-171-6" href="#__codelineno-171-6"></a>graph LR
+<a id="__codelineno-171-7" name="__codelineno-171-7" href="#__codelineno-171-7"></a>    subgraph src [Source]
+<a id="__codelineno-171-8" name="__codelineno-171-8" href="#__codelineno-171-8"></a>        %%metro exit: right | main,branch
+<a id="__codelineno-171-9" name="__codelineno-171-9" href="#__codelineno-171-9"></a>        s1[Start]
+<a id="__codelineno-171-10" name="__codelineno-171-10" href="#__codelineno-171-10"></a>    end
+<a id="__codelineno-171-11" name="__codelineno-171-11" href="#__codelineno-171-11"></a>    subgraph sec1 [Section One]
+<a id="__codelineno-171-12" name="__codelineno-171-12" href="#__codelineno-171-12"></a>        %%metro entry: left | main,branch
+<a id="__codelineno-171-13" name="__codelineno-171-13" href="#__codelineno-171-13"></a>        %%metro exit: top | main,branch
+<a id="__codelineno-171-14" name="__codelineno-171-14" href="#__codelineno-171-14"></a>        a[Input]
+<a id="__codelineno-171-15" name="__codelineno-171-15" href="#__codelineno-171-15"></a>        b[Output]
+<a id="__codelineno-171-16" name="__codelineno-171-16" href="#__codelineno-171-16"></a>        a --&gt;|main,branch| b
+<a id="__codelineno-171-17" name="__codelineno-171-17" href="#__codelineno-171-17"></a>    end
+<a id="__codelineno-171-18" name="__codelineno-171-18" href="#__codelineno-171-18"></a>    subgraph sec2 [Section Two]
+<a id="__codelineno-171-19" name="__codelineno-171-19" href="#__codelineno-171-19"></a>        %%metro entry: top | main,branch
+<a id="__codelineno-171-20" name="__codelineno-171-20" href="#__codelineno-171-20"></a>        d[Step D]
+<a id="__codelineno-171-21" name="__codelineno-171-21" href="#__codelineno-171-21"></a>        e[Step E]
+<a id="__codelineno-171-22" name="__codelineno-171-22" href="#__codelineno-171-22"></a>        d --&gt;|main,branch| e
+<a id="__codelineno-171-23" name="__codelineno-171-23" href="#__codelineno-171-23"></a>    end
+<a id="__codelineno-171-24" name="__codelineno-171-24" href="#__codelineno-171-24"></a>    s1 --&gt;|main,branch| a
+<a id="__codelineno-171-25" name="__codelineno-171-25" href="#__codelineno-171-25"></a>    b --&gt;|main,branch| d
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Lr Perp Top Exit Perp Entry" src="../assets/renders/lr_perp_top_exit_perp_entry.svg" /></p>
+<h3 id="lr-perp-bottom-exit-perp-entry">Lr Perp Bottom Exit Perp Entry<a class="headerlink" href="#lr-perp-bottom-exit-perp-entry" title="Permanent link">&para;</a></h3>
+<p>The BOTTOM-exit mirror of lr_perp_top_exit_perp_entry: the bundle drops under the row, runs across, and rises into the consumer's BOTTOM entry, staying parallel through the corridor.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_bottom_exit_perp_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_bottom_exit_perp_entry.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a>%%metro title: Cross-Column Perp Bottom Entry
+<a id="__codelineno-173-2" name="__codelineno-173-2" href="#__codelineno-173-2"></a>%%metro style: dark
+<a id="__codelineno-173-3" name="__codelineno-173-3" href="#__codelineno-173-3"></a>%%metro line: main | Main | #e63946
+<a id="__codelineno-173-4" name="__codelineno-173-4" href="#__codelineno-173-4"></a>%%metro line: branch | Branch | #2db572
+<a id="__codelineno-173-5" name="__codelineno-173-5" href="#__codelineno-173-5"></a>
+<a id="__codelineno-173-6" name="__codelineno-173-6" href="#__codelineno-173-6"></a>graph LR
+<a id="__codelineno-173-7" name="__codelineno-173-7" href="#__codelineno-173-7"></a>    subgraph src [Source]
+<a id="__codelineno-173-8" name="__codelineno-173-8" href="#__codelineno-173-8"></a>        %%metro exit: right | main,branch
+<a id="__codelineno-173-9" name="__codelineno-173-9" href="#__codelineno-173-9"></a>        s1[Start]
+<a id="__codelineno-173-10" name="__codelineno-173-10" href="#__codelineno-173-10"></a>    end
+<a id="__codelineno-173-11" name="__codelineno-173-11" href="#__codelineno-173-11"></a>    subgraph sec1 [Section One]
+<a id="__codelineno-173-12" name="__codelineno-173-12" href="#__codelineno-173-12"></a>        %%metro entry: left | main,branch
+<a id="__codelineno-173-13" name="__codelineno-173-13" href="#__codelineno-173-13"></a>        %%metro exit: bottom | main,branch
+<a id="__codelineno-173-14" name="__codelineno-173-14" href="#__codelineno-173-14"></a>        a[Input]
+<a id="__codelineno-173-15" name="__codelineno-173-15" href="#__codelineno-173-15"></a>        b[Output]
+<a id="__codelineno-173-16" name="__codelineno-173-16" href="#__codelineno-173-16"></a>        a --&gt;|main,branch| b
+<a id="__codelineno-173-17" name="__codelineno-173-17" href="#__codelineno-173-17"></a>    end
+<a id="__codelineno-173-18" name="__codelineno-173-18" href="#__codelineno-173-18"></a>    subgraph sec2 [Section Two]
+<a id="__codelineno-173-19" name="__codelineno-173-19" href="#__codelineno-173-19"></a>        %%metro entry: bottom | main,branch
+<a id="__codelineno-173-20" name="__codelineno-173-20" href="#__codelineno-173-20"></a>        d[Step D]
+<a id="__codelineno-173-21" name="__codelineno-173-21" href="#__codelineno-173-21"></a>        e[Step E]
+<a id="__codelineno-173-22" name="__codelineno-173-22" href="#__codelineno-173-22"></a>        d --&gt;|main,branch| e
+<a id="__codelineno-173-23" name="__codelineno-173-23" href="#__codelineno-173-23"></a>    end
+<a id="__codelineno-173-24" name="__codelineno-173-24" href="#__codelineno-173-24"></a>    s1 --&gt;|main,branch| a
+<a id="__codelineno-173-25" name="__codelineno-173-25" href="#__codelineno-173-25"></a>    b --&gt;|main,branch| d
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Lr Perp Bottom Exit Perp Entry" src="../assets/renders/lr_perp_bottom_exit_perp_entry.svg" /></p>
+<h3 id="lr-perp-top-exit-perp-entry-diverging">Lr Perp Top Exit Perp Entry Diverging<a class="headerlink" href="#lr-perp-top-exit-perp-entry-diverging" title="Permanent link">&para;</a></h3>
+<p>A TOP-exit bundle taken over the corridor into a TOP entry where the two lines split to different downstream stations. Consistent corridor ordering routes each line to its target without a convergence jog at the entry.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-174-1" name="__codelineno-174-1" href="#__codelineno-174-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_perp_entry_diverging.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_perp_entry_diverging.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-175-1" name="__codelineno-175-1" href="#__codelineno-175-1"></a>%%metro title: Cross-Column Perp Entry Diverging
+<a id="__codelineno-175-2" name="__codelineno-175-2" href="#__codelineno-175-2"></a>%%metro style: dark
+<a id="__codelineno-175-3" name="__codelineno-175-3" href="#__codelineno-175-3"></a>%%metro line: main | Main | #e63946
+<a id="__codelineno-175-4" name="__codelineno-175-4" href="#__codelineno-175-4"></a>%%metro line: branch | Branch | #2db572
+<a id="__codelineno-175-5" name="__codelineno-175-5" href="#__codelineno-175-5"></a>
+<a id="__codelineno-175-6" name="__codelineno-175-6" href="#__codelineno-175-6"></a>graph LR
+<a id="__codelineno-175-7" name="__codelineno-175-7" href="#__codelineno-175-7"></a>    subgraph src [Source]
+<a id="__codelineno-175-8" name="__codelineno-175-8" href="#__codelineno-175-8"></a>        %%metro exit: right | main,branch
+<a id="__codelineno-175-9" name="__codelineno-175-9" href="#__codelineno-175-9"></a>        s1[Start]
+<a id="__codelineno-175-10" name="__codelineno-175-10" href="#__codelineno-175-10"></a>    end
+<a id="__codelineno-175-11" name="__codelineno-175-11" href="#__codelineno-175-11"></a>    subgraph sec1 [Section One]
+<a id="__codelineno-175-12" name="__codelineno-175-12" href="#__codelineno-175-12"></a>        %%metro entry: left | main,branch
+<a id="__codelineno-175-13" name="__codelineno-175-13" href="#__codelineno-175-13"></a>        %%metro exit: top | main,branch
+<a id="__codelineno-175-14" name="__codelineno-175-14" href="#__codelineno-175-14"></a>        a[Input]
+<a id="__codelineno-175-15" name="__codelineno-175-15" href="#__codelineno-175-15"></a>        b[Output]
+<a id="__codelineno-175-16" name="__codelineno-175-16" href="#__codelineno-175-16"></a>        a --&gt;|main,branch| b
+<a id="__codelineno-175-17" name="__codelineno-175-17" href="#__codelineno-175-17"></a>    end
+<a id="__codelineno-175-18" name="__codelineno-175-18" href="#__codelineno-175-18"></a>    subgraph sec2 [Section Two]
+<a id="__codelineno-175-19" name="__codelineno-175-19" href="#__codelineno-175-19"></a>        %%metro entry: top | main,branch
+<a id="__codelineno-175-20" name="__codelineno-175-20" href="#__codelineno-175-20"></a>        d[Step D]
+<a id="__codelineno-175-21" name="__codelineno-175-21" href="#__codelineno-175-21"></a>        e[Step E]
+<a id="__codelineno-175-22" name="__codelineno-175-22" href="#__codelineno-175-22"></a>        d --&gt;|main| e
+<a id="__codelineno-175-23" name="__codelineno-175-23" href="#__codelineno-175-23"></a>    end
+<a id="__codelineno-175-24" name="__codelineno-175-24" href="#__codelineno-175-24"></a>    s1 --&gt;|main,branch| a
+<a id="__codelineno-175-25" name="__codelineno-175-25" href="#__codelineno-175-25"></a>    b --&gt;|main| d
+<a id="__codelineno-175-26" name="__codelineno-175-26" href="#__codelineno-175-26"></a>    b --&gt;|branch| e
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Lr Perp Top Exit Perp Entry Diverging" src="../assets/renders/lr_perp_top_exit_perp_entry_diverging.svg" /></p>
 
 
 
