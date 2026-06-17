@@ -1767,6 +1767,10 @@
 <td>How lines sharing a station relate vertically (see below). <code>&lt;mode&gt;</code> is <code>bundle</code> (default), <code>centered</code>, or <code>rails</code>. The bare form sets the graph default; <code>&lt;mode&gt; \| sectionA, sectionB</code> overrides those sections.</td>
 </tr>
 <tr>
+<td><code>%%metro interchange: &lt;node&gt; \| &lt;rail-1 lines&gt; \| &lt;rail-2 lines&gt; [\| ...]</code></td>
+<td>Render a shared step as a cross-track interchange instead of a convergence point (see below). Each pipe-group is one rail (comma-separated lines bundle on it). Auto-layout infers this for fully-parallel lanes, so the directive is only needed to pin a grouping.</td>
+</tr>
+<tr>
 <td><code>%%metro legend_min_height: &lt;pixels&gt;</code></td>
 <td>Minimum legend content height in pixels (useful for single-line maps where the logo would otherwise be tiny)</td>
 </tr>
@@ -1803,6 +1807,12 @@
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>%%metro line_spread: rails | pathways
 </code></pre></div>
 <p>Here every section defaults to <code>centered</code> while <code>pathways</code> is laid out as parallel rails; ordinary section placement positions both. The <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/line_spread.mmd"><code>line_spread</code></a> example shows all three modes in one map via per-section overrides. For <code>rails</code>, inter-section edges into or out of a rail section are not yet supported - a rail section should be self-contained.</p>
+<p><strong>Cross-track interchanges.</strong> Sometimes a single step is shared by lines that otherwise run as separate parallel lanes - a tumour and a normal lane both running MarkDuplicates, say - but the lanes never actually merge. In <code>bundle</code> mode each lane has to dip off its track to touch that shared node and dip back, pinching the lines together at a point that isn't really a join. An <em>interchange</em> renders the shared step the way a real metro map would: each lane stays straight on its own track, and the step is drawn as a connector (a knob on each rail joined by a link bar) spanning them.</p>
+<p>Unlike <code>line_spread: rails</code>, this is per-node and works in ordinary <code>bundle</code>/<code>centered</code> layout - only the one shared step becomes an interchange; everything else stays as it was. Internally the node is expanded into one ordinary sub-station per rail, so the normal layout engine keeps each lane straight and routes it; only the glyph is special.</p>
+<p>Auto-layout infers an interchange automatically wherever the lanes are <em>fully parallel</em> - every line through the node has its own predecessor and its own successor, so converging them buys nothing. You only need the directive to pin a specific rail grouping (e.g. bundling two lines onto one rail), or to force an interchange where lines share a neighbour:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>%%metro interchange: markduplicates | tumor | normal
+</code></pre></div>
+<p>The lanes are listed one rail per pipe-group; commas bundle several lines onto the same rail. Auto-detection deliberately abstains when two lines share a predecessor or successor (e.g. two callers feeding one merge): there the convergence is doing real work, so it is left alone. It also abstains when another lane's rail would fall between the interchange's rails, since the connector bar would then cut across that lane's stations. Interchanges are skipped inside <code>rails</code> sections, which already lay every line on its own rail. The <a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/cross_track_interchange.mmd">cross_track_interchange</a> example shows a shared MarkDuplicates step across parallel tumour/normal lanes.</p>
 <h3 id="section-directives">Section directives<a class="headerlink" href="#section-directives" title="Permanent link">&para;</a></h3>
 <p>These go inside <code>subgraph</code> blocks.</p>
 <table>
@@ -1977,7 +1987,7 @@ glyph is the correct rendering.</p>
 </ul>
 <h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
 <p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
 </code></pre></div>
 <p><img alt="Debug overlay" src="../assets/renders/rnaseq_auto_debug.svg" /></p>
 <p>The overlay shows:</p>
