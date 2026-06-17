@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Render diff - PR #783</title>
+<style>
+  :root {
+    --bg: #1e1e2e;
+    --surface: #2a2a3c;
+    --border: #3a3a4c;
+    --text: #e0e0e0;
+    --muted: #888;
+    --accent: #4ec9b0;
+    --added: #2ea04370;
+    --removed: #da363470;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .summary {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .toc {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .toc h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .toc h3 {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .toc ul {
+    list-style: none;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .toc li {
+    margin-bottom: 0.25rem;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .toc a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+  .badge-changed { background: var(--border); }
+  .badge-added { background: var(--added); }
+  .badge-removed { background: var(--removed); }
+  .section-header {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .diff-entry {
+    margin-bottom: 3rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .diff-entry h3 {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .side {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .side:first-child {
+    border-right: 1px solid var(--border);
+  }
+  .side h4 {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .side img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .side-only {
+    padding: 1rem;
+  }
+  .side-only img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .empty {
+    color: var(--muted);
+    font-style: italic;
+    padding: 2rem;
+    text-align: center;
+  }
+  .toggle-bar {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .toggle-bar button {
+    background: var(--border);
+    color: var(--text);
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .toggle-bar button.active {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .intro {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .intro summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .intro p {
+    margin-top: 0.75rem;
+  }
+  .intro ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  .intro li {
+    margin-bottom: 0.25rem;
+  }
+  .intro code {
+    background: var(--border);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+  .intro a {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<h1>Render diff - PR #783</h1>
+<p class="summary">117 changed out of 117 total renders. Generated 2026-06-17 08:28 UTC.</p>
+<details class="intro">
+<summary>What is this page?</summary>
+<p>
+<a href="https://github.com/pinin4fjords/nf-metro">nf-metro</a>
+generates metro-map-style SVG diagrams from Mermaid graph definitions.
+This page is automatically generated for every pull request and shows
+<strong>only the renders that changed</strong> compared to the
+<code>main</code> branch.
+</p>
+<p>
+Use it to check that code changes produce the intended visual result
+without unexpected side-effects on other diagrams. Each entry shows
+the <strong>base</strong> (main) render on the left and the
+<strong>PR</strong> render on the right. Use the toggle buttons to
+switch between side-by-side, base-only, and PR-only views.
+</p>
+<p><strong>What to look for:</strong></p>
+<ul>
+<li>Intended improvements in the PR column</li>
+<li>Unintended regressions (overlapping lines, shifted labels,
+    broken routing) in diagrams you did not mean to change</li>
+<li>New renders (green <em>added</em> badge) or removed renders
+    (red <em>removed</em> badge)</li>
+</ul>
+</details>
+<div class="toc">
+<h2>Changed renders</h2>
+<h3><a href="#section-guide-examples">Guide Examples</a></h3>
+<ul>
+<li><a href="#01_minimal">01_minimal</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#02_sections">02_sections</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#03_fan_out">03_fan_out</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#03b_fan_in_merge">03b_fan_in_merge</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#04_directions">04_directions</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#05_file_icons">05_file_icons</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#05b_multi_icons">05b_multi_icons</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#05c_files_icon">05c_files_icon</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#05d_folder_icon">05d_folder_icon</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#05f_banner_labels">05f_banner_labels</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#06a_without_hidden">06a_without_hidden</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#06b_with_hidden">06b_with_hidden</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_auto_debug">rnaseq_auto_debug</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_sections_manual">rnaseq_sections_manual</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#variantbenchmarking">variantbenchmarking</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#variantbenchmarking_auto">variantbenchmarking_auto</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-fold-topologies">Fold Topologies</a></h3>
+<ul>
+<li><a href="#around_below_ep_col_gt0">around_below_ep_col_gt0</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#around_section_below">around_section_below</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#bypass_fan_in_outer_slot">bypass_fan_in_outer_slot</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#bypass_gap2_rightward_overflow">bypass_gap2_rightward_overflow</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#bypass_label_rake">bypass_label_rake</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#bypass_label_rake_left">bypass_label_rake_left</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#bypass_v_tight">bypass_v_tight</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#compact_gap_peer_conflict">compact_gap_peer_conflict</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#compact_hidden_passthrough">compact_hidden_passthrough</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#convergence_stacked_sink">convergence_stacked_sink</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#corridor_narrow_gap_fallback">corridor_narrow_gap_fallback</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#cross_col_top_entry">cross_col_top_entry</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#cross_row_gap_wrap">cross_row_gap_wrap</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#disjoint_sameline_trunks">disjoint_sameline_trunks</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#divergent_fanout_split">divergent_fanout_split</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#dogleg_exempt_distinct">dogleg_exempt_distinct</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#dogleg_exempt_sameline">dogleg_exempt_sameline</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#fan_bypass_nesting">fan_bypass_nesting</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#fold_double">fold_double</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#fold_fan_across">fold_fan_across</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#fold_stacked_branch">fold_stacked_branch</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#inter_row_wrap_clearance">inter_row_wrap_clearance</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#junction_entry_align">junction_entry_align</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#junction_entry_collision">junction_entry_collision</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_perp_bottom_exit_side_entry">lr_perp_bottom_exit_side_entry</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_perp_top_exit_side_entry">lr_perp_top_exit_side_entry</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_to_tb_top_cross_col">lr_to_tb_top_cross_col</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_to_tb_top_drop">lr_to_tb_top_drop</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_to_tb_top_drop_two_lines">lr_to_tb_top_drop_two_lines</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_to_tb_top_near_vertical">lr_to_tb_top_near_vertical</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_to_tb_top_two_lines">lr_to_tb_top_two_lines</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#merge_offrow_continuation">merge_offrow_continuation</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#merge_port_above_approach">merge_port_above_approach</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#merge_trunk_out_of_range_section">merge_trunk_out_of_range_section</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#mismatched_tracks">mismatched_tracks</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#off_track_convergence">off_track_convergence</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#off_track_convergence_multiline">off_track_convergence_multiline</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#off_track_input_above_consumer">off_track_input_above_consumer</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#peeloff_riser_respace">peeloff_riser_respace</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#right_entry_gap_above_empty_row">right_entry_gap_above_empty_row</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#right_entry_wrap_no_fan">right_entry_wrap_no_fan</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rl_entry_runway">rl_entry_runway</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#route_around_intervening">route_around_intervening</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#self_crossing_bridge">self_crossing_bridge</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#stacked_lr_serpentine">stacked_lr_serpentine</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#terminus_join">terminus_join</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#upward_bypass">upward_bypass</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-branching-and-multipath">Branching and Multipath</a></h3>
+<ul>
+<li><a href="#asymmetric_tree">asymmetric_tree</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#complex_multipath">complex_multipath</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-main-examples">Main Examples</a></h3>
+<ul>
+<li><a href="#cross_track_interchange">cross_track_interchange</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#diagonal_labels">diagonal_labels</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#differentialabundance">differentialabundance</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#differentialabundance_default">differentialabundance_default</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#disconnected_components">disconnected_components</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#file_icons">file_icons</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#genomeassembly_staggered">genomeassembly_staggered</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#genomic_pipeline">genomic_pipeline</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#group_labels">group_labels</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#legend_combo">legend_combo</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#legend_logo_placement">legend_logo_placement</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#line_spread">line_spread</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#longread_variant_calling">longread_variant_calling</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#marker_styles">marker_styles</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#off_track_outputs">off_track_outputs</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_auto">rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_sections">rnaseq_sections</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#sarek_metro">sarek_metro</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#simple_pipeline">simple_pipeline</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_file_termini">tb_file_termini</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-simple-topologies">Simple Topologies</a></h3>
+<ul>
+<li><a href="#deep_linear">deep_linear</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#parallel_independent">parallel_independent</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#single_section">single_section</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-fan-out-and-fan-in">Fan-out and Fan-in</a></h3>
+<ul>
+<li><a href="#funcprofiler_upstream">funcprofiler_upstream</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#section_diamond">section_diamond</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#terminal_symmetric_fan">terminal_symmetric_fan</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#trunk_through_fan">trunk_through_fan</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#uneven_diamond">uneven_diamond</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#wide_fan_in">wide_fan_in</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#wide_fan_out">wide_fan_out</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#wide_label_fan">wide_label_fan</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#wrapped_label_trunk">wrapped_label_trunk</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-multi-line-bundles">Multi-line Bundles</a></h3>
+<ul>
+<li><a href="#mixed_port_sides">mixed_port_sides</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#multi_line_bundle">multi_line_bundle</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-test-fixtures">Test Fixtures</a></h3>
+<ul>
+<li><a href="#multiline_labels">multiline_labels</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_simple">rnaseq_simple</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-nextflow-conversions">Nextflow Conversions</a></h3>
+<ul>
+<li><a href="#nf_duplicate_processes">nf_duplicate_processes</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_flat_pipeline">nf_flat_pipeline</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_unquoted_labels">nf_unquoted_labels</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_variant_calling">nf_variant_calling</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_variant_calling_tuned">nf_variant_calling_tuned</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_variant_calling_tuned_icons">nf_variant_calling_tuned_icons</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#nf_with_subworkflows">nf_with_subworkflows</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-nf-core-pipelines">nf-core Pipelines</a></h3>
+<ul>
+<li><a href="#pipeline_epitopeprediction">pipeline_epitopeprediction</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#pipeline_genomeassembly">pipeline_genomeassembly</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#pipeline_hlatyping">pipeline_hlatyping</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#pipeline_rnaseq_auto">pipeline_rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#pipeline_sarek_metro">pipeline_sarek_metro</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#pipeline_variantbenchmarking">pipeline_variantbenchmarking</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#pipeline_variantprioritization">pipeline_variantprioritization</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-realistic-pipelines">Realistic Pipelines</a></h3>
+<ul>
+<li><a href="#rnaseq_lite">rnaseq_lite</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#variant_calling">variant_calling</a><span class="badge badge-changed">changed</span></li>
+</ul>
+</div>
+<h2 class="section-header" id="section-guide-examples">Guide Examples</h2>
+
+<div class="diff-entry" id="01_minimal">
+<h3>01 Minimal <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/01_minimal.svg" alt="Base: 01_minimal"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/01_minimal.svg" alt="PR: 01_minimal"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="02_sections">
+<h3>02 Sections <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/02_sections.svg" alt="Base: 02_sections"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/02_sections.svg" alt="PR: 02_sections"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="03_fan_out">
+<h3>03 Fan Out <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/03_fan_out.svg" alt="Base: 03_fan_out"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/03_fan_out.svg" alt="PR: 03_fan_out"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="03b_fan_in_merge">
+<h3>03B Fan In Merge <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/03b_fan_in_merge.svg" alt="Base: 03b_fan_in_merge"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/03b_fan_in_merge.svg" alt="PR: 03b_fan_in_merge"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="04_directions">
+<h3>04 Directions <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/04_directions.svg" alt="Base: 04_directions"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/04_directions.svg" alt="PR: 04_directions"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="05_file_icons">
+<h3>05 File Icons <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/05_file_icons.svg" alt="Base: 05_file_icons"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/05_file_icons.svg" alt="PR: 05_file_icons"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="05b_multi_icons">
+<h3>05B Multi Icons <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/05b_multi_icons.svg" alt="Base: 05b_multi_icons"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/05b_multi_icons.svg" alt="PR: 05b_multi_icons"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="05c_files_icon">
+<h3>05C Files Icon <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/05c_files_icon.svg" alt="Base: 05c_files_icon"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/05c_files_icon.svg" alt="PR: 05c_files_icon"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="05d_folder_icon">
+<h3>05D Folder Icon <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/05d_folder_icon.svg" alt="Base: 05d_folder_icon"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/05d_folder_icon.svg" alt="PR: 05d_folder_icon"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="05f_banner_labels">
+<h3>05F Banner Labels <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/05f_banner_labels.svg" alt="Base: 05f_banner_labels"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/05f_banner_labels.svg" alt="PR: 05f_banner_labels"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="06a_without_hidden">
+<h3>06A Without Hidden <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/06a_without_hidden.svg" alt="Base: 06a_without_hidden"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/06a_without_hidden.svg" alt="PR: 06a_without_hidden"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="06b_with_hidden">
+<h3>06B With Hidden <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/06b_with_hidden.svg" alt="Base: 06b_with_hidden"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/06b_with_hidden.svg" alt="PR: 06b_with_hidden"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_auto_debug">
+<h3>Rnaseq Auto Debug <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto_debug.svg" alt="Base: rnaseq_auto_debug"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto_debug.svg" alt="PR: rnaseq_auto_debug"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_sections_manual">
+<h3>Rnaseq Sections Manual <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections_manual.svg" alt="Base: rnaseq_sections_manual"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections_manual.svg" alt="PR: rnaseq_sections_manual"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="variantbenchmarking">
+<h3>Variantbenchmarking <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/variantbenchmarking.svg" alt="Base: variantbenchmarking"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/variantbenchmarking.svg" alt="PR: variantbenchmarking"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="variantbenchmarking_auto">
+<h3>Variantbenchmarking Auto <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/variantbenchmarking_auto.svg" alt="Base: variantbenchmarking_auto"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/variantbenchmarking_auto.svg" alt="PR: variantbenchmarking_auto"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-fold-topologies">Fold Topologies</h2>
+
+<div class="diff-entry" id="around_below_ep_col_gt0">
+<h3>Around Below Ep Col Gt0 <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/around_below_ep_col_gt0.svg" alt="Base: around_below_ep_col_gt0"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/around_below_ep_col_gt0.svg" alt="PR: around_below_ep_col_gt0"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="around_section_below">
+<h3>Around Section Below <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/around_section_below.svg" alt="Base: around_section_below"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/around_section_below.svg" alt="PR: around_section_below"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="bypass_fan_in_outer_slot">
+<h3>Bypass Fan In Outer Slot <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/bypass_fan_in_outer_slot.svg" alt="Base: bypass_fan_in_outer_slot"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/bypass_fan_in_outer_slot.svg" alt="PR: bypass_fan_in_outer_slot"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="bypass_gap2_rightward_overflow">
+<h3>Bypass Gap2 Rightward Overflow <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/bypass_gap2_rightward_overflow.svg" alt="Base: bypass_gap2_rightward_overflow"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/bypass_gap2_rightward_overflow.svg" alt="PR: bypass_gap2_rightward_overflow"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="bypass_label_rake">
+<h3>Bypass Label Rake <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/bypass_label_rake.svg" alt="Base: bypass_label_rake"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/bypass_label_rake.svg" alt="PR: bypass_label_rake"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="bypass_label_rake_left">
+<h3>Bypass Label Rake Left <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/bypass_label_rake_left.svg" alt="Base: bypass_label_rake_left"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/bypass_label_rake_left.svg" alt="PR: bypass_label_rake_left"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="bypass_v_tight">
+<h3>Bypass V Tight <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/bypass_v_tight.svg" alt="Base: bypass_v_tight"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/bypass_v_tight.svg" alt="PR: bypass_v_tight"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="compact_gap_peer_conflict">
+<h3>Compact Gap Peer Conflict <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/compact_gap_peer_conflict.svg" alt="Base: compact_gap_peer_conflict"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/compact_gap_peer_conflict.svg" alt="PR: compact_gap_peer_conflict"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="compact_hidden_passthrough">
+<h3>Compact Hidden Passthrough <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/compact_hidden_passthrough.svg" alt="Base: compact_hidden_passthrough"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/compact_hidden_passthrough.svg" alt="PR: compact_hidden_passthrough"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="convergence_stacked_sink">
+<h3>Convergence Stacked Sink <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/convergence_stacked_sink.svg" alt="Base: convergence_stacked_sink"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/convergence_stacked_sink.svg" alt="PR: convergence_stacked_sink"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="corridor_narrow_gap_fallback">
+<h3>Corridor Narrow Gap Fallback <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/corridor_narrow_gap_fallback.svg" alt="Base: corridor_narrow_gap_fallback"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/corridor_narrow_gap_fallback.svg" alt="PR: corridor_narrow_gap_fallback"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="cross_col_top_entry">
+<h3>Cross Col Top Entry <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/cross_col_top_entry.svg" alt="Base: cross_col_top_entry"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/cross_col_top_entry.svg" alt="PR: cross_col_top_entry"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="cross_row_gap_wrap">
+<h3>Cross Row Gap Wrap <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/cross_row_gap_wrap.svg" alt="Base: cross_row_gap_wrap"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/cross_row_gap_wrap.svg" alt="PR: cross_row_gap_wrap"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="disjoint_sameline_trunks">
+<h3>Disjoint Sameline Trunks <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/disjoint_sameline_trunks.svg" alt="Base: disjoint_sameline_trunks"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/disjoint_sameline_trunks.svg" alt="PR: disjoint_sameline_trunks"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="divergent_fanout_split">
+<h3>Divergent Fanout Split <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/divergent_fanout_split.svg" alt="Base: divergent_fanout_split"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/divergent_fanout_split.svg" alt="PR: divergent_fanout_split"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="dogleg_exempt_distinct">
+<h3>Dogleg Exempt Distinct <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/dogleg_exempt_distinct.svg" alt="Base: dogleg_exempt_distinct"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/dogleg_exempt_distinct.svg" alt="PR: dogleg_exempt_distinct"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="dogleg_exempt_sameline">
+<h3>Dogleg Exempt Sameline <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/dogleg_exempt_sameline.svg" alt="Base: dogleg_exempt_sameline"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/dogleg_exempt_sameline.svg" alt="PR: dogleg_exempt_sameline"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="fan_bypass_nesting">
+<h3>Fan Bypass Nesting <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/fan_bypass_nesting.svg" alt="Base: fan_bypass_nesting"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/fan_bypass_nesting.svg" alt="PR: fan_bypass_nesting"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="fold_double">
+<h3>Fold Double <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/fold_double.svg" alt="Base: fold_double"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/fold_double.svg" alt="PR: fold_double"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="fold_fan_across">
+<h3>Fold Fan Across <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/fold_fan_across.svg" alt="Base: fold_fan_across"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/fold_fan_across.svg" alt="PR: fold_fan_across"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="fold_stacked_branch">
+<h3>Fold Stacked Branch <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/fold_stacked_branch.svg" alt="Base: fold_stacked_branch"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/fold_stacked_branch.svg" alt="PR: fold_stacked_branch"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="inter_row_wrap_clearance">
+<h3>Inter Row Wrap Clearance <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/inter_row_wrap_clearance.svg" alt="Base: inter_row_wrap_clearance"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/inter_row_wrap_clearance.svg" alt="PR: inter_row_wrap_clearance"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="junction_entry_align">
+<h3>Junction Entry Align <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/junction_entry_align.svg" alt="Base: junction_entry_align"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/junction_entry_align.svg" alt="PR: junction_entry_align"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="junction_entry_collision">
+<h3>Junction Entry Collision <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/junction_entry_collision.svg" alt="Base: junction_entry_collision"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/junction_entry_collision.svg" alt="PR: junction_entry_collision"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_perp_bottom_exit_side_entry">
+<h3>Lr Perp Bottom Exit Side Entry <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_perp_bottom_exit_side_entry.svg" alt="Base: lr_perp_bottom_exit_side_entry"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_perp_bottom_exit_side_entry.svg" alt="PR: lr_perp_bottom_exit_side_entry"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_perp_top_exit_side_entry">
+<h3>Lr Perp Top Exit Side Entry <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_perp_top_exit_side_entry.svg" alt="Base: lr_perp_top_exit_side_entry"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_perp_top_exit_side_entry.svg" alt="PR: lr_perp_top_exit_side_entry"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_cross_col">
+<h3>Lr To Tb Top Cross Col <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_to_tb_top_cross_col.svg" alt="Base: lr_to_tb_top_cross_col"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_to_tb_top_cross_col.svg" alt="PR: lr_to_tb_top_cross_col"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_drop">
+<h3>Lr To Tb Top Drop <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_to_tb_top_drop.svg" alt="Base: lr_to_tb_top_drop"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_to_tb_top_drop.svg" alt="PR: lr_to_tb_top_drop"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_drop_two_lines">
+<h3>Lr To Tb Top Drop Two Lines <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_to_tb_top_drop_two_lines.svg" alt="Base: lr_to_tb_top_drop_two_lines"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_to_tb_top_drop_two_lines.svg" alt="PR: lr_to_tb_top_drop_two_lines"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_near_vertical">
+<h3>Lr To Tb Top Near Vertical <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_to_tb_top_near_vertical.svg" alt="Base: lr_to_tb_top_near_vertical"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_to_tb_top_near_vertical.svg" alt="PR: lr_to_tb_top_near_vertical"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_two_lines">
+<h3>Lr To Tb Top Two Lines <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_to_tb_top_two_lines.svg" alt="Base: lr_to_tb_top_two_lines"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_to_tb_top_two_lines.svg" alt="PR: lr_to_tb_top_two_lines"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="merge_offrow_continuation">
+<h3>Merge Offrow Continuation <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/merge_offrow_continuation.svg" alt="Base: merge_offrow_continuation"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/merge_offrow_continuation.svg" alt="PR: merge_offrow_continuation"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="merge_port_above_approach">
+<h3>Merge Port Above Approach <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/merge_port_above_approach.svg" alt="Base: merge_port_above_approach"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/merge_port_above_approach.svg" alt="PR: merge_port_above_approach"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="merge_trunk_out_of_range_section">
+<h3>Merge Trunk Out Of Range Section <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/merge_trunk_out_of_range_section.svg" alt="Base: merge_trunk_out_of_range_section"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/merge_trunk_out_of_range_section.svg" alt="PR: merge_trunk_out_of_range_section"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="mismatched_tracks">
+<h3>Mismatched Tracks <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/mismatched_tracks.svg" alt="Base: mismatched_tracks"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/mismatched_tracks.svg" alt="PR: mismatched_tracks"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="off_track_convergence">
+<h3>Off Track Convergence <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/off_track_convergence.svg" alt="Base: off_track_convergence"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/off_track_convergence.svg" alt="PR: off_track_convergence"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="off_track_convergence_multiline">
+<h3>Off Track Convergence Multiline <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/off_track_convergence_multiline.svg" alt="Base: off_track_convergence_multiline"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/off_track_convergence_multiline.svg" alt="PR: off_track_convergence_multiline"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="off_track_input_above_consumer">
+<h3>Off Track Input Above Consumer <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/off_track_input_above_consumer.svg" alt="Base: off_track_input_above_consumer"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/off_track_input_above_consumer.svg" alt="PR: off_track_input_above_consumer"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="peeloff_riser_respace">
+<h3>Peeloff Riser Respace <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/peeloff_riser_respace.svg" alt="Base: peeloff_riser_respace"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/peeloff_riser_respace.svg" alt="PR: peeloff_riser_respace"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="right_entry_gap_above_empty_row">
+<h3>Right Entry Gap Above Empty Row <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/right_entry_gap_above_empty_row.svg" alt="Base: right_entry_gap_above_empty_row"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/right_entry_gap_above_empty_row.svg" alt="PR: right_entry_gap_above_empty_row"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="right_entry_wrap_no_fan">
+<h3>Right Entry Wrap No Fan <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/right_entry_wrap_no_fan.svg" alt="Base: right_entry_wrap_no_fan"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/right_entry_wrap_no_fan.svg" alt="PR: right_entry_wrap_no_fan"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rl_entry_runway">
+<h3>Rl Entry Runway <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rl_entry_runway.svg" alt="Base: rl_entry_runway"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rl_entry_runway.svg" alt="PR: rl_entry_runway"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="route_around_intervening">
+<h3>Route Around Intervening <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/route_around_intervening.svg" alt="Base: route_around_intervening"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/route_around_intervening.svg" alt="PR: route_around_intervening"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="self_crossing_bridge">
+<h3>Self Crossing Bridge <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/self_crossing_bridge.svg" alt="Base: self_crossing_bridge"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/self_crossing_bridge.svg" alt="PR: self_crossing_bridge"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="stacked_lr_serpentine">
+<h3>Stacked Lr Serpentine <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/stacked_lr_serpentine.svg" alt="Base: stacked_lr_serpentine"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/stacked_lr_serpentine.svg" alt="PR: stacked_lr_serpentine"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="terminus_join">
+<h3>Terminus Join <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/terminus_join.svg" alt="Base: terminus_join"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/terminus_join.svg" alt="PR: terminus_join"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="upward_bypass">
+<h3>Upward Bypass <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/upward_bypass.svg" alt="Base: upward_bypass"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/upward_bypass.svg" alt="PR: upward_bypass"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-branching-and-multipath">Branching and Multipath</h2>
+
+<div class="diff-entry" id="asymmetric_tree">
+<h3>Asymmetric Tree <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/asymmetric_tree.svg" alt="Base: asymmetric_tree"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/asymmetric_tree.svg" alt="PR: asymmetric_tree"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="complex_multipath">
+<h3>Complex Multipath <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/complex_multipath.svg" alt="Base: complex_multipath"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/complex_multipath.svg" alt="PR: complex_multipath"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-main-examples">Main Examples</h2>
+
+<div class="diff-entry" id="cross_track_interchange">
+<h3>Cross Track Interchange <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/cross_track_interchange.svg" alt="Base: cross_track_interchange"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/cross_track_interchange.svg" alt="PR: cross_track_interchange"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="diagonal_labels">
+<h3>Diagonal Labels <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/diagonal_labels.svg" alt="Base: diagonal_labels"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/diagonal_labels.svg" alt="PR: diagonal_labels"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="differentialabundance">
+<h3>Differentialabundance <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/differentialabundance.svg" alt="Base: differentialabundance"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/differentialabundance.svg" alt="PR: differentialabundance"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="differentialabundance_default">
+<h3>Differentialabundance Default <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/differentialabundance_default.svg" alt="Base: differentialabundance_default"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/differentialabundance_default.svg" alt="PR: differentialabundance_default"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="disconnected_components">
+<h3>Disconnected Components <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/disconnected_components.svg" alt="Base: disconnected_components"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/disconnected_components.svg" alt="PR: disconnected_components"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="file_icons">
+<h3>File Icons <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/file_icons.svg" alt="Base: file_icons"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/file_icons.svg" alt="PR: file_icons"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="genomeassembly_staggered">
+<h3>Genomeassembly Staggered <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/genomeassembly_staggered.svg" alt="Base: genomeassembly_staggered"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/genomeassembly_staggered.svg" alt="PR: genomeassembly_staggered"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="genomic_pipeline">
+<h3>Genomic Pipeline <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/genomic_pipeline.svg" alt="Base: genomic_pipeline"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/genomic_pipeline.svg" alt="PR: genomic_pipeline"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="group_labels">
+<h3>Group Labels <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/group_labels.svg" alt="Base: group_labels"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/group_labels.svg" alt="PR: group_labels"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="legend_combo">
+<h3>Legend Combo <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/legend_combo.svg" alt="Base: legend_combo"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/legend_combo.svg" alt="PR: legend_combo"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="legend_logo_placement">
+<h3>Legend Logo Placement <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/legend_logo_placement.svg" alt="Base: legend_logo_placement"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/legend_logo_placement.svg" alt="PR: legend_logo_placement"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="line_spread">
+<h3>Line Spread <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/line_spread.svg" alt="Base: line_spread"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/line_spread.svg" alt="PR: line_spread"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="longread_variant_calling">
+<h3>Longread Variant Calling <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/longread_variant_calling.svg" alt="Base: longread_variant_calling"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/longread_variant_calling.svg" alt="PR: longread_variant_calling"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="marker_styles">
+<h3>Marker Styles <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/marker_styles.svg" alt="Base: marker_styles"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/marker_styles.svg" alt="PR: marker_styles"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="off_track_outputs">
+<h3>Off Track Outputs <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/off_track_outputs.svg" alt="Base: off_track_outputs"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/off_track_outputs.svg" alt="PR: off_track_outputs"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_auto">
+<h3>Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto.svg" alt="Base: rnaseq_auto"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto.svg" alt="PR: rnaseq_auto"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_sections">
+<h3>Rnaseq Sections <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections.svg" alt="Base: rnaseq_sections"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections.svg" alt="PR: rnaseq_sections"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="sarek_metro">
+<h3>Sarek Metro <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/sarek_metro.svg" alt="Base: sarek_metro"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/sarek_metro.svg" alt="PR: sarek_metro"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="simple_pipeline">
+<h3>Simple Pipeline <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/simple_pipeline.svg" alt="Base: simple_pipeline"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/simple_pipeline.svg" alt="PR: simple_pipeline"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_file_termini">
+<h3>Tb File Termini <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_file_termini.svg" alt="Base: tb_file_termini"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_file_termini.svg" alt="PR: tb_file_termini"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-simple-topologies">Simple Topologies</h2>
+
+<div class="diff-entry" id="deep_linear">
+<h3>Deep Linear <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/deep_linear.svg" alt="Base: deep_linear"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/deep_linear.svg" alt="PR: deep_linear"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="parallel_independent">
+<h3>Parallel Independent <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/parallel_independent.svg" alt="Base: parallel_independent"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/parallel_independent.svg" alt="PR: parallel_independent"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="single_section">
+<h3>Single Section <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/single_section.svg" alt="Base: single_section"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/single_section.svg" alt="PR: single_section"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-fan-out-and-fan-in">Fan-out and Fan-in</h2>
+
+<div class="diff-entry" id="funcprofiler_upstream">
+<h3>Funcprofiler Upstream <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/funcprofiler_upstream.svg" alt="Base: funcprofiler_upstream"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/funcprofiler_upstream.svg" alt="PR: funcprofiler_upstream"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="section_diamond">
+<h3>Section Diamond <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/section_diamond.svg" alt="Base: section_diamond"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/section_diamond.svg" alt="PR: section_diamond"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="terminal_symmetric_fan">
+<h3>Terminal Symmetric Fan <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/terminal_symmetric_fan.svg" alt="Base: terminal_symmetric_fan"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/terminal_symmetric_fan.svg" alt="PR: terminal_symmetric_fan"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="trunk_through_fan">
+<h3>Trunk Through Fan <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/trunk_through_fan.svg" alt="Base: trunk_through_fan"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/trunk_through_fan.svg" alt="PR: trunk_through_fan"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="uneven_diamond">
+<h3>Uneven Diamond <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/uneven_diamond.svg" alt="Base: uneven_diamond"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/uneven_diamond.svg" alt="PR: uneven_diamond"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="wide_fan_in">
+<h3>Wide Fan In <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/wide_fan_in.svg" alt="Base: wide_fan_in"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/wide_fan_in.svg" alt="PR: wide_fan_in"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="wide_fan_out">
+<h3>Wide Fan Out <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/wide_fan_out.svg" alt="Base: wide_fan_out"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/wide_fan_out.svg" alt="PR: wide_fan_out"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="wide_label_fan">
+<h3>Wide Label Fan <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/wide_label_fan.svg" alt="Base: wide_label_fan"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/wide_label_fan.svg" alt="PR: wide_label_fan"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="wrapped_label_trunk">
+<h3>Wrapped Label Trunk <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/wrapped_label_trunk.svg" alt="Base: wrapped_label_trunk"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/wrapped_label_trunk.svg" alt="PR: wrapped_label_trunk"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-multi-line-bundles">Multi-line Bundles</h2>
+
+<div class="diff-entry" id="mixed_port_sides">
+<h3>Mixed Port Sides <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/mixed_port_sides.svg" alt="Base: mixed_port_sides"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/mixed_port_sides.svg" alt="PR: mixed_port_sides"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="multi_line_bundle">
+<h3>Multi Line Bundle <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/multi_line_bundle.svg" alt="Base: multi_line_bundle"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/multi_line_bundle.svg" alt="PR: multi_line_bundle"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-test-fixtures">Test Fixtures</h2>
+
+<div class="diff-entry" id="multiline_labels">
+<h3>Multiline Labels <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/multiline_labels.svg" alt="Base: multiline_labels"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/multiline_labels.svg" alt="PR: multiline_labels"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_simple">
+<h3>Rnaseq Simple <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_simple.svg" alt="Base: rnaseq_simple"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_simple.svg" alt="PR: rnaseq_simple"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-nextflow-conversions">Nextflow Conversions</h2>
+
+<div class="diff-entry" id="nf_duplicate_processes">
+<h3>Nf Duplicate Processes <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_duplicate_processes.svg" alt="Base: nf_duplicate_processes"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_duplicate_processes.svg" alt="PR: nf_duplicate_processes"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_flat_pipeline">
+<h3>Nf Flat Pipeline <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_flat_pipeline.svg" alt="Base: nf_flat_pipeline"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_flat_pipeline.svg" alt="PR: nf_flat_pipeline"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_unquoted_labels">
+<h3>Nf Unquoted Labels <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_unquoted_labels.svg" alt="Base: nf_unquoted_labels"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_unquoted_labels.svg" alt="PR: nf_unquoted_labels"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_variant_calling">
+<h3>Nf Variant Calling <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling.svg" alt="Base: nf_variant_calling"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling.svg" alt="PR: nf_variant_calling"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_variant_calling_tuned">
+<h3>Nf Variant Calling Tuned <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling_tuned.svg" alt="Base: nf_variant_calling_tuned"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling_tuned.svg" alt="PR: nf_variant_calling_tuned"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_variant_calling_tuned_icons">
+<h3>Nf Variant Calling Tuned Icons <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling_tuned_icons.svg" alt="Base: nf_variant_calling_tuned_icons"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling_tuned_icons.svg" alt="PR: nf_variant_calling_tuned_icons"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="nf_with_subworkflows">
+<h3>Nf With Subworkflows <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_with_subworkflows.svg" alt="Base: nf_with_subworkflows"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/nf_with_subworkflows.svg" alt="PR: nf_with_subworkflows"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-nf-core-pipelines">nf-core Pipelines</h2>
+
+<div class="diff-entry" id="pipeline_epitopeprediction">
+<h3>Pipeline Epitopeprediction <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_epitopeprediction.svg" alt="Base: pipeline_epitopeprediction"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_epitopeprediction.svg" alt="PR: pipeline_epitopeprediction"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="pipeline_genomeassembly">
+<h3>Pipeline Genomeassembly <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_genomeassembly.svg" alt="Base: pipeline_genomeassembly"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_genomeassembly.svg" alt="PR: pipeline_genomeassembly"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="pipeline_hlatyping">
+<h3>Pipeline Hlatyping <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_hlatyping.svg" alt="Base: pipeline_hlatyping"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_hlatyping.svg" alt="PR: pipeline_hlatyping"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="pipeline_rnaseq_auto">
+<h3>Pipeline Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_rnaseq_auto.svg" alt="Base: pipeline_rnaseq_auto"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_rnaseq_auto.svg" alt="PR: pipeline_rnaseq_auto"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="pipeline_sarek_metro">
+<h3>Pipeline Sarek Metro <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_sarek_metro.svg" alt="Base: pipeline_sarek_metro"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_sarek_metro.svg" alt="PR: pipeline_sarek_metro"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="pipeline_variantbenchmarking">
+<h3>Pipeline Variantbenchmarking <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_variantbenchmarking.svg" alt="Base: pipeline_variantbenchmarking"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_variantbenchmarking.svg" alt="PR: pipeline_variantbenchmarking"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="pipeline_variantprioritization">
+<h3>Pipeline Variantprioritization <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_variantprioritization.svg" alt="Base: pipeline_variantprioritization"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_variantprioritization.svg" alt="PR: pipeline_variantprioritization"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-realistic-pipelines">Realistic Pipelines</h2>
+
+<div class="diff-entry" id="rnaseq_lite">
+<h3>Rnaseq Lite <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_lite.svg" alt="Base: rnaseq_lite"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_lite.svg" alt="PR: rnaseq_lite"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="variant_calling">
+<h3>Variant Calling <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/variant_calling.svg" alt="Base: variant_calling"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/variant_calling.svg" alt="PR: variant_calling"></div>
+</div>
+</div>
+<script>
+document.querySelectorAll('.toggle-bar button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const entry = btn.closest('.diff-entry');
+    const mode = btn.dataset.mode;
+    const buttons = entry.querySelectorAll('.toggle-bar button');
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const comp = entry.querySelector('.comparison');
+    const sideBase = comp.querySelector('.side-base');
+    const sidePr = comp.querySelector('.side-pr');
+    if (mode === 'side-by-side') {
+      comp.style.gridTemplateColumns = '1fr 1fr';
+      sideBase.style.display = '';
+      sidePr.style.display = '';
+    } else if (mode === 'base') {
+      comp.style.gridTemplateColumns = '1fr';
+      sideBase.style.display = '';
+      sidePr.style.display = 'none';
+    } else if (mode === 'pr') {
+      comp.style.gridTemplateColumns = '1fr';
+      sideBase.style.display = 'none';
+      sidePr.style.display = '';
+    }
+  });
+});
+</script>
+</body>
+</html>
