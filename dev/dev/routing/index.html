@@ -944,14 +944,16 @@ apply return <code>None</code>.</p>
    family of sub-handlers (L-shape, top-entry L-shape, left/right-entry
    wraps, TB bottom-exit, merge trunk/branch, bypass, stepped descent,
    inter-row corridors, around-section-below).</li>
-<li><code>_route_tb_internal</code> - internal edges within a <code>TB</code> section, drawn as
-   vertical drops.</li>
-<li><code>_route_tb_lr_exit</code> - internal station to a LEFT/RIGHT exit port in a
-   <code>TB</code> section.</li>
-<li><code>_route_tb_lr_entry</code> - LEFT/RIGHT entry port to an internal station in
-   a <code>TB</code> section.</li>
-<li><code>_route_perp_entry</code> - TOP/BOTTOM port to an internal station, with
-   upstream merging.</li>
+<li><code>_route_tb_section</code> - edges touching a <code>TB</code> section.  Dispatches over
+   the ordered <code>_TB_SECTION_SHAPES</code> tuple (first match wins): internal
+   vertical drops (<code>_route_tb_internal</code>), internal station to a LEFT/RIGHT
+   exit port (<code>_route_tb_lr_exit</code>), LEFT/RIGHT entry port to an internal
+   station (<code>_route_tb_lr_entry</code>), and TOP/BOTTOM port to an internal
+   station (<code>_route_perp_entry</code>).  Each shape describes a centreline and
+   fans it through the bundle builder (<code>build_tapered_bundle</code> /
+   <code>build_offset_bundle</code>), so no handler hand-assembles per-line points or
+   curve radii; the perpendicular-entry corridor variant
+   (<code>_route_perp_entry_from_corridor</code>) routes the same way.</li>
 <li><code>_route_entry_runway</code> - flow-side entry port to a deep internal
    station: compresses the diagonal into the entry region and runs a
    horizontal runway past the bypassed early-layer stations.</li>
@@ -1018,11 +1020,19 @@ dispatcher handles those degenerate cases directly.</p>
 </tr>
 <tr>
 <td><code>tb_handlers.py</code></td>
-<td>TB section handlers (<code>_route_tb_internal</code>, <code>_route_tb_lr_exit</code>, <code>_route_tb_lr_entry</code>, <code>_route_perp_entry</code>) and <code>_compute_diagonal_placement</code></td>
+<td>TB section shapes dispatched by <code>_route_tb_section</code> over <code>_TB_SECTION_SHAPES</code> (<code>_route_tb_internal</code>, <code>_route_tb_lr_exit</code>, <code>_route_tb_lr_entry</code>, <code>_route_perp_entry</code>, <code>_route_perp_entry_from_corridor</code>) and <code>_compute_diagonal_placement</code></td>
 </tr>
 <tr>
 <td><code>intra_handlers.py</code></td>
 <td><code>_route_entry_runway</code> and <code>_route_intra_section</code> (the general intra-section fallback)</td>
+</tr>
+<tr>
+<td><code>bundle.py</code></td>
+<td>constructive bundle-curve builders (<code>build_concentric_bundle</code>, <code>build_tapered_bundle</code>, <code>build_offset_bundle</code>); fans a centreline into per-line offset paths with concentric corners</td>
+</tr>
+<tr>
+<td><code>centrelines.py</code></td>
+<td>centreline templates and bundle-gathering helpers (<code>gather_member_edges</code>, <code>route_along</code>, <code>route_tapered</code>, …) layered over <code>bundle.py</code></td>
 </tr>
 <tr>
 <td><code>postprocess.py</code></td>
