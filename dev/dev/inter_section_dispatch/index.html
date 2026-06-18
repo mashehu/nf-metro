@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/render/">
+        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/inter_section_dispatch/">
       
       
+        <link rel="prev" href="../routing/">
+      
+      
+        <link rel="next" href="../routing_gate_coverage/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>Render - nf-metro</title>
+        <title>Inter-section dispatch - nf-metro</title>
       
     
     
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#render" class="md-skip">
+        <a href="#inter-section-dispatch-table" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Render
+              Inter-section dispatch
             
           </span>
         </div>
@@ -418,8 +422,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -430,11 +436,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
@@ -455,7 +461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -554,10 +560,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../inter_section_dispatch/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-section dispatch
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -573,6 +606,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-fact-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fact space
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rules-in-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rules, in order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-curve-guard-is-a-backstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The curve guard is a backstop
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -724,38 +810,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#svg-generation-svgpy" class="md-nav__link">
+  <a href="#the-fact-space" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SVG generation (svg.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SVG generation (svg.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-gets-drawn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What gets drawn
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bridges-bridgespy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bridges (bridges.py)
+        The fact space
       
     </span>
   </a>
@@ -763,10 +821,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-html-htmlpy" class="md-nav__link">
+  <a href="#the-rules-in-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interactive HTML (html.py)
+        The rules, in order
       
     </span>
   </a>
@@ -774,43 +832,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manifest-manifestpy" class="md-nav__link">
+  <a href="#the-curve-guard-is-a-backstop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manifest (manifest.py)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#animation-animatepy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Animation (animate.py)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#theming-stylepy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Theming (style.py)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Module map
+        The curve guard is a backstop
       
     </span>
   </a>
@@ -837,171 +862,146 @@
   
 
 
-<h1 id="render">Render<a class="headerlink" href="#render" title="Permanent link">&para;</a></h1>
-<p>Rendering turns a laid-out <code>MetroGraph</code> (stations, ports, junctions, and
-sections with coordinates, plus routed <code>RoutedPath</code> polylines) into output
-files.  The primary entry point is <code>render_svg</code> in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/render/svg.py"><code>src/nf_metro/render/svg.py</code></a>,
-which returns an SVG string.  From there, <code>render_html</code> wraps that SVG in
-an interactive HTML page, and <code>build_manifest</code> embeds a data manifest into
-the SVG for downstream tooling.</p>
-<h2 id="svg-generation-svgpy">SVG generation (<code>svg.py</code>)<a class="headerlink" href="#svg-generation-svgpy" title="Permanent link">&para;</a></h2>
-<p><code>render_svg(graph, theme, ...)</code> is the top-level call.  It:</p>
-<ol>
-<li>Scales theme fonts by <code>graph.font_scale</code> (set by the <code>%%metro font_scale:</code>
-   directive or the <code>--font-scale</code> CLI flag).</li>
-<li>Calls <code>_render_svg_scaled</code>, which does the actual drawing via the
-   <code>drawsvg</code> library.</li>
-<li>If <code>graph.animate</code> is set (or <code>--animate</code> was passed), calls
-   <code>render_animation</code> from <code>animate.py</code> to add travelling balls.</li>
-<li>If a manifest is requested, calls <code>build_manifest</code> from <code>manifest.py</code>
-   and injects it into the SVG element.</li>
-</ol>
-<p><code>apply_route_offsets(routes, station_offsets)</code> is also exported from
-<code>svg.py</code>.  It fans a bundle of co-travelling routes into parallel tracks
-by applying the per-station Y offsets computed by <code>compute_station_offsets</code>
-in <code>routing/offsets.py</code>.  This is a separate function (not called inside
-<code>render_svg</code>) so that <code>animate.py</code> can share the same offset-applied paths
-rather than recomputing them.</p>
-<h3 id="what-gets-drawn">What gets drawn<a class="headerlink" href="#what-gets-drawn" title="Permanent link">&para;</a></h3>
-<p><code>_render_svg_scaled</code> draws in layers:</p>
-<ol>
-<li><strong>Section boxes</strong> - rounded rectangles with optional section labels and
-   tick marks for group labels.</li>
-<li><strong>Edges</strong> - polylines from <code>RoutedPath.waypoints</code>, with quadratic Bézier
-   curves at corners (radius computed by <code>routing/corners.py</code>).  Where
-   <code>compute_bridges</code> identifies a non-merging crossing, <code>_render_bridged_edge</code>
-   draws the under-route with a gap (see <a href="#bridges">Bridges</a> below).</li>
-<li><strong>Station markers</strong> - pill-shaped rectangles (or circles/squares for
-   alternative marker styles).  Rail-mode interchange stations span multiple
-   rails and are drawn by <code>_render_rail_pill</code>.</li>
-<li><strong>Icons</strong> - file, files, and folder icons for off-track input nodes (drawn
-   by <code>icons.py</code>).</li>
-<li><strong>Labels</strong> - placed by <code>layout/labels.py</code> and rendered with optional
-   line-wrapping; positioned above or beside their station.</li>
-<li><strong>Legend</strong> - drawn by <code>legend.py</code>, auto-positioned to avoid overlapping
-   section boxes and routes.  Position can be overridden via
-   <code>%%metro legend_position:</code> or set to <code>"none"</code> (suppressed) for the HTML
-   output mode.</li>
-</ol>
-<h2 id="bridges-bridgespy">Bridges (<code>bridges.py</code>)<a class="headerlink" href="#bridges-bridgespy" title="Permanent link">&para;</a></h2>
-<p>Two distinct metro lines may cross at a point that is not a shared station,
-port, junction, or merge.  Drawn naively that reads as an interchange.
-<code>compute_bridges</code> resolves the ambiguity by inserting a short gap in the
-under-route where it passes beneath the over-route.</p>
-<p><code>compute_bridges(graph, routes)</code> takes the assembled polylines (with offsets
-already applied) and:</p>
-<ol>
-<li>Identifies all genuine pairwise crossings: ignores crossings between the
-   same line, crossings at shared endpoints, and crossings within
-   <code>BRIDGE_NODE_TOLERANCE</code> of any node.</li>
-<li>For same-line crossings, distinguishes a fan-in/out (two legs that share a
-   common ancestor and rejoin at a common descendant) from an independent
-   self-crossing that genuinely needs a bridge.</li>
-<li>Groups nearby crossings into clusters and assigns "over" and "under" by
-   2-colouring the cluster graph.</li>
-<li>Returns a list of <code>BridgeBreak</code> objects, one per under-route segment,
-   recording the <code>t_start</code>/<code>t_end</code> parametric range on that segment to omit.</li>
-</ol>
-<p>The drawing half lives in <code>svg.py</code>: <code>_render_bridged_edge</code> splits the
-polyline at the gap span and renders each piece separately.</p>
-<h2 id="interactive-html-htmlpy">Interactive HTML (<code>html.py</code>)<a class="headerlink" href="#interactive-html-htmlpy" title="Permanent link">&para;</a></h2>
-<p><code>render_html(graph, theme, ...)</code> wraps <code>render_svg</code> in a self-contained
-HTML page.  It suppresses the SVG legend (the side panel takes its place)
-and returns a full HTML string.</p>
-<p>The HTML output has two delivery modes:</p>
+<h1 id="inter-section-dispatch-table">Inter-section dispatch table<a class="headerlink" href="#inter-section-dispatch-table" title="Permanent link">&para;</a></h1>
+<p>Inter-section edges (port/junction to port/junction) are routed by
+<code>_route_inter_section</code> in
+<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/routing/inter_section_handlers.py"><code>routing/inter_section_handlers.py</code></a>.
+It chooses the route's shape from a <strong>declarative table</strong>, <code>_INTER_SECTION_RULES</code>,
+rather than a hand-written if-ladder: one <code>_InterFacts</code> snapshot of the edge is
+matched against an ordered list of named rules, and the first whose predicate
+holds owns the route.</p>
+<p>Every rule's handler builds its route from a centreline through the
+<a href="../routing/">bundle builder</a> (<code>build_concentric_bundle</code> /
+<code>build_tapered_bundle</code>), so no handler assembles per-line points or corner
+radii by hand. The runtime curve guard (below) is a backstop, not the
+mechanism that keeps the routes correct.</p>
+<h2 id="the-fact-space">The fact space<a class="headerlink" href="#the-fact-space" title="Permanent link">&para;</a></h2>
+<p><code>_InterFacts</code> resolves the geometry and topology each rule keys on:</p>
 <ul>
-<li><strong>Standalone page</strong> (<code>_STANDALONE_TEMPLATE</code>): a full <code>&lt;!DOCTYPE html&gt;</code>
-  document with a two-column layout (canvas left, legend panel right).
-  Supports pan/zoom, per-line focus (click a line chip to dim everything
-  else and zoom to visible), station tooltips, and an embed modal that
-  generates copy-paste snippets.</li>
-<li><strong>Inline embed snippet</strong> (<code>_INLINE_TEMPLATE</code>, via <code>_build_inline_snippet</code>):
-  a <code>&lt;div&gt;</code> with scoped CSS and an IIFE — paste into any HTML host (MkDocs,
-  Confluence, blog templates) without hosting a separate file.</li>
+<li><strong>Relative position</strong> — the source and target grid columns and rows
+  (<code>src_col/row</code>, <code>tgt_col/row</code>), and the derived <code>same_y</code>, <code>same_x</code>,
+  <code>same_col</code>, <code>cross_row</code>, and <code>needs_bypass</code> (a multi-column hop with an
+  intervening section in the source <em>or</em> target row).</li>
+<li><strong>Exit side</strong> — whether the source is a LEFT/RIGHT exit port, a TOP/BOTTOM
+  perpendicular exit (<code>is_perp_exit</code>), a TB BOTTOM exit (<code>is_tb_bottom_exit</code>),
+  or a junction.</li>
+<li><strong>Entry side</strong> — <code>entry_side</code> is the target entry port's side
+  (LEFT/RIGHT/TOP/BOTTOM) or <code>None</code> when the target is a junction; <code>merge_ep</code>
+  is the resolved entry-port station when the target is a merge junction.</li>
 </ul>
-<p>Both modes share a single <code>_SHARED_JS</code> block (<code>attachMetroMap</code>) so the
-interaction behaviour is identical.  The embed snippet scopes CSS under a
-per-render hash (<code>.nfmm-&lt;sha1[:8]&gt;</code>) so multiple maps can coexist on one
-page.</p>
-<h2 id="manifest-manifestpy">Manifest (<code>manifest.py</code>)<a class="headerlink" href="#manifest-manifestpy" title="Permanent link">&para;</a></h2>
-<p><code>build_manifest(graph)</code> maps the laid-out <code>MetroGraph</code> onto the
-<a href="../../docs/manifest.md">embedded-manifest standard</a>: stations become nodes,
-sections become groups, and visual regions (section bboxes) become regions.
-The manifest is serialised to JSON and injected as a <code>&lt;metadata&gt;</code> element
-inside the SVG, keyed by <code>MANIFEST_ELEMENT_ID</code>.</p>
-<p>The tool-neutral serialisation/deserialisation logic lives in
-<code>nf_metro.manifest</code> (a dependency-free package built to be lifted into its
-own distribution).  <code>render/manifest.py</code> is the thin nf-metro-specific
-adapter: it imports from <code>nf_metro.manifest</code> and re-exports the public API
-so that existing <code>nf_metro.render.manifest</code> import paths keep working.</p>
-<p><code>manifest_metadata_svg(graph)</code> returns the raw SVG <code>&lt;metadata&gt;</code> XML string
-for cases where the caller assembles the SVG element manually.</p>
-<h2 id="animation-animatepy">Animation (<code>animate.py</code>)<a class="headerlink" href="#animation-animatepy" title="Permanent link">&para;</a></h2>
-<p><code>render_animation(d, graph, routes, station_offsets, theme)</code> appends
-animated <code>&lt;circle&gt;</code> elements with <code>&lt;animateMotion&gt;</code> to an existing
-<code>drawsvg.Drawing</code>.  It is called by <code>_render_svg_scaled</code> when <code>animate</code> is
-<code>True</code>.</p>
-<p>Each metro line gets one ball.  All balls are synchronised to the same
-cycle duration (<code>max_dur</code>, chosen so the slowest ball just finishes one
-lap per cycle) via <code>keyTimes</code>/<code>keyPoints</code>, so no ball restarts while
-another is still mid-track.</p>
-<h2 id="theming-stylepy">Theming (<code>style.py</code>)<a class="headerlink" href="#theming-stylepy" title="Permanent link">&para;</a></h2>
-<p><code>Theme</code> is a frozen dataclass of visual properties: colours, font sizes,
-line widths, station radii, animation speed, and legend layout.</p>
-<p>Built-in themes live in <code>src/nf_metro/themes/</code>:
-- <code>nfcore.py</code> — dark theme (default), matching nf-core visual style.
-- <code>light.py</code> — light theme variant.</p>
-<p>To add a theme: create a <code>Theme</code> instance and register it in
-<code>themes/__init__.py</code>'s <code>THEMES</code> dict under a string key; it then becomes
-selectable via <code>%%metro style: &lt;key&gt;</code> or <code>--style</code>.</p>
-<h2 id="module-map">Module map<a class="headerlink" href="#module-map" title="Permanent link">&para;</a></h2>
+<h2 id="the-rules-in-order">The rules, in order<a class="headerlink" href="#the-rules-in-order" title="Permanent link">&para;</a></h2>
+<p>The table is ordered: earlier rules shadow later ones, so the order encodes the
+precedence between overlapping cases. The first matching rule wins; if none
+match, the <strong>standard L-shape</strong> is the fall-through.</p>
 <table>
 <thead>
 <tr>
-<th>Module</th>
-<th>Responsibility</th>
+<th>#</th>
+<th>Rule</th>
+<th>Fires when</th>
+<th>Route</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>svg.py</code></td>
-<td><code>render_svg</code> entry point; <code>apply_route_offsets</code>; all drawing passes (sections, edges, stations, icons, labels, legend)</td>
+<td>1</td>
+<td><code>perp-exit</code></td>
+<td>source is a TOP/BOTTOM exit on a horizontal-flow section</td>
+<td><code>_route_perp_exit</code> (column-aligned drop, else up-and-over). Before the same-Y rule: an exit and entry sharing an edge Y would graze both boxes on a straight run.</td>
 </tr>
 <tr>
-<td><code>bridges.py</code></td>
-<td><code>compute_bridges</code> — detects genuine non-merging crossings and returns <code>BridgeBreak</code> gap spans; drawing is in <code>svg.py</code></td>
+<td>2</td>
+<td><code>same-Y straight</code></td>
+<td><code>same_y</code>, not <code>needs_bypass</code>, not a right-entry plough</td>
+<td>straight horizontal</td>
 </tr>
 <tr>
-<td><code>html.py</code></td>
-<td><code>render_html</code> — standalone HTML page and inline embed snippet around the SVG</td>
+<td>3</td>
+<td><code>TB bottom exit</code></td>
+<td>BOTTOM exit on a TB/BT section, with station offsets</td>
+<td><code>_route_tb_bottom_exit</code></td>
 </tr>
 <tr>
-<td><code>manifest.py</code></td>
-<td>nf-metro adapter for the embedded-manifest standard; <code>build_manifest</code>, <code>manifest_metadata_svg</code></td>
+<td>4</td>
+<td><code>TOP entry L-shape</code></td>
+<td><code>entry_side is TOP</code></td>
+<td><code>_route_top_entry_l_shape</code>. Before the same-X rule, which would drop straight in with no horizontal lead-in.</td>
 </tr>
 <tr>
-<td><code>animate.py</code></td>
-<td><code>render_animation</code> — animated balls via <code>&lt;animateMotion&gt;</code></td>
+<td>5</td>
+<td><code>same-X vertical drop</code></td>
+<td><code>same_x</code></td>
+<td>straight vertical</td>
 </tr>
 <tr>
-<td><code>style.py</code></td>
-<td><code>Theme</code> dataclass</td>
+<td>6</td>
+<td><code>bottom-exit junction</code></td>
+<td>source is a bottom-exit junction</td>
+<td><code>_route_bottom_exit_junction</code></td>
 </tr>
 <tr>
-<td><code>legend.py</code></td>
-<td><code>render_legend</code>, <code>compute_legend_dimensions</code></td>
+<td>7</td>
+<td><code>bypass family</code></td>
+<td><code>needs_bypass</code></td>
+<td><code>_route_bypass_family</code>: merge trunk/branch, LEFT-entry-one-row-below straight drop, RIGHT-entry wrap (gap-above or around-below), else the U-shaped bypass</td>
 </tr>
 <tr>
-<td><code>icons.py</code></td>
-<td><code>render_file_icon</code>, <code>render_files_icon</code>, <code>render_folder_icon</code></td>
+<td>8</td>
+<td><code>near-vertical same-col junction</code></td>
+<td>junction dropping almost straight into a same-column entry</td>
+<td><code>_route_near_vertical_junction</code></td>
 </tr>
 <tr>
-<td><code>constants.py</code></td>
-<td>render magic numbers (canvas padding, legend sizing, animation params, debug overlay); theme-dependent values remain in <code>style.py</code></td>
+<td>9</td>
+<td><code>RIGHT entry wrap</code></td>
+<td><code>entry_side is RIGHT</code> and travelling right</td>
+<td><code>_route_right_entry_wrap</code> (over the top / around the right side)</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>LEFT entry wrap family</code></td>
+<td><code>entry_side is LEFT</code>, <code>dx &lt; 0</code>, <code>cross_row</code></td>
+<td><code>_route_left_entry_family</code>: inter-row gap wrap, or the corridor / around-below loop when that gap crosses a section</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>serpentine LEFT exit -&gt; LEFT entry</code></td>
+<td>LEFT exit into a LEFT entry stacked in the same column</td>
+<td><code>_route_left_exit_left_entry_drop</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>merge entry family</code></td>
+<td><code>merge_ep is not None</code></td>
+<td><code>_route_merge_entry_family</code>: straight (near-collinear), corridor / around-below (LEFT entry crossing a section), else L-shape into the entry port</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>RIGHT entry plough -&gt; bypass</code></td>
+<td>a higher-row L-shape to a RIGHT entry that would plough an intervening same-row section</td>
+<td><code>_route_bypass</code></td>
+</tr>
+<tr>
+<td>—</td>
+<td><em>fall-through</em></td>
+<td>no rule matched</td>
+<td><code>_route_l_shape</code></td>
 </tr>
 </tbody>
 </table>
+<p>The three rules whose handlers carry their own residual decisions (7, 10, 12)
+own that logic inside the named handler, so the top-level table stays a single
+declarative pass.</p>
+<h2 id="the-curve-guard-is-a-backstop">The curve guard is a backstop<a class="headerlink" href="#the-curve-guard-is-a-backstop" title="Permanent link">&para;</a></h2>
+<p><code>assert_render_curve_invariants</code>
+(<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/routing/invariants.py"><code>routing/invariants.py</code></a>)
+runs on every render and the stage-boundary checks run under <code>validate=True</code>.
+Because every rule above builds its route through the centreline bundle builder
+— which makes a flipped, pinched, or collinear bundle impossible by
+construction — these checks are a thin safety net. In normal operation they
+never fire; a failure means a genuinely new, un-tabled shape reached the
+renderer built some other way, and the fix is to route it through the builder
+too, not to relax the guard.</p>
 
 
 
