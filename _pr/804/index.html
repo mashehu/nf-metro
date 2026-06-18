@@ -237,7 +237,7 @@
 </head>
 <body>
 <h1>Render diff - PR #804</h1>
-<p class="summary">8 changed out of 121 total renders. Generated 2026-06-18 07:39 UTC.</p>
+<p class="summary">3 changed out of 121 total renders. Generated 2026-06-18 08:21 UTC.</p>
 <details class="intro">
 <summary>What is this page?</summary>
 <p>
@@ -268,13 +268,8 @@ switch between side-by-side, base-only, and PR-only views.
 <p class="caption">Advisory only &mdash; nothing gates on these. Lower is better; <span class="m-better">green</span> improved, <span class="m-worse">red</span> regressed.</p>
 <table>
 <tr><th>Render</th><th>Crossings</th><th>Near-horiz.</th><th>Lone diag.</th><th>Label strikes</th><th>Excess gaps</th><th>Wasted canvas</th></tr>
-<tr><td><a href="#bypass_fan_in_outer_slot">bypass_fan_in_outer_slot</a></td><td class="m-flat">4</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">42%</td></tr>
+<tr><td><a href="#junction_entry_align">junction_entry_align</a></td><td class="m-flat">2</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">43%</td></tr>
 <tr><td><a href="#merge_trunk_out_of_range_section">merge_trunk_out_of_range_section</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">44%</td></tr>
-<tr><td><a href="#route_around_intervening">route_around_intervening</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">66%</td></tr>
-<tr><td><a href="#funcprofiler_upstream">funcprofiler_upstream</a></td><td class="m-flat">28</td><td class="m-flat">4</td><td class="m-flat">3</td><td class="m-flat">0</td><td class="m-flat">1</td><td class="m-flat">56%</td></tr>
-<tr><td><a href="#longread_variant_calling">longread_variant_calling</a></td><td class="m-flat">17</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">1</td><td class="m-flat">21%</td></tr>
-<tr><td><a href="#nf_variant_calling">nf_variant_calling</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">54%</td></tr>
-<tr><td><a href="#nf_variant_calling_tuned">nf_variant_calling_tuned</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">54%</td></tr>
 <tr><td><a href="#nf_with_subworkflows">nf_with_subworkflows</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">59%</td></tr>
 </table>
 </div>
@@ -282,33 +277,22 @@ switch between side-by-side, base-only, and PR-only views.
 <h2>Changed renders</h2>
 <h3><a href="#section-fold-topologies">Fold Topologies</a></h3>
 <ul>
-<li><a href="#bypass_fan_in_outer_slot">bypass_fan_in_outer_slot</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#junction_entry_align">junction_entry_align</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#merge_trunk_out_of_range_section">merge_trunk_out_of_range_section</a><span class="badge badge-changed">changed</span></li>
-<li><a href="#route_around_intervening">route_around_intervening</a><span class="badge badge-changed">changed</span></li>
-</ul>
-<h3><a href="#section-fan-out-and-fan-in">Fan-out and Fan-in</a></h3>
-<ul>
-<li><a href="#funcprofiler_upstream">funcprofiler_upstream</a><span class="badge badge-changed">changed</span></li>
-</ul>
-<h3><a href="#section-main-examples">Main Examples</a></h3>
-<ul>
-<li><a href="#longread_variant_calling">longread_variant_calling</a><span class="badge badge-changed">changed</span></li>
 </ul>
 <h3><a href="#section-nextflow-conversions">Nextflow Conversions</a></h3>
 <ul>
-<li><a href="#nf_variant_calling">nf_variant_calling</a><span class="badge badge-changed">changed</span></li>
-<li><a href="#nf_variant_calling_tuned">nf_variant_calling_tuned</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#nf_with_subworkflows">nf_with_subworkflows</a><span class="badge badge-changed">changed</span></li>
 </ul>
 </div>
 <h2 class="section-header" id="section-fold-topologies">Fold Topologies</h2>
 
-<div class="diff-entry" id="bypass_fan_in_outer_slot">
-<h3>Bypass Fan In Outer Slot <span class="badge badge-changed">changed</span></h3>
+<div class="diff-entry" id="junction_entry_align">
+<h3>Junction Entry Align <span class="badge badge-changed">changed</span></h3>
 <div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
 <div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/bypass_fan_in_outer_slot.svg" alt="Base: bypass_fan_in_outer_slot"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/bypass_fan_in_outer_slot.svg" alt="PR: bypass_fan_in_outer_slot"></div>
+<div class="side side-base"><h4>Base (main)</h4><img src="base/junction_entry_align.svg" alt="Base: junction_entry_align"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/junction_entry_align.svg" alt="PR: junction_entry_align"></div>
 </div>
 </div>
 
@@ -321,56 +305,7 @@ switch between side-by-side, base-only, and PR-only views.
 </div>
 </div>
 
-<div class="diff-entry" id="route_around_intervening">
-<h3>Route Around Intervening <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/route_around_intervening.svg" alt="Base: route_around_intervening"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/route_around_intervening.svg" alt="PR: route_around_intervening"></div>
-</div>
-</div>
-
-<h2 class="section-header" id="section-fan-out-and-fan-in">Fan-out and Fan-in</h2>
-
-<div class="diff-entry" id="funcprofiler_upstream">
-<h3>Funcprofiler Upstream <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/funcprofiler_upstream.svg" alt="Base: funcprofiler_upstream"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/funcprofiler_upstream.svg" alt="PR: funcprofiler_upstream"></div>
-</div>
-</div>
-
-<h2 class="section-header" id="section-main-examples">Main Examples</h2>
-
-<div class="diff-entry" id="longread_variant_calling">
-<h3>Longread Variant Calling <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/longread_variant_calling.svg" alt="Base: longread_variant_calling"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/longread_variant_calling.svg" alt="PR: longread_variant_calling"></div>
-</div>
-</div>
-
 <h2 class="section-header" id="section-nextflow-conversions">Nextflow Conversions</h2>
-
-<div class="diff-entry" id="nf_variant_calling">
-<h3>Nf Variant Calling <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling.svg" alt="Base: nf_variant_calling"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling.svg" alt="PR: nf_variant_calling"></div>
-</div>
-</div>
-
-<div class="diff-entry" id="nf_variant_calling_tuned">
-<h3>Nf Variant Calling Tuned <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/nf_variant_calling_tuned.svg" alt="Base: nf_variant_calling_tuned"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/nf_variant_calling_tuned.svg" alt="PR: nf_variant_calling_tuned"></div>
-</div>
-</div>
 
 <div class="diff-entry" id="nf_with_subworkflows">
 <h3>Nf With Subworkflows <span class="badge badge-changed">changed</span></h3>
