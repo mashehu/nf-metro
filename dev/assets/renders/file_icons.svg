@@ -8,11 +8,11 @@
 <rect x="22.0" y="66.8" width="204.0" height="216.8" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="inputs" data-section-lines="main" />
 <circle cx="33.0" cy="51.8" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="inputs" />
 <text x="33.0" y="51.8" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="inputs">1</text>
-<text x="49.0" y="51.8" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="inputs">Inputs</text>
+<text x="49.0" y="51.8" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="inputs">Inputs</text>
 <rect x="276.0" y="66.8" width="204.0" height="216.8" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="outputs" data-section-lines="main" />
 <circle cx="287.0" cy="51.8" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="outputs" />
 <text x="287.0" y="51.8" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="outputs">2</text>
-<text x="303.0" y="51.8" font-size="16.0" fill="#aaaaaa" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="outputs">Outputs</text>
+<text x="303.0" y="51.8" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="outputs">Outputs</text>
 <path d="M80.0,116.8 L113.5,116.8 Q123.5,116.8,128.06934981397032,125.69500097119553 L148.93065018602968,166.30499902880445 Q153.5,175.2,163.5,175.2 L176.0,175.2" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M80.0,233.6 L113.5,233.6 Q123.5,233.6,128.06934981397032,224.70499902880445 L148.93065018602968,184.09500097119553 Q153.5,175.2,163.5,175.2 L176.0,175.2" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M326.0,175.2 L347.5,175.2 Q357.5,175.2,362.0693498139703,166.30499902880445 L382.9306501860297,125.69500097119553 Q387.5,116.8,397.5,116.8 L422.0,116.8" stroke="#4CAF50" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
@@ -69,7 +69,9 @@
 <path d="M433.0,224.0 L459.0,224.0 Q461.0,224.0,461.0,226.0 L461.0,247.6 Q461.0,249.6,459.0,249.6 L435.0,249.6 Q433.0,249.6,433.0,247.6 L433.0,224.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
 <text x="447.0" y="236.8" font-size="5.476190476190476" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">Results</text>
 </g>
+<text x="326.0" y="186.2" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Collect</text>
 <text x="326.0" y="186.2" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="collect" class="nf-metro-station-label">Collect</text>
+<text x="176.0" y="161.2" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Align</text>
 <text x="176.0" y="161.2" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="align" class="nf-metro-station-label">Align</text>
 <rect x="22.0" y="313.6" width="121.60000000000001" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
 <path d="M34.0,337.6 L58.0,337.6" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" />
