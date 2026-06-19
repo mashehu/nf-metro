@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="476" height="450" viewBox="0 0 476 450">
+<defs>
+</defs>
+<style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
+.nf-metro-title { fill: var(--nfm-title-color, #ffffff); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #e0e0e0); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #373737); stroke: var(--nfm-section-stroke, #595959); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-section-num-circle { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
+<rect x="0" y="0" width="476" height="450" fill="#2b2b2b" class="nf-metro-bg" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Right Entry Wrap No Fan</text>
+<rect x="30.0" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="source" data-section-lines="a" />
+<circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="source" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="source">1</text>
+<text x="57.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="source">Source</text>
+<rect x="240.0" y="248.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="target" data-section-lines="a" />
+<circle cx="251.0" cy="233.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="target" />
+<text x="251.0" y="233.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="target">2</text>
+<text x="267.0" y="233.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="target">Target</text>
+<path d="M80.0,120.0 L140.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M350.0,298.0 L290.0,298.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M140.0,120.0 L190.0,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M400.0,298.0 L350.0,298.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M190.0,120.0 L196.0,120.0 Q206.0,120.0,206.0,130.0 L206.0,182.0 Q206.0,192.0,216.0,192.0 L406.0,192.0 Q416.0,192.0,416.0,202.0 L416.0,288.0 Q416.0,298.0,406.0,298.0 L400.0,298.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-a" data-line-id="a" />
+<rect x="75.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="s1" data-station-lines="a" data-station-label="Start" data-section-id="source" data-section-name="Source" />
+<rect x="135.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="s2" data-station-lines="a" data-station-label="Process" data-section-id="source" data-section-name="Source" />
+<rect x="345.0" y="293.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="t1" data-station-lines="a" data-station-label="Step One" data-section-id="target" data-section-name="Target" />
+<rect x="285.0" y="293.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="t2" data-station-lines="a" data-station-label="Step Two" data-section-id="target" data-section-name="Target" />
+<text x="80.0" y="131.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Start</text>
+<text x="80.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="s1" class="nf-metro-station-label">Start</text>
+<text x="350.0" y="309.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Step One</text>
+<text x="350.0" y="309.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="t1" class="nf-metro-station-label">Step One</text>
+<text x="140.0" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Process</text>
+<text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="s2" class="nf-metro-station-label">Process</text>
+<text x="290.0" y="284.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Step Two</text>
+<text x="290.0" y="284.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="t2" class="nf-metro-station-label">Step Two</text>
+<circle cx="206.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="206.0" cy="192.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="416.0" cy="192.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="416.0" cy="298.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<path d="M190.0,115.0 L195.0,120.0 L190.0,125.0 L185.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="190.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">source__exit_right_0 (right)</text>
+<path d="M400.0,293.0 L405.0,298.0 L400.0,303.0 L395.0,298.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="400.0" y="290.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">target__entry_right_1 (right)</text>
+<path d="M215.0,50.0 L215.0,368.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="215.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M10.0,209.0 L420.0,209.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="6.0" y="209.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
+<path d="M20.0,120.0 L200.0,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="16.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M230.0,298.0 L410.0,298.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="226.0" y="298.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 1 grid</text>
+<rect x="30.0" y="378.0" width="67.7" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
+<path d="M42.0,402.0 L66.0,402.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="402.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">A</text>
+<text x="446.0" y="442.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>

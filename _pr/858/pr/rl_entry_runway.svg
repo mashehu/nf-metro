@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="761" height="336" viewBox="0 0 761 336">
+<defs>
+</defs>
+<style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
+.nf-metro-title { fill: var(--nfm-title-color, #ffffff); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #e0e0e0); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #373737); stroke: var(--nfm-section-stroke, #595959); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-section-num-circle { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
+<rect x="0" y="0" width="761" height="336" fill="#2b2b2b" class="nf-metro-bg" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">RL Entry Runway</text>
+<rect x="505.5" y="70.0" width="196.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="src_sec" data-section-lines="l1,l2" />
+<circle cx="516.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="src_sec" />
+<text x="516.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="src_sec">1</text>
+<text x="532.5" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="src_sec">Source</text>
+<rect x="30.0" y="70.0" width="425.5" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="rl_sec" data-section-lines="l1,l2" />
+<circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="rl_sec" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="rl_sec">2</text>
+<text x="57.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="rl_sec">RL Section</text>
+<path d="M555.5,124.0 L568.0,124.0 Q578.0,124.0,584.0,132.0 L602.0,156.0 Q608.0,164.0,618.0,164.0 L651.5,164.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-l2" data-line-id="l2" />
+<path d="M345.5,124.0 L285.5,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-l2" data-line-id="l2" />
+<path d="M651.5,164.0 L560.5,164.0 Q550.5,164.0,544.5,156.0 L526.5,132.0 Q520.5,124.0,510.5,124.0 L505.5,124.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-l2" data-line-id="l2" />
+<path d="M455.5,124.0 L345.5,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-l2" data-line-id="l2" />
+<path d="M505.5,124.0 L455.5,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-l2" data-line-id="l2" />
+<path d="M555.5,120.0 L651.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-l1" data-line-id="l1" />
+<path d="M345.5,120.0 L285.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-l1" data-line-id="l1" />
+<path d="M285.5,120.0 L280.5,120.0 Q270.5,120.0,264.5,128.0 L246.5,152.0 Q240.5,160.0,230.5,160.0 L225.5,160.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-l1" data-line-id="l1" />
+<path d="M225.5,160.0 L116.0,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-l1" data-line-id="l1" />
+<path d="M651.5,120.0 L505.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-l1" data-line-id="l1" />
+<path d="M455.5,120.0 L450.5,120.0 Q440.5,120.0,434.5,128.0 L416.5,152.0 Q410.5,160.0,400.5,160.0 L116.0,160.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-l1" data-line-id="l1" />
+<path d="M505.5,120.0 L455.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-l1" data-line-id="l1" />
+<rect x="550.5" y="115.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="s1" data-station-lines="l1,l2" data-station-label="Start" data-section-id="src_sec" data-section-name="Source" />
+<rect x="646.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="s2" data-station-lines="l1" data-station-label="Prep A" data-section-id="src_sec" data-section-name="Source" />
+<rect x="646.5" y="159.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="s3" data-station-lines="l2" data-station-label="Prep B" data-section-id="src_sec" data-section-name="Source" />
+<rect x="340.5" y="115.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="r1" data-station-lines="l1,l2" data-station-label="Stage One" data-section-id="rl_sec" data-section-name="RL Section" />
+<rect x="280.5" y="115.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="r2" data-station-lines="l1,l2" data-station-label="Stage Two" data-section-id="rl_sec" data-section-name="RL Section" />
+<rect x="220.5" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="r3" data-station-lines="l1" data-station-label="Stage Three" data-section-id="rl_sec" data-section-name="RL Section" />
+<rect x="111.0" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="r4" data-station-lines="l1" data-station-label="Deep Target" data-section-id="rl_sec" data-section-name="RL Section" />
+<text x="345.5" y="135.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Stage One</text>
+<text x="345.5" y="135.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="r1" class="nf-metro-station-label">Stage One</text>
+<text x="555.5" y="109.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Start</text>
+<text x="555.5" y="109.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="s1" class="nf-metro-station-label">Start</text>
+<text x="285.5" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Stage Two</text>
+<text x="285.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="r2" class="nf-metro-station-label">Stage Two</text>
+<text x="651.5" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Prep A</text>
+<text x="651.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="s2" class="nf-metro-station-label">Prep A</text>
+<text x="651.5" y="175.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Prep B</text>
+<text x="651.5" y="175.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="s3" class="nf-metro-station-label">Prep B</text>
+<text x="225.5" y="171.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Stage Three</text>
+<text x="225.5" y="171.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="r3" class="nf-metro-station-label">Stage Three</text>
+<text x="116.0" y="146.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Deep Target</text>
+<text x="116.0" y="146.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="r4" class="nf-metro-station-label">Deep Target</text>
+<circle cx="578.0" cy="124.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="608.0" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="270.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="240.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="440.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="410.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="550.5" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="520.5" cy="124.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<path d="M505.5,115.0 L510.5,120.0 L505.5,125.0 L500.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="505.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">src_sec__exit_left_0 (left)</text>
+<path d="M455.5,115.0 L460.5,120.0 L455.5,125.0 L450.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="455.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">rl_sec__entry_right_1 (right)</text>
+<path d="M480.5,50.0 L480.5,230.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="480.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M495.5,120.0 L711.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="491.5" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M495.5,160.0 L711.5,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<path d="M20.0,120.0 L465.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="16.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M20.0,160.0 L465.5,160.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<rect x="30.0" y="240.0" width="75.4" height="72.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
+<path d="M42.0,264.0 L66.0,264.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="264.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">L1</text>
+<path d="M42.0,288.0 L66.0,288.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="288.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">L2</text>
+<text x="731.0" y="328.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
