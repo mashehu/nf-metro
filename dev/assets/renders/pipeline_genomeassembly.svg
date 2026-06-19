@@ -3,7 +3,16 @@
      width="1443" height="455" viewBox="0 0 1443 455">
 <defs>
 </defs>
-<rect x="0" y="0" width="1443" height="455" fill="#2b2b2b" />
+<style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
+.nf-metro-title { fill: var(--nfm-title-color, #ffffff); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #e0e0e0); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #373737); stroke: var(--nfm-section-stroke, #595959); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
+<rect x="0" y="0" width="1443" height="455" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">sanger-tol/genomeassembly</text>
 <rect x="22.0" y="70.0" width="204.0" height="143.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="raw_asm" data-section-lines="assemblies,hic_reads,long_reads" />
 <circle cx="33.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="raw_asm" />
@@ -230,14 +239,14 @@
 <text x="8.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
 <path d="M12.0,163.0 L1393.0,163.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <path d="M12.0,206.0 L1393.0,206.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
-<rect x="22.0" y="311.0" width="137.0" height="120.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<rect x="22.0" y="311.0" width="137.0" height="120.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
 <path d="M34.0,335.0 L58.0,335.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="335.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Assembly</text>
+<text x="70.0" y="335.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Assembly</text>
 <path d="M34.0,359.0 L58.0,359.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="359.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Long reads</text>
+<text x="70.0" y="359.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Long reads</text>
 <path d="M34.0,383.0 L58.0,383.0" stroke="#e6842a" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="383.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Hi-C reads</text>
+<text x="70.0" y="383.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Hi-C reads</text>
 <path d="M34.0,407.0 L58.0,407.0" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" />
-<text x="70.0" y="407.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">10X reads</text>
+<text x="70.0" y="407.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">10X reads</text>
 <text x="1413.0" y="447.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>

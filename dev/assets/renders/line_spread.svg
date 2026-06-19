@@ -3,7 +3,16 @@
      width="1170" height="449" viewBox="0 0 1170 449">
 <defs>
 </defs>
-<rect x="0" y="0" width="1170" height="449" fill="#2b2b2b" />
+<style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
+.nf-metro-title { fill: var(--nfm-title-color, #ffffff); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #e0e0e0); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #373737); stroke: var(--nfm-section-stroke, #595959); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
+<rect x="0" y="0" width="1170" height="449" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Line spread modes</text>
 <rect x="30.0" y="113.0" width="292.0" height="186.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="bundle_sec" data-section-lines="cfdna,dna,rna" />
 <circle cx="41.0" cy="98.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="bundle_sec" />
@@ -121,12 +130,12 @@
 <text x="908.0" y="211.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="r_filter" class="nf-metro-station-label">Filter</text>
 <text x="984.0" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Annotate</text>
 <text x="984.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="r_annotate" class="nf-metro-station-label">Annotate</text>
-<rect x="30.0" y="329.0" width="98.5" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<rect x="30.0" y="329.0" width="98.5" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
 <path d="M42.0,353.0 L66.0,353.0" stroke="#4CAF50" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="353.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">DNA</text>
+<text x="78.0" y="353.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">DNA</text>
 <path d="M42.0,377.0 L66.0,377.0" stroke="#2196F3" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="377.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">RNA</text>
+<text x="78.0" y="377.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">RNA</text>
 <path d="M42.0,401.0 L66.0,401.0" stroke="#E91E63" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="401.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">cfDNA</text>
+<text x="78.0" y="401.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">cfDNA</text>
 <text x="1140.0" y="441.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>

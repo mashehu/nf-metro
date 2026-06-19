@@ -3,7 +3,16 @@
      width="1979" height="554" viewBox="0 0 1979 554">
 <defs>
 </defs>
-<rect x="0" y="0" width="1979" height="554" fill="#2b2b2b" />
+<style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
+.nf-metro-title { fill: var(--nfm-title-color, #ffffff); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #e0e0e0); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #373737); stroke: var(--nfm-section-stroke, #595959); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
+<rect x="0" y="0" width="1979" height="554" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Long-read Variant Calling</text>
 <rect x="767.0" y="53.2" width="510.0" height="193.8" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocessing" data-section-lines="bam,fastq,other,ubam" />
 <circle cx="778.0" cy="38.2" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="preprocessing" />
@@ -215,18 +224,18 @@ sort/index" data-section-id="preprocessing" data-section-name="Pre-processing" /
 <text x="1122.0" y="208.2" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="samtools_sort_index" class="nf-metro-station-label"><tspan x="1122.0" dy="0em">samtools</tspan><tspan x="1122.0" dy="1.2em">sort/index</tspan></text>
 <text x="1227.0" y="183.2" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">mosdepth</text>
 <text x="1227.0" y="183.2" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="mosdepth" class="nf-metro-station-label">mosdepth</text>
-<rect x="100.0" y="63.2" width="113.9" height="168.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<rect x="100.0" y="63.2" width="113.9" height="168.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
 <path d="M112.0,87.2 L136.0,87.2" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
-<text x="148.0" y="87.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">uBAM</text>
+<text x="148.0" y="87.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">uBAM</text>
 <path d="M112.0,111.2 L136.0,111.2" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
-<text x="148.0" y="111.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">FASTQ</text>
+<text x="148.0" y="111.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">FASTQ</text>
 <path d="M112.0,135.2 L136.0,135.2" stroke="#f5c542" stroke-width="3.0" stroke-linecap="round" />
-<text x="148.0" y="135.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">BAM</text>
+<text x="148.0" y="135.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">BAM</text>
 <path d="M112.0,159.2 L136.0,159.2" stroke="#ff8c00" stroke-width="3.0" stroke-linecap="round" />
-<text x="148.0" y="159.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Other</text>
+<text x="148.0" y="159.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Other</text>
 <path d="M112.0,183.2 L136.0,183.2" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
-<text x="148.0" y="183.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">SNV VCF</text>
+<text x="148.0" y="183.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">SNV VCF</text>
 <path d="M112.0,207.2 L136.0,207.2" stroke="#9d4edd" stroke-width="3.0" stroke-linecap="round" />
-<text x="148.0" y="207.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">SV VCF</text>
+<text x="148.0" y="207.2" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">SV VCF</text>
 <text x="1949.0" y="546.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>

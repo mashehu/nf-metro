@@ -964,7 +964,7 @@ apply return <code>None</code>.</p>
 </ol>
 <p>After all edges are routed, <code>route_edges</code> runs a series of post-passes
 that adjust the assembled polylines as a set (for example
-<code>_spread_diagonal_bundles</code>, <code>_normalize_gap_channels</code>,
+<code>_spread_diagonal_bundles</code>, <code>_materialize_gap_slots</code>,
 <code>_normalize_bypass_trunks</code>, <code>_join_fanout_upstream_tails</code>).</p>
 <h2 id="bundles-and-offsets">Bundles and offsets<a class="headerlink" href="#bundles-and-offsets" title="Permanent link">&para;</a></h2>
 <p>When several lines travel between the same pair of endpoints they form a
@@ -1040,7 +1040,7 @@ dispatcher handles those degenerate cases directly.</p>
 </tr>
 <tr>
 <td><code>normalize.py</code></td>
-<td>channel and trunk normalization passes (<code>_normalize_gap_channels</code>, htrunk restacking, riser/port-approach alignment, …)</td>
+<td>channel and trunk normalization passes (<code>_materialize_gap_slots</code>, htrunk restacking, riser/port-approach alignment, …)</td>
 </tr>
 <tr>
 <td><code>common.py</code></td>

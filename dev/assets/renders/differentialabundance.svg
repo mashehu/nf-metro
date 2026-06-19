@@ -3,7 +3,16 @@
      width="1636" height="662" viewBox="0 0 1636 662">
 <defs>
 </defs>
-<rect x="0" y="0" width="1636" height="662" fill="#2b2b2b" />
+<style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
+.nf-metro-title { fill: var(--nfm-title-color, #ffffff); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #e0e0e0); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #373737); stroke: var(--nfm-section-stroke, #595959); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
+<rect x="0" y="0" width="1636" height="662" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/differentialabundance</text>
 <rect x="30.0" y="66.8" width="434.08000000000004" height="392.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="data_prep" data-section-lines="affy,geo,maxquant,rnaseq" />
 <circle cx="41.0" cy="51.8" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="data_prep" />
@@ -329,14 +338,14 @@
 <text x="341.58000000000004" y="219.60000000000002" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="validator" class="nf-metro-station-label">Validate</text>
 <text x="401.58000000000004" y="256.6" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Filter matrix</text>
 <text x="401.58000000000004" y="256.6" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="matrix_filter" class="nf-metro-station-label">Filter matrix</text>
-<rect x="1344.8799999999999" y="508.80000000000007" width="221.70000000000002" height="120.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<rect x="1344.8799999999999" y="508.80000000000007" width="221.70000000000002" height="120.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
 <path d="M1356.8799999999999,532.8000000000001 L1380.8799999999999,532.8000000000001" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" />
-<text x="1392.8799999999999" y="532.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">RNA-seq counts</text>
+<text x="1392.8799999999999" y="532.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">RNA-seq counts</text>
 <path d="M1356.8799999999999,556.8000000000001 L1380.8799999999999,556.8000000000001" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" />
-<text x="1392.8799999999999" y="556.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Affymetrix microarray</text>
+<text x="1392.8799999999999" y="556.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Affymetrix microarray</text>
 <path d="M1356.8799999999999,580.8000000000001 L1380.8799999999999,580.8000000000001" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
-<text x="1392.8799999999999" y="580.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">MaxQuant proteomics</text>
+<text x="1392.8799999999999" y="580.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">MaxQuant proteomics</text>
 <path d="M1356.8799999999999,604.8000000000001 L1380.8799999999999,604.8000000000001" stroke="#756bb1" stroke-width="3.0" stroke-linecap="round" />
-<text x="1392.8799999999999" y="604.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">GEO SOFT file</text>
+<text x="1392.8799999999999" y="604.8000000000001" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">GEO SOFT file</text>
 <text x="1606.0" y="654.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
