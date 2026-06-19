@@ -16,7 +16,7 @@
         <link rel="prev" href="../guide/">
       
       
-        <link rel="next" href="../live/">
+        <link rel="next" href="../embed/">
       
       
         
@@ -563,14 +563,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../live/" class="md-nav__link">
+      <a href="../embed/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Live progress
+    Embed contract
   
 
     
@@ -617,14 +617,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../embed/" class="md-nav__link">
+      <a href="../live/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Embed contract
+    Live progress
   
 
     
@@ -1498,43 +1498,23 @@ the overlay is a cheap, disposable status layer. The coordinate-space rules:</p>
 <li>Each node's <code>x</code>/<code>y</code>/<code>r</code> are absolute units in that space, so an overlay
   marker at <code>(x, y)</code> lands on the node.</li>
 </ul>
-<p>A worked end-to-end example - read the embedded manifest, match a runtime
-process name to a node, and draw a status layer with <code>overlay_svg()</code> - is in the
-manifest tutorial:
-<strong><a href="../manifest/#tutorial-light-up-a-diagram-as-a-job-runs">Light up a diagram as a job runs</a></strong>.</p>
-<p>The sketch, in Python:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.manifest</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_manifest</span><span class="p">,</span> <span class="n">match_node_ids</span><span class="p">,</span> <span class="n">overlay_svg</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">manifest</span> <span class="o">=</span> <span class="n">read_manifest</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pipeline.svg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">status_layer</span><span class="p">(</span><span class="n">states</span><span class="p">):</span>  <span class="c1"># {node_id: &quot;running&quot; | &quot;done&quot; | ...}</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;running&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffc23a&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="p">:</span> <span class="s2">&quot;#2bee92&quot;</span><span class="p">,</span> <span class="s2">&quot;failed&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff4d4d&quot;</span><span class="p">}</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="n">markers</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        <span class="sa">f</span><span class="s1">&#39;&lt;circle cx=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; cy=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; r=&quot;</span><span class="si">{</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s1">&quot; fill=&quot;none&quot; &#39;</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="sa">f</span><span class="s1">&#39;stroke=&quot;</span><span class="si">{</span><span class="n">colors</span><span class="p">[</span><span class="n">states</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]]]</span><span class="si">}</span><span class="s1">&quot; stroke-width=&quot;3.5&quot;/&gt;&#39;</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">states</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="p">)</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="k">return</span> <span class="n">overlay_svg</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">markers</span><span class="p">,</span> <span class="n">extra_attrs</span><span class="o">=</span><span class="s1">&#39;style=&quot;pointer-events:none&quot;&#39;</span><span class="p">)</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="c1"># On each event from your runtime:</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="c1">#   ids = match_node_ids(manifest, &quot;NFCORE_RNASEQ:RNASEQ:ALIGN_STAR_SALMON:STAR_ALIGN&quot;)</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="c1">#   update a {node_id: state} map, then re-render status_layer(states) on top.</span>
-</code></pre></div>
-<p>For a ready-made server that does exactly this for a live Nextflow run, see
-<a href="../live/">Live progress</a>.</p>
+<p>The recipe is always the same three steps: <code>read_manifest</code> the committed SVG,
+<code>match_node_ids</code> each runtime event to a node, and redraw an <code>overlay_svg()</code>
+status layer over the base. The manifest tutorial,
+<strong><a href="../manifest/#tutorial-light-up-a-diagram-as-a-job-runs">Light up a diagram as a job runs</a></strong>,
+walks it end to end in ~50 lines of Python (with the matching semantics and the
+node state model documented alongside it on the <a href="../manifest/">Data manifest</a>
+page).</p>
+<p>For a ready-made server that does exactly this for a live Nextflow run - no code
+to write - see <a href="../live/">Live progress</a>.</p>
 <h2 id="versioning-and-stability">Versioning and stability<a class="headerlink" href="#versioning-and-stability" title="Permanent link">&para;</a></h2>
 <p>The manifest schema and the driver contract are versioned independently, both
-<code>1.0</code> today:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.manifest</span><span class="w"> </span><span class="kn">import</span> <span class="n">MANIFEST_SCHEMA_VERSION</span>       <span class="c1"># &quot;1.0&quot;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nf_metro.render.driver</span><span class="w"> </span><span class="kn">import</span> <span class="n">DRIVER_CONTRACT_VERSION</span>  <span class="c1"># &quot;1.0&quot;</span>
-</code></pre></div>
-<p>The schema version is <code>major.minor</code>: the minor part increments for additive,
-backward-compatible changes; the major part for breaking ones. <strong>Consumers must
-ignore unknown fields.</strong> Stable surface (keyed to the version): the <code>data-*</code>
-attribute names, the manifest fields, the <code>0 0 w h</code> coordinate rule, and the
-driver method names. Everything else - exact pixel coordinates, internal class
-names beyond the documented ones, the layout - is internal and may change.
-Until a stability notice, pin to a specific nf-metro release.</p>
+<code>1.0</code> today. The stable surface keyed to those versions - the <code>data-*</code> attribute
+names, the manifest fields, the <code>0 0 w h</code> coordinate rule, and the driver method
+names - and the <code>major.minor</code> rules for changing it are specified under
+<a href="../embed/#versioning">Versioning</a> on the Embed contract page. <strong>Consumers must
+ignore unknown fields</strong>, and until a stability notice, pin to a specific
+nf-metro release.</p>
 <h2 id="attribution">Attribution<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h2>
 <p>Rendered maps carry a small <code>created with nf-metro</code> watermark in the corner. It
 stays by default, <strong>including in <code>--bare</code> mode</strong>. Please keep it on embedded

@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/live/">
       
       
-        <link rel="prev" href="../embedding/">
+        <link rel="prev" href="../manifest/">
       
       
-        <link rel="next" href="../manifest/">
+        <link rel="next" href="../nextflow/">
       
       
         
@@ -314,6 +314,60 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../embed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embed contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -530,60 +584,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../manifest/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Data manifest
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../embed/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Embed contract
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1214,6 +1214,8 @@ are a standalone contract documented on the <a href="../manifest/">Data manifest
 the same standard any non-metro tool can emit. Set <code>%%metro manifest: false</code>
 (or <code>--no-manifest</code>) to emit the drawn map only, with no manifest, no
 <code>data-node-*</code> attributes, and no station-group wrapper.</p>
+<p><code>serve</code> is one ready-made consumer of that manifest. To drive the overlay from
+your <strong>own</strong> application instead, see the <a href="../embedding/">Embedding guide</a>.</p>
 <h2 id="2-serve-the-map">2. Serve the map<a class="headerlink" href="#2-serve-the-map" title="Permanent link">&para;</a></h2>
 <p><code>serve</code> hosts <strong>one</strong> map at a stable URL. Each run's <code>started</code> event resets it,
 so it's the mode for iterating on a single pipeline - re-run and watch the same

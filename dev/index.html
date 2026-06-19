@@ -556,14 +556,14 @@
   
   
     <li class="md-nav__item">
-      <a href="live/" class="md-nav__link">
+      <a href="embed/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Live progress
+    Embed contract
   
 
     
@@ -610,14 +610,14 @@
   
   
     <li class="md-nav__item">
-      <a href="embed/" class="md-nav__link">
+      <a href="live/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Embed contract
+    Live progress
   
 
     
@@ -1459,13 +1459,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>pipeline.mmd<span class="w"> </span>--format<span class="w"> </span>html<span class="w"> </span>-o<span class="w"> </span>pipeline.html
 </code></pre></div>
 <p>The page supports drag-to-pan, scroll-to-zoom, station hover tooltips, and a clickable line legend. Clicking a line isolates it: stations and sections not carrying that line are hidden and the view zooms to the bounding box of what remains. Click again, hit <code>Esc</code>, or use the Reset button to restore.</p>
-<p>The <strong>Embed&hellip;</strong> button opens a panel with three copyable snippets:</p>
-<ul>
-<li><strong>Inline HTML</strong> - a self-contained <code>&lt;div&gt;</code> you paste into any HTML host (MkDocs, Confluence, Notion, blog templates). Keeps full interactivity, no iframe.</li>
-<li><strong>iframe</strong> - a one-liner pointing at the hosted <code>.html</code> file.</li>
-<li><strong>Static SVG</strong> - the raw <code>&lt;svg&gt;</code> markup for hosts that strip scripts.</li>
-</ul>
-<p>GitHub READMEs strip <code>&lt;script&gt;</code> tags, so embed there as a static SVG (or link out to a hosted version). Most static-site generators and internal wikis run the inline-HTML snippet as-is.</p>
+<p>The <strong>Embed&hellip;</strong> button opens a panel with copyable inline-HTML, iframe, and static-SVG snippets. The <a href="embedding/">Embedding guide</a> explains when to reach for each, plus responsive sizing, font portability, host theming, and progress overlays.</p>
 <h3 id="nf-metro-convert"><code>nf-metro convert</code><a class="headerlink" href="#nf-metro-convert" title="Permanent link">&para;</a></h3>
 <p>Convert a Nextflow <code>-with-dag</code> mermaid file to nf-metro format.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nf-metro convert [OPTIONS] INPUT_FILE
