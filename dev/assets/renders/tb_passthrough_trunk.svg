@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="442" height="499" viewBox="0 0 442 499">
+<defs>
+</defs>
+<rect x="0" y="0" width="442" height="499" fill="#2b2b2b" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">TB pass-through trunk</text>
+<rect x="30.0" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="analysis" data-section-lines="affy,mq,rna" />
+<circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="analysis" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="analysis">1</text>
+<text x="57.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="analysis">Analysis</text>
+<rect x="240.0" y="70.0" width="142.0" height="279.4" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="reporting" data-section-lines="affy,mq,rna" />
+<circle cx="251.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="reporting" />
+<text x="251.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="reporting">2</text>
+<text x="267.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="reporting">Reporting</text>
+<path d="M80.0,128.0 L140.0,128.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-mq" data-line-id="mq" />
+<path d="M332.0,160.0 L332.0,200.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-mq" data-line-id="mq" />
+<path d="M332.0,200.0 L332.0,240.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-mq" data-line-id="mq" />
+<path d="M332.0,240.0 L332.0,280.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-mq" data-line-id="mq" />
+<path d="M140.0,128.0 L190.0,128.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-mq" data-line-id="mq" />
+<path d="M240.0,128.0 L322.0,128.0 Q332.0,128.0,332.0,138.0 L332.0,160.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-mq" data-line-id="mq" />
+<path d="M190.0,128.0 L240.0,128.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" class="metro-line-mq" data-line-id="mq" />
+<path d="M80.0,124.0 L140.0,124.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-affy" data-line-id="affy" />
+<path d="M336.0,160.0 L336.0,200.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-affy" data-line-id="affy" />
+<path d="M336.0,200.0 L336.0,240.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-affy" data-line-id="affy" />
+<path d="M336.0,240.0 L336.0,280.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-affy" data-line-id="affy" />
+<path d="M140.0,124.0 L190.0,124.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-affy" data-line-id="affy" />
+<path d="M240.0,124.0 L322.0,124.0 Q336.0,124.0,336.0,138.0 L336.0,160.0" stroke="#e6550d" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-affy" data-line-id="affy" />
+<path d="M190.0,124.0 L240.0,124.0" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" class="metro-line-affy" data-line-id="affy" />
+<path d="M80.0,120.0 L140.0,120.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M340.0,160.0 L340.0,200.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M340.0,200.0 L340.0,240.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M340.0,240.0 L340.0,280.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M140.0,120.0 L190.0,120.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M240.0,120.0 L322.0,120.0 Q340.0,120.0,340.0,138.0 L340.0,160.0" stroke="#1f9e89" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-rna" data-line-id="rna" />
+<path d="M190.0,120.0 L240.0,120.0" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" class="metro-line-rna" data-line-id="rna" />
+<rect x="75.0" y="115.0" width="10.0" height="18.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="align" data-station-lines="affy,mq,rna" data-station-label="Align" data-section-id="analysis" data-section-name="Analysis" />
+<rect x="135.0" y="115.0" width="10.0" height="18.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="call" data-station-lines="affy,mq,rna" data-station-label="Call" data-section-id="analysis" data-section-name="Analysis" />
+<rect x="327.0" y="155.0" width="18.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="collect" data-station-lines="affy,mq,rna" data-station-label="Collect" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="327.0" y="195.0" width="18.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="annotate" data-station-lines="affy,mq,rna" data-station-label="Annotate" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="327.0" y="235.0" width="18.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="package" data-station-lines="affy,mq,rna" data-station-label="Package" data-section-id="reporting" data-section-name="Reporting" />
+<rect x="327.0" y="275.0" width="18.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bundle_zip" data-station-lines="affy,mq,rna" data-station-label="bundle_zip" data-section-id="reporting" data-section-name="Reporting" />
+<g data-station-id="bundle_zip">
+<path d="M324.0,291.0 L342.0,291.0 L350.0,299.0 L350.0,321.0 Q350.0,323.0,348.0,323.0 L324.0,323.0 Q322.0,323.0,322.0,321.0 L322.0,293.0 Q322.0,291.0,324.0,291.0 Z" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-linejoin="round" />
+<path d="M342.0,291.0 L342.0,299.0 L350.0,299.0 Z" fill="#333333" opacity="0.15" stroke="none" />
+<path d="M342.0,291.0 L342.0,299.0 L350.0,299.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
+<text x="336.0" y="308.2" font-size="7.5" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">ZIP</text>
+<text x="336.0" y="327.0" font-size="7.8" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging">Bundle</text>
+</g>
+<text x="80.0" y="139.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Align</text>
+<text x="80.0" y="139.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="align" class="nf-metro-station-label">Align</text>
+<text x="318.0" y="160.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Collect</text>
+<text x="318.0" y="160.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="collect" class="nf-metro-station-label">Collect</text>
+<text x="140.0" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Call</text>
+<text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="call" class="nf-metro-station-label">Call</text>
+<text x="318.0" y="200.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Annotate</text>
+<text x="318.0" y="200.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="annotate" class="nf-metro-station-label">Annotate</text>
+<text x="318.0" y="240.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Package</text>
+<text x="318.0" y="240.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="package" class="nf-metro-station-label">Package</text>
+<rect x="30.0" y="379.4" width="137.0" height="96.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" />
+<path d="M42.0,403.4 L66.0,403.4" stroke="#1f9e89" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="403.4" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">RNA-seq</text>
+<path d="M42.0,427.4 L66.0,427.4" stroke="#e6550d" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="427.4" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">Affymetrix</text>
+<path d="M42.0,451.4 L66.0,451.4" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="451.4" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em">MaxQuant</text>
+<text x="412.0" y="491.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
