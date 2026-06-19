@@ -1019,7 +1019,7 @@ apply return <code>None</code>.</p>
 <p>After all edges are routed, <code>route_edges</code> runs a series of post-passes
 that adjust the assembled polylines as a set (for example
 <code>_spread_diagonal_bundles</code>, <code>_materialize_gap_slots</code>,
-<code>_normalize_bypass_trunks</code>, <code>_join_fanout_upstream_tails</code>).</p>
+<code>_materialize_trunk_slots</code>, <code>_coincide_same_line_tracks</code>).</p>
 <h2 id="bundles-and-offsets">Bundles and offsets<a class="headerlink" href="#bundles-and-offsets" title="Permanent link">&para;</a></h2>
 <p>When several lines travel between the same pair of endpoints they form a
 <strong>bundle</strong>.  Per-line offsets (computed by <code>compute_station_offsets</code>,
