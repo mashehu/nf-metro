@@ -424,12 +424,12 @@
     "wasted_canvas": 0.529
   },
   "longread_variant_calling.svg": {
-    "crossings": 17.0,
+    "crossings": 19.0,
     "excessive_gaps": 1.0,
     "label_strikes": 0.0,
     "near_horizontal": 0.0,
     "single_diagonals": 0.0,
-    "wasted_canvas": 0.204
+    "wasted_canvas": 0.189
   },
   "lr_perp_bottom_exit_perp_entry.svg": {
     "crossings": 0.0,
@@ -519,6 +519,14 @@
     "single_diagonals": 0.0,
     "wasted_canvas": 0.695
   },
+  "merge_around_below_leftmost.svg": {
+    "crossings": 0.0,
+    "excessive_gaps": 0.0,
+    "label_strikes": 0.0,
+    "near_horizontal": 0.0,
+    "single_diagonals": 0.0,
+    "wasted_canvas": 0.434
+  },
   "merge_bottom_row_bypass.svg": {
     "crossings": 0.0,
     "excessive_gaps": 0.0,
@@ -526,6 +534,14 @@
     "near_horizontal": 0.0,
     "single_diagonals": 0.0,
     "wasted_canvas": 0.384
+  },
+  "merge_leftmost_sink_branch.svg": {
+    "crossings": 0.0,
+    "excessive_gaps": 0.0,
+    "label_strikes": 0.0,
+    "near_horizontal": 0.0,
+    "single_diagonals": 0.0,
+    "wasted_canvas": 0.42
   },
   "merge_offrow_continuation.svg": {
     "crossings": 0.0,
@@ -775,6 +791,14 @@
     "single_diagonals": 0.0,
     "wasted_canvas": 0.411
   },
+  "right_entry_from_above.svg": {
+    "crossings": 0.0,
+    "excessive_gaps": 0.0,
+    "label_strikes": 0.0,
+    "near_horizontal": 0.0,
+    "single_diagonals": 0.0,
+    "wasted_canvas": 0.501
+  },
   "right_entry_gap_above_empty_row.svg": {
     "crossings": 0.0,
     "excessive_gaps": 0.0,
@@ -894,6 +918,14 @@
     "near_horizontal": 0.0,
     "single_diagonals": 0.0,
     "wasted_canvas": 0.739
+  },
+  "stacked_left_exit_drop.svg": {
+    "crossings": 0.0,
+    "excessive_gaps": 0.0,
+    "label_strikes": 0.0,
+    "near_horizontal": 0.0,
+    "single_diagonals": 0.0,
+    "wasted_canvas": 0.57
   },
   "stacked_lr_serpentine.svg": {
     "crossings": 0.0,
