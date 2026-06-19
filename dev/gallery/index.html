@@ -1441,6 +1441,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#merge-bottom-row-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge Bottom Row Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#merge-pullaway" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2893,6 +2904,17 @@
     <span class="md-ellipsis">
       
         Merge Trunk Over Low Section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-bottom-row-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge Bottom Row Bypass
       
     </span>
   </a>
@@ -8154,53 +8176,107 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Merge Trunk Over Low Section" src="../assets/renders/merge_trunk_over_low_section.svg" /></p>
-<h3 id="merge-pullaway">Merge Pullaway<a class="headerlink" href="#merge-pullaway" title="Permanent link">&para;</a></h3>
-<p>One line converges on a merge from two stacked rows of the same column; the cross-row feeder drops onto the trunk's pull-away bypass channel and the two travel as a single stroke into the entry.</p>
+<h3 id="merge-bottom-row-bypass">Merge Bottom Row Bypass<a class="headerlink" href="#merge-bottom-row-bypass" title="Permanent link">&para;</a></h3>
+<p>A merge whose entry sits in the bottommost grid row: the trunk's inter-row bypass routes in the cramped gap above that row. Placement reserves the gap so the channel clears the upper row's section boxes instead of grazing them.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/merge_pullaway.mmd<span class="w"> </span>-o<span class="w"> </span>merge_pullaway.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/merge_bottom_row_bypass.mmd<span class="w"> </span>-o<span class="w"> </span>merge_bottom_row_bypass.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a>%%metro title: Merge trunk pull-away cross-row sibling
+<div class="highlight"><pre><span></span><code><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a>%%metro title: Bottommost-Row Merge Inter-Row Bypass
 <a id="__codelineno-159-2" name="__codelineno-159-2" href="#__codelineno-159-2"></a>%%metro style: dark
-<a id="__codelineno-159-3" name="__codelineno-159-3" href="#__codelineno-159-3"></a>%%metro line: main | Main | #0570b0
-<a id="__codelineno-159-4" name="__codelineno-159-4" href="#__codelineno-159-4"></a>%%metro grid: wide_src | 0,0
-<a id="__codelineno-159-5" name="__codelineno-159-5" href="#__codelineno-159-5"></a>%%metro grid: obstacle | 1,0
-<a id="__codelineno-159-6" name="__codelineno-159-6" href="#__codelineno-159-6"></a>%%metro grid: sibling_sec | 0,1
-<a id="__codelineno-159-7" name="__codelineno-159-7" href="#__codelineno-159-7"></a>%%metro grid: side_dst | 2,1
-<a id="__codelineno-159-8" name="__codelineno-159-8" href="#__codelineno-159-8"></a>%%metro grid: target | 2,0
-<a id="__codelineno-159-9" name="__codelineno-159-9" href="#__codelineno-159-9"></a>
-<a id="__codelineno-159-10" name="__codelineno-159-10" href="#__codelineno-159-10"></a>graph LR
-<a id="__codelineno-159-11" name="__codelineno-159-11" href="#__codelineno-159-11"></a>    subgraph wide_src [Wide Source]
-<a id="__codelineno-159-12" name="__codelineno-159-12" href="#__codelineno-159-12"></a>        w1[Start]
-<a id="__codelineno-159-13" name="__codelineno-159-13" href="#__codelineno-159-13"></a>        w2[Out]
-<a id="__codelineno-159-14" name="__codelineno-159-14" href="#__codelineno-159-14"></a>        w1 --&gt;|main| w2
-<a id="__codelineno-159-15" name="__codelineno-159-15" href="#__codelineno-159-15"></a>    end
-<a id="__codelineno-159-16" name="__codelineno-159-16" href="#__codelineno-159-16"></a>    subgraph obstacle [Obstacle]
-<a id="__codelineno-159-17" name="__codelineno-159-17" href="#__codelineno-159-17"></a>        o1[Block]
-<a id="__codelineno-159-18" name="__codelineno-159-18" href="#__codelineno-159-18"></a>        o2[Pass]
-<a id="__codelineno-159-19" name="__codelineno-159-19" href="#__codelineno-159-19"></a>        o1 --&gt;|main| o2
-<a id="__codelineno-159-20" name="__codelineno-159-20" href="#__codelineno-159-20"></a>    end
-<a id="__codelineno-159-21" name="__codelineno-159-21" href="#__codelineno-159-21"></a>    subgraph sibling_sec [Sibling]
-<a id="__codelineno-159-22" name="__codelineno-159-22" href="#__codelineno-159-22"></a>        s1[Step]
-<a id="__codelineno-159-23" name="__codelineno-159-23" href="#__codelineno-159-23"></a>        s2[Done]
-<a id="__codelineno-159-24" name="__codelineno-159-24" href="#__codelineno-159-24"></a>        s1 --&gt;|main| s2
-<a id="__codelineno-159-25" name="__codelineno-159-25" href="#__codelineno-159-25"></a>    end
-<a id="__codelineno-159-26" name="__codelineno-159-26" href="#__codelineno-159-26"></a>    subgraph side_dst [Side Dest]
-<a id="__codelineno-159-27" name="__codelineno-159-27" href="#__codelineno-159-27"></a>        sd1[Side]
-<a id="__codelineno-159-28" name="__codelineno-159-28" href="#__codelineno-159-28"></a>        sd2[Out]
-<a id="__codelineno-159-29" name="__codelineno-159-29" href="#__codelineno-159-29"></a>        sd1 --&gt;|main| sd2
-<a id="__codelineno-159-30" name="__codelineno-159-30" href="#__codelineno-159-30"></a>    end
-<a id="__codelineno-159-31" name="__codelineno-159-31" href="#__codelineno-159-31"></a>    subgraph target [Target]
-<a id="__codelineno-159-32" name="__codelineno-159-32" href="#__codelineno-159-32"></a>        %%metro entry: left | main
-<a id="__codelineno-159-33" name="__codelineno-159-33" href="#__codelineno-159-33"></a>        t1[Merge]
-<a id="__codelineno-159-34" name="__codelineno-159-34" href="#__codelineno-159-34"></a>        t2[Report]
-<a id="__codelineno-159-35" name="__codelineno-159-35" href="#__codelineno-159-35"></a>        t1 --&gt;|main| t2
-<a id="__codelineno-159-36" name="__codelineno-159-36" href="#__codelineno-159-36"></a>    end
-<a id="__codelineno-159-37" name="__codelineno-159-37" href="#__codelineno-159-37"></a>    w2 --&gt;|main| o1
-<a id="__codelineno-159-38" name="__codelineno-159-38" href="#__codelineno-159-38"></a>    w2 --&gt;|main| t1
-<a id="__codelineno-159-39" name="__codelineno-159-39" href="#__codelineno-159-39"></a>    s2 --&gt;|main| sd1
-<a id="__codelineno-159-40" name="__codelineno-159-40" href="#__codelineno-159-40"></a>    s2 --&gt;|main| t1
+<a id="__codelineno-159-3" name="__codelineno-159-3" href="#__codelineno-159-3"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-159-4" name="__codelineno-159-4" href="#__codelineno-159-4"></a>%%metro line: b | B | #0570b0
+<a id="__codelineno-159-5" name="__codelineno-159-5" href="#__codelineno-159-5"></a>%%metro grid: src_fanA | 2,0
+<a id="__codelineno-159-6" name="__codelineno-159-6" href="#__codelineno-159-6"></a>%%metro grid: src_fanB | 2,1
+<a id="__codelineno-159-7" name="__codelineno-159-7" href="#__codelineno-159-7"></a>%%metro grid: side_a | 3,0
+<a id="__codelineno-159-8" name="__codelineno-159-8" href="#__codelineno-159-8"></a>%%metro grid: middle | 1,1
+<a id="__codelineno-159-9" name="__codelineno-159-9" href="#__codelineno-159-9"></a>%%metro grid: target | 0,2
+<a id="__codelineno-159-10" name="__codelineno-159-10" href="#__codelineno-159-10"></a>
+<a id="__codelineno-159-11" name="__codelineno-159-11" href="#__codelineno-159-11"></a>graph LR
+<a id="__codelineno-159-12" name="__codelineno-159-12" href="#__codelineno-159-12"></a>    subgraph src_fanA [Fan Source A]
+<a id="__codelineno-159-13" name="__codelineno-159-13" href="#__codelineno-159-13"></a>        fsa1[In]
+<a id="__codelineno-159-14" name="__codelineno-159-14" href="#__codelineno-159-14"></a>        fsa2[Out]
+<a id="__codelineno-159-15" name="__codelineno-159-15" href="#__codelineno-159-15"></a>        fsa1 --&gt;|a| fsa2
+<a id="__codelineno-159-16" name="__codelineno-159-16" href="#__codelineno-159-16"></a>    end
+<a id="__codelineno-159-17" name="__codelineno-159-17" href="#__codelineno-159-17"></a>    subgraph src_fanB [Fan Source B]
+<a id="__codelineno-159-18" name="__codelineno-159-18" href="#__codelineno-159-18"></a>        fsb1[In]
+<a id="__codelineno-159-19" name="__codelineno-159-19" href="#__codelineno-159-19"></a>        fsb2[Out]
+<a id="__codelineno-159-20" name="__codelineno-159-20" href="#__codelineno-159-20"></a>        fsb1 --&gt;|a| fsb2
+<a id="__codelineno-159-21" name="__codelineno-159-21" href="#__codelineno-159-21"></a>    end
+<a id="__codelineno-159-22" name="__codelineno-159-22" href="#__codelineno-159-22"></a>    subgraph side_a [Side]
+<a id="__codelineno-159-23" name="__codelineno-159-23" href="#__codelineno-159-23"></a>        %%metro entry: left | a
+<a id="__codelineno-159-24" name="__codelineno-159-24" href="#__codelineno-159-24"></a>        sia1[Side]
+<a id="__codelineno-159-25" name="__codelineno-159-25" href="#__codelineno-159-25"></a>        sia2[Out]
+<a id="__codelineno-159-26" name="__codelineno-159-26" href="#__codelineno-159-26"></a>        sia1 --&gt;|a| sia2
+<a id="__codelineno-159-27" name="__codelineno-159-27" href="#__codelineno-159-27"></a>    end
+<a id="__codelineno-159-28" name="__codelineno-159-28" href="#__codelineno-159-28"></a>    subgraph middle [Middle]
+<a id="__codelineno-159-29" name="__codelineno-159-29" href="#__codelineno-159-29"></a>        m1[Process]
+<a id="__codelineno-159-30" name="__codelineno-159-30" href="#__codelineno-159-30"></a>        m2[Out]
+<a id="__codelineno-159-31" name="__codelineno-159-31" href="#__codelineno-159-31"></a>        m1 --&gt;|b| m2
+<a id="__codelineno-159-32" name="__codelineno-159-32" href="#__codelineno-159-32"></a>    end
+<a id="__codelineno-159-33" name="__codelineno-159-33" href="#__codelineno-159-33"></a>    subgraph target [Target]
+<a id="__codelineno-159-34" name="__codelineno-159-34" href="#__codelineno-159-34"></a>        %%metro direction: RL
+<a id="__codelineno-159-35" name="__codelineno-159-35" href="#__codelineno-159-35"></a>        %%metro entry: right | a
+<a id="__codelineno-159-36" name="__codelineno-159-36" href="#__codelineno-159-36"></a>        t1[Process]
+<a id="__codelineno-159-37" name="__codelineno-159-37" href="#__codelineno-159-37"></a>        t2[Out]
+<a id="__codelineno-159-38" name="__codelineno-159-38" href="#__codelineno-159-38"></a>        t1 --&gt;|a| t2
+<a id="__codelineno-159-39" name="__codelineno-159-39" href="#__codelineno-159-39"></a>    end
+<a id="__codelineno-159-40" name="__codelineno-159-40" href="#__codelineno-159-40"></a>    fsa2 --&gt;|a| t1
+<a id="__codelineno-159-41" name="__codelineno-159-41" href="#__codelineno-159-41"></a>    fsa2 --&gt;|a| sia1
+<a id="__codelineno-159-42" name="__codelineno-159-42" href="#__codelineno-159-42"></a>    fsb2 --&gt;|a| t1
+<a id="__codelineno-159-43" name="__codelineno-159-43" href="#__codelineno-159-43"></a>    fsb2 --&gt;|a| sia1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Merge Bottom Row Bypass" src="../assets/renders/merge_bottom_row_bypass.svg" /></p>
+<h3 id="merge-pullaway">Merge Pullaway<a class="headerlink" href="#merge-pullaway" title="Permanent link">&para;</a></h3>
+<p>One line converges on a merge from two stacked rows of the same column; the cross-row feeder drops onto the trunk's pull-away bypass channel and the two travel as a single stroke into the entry.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/merge_pullaway.mmd<span class="w"> </span>-o<span class="w"> </span>merge_pullaway.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a>%%metro title: Merge trunk pull-away cross-row sibling
+<a id="__codelineno-161-2" name="__codelineno-161-2" href="#__codelineno-161-2"></a>%%metro style: dark
+<a id="__codelineno-161-3" name="__codelineno-161-3" href="#__codelineno-161-3"></a>%%metro line: main | Main | #0570b0
+<a id="__codelineno-161-4" name="__codelineno-161-4" href="#__codelineno-161-4"></a>%%metro grid: wide_src | 0,0
+<a id="__codelineno-161-5" name="__codelineno-161-5" href="#__codelineno-161-5"></a>%%metro grid: obstacle | 1,0
+<a id="__codelineno-161-6" name="__codelineno-161-6" href="#__codelineno-161-6"></a>%%metro grid: sibling_sec | 0,1
+<a id="__codelineno-161-7" name="__codelineno-161-7" href="#__codelineno-161-7"></a>%%metro grid: side_dst | 2,1
+<a id="__codelineno-161-8" name="__codelineno-161-8" href="#__codelineno-161-8"></a>%%metro grid: target | 2,0
+<a id="__codelineno-161-9" name="__codelineno-161-9" href="#__codelineno-161-9"></a>
+<a id="__codelineno-161-10" name="__codelineno-161-10" href="#__codelineno-161-10"></a>graph LR
+<a id="__codelineno-161-11" name="__codelineno-161-11" href="#__codelineno-161-11"></a>    subgraph wide_src [Wide Source]
+<a id="__codelineno-161-12" name="__codelineno-161-12" href="#__codelineno-161-12"></a>        w1[Start]
+<a id="__codelineno-161-13" name="__codelineno-161-13" href="#__codelineno-161-13"></a>        w2[Out]
+<a id="__codelineno-161-14" name="__codelineno-161-14" href="#__codelineno-161-14"></a>        w1 --&gt;|main| w2
+<a id="__codelineno-161-15" name="__codelineno-161-15" href="#__codelineno-161-15"></a>    end
+<a id="__codelineno-161-16" name="__codelineno-161-16" href="#__codelineno-161-16"></a>    subgraph obstacle [Obstacle]
+<a id="__codelineno-161-17" name="__codelineno-161-17" href="#__codelineno-161-17"></a>        o1[Block]
+<a id="__codelineno-161-18" name="__codelineno-161-18" href="#__codelineno-161-18"></a>        o2[Pass]
+<a id="__codelineno-161-19" name="__codelineno-161-19" href="#__codelineno-161-19"></a>        o1 --&gt;|main| o2
+<a id="__codelineno-161-20" name="__codelineno-161-20" href="#__codelineno-161-20"></a>    end
+<a id="__codelineno-161-21" name="__codelineno-161-21" href="#__codelineno-161-21"></a>    subgraph sibling_sec [Sibling]
+<a id="__codelineno-161-22" name="__codelineno-161-22" href="#__codelineno-161-22"></a>        s1[Step]
+<a id="__codelineno-161-23" name="__codelineno-161-23" href="#__codelineno-161-23"></a>        s2[Done]
+<a id="__codelineno-161-24" name="__codelineno-161-24" href="#__codelineno-161-24"></a>        s1 --&gt;|main| s2
+<a id="__codelineno-161-25" name="__codelineno-161-25" href="#__codelineno-161-25"></a>    end
+<a id="__codelineno-161-26" name="__codelineno-161-26" href="#__codelineno-161-26"></a>    subgraph side_dst [Side Dest]
+<a id="__codelineno-161-27" name="__codelineno-161-27" href="#__codelineno-161-27"></a>        sd1[Side]
+<a id="__codelineno-161-28" name="__codelineno-161-28" href="#__codelineno-161-28"></a>        sd2[Out]
+<a id="__codelineno-161-29" name="__codelineno-161-29" href="#__codelineno-161-29"></a>        sd1 --&gt;|main| sd2
+<a id="__codelineno-161-30" name="__codelineno-161-30" href="#__codelineno-161-30"></a>    end
+<a id="__codelineno-161-31" name="__codelineno-161-31" href="#__codelineno-161-31"></a>    subgraph target [Target]
+<a id="__codelineno-161-32" name="__codelineno-161-32" href="#__codelineno-161-32"></a>        %%metro entry: left | main
+<a id="__codelineno-161-33" name="__codelineno-161-33" href="#__codelineno-161-33"></a>        t1[Merge]
+<a id="__codelineno-161-34" name="__codelineno-161-34" href="#__codelineno-161-34"></a>        t2[Report]
+<a id="__codelineno-161-35" name="__codelineno-161-35" href="#__codelineno-161-35"></a>        t1 --&gt;|main| t2
+<a id="__codelineno-161-36" name="__codelineno-161-36" href="#__codelineno-161-36"></a>    end
+<a id="__codelineno-161-37" name="__codelineno-161-37" href="#__codelineno-161-37"></a>    w2 --&gt;|main| o1
+<a id="__codelineno-161-38" name="__codelineno-161-38" href="#__codelineno-161-38"></a>    w2 --&gt;|main| t1
+<a id="__codelineno-161-39" name="__codelineno-161-39" href="#__codelineno-161-39"></a>    s2 --&gt;|main| sd1
+<a id="__codelineno-161-40" name="__codelineno-161-40" href="#__codelineno-161-40"></a>    s2 --&gt;|main| t1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8208,45 +8284,45 @@
 <h3 id="merge-right-entry">Merge Right Entry<a class="headerlink" href="#merge-right-entry" title="Permanent link">&para;</a></h3>
 <p>One line converges on a RIGHT entry from feeders spread across several columns: the farthest carries the trunk that loops under the sink, and the nearer feeder drops onto that same channel instead of taking a second path over the top.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/merge_right_entry.mmd<span class="w"> </span>-o<span class="w"> </span>merge_right_entry.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/merge_right_entry.mmd<span class="w"> </span>-o<span class="w"> </span>merge_right_entry.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a>%%metro title: Merge Right Entry Cross Row
-<a id="__codelineno-161-2" name="__codelineno-161-2" href="#__codelineno-161-2"></a>%%metro style: dark
-<a id="__codelineno-161-3" name="__codelineno-161-3" href="#__codelineno-161-3"></a>%%metro line: main | Main | #0570b0
-<a id="__codelineno-161-4" name="__codelineno-161-4" href="#__codelineno-161-4"></a>%%metro grid: sink | 0,0
-<a id="__codelineno-161-5" name="__codelineno-161-5" href="#__codelineno-161-5"></a>%%metro grid: source | 2,1
-<a id="__codelineno-161-6" name="__codelineno-161-6" href="#__codelineno-161-6"></a>%%metro grid: extra | 4,1
-<a id="__codelineno-161-7" name="__codelineno-161-7" href="#__codelineno-161-7"></a>%%metro grid: step_a | 6,1
-<a id="__codelineno-161-8" name="__codelineno-161-8" href="#__codelineno-161-8"></a>
-<a id="__codelineno-161-9" name="__codelineno-161-9" href="#__codelineno-161-9"></a>graph LR
-<a id="__codelineno-161-10" name="__codelineno-161-10" href="#__codelineno-161-10"></a>    subgraph sink [Sink]
-<a id="__codelineno-161-11" name="__codelineno-161-11" href="#__codelineno-161-11"></a>        %%metro entry: right | main
-<a id="__codelineno-161-12" name="__codelineno-161-12" href="#__codelineno-161-12"></a>        t1[Collect]
-<a id="__codelineno-161-13" name="__codelineno-161-13" href="#__codelineno-161-13"></a>        t2[Report]
-<a id="__codelineno-161-14" name="__codelineno-161-14" href="#__codelineno-161-14"></a>        t1 --&gt;|main| t2
-<a id="__codelineno-161-15" name="__codelineno-161-15" href="#__codelineno-161-15"></a>    end
-<a id="__codelineno-161-16" name="__codelineno-161-16" href="#__codelineno-161-16"></a>    subgraph source [Source]
-<a id="__codelineno-161-17" name="__codelineno-161-17" href="#__codelineno-161-17"></a>        s1[Produce]
-<a id="__codelineno-161-18" name="__codelineno-161-18" href="#__codelineno-161-18"></a>        s2[Prepare]
-<a id="__codelineno-161-19" name="__codelineno-161-19" href="#__codelineno-161-19"></a>        s1 --&gt;|main| s2
-<a id="__codelineno-161-20" name="__codelineno-161-20" href="#__codelineno-161-20"></a>    end
-<a id="__codelineno-161-21" name="__codelineno-161-21" href="#__codelineno-161-21"></a>    subgraph extra [Extra]
-<a id="__codelineno-161-22" name="__codelineno-161-22" href="#__codelineno-161-22"></a>        e1[Extra]
-<a id="__codelineno-161-23" name="__codelineno-161-23" href="#__codelineno-161-23"></a>        e2[Extra Out]
-<a id="__codelineno-161-24" name="__codelineno-161-24" href="#__codelineno-161-24"></a>        e1 --&gt;|main| e2
-<a id="__codelineno-161-25" name="__codelineno-161-25" href="#__codelineno-161-25"></a>    end
-<a id="__codelineno-161-26" name="__codelineno-161-26" href="#__codelineno-161-26"></a>    subgraph step_a [Step A]
-<a id="__codelineno-161-27" name="__codelineno-161-27" href="#__codelineno-161-27"></a>        a1[Process A]
-<a id="__codelineno-161-28" name="__codelineno-161-28" href="#__codelineno-161-28"></a>        a2[Out A]
-<a id="__codelineno-161-29" name="__codelineno-161-29" href="#__codelineno-161-29"></a>        a1 --&gt;|main| a2
-<a id="__codelineno-161-30" name="__codelineno-161-30" href="#__codelineno-161-30"></a>    end
-<a id="__codelineno-161-31" name="__codelineno-161-31" href="#__codelineno-161-31"></a>    s2 --&gt;|main| e1
-<a id="__codelineno-161-32" name="__codelineno-161-32" href="#__codelineno-161-32"></a>    s2 --&gt;|main| t1
-<a id="__codelineno-161-33" name="__codelineno-161-33" href="#__codelineno-161-33"></a>    e2 --&gt;|main| a1
-<a id="__codelineno-161-34" name="__codelineno-161-34" href="#__codelineno-161-34"></a>    e2 --&gt;|main| t1
-<a id="__codelineno-161-35" name="__codelineno-161-35" href="#__codelineno-161-35"></a>    a2 --&gt;|main| t1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a>%%metro title: Merge Right Entry Cross Row
+<a id="__codelineno-163-2" name="__codelineno-163-2" href="#__codelineno-163-2"></a>%%metro style: dark
+<a id="__codelineno-163-3" name="__codelineno-163-3" href="#__codelineno-163-3"></a>%%metro line: main | Main | #0570b0
+<a id="__codelineno-163-4" name="__codelineno-163-4" href="#__codelineno-163-4"></a>%%metro grid: sink | 0,0
+<a id="__codelineno-163-5" name="__codelineno-163-5" href="#__codelineno-163-5"></a>%%metro grid: source | 2,1
+<a id="__codelineno-163-6" name="__codelineno-163-6" href="#__codelineno-163-6"></a>%%metro grid: extra | 4,1
+<a id="__codelineno-163-7" name="__codelineno-163-7" href="#__codelineno-163-7"></a>%%metro grid: step_a | 6,1
+<a id="__codelineno-163-8" name="__codelineno-163-8" href="#__codelineno-163-8"></a>
+<a id="__codelineno-163-9" name="__codelineno-163-9" href="#__codelineno-163-9"></a>graph LR
+<a id="__codelineno-163-10" name="__codelineno-163-10" href="#__codelineno-163-10"></a>    subgraph sink [Sink]
+<a id="__codelineno-163-11" name="__codelineno-163-11" href="#__codelineno-163-11"></a>        %%metro entry: right | main
+<a id="__codelineno-163-12" name="__codelineno-163-12" href="#__codelineno-163-12"></a>        t1[Collect]
+<a id="__codelineno-163-13" name="__codelineno-163-13" href="#__codelineno-163-13"></a>        t2[Report]
+<a id="__codelineno-163-14" name="__codelineno-163-14" href="#__codelineno-163-14"></a>        t1 --&gt;|main| t2
+<a id="__codelineno-163-15" name="__codelineno-163-15" href="#__codelineno-163-15"></a>    end
+<a id="__codelineno-163-16" name="__codelineno-163-16" href="#__codelineno-163-16"></a>    subgraph source [Source]
+<a id="__codelineno-163-17" name="__codelineno-163-17" href="#__codelineno-163-17"></a>        s1[Produce]
+<a id="__codelineno-163-18" name="__codelineno-163-18" href="#__codelineno-163-18"></a>        s2[Prepare]
+<a id="__codelineno-163-19" name="__codelineno-163-19" href="#__codelineno-163-19"></a>        s1 --&gt;|main| s2
+<a id="__codelineno-163-20" name="__codelineno-163-20" href="#__codelineno-163-20"></a>    end
+<a id="__codelineno-163-21" name="__codelineno-163-21" href="#__codelineno-163-21"></a>    subgraph extra [Extra]
+<a id="__codelineno-163-22" name="__codelineno-163-22" href="#__codelineno-163-22"></a>        e1[Extra]
+<a id="__codelineno-163-23" name="__codelineno-163-23" href="#__codelineno-163-23"></a>        e2[Extra Out]
+<a id="__codelineno-163-24" name="__codelineno-163-24" href="#__codelineno-163-24"></a>        e1 --&gt;|main| e2
+<a id="__codelineno-163-25" name="__codelineno-163-25" href="#__codelineno-163-25"></a>    end
+<a id="__codelineno-163-26" name="__codelineno-163-26" href="#__codelineno-163-26"></a>    subgraph step_a [Step A]
+<a id="__codelineno-163-27" name="__codelineno-163-27" href="#__codelineno-163-27"></a>        a1[Process A]
+<a id="__codelineno-163-28" name="__codelineno-163-28" href="#__codelineno-163-28"></a>        a2[Out A]
+<a id="__codelineno-163-29" name="__codelineno-163-29" href="#__codelineno-163-29"></a>        a1 --&gt;|main| a2
+<a id="__codelineno-163-30" name="__codelineno-163-30" href="#__codelineno-163-30"></a>    end
+<a id="__codelineno-163-31" name="__codelineno-163-31" href="#__codelineno-163-31"></a>    s2 --&gt;|main| e1
+<a id="__codelineno-163-32" name="__codelineno-163-32" href="#__codelineno-163-32"></a>    s2 --&gt;|main| t1
+<a id="__codelineno-163-33" name="__codelineno-163-33" href="#__codelineno-163-33"></a>    e2 --&gt;|main| a1
+<a id="__codelineno-163-34" name="__codelineno-163-34" href="#__codelineno-163-34"></a>    e2 --&gt;|main| t1
+<a id="__codelineno-163-35" name="__codelineno-163-35" href="#__codelineno-163-35"></a>    a2 --&gt;|main| t1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8254,50 +8330,50 @@
 <h3 id="peeloff-riser-respace">Peeloff Riser Respace<a class="headerlink" href="#peeloff-riser-respace" title="Permanent link">&para;</a></h3>
 <p>Four lines from two sources ride one shared bypass trunk and rise into a common destination entry port, where the trunk-Y order and the entry-port slot order disagree. Each source bundle keeps its declaration order at the peel-off corner instead of inverting (issue #695).</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/peeloff_riser_respace.mmd<span class="w"> </span>-o<span class="w"> </span>peeloff_riser_respace.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-164-1" name="__codelineno-164-1" href="#__codelineno-164-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/peeloff_riser_respace.mmd<span class="w"> </span>-o<span class="w"> </span>peeloff_riser_respace.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a>%%metro title: Peel-off Riser Respace
-<a id="__codelineno-163-2" name="__codelineno-163-2" href="#__codelineno-163-2"></a>%%metro style: dark
-<a id="__codelineno-163-3" name="__codelineno-163-3" href="#__codelineno-163-3"></a>%%metro line: l1 | Line 1 | #e63946
-<a id="__codelineno-163-4" name="__codelineno-163-4" href="#__codelineno-163-4"></a>%%metro line: l2 | Line 2 | #2db572
-<a id="__codelineno-163-5" name="__codelineno-163-5" href="#__codelineno-163-5"></a>%%metro line: l3 | Line 3 | #0570b0
-<a id="__codelineno-163-6" name="__codelineno-163-6" href="#__codelineno-163-6"></a>%%metro line: l4 | Line 4 | #f5c542
-<a id="__codelineno-163-7" name="__codelineno-163-7" href="#__codelineno-163-7"></a>%%metro grid: src_a | 0,0
-<a id="__codelineno-163-8" name="__codelineno-163-8" href="#__codelineno-163-8"></a>%%metro grid: src_b | 1,0
-<a id="__codelineno-163-9" name="__codelineno-163-9" href="#__codelineno-163-9"></a>%%metro grid: mid | 2,0
-<a id="__codelineno-163-10" name="__codelineno-163-10" href="#__codelineno-163-10"></a>%%metro grid: dst | 3,0
-<a id="__codelineno-163-11" name="__codelineno-163-11" href="#__codelineno-163-11"></a>
-<a id="__codelineno-163-12" name="__codelineno-163-12" href="#__codelineno-163-12"></a>graph LR
-<a id="__codelineno-163-13" name="__codelineno-163-13" href="#__codelineno-163-13"></a>    subgraph src_a [Source A]
-<a id="__codelineno-163-14" name="__codelineno-163-14" href="#__codelineno-163-14"></a>        %%metro exit: right | l1,l2
-<a id="__codelineno-163-15" name="__codelineno-163-15" href="#__codelineno-163-15"></a>        sa_in[Input A]
-<a id="__codelineno-163-16" name="__codelineno-163-16" href="#__codelineno-163-16"></a>        sa_out[Output A]
-<a id="__codelineno-163-17" name="__codelineno-163-17" href="#__codelineno-163-17"></a>        sa_in --&gt;|l1,l2| sa_out
-<a id="__codelineno-163-18" name="__codelineno-163-18" href="#__codelineno-163-18"></a>    end
-<a id="__codelineno-163-19" name="__codelineno-163-19" href="#__codelineno-163-19"></a>
-<a id="__codelineno-163-20" name="__codelineno-163-20" href="#__codelineno-163-20"></a>    subgraph src_b [Source B]
-<a id="__codelineno-163-21" name="__codelineno-163-21" href="#__codelineno-163-21"></a>        %%metro entry: left | l3,l4
-<a id="__codelineno-163-22" name="__codelineno-163-22" href="#__codelineno-163-22"></a>        %%metro exit: right | l3,l4
-<a id="__codelineno-163-23" name="__codelineno-163-23" href="#__codelineno-163-23"></a>        sb_in[Input B]
-<a id="__codelineno-163-24" name="__codelineno-163-24" href="#__codelineno-163-24"></a>        sb_out[Output B]
-<a id="__codelineno-163-25" name="__codelineno-163-25" href="#__codelineno-163-25"></a>        sb_in --&gt;|l3,l4| sb_out
-<a id="__codelineno-163-26" name="__codelineno-163-26" href="#__codelineno-163-26"></a>    end
-<a id="__codelineno-163-27" name="__codelineno-163-27" href="#__codelineno-163-27"></a>
-<a id="__codelineno-163-28" name="__codelineno-163-28" href="#__codelineno-163-28"></a>    subgraph mid [Mid]
-<a id="__codelineno-163-29" name="__codelineno-163-29" href="#__codelineno-163-29"></a>        m1[Mid Process]
-<a id="__codelineno-163-30" name="__codelineno-163-30" href="#__codelineno-163-30"></a>    end
-<a id="__codelineno-163-31" name="__codelineno-163-31" href="#__codelineno-163-31"></a>
-<a id="__codelineno-163-32" name="__codelineno-163-32" href="#__codelineno-163-32"></a>    subgraph dst [Destination]
-<a id="__codelineno-163-33" name="__codelineno-163-33" href="#__codelineno-163-33"></a>        %%metro entry: left | l1,l2,l3,l4
-<a id="__codelineno-163-34" name="__codelineno-163-34" href="#__codelineno-163-34"></a>        d1[Process D1]
-<a id="__codelineno-163-35" name="__codelineno-163-35" href="#__codelineno-163-35"></a>        d2[Process D2]
-<a id="__codelineno-163-36" name="__codelineno-163-36" href="#__codelineno-163-36"></a>        d1 --&gt;|l1,l2,l3,l4| d2
-<a id="__codelineno-163-37" name="__codelineno-163-37" href="#__codelineno-163-37"></a>    end
-<a id="__codelineno-163-38" name="__codelineno-163-38" href="#__codelineno-163-38"></a>
-<a id="__codelineno-163-39" name="__codelineno-163-39" href="#__codelineno-163-39"></a>    sa_out --&gt;|l1,l2| d1
-<a id="__codelineno-163-40" name="__codelineno-163-40" href="#__codelineno-163-40"></a>    sb_out --&gt;|l3,l4| d1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-165-1" name="__codelineno-165-1" href="#__codelineno-165-1"></a>%%metro title: Peel-off Riser Respace
+<a id="__codelineno-165-2" name="__codelineno-165-2" href="#__codelineno-165-2"></a>%%metro style: dark
+<a id="__codelineno-165-3" name="__codelineno-165-3" href="#__codelineno-165-3"></a>%%metro line: l1 | Line 1 | #e63946
+<a id="__codelineno-165-4" name="__codelineno-165-4" href="#__codelineno-165-4"></a>%%metro line: l2 | Line 2 | #2db572
+<a id="__codelineno-165-5" name="__codelineno-165-5" href="#__codelineno-165-5"></a>%%metro line: l3 | Line 3 | #0570b0
+<a id="__codelineno-165-6" name="__codelineno-165-6" href="#__codelineno-165-6"></a>%%metro line: l4 | Line 4 | #f5c542
+<a id="__codelineno-165-7" name="__codelineno-165-7" href="#__codelineno-165-7"></a>%%metro grid: src_a | 0,0
+<a id="__codelineno-165-8" name="__codelineno-165-8" href="#__codelineno-165-8"></a>%%metro grid: src_b | 1,0
+<a id="__codelineno-165-9" name="__codelineno-165-9" href="#__codelineno-165-9"></a>%%metro grid: mid | 2,0
+<a id="__codelineno-165-10" name="__codelineno-165-10" href="#__codelineno-165-10"></a>%%metro grid: dst | 3,0
+<a id="__codelineno-165-11" name="__codelineno-165-11" href="#__codelineno-165-11"></a>
+<a id="__codelineno-165-12" name="__codelineno-165-12" href="#__codelineno-165-12"></a>graph LR
+<a id="__codelineno-165-13" name="__codelineno-165-13" href="#__codelineno-165-13"></a>    subgraph src_a [Source A]
+<a id="__codelineno-165-14" name="__codelineno-165-14" href="#__codelineno-165-14"></a>        %%metro exit: right | l1,l2
+<a id="__codelineno-165-15" name="__codelineno-165-15" href="#__codelineno-165-15"></a>        sa_in[Input A]
+<a id="__codelineno-165-16" name="__codelineno-165-16" href="#__codelineno-165-16"></a>        sa_out[Output A]
+<a id="__codelineno-165-17" name="__codelineno-165-17" href="#__codelineno-165-17"></a>        sa_in --&gt;|l1,l2| sa_out
+<a id="__codelineno-165-18" name="__codelineno-165-18" href="#__codelineno-165-18"></a>    end
+<a id="__codelineno-165-19" name="__codelineno-165-19" href="#__codelineno-165-19"></a>
+<a id="__codelineno-165-20" name="__codelineno-165-20" href="#__codelineno-165-20"></a>    subgraph src_b [Source B]
+<a id="__codelineno-165-21" name="__codelineno-165-21" href="#__codelineno-165-21"></a>        %%metro entry: left | l3,l4
+<a id="__codelineno-165-22" name="__codelineno-165-22" href="#__codelineno-165-22"></a>        %%metro exit: right | l3,l4
+<a id="__codelineno-165-23" name="__codelineno-165-23" href="#__codelineno-165-23"></a>        sb_in[Input B]
+<a id="__codelineno-165-24" name="__codelineno-165-24" href="#__codelineno-165-24"></a>        sb_out[Output B]
+<a id="__codelineno-165-25" name="__codelineno-165-25" href="#__codelineno-165-25"></a>        sb_in --&gt;|l3,l4| sb_out
+<a id="__codelineno-165-26" name="__codelineno-165-26" href="#__codelineno-165-26"></a>    end
+<a id="__codelineno-165-27" name="__codelineno-165-27" href="#__codelineno-165-27"></a>
+<a id="__codelineno-165-28" name="__codelineno-165-28" href="#__codelineno-165-28"></a>    subgraph mid [Mid]
+<a id="__codelineno-165-29" name="__codelineno-165-29" href="#__codelineno-165-29"></a>        m1[Mid Process]
+<a id="__codelineno-165-30" name="__codelineno-165-30" href="#__codelineno-165-30"></a>    end
+<a id="__codelineno-165-31" name="__codelineno-165-31" href="#__codelineno-165-31"></a>
+<a id="__codelineno-165-32" name="__codelineno-165-32" href="#__codelineno-165-32"></a>    subgraph dst [Destination]
+<a id="__codelineno-165-33" name="__codelineno-165-33" href="#__codelineno-165-33"></a>        %%metro entry: left | l1,l2,l3,l4
+<a id="__codelineno-165-34" name="__codelineno-165-34" href="#__codelineno-165-34"></a>        d1[Process D1]
+<a id="__codelineno-165-35" name="__codelineno-165-35" href="#__codelineno-165-35"></a>        d2[Process D2]
+<a id="__codelineno-165-36" name="__codelineno-165-36" href="#__codelineno-165-36"></a>        d1 --&gt;|l1,l2,l3,l4| d2
+<a id="__codelineno-165-37" name="__codelineno-165-37" href="#__codelineno-165-37"></a>    end
+<a id="__codelineno-165-38" name="__codelineno-165-38" href="#__codelineno-165-38"></a>
+<a id="__codelineno-165-39" name="__codelineno-165-39" href="#__codelineno-165-39"></a>    sa_out --&gt;|l1,l2| d1
+<a id="__codelineno-165-40" name="__codelineno-165-40" href="#__codelineno-165-40"></a>    sb_out --&gt;|l3,l4| d1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8305,53 +8381,53 @@
 <h3 id="peeloff-extra-line-consumer">Peeloff Extra Line Consumer<a class="headerlink" href="#peeloff-extra-line-consumer" title="Permanent link">&para;</a></h3>
 <p>Same peel-off topology as peeloff_riser_respace but the destination section also carries an extra internal branch (l5). The riser reorder must still fire and keep the bundle crossing-free at the shared entry port regardless of extra lines in the consumer section (issue #751).</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-164-1" name="__codelineno-164-1" href="#__codelineno-164-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/peeloff_extra_line_consumer.mmd<span class="w"> </span>-o<span class="w"> </span>peeloff_extra_line_consumer.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-166-1" name="__codelineno-166-1" href="#__codelineno-166-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/peeloff_extra_line_consumer.mmd<span class="w"> </span>-o<span class="w"> </span>peeloff_extra_line_consumer.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-165-1" name="__codelineno-165-1" href="#__codelineno-165-1"></a>%%metro title: Peel-off Extra Line Consumer
-<a id="__codelineno-165-2" name="__codelineno-165-2" href="#__codelineno-165-2"></a>%%metro style: dark
-<a id="__codelineno-165-3" name="__codelineno-165-3" href="#__codelineno-165-3"></a>%%metro line: l1 | Line 1 | #e63946
-<a id="__codelineno-165-4" name="__codelineno-165-4" href="#__codelineno-165-4"></a>%%metro line: l2 | Line 2 | #2db572
-<a id="__codelineno-165-5" name="__codelineno-165-5" href="#__codelineno-165-5"></a>%%metro line: l3 | Line 3 | #0570b0
-<a id="__codelineno-165-6" name="__codelineno-165-6" href="#__codelineno-165-6"></a>%%metro line: l4 | Line 4 | #f5c542
-<a id="__codelineno-165-7" name="__codelineno-165-7" href="#__codelineno-165-7"></a>%%metro line: l5 | Line 5 | #9b59b6
-<a id="__codelineno-165-8" name="__codelineno-165-8" href="#__codelineno-165-8"></a>%%metro grid: src_a | 0,0
-<a id="__codelineno-165-9" name="__codelineno-165-9" href="#__codelineno-165-9"></a>%%metro grid: src_b | 1,0
-<a id="__codelineno-165-10" name="__codelineno-165-10" href="#__codelineno-165-10"></a>%%metro grid: mid | 2,0
-<a id="__codelineno-165-11" name="__codelineno-165-11" href="#__codelineno-165-11"></a>%%metro grid: dst | 3,0
-<a id="__codelineno-165-12" name="__codelineno-165-12" href="#__codelineno-165-12"></a>
-<a id="__codelineno-165-13" name="__codelineno-165-13" href="#__codelineno-165-13"></a>graph LR
-<a id="__codelineno-165-14" name="__codelineno-165-14" href="#__codelineno-165-14"></a>    subgraph src_a [Source A]
-<a id="__codelineno-165-15" name="__codelineno-165-15" href="#__codelineno-165-15"></a>        %%metro exit: right | l1,l2
-<a id="__codelineno-165-16" name="__codelineno-165-16" href="#__codelineno-165-16"></a>        sa_in[Input A]
-<a id="__codelineno-165-17" name="__codelineno-165-17" href="#__codelineno-165-17"></a>        sa_out[Output A]
-<a id="__codelineno-165-18" name="__codelineno-165-18" href="#__codelineno-165-18"></a>        sa_in --&gt;|l1,l2| sa_out
-<a id="__codelineno-165-19" name="__codelineno-165-19" href="#__codelineno-165-19"></a>    end
-<a id="__codelineno-165-20" name="__codelineno-165-20" href="#__codelineno-165-20"></a>
-<a id="__codelineno-165-21" name="__codelineno-165-21" href="#__codelineno-165-21"></a>    subgraph src_b [Source B]
-<a id="__codelineno-165-22" name="__codelineno-165-22" href="#__codelineno-165-22"></a>        %%metro entry: left | l3,l4
-<a id="__codelineno-165-23" name="__codelineno-165-23" href="#__codelineno-165-23"></a>        %%metro exit: right | l3,l4
-<a id="__codelineno-165-24" name="__codelineno-165-24" href="#__codelineno-165-24"></a>        sb_in[Input B]
-<a id="__codelineno-165-25" name="__codelineno-165-25" href="#__codelineno-165-25"></a>        sb_out[Output B]
-<a id="__codelineno-165-26" name="__codelineno-165-26" href="#__codelineno-165-26"></a>        sb_in --&gt;|l3,l4| sb_out
-<a id="__codelineno-165-27" name="__codelineno-165-27" href="#__codelineno-165-27"></a>    end
-<a id="__codelineno-165-28" name="__codelineno-165-28" href="#__codelineno-165-28"></a>
-<a id="__codelineno-165-29" name="__codelineno-165-29" href="#__codelineno-165-29"></a>    subgraph mid [Mid]
-<a id="__codelineno-165-30" name="__codelineno-165-30" href="#__codelineno-165-30"></a>        m1[Mid Process]
-<a id="__codelineno-165-31" name="__codelineno-165-31" href="#__codelineno-165-31"></a>    end
-<a id="__codelineno-165-32" name="__codelineno-165-32" href="#__codelineno-165-32"></a>
-<a id="__codelineno-165-33" name="__codelineno-165-33" href="#__codelineno-165-33"></a>    subgraph dst [Destination]
-<a id="__codelineno-165-34" name="__codelineno-165-34" href="#__codelineno-165-34"></a>        %%metro entry: left | l1,l2,l3,l4
-<a id="__codelineno-165-35" name="__codelineno-165-35" href="#__codelineno-165-35"></a>        d1[Process D1]
-<a id="__codelineno-165-36" name="__codelineno-165-36" href="#__codelineno-165-36"></a>        d2[Process D2]
-<a id="__codelineno-165-37" name="__codelineno-165-37" href="#__codelineno-165-37"></a>        d3[Process D3]
-<a id="__codelineno-165-38" name="__codelineno-165-38" href="#__codelineno-165-38"></a>        d1 --&gt;|l1,l2,l3,l4| d2
-<a id="__codelineno-165-39" name="__codelineno-165-39" href="#__codelineno-165-39"></a>        d2 --&gt;|l5| d3
-<a id="__codelineno-165-40" name="__codelineno-165-40" href="#__codelineno-165-40"></a>    end
-<a id="__codelineno-165-41" name="__codelineno-165-41" href="#__codelineno-165-41"></a>
-<a id="__codelineno-165-42" name="__codelineno-165-42" href="#__codelineno-165-42"></a>    sa_out --&gt;|l1,l2| d1
-<a id="__codelineno-165-43" name="__codelineno-165-43" href="#__codelineno-165-43"></a>    sb_out --&gt;|l3,l4| d1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-167-1" name="__codelineno-167-1" href="#__codelineno-167-1"></a>%%metro title: Peel-off Extra Line Consumer
+<a id="__codelineno-167-2" name="__codelineno-167-2" href="#__codelineno-167-2"></a>%%metro style: dark
+<a id="__codelineno-167-3" name="__codelineno-167-3" href="#__codelineno-167-3"></a>%%metro line: l1 | Line 1 | #e63946
+<a id="__codelineno-167-4" name="__codelineno-167-4" href="#__codelineno-167-4"></a>%%metro line: l2 | Line 2 | #2db572
+<a id="__codelineno-167-5" name="__codelineno-167-5" href="#__codelineno-167-5"></a>%%metro line: l3 | Line 3 | #0570b0
+<a id="__codelineno-167-6" name="__codelineno-167-6" href="#__codelineno-167-6"></a>%%metro line: l4 | Line 4 | #f5c542
+<a id="__codelineno-167-7" name="__codelineno-167-7" href="#__codelineno-167-7"></a>%%metro line: l5 | Line 5 | #9b59b6
+<a id="__codelineno-167-8" name="__codelineno-167-8" href="#__codelineno-167-8"></a>%%metro grid: src_a | 0,0
+<a id="__codelineno-167-9" name="__codelineno-167-9" href="#__codelineno-167-9"></a>%%metro grid: src_b | 1,0
+<a id="__codelineno-167-10" name="__codelineno-167-10" href="#__codelineno-167-10"></a>%%metro grid: mid | 2,0
+<a id="__codelineno-167-11" name="__codelineno-167-11" href="#__codelineno-167-11"></a>%%metro grid: dst | 3,0
+<a id="__codelineno-167-12" name="__codelineno-167-12" href="#__codelineno-167-12"></a>
+<a id="__codelineno-167-13" name="__codelineno-167-13" href="#__codelineno-167-13"></a>graph LR
+<a id="__codelineno-167-14" name="__codelineno-167-14" href="#__codelineno-167-14"></a>    subgraph src_a [Source A]
+<a id="__codelineno-167-15" name="__codelineno-167-15" href="#__codelineno-167-15"></a>        %%metro exit: right | l1,l2
+<a id="__codelineno-167-16" name="__codelineno-167-16" href="#__codelineno-167-16"></a>        sa_in[Input A]
+<a id="__codelineno-167-17" name="__codelineno-167-17" href="#__codelineno-167-17"></a>        sa_out[Output A]
+<a id="__codelineno-167-18" name="__codelineno-167-18" href="#__codelineno-167-18"></a>        sa_in --&gt;|l1,l2| sa_out
+<a id="__codelineno-167-19" name="__codelineno-167-19" href="#__codelineno-167-19"></a>    end
+<a id="__codelineno-167-20" name="__codelineno-167-20" href="#__codelineno-167-20"></a>
+<a id="__codelineno-167-21" name="__codelineno-167-21" href="#__codelineno-167-21"></a>    subgraph src_b [Source B]
+<a id="__codelineno-167-22" name="__codelineno-167-22" href="#__codelineno-167-22"></a>        %%metro entry: left | l3,l4
+<a id="__codelineno-167-23" name="__codelineno-167-23" href="#__codelineno-167-23"></a>        %%metro exit: right | l3,l4
+<a id="__codelineno-167-24" name="__codelineno-167-24" href="#__codelineno-167-24"></a>        sb_in[Input B]
+<a id="__codelineno-167-25" name="__codelineno-167-25" href="#__codelineno-167-25"></a>        sb_out[Output B]
+<a id="__codelineno-167-26" name="__codelineno-167-26" href="#__codelineno-167-26"></a>        sb_in --&gt;|l3,l4| sb_out
+<a id="__codelineno-167-27" name="__codelineno-167-27" href="#__codelineno-167-27"></a>    end
+<a id="__codelineno-167-28" name="__codelineno-167-28" href="#__codelineno-167-28"></a>
+<a id="__codelineno-167-29" name="__codelineno-167-29" href="#__codelineno-167-29"></a>    subgraph mid [Mid]
+<a id="__codelineno-167-30" name="__codelineno-167-30" href="#__codelineno-167-30"></a>        m1[Mid Process]
+<a id="__codelineno-167-31" name="__codelineno-167-31" href="#__codelineno-167-31"></a>    end
+<a id="__codelineno-167-32" name="__codelineno-167-32" href="#__codelineno-167-32"></a>
+<a id="__codelineno-167-33" name="__codelineno-167-33" href="#__codelineno-167-33"></a>    subgraph dst [Destination]
+<a id="__codelineno-167-34" name="__codelineno-167-34" href="#__codelineno-167-34"></a>        %%metro entry: left | l1,l2,l3,l4
+<a id="__codelineno-167-35" name="__codelineno-167-35" href="#__codelineno-167-35"></a>        d1[Process D1]
+<a id="__codelineno-167-36" name="__codelineno-167-36" href="#__codelineno-167-36"></a>        d2[Process D2]
+<a id="__codelineno-167-37" name="__codelineno-167-37" href="#__codelineno-167-37"></a>        d3[Process D3]
+<a id="__codelineno-167-38" name="__codelineno-167-38" href="#__codelineno-167-38"></a>        d1 --&gt;|l1,l2,l3,l4| d2
+<a id="__codelineno-167-39" name="__codelineno-167-39" href="#__codelineno-167-39"></a>        d2 --&gt;|l5| d3
+<a id="__codelineno-167-40" name="__codelineno-167-40" href="#__codelineno-167-40"></a>    end
+<a id="__codelineno-167-41" name="__codelineno-167-41" href="#__codelineno-167-41"></a>
+<a id="__codelineno-167-42" name="__codelineno-167-42" href="#__codelineno-167-42"></a>    sa_out --&gt;|l1,l2| d1
+<a id="__codelineno-167-43" name="__codelineno-167-43" href="#__codelineno-167-43"></a>    sb_out --&gt;|l3,l4| d1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8359,35 +8435,35 @@
 <h3 id="lr-to-tb-top-drop">Lr To Tb Top Drop<a class="headerlink" href="#lr-to-tb-top-drop" title="Permanent link">&para;</a></h3>
 <p>An LR section feeds the TOP entry of a TB section stacked directly below. With no explicit exit side the engine infers a BOTTOM exit: the line curves out of the trunk after the last station and drops straight onto the target trunk, which is aligned under the exit.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-166-1" name="__codelineno-166-1" href="#__codelineno-166-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_drop.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_drop.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_drop.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_drop.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-167-1" name="__codelineno-167-1" href="#__codelineno-167-1"></a>%%metro title: LR to TB Top Drop
-<a id="__codelineno-167-2" name="__codelineno-167-2" href="#__codelineno-167-2"></a>%%metro style: dark
-<a id="__codelineno-167-3" name="__codelineno-167-3" href="#__codelineno-167-3"></a>%%metro line: a | A | #e63946
-<a id="__codelineno-167-4" name="__codelineno-167-4" href="#__codelineno-167-4"></a>
-<a id="__codelineno-167-5" name="__codelineno-167-5" href="#__codelineno-167-5"></a>%%metro grid: src_sec | 0,0
-<a id="__codelineno-167-6" name="__codelineno-167-6" href="#__codelineno-167-6"></a>%%metro grid: tgt_sec | 0,1
-<a id="__codelineno-167-7" name="__codelineno-167-7" href="#__codelineno-167-7"></a>
-<a id="__codelineno-167-8" name="__codelineno-167-8" href="#__codelineno-167-8"></a>graph LR
-<a id="__codelineno-167-9" name="__codelineno-167-9" href="#__codelineno-167-9"></a>    subgraph src_sec [Source]
-<a id="__codelineno-167-10" name="__codelineno-167-10" href="#__codelineno-167-10"></a>        %%metro direction: LR
-<a id="__codelineno-167-11" name="__codelineno-167-11" href="#__codelineno-167-11"></a>        s1[Start]
-<a id="__codelineno-167-12" name="__codelineno-167-12" href="#__codelineno-167-12"></a>        s2[End]
-<a id="__codelineno-167-13" name="__codelineno-167-13" href="#__codelineno-167-13"></a>        s1 --&gt;|a| s2
-<a id="__codelineno-167-14" name="__codelineno-167-14" href="#__codelineno-167-14"></a>    end
-<a id="__codelineno-167-15" name="__codelineno-167-15" href="#__codelineno-167-15"></a>
-<a id="__codelineno-167-16" name="__codelineno-167-16" href="#__codelineno-167-16"></a>    subgraph tgt_sec [Target]
-<a id="__codelineno-167-17" name="__codelineno-167-17" href="#__codelineno-167-17"></a>        %%metro direction: TB
-<a id="__codelineno-167-18" name="__codelineno-167-18" href="#__codelineno-167-18"></a>        %%metro entry: top | a
-<a id="__codelineno-167-19" name="__codelineno-167-19" href="#__codelineno-167-19"></a>        %%metro exit: right | a
-<a id="__codelineno-167-20" name="__codelineno-167-20" href="#__codelineno-167-20"></a>        t1[Process]
-<a id="__codelineno-167-21" name="__codelineno-167-21" href="#__codelineno-167-21"></a>        t2[Result]
-<a id="__codelineno-167-22" name="__codelineno-167-22" href="#__codelineno-167-22"></a>        t1 --&gt;|a| t2
-<a id="__codelineno-167-23" name="__codelineno-167-23" href="#__codelineno-167-23"></a>    end
-<a id="__codelineno-167-24" name="__codelineno-167-24" href="#__codelineno-167-24"></a>
-<a id="__codelineno-167-25" name="__codelineno-167-25" href="#__codelineno-167-25"></a>    s2 --&gt;|a| t1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a>%%metro title: LR to TB Top Drop
+<a id="__codelineno-169-2" name="__codelineno-169-2" href="#__codelineno-169-2"></a>%%metro style: dark
+<a id="__codelineno-169-3" name="__codelineno-169-3" href="#__codelineno-169-3"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-169-4" name="__codelineno-169-4" href="#__codelineno-169-4"></a>
+<a id="__codelineno-169-5" name="__codelineno-169-5" href="#__codelineno-169-5"></a>%%metro grid: src_sec | 0,0
+<a id="__codelineno-169-6" name="__codelineno-169-6" href="#__codelineno-169-6"></a>%%metro grid: tgt_sec | 0,1
+<a id="__codelineno-169-7" name="__codelineno-169-7" href="#__codelineno-169-7"></a>
+<a id="__codelineno-169-8" name="__codelineno-169-8" href="#__codelineno-169-8"></a>graph LR
+<a id="__codelineno-169-9" name="__codelineno-169-9" href="#__codelineno-169-9"></a>    subgraph src_sec [Source]
+<a id="__codelineno-169-10" name="__codelineno-169-10" href="#__codelineno-169-10"></a>        %%metro direction: LR
+<a id="__codelineno-169-11" name="__codelineno-169-11" href="#__codelineno-169-11"></a>        s1[Start]
+<a id="__codelineno-169-12" name="__codelineno-169-12" href="#__codelineno-169-12"></a>        s2[End]
+<a id="__codelineno-169-13" name="__codelineno-169-13" href="#__codelineno-169-13"></a>        s1 --&gt;|a| s2
+<a id="__codelineno-169-14" name="__codelineno-169-14" href="#__codelineno-169-14"></a>    end
+<a id="__codelineno-169-15" name="__codelineno-169-15" href="#__codelineno-169-15"></a>
+<a id="__codelineno-169-16" name="__codelineno-169-16" href="#__codelineno-169-16"></a>    subgraph tgt_sec [Target]
+<a id="__codelineno-169-17" name="__codelineno-169-17" href="#__codelineno-169-17"></a>        %%metro direction: TB
+<a id="__codelineno-169-18" name="__codelineno-169-18" href="#__codelineno-169-18"></a>        %%metro entry: top | a
+<a id="__codelineno-169-19" name="__codelineno-169-19" href="#__codelineno-169-19"></a>        %%metro exit: right | a
+<a id="__codelineno-169-20" name="__codelineno-169-20" href="#__codelineno-169-20"></a>        t1[Process]
+<a id="__codelineno-169-21" name="__codelineno-169-21" href="#__codelineno-169-21"></a>        t2[Result]
+<a id="__codelineno-169-22" name="__codelineno-169-22" href="#__codelineno-169-22"></a>        t1 --&gt;|a| t2
+<a id="__codelineno-169-23" name="__codelineno-169-23" href="#__codelineno-169-23"></a>    end
+<a id="__codelineno-169-24" name="__codelineno-169-24" href="#__codelineno-169-24"></a>
+<a id="__codelineno-169-25" name="__codelineno-169-25" href="#__codelineno-169-25"></a>    s2 --&gt;|a| t1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8395,37 +8471,37 @@
 <h3 id="lr-to-tb-top-drop-two-lines">Lr To Tb Top Drop Two Lines<a class="headerlink" href="#lr-to-tb-top-drop-two-lines" title="Permanent link">&para;</a></h3>
 <p>Two co-travelling lines drop out of an LR section's explicit BOTTOM exit into a TB section's shared TOP entry below, staying parallel through the corner and down to the trunk without crossing.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_drop_two_lines.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_drop_two_lines.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_drop_two_lines.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_drop_two_lines.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a>%%metro title: LR to TB Top Drop Two Lines
-<a id="__codelineno-169-2" name="__codelineno-169-2" href="#__codelineno-169-2"></a>%%metro style: dark
-<a id="__codelineno-169-3" name="__codelineno-169-3" href="#__codelineno-169-3"></a>%%metro line: a | A | #e63946
-<a id="__codelineno-169-4" name="__codelineno-169-4" href="#__codelineno-169-4"></a>%%metro line: b | B | #0570b0
-<a id="__codelineno-169-5" name="__codelineno-169-5" href="#__codelineno-169-5"></a>
-<a id="__codelineno-169-6" name="__codelineno-169-6" href="#__codelineno-169-6"></a>%%metro grid: src_sec | 0,0
-<a id="__codelineno-169-7" name="__codelineno-169-7" href="#__codelineno-169-7"></a>%%metro grid: tgt_sec | 0,1
-<a id="__codelineno-169-8" name="__codelineno-169-8" href="#__codelineno-169-8"></a>
-<a id="__codelineno-169-9" name="__codelineno-169-9" href="#__codelineno-169-9"></a>graph LR
-<a id="__codelineno-169-10" name="__codelineno-169-10" href="#__codelineno-169-10"></a>    subgraph src_sec [Source]
-<a id="__codelineno-169-11" name="__codelineno-169-11" href="#__codelineno-169-11"></a>        %%metro direction: LR
-<a id="__codelineno-169-12" name="__codelineno-169-12" href="#__codelineno-169-12"></a>        %%metro exit: bottom | a,b
-<a id="__codelineno-169-13" name="__codelineno-169-13" href="#__codelineno-169-13"></a>        s1[Start]
-<a id="__codelineno-169-14" name="__codelineno-169-14" href="#__codelineno-169-14"></a>        s2[End]
-<a id="__codelineno-169-15" name="__codelineno-169-15" href="#__codelineno-169-15"></a>        s1 --&gt;|a,b| s2
-<a id="__codelineno-169-16" name="__codelineno-169-16" href="#__codelineno-169-16"></a>    end
-<a id="__codelineno-169-17" name="__codelineno-169-17" href="#__codelineno-169-17"></a>
-<a id="__codelineno-169-18" name="__codelineno-169-18" href="#__codelineno-169-18"></a>    subgraph tgt_sec [Target]
-<a id="__codelineno-169-19" name="__codelineno-169-19" href="#__codelineno-169-19"></a>        %%metro direction: TB
-<a id="__codelineno-169-20" name="__codelineno-169-20" href="#__codelineno-169-20"></a>        %%metro entry: top | a,b
-<a id="__codelineno-169-21" name="__codelineno-169-21" href="#__codelineno-169-21"></a>        %%metro exit: right | a,b
-<a id="__codelineno-169-22" name="__codelineno-169-22" href="#__codelineno-169-22"></a>        t1[Process]
-<a id="__codelineno-169-23" name="__codelineno-169-23" href="#__codelineno-169-23"></a>        t2[Result]
-<a id="__codelineno-169-24" name="__codelineno-169-24" href="#__codelineno-169-24"></a>        t1 --&gt;|a,b| t2
-<a id="__codelineno-169-25" name="__codelineno-169-25" href="#__codelineno-169-25"></a>    end
-<a id="__codelineno-169-26" name="__codelineno-169-26" href="#__codelineno-169-26"></a>
-<a id="__codelineno-169-27" name="__codelineno-169-27" href="#__codelineno-169-27"></a>    s2 --&gt;|a,b| t1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a>%%metro title: LR to TB Top Drop Two Lines
+<a id="__codelineno-171-2" name="__codelineno-171-2" href="#__codelineno-171-2"></a>%%metro style: dark
+<a id="__codelineno-171-3" name="__codelineno-171-3" href="#__codelineno-171-3"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-171-4" name="__codelineno-171-4" href="#__codelineno-171-4"></a>%%metro line: b | B | #0570b0
+<a id="__codelineno-171-5" name="__codelineno-171-5" href="#__codelineno-171-5"></a>
+<a id="__codelineno-171-6" name="__codelineno-171-6" href="#__codelineno-171-6"></a>%%metro grid: src_sec | 0,0
+<a id="__codelineno-171-7" name="__codelineno-171-7" href="#__codelineno-171-7"></a>%%metro grid: tgt_sec | 0,1
+<a id="__codelineno-171-8" name="__codelineno-171-8" href="#__codelineno-171-8"></a>
+<a id="__codelineno-171-9" name="__codelineno-171-9" href="#__codelineno-171-9"></a>graph LR
+<a id="__codelineno-171-10" name="__codelineno-171-10" href="#__codelineno-171-10"></a>    subgraph src_sec [Source]
+<a id="__codelineno-171-11" name="__codelineno-171-11" href="#__codelineno-171-11"></a>        %%metro direction: LR
+<a id="__codelineno-171-12" name="__codelineno-171-12" href="#__codelineno-171-12"></a>        %%metro exit: bottom | a,b
+<a id="__codelineno-171-13" name="__codelineno-171-13" href="#__codelineno-171-13"></a>        s1[Start]
+<a id="__codelineno-171-14" name="__codelineno-171-14" href="#__codelineno-171-14"></a>        s2[End]
+<a id="__codelineno-171-15" name="__codelineno-171-15" href="#__codelineno-171-15"></a>        s1 --&gt;|a,b| s2
+<a id="__codelineno-171-16" name="__codelineno-171-16" href="#__codelineno-171-16"></a>    end
+<a id="__codelineno-171-17" name="__codelineno-171-17" href="#__codelineno-171-17"></a>
+<a id="__codelineno-171-18" name="__codelineno-171-18" href="#__codelineno-171-18"></a>    subgraph tgt_sec [Target]
+<a id="__codelineno-171-19" name="__codelineno-171-19" href="#__codelineno-171-19"></a>        %%metro direction: TB
+<a id="__codelineno-171-20" name="__codelineno-171-20" href="#__codelineno-171-20"></a>        %%metro entry: top | a,b
+<a id="__codelineno-171-21" name="__codelineno-171-21" href="#__codelineno-171-21"></a>        %%metro exit: right | a,b
+<a id="__codelineno-171-22" name="__codelineno-171-22" href="#__codelineno-171-22"></a>        t1[Process]
+<a id="__codelineno-171-23" name="__codelineno-171-23" href="#__codelineno-171-23"></a>        t2[Result]
+<a id="__codelineno-171-24" name="__codelineno-171-24" href="#__codelineno-171-24"></a>        t1 --&gt;|a,b| t2
+<a id="__codelineno-171-25" name="__codelineno-171-25" href="#__codelineno-171-25"></a>    end
+<a id="__codelineno-171-26" name="__codelineno-171-26" href="#__codelineno-171-26"></a>
+<a id="__codelineno-171-27" name="__codelineno-171-27" href="#__codelineno-171-27"></a>    s2 --&gt;|a,b| t1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8433,36 +8509,36 @@
 <h3 id="lr-to-tb-top-near-vertical">Lr To Tb Top Near Vertical<a class="headerlink" href="#lr-to-tb-top-near-vertical" title="Permanent link">&para;</a></h3>
 <p>A RIGHT-exit LR section feeds the TOP entry of a TB section stacked directly below. The explicit right exit leaves on the right, clears the source box, and doubles back over the inter-row gap to drop straight onto the target trunk rather than elbowing in through the top-right corner.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_near_vertical.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_near_vertical.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_near_vertical.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_near_vertical.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a>%%metro title: Top Entry Near Vertical TB
-<a id="__codelineno-171-2" name="__codelineno-171-2" href="#__codelineno-171-2"></a>%%metro style: dark
-<a id="__codelineno-171-3" name="__codelineno-171-3" href="#__codelineno-171-3"></a>%%metro line: a | A | #e63946
-<a id="__codelineno-171-4" name="__codelineno-171-4" href="#__codelineno-171-4"></a>
-<a id="__codelineno-171-5" name="__codelineno-171-5" href="#__codelineno-171-5"></a>%%metro grid: src_sec | 0,0
-<a id="__codelineno-171-6" name="__codelineno-171-6" href="#__codelineno-171-6"></a>%%metro grid: tgt_sec | 0,1
-<a id="__codelineno-171-7" name="__codelineno-171-7" href="#__codelineno-171-7"></a>
-<a id="__codelineno-171-8" name="__codelineno-171-8" href="#__codelineno-171-8"></a>graph LR
-<a id="__codelineno-171-9" name="__codelineno-171-9" href="#__codelineno-171-9"></a>    subgraph src_sec [Source]
-<a id="__codelineno-171-10" name="__codelineno-171-10" href="#__codelineno-171-10"></a>        %%metro direction: LR
-<a id="__codelineno-171-11" name="__codelineno-171-11" href="#__codelineno-171-11"></a>        %%metro exit: right | a
-<a id="__codelineno-171-12" name="__codelineno-171-12" href="#__codelineno-171-12"></a>        s1[Start]
-<a id="__codelineno-171-13" name="__codelineno-171-13" href="#__codelineno-171-13"></a>        s2[End]
-<a id="__codelineno-171-14" name="__codelineno-171-14" href="#__codelineno-171-14"></a>        s1 --&gt;|a| s2
-<a id="__codelineno-171-15" name="__codelineno-171-15" href="#__codelineno-171-15"></a>    end
-<a id="__codelineno-171-16" name="__codelineno-171-16" href="#__codelineno-171-16"></a>
-<a id="__codelineno-171-17" name="__codelineno-171-17" href="#__codelineno-171-17"></a>    subgraph tgt_sec [Target]
-<a id="__codelineno-171-18" name="__codelineno-171-18" href="#__codelineno-171-18"></a>        %%metro direction: TB
-<a id="__codelineno-171-19" name="__codelineno-171-19" href="#__codelineno-171-19"></a>        %%metro entry: top | a
-<a id="__codelineno-171-20" name="__codelineno-171-20" href="#__codelineno-171-20"></a>        %%metro exit: right | a
-<a id="__codelineno-171-21" name="__codelineno-171-21" href="#__codelineno-171-21"></a>        t1[Process]
-<a id="__codelineno-171-22" name="__codelineno-171-22" href="#__codelineno-171-22"></a>        t2[Result]
-<a id="__codelineno-171-23" name="__codelineno-171-23" href="#__codelineno-171-23"></a>        t1 --&gt;|a| t2
-<a id="__codelineno-171-24" name="__codelineno-171-24" href="#__codelineno-171-24"></a>    end
-<a id="__codelineno-171-25" name="__codelineno-171-25" href="#__codelineno-171-25"></a>
-<a id="__codelineno-171-26" name="__codelineno-171-26" href="#__codelineno-171-26"></a>    s2 --&gt;|a| t1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a>%%metro title: Top Entry Near Vertical TB
+<a id="__codelineno-173-2" name="__codelineno-173-2" href="#__codelineno-173-2"></a>%%metro style: dark
+<a id="__codelineno-173-3" name="__codelineno-173-3" href="#__codelineno-173-3"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-173-4" name="__codelineno-173-4" href="#__codelineno-173-4"></a>
+<a id="__codelineno-173-5" name="__codelineno-173-5" href="#__codelineno-173-5"></a>%%metro grid: src_sec | 0,0
+<a id="__codelineno-173-6" name="__codelineno-173-6" href="#__codelineno-173-6"></a>%%metro grid: tgt_sec | 0,1
+<a id="__codelineno-173-7" name="__codelineno-173-7" href="#__codelineno-173-7"></a>
+<a id="__codelineno-173-8" name="__codelineno-173-8" href="#__codelineno-173-8"></a>graph LR
+<a id="__codelineno-173-9" name="__codelineno-173-9" href="#__codelineno-173-9"></a>    subgraph src_sec [Source]
+<a id="__codelineno-173-10" name="__codelineno-173-10" href="#__codelineno-173-10"></a>        %%metro direction: LR
+<a id="__codelineno-173-11" name="__codelineno-173-11" href="#__codelineno-173-11"></a>        %%metro exit: right | a
+<a id="__codelineno-173-12" name="__codelineno-173-12" href="#__codelineno-173-12"></a>        s1[Start]
+<a id="__codelineno-173-13" name="__codelineno-173-13" href="#__codelineno-173-13"></a>        s2[End]
+<a id="__codelineno-173-14" name="__codelineno-173-14" href="#__codelineno-173-14"></a>        s1 --&gt;|a| s2
+<a id="__codelineno-173-15" name="__codelineno-173-15" href="#__codelineno-173-15"></a>    end
+<a id="__codelineno-173-16" name="__codelineno-173-16" href="#__codelineno-173-16"></a>
+<a id="__codelineno-173-17" name="__codelineno-173-17" href="#__codelineno-173-17"></a>    subgraph tgt_sec [Target]
+<a id="__codelineno-173-18" name="__codelineno-173-18" href="#__codelineno-173-18"></a>        %%metro direction: TB
+<a id="__codelineno-173-19" name="__codelineno-173-19" href="#__codelineno-173-19"></a>        %%metro entry: top | a
+<a id="__codelineno-173-20" name="__codelineno-173-20" href="#__codelineno-173-20"></a>        %%metro exit: right | a
+<a id="__codelineno-173-21" name="__codelineno-173-21" href="#__codelineno-173-21"></a>        t1[Process]
+<a id="__codelineno-173-22" name="__codelineno-173-22" href="#__codelineno-173-22"></a>        t2[Result]
+<a id="__codelineno-173-23" name="__codelineno-173-23" href="#__codelineno-173-23"></a>        t1 --&gt;|a| t2
+<a id="__codelineno-173-24" name="__codelineno-173-24" href="#__codelineno-173-24"></a>    end
+<a id="__codelineno-173-25" name="__codelineno-173-25" href="#__codelineno-173-25"></a>
+<a id="__codelineno-173-26" name="__codelineno-173-26" href="#__codelineno-173-26"></a>    s2 --&gt;|a| t1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8470,42 +8546,42 @@
 <h3 id="lr-to-tb-top-cross-col">Lr To Tb Top Cross Col<a class="headerlink" href="#lr-to-tb-top-cross-col" title="Permanent link">&para;</a></h3>
 <p>A junction source feeds both a same-row RIGHT-entry consumer and a TB section's TOP entry two rows below. The downward branch drops onto the target trunk without crossing the section boundary off-port.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_cross_col.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_cross_col.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-174-1" name="__codelineno-174-1" href="#__codelineno-174-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_cross_col.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_cross_col.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a>%%metro title: Top Entry Horizontal Source
-<a id="__codelineno-173-2" name="__codelineno-173-2" href="#__codelineno-173-2"></a>%%metro style: dark
-<a id="__codelineno-173-3" name="__codelineno-173-3" href="#__codelineno-173-3"></a>%%metro line: a | A | #e63946
-<a id="__codelineno-173-4" name="__codelineno-173-4" href="#__codelineno-173-4"></a>%%metro grid: src_sec | 0,0
-<a id="__codelineno-173-5" name="__codelineno-173-5" href="#__codelineno-173-5"></a>%%metro grid: mid_sec | 1,0
-<a id="__codelineno-173-6" name="__codelineno-173-6" href="#__codelineno-173-6"></a>%%metro grid: tgt_sec | 0,2
-<a id="__codelineno-173-7" name="__codelineno-173-7" href="#__codelineno-173-7"></a>graph LR
-<a id="__codelineno-173-8" name="__codelineno-173-8" href="#__codelineno-173-8"></a>    subgraph src_sec [Source]
-<a id="__codelineno-173-9" name="__codelineno-173-9" href="#__codelineno-173-9"></a>        %%metro direction: LR
-<a id="__codelineno-173-10" name="__codelineno-173-10" href="#__codelineno-173-10"></a>        %%metro exit: right | a
-<a id="__codelineno-173-11" name="__codelineno-173-11" href="#__codelineno-173-11"></a>        s1[Start]
-<a id="__codelineno-173-12" name="__codelineno-173-12" href="#__codelineno-173-12"></a>        s2[End]
-<a id="__codelineno-173-13" name="__codelineno-173-13" href="#__codelineno-173-13"></a>        s1 --&gt;|a| s2
-<a id="__codelineno-173-14" name="__codelineno-173-14" href="#__codelineno-173-14"></a>    end
-<a id="__codelineno-173-15" name="__codelineno-173-15" href="#__codelineno-173-15"></a>    subgraph mid_sec [Middle]
-<a id="__codelineno-173-16" name="__codelineno-173-16" href="#__codelineno-173-16"></a>        %%metro direction: LR
-<a id="__codelineno-173-17" name="__codelineno-173-17" href="#__codelineno-173-17"></a>        %%metro entry: left | a
-<a id="__codelineno-173-18" name="__codelineno-173-18" href="#__codelineno-173-18"></a>        %%metro exit: right | a
-<a id="__codelineno-173-19" name="__codelineno-173-19" href="#__codelineno-173-19"></a>        m1[Middle]
-<a id="__codelineno-173-20" name="__codelineno-173-20" href="#__codelineno-173-20"></a>        m2[Middle Out]
-<a id="__codelineno-173-21" name="__codelineno-173-21" href="#__codelineno-173-21"></a>        m1 --&gt;|a| m2
-<a id="__codelineno-173-22" name="__codelineno-173-22" href="#__codelineno-173-22"></a>    end
-<a id="__codelineno-173-23" name="__codelineno-173-23" href="#__codelineno-173-23"></a>    subgraph tgt_sec [Target]
-<a id="__codelineno-173-24" name="__codelineno-173-24" href="#__codelineno-173-24"></a>        %%metro direction: TB
-<a id="__codelineno-173-25" name="__codelineno-173-25" href="#__codelineno-173-25"></a>        %%metro entry: top | a
-<a id="__codelineno-173-26" name="__codelineno-173-26" href="#__codelineno-173-26"></a>        %%metro exit: right | a
-<a id="__codelineno-173-27" name="__codelineno-173-27" href="#__codelineno-173-27"></a>        t1[Process]
-<a id="__codelineno-173-28" name="__codelineno-173-28" href="#__codelineno-173-28"></a>        t2[Result]
-<a id="__codelineno-173-29" name="__codelineno-173-29" href="#__codelineno-173-29"></a>        t1 --&gt;|a| t2
-<a id="__codelineno-173-30" name="__codelineno-173-30" href="#__codelineno-173-30"></a>    end
-<a id="__codelineno-173-31" name="__codelineno-173-31" href="#__codelineno-173-31"></a>    s2 --&gt;|a| m1
-<a id="__codelineno-173-32" name="__codelineno-173-32" href="#__codelineno-173-32"></a>    s2 --&gt;|a| t1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-175-1" name="__codelineno-175-1" href="#__codelineno-175-1"></a>%%metro title: Top Entry Horizontal Source
+<a id="__codelineno-175-2" name="__codelineno-175-2" href="#__codelineno-175-2"></a>%%metro style: dark
+<a id="__codelineno-175-3" name="__codelineno-175-3" href="#__codelineno-175-3"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-175-4" name="__codelineno-175-4" href="#__codelineno-175-4"></a>%%metro grid: src_sec | 0,0
+<a id="__codelineno-175-5" name="__codelineno-175-5" href="#__codelineno-175-5"></a>%%metro grid: mid_sec | 1,0
+<a id="__codelineno-175-6" name="__codelineno-175-6" href="#__codelineno-175-6"></a>%%metro grid: tgt_sec | 0,2
+<a id="__codelineno-175-7" name="__codelineno-175-7" href="#__codelineno-175-7"></a>graph LR
+<a id="__codelineno-175-8" name="__codelineno-175-8" href="#__codelineno-175-8"></a>    subgraph src_sec [Source]
+<a id="__codelineno-175-9" name="__codelineno-175-9" href="#__codelineno-175-9"></a>        %%metro direction: LR
+<a id="__codelineno-175-10" name="__codelineno-175-10" href="#__codelineno-175-10"></a>        %%metro exit: right | a
+<a id="__codelineno-175-11" name="__codelineno-175-11" href="#__codelineno-175-11"></a>        s1[Start]
+<a id="__codelineno-175-12" name="__codelineno-175-12" href="#__codelineno-175-12"></a>        s2[End]
+<a id="__codelineno-175-13" name="__codelineno-175-13" href="#__codelineno-175-13"></a>        s1 --&gt;|a| s2
+<a id="__codelineno-175-14" name="__codelineno-175-14" href="#__codelineno-175-14"></a>    end
+<a id="__codelineno-175-15" name="__codelineno-175-15" href="#__codelineno-175-15"></a>    subgraph mid_sec [Middle]
+<a id="__codelineno-175-16" name="__codelineno-175-16" href="#__codelineno-175-16"></a>        %%metro direction: LR
+<a id="__codelineno-175-17" name="__codelineno-175-17" href="#__codelineno-175-17"></a>        %%metro entry: left | a
+<a id="__codelineno-175-18" name="__codelineno-175-18" href="#__codelineno-175-18"></a>        %%metro exit: right | a
+<a id="__codelineno-175-19" name="__codelineno-175-19" href="#__codelineno-175-19"></a>        m1[Middle]
+<a id="__codelineno-175-20" name="__codelineno-175-20" href="#__codelineno-175-20"></a>        m2[Middle Out]
+<a id="__codelineno-175-21" name="__codelineno-175-21" href="#__codelineno-175-21"></a>        m1 --&gt;|a| m2
+<a id="__codelineno-175-22" name="__codelineno-175-22" href="#__codelineno-175-22"></a>    end
+<a id="__codelineno-175-23" name="__codelineno-175-23" href="#__codelineno-175-23"></a>    subgraph tgt_sec [Target]
+<a id="__codelineno-175-24" name="__codelineno-175-24" href="#__codelineno-175-24"></a>        %%metro direction: TB
+<a id="__codelineno-175-25" name="__codelineno-175-25" href="#__codelineno-175-25"></a>        %%metro entry: top | a
+<a id="__codelineno-175-26" name="__codelineno-175-26" href="#__codelineno-175-26"></a>        %%metro exit: right | a
+<a id="__codelineno-175-27" name="__codelineno-175-27" href="#__codelineno-175-27"></a>        t1[Process]
+<a id="__codelineno-175-28" name="__codelineno-175-28" href="#__codelineno-175-28"></a>        t2[Result]
+<a id="__codelineno-175-29" name="__codelineno-175-29" href="#__codelineno-175-29"></a>        t1 --&gt;|a| t2
+<a id="__codelineno-175-30" name="__codelineno-175-30" href="#__codelineno-175-30"></a>    end
+<a id="__codelineno-175-31" name="__codelineno-175-31" href="#__codelineno-175-31"></a>    s2 --&gt;|a| m1
+<a id="__codelineno-175-32" name="__codelineno-175-32" href="#__codelineno-175-32"></a>    s2 --&gt;|a| t1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8513,33 +8589,33 @@
 <h3 id="lr-to-tb-top-two-lines">Lr To Tb Top Two Lines<a class="headerlink" href="#lr-to-tb-top-two-lines" title="Permanent link">&para;</a></h3>
 <p>Two co-travelling lines from a RIGHT-exit LR section double back into a TB section's shared TOP entry below, landing on their trunk X offsets so the bundle stays parallel through the boundary without pinching or crossing.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-174-1" name="__codelineno-174-1" href="#__codelineno-174-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_two_lines.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_two_lines.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-176-1" name="__codelineno-176-1" href="#__codelineno-176-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_to_tb_top_two_lines.mmd<span class="w"> </span>-o<span class="w"> </span>lr_to_tb_top_two_lines.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-175-1" name="__codelineno-175-1" href="#__codelineno-175-1"></a>%%metro title: LR to TB Top Two Lines
-<a id="__codelineno-175-2" name="__codelineno-175-2" href="#__codelineno-175-2"></a>%%metro style: dark
-<a id="__codelineno-175-3" name="__codelineno-175-3" href="#__codelineno-175-3"></a>%%metro line: a | A | #e63946
-<a id="__codelineno-175-4" name="__codelineno-175-4" href="#__codelineno-175-4"></a>%%metro line: b | B | #0570b0
-<a id="__codelineno-175-5" name="__codelineno-175-5" href="#__codelineno-175-5"></a>%%metro grid: src_sec | 0,0
-<a id="__codelineno-175-6" name="__codelineno-175-6" href="#__codelineno-175-6"></a>%%metro grid: tgt_sec | 0,1
-<a id="__codelineno-175-7" name="__codelineno-175-7" href="#__codelineno-175-7"></a>graph LR
-<a id="__codelineno-175-8" name="__codelineno-175-8" href="#__codelineno-175-8"></a>    subgraph src_sec [Source]
-<a id="__codelineno-175-9" name="__codelineno-175-9" href="#__codelineno-175-9"></a>        %%metro direction: LR
-<a id="__codelineno-175-10" name="__codelineno-175-10" href="#__codelineno-175-10"></a>        %%metro exit: right | a,b
-<a id="__codelineno-175-11" name="__codelineno-175-11" href="#__codelineno-175-11"></a>        s1[Start]
-<a id="__codelineno-175-12" name="__codelineno-175-12" href="#__codelineno-175-12"></a>        s2[End]
-<a id="__codelineno-175-13" name="__codelineno-175-13" href="#__codelineno-175-13"></a>        s1 --&gt;|a,b| s2
-<a id="__codelineno-175-14" name="__codelineno-175-14" href="#__codelineno-175-14"></a>    end
-<a id="__codelineno-175-15" name="__codelineno-175-15" href="#__codelineno-175-15"></a>    subgraph tgt_sec [Target]
-<a id="__codelineno-175-16" name="__codelineno-175-16" href="#__codelineno-175-16"></a>        %%metro direction: TB
-<a id="__codelineno-175-17" name="__codelineno-175-17" href="#__codelineno-175-17"></a>        %%metro entry: top | a,b
-<a id="__codelineno-175-18" name="__codelineno-175-18" href="#__codelineno-175-18"></a>        %%metro exit: right | a,b
-<a id="__codelineno-175-19" name="__codelineno-175-19" href="#__codelineno-175-19"></a>        t1[Process]
-<a id="__codelineno-175-20" name="__codelineno-175-20" href="#__codelineno-175-20"></a>        t2[Result]
-<a id="__codelineno-175-21" name="__codelineno-175-21" href="#__codelineno-175-21"></a>        t1 --&gt;|a,b| t2
-<a id="__codelineno-175-22" name="__codelineno-175-22" href="#__codelineno-175-22"></a>    end
-<a id="__codelineno-175-23" name="__codelineno-175-23" href="#__codelineno-175-23"></a>    s2 --&gt;|a,b| t1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-177-1" name="__codelineno-177-1" href="#__codelineno-177-1"></a>%%metro title: LR to TB Top Two Lines
+<a id="__codelineno-177-2" name="__codelineno-177-2" href="#__codelineno-177-2"></a>%%metro style: dark
+<a id="__codelineno-177-3" name="__codelineno-177-3" href="#__codelineno-177-3"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-177-4" name="__codelineno-177-4" href="#__codelineno-177-4"></a>%%metro line: b | B | #0570b0
+<a id="__codelineno-177-5" name="__codelineno-177-5" href="#__codelineno-177-5"></a>%%metro grid: src_sec | 0,0
+<a id="__codelineno-177-6" name="__codelineno-177-6" href="#__codelineno-177-6"></a>%%metro grid: tgt_sec | 0,1
+<a id="__codelineno-177-7" name="__codelineno-177-7" href="#__codelineno-177-7"></a>graph LR
+<a id="__codelineno-177-8" name="__codelineno-177-8" href="#__codelineno-177-8"></a>    subgraph src_sec [Source]
+<a id="__codelineno-177-9" name="__codelineno-177-9" href="#__codelineno-177-9"></a>        %%metro direction: LR
+<a id="__codelineno-177-10" name="__codelineno-177-10" href="#__codelineno-177-10"></a>        %%metro exit: right | a,b
+<a id="__codelineno-177-11" name="__codelineno-177-11" href="#__codelineno-177-11"></a>        s1[Start]
+<a id="__codelineno-177-12" name="__codelineno-177-12" href="#__codelineno-177-12"></a>        s2[End]
+<a id="__codelineno-177-13" name="__codelineno-177-13" href="#__codelineno-177-13"></a>        s1 --&gt;|a,b| s2
+<a id="__codelineno-177-14" name="__codelineno-177-14" href="#__codelineno-177-14"></a>    end
+<a id="__codelineno-177-15" name="__codelineno-177-15" href="#__codelineno-177-15"></a>    subgraph tgt_sec [Target]
+<a id="__codelineno-177-16" name="__codelineno-177-16" href="#__codelineno-177-16"></a>        %%metro direction: TB
+<a id="__codelineno-177-17" name="__codelineno-177-17" href="#__codelineno-177-17"></a>        %%metro entry: top | a,b
+<a id="__codelineno-177-18" name="__codelineno-177-18" href="#__codelineno-177-18"></a>        %%metro exit: right | a,b
+<a id="__codelineno-177-19" name="__codelineno-177-19" href="#__codelineno-177-19"></a>        t1[Process]
+<a id="__codelineno-177-20" name="__codelineno-177-20" href="#__codelineno-177-20"></a>        t2[Result]
+<a id="__codelineno-177-21" name="__codelineno-177-21" href="#__codelineno-177-21"></a>        t1 --&gt;|a,b| t2
+<a id="__codelineno-177-22" name="__codelineno-177-22" href="#__codelineno-177-22"></a>    end
+<a id="__codelineno-177-23" name="__codelineno-177-23" href="#__codelineno-177-23"></a>    s2 --&gt;|a,b| t1
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
@@ -8547,45 +8623,11 @@
 <h3 id="lr-perp-top-exit-side-entry">Lr Perp Top Exit Side Entry<a class="headerlink" href="#lr-perp-top-exit-side-entry" title="Permanent link">&para;</a></h3>
 <p>Two co-travelling lines leave an LR section through an explicit TOP exit and feed the LEFT entry of a same-row neighbour. The exit port sits past the last station, and the bundle rises into the header band, runs across, and descends to the consumer's row to enter straight, staying parallel through every concentric corner.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-176-1" name="__codelineno-176-1" href="#__codelineno-176-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_side_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_side_entry.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-178-1" name="__codelineno-178-1" href="#__codelineno-178-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_side_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_side_entry.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-177-1" name="__codelineno-177-1" href="#__codelineno-177-1"></a>%%metro title: LR Perp Top Exit into Side Entry
-<a id="__codelineno-177-2" name="__codelineno-177-2" href="#__codelineno-177-2"></a>%%metro style: dark
-<a id="__codelineno-177-3" name="__codelineno-177-3" href="#__codelineno-177-3"></a>%%metro line: a | Line A | #e63946
-<a id="__codelineno-177-4" name="__codelineno-177-4" href="#__codelineno-177-4"></a>%%metro line: b | Line B | #0570b0
-<a id="__codelineno-177-5" name="__codelineno-177-5" href="#__codelineno-177-5"></a>
-<a id="__codelineno-177-6" name="__codelineno-177-6" href="#__codelineno-177-6"></a>graph LR
-<a id="__codelineno-177-7" name="__codelineno-177-7" href="#__codelineno-177-7"></a>    subgraph src [Source]
-<a id="__codelineno-177-8" name="__codelineno-177-8" href="#__codelineno-177-8"></a>        s1[Start]
-<a id="__codelineno-177-9" name="__codelineno-177-9" href="#__codelineno-177-9"></a>    end
-<a id="__codelineno-177-10" name="__codelineno-177-10" href="#__codelineno-177-10"></a>
-<a id="__codelineno-177-11" name="__codelineno-177-11" href="#__codelineno-177-11"></a>    subgraph mid [Middle]
-<a id="__codelineno-177-12" name="__codelineno-177-12" href="#__codelineno-177-12"></a>        %%metro exit: top | a, b
-<a id="__codelineno-177-13" name="__codelineno-177-13" href="#__codelineno-177-13"></a>        m1[Step 1]
-<a id="__codelineno-177-14" name="__codelineno-177-14" href="#__codelineno-177-14"></a>        m2[Step 2]
-<a id="__codelineno-177-15" name="__codelineno-177-15" href="#__codelineno-177-15"></a>        m1 --&gt;|a,b| m2
-<a id="__codelineno-177-16" name="__codelineno-177-16" href="#__codelineno-177-16"></a>    end
-<a id="__codelineno-177-17" name="__codelineno-177-17" href="#__codelineno-177-17"></a>
-<a id="__codelineno-177-18" name="__codelineno-177-18" href="#__codelineno-177-18"></a>    subgraph dst [Destination]
-<a id="__codelineno-177-19" name="__codelineno-177-19" href="#__codelineno-177-19"></a>        d1[Finish]
-<a id="__codelineno-177-20" name="__codelineno-177-20" href="#__codelineno-177-20"></a>    end
-<a id="__codelineno-177-21" name="__codelineno-177-21" href="#__codelineno-177-21"></a>
-<a id="__codelineno-177-22" name="__codelineno-177-22" href="#__codelineno-177-22"></a>    s1 --&gt;|a,b| m1
-<a id="__codelineno-177-23" name="__codelineno-177-23" href="#__codelineno-177-23"></a>    m2 --&gt;|a,b| d1
-</code></pre></div>
-</details>
-<p><strong>Rendered output:</strong></p>
-<p><img alt="Lr Perp Top Exit Side Entry" src="../assets/renders/lr_perp_top_exit_side_entry.svg" /></p>
-<h3 id="lr-perp-bottom-exit-side-entry">Lr Perp Bottom Exit Side Entry<a class="headerlink" href="#lr-perp-bottom-exit-side-entry" title="Permanent link">&para;</a></h3>
-<p>The BOTTOM-exit mirror of lr_perp_top_exit_side_entry: the bundle drops below the source section, runs across the under-row band, and rises back to the consumer's row to enter straight.</p>
-<p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-178-1" name="__codelineno-178-1" href="#__codelineno-178-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_bottom_exit_side_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_bottom_exit_side_entry.svg
-</code></pre></div>
-<details class="note">
-<summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-179-1" name="__codelineno-179-1" href="#__codelineno-179-1"></a>%%metro title: LR Perp Bottom Exit into Side Entry
+<div class="highlight"><pre><span></span><code><a id="__codelineno-179-1" name="__codelineno-179-1" href="#__codelineno-179-1"></a>%%metro title: LR Perp Top Exit into Side Entry
 <a id="__codelineno-179-2" name="__codelineno-179-2" href="#__codelineno-179-2"></a>%%metro style: dark
 <a id="__codelineno-179-3" name="__codelineno-179-3" href="#__codelineno-179-3"></a>%%metro line: a | Line A | #e63946
 <a id="__codelineno-179-4" name="__codelineno-179-4" href="#__codelineno-179-4"></a>%%metro line: b | Line B | #0570b0
@@ -8596,7 +8638,7 @@
 <a id="__codelineno-179-9" name="__codelineno-179-9" href="#__codelineno-179-9"></a>    end
 <a id="__codelineno-179-10" name="__codelineno-179-10" href="#__codelineno-179-10"></a>
 <a id="__codelineno-179-11" name="__codelineno-179-11" href="#__codelineno-179-11"></a>    subgraph mid [Middle]
-<a id="__codelineno-179-12" name="__codelineno-179-12" href="#__codelineno-179-12"></a>        %%metro exit: bottom | a, b
+<a id="__codelineno-179-12" name="__codelineno-179-12" href="#__codelineno-179-12"></a>        %%metro exit: top | a, b
 <a id="__codelineno-179-13" name="__codelineno-179-13" href="#__codelineno-179-13"></a>        m1[Step 1]
 <a id="__codelineno-179-14" name="__codelineno-179-14" href="#__codelineno-179-14"></a>        m2[Step 2]
 <a id="__codelineno-179-15" name="__codelineno-179-15" href="#__codelineno-179-15"></a>        m1 --&gt;|a,b| m2
@@ -8611,51 +8653,49 @@
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
+<p><img alt="Lr Perp Top Exit Side Entry" src="../assets/renders/lr_perp_top_exit_side_entry.svg" /></p>
+<h3 id="lr-perp-bottom-exit-side-entry">Lr Perp Bottom Exit Side Entry<a class="headerlink" href="#lr-perp-bottom-exit-side-entry" title="Permanent link">&para;</a></h3>
+<p>The BOTTOM-exit mirror of lr_perp_top_exit_side_entry: the bundle drops below the source section, runs across the under-row band, and rises back to the consumer's row to enter straight.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-180-1" name="__codelineno-180-1" href="#__codelineno-180-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_bottom_exit_side_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_bottom_exit_side_entry.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-181-1" name="__codelineno-181-1" href="#__codelineno-181-1"></a>%%metro title: LR Perp Bottom Exit into Side Entry
+<a id="__codelineno-181-2" name="__codelineno-181-2" href="#__codelineno-181-2"></a>%%metro style: dark
+<a id="__codelineno-181-3" name="__codelineno-181-3" href="#__codelineno-181-3"></a>%%metro line: a | Line A | #e63946
+<a id="__codelineno-181-4" name="__codelineno-181-4" href="#__codelineno-181-4"></a>%%metro line: b | Line B | #0570b0
+<a id="__codelineno-181-5" name="__codelineno-181-5" href="#__codelineno-181-5"></a>
+<a id="__codelineno-181-6" name="__codelineno-181-6" href="#__codelineno-181-6"></a>graph LR
+<a id="__codelineno-181-7" name="__codelineno-181-7" href="#__codelineno-181-7"></a>    subgraph src [Source]
+<a id="__codelineno-181-8" name="__codelineno-181-8" href="#__codelineno-181-8"></a>        s1[Start]
+<a id="__codelineno-181-9" name="__codelineno-181-9" href="#__codelineno-181-9"></a>    end
+<a id="__codelineno-181-10" name="__codelineno-181-10" href="#__codelineno-181-10"></a>
+<a id="__codelineno-181-11" name="__codelineno-181-11" href="#__codelineno-181-11"></a>    subgraph mid [Middle]
+<a id="__codelineno-181-12" name="__codelineno-181-12" href="#__codelineno-181-12"></a>        %%metro exit: bottom | a, b
+<a id="__codelineno-181-13" name="__codelineno-181-13" href="#__codelineno-181-13"></a>        m1[Step 1]
+<a id="__codelineno-181-14" name="__codelineno-181-14" href="#__codelineno-181-14"></a>        m2[Step 2]
+<a id="__codelineno-181-15" name="__codelineno-181-15" href="#__codelineno-181-15"></a>        m1 --&gt;|a,b| m2
+<a id="__codelineno-181-16" name="__codelineno-181-16" href="#__codelineno-181-16"></a>    end
+<a id="__codelineno-181-17" name="__codelineno-181-17" href="#__codelineno-181-17"></a>
+<a id="__codelineno-181-18" name="__codelineno-181-18" href="#__codelineno-181-18"></a>    subgraph dst [Destination]
+<a id="__codelineno-181-19" name="__codelineno-181-19" href="#__codelineno-181-19"></a>        d1[Finish]
+<a id="__codelineno-181-20" name="__codelineno-181-20" href="#__codelineno-181-20"></a>    end
+<a id="__codelineno-181-21" name="__codelineno-181-21" href="#__codelineno-181-21"></a>
+<a id="__codelineno-181-22" name="__codelineno-181-22" href="#__codelineno-181-22"></a>    s1 --&gt;|a,b| m1
+<a id="__codelineno-181-23" name="__codelineno-181-23" href="#__codelineno-181-23"></a>    m2 --&gt;|a,b| d1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
 <p><img alt="Lr Perp Bottom Exit Side Entry" src="../assets/renders/lr_perp_bottom_exit_side_entry.svg" /></p>
 <h3 id="lr-perp-top-exit-perp-entry">Lr Perp Top Exit Perp Entry<a class="headerlink" href="#lr-perp-top-exit-perp-entry" title="Permanent link">&para;</a></h3>
 <p>Two co-travelling lines leave an LR section through a TOP exit and feed the TOP entry of a same-row neighbour in another column. The bundle rises over the header band and drops into the consumer trunk, keeping a single left/right order across the shared entry port so it stays parallel without crossing at the drop.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-180-1" name="__codelineno-180-1" href="#__codelineno-180-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_perp_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_perp_entry.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-182-1" name="__codelineno-182-1" href="#__codelineno-182-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_perp_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_perp_entry.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-181-1" name="__codelineno-181-1" href="#__codelineno-181-1"></a>%%metro title: Cross-Column Perp Entry
-<a id="__codelineno-181-2" name="__codelineno-181-2" href="#__codelineno-181-2"></a>%%metro style: dark
-<a id="__codelineno-181-3" name="__codelineno-181-3" href="#__codelineno-181-3"></a>%%metro line: main | Main | #e63946
-<a id="__codelineno-181-4" name="__codelineno-181-4" href="#__codelineno-181-4"></a>%%metro line: branch | Branch | #2db572
-<a id="__codelineno-181-5" name="__codelineno-181-5" href="#__codelineno-181-5"></a>
-<a id="__codelineno-181-6" name="__codelineno-181-6" href="#__codelineno-181-6"></a>graph LR
-<a id="__codelineno-181-7" name="__codelineno-181-7" href="#__codelineno-181-7"></a>    subgraph src [Source]
-<a id="__codelineno-181-8" name="__codelineno-181-8" href="#__codelineno-181-8"></a>        %%metro exit: right | main,branch
-<a id="__codelineno-181-9" name="__codelineno-181-9" href="#__codelineno-181-9"></a>        s1[Start]
-<a id="__codelineno-181-10" name="__codelineno-181-10" href="#__codelineno-181-10"></a>    end
-<a id="__codelineno-181-11" name="__codelineno-181-11" href="#__codelineno-181-11"></a>    subgraph sec1 [Section One]
-<a id="__codelineno-181-12" name="__codelineno-181-12" href="#__codelineno-181-12"></a>        %%metro entry: left | main,branch
-<a id="__codelineno-181-13" name="__codelineno-181-13" href="#__codelineno-181-13"></a>        %%metro exit: top | main,branch
-<a id="__codelineno-181-14" name="__codelineno-181-14" href="#__codelineno-181-14"></a>        a[Input]
-<a id="__codelineno-181-15" name="__codelineno-181-15" href="#__codelineno-181-15"></a>        b[Output]
-<a id="__codelineno-181-16" name="__codelineno-181-16" href="#__codelineno-181-16"></a>        a --&gt;|main,branch| b
-<a id="__codelineno-181-17" name="__codelineno-181-17" href="#__codelineno-181-17"></a>    end
-<a id="__codelineno-181-18" name="__codelineno-181-18" href="#__codelineno-181-18"></a>    subgraph sec2 [Section Two]
-<a id="__codelineno-181-19" name="__codelineno-181-19" href="#__codelineno-181-19"></a>        %%metro entry: top | main,branch
-<a id="__codelineno-181-20" name="__codelineno-181-20" href="#__codelineno-181-20"></a>        d[Step D]
-<a id="__codelineno-181-21" name="__codelineno-181-21" href="#__codelineno-181-21"></a>        e[Step E]
-<a id="__codelineno-181-22" name="__codelineno-181-22" href="#__codelineno-181-22"></a>        d --&gt;|main,branch| e
-<a id="__codelineno-181-23" name="__codelineno-181-23" href="#__codelineno-181-23"></a>    end
-<a id="__codelineno-181-24" name="__codelineno-181-24" href="#__codelineno-181-24"></a>    s1 --&gt;|main,branch| a
-<a id="__codelineno-181-25" name="__codelineno-181-25" href="#__codelineno-181-25"></a>    b --&gt;|main,branch| d
-</code></pre></div>
-</details>
-<p><strong>Rendered output:</strong></p>
-<p><img alt="Lr Perp Top Exit Perp Entry" src="../assets/renders/lr_perp_top_exit_perp_entry.svg" /></p>
-<h3 id="lr-perp-bottom-exit-perp-entry">Lr Perp Bottom Exit Perp Entry<a class="headerlink" href="#lr-perp-bottom-exit-perp-entry" title="Permanent link">&para;</a></h3>
-<p>The BOTTOM-exit mirror of lr_perp_top_exit_perp_entry: the bundle drops under the row, runs across, and rises into the consumer's BOTTOM entry, staying parallel through the corridor.</p>
-<p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-182-1" name="__codelineno-182-1" href="#__codelineno-182-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_bottom_exit_perp_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_bottom_exit_perp_entry.svg
-</code></pre></div>
-<details class="note">
-<summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-183-1" name="__codelineno-183-1" href="#__codelineno-183-1"></a>%%metro title: Cross-Column Perp Bottom Entry
+<div class="highlight"><pre><span></span><code><a id="__codelineno-183-1" name="__codelineno-183-1" href="#__codelineno-183-1"></a>%%metro title: Cross-Column Perp Entry
 <a id="__codelineno-183-2" name="__codelineno-183-2" href="#__codelineno-183-2"></a>%%metro style: dark
 <a id="__codelineno-183-3" name="__codelineno-183-3" href="#__codelineno-183-3"></a>%%metro line: main | Main | #e63946
 <a id="__codelineno-183-4" name="__codelineno-183-4" href="#__codelineno-183-4"></a>%%metro line: branch | Branch | #2db572
@@ -8667,13 +8707,13 @@
 <a id="__codelineno-183-10" name="__codelineno-183-10" href="#__codelineno-183-10"></a>    end
 <a id="__codelineno-183-11" name="__codelineno-183-11" href="#__codelineno-183-11"></a>    subgraph sec1 [Section One]
 <a id="__codelineno-183-12" name="__codelineno-183-12" href="#__codelineno-183-12"></a>        %%metro entry: left | main,branch
-<a id="__codelineno-183-13" name="__codelineno-183-13" href="#__codelineno-183-13"></a>        %%metro exit: bottom | main,branch
+<a id="__codelineno-183-13" name="__codelineno-183-13" href="#__codelineno-183-13"></a>        %%metro exit: top | main,branch
 <a id="__codelineno-183-14" name="__codelineno-183-14" href="#__codelineno-183-14"></a>        a[Input]
 <a id="__codelineno-183-15" name="__codelineno-183-15" href="#__codelineno-183-15"></a>        b[Output]
 <a id="__codelineno-183-16" name="__codelineno-183-16" href="#__codelineno-183-16"></a>        a --&gt;|main,branch| b
 <a id="__codelineno-183-17" name="__codelineno-183-17" href="#__codelineno-183-17"></a>    end
 <a id="__codelineno-183-18" name="__codelineno-183-18" href="#__codelineno-183-18"></a>    subgraph sec2 [Section Two]
-<a id="__codelineno-183-19" name="__codelineno-183-19" href="#__codelineno-183-19"></a>        %%metro entry: bottom | main,branch
+<a id="__codelineno-183-19" name="__codelineno-183-19" href="#__codelineno-183-19"></a>        %%metro entry: top | main,branch
 <a id="__codelineno-183-20" name="__codelineno-183-20" href="#__codelineno-183-20"></a>        d[Step D]
 <a id="__codelineno-183-21" name="__codelineno-183-21" href="#__codelineno-183-21"></a>        e[Step E]
 <a id="__codelineno-183-22" name="__codelineno-183-22" href="#__codelineno-183-22"></a>        d --&gt;|main,branch| e
@@ -8683,15 +8723,15 @@
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
-<p><img alt="Lr Perp Bottom Exit Perp Entry" src="../assets/renders/lr_perp_bottom_exit_perp_entry.svg" /></p>
-<h3 id="lr-perp-top-exit-perp-entry-diverging">Lr Perp Top Exit Perp Entry Diverging<a class="headerlink" href="#lr-perp-top-exit-perp-entry-diverging" title="Permanent link">&para;</a></h3>
-<p>A TOP-exit bundle taken over the corridor into a TOP entry where the two lines split to different downstream stations. Consistent corridor ordering routes each line to its target without a convergence jog at the entry.</p>
+<p><img alt="Lr Perp Top Exit Perp Entry" src="../assets/renders/lr_perp_top_exit_perp_entry.svg" /></p>
+<h3 id="lr-perp-bottom-exit-perp-entry">Lr Perp Bottom Exit Perp Entry<a class="headerlink" href="#lr-perp-bottom-exit-perp-entry" title="Permanent link">&para;</a></h3>
+<p>The BOTTOM-exit mirror of lr_perp_top_exit_perp_entry: the bundle drops under the row, runs across, and rises into the consumer's BOTTOM entry, staying parallel through the corridor.</p>
 <p><strong>CLI command:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-184-1" name="__codelineno-184-1" href="#__codelineno-184-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_perp_entry_diverging.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_perp_entry_diverging.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-184-1" name="__codelineno-184-1" href="#__codelineno-184-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_bottom_exit_perp_entry.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_bottom_exit_perp_entry.svg
 </code></pre></div>
 <details class="note">
 <summary>Mermaid source</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-185-1" name="__codelineno-185-1" href="#__codelineno-185-1"></a>%%metro title: Cross-Column Perp Entry Diverging
+<div class="highlight"><pre><span></span><code><a id="__codelineno-185-1" name="__codelineno-185-1" href="#__codelineno-185-1"></a>%%metro title: Cross-Column Perp Bottom Entry
 <a id="__codelineno-185-2" name="__codelineno-185-2" href="#__codelineno-185-2"></a>%%metro style: dark
 <a id="__codelineno-185-3" name="__codelineno-185-3" href="#__codelineno-185-3"></a>%%metro line: main | Main | #e63946
 <a id="__codelineno-185-4" name="__codelineno-185-4" href="#__codelineno-185-4"></a>%%metro line: branch | Branch | #2db572
@@ -8703,20 +8743,56 @@
 <a id="__codelineno-185-10" name="__codelineno-185-10" href="#__codelineno-185-10"></a>    end
 <a id="__codelineno-185-11" name="__codelineno-185-11" href="#__codelineno-185-11"></a>    subgraph sec1 [Section One]
 <a id="__codelineno-185-12" name="__codelineno-185-12" href="#__codelineno-185-12"></a>        %%metro entry: left | main,branch
-<a id="__codelineno-185-13" name="__codelineno-185-13" href="#__codelineno-185-13"></a>        %%metro exit: top | main,branch
+<a id="__codelineno-185-13" name="__codelineno-185-13" href="#__codelineno-185-13"></a>        %%metro exit: bottom | main,branch
 <a id="__codelineno-185-14" name="__codelineno-185-14" href="#__codelineno-185-14"></a>        a[Input]
 <a id="__codelineno-185-15" name="__codelineno-185-15" href="#__codelineno-185-15"></a>        b[Output]
 <a id="__codelineno-185-16" name="__codelineno-185-16" href="#__codelineno-185-16"></a>        a --&gt;|main,branch| b
 <a id="__codelineno-185-17" name="__codelineno-185-17" href="#__codelineno-185-17"></a>    end
 <a id="__codelineno-185-18" name="__codelineno-185-18" href="#__codelineno-185-18"></a>    subgraph sec2 [Section Two]
-<a id="__codelineno-185-19" name="__codelineno-185-19" href="#__codelineno-185-19"></a>        %%metro entry: top | main,branch
+<a id="__codelineno-185-19" name="__codelineno-185-19" href="#__codelineno-185-19"></a>        %%metro entry: bottom | main,branch
 <a id="__codelineno-185-20" name="__codelineno-185-20" href="#__codelineno-185-20"></a>        d[Step D]
 <a id="__codelineno-185-21" name="__codelineno-185-21" href="#__codelineno-185-21"></a>        e[Step E]
-<a id="__codelineno-185-22" name="__codelineno-185-22" href="#__codelineno-185-22"></a>        d --&gt;|main| e
+<a id="__codelineno-185-22" name="__codelineno-185-22" href="#__codelineno-185-22"></a>        d --&gt;|main,branch| e
 <a id="__codelineno-185-23" name="__codelineno-185-23" href="#__codelineno-185-23"></a>    end
 <a id="__codelineno-185-24" name="__codelineno-185-24" href="#__codelineno-185-24"></a>    s1 --&gt;|main,branch| a
-<a id="__codelineno-185-25" name="__codelineno-185-25" href="#__codelineno-185-25"></a>    b --&gt;|main| d
-<a id="__codelineno-185-26" name="__codelineno-185-26" href="#__codelineno-185-26"></a>    b --&gt;|branch| e
+<a id="__codelineno-185-25" name="__codelineno-185-25" href="#__codelineno-185-25"></a>    b --&gt;|main,branch| d
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Lr Perp Bottom Exit Perp Entry" src="../assets/renders/lr_perp_bottom_exit_perp_entry.svg" /></p>
+<h3 id="lr-perp-top-exit-perp-entry-diverging">Lr Perp Top Exit Perp Entry Diverging<a class="headerlink" href="#lr-perp-top-exit-perp-entry-diverging" title="Permanent link">&para;</a></h3>
+<p>A TOP-exit bundle taken over the corridor into a TOP entry where the two lines split to different downstream stations. Consistent corridor ordering routes each line to its target without a convergence jog at the entry.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-186-1" name="__codelineno-186-1" href="#__codelineno-186-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/lr_perp_top_exit_perp_entry_diverging.mmd<span class="w"> </span>-o<span class="w"> </span>lr_perp_top_exit_perp_entry_diverging.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-187-1" name="__codelineno-187-1" href="#__codelineno-187-1"></a>%%metro title: Cross-Column Perp Entry Diverging
+<a id="__codelineno-187-2" name="__codelineno-187-2" href="#__codelineno-187-2"></a>%%metro style: dark
+<a id="__codelineno-187-3" name="__codelineno-187-3" href="#__codelineno-187-3"></a>%%metro line: main | Main | #e63946
+<a id="__codelineno-187-4" name="__codelineno-187-4" href="#__codelineno-187-4"></a>%%metro line: branch | Branch | #2db572
+<a id="__codelineno-187-5" name="__codelineno-187-5" href="#__codelineno-187-5"></a>
+<a id="__codelineno-187-6" name="__codelineno-187-6" href="#__codelineno-187-6"></a>graph LR
+<a id="__codelineno-187-7" name="__codelineno-187-7" href="#__codelineno-187-7"></a>    subgraph src [Source]
+<a id="__codelineno-187-8" name="__codelineno-187-8" href="#__codelineno-187-8"></a>        %%metro exit: right | main,branch
+<a id="__codelineno-187-9" name="__codelineno-187-9" href="#__codelineno-187-9"></a>        s1[Start]
+<a id="__codelineno-187-10" name="__codelineno-187-10" href="#__codelineno-187-10"></a>    end
+<a id="__codelineno-187-11" name="__codelineno-187-11" href="#__codelineno-187-11"></a>    subgraph sec1 [Section One]
+<a id="__codelineno-187-12" name="__codelineno-187-12" href="#__codelineno-187-12"></a>        %%metro entry: left | main,branch
+<a id="__codelineno-187-13" name="__codelineno-187-13" href="#__codelineno-187-13"></a>        %%metro exit: top | main,branch
+<a id="__codelineno-187-14" name="__codelineno-187-14" href="#__codelineno-187-14"></a>        a[Input]
+<a id="__codelineno-187-15" name="__codelineno-187-15" href="#__codelineno-187-15"></a>        b[Output]
+<a id="__codelineno-187-16" name="__codelineno-187-16" href="#__codelineno-187-16"></a>        a --&gt;|main,branch| b
+<a id="__codelineno-187-17" name="__codelineno-187-17" href="#__codelineno-187-17"></a>    end
+<a id="__codelineno-187-18" name="__codelineno-187-18" href="#__codelineno-187-18"></a>    subgraph sec2 [Section Two]
+<a id="__codelineno-187-19" name="__codelineno-187-19" href="#__codelineno-187-19"></a>        %%metro entry: top | main,branch
+<a id="__codelineno-187-20" name="__codelineno-187-20" href="#__codelineno-187-20"></a>        d[Step D]
+<a id="__codelineno-187-21" name="__codelineno-187-21" href="#__codelineno-187-21"></a>        e[Step E]
+<a id="__codelineno-187-22" name="__codelineno-187-22" href="#__codelineno-187-22"></a>        d --&gt;|main| e
+<a id="__codelineno-187-23" name="__codelineno-187-23" href="#__codelineno-187-23"></a>    end
+<a id="__codelineno-187-24" name="__codelineno-187-24" href="#__codelineno-187-24"></a>    s1 --&gt;|main,branch| a
+<a id="__codelineno-187-25" name="__codelineno-187-25" href="#__codelineno-187-25"></a>    b --&gt;|main| d
+<a id="__codelineno-187-26" name="__codelineno-187-26" href="#__codelineno-187-26"></a>    b --&gt;|branch| e
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
