@@ -379,6 +379,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#embedding-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedding options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#interactive-html-output" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -437,6 +448,17 @@
     <span class="md-ellipsis">
       
         Writing metro maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-maps-in-your-own-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedding maps in your own page
       
     </span>
   </a>
@@ -507,6 +529,33 @@
   
   
     <li class="md-nav__item">
+      <a href="embedding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="live/" class="md-nav__link">
         
   
@@ -542,6 +591,33 @@
     
   
     Data manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="embed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embed contract
   
 
     
@@ -655,10 +731,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -676,8 +752,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1030,6 +1106,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#embedding-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedding options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#interactive-html-output" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1088,6 +1175,17 @@
     <span class="md-ellipsis">
       
         Writing metro maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-maps-in-your-own-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedding maps in your own page
       
     </span>
   </a>
@@ -1308,6 +1406,54 @@
 </tr>
 </tbody>
 </table>
+<h4 id="embedding-options">Embedding options<a class="headerlink" href="#embedding-options" title="Permanent link">&para;</a></h4>
+<p>Flags for producing an SVG to embed in another page or application. The <a href="embedding/">Embedding guide</a> explains when to use each.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--responsive / --no-responsive</code></td>
+<td>off</td>
+<td>Emit <code>viewBox</code> only (no fixed <code>width</code>/<code>height</code>) for CSS-scalable embedding</td>
+</tr>
+<tr>
+<td><code>--embed-font / --no-embed-font</code></td>
+<td>off</td>
+<td>Inline Inter as a base64 <code>@font-face</code> so the SVG renders identically anywhere</td>
+</tr>
+<tr>
+<td><code>--text-to-paths / --no-text-to-paths</code></td>
+<td>off</td>
+<td>Convert text to vector paths (no font dependency; loses selectable text)</td>
+</tr>
+<tr>
+<td><code>--bare / --no-bare</code></td>
+<td>off</td>
+<td>Omit the title and outer padding so the canvas hugs the content (keeps the watermark)</td>
+</tr>
+<tr>
+<td><code>--svg-class-prefix TEXT</code></td>
+<td>none</td>
+<td>Prefix every SVG presentation class so multiple maps on one page don't collide</td>
+</tr>
+<tr>
+<td><code>--no-dark-mode-css</code></td>
+<td>off</td>
+<td>Suppress the <code>prefers-color-scheme: dark</code> block when the host manages its own theme</td>
+</tr>
+<tr>
+<td><code>--no-chrome-css</code></td>
+<td>off</td>
+<td>Bake concrete chrome colors instead of <code>--nfm-*</code> <code>var()</code> (needed for raster export, e.g. cairosvg)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="interactive-html-output">Interactive HTML output<a class="headerlink" href="#interactive-html-output" title="Permanent link">&para;</a></h4>
 <p><code>--format html</code> produces a self-contained <code>.html</code> file with the SVG inlined plus a small JS/CSS layer (no external dependencies, no network):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>pipeline.mmd<span class="w"> </span>--format<span class="w"> </span>html<span class="w"> </span>-o<span class="w"> </span>pipeline.html
@@ -1356,6 +1502,8 @@
 </code></pre></div>
 <h2 id="writing-metro-maps">Writing metro maps<a class="headerlink" href="#writing-metro-maps" title="Permanent link">&para;</a></h2>
 <p>Read the <a href="guide/">Guide</a> to learn how to write <code>.mmd</code> files, from minimal examples to multi-section pipelines with custom grid layouts.</p>
+<h2 id="embedding-maps-in-your-own-page">Embedding maps in your own page<a class="headerlink" href="#embedding-maps-in-your-own-page" title="Permanent link">&para;</a></h2>
+<p>Read the <a href="embedding/">Embedding guide</a> to put a rendered map into a docs site, dashboard, or app: responsive sizing, font portability, host theming, and driving a progress overlay from a running pipeline.</p>
 <h2 id="gallery">Gallery<a class="headerlink" href="#gallery" title="Permanent link">&para;</a></h2>
 <p>See the <a href="gallery/">Gallery</a> for rendered examples covering simple pipelines, complex multi-line topologies, fan-out/fan-in patterns, fold layouts, and realistic bioinformatics workflows.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
