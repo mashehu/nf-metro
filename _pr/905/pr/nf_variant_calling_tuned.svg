@@ -42,15 +42,15 @@
 <path d="M772.0,200.0 L801.5,200.0 Q811.5,200.0,817.5,192.0 L835.5,168.0 Q841.5,160.0,851.5,160.0 L904.5,160.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M128.0,160.0 L196.0,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M246.0,160.0 L392.0,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
-<path d="M452.0,160.0 L637.5,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M452.0,160.0 L500.5,160.0 Q510.5,160.0,516.5,152.0 L534.5,128.0 Q540.5,120.0,550.5,120.0 L637.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M687.5,120.0 L749.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M687.5,120.0 L692.5,120.0 Q702.5,120.0,706.0112344158839,129.36329177569044 L728.9887655841161,190.63670822430956 Q732.5,200.0,742.5,200.0 L772.0,200.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
-<path d="M570.5,160.0 L637.5,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M570.5,160.0 L582.5,160.0 Q592.5,160.0,598.5,152.0 L616.5,128.0 Q622.5,120.0,632.5,120.0 L637.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <path d="M904.5,160.0 L971.5,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M1051.5,120.0 L1101.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M196.0,160.0 L206.0,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M206.0,160.0 L246.0,160.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
-<path d="M637.5,160.0 L652.5,160.0 Q662.5,160.0,662.5,150.0 L662.5,130.0 Q662.5,120.0,672.5,120.0 L687.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M637.5,120.0 L687.5,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M971.5,160.0 L999.5,160.0 Q1009.5,160.0,1009.5,150.0 L1009.5,134.0 Q1009.5,120.0,1023.5,120.0 L1051.5,120.0" stroke="#2db572" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
 <rect x="123.0" y="119.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastqc" data-station-lines="qc" data-station-label="FastQC" data-section-id="preprocess" data-section-name="Pre-processing" />
 <rect x="123.0" y="155.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastp" data-station-lines="main,qc" data-station-label="FastP" data-section-id="preprocess" data-section-name="Pre-processing" />
@@ -88,22 +88,24 @@
 <circle cx="841.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="811.5" cy="200.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="841.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="510.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="540.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="702.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="732.5" cy="200.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="592.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="622.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="151.0" cy="124.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="181.0" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="219.0" cy="164.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="219.0" cy="275.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1013.5" cy="275.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1013.5" cy="124.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="662.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="662.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1009.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="1009.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M196.0,155.0 L201.0,160.0 L196.0,165.0 L191.0,160.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="196.0" y="152.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">preprocess__exit_right_0 (right)</text>
-<path d="M637.5,155.0 L642.5,160.0 L637.5,165.0 L632.5,160.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
-<text x="637.5" y="152.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">alignment__exit_right_1 (right)</text>
+<path d="M637.5,115.0 L642.5,120.0 L637.5,125.0 L632.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="637.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">alignment__exit_right_1 (right)</text>
 <path d="M971.5,155.0 L976.5,160.0 L971.5,165.0 L966.5,160.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="971.5" y="152.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">variant_calling__exit_right_2 (right)</text>
 <path d="M246.0,155.0 L251.0,160.0 L246.0,165.0 L241.0,160.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
