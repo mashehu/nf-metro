@@ -1725,6 +1725,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cross-column-perp-drop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross Column Perp Drop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-column-perp-drop-far-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross Column Perp Drop Far Exit
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3255,6 +3277,28 @@
     <span class="md-ellipsis">
       
         Lr Perp Top Exit Perp Entry Diverging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-column-perp-drop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross Column Perp Drop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-column-perp-drop-far-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross Column Perp Drop Far Exit
       
     </span>
   </a>
@@ -9226,6 +9270,68 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Lr Perp Top Exit Perp Entry Diverging" src="../assets/renders/lr_perp_top_exit_perp_entry_diverging.svg" /></p>
+<h3 id="cross-column-perp-drop">Cross Column Perp Drop<a class="headerlink" href="#cross-column-perp-drop" title="Permanent link">&para;</a></h3>
+<p>A <code>%%metro direction: TB</code> section fed by a perpendicular drop from a section in a different grid column. The vertical trunk stays on the QC section's own column and the cross-column feed comes over the top and drops into the trunk head, rather than the trunk being dragged out toward the off-column source.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-200-1" name="__codelineno-200-1" href="#__codelineno-200-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/cross_column_perp_drop.mmd<span class="w"> </span>-o<span class="w"> </span>cross_column_perp_drop.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-201-1" name="__codelineno-201-1" href="#__codelineno-201-1"></a>%%metro title: Cross-column perpendicular drop
+<a id="__codelineno-201-2" name="__codelineno-201-2" href="#__codelineno-201-2"></a>%%metro line: reads | Reads | #1f77b4
+<a id="__codelineno-201-3" name="__codelineno-201-3" href="#__codelineno-201-3"></a>
+<a id="__codelineno-201-4" name="__codelineno-201-4" href="#__codelineno-201-4"></a>graph LR
+<a id="__codelineno-201-5" name="__codelineno-201-5" href="#__codelineno-201-5"></a>    subgraph align [Alignment]
+<a id="__codelineno-201-6" name="__codelineno-201-6" href="#__codelineno-201-6"></a>        %%metro exit: top | reads
+<a id="__codelineno-201-7" name="__codelineno-201-7" href="#__codelineno-201-7"></a>        load[Load]
+<a id="__codelineno-201-8" name="__codelineno-201-8" href="#__codelineno-201-8"></a>        trim[Trim]
+<a id="__codelineno-201-9" name="__codelineno-201-9" href="#__codelineno-201-9"></a>        bwa[BWA-MEM]
+<a id="__codelineno-201-10" name="__codelineno-201-10" href="#__codelineno-201-10"></a>        load --&gt;|reads| trim
+<a id="__codelineno-201-11" name="__codelineno-201-11" href="#__codelineno-201-11"></a>        trim --&gt;|reads| bwa
+<a id="__codelineno-201-12" name="__codelineno-201-12" href="#__codelineno-201-12"></a>    end
+<a id="__codelineno-201-13" name="__codelineno-201-13" href="#__codelineno-201-13"></a>    subgraph qc [QC report]
+<a id="__codelineno-201-14" name="__codelineno-201-14" href="#__codelineno-201-14"></a>        %%metro direction: TB
+<a id="__codelineno-201-15" name="__codelineno-201-15" href="#__codelineno-201-15"></a>        %%metro entry: top | reads
+<a id="__codelineno-201-16" name="__codelineno-201-16" href="#__codelineno-201-16"></a>        collect[Collect]
+<a id="__codelineno-201-17" name="__codelineno-201-17" href="#__codelineno-201-17"></a>        multiqc[MultiQC]
+<a id="__codelineno-201-18" name="__codelineno-201-18" href="#__codelineno-201-18"></a>        collect --&gt;|reads| multiqc
+<a id="__codelineno-201-19" name="__codelineno-201-19" href="#__codelineno-201-19"></a>    end
+<a id="__codelineno-201-20" name="__codelineno-201-20" href="#__codelineno-201-20"></a>    bwa --&gt;|reads| collect
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Cross Column Perp Drop" src="../assets/renders/cross_column_perp_drop.svg" /></p>
+<h3 id="cross-column-perp-drop-far-exit">Cross Column Perp Drop Far Exit<a class="headerlink" href="#cross-column-perp-drop-far-exit" title="Permanent link">&para;</a></h3>
+<p>The cross-column perpendicular drop where the source's exit side faces away from the target's entry side (a BOTTOM exit feeding a TOP entry). The lead-in crosses to the inter-column gap and reaches the TOP entry from above the box, rather than rising up the trunk through the section's stations.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-202-1" name="__codelineno-202-1" href="#__codelineno-202-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/cross_column_perp_drop_far_exit.mmd<span class="w"> </span>-o<span class="w"> </span>cross_column_perp_drop_far_exit.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-203-1" name="__codelineno-203-1" href="#__codelineno-203-1"></a>%%metro title: Cross-column perpendicular drop (far-side exit)
+<a id="__codelineno-203-2" name="__codelineno-203-2" href="#__codelineno-203-2"></a>%%metro line: reads | Reads | #1f77b4
+<a id="__codelineno-203-3" name="__codelineno-203-3" href="#__codelineno-203-3"></a>
+<a id="__codelineno-203-4" name="__codelineno-203-4" href="#__codelineno-203-4"></a>graph LR
+<a id="__codelineno-203-5" name="__codelineno-203-5" href="#__codelineno-203-5"></a>    subgraph align [Alignment]
+<a id="__codelineno-203-6" name="__codelineno-203-6" href="#__codelineno-203-6"></a>        %%metro exit: bottom | reads
+<a id="__codelineno-203-7" name="__codelineno-203-7" href="#__codelineno-203-7"></a>        load[Load]
+<a id="__codelineno-203-8" name="__codelineno-203-8" href="#__codelineno-203-8"></a>        trim[Trim]
+<a id="__codelineno-203-9" name="__codelineno-203-9" href="#__codelineno-203-9"></a>        bwa[BWA-MEM]
+<a id="__codelineno-203-10" name="__codelineno-203-10" href="#__codelineno-203-10"></a>        load --&gt;|reads| trim
+<a id="__codelineno-203-11" name="__codelineno-203-11" href="#__codelineno-203-11"></a>        trim --&gt;|reads| bwa
+<a id="__codelineno-203-12" name="__codelineno-203-12" href="#__codelineno-203-12"></a>    end
+<a id="__codelineno-203-13" name="__codelineno-203-13" href="#__codelineno-203-13"></a>    subgraph qc [QC report]
+<a id="__codelineno-203-14" name="__codelineno-203-14" href="#__codelineno-203-14"></a>        %%metro direction: TB
+<a id="__codelineno-203-15" name="__codelineno-203-15" href="#__codelineno-203-15"></a>        %%metro entry: top | reads
+<a id="__codelineno-203-16" name="__codelineno-203-16" href="#__codelineno-203-16"></a>        collect[Collect]
+<a id="__codelineno-203-17" name="__codelineno-203-17" href="#__codelineno-203-17"></a>        multiqc[MultiQC]
+<a id="__codelineno-203-18" name="__codelineno-203-18" href="#__codelineno-203-18"></a>        collect --&gt;|reads| multiqc
+<a id="__codelineno-203-19" name="__codelineno-203-19" href="#__codelineno-203-19"></a>    end
+<a id="__codelineno-203-20" name="__codelineno-203-20" href="#__codelineno-203-20"></a>    bwa --&gt;|reads| collect
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Cross Column Perp Drop Far Exit" src="../assets/renders/cross_column_perp_drop_far_exit.svg" /></p>
 
 
 
