@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="480" height="815" viewBox="0 0 480 815">
+     width="424" height="788" viewBox="0 0 424 788">
 <defs>
 </defs>
 <style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
@@ -12,7 +12,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
 .nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
 .nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
-<rect x="0" y="0" width="480" height="815" fill="#2b2b2b" class="nf-metro-bg" />
+<rect x="0" y="0" width="424" height="788" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Header Nudged Past Trunk</text>
 <rect x="42.0" y="90.0" width="100.0" height="150.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="src_sec" data-section-lines="a" />
 <circle cx="53.0" cy="75.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="src_sec" />
@@ -64,8 +64,8 @@
 <path d="M20.0,408.0 L152.0,408.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <path d="M30.5,636.0 L152.0,636.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="26.5" y="636.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 2 grid</text>
-<rect x="30.0" y="743.8" width="67.7" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
-<path d="M42.0,767.8 L66.0,767.8" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
-<text x="78.0" y="767.8" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">A</text>
-<text x="450.0" y="807.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<rect x="30.0" y="716.0" width="67.7" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
+<path d="M42.0,740.0 L66.0,740.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="740.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">A</text>
+<text x="394.0" y="780.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
