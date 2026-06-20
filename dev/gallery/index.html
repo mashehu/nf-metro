@@ -1824,6 +1824,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rail-offtrack-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rail Offtrack Io
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rail-offtrack-plain-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rail Offtrack Plain Io
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3453,6 +3475,28 @@
     <span class="md-ellipsis">
       
         Cross Column Perp Drop Far Exit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rail-offtrack-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rail Offtrack Io
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rail-offtrack-plain-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rail Offtrack Plain Io
       
     </span>
   </a>
@@ -9750,6 +9794,78 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Cross Column Perp Drop Far Exit" src="../assets/renders/cross_column_perp_drop_far_exit.svg" /></p>
+<h3 id="rail-offtrack-io">Rail Offtrack Io<a class="headerlink" href="#rail-offtrack-io" title="Permanent link">&para;</a></h3>
+<p>A <code>%%metro line_spread: rails</code> section with off-track <code>%%metro file:</code> input and output. Each off-track file terminus carries a buffer-stop nub at the rail-side end of its vertical stub (like the on-rail CRAM/VCF termini) seated clear of its under-icon caption, rather than the line ending bare at the icon.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-218-1" name="__codelineno-218-1" href="#__codelineno-218-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/rail_offtrack_io.mmd<span class="w"> </span>-o<span class="w"> </span>rail_offtrack_io.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-219-1" name="__codelineno-219-1" href="#__codelineno-219-1"></a>%%metro title: Rail off-track file input and output
+<a id="__codelineno-219-2" name="__codelineno-219-2" href="#__codelineno-219-2"></a>%%metro style: dark
+<a id="__codelineno-219-3" name="__codelineno-219-3" href="#__codelineno-219-3"></a>%%metro line_spread: rails
+<a id="__codelineno-219-4" name="__codelineno-219-4" href="#__codelineno-219-4"></a>%%metro line: a | A | #2db572
+<a id="__codelineno-219-5" name="__codelineno-219-5" href="#__codelineno-219-5"></a>%%metro line: b | B | #f4a300
+<a id="__codelineno-219-6" name="__codelineno-219-6" href="#__codelineno-219-6"></a>%%metro file: cram_in | CRAM
+<a id="__codelineno-219-7" name="__codelineno-219-7" href="#__codelineno-219-7"></a>%%metro file: aux_in | BED | Targets
+<a id="__codelineno-219-8" name="__codelineno-219-8" href="#__codelineno-219-8"></a>%%metro file: side_out | QC
+<a id="__codelineno-219-9" name="__codelineno-219-9" href="#__codelineno-219-9"></a>%%metro off_track: aux_in
+<a id="__codelineno-219-10" name="__codelineno-219-10" href="#__codelineno-219-10"></a>%%metro off_track: side_out
+<a id="__codelineno-219-11" name="__codelineno-219-11" href="#__codelineno-219-11"></a>
+<a id="__codelineno-219-12" name="__codelineno-219-12" href="#__codelineno-219-12"></a>graph LR
+<a id="__codelineno-219-13" name="__codelineno-219-13" href="#__codelineno-219-13"></a>    subgraph sec [Calling]
+<a id="__codelineno-219-14" name="__codelineno-219-14" href="#__codelineno-219-14"></a>        cram_in[ ]
+<a id="__codelineno-219-15" name="__codelineno-219-15" href="#__codelineno-219-15"></a>        align[Align]
+<a id="__codelineno-219-16" name="__codelineno-219-16" href="#__codelineno-219-16"></a>        call[Call]
+<a id="__codelineno-219-17" name="__codelineno-219-17" href="#__codelineno-219-17"></a>        report[Report]
+<a id="__codelineno-219-18" name="__codelineno-219-18" href="#__codelineno-219-18"></a>        aux_in[ ]
+<a id="__codelineno-219-19" name="__codelineno-219-19" href="#__codelineno-219-19"></a>        side_out[ ]
+<a id="__codelineno-219-20" name="__codelineno-219-20" href="#__codelineno-219-20"></a>
+<a id="__codelineno-219-21" name="__codelineno-219-21" href="#__codelineno-219-21"></a>        cram_in --&gt;|a,b| align
+<a id="__codelineno-219-22" name="__codelineno-219-22" href="#__codelineno-219-22"></a>        align --&gt;|a,b| call
+<a id="__codelineno-219-23" name="__codelineno-219-23" href="#__codelineno-219-23"></a>        call --&gt;|a,b| report
+<a id="__codelineno-219-24" name="__codelineno-219-24" href="#__codelineno-219-24"></a>        aux_in --&gt;|a| call
+<a id="__codelineno-219-25" name="__codelineno-219-25" href="#__codelineno-219-25"></a>        call --&gt;|a| side_out
+<a id="__codelineno-219-26" name="__codelineno-219-26" href="#__codelineno-219-26"></a>    end
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Rail Offtrack Io" src="../assets/renders/rail_offtrack_io.svg" /></p>
+<h3 id="rail-offtrack-plain-io">Rail Offtrack Plain Io<a class="headerlink" href="#rail-offtrack-plain-io" title="Permanent link">&para;</a></h3>
+<p>A <code>%%metro line_spread: rails</code> section with plain (non-file) off-track input and output. Each plain off-track node renders a station marker at its line end rather than a bare stub, and the input's label sits above the node clear of its drop and the adjacent station's label.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-220-1" name="__codelineno-220-1" href="#__codelineno-220-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/rail_offtrack_plain_io.mmd<span class="w"> </span>-o<span class="w"> </span>rail_offtrack_plain_io.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-221-1" name="__codelineno-221-1" href="#__codelineno-221-1"></a>%%metro title: Rail off-track plain input and output
+<a id="__codelineno-221-2" name="__codelineno-221-2" href="#__codelineno-221-2"></a>%%metro style: dark
+<a id="__codelineno-221-3" name="__codelineno-221-3" href="#__codelineno-221-3"></a>%%metro line_spread: rails
+<a id="__codelineno-221-4" name="__codelineno-221-4" href="#__codelineno-221-4"></a>%%metro line: a | A | #2db572
+<a id="__codelineno-221-5" name="__codelineno-221-5" href="#__codelineno-221-5"></a>%%metro line: b | B | #f4a300
+<a id="__codelineno-221-6" name="__codelineno-221-6" href="#__codelineno-221-6"></a>%%metro file: cram_in | CRAM
+<a id="__codelineno-221-7" name="__codelineno-221-7" href="#__codelineno-221-7"></a>
+<a id="__codelineno-221-8" name="__codelineno-221-8" href="#__codelineno-221-8"></a>graph LR
+<a id="__codelineno-221-9" name="__codelineno-221-9" href="#__codelineno-221-9"></a>    subgraph sec [Calling]
+<a id="__codelineno-221-10" name="__codelineno-221-10" href="#__codelineno-221-10"></a>        cram_in[ ]
+<a id="__codelineno-221-11" name="__codelineno-221-11" href="#__codelineno-221-11"></a>        align[Align]
+<a id="__codelineno-221-12" name="__codelineno-221-12" href="#__codelineno-221-12"></a>        call[Call]
+<a id="__codelineno-221-13" name="__codelineno-221-13" href="#__codelineno-221-13"></a>        report[Report]
+<a id="__codelineno-221-14" name="__codelineno-221-14" href="#__codelineno-221-14"></a>        aux[Targets BED]
+<a id="__codelineno-221-15" name="__codelineno-221-15" href="#__codelineno-221-15"></a>        qc[QC report]
+<a id="__codelineno-221-16" name="__codelineno-221-16" href="#__codelineno-221-16"></a>
+<a id="__codelineno-221-17" name="__codelineno-221-17" href="#__codelineno-221-17"></a>        cram_in --&gt;|a,b| align
+<a id="__codelineno-221-18" name="__codelineno-221-18" href="#__codelineno-221-18"></a>        align --&gt;|a,b| call
+<a id="__codelineno-221-19" name="__codelineno-221-19" href="#__codelineno-221-19"></a>        call --&gt;|a,b| report
+<a id="__codelineno-221-20" name="__codelineno-221-20" href="#__codelineno-221-20"></a>        aux --&gt;|a| call
+<a id="__codelineno-221-21" name="__codelineno-221-21" href="#__codelineno-221-21"></a>        call --&gt;|a| qc
+<a id="__codelineno-221-22" name="__codelineno-221-22" href="#__codelineno-221-22"></a>    end
+<a id="__codelineno-221-23" name="__codelineno-221-23" href="#__codelineno-221-23"></a>%%metro off_track: aux
+<a id="__codelineno-221-24" name="__codelineno-221-24" href="#__codelineno-221-24"></a>%%metro off_track: qc
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Rail Offtrack Plain Io" src="../assets/renders/rail_offtrack_plain_io.svg" /></p>
 
 
 
