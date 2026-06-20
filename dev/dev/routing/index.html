@@ -682,6 +682,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#render-time-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render-time guards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-descriptor-catalogue-wrap_table" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -919,6 +930,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#render-time-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render-time guards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-descriptor-catalogue-wrap_table" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1030,6 +1052,24 @@ offset propagation at each corner (the corner-radius helpers live in
 <code>routing/corners.py</code>).  The runtime guard
 <code>check_bundle_order_preserved</code> (in <code>routing/invariants.py</code>) catches any
 regression where a line crosses over its bundle-mates.</p>
+<h2 id="render-time-guards">Render-time guards<a class="headerlink" href="#render-time-guards" title="Permanent link">&para;</a></h2>
+<p><code>assert_render_curve_invariants</code> (in <code>routing/invariants.py</code>) runs a set of
+correctness checks on the final <code>route_edges</code> output every render -- the exact
+geometry the renderer is about to draw -- so a defective route aborts the
+render with a message naming the offending edge rather than being shipped.  It
+is always on, independent of <code>compute_layout</code>'s <code>validate</code> flag.</p>
+<p>Among these are the <strong>endpoint guards</strong>, which assert that a routed segment
+terminates at a real anchor rather than hanging in open space:</p>
+<ul>
+<li><code>check_merge_branches_meet_trunk</code> -- a merge feeder must land on its trunk's
+  channel (merge junctions only).</li>
+<li><code>check_no_hanging_routes</code> -- the general backstop: <strong>every</strong> route's two
+  endpoints must each lie within <code>2 * CURVE_RADIUS</code> of a station/port/junction
+  marker or of another route it joins (a bundle mate, a branch onto a trunk, a
+  peel-off).  Rail-mode endpoints are skipped (a rail stub terminates on its
+  rail).  This generalises the merge-only check to any route family; the
+  family-specific checks remain as sharper diagnostics.</li>
+</ul>
 <h2 id="the-descriptor-catalogue-wrap_table">The descriptor catalogue (<code>WRAP_TABLE</code>)<a class="headerlink" href="#the-descriptor-catalogue-wrap_table" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/routing/inter_section.py"><code>routing/inter_section.py</code></a>
 defines <code>WRAP_TABLE</code>, a declarative mirror of the inter-section
