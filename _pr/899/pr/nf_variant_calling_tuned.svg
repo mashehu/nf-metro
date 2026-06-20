@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="1224" height="401" viewBox="0 0 1224 401">
+     width="1211" height="401" viewBox="0 0 1211 401">
 <defs>
 </defs>
 <style>.nf-metro-bg { fill: var(--nfm-bg, #2b2b2b); }
@@ -12,7 +12,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-section-label-color, #c8c8c8); }
 .nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(0, 0, 0, 0.3)); }
 .nf-metro-legend-text { fill: var(--nfm-legend-text-color, #e0e0e0); }</style>
-<rect x="0" y="0" width="1224" height="401" fill="#2b2b2b" class="nf-metro-bg" />
+<rect x="0" y="0" width="1211" height="401" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Variant Calling Pipeline</text>
 <rect x="60.0" y="70.0" width="136.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocess" data-section-lines="main,qc" />
 <circle cx="71.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="preprocess" />
@@ -131,5 +131,5 @@
 <text x="108.0" y="329.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Main</text>
 <path d="M72.0,353.0 L96.0,353.0" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <text x="108.0" y="353.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">QC Reporting</text>
-<text x="1194.0" y="393.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+<text x="1181.0" y="393.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 </svg>
