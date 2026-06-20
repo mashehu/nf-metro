@@ -24,28 +24,26 @@
 <text x="267.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="qc">QC</text>
 <path d="M80.0,120.0 L140.0,120.0" stroke="#1f77b4" stroke-width="3.0" stroke-linecap="round" class="metro-line-reads" data-line-id="reads" />
 <path d="M320.0,160.0 L320.0,200.0" stroke="#1f77b4" stroke-width="3.0" stroke-linecap="round" class="metro-line-reads" data-line-id="reads" />
-<path d="M140.0,120.0 L145.0,120.0 Q155.0,120.0,159.47213595499957,128.94427190999915 L170.52786404500043,151.05572809000085 Q175.0,160.0,185.0,160.0 L190.0,160.0" stroke="#1f77b4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-reads" data-line-id="reads" />
+<path d="M140.0,120.0 L190.0,120.0" stroke="#1f77b4" stroke-width="3.0" stroke-linecap="round" class="metro-line-reads" data-line-id="reads" />
 <path d="M320.0,70.0 L320.0,160.0" stroke="#1f77b4" stroke-width="3.0" stroke-linecap="round" class="metro-line-reads" data-line-id="reads" />
-<path d="M190.0,160.0 L190.0,160.0 Q200.0,160.0,200.0,150.0 L200.0,54.0 Q200.0,44.0,210.0,44.0 L310.0,44.0 Q320.0,44.0,320.0,54.0 L320.0,70.0" stroke="#1f77b4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-reads" data-line-id="reads" />
+<path d="M190.0,120.0 L190.0,120.0 Q200.0,120.0,200.0,110.0 L200.0,54.0 Q200.0,44.0,210.0,44.0 L310.0,44.0 Q320.0,44.0,320.0,54.0 L320.0,70.0" stroke="#1f77b4" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-reads" data-line-id="reads" />
 <rect x="75.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="a" data-station-lines="reads" data-station-label="A" data-section-id="up" data-section-name="Up" />
 <rect x="135.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="b" data-station-lines="reads" data-station-label="B" data-section-id="up" data-section-name="Up" />
 <rect x="315.0" y="155.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="collect" data-station-lines="reads" data-station-label="Collect" data-section-id="qc" data-section-name="QC" />
 <rect x="315.0" y="195.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="multiqc" data-station-lines="reads" data-station-label="MultiQC" data-section-id="qc" data-section-name="QC" />
-<text x="80.0" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">A</text>
-<text x="80.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="a" class="nf-metro-station-label">A</text>
+<text x="80.0" y="131.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">A</text>
+<text x="80.0" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="a" class="nf-metro-station-label">A</text>
 <text x="309.0" y="160.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Collect</text>
 <text x="309.0" y="160.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="collect" class="nf-metro-station-label">Collect</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">B</text>
 <text x="140.0" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="b" class="nf-metro-station-label">B</text>
 <text x="309.0" y="200.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">MultiQC</text>
 <text x="309.0" y="200.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="multiqc" class="nf-metro-station-label">MultiQC</text>
-<circle cx="155.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="175.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="200.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="200.0" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="200.0" cy="44.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <circle cx="320.0" cy="44.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<path d="M190.0,155.0 L195.0,160.0 L190.0,165.0 L185.0,160.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
-<text x="190.0" y="152.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">up__exit_right_0 (right)</text>
+<path d="M190.0,115.0 L195.0,120.0 L190.0,125.0 L185.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="190.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">up__exit_right_0 (right)</text>
 <path d="M320.0,65.0 L325.0,70.0 L320.0,75.0 L315.0,70.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
 <text x="320.0" y="62.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">qc__entry_top_1 (top)</text>
 <path d="M215.0,50.0 L215.0,270.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
