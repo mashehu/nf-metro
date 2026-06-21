@@ -400,6 +400,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#validating-the-rendered-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validating the rendered geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1155,6 +1166,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#validating-the-rendered-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validating the rendered geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1488,9 +1510,14 @@
 </code></pre></div>
 <p>The page supports drag-to-pan, scroll-to-zoom, station hover tooltips, and a clickable line legend. Clicking a line isolates it: stations and sections not carrying that line are hidden and the view zooms to the bounding box of what remains. Click again, hit <code>Esc</code>, or use the Reset button to restore.</p>
 <p>The <strong>Embed&hellip;</strong> button opens a panel with copyable inline-HTML, iframe, and static-SVG snippets. The <a href="embedding/">Embedding guide</a> explains when to reach for each, plus responsive sizing, font portability, host theming, and progress overlays.</p>
+<h4 id="validating-the-rendered-geometry">Validating the rendered geometry<a class="headerlink" href="#validating-the-rendered-geometry" title="Permanent link">&para;</a></h4>
+<p>Pass <code>--validate</code> to check the <em>drawn</em> SVG after rendering and fail (non-zero exit) if a route is drawn through a station's label or marker, or two distinct lines collapse into one stroke where they should run parallel. This reads the geometry as it ends up on the page (after the per-line offsets and label shifts the layout applies), catching defects the pre-render checks cannot see:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>pipeline.svg<span class="w"> </span>--validate
+</code></pre></div>
+<p>To run the same geometry checks on an already-rendered SVG, use <a href="manifest/#manifest-schema"><code>nf-metro validate-svg --geometry</code></a>.</p>
 <h3 id="nf-metro-convert"><code>nf-metro convert</code><a class="headerlink" href="#nf-metro-convert" title="Permanent link">&para;</a></h3>
 <p>Convert a Nextflow <code>-with-dag</code> mermaid file to nf-metro format.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nf-metro convert [OPTIONS] INPUT_FILE
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nf-metro convert [OPTIONS] INPUT_FILE
 </code></pre></div>
 <table>
 <thead>
@@ -1516,11 +1543,11 @@
 <p>See <a href="nextflow/">Importing from Nextflow</a> for details and examples.</p>
 <h3 id="nf-metro-validate"><code>nf-metro validate</code><a class="headerlink" href="#nf-metro-validate" title="Permanent link">&para;</a></h3>
 <p>Check a <code>.mmd</code> file for errors without producing output.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nf-metro validate INPUT_FILE
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>nf-metro validate INPUT_FILE
 </code></pre></div>
 <h3 id="nf-metro-info"><code>nf-metro info</code><a class="headerlink" href="#nf-metro-info" title="Permanent link">&para;</a></h3>
 <p>Print a summary of the parsed map: sections, lines, stations, and edges.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>nf-metro info INPUT_FILE
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>nf-metro info INPUT_FILE
 </code></pre></div>
 <h2 id="writing-metro-maps">Writing metro maps<a class="headerlink" href="#writing-metro-maps" title="Permanent link">&para;</a></h2>
 <p>Read the <a href="guide/">Guide</a> to learn how to write <code>.mmd</code> files, from minimal examples to multi-section pipelines with custom grid layouts.</p>

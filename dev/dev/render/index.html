@@ -1041,15 +1041,28 @@ finished artifact back into geometry — node markers from the embedded
 manifest, route polylines from the drawn <code>&lt;path data-line-id&gt;</code> ink (splitting
 at each <code>M</code> so a bridge-hop gap is a real break, and collapsing each smoothing
 <code>Q</code> to its corner), and label ink boxes from the drawn <code>&lt;text&gt;</code> ink — then
-runs render-geometry checks on what was drawn. The label-strike check reuses
-the authoritative <code>segment_strikes_label</code> predicate at the label's drawn font
-scale, so a finding means the rendered image is wrong, not that a
-re-derivation diverged. It needs only the SVG string, so it validates a
-produced file (in CI, or via <code>validate-svg --geometry</code>) and behind
-<code>render --validate</code> without re-running layout.</p>
-<p>The marker-crossing and offset-pitch separation checks the same direction
-calls for are tracked separately: they fire on accepted idioms (rail
-interchanges; diagonal bundles) that the bare manifest cannot yet distinguish.</p>
+runs render-geometry checks on what was drawn. Three checks run:</p>
+<ul>
+<li><strong>label-strike</strong> reuses the authoritative <code>segment_strikes_label</code> predicate
+  at the label's drawn font scale, so a finding means the rendered image is
+  wrong, not that a re-derivation diverged.</li>
+<li><strong>marker-cross</strong> flags a route segment through a non-consumer station's
+  marker (a line the station carries, via the manifest <code>groups</code>, is exempt).
+  Rail-interchange stations are exempt too — a line threading an interchange
+  knob is the intended rail idiom — and their ids are read back from the drawn
+  <code>...-rail-...</code> markers, since the manifest carries no rail flag.</li>
+<li><strong>offset-collapse</strong> flags two distinct lines drawn flush where the offset
+  regime assigned them a full <code>OFFSET_STEP</code> apart. Two lines on the same
+  assigned slot draw flush by design (a shared-trunk bundle), so the check
+  compares the drawn gap against the gap the regime <em>assigned</em>, not a constant.</li>
+</ul>
+<p>label-strike and marker-cross are pure artifact oracles (the SVG string is
+enough), so they run on a produced file in CI, via <code>validate-svg --geometry</code>,
+and behind <code>render --validate</code>. offset-collapse needs the engine's assigned
+offsets to tell an intended same-slot bundle from a real merge, so
+<code>validate_render(svg, *, graph=...)</code> runs it only when the laid-out graph is
+supplied — the <code>render --validate</code> path and the CI corpus test, not the
+standalone SVG path.</p>
 <h2 id="animation-animatepy">Animation (<code>animate.py</code>)<a class="headerlink" href="#animation-animatepy" title="Permanent link">&para;</a></h2>
 <p><code>render_animation(d, graph, routes, station_offsets, theme)</code> appends
 animated <code>&lt;circle&gt;</code> elements with <code>&lt;animateMotion&gt;</code> to an existing

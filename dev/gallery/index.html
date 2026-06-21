@@ -1934,6 +1934,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#post-convergence-trunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post Convergence Trunk
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3701,6 +3712,17 @@
     <span class="md-ellipsis">
       
         Bottom Row Climb Clear Corridor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-convergence-trunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post Convergence Trunk
       
     </span>
   </a>
@@ -10479,6 +10501,32 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Bottom Row Climb Clear Corridor" src="../assets/renders/bottom_row_climb_clear_corridor.svg" /></p>
+<h3 id="post-convergence-trunk">Post Convergence Trunk<a class="headerlink" href="#post-convergence-trunk" title="Permanent link">&para;</a></h3>
+<p>Two stacked inputs converge on a station inside one LR section. The merge station's single linear successor continues flat on the merge row rather than dropping back onto one of the incoming branch rows, so the post-merge trunk runs straight instead of zigzagging.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-238-1" name="__codelineno-238-1" href="#__codelineno-238-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/post_convergence_trunk.mmd<span class="w"> </span>-o<span class="w"> </span>post_convergence_trunk.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-239-1" name="__codelineno-239-1" href="#__codelineno-239-1"></a>%%metro title: Post-convergence trunk
+<a id="__codelineno-239-2" name="__codelineno-239-2" href="#__codelineno-239-2"></a>%%metro line: fastq | FASTQ | #2db572
+<a id="__codelineno-239-3" name="__codelineno-239-3" href="#__codelineno-239-3"></a>%%metro line: ubam | uBAM | #0570b0
+<a id="__codelineno-239-4" name="__codelineno-239-4" href="#__codelineno-239-4"></a>%%metro line: bam | BAM | #f5c542
+<a id="__codelineno-239-5" name="__codelineno-239-5" href="#__codelineno-239-5"></a>
+<a id="__codelineno-239-6" name="__codelineno-239-6" href="#__codelineno-239-6"></a>graph LR
+<a id="__codelineno-239-7" name="__codelineno-239-7" href="#__codelineno-239-7"></a>    subgraph prep [Prep]
+<a id="__codelineno-239-8" name="__codelineno-239-8" href="#__codelineno-239-8"></a>        fq[FQ]
+<a id="__codelineno-239-9" name="__codelineno-239-9" href="#__codelineno-239-9"></a>        ub[UB]
+<a id="__codelineno-239-10" name="__codelineno-239-10" href="#__codelineno-239-10"></a>        mm[minimap2]
+<a id="__codelineno-239-11" name="__codelineno-239-11" href="#__codelineno-239-11"></a>        st[samtools]
+<a id="__codelineno-239-12" name="__codelineno-239-12" href="#__codelineno-239-12"></a>        fq --&gt;|fastq| mm
+<a id="__codelineno-239-13" name="__codelineno-239-13" href="#__codelineno-239-13"></a>        ub --&gt;|ubam| mm
+<a id="__codelineno-239-14" name="__codelineno-239-14" href="#__codelineno-239-14"></a>        mm --&gt;|bam| st
+<a id="__codelineno-239-15" name="__codelineno-239-15" href="#__codelineno-239-15"></a>    end
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Post Convergence Trunk" src="../assets/renders/post_convergence_trunk.svg" /></p>
 
 
 
