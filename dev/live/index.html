@@ -465,6 +465,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#overlay-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlay styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1013,6 +1024,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#overlay-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlay styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1248,7 +1270,11 @@ blank map.</p>
 </tr>
 <tr>
 <td><code>--theme</code></td>
-<td>Theme name (<code>nfcore</code>, <code>light</code>).</td>
+<td>Theme name (<code>nfcore</code>, <code>light</code>, <code>seqera</code>). The page chrome (background, text) follows the theme, so a light theme gives a light page.</td>
+</tr>
+<tr>
+<td><code>--overlay</code></td>
+<td>Status-overlay style: <code>ring</code> (default), <code>pulse</code>, <code>dot</code>, or <code>led</code>. Sets the style shown until a viewer picks another.</td>
 </tr>
 <tr>
 <td><code>--token</code></td>
@@ -1256,6 +1282,27 @@ blank map.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="overlay-styles">Overlay styles<a class="headerlink" href="#overlay-styles" title="Permanent link">&para;</a></h3>
+<p>The status overlay - how a station shows pending / queued / running / done /
+failed - has a few looks, picked in the page's <strong>Style</strong> menu (the choice is
+remembered per browser) or set as the page default with <code>--overlay</code>. Every mark
+takes the station's own marker shape: a circle for a single-line stop, a capsule
+spanning the bundle for an interchange.</p>
+<ul>
+<li><strong><code>ring</code></strong> (default) - a bold outline hugging each station, leaving the marker
+  visible underneath; the dash marches around it while running. Clean and
+  professional; the recommended look for a light page or embedding in Seqera
+  Platform.</li>
+<li><strong><code>pulse</code></strong> - a crisp status mark filling the station with a radar ripple
+  while running.</li>
+<li><strong><code>dot</code></strong> - a flat status mark that gently breathes while running, no glow.
+  The most minimal option.</li>
+<li><strong><code>led</code></strong> - glowing neon marks that pulse while running; reads best on the
+  dark <code>nfcore</code> theme.</li>
+</ul>
+<p>All styles are driven entirely client-side from the same status data, so
+switching style never re-renders the map. Animations respect
+<code>prefers-reduced-motion</code>.</p>
 <h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
