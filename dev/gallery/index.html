@@ -1967,6 +1967,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#clear-channel-target-aware-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clear Channel Target Aware Push
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3767,6 +3778,17 @@
     <span class="md-ellipsis">
       
         Post Convergence Trunk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-channel-target-aware-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clear Channel Target Aware Push
       
     </span>
   </a>
@@ -10674,6 +10696,52 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Post Convergence Trunk" src="../assets/renders/post_convergence_trunk.svg" /></p>
+<h3 id="clear-channel-target-aware-push">Clear Channel Target Aware Push<a class="headerlink" href="#clear-channel-target-aware-push" title="Permanent link">&para;</a></h3>
+<p>A hub fans one line down into a wide section stacked directly below and another down-and-right to a target. The fan descent for the rightward line grazes the wide block, so the graze correction pushes it toward the target's side of the block rather than the nearer edge, keeping the line heading to its target instead of detouring across the canvas.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-244-1" name="__codelineno-244-1" href="#__codelineno-244-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/clear_channel_target_aware_push.mmd<span class="w"> </span>-o<span class="w"> </span>clear_channel_target_aware_push.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-245-1" name="__codelineno-245-1" href="#__codelineno-245-1"></a>%%metro title: Fan descent target-aware push
+<a id="__codelineno-245-2" name="__codelineno-245-2" href="#__codelineno-245-2"></a>%%metro line: dna | DNA | #2db572
+<a id="__codelineno-245-3" name="__codelineno-245-3" href="#__codelineno-245-3"></a>%%metro line: rna | RNA | #e63946
+<a id="__codelineno-245-4" name="__codelineno-245-4" href="#__codelineno-245-4"></a>
+<a id="__codelineno-245-5" name="__codelineno-245-5" href="#__codelineno-245-5"></a>%%metro grid: src | 0,0
+<a id="__codelineno-245-6" name="__codelineno-245-6" href="#__codelineno-245-6"></a>%%metro grid: block | 0,1
+<a id="__codelineno-245-7" name="__codelineno-245-7" href="#__codelineno-245-7"></a>%%metro grid: target | 1,2
+<a id="__codelineno-245-8" name="__codelineno-245-8" href="#__codelineno-245-8"></a>
+<a id="__codelineno-245-9" name="__codelineno-245-9" href="#__codelineno-245-9"></a>graph LR
+<a id="__codelineno-245-10" name="__codelineno-245-10" href="#__codelineno-245-10"></a>    subgraph src [Src]
+<a id="__codelineno-245-11" name="__codelineno-245-11" href="#__codelineno-245-11"></a>        s_in[I]
+<a id="__codelineno-245-12" name="__codelineno-245-12" href="#__codelineno-245-12"></a>        s_hub[H]
+<a id="__codelineno-245-13" name="__codelineno-245-13" href="#__codelineno-245-13"></a>        s_in --&gt;|dna,rna| s_hub
+<a id="__codelineno-245-14" name="__codelineno-245-14" href="#__codelineno-245-14"></a>    end
+<a id="__codelineno-245-15" name="__codelineno-245-15" href="#__codelineno-245-15"></a>    subgraph block [Block]
+<a id="__codelineno-245-16" name="__codelineno-245-16" href="#__codelineno-245-16"></a>        b_a[A]
+<a id="__codelineno-245-17" name="__codelineno-245-17" href="#__codelineno-245-17"></a>        b_b[B]
+<a id="__codelineno-245-18" name="__codelineno-245-18" href="#__codelineno-245-18"></a>        b_c[C]
+<a id="__codelineno-245-19" name="__codelineno-245-19" href="#__codelineno-245-19"></a>        b_d[D]
+<a id="__codelineno-245-20" name="__codelineno-245-20" href="#__codelineno-245-20"></a>        b_e[E]
+<a id="__codelineno-245-21" name="__codelineno-245-21" href="#__codelineno-245-21"></a>        b_f[F]
+<a id="__codelineno-245-22" name="__codelineno-245-22" href="#__codelineno-245-22"></a>        b_a --&gt;|dna| b_b
+<a id="__codelineno-245-23" name="__codelineno-245-23" href="#__codelineno-245-23"></a>        b_b --&gt;|dna| b_c
+<a id="__codelineno-245-24" name="__codelineno-245-24" href="#__codelineno-245-24"></a>        b_c --&gt;|dna| b_d
+<a id="__codelineno-245-25" name="__codelineno-245-25" href="#__codelineno-245-25"></a>        b_d --&gt;|dna| b_e
+<a id="__codelineno-245-26" name="__codelineno-245-26" href="#__codelineno-245-26"></a>        b_e --&gt;|dna| b_f
+<a id="__codelineno-245-27" name="__codelineno-245-27" href="#__codelineno-245-27"></a>    end
+<a id="__codelineno-245-28" name="__codelineno-245-28" href="#__codelineno-245-28"></a>    subgraph target [Target]
+<a id="__codelineno-245-29" name="__codelineno-245-29" href="#__codelineno-245-29"></a>        %%metro entry: left | rna
+<a id="__codelineno-245-30" name="__codelineno-245-30" href="#__codelineno-245-30"></a>        t_a[T1]
+<a id="__codelineno-245-31" name="__codelineno-245-31" href="#__codelineno-245-31"></a>        t_b[T2]
+<a id="__codelineno-245-32" name="__codelineno-245-32" href="#__codelineno-245-32"></a>        t_a --&gt;|rna| t_b
+<a id="__codelineno-245-33" name="__codelineno-245-33" href="#__codelineno-245-33"></a>    end
+<a id="__codelineno-245-34" name="__codelineno-245-34" href="#__codelineno-245-34"></a>    s_hub --&gt;|rna| t_a
+<a id="__codelineno-245-35" name="__codelineno-245-35" href="#__codelineno-245-35"></a>    s_hub --&gt;|dna| b_a
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Clear Channel Target Aware Push" src="../assets/renders/clear_channel_target_aware_push.svg" /></p>
 
 
 
