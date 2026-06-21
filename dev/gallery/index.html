@@ -1857,6 +1857,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bottom-row-climb-clear-corridor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Row Climb Clear Corridor
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3519,6 +3530,17 @@
     <span class="md-ellipsis">
       
         Rail Offtrack Plain Io
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-row-climb-clear-corridor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Row Climb Clear Corridor
       
     </span>
   </a>
@@ -9940,6 +9962,54 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Rail Offtrack Plain Io" src="../assets/renders/rail_offtrack_plain_io.svg" /></p>
+<h3 id="bottom-row-climb-clear-corridor">Bottom Row Climb Clear Corridor<a class="headerlink" href="#bottom-row-climb-clear-corridor" title="Permanent link">&para;</a></h3>
+<p>A section in the bottommost grid row sends a line up and across to a higher-row target several columns away. The columns it spans hold no same-row section, so the line runs along its own row level and climbs at the end rather than diving below the source row to the canvas floor and looping back up.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-224-1" name="__codelineno-224-1" href="#__codelineno-224-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/bottom_row_climb_clear_corridor.mmd<span class="w"> </span>-o<span class="w"> </span>bottom_row_climb_clear_corridor.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-225-1" name="__codelineno-225-1" href="#__codelineno-225-1"></a>%%metro title: Bottom-row climb over a clear corridor
+<a id="__codelineno-225-2" name="__codelineno-225-2" href="#__codelineno-225-2"></a>%%metro style: dark
+<a id="__codelineno-225-3" name="__codelineno-225-3" href="#__codelineno-225-3"></a>%%metro line: main | Main | #2db572
+<a id="__codelineno-225-4" name="__codelineno-225-4" href="#__codelineno-225-4"></a>%%metro line: side | Side | #ff8c00
+<a id="__codelineno-225-5" name="__codelineno-225-5" href="#__codelineno-225-5"></a>%%metro grid: feed | 0,0
+<a id="__codelineno-225-6" name="__codelineno-225-6" href="#__codelineno-225-6"></a>%%metro grid: mid_a | 2,0
+<a id="__codelineno-225-7" name="__codelineno-225-7" href="#__codelineno-225-7"></a>%%metro grid: mid_b | 3,0
+<a id="__codelineno-225-8" name="__codelineno-225-8" href="#__codelineno-225-8"></a>%%metro grid: dest | 4,0
+<a id="__codelineno-225-9" name="__codelineno-225-9" href="#__codelineno-225-9"></a>%%metro grid: low | 1,1
+<a id="__codelineno-225-10" name="__codelineno-225-10" href="#__codelineno-225-10"></a>
+<a id="__codelineno-225-11" name="__codelineno-225-11" href="#__codelineno-225-11"></a>graph LR
+<a id="__codelineno-225-12" name="__codelineno-225-12" href="#__codelineno-225-12"></a>    subgraph feed [Feed]
+<a id="__codelineno-225-13" name="__codelineno-225-13" href="#__codelineno-225-13"></a>        a[A]
+<a id="__codelineno-225-14" name="__codelineno-225-14" href="#__codelineno-225-14"></a>    end
+<a id="__codelineno-225-15" name="__codelineno-225-15" href="#__codelineno-225-15"></a>
+<a id="__codelineno-225-16" name="__codelineno-225-16" href="#__codelineno-225-16"></a>    subgraph low [Low]
+<a id="__codelineno-225-17" name="__codelineno-225-17" href="#__codelineno-225-17"></a>        x[X]
+<a id="__codelineno-225-18" name="__codelineno-225-18" href="#__codelineno-225-18"></a>    end
+<a id="__codelineno-225-19" name="__codelineno-225-19" href="#__codelineno-225-19"></a>
+<a id="__codelineno-225-20" name="__codelineno-225-20" href="#__codelineno-225-20"></a>    subgraph mid_a [Mid A]
+<a id="__codelineno-225-21" name="__codelineno-225-21" href="#__codelineno-225-21"></a>        m[M]
+<a id="__codelineno-225-22" name="__codelineno-225-22" href="#__codelineno-225-22"></a>    end
+<a id="__codelineno-225-23" name="__codelineno-225-23" href="#__codelineno-225-23"></a>
+<a id="__codelineno-225-24" name="__codelineno-225-24" href="#__codelineno-225-24"></a>    subgraph mid_b [Mid B]
+<a id="__codelineno-225-25" name="__codelineno-225-25" href="#__codelineno-225-25"></a>        n[N]
+<a id="__codelineno-225-26" name="__codelineno-225-26" href="#__codelineno-225-26"></a>    end
+<a id="__codelineno-225-27" name="__codelineno-225-27" href="#__codelineno-225-27"></a>
+<a id="__codelineno-225-28" name="__codelineno-225-28" href="#__codelineno-225-28"></a>    subgraph dest [Dest]
+<a id="__codelineno-225-29" name="__codelineno-225-29" href="#__codelineno-225-29"></a>        z[Z]
+<a id="__codelineno-225-30" name="__codelineno-225-30" href="#__codelineno-225-30"></a>    end
+<a id="__codelineno-225-31" name="__codelineno-225-31" href="#__codelineno-225-31"></a>
+<a id="__codelineno-225-32" name="__codelineno-225-32" href="#__codelineno-225-32"></a>    a --&gt;|main| m
+<a id="__codelineno-225-33" name="__codelineno-225-33" href="#__codelineno-225-33"></a>    m --&gt;|main| n
+<a id="__codelineno-225-34" name="__codelineno-225-34" href="#__codelineno-225-34"></a>    n --&gt;|main| z
+<a id="__codelineno-225-35" name="__codelineno-225-35" href="#__codelineno-225-35"></a>
+<a id="__codelineno-225-36" name="__codelineno-225-36" href="#__codelineno-225-36"></a>    a --&gt;|side| x
+<a id="__codelineno-225-37" name="__codelineno-225-37" href="#__codelineno-225-37"></a>    x --&gt;|side| z
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Bottom Row Climb Clear Corridor" src="../assets/renders/bottom_row_climb_clear_corridor.svg" /></p>
 
 
 
