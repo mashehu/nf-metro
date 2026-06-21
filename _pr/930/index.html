@@ -237,7 +237,7 @@
 </head>
 <body>
 <h1>Render diff - PR #930</h1>
-<p class="summary">2 changed, 1 added out of 152 total renders. Generated 2026-06-21 15:32 UTC.</p>
+<p class="summary">1 added out of 152 total renders. Generated 2026-06-21 15:59 UTC.</p>
 <details class="intro">
 <summary>What is this page?</summary>
 <p>
@@ -268,48 +268,21 @@ switch between side-by-side, base-only, and PR-only views.
 <p class="caption">Advisory only &mdash; nothing gates on these. Lower is better; <span class="m-better">green</span> improved, <span class="m-worse">red</span> regressed.</p>
 <table>
 <tr><th>Render</th><th>Crossings</th><th>Near-horiz.</th><th>Lone diag.</th><th>Label strikes</th><th>Excess gaps</th><th>Wasted canvas</th></tr>
-<tr><td><a href="#fold_stacked_branch">fold_stacked_branch</a></td><td class="m-better">2&rarr;0 (−2)</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">29%</td></tr>
-<tr><td><a href="#reconverge_reversed_fold">reconverge_reversed_fold</a></td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;29%</td></tr>
-<tr><td><a href="#longread_variant_calling">longread_variant_calling</a></td><td class="m-better">19&rarr;17 (−2)</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">1</td><td class="m-worse">19%&rarr;20% (+1%)</td></tr>
+<tr><td><a href="#reconverge_reversed_fold">reconverge_reversed_fold</a></td><td class="m-flat">&ndash;&rarr;2</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;0</td><td class="m-flat">&ndash;&rarr;29%</td></tr>
 </table>
 </div>
 <div class="toc">
 <h2>Changed renders</h2>
 <h3><a href="#section-fold-topologies">Fold Topologies</a></h3>
 <ul>
-<li><a href="#fold_stacked_branch">fold_stacked_branch</a><span class="badge badge-changed">changed</span></li>
 <li><a href="#reconverge_reversed_fold">reconverge_reversed_fold</a><span class="badge badge-added">added</span></li>
-</ul>
-<h3><a href="#section-main-examples">Main Examples</a></h3>
-<ul>
-<li><a href="#longread_variant_calling">longread_variant_calling</a><span class="badge badge-changed">changed</span></li>
 </ul>
 </div>
 <h2 class="section-header" id="section-fold-topologies">Fold Topologies</h2>
 
-<div class="diff-entry" id="fold_stacked_branch">
-<h3>Fold Stacked Branch <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/fold_stacked_branch.svg" alt="Base: fold_stacked_branch"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/fold_stacked_branch.svg" alt="PR: fold_stacked_branch"></div>
-</div>
-</div>
-
 <div class="diff-entry" id="reconverge_reversed_fold">
 <h3>Reconverge Reversed Fold <span class="badge badge-added">added</span></h3>
 <div class="side-only"><h4>New in PR</h4><img src="pr/reconverge_reversed_fold.svg" alt="PR: reconverge_reversed_fold"></div>
-</div>
-
-<h2 class="section-header" id="section-main-examples">Main Examples</h2>
-
-<div class="diff-entry" id="longread_variant_calling">
-<h3>Longread Variant Calling <span class="badge badge-changed">changed</span></h3>
-<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
-<div class="comparison">
-<div class="side side-base"><h4>Base (main)</h4><img src="base/longread_variant_calling.svg" alt="Base: longread_variant_calling"></div>
-<div class="side side-pr"><h4>PR</h4><img src="pr/longread_variant_calling.svg" alt="PR: longread_variant_calling"></div>
-</div>
 </div>
 <script>
 document.querySelectorAll('.toggle-bar button').forEach(btn => {
