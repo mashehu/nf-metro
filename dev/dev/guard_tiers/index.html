@@ -817,10 +817,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#inline-guards-not-in-guard_registry" class="md-nav__link">
+  <a href="#inline-guards-inline_guard_registry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inline guards (not in GUARD_REGISTRY)
+        Inline guards (INLINE_GUARD_REGISTRY)
       
     </span>
   </a>
@@ -833,10 +833,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consolidation-candidates" class="md-nav__link">
+  <a href="#consolidation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Consolidation candidates
+        Consolidation
       
     </span>
   </a>
@@ -998,10 +998,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#inline-guards-not-in-guard_registry" class="md-nav__link">
+  <a href="#inline-guards-inline_guard_registry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inline guards (not in GUARD_REGISTRY)
+        Inline guards (INLINE_GUARD_REGISTRY)
       
     </span>
   </a>
@@ -1014,10 +1014,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consolidation-candidates" class="md-nav__link">
+  <a href="#consolidation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Consolidation candidates
+        Consolidation
       
     </span>
   </a>
@@ -1096,8 +1096,8 @@ needs the routed geometry or is materially more expensive; the most expensive
 members (<code>check_no_hanging_routes</code> ~470 us, the collinear-distinct checks
 ~100 us) are routed-geometry sweeps. <strong>Tier C is empty on the current tree</strong>:
 every guard and check is reachable from <code>compute_layout</code> or the render
-chokepoint, none is a pure test oracle. It is documented here as the target
-bucket for #922 — see <a href="#consolidation-candidates">Consolidation candidates</a>.</p>
+chokepoint, none is a pure test oracle. The de-duplication that kept it empty
+is recorded under <a href="#consolidation">Consolidation</a>.</p>
 <h2 id="registries">Registries<a class="headerlink" href="#registries" title="Permanent link">&para;</a></h2>
 <p>The classification is data, not prose:</p>
 <ul>
@@ -1108,15 +1108,26 @@ bucket for #922 — see <a href="#consolidation-candidates">Consolidation candid
   guard takes), <code>bisection_safe</code> (runs at every Pass C checkpoint, gated by
   <code>first_valid_stage</code>) vs final-only, and the <code>_BISECTION_FIRST_VALID</code> data
   derived back out for the engine re-export.</li>
+<li><strong><code>INLINE_GUARD_REGISTRY</code></strong> (<code>phases/guards.py</code>) — the same <code>GuardSpec</code>
+  schema applied to the guards <code>engine.py</code> invokes directly at a specific
+  pipeline stage rather than through the Pass C / final runner. Like
+  <code>CHECK_REGISTRY</code> it is <em>classification</em> only (no <code>needs</code> / <code>bisection_safe</code>
+  dispatch data), so every defined <code>_guard_*</code> lives in exactly one of the two
+  guard registries and none escapes tier / issue-pin classification.</li>
 <li><strong><code>CHECK_REGISTRY</code></strong> (<code>routing/invariants.py</code>) — the same <code>GuardSpec</code> schema
   applied to the routing checks. Because checks return lists rather than
   raising, this is a <em>classification</em> registry, not a dispatcher; the runtime
-  chokepoint stays <code>assert_render_curve_invariants</code>. The two registries are
+  chokepoint stays <code>assert_render_curve_invariants</code>. The registries are
   unified through the shared schema and this page, <strong>not</strong> by merging the
   raise-vs-return error protocols.</li>
 </ul>
-<p><code>tests/test_guard_registry.py</code> keeps both honest: every guard and check must be
-registered, and the Tier-A check set must equal the render chokepoint exactly.</p>
+<p>Each <code>GuardSpec</code> also carries <code>issue_pin</code> (the <code>#NNN</code> issues a guard was born
+from, kept as data so consolidation cannot lose the regression trail) and
+<code>narrow_reason</code> (why an issue-pinned guard stays scoped to its case rather than
+being a general property). <code>tests/test_guard_registry.py</code> keeps these honest:
+every guard and check is registered exactly once, the Tier-A check set equals
+the render chokepoint exactly, no validate-only guard duplicates an always-on
+check, and every issue-pinned guard records its issue and a <code>narrow_reason</code>.</p>
 <h2 id="cost-audit">Cost audit<a class="headerlink" href="#cost-audit" title="Permanent link">&para;</a></h2>
 <p><code>scripts/guard_cost_audit.py</code> lays out every fixture under <code>examples/</code> +
 <code>examples/topologies/</code> once, then times each registered guard and check against
@@ -1292,39 +1303,9 @@ regenerate with:</p>
 <td>final-only</td>
 </tr>
 <tr>
-<td><code>_guard_bundle_order_preserved</code></td>
-<td>B</td>
-<td style="text-align: right;">35.0</td>
-<td>final-only</td>
-</tr>
-<tr>
 <td><code>_guard_tb_exit_corner_column_order</code></td>
 <td>B</td>
 <td style="text-align: right;">2.0</td>
-<td>final-only</td>
-</tr>
-<tr>
-<td><code>_guard_concentric_bundle_corners</code></td>
-<td>B</td>
-<td style="text-align: right;">41.9</td>
-<td>final-only</td>
-</tr>
-<tr>
-<td><code>_guard_no_collinear_distinct_lines</code></td>
-<td>B</td>
-<td style="text-align: right;">17.0</td>
-<td>final-only</td>
-</tr>
-<tr>
-<td><code>_guard_no_intra_section_collinear_distinct_lines</code></td>
-<td>B</td>
-<td style="text-align: right;">105.3</td>
-<td>final-only</td>
-</tr>
-<tr>
-<td><code>_guard_no_same_line_parallel_descents</code></td>
-<td>B</td>
-<td style="text-align: right;">6.0</td>
 <td>final-only</td>
 </tr>
 <tr>
@@ -1618,11 +1599,12 @@ regenerate with:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="inline-guards-not-in-guard_registry">Inline guards (not in <code>GUARD_REGISTRY</code>)<a class="headerlink" href="#inline-guards-not-in-guard_registry" title="Permanent link">&para;</a></h3>
+<h3 id="inline-guards-inline_guard_registry">Inline guards (<code>INLINE_GUARD_REGISTRY</code>)<a class="headerlink" href="#inline-guards-inline_guard_registry" title="Permanent link">&para;</a></h3>
 <p>These <code>_guard_*</code> functions are invoked directly at specific pipeline stages
-rather than through the Pass C / final dispatch, so they are classified here
-but not dispatched from <code>GUARD_REGISTRY</code>. Costs are not separately measured;
-each is a single structural pass.</p>
+rather than through the Pass C / final dispatch, so they carry no <code>needs</code> /
+<code>bisection_safe</code> dispatch data — only their tier and any <code>issue_pin</code> /
+<code>narrow_reason</code>. Costs are not separately measured; each is a single structural
+pass.</p>
 <table>
 <thead>
 <tr>
@@ -1715,12 +1697,12 @@ each is a single structural pass.</p>
 <tr>
 <td><code>_guard_off_track_consumer_on_trunk</code></td>
 <td>B</td>
-<td>An off-track input's straight-through consumer stays on trunk.</td>
+<td>An off-track input's straight-through consumer stays on trunk (<code>#650</code>).</td>
 </tr>
 <tr>
 <td><code>_guard_off_track_input_column_stack</code></td>
 <td>B</td>
-<td>Single-trunk off-track inputs hug their consumer column.</td>
+<td>Single-trunk off-track inputs hug their consumer column (<code>#651</code>).</td>
 </tr>
 <tr>
 <td><code>_guard_rail_above_label_band</code></td>
@@ -1740,7 +1722,7 @@ each is a single structural pass.</p>
 <tr>
 <td><code>_guard_single_trunk_off_track_step</code></td>
 <td>B</td>
-<td>Single-trunk sections lift off-track stations by the base pitch.</td>
+<td>Single-trunk sections lift off-track stations by the base pitch (<code>#580</code>).</td>
 </tr>
 <tr>
 <td><code>_guard_tall_anchor_stack_well_formed</code></td>
@@ -1754,16 +1736,27 @@ each is a single structural pass.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="consolidation-candidates">Consolidation candidates<a class="headerlink" href="#consolidation-candidates" title="Permanent link">&para;</a></h2>
-<p>For #922, the clearest Tier-C / de-duplication targets are the <code>_guard_*</code>
-wrappers that exist only to raise around a <code>CHECK_REGISTRY</code> check —
-<code>_guard_bundle_order_preserved</code>/<code>check_bundle_order_preserved</code>,
-<code>_guard_concentric_bundle_corners</code>/<code>check_concentric_bundle_corners</code>, the
-collinear-distinct pair, and the merge-port pair. The check is the oracle; the
-guard is a thin raising adapter. The collinear-distinct family
-(<code>check_no_collinear_distinct_lines</code>, <code>check_intra_section_collinear_distinct_lines</code>,
-<code>check_no_collinear_distinct_diagonals</code>) is also a candidate to fold into one
-parametrised check.</p>
+<h2 id="consolidation">Consolidation<a class="headerlink" href="#consolidation" title="Permanent link">&para;</a></h2>
+<p>The consolidation pass (#922) removed the validate-only <code>_guard_*</code> wrappers
+that only raised around a check already in the always-on render chokepoint —
+<code>_guard_bundle_order_preserved</code>, <code>_guard_concentric_bundle_corners</code>,
+<code>_guard_no_collinear_distinct_lines</code>,
+<code>_guard_no_intra_section_collinear_distinct_lines</code>, and
+<code>_guard_no_same_line_parallel_descents</code>. Each check is the single authority and
+runs on every render via <code>assert_render_curve_invariants</code>, so the wrapper was
+pure duplication; <code>test_no_registry_guard_duplicates_an_always_on_check</code> keeps
+the duplication from returning.</p>
+<p>The remaining issue-pinned guards each express a distinct geometric property
+(their docstrings explicitly distinguish them from one another), so rather than
+force-merging bodies the pass records each guard's originating issue in
+<code>issue_pin</code> and documents its scope in <code>narrow_reason</code>. The two genuinely
+general inline guards (<code>_guard_no_negative_grid_columns</code>,
+<code>_guard_explicit_grid_directions</code>) carry no pin: they state a general structural
+property, not a special case.</p>
+<p>A further candidate left for later is folding the collinear-distinct check
+family (<code>check_no_collinear_distinct_lines</code>,
+<code>check_intra_section_collinear_distinct_lines</code>,
+<code>check_no_collinear_distinct_diagonals</code>) into one parametrised check.</p>
 
 
 
