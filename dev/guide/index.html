@@ -528,6 +528,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#when-a-layout-is-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a layout is broken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bridge-glyphs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1300,6 +1311,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#when-a-layout-is-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a layout is broken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bridge-glyphs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1853,6 +1875,10 @@
 <td>Draw static chevrons along each route pointing in the flow direction (source to target). Off by default; CLI equivalent <code>--directional</code>. Marker size, spacing, opacity, and colour are theme knobs (<code>directional_marker_*</code>).</td>
 </tr>
 <tr>
+<td><code>%%metro strict: true</code></td>
+<td>Treat a layout-invariant violation on the rendered geometry (e.g. a station pushed outside its section box) as an error that aborts the render, instead of a warning. Off by default; CLI equivalent <code>--strict</code>. See <a href="#when-a-layout-is-broken">When a layout is broken</a>.</td>
+</tr>
+<tr>
 <td><code>%%metro file: &lt;station&gt; \| &lt;label&gt; [\| &lt;name&gt;] [\| banner]</code></td>
 <td>Mark a station as a file terminus with a document icon. Optional <code>name</code> renders as a caption below the icon; optional <code>banner</code> draws the label on a dark strip across the icon.</td>
 </tr>
@@ -2077,9 +2103,33 @@
 <td><code>--animate</code> / <code>--no-animate</code></td>
 <td>off</td>
 </tr>
+<tr>
+<td><code>strict:</code></td>
+<td><code>--strict</code> / <code>--no-strict</code></td>
+<td>off</td>
+</tr>
 </tbody>
 </table>
 <p><code>--output</code>, <code>--format</code>, <code>--from-nextflow</code>, and <code>--debug</code> have no directive: they select the output target or a diagnostic overlay rather than describing the diagram.</p>
+<h2 id="when-a-layout-is-broken">When a layout is broken<a class="headerlink" href="#when-a-layout-is-broken" title="Permanent link">&para;</a></h2>
+<p>Some directive combinations leave the layout engine no clean way to place a
+map - for example, an internally left-to-right section whose only ports are on
+the top and bottom edges has no flow-aligned edge to anchor its row, so its
+stations end up outside their own section box. nf-metro renders such a map
+<strong>best-effort and prints a warning to stderr</strong> naming the problem, rather than
+refusing to produce anything:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$ nf-metro render broken.mmd -o broken.svg
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>... the settled layout violates Tier-A invariants the renderer is about to draw ...
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>Rendered 12 stations, 11 edges, 1 lines -&gt; broken.svg
+</code></pre></div>
+<p>Pass <code>--strict</code> (or add <code>%%metro strict: true</code>) to turn that warning into a
+hard error with a non-zero exit, so a broken map fails your build instead of
+shipping a visibly-wrong diagram:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$ nf-metro render broken.mmd -o broken.svg --strict
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Error: the settled layout violates Tier-A invariants ...
+</code></pre></div>
+<p><code>--strict</code> has the same meaning for <code>nf-metro validate --with-layout</code>, which
+checks a map without rendering it.</p>
 <h2 id="bridge-glyphs">Bridge glyphs<a class="headerlink" href="#bridge-glyphs" title="Permanent link">&para;</a></h2>
 <p>When two distinct lines cross at a point that is neither a shared station nor a
 merge/junction, nf-metro automatically draws a <strong>bridge glyph</strong>: a short gap in
@@ -2101,7 +2151,7 @@ glyph is the correct rendering.</p>
 </ul>
 <h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
 <p>Add <code>--debug</code> to any render command to overlay layout internals on the diagram:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>--debug<span class="w"> </span>pipeline.mmd<span class="w"> </span>-o<span class="w"> </span>debug.svg
 </code></pre></div>
 <p><img alt="Debug overlay" src="../assets/renders/rnaseq_auto_debug.svg" /></p>
 <p>The overlay shows:</p>

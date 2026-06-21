@@ -1052,17 +1052,22 @@
 <li><strong><code>check_*</code> functions</strong> in <code>src/nf_metro/layout/routing/invariants.py</code> —
   return a list of violation objects; a caller decides whether to raise.</li>
 </ul>
-<p>Almost all of the <code>_guard_*</code> suite is gated behind <code>compute_layout(validate=True)</code>,
-which the <code>nf-metro render</code> path never sets. Only <code>_guard_stations_within_bbox</code>
-(always-on in <code>engine.py</code>) and the routing <code>check_*</code> invariants that
-<code>assert_render_curve_invariants</code> runs on every render reach an end user. A
-novel pipeline can therefore ship a silently-broken SVG that only our own
-<code>validate=True</code> tests would have caught.</p>
+<p>The render path runs the cheap <strong>Tier-A</strong> subset of both families on the
+settled geometry, so a layout defect reaches the end user as a warning (or a
+<code>--strict</code> error) instead of a silently-broken SVG:</p>
+<ul>
+<li><code>assert_render_layout_invariants</code> (<code>phases/guards.py</code>) runs the Tier-A
+  <code>_guard_*</code> postconditions, and</li>
+<li><code>assert_render_curve_invariants</code> (<code>routing/invariants.py</code>) runs the Tier-A
+  routing <code>check_*</code> invariants.</li>
+</ul>
+<p>The <strong>Tier-B</strong> remainder of the <code>_guard_*</code> suite is gated behind
+<code>compute_layout(validate=True)</code>, which the <code>nf-metro render</code> path never sets;
+it is costlier or depends on a mid-pipeline reroute.</p>
 <p>This page is the cost-tier classification that the always-on promotion
 (#923) and the consolidation pass (#922) build on. It is <strong>descriptive of the
-current tree</strong> and <strong>prescriptive of the target tier</strong> — the two coincide for
-Tier A (already always-on) and diverge where a Tier-A <em>candidate</em> is still
-gated.</p>
+current tree</strong>: Tier A is the always-on render-path set, Tier B is the
+<code>validate=True</code> set.</p>
 <h2 id="tiers">Tiers<a class="headerlink" href="#tiers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1114,20 +1119,29 @@ is recorded under <a href="#consolidation">Consolidation</a>.</p>
   <code>CHECK_REGISTRY</code> it is <em>classification</em> only (no <code>needs</code> / <code>bisection_safe</code>
   dispatch data), so every defined <code>_guard_*</code> lives in exactly one of the two
   guard registries and none escapes tier / issue-pin classification.</li>
-<li><strong><code>CHECK_REGISTRY</code></strong> (<code>routing/invariants.py</code>) — the same <code>GuardSpec</code> schema
+</ul>
+<p>The Tier-A <code>_guard_*</code> postconditions across both registries are run on the
+render path by <code>assert_render_layout_invariants</code>, the sibling of the routing
+chokepoint. <code>render_layout_invariant_specs</code> selects them: every Tier-A guard
+except <code>_RENDER_CHOKEPOINT_AUTHORING_GUARDS</code>, the two authoring-error guards
+(<code>_guard_no_same_row_backward_feed</code>, <code>_guard_no_mixed_entry_directions</code>) that
+raise a <code>ValueError</code> on un-renderable input and stay always-on hard fails in
+the engine rather than joining the warn-by-default chokepoint.
+- <strong><code>CHECK_REGISTRY</code></strong> (<code>routing/invariants.py</code>) — the same <code>GuardSpec</code> schema
   applied to the routing checks. Because checks return lists rather than
   raising, this is a <em>classification</em> registry, not a dispatcher; the runtime
   chokepoint stays <code>assert_render_curve_invariants</code>. The registries are
   unified through the shared schema and this page, <strong>not</strong> by merging the
-  raise-vs-return error protocols.</li>
-</ul>
+  raise-vs-return error protocols.</p>
 <p>Each <code>GuardSpec</code> also carries <code>issue_pin</code> (the <code>#NNN</code> issues a guard was born
 from, kept as data so consolidation cannot lose the regression trail) and
 <code>narrow_reason</code> (why an issue-pinned guard stays scoped to its case rather than
 being a general property). <code>tests/test_guard_registry.py</code> keeps these honest:
 every guard and check is registered exactly once, the Tier-A check set equals
-the render chokepoint exactly, no validate-only guard duplicates an always-on
-check, and every issue-pinned guard records its issue and a <code>narrow_reason</code>.</p>
+the curve render chokepoint exactly, the render-layout chokepoint equals the
+Tier-A guard set minus the authoring guards, no validate-only guard duplicates
+an always-on check, and every issue-pinned guard records its issue and a
+<code>narrow_reason</code>.</p>
 <h2 id="cost-audit">Cost audit<a class="headerlink" href="#cost-audit" title="Permanent link">&para;</a></h2>
 <p><code>scripts/guard_cost_audit.py</code> lays out every fixture under <code>examples/</code> +
 <code>examples/topologies/</code> once, then times each registered guard and check against
