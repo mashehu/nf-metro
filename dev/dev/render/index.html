@@ -867,6 +867,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#render-geometry-validation-validatepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render-geometry validation (validate.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#animation-animatepy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1019,6 +1030,26 @@ adapter: it imports from <code>nf_metro.manifest</code> and re-exports the publi
 so that existing <code>nf_metro.render.manifest</code> import paths keep working.</p>
 <p><code>manifest_metadata_svg(graph)</code> returns the raw SVG <code>&lt;metadata&gt;</code> XML string
 for cases where the caller assembles the SVG element manually.</p>
+<h2 id="render-geometry-validation-validatepy">Render-geometry validation (<code>validate.py</code>)<a class="headerlink" href="#render-geometry-validation-validatepy" title="Permanent link">&para;</a></h2>
+<p>The layout guards and routing invariants validate geometry <em>before</em> the
+render-time regimes run — the per-line offsets <code>apply_route_offsets</code> applies,
+the multi-line label Y-shifts, and the wrapped-label lift. The picture the
+user sees only exists in the emitted SVG, so a class of defect (a line drawn
+through a label only after the offsets shift it) is invisible to them.</p>
+<p><code>validate_render(svg)</code> closes that gap from the other side. It reads the
+finished artifact back into geometry — node markers from the embedded
+manifest, route polylines from the drawn <code>&lt;path data-line-id&gt;</code> ink (splitting
+at each <code>M</code> so a bridge-hop gap is a real break, and collapsing each smoothing
+<code>Q</code> to its corner), and label ink boxes from the drawn <code>&lt;text&gt;</code> ink — then
+runs render-geometry checks on what was drawn. The label-strike check reuses
+the authoritative <code>segment_strikes_label</code> predicate at the label's drawn font
+scale, so a finding means the rendered image is wrong, not that a
+re-derivation diverged. It needs only the SVG string, so it validates a
+produced file (in CI, or via <code>validate-svg --geometry</code>) and behind
+<code>render --validate</code> without re-running layout.</p>
+<p>The marker-crossing and offset-pitch separation checks the same direction
+calls for are tracked separately: they fire on accepted idioms (rail
+interchanges; diagonal bundles) that the bare manifest cannot yet distinguish.</p>
 <h2 id="animation-animatepy">Animation (<code>animate.py</code>)<a class="headerlink" href="#animation-animatepy" title="Permanent link">&para;</a></h2>
 <p><code>render_animation(d, graph, routes, station_offsets, theme)</code> appends
 animated <code>&lt;circle&gt;</code> elements with <code>&lt;animateMotion&gt;</code> to an existing
@@ -1061,6 +1092,10 @@ selectable via <code>%%metro style: &lt;key&gt;</code> or <code>--style</code>.<
 <tr>
 <td><code>manifest.py</code></td>
 <td>nf-metro adapter for the embedded-manifest standard; <code>build_manifest</code>, <code>manifest_metadata_svg</code></td>
+</tr>
+<tr>
+<td><code>validate.py</code></td>
+<td><code>validate_render</code> — render-geometry guards that read the drawn SVG (markers, route ink, label ink) as their own oracle</td>
 </tr>
 <tr>
 <td><code>animate.py</code></td>
