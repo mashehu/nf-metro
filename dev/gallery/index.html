@@ -2000,6 +2000,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#convergent-offrow-exit-climb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergent Offrow Exit Climb
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3833,6 +3844,17 @@
     <span class="md-ellipsis">
       
         Junction Fanout Convergence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergent-offrow-exit-climb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergent Offrow Exit Climb
       
     </span>
   </a>
@@ -10861,6 +10883,175 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Junction Fanout Convergence" src="../assets/renders/junction_fanout_convergence.svg" /></p>
+<h3 id="convergent-offrow-exit-climb">Convergent Offrow Exit Climb<a class="headerlink" href="#convergent-offrow-exit-climb" title="Permanent link">&para;</a></h3>
+<p>A single-row long-read variant-calling map. The annotation section carries only snv and sv (the two highest-priority lines), reached through a bypass whose source re-based them onto low slots. Its two-line bundle anchors on its own trunk rather than inheriting the high global slots, so its markers sit on their rows and the run into reports stays level.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-250-1" name="__codelineno-250-1" href="#__codelineno-250-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/convergent_offrow_exit_climb.mmd<span class="w"> </span>-o<span class="w"> </span>convergent_offrow_exit_climb.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-251-1" name="__codelineno-251-1" href="#__codelineno-251-1"></a>%% Regression fixture for issue #941.  Single-row grid for the longread
+<a id="__codelineno-251-2" name="__codelineno-251-2" href="#__codelineno-251-2"></a>%% variant-calling map.  The annotation section carries snvvcf+svvcf reached
+<a id="__codelineno-251-3" name="__codelineno-251-3" href="#__codelineno-251-3"></a>%% through a bypass whose source re-based those lines, so its two-line bundle
+<a id="__codelineno-251-4" name="__codelineno-251-4" href="#__codelineno-251-4"></a>%% must anchor on its own trunk (global slots 4,5 -&gt; local 0,1) rather than
+<a id="__codelineno-251-5" name="__codelineno-251-5" href="#__codelineno-251-5"></a>%% inheriting the high slots and pushing its markers ~18px below the row.
+<a id="__codelineno-251-6" name="__codelineno-251-6" href="#__codelineno-251-6"></a>%%metro title: Long-read Variant Calling
+<a id="__codelineno-251-7" name="__codelineno-251-7" href="#__codelineno-251-7"></a>%%metro style: dark
+<a id="__codelineno-251-8" name="__codelineno-251-8" href="#__codelineno-251-8"></a>%%metro directional: true
+<a id="__codelineno-251-9" name="__codelineno-251-9" href="#__codelineno-251-9"></a>%%metro files: fastq_in | FASTQ
+<a id="__codelineno-251-10" name="__codelineno-251-10" href="#__codelineno-251-10"></a>%%metro files: bam_in | BAM
+<a id="__codelineno-251-11" name="__codelineno-251-11" href="#__codelineno-251-11"></a>%%metro files: ubam_in | uBAM
+<a id="__codelineno-251-12" name="__codelineno-251-12" href="#__codelineno-251-12"></a>%%metro line: ubam | uBAM | #0570b0
+<a id="__codelineno-251-13" name="__codelineno-251-13" href="#__codelineno-251-13"></a>%%metro line: fastq | FASTQ | #2db572
+<a id="__codelineno-251-14" name="__codelineno-251-14" href="#__codelineno-251-14"></a>%%metro line: bam | BAM | #f5c542
+<a id="__codelineno-251-15" name="__codelineno-251-15" href="#__codelineno-251-15"></a>%%metro line: other | Other | #ff8c00
+<a id="__codelineno-251-16" name="__codelineno-251-16" href="#__codelineno-251-16"></a>%%metro line: snvvcf | SNV VCF | #e63946
+<a id="__codelineno-251-17" name="__codelineno-251-17" href="#__codelineno-251-17"></a>%%metro line: svvcf | SV VCF | #9d4edd
+<a id="__codelineno-251-18" name="__codelineno-251-18" href="#__codelineno-251-18"></a>%%metro legend: tl
+<a id="__codelineno-251-19" name="__codelineno-251-19" href="#__codelineno-251-19"></a>%%metro grid: preprocessing | 0,0
+<a id="__codelineno-251-20" name="__codelineno-251-20" href="#__codelineno-251-20"></a>%%metro grid: small_variants | 1,0
+<a id="__codelineno-251-21" name="__codelineno-251-21" href="#__codelineno-251-21"></a>%%metro grid: tr_calling | 1,1
+<a id="__codelineno-251-22" name="__codelineno-251-22" href="#__codelineno-251-22"></a>%%metro grid: phasing | 2,0
+<a id="__codelineno-251-23" name="__codelineno-251-23" href="#__codelineno-251-23"></a>%%metro grid: cnv_calling | 2,1
+<a id="__codelineno-251-24" name="__codelineno-251-24" href="#__codelineno-251-24"></a>%%metro grid: structural_variants | 3,0
+<a id="__codelineno-251-25" name="__codelineno-251-25" href="#__codelineno-251-25"></a>%%metro grid: jointcalling | 4,0
+<a id="__codelineno-251-26" name="__codelineno-251-26" href="#__codelineno-251-26"></a>%%metro grid: annotation | 5,0
+<a id="__codelineno-251-27" name="__codelineno-251-27" href="#__codelineno-251-27"></a>%%metro grid: reports | 6,0
+<a id="__codelineno-251-28" name="__codelineno-251-28" href="#__codelineno-251-28"></a>
+<a id="__codelineno-251-29" name="__codelineno-251-29" href="#__codelineno-251-29"></a>graph LR
+<a id="__codelineno-251-30" name="__codelineno-251-30" href="#__codelineno-251-30"></a>    subgraph preprocessing [Pre-processing]
+<a id="__codelineno-251-31" name="__codelineno-251-31" href="#__codelineno-251-31"></a>
+<a id="__codelineno-251-32" name="__codelineno-251-32" href="#__codelineno-251-32"></a>        fastq_in[ ]
+<a id="__codelineno-251-33" name="__codelineno-251-33" href="#__codelineno-251-33"></a>        bam_in[ ]
+<a id="__codelineno-251-34" name="__codelineno-251-34" href="#__codelineno-251-34"></a>        ubam_in[ ]
+<a id="__codelineno-251-35" name="__codelineno-251-35" href="#__codelineno-251-35"></a>        cat_fastq[cat FASTQ]
+<a id="__codelineno-251-36" name="__codelineno-251-36" href="#__codelineno-251-36"></a>        samtools_merge[samtools\nmerge]
+<a id="__codelineno-251-37" name="__codelineno-251-37" href="#__codelineno-251-37"></a>        minimap2_align[minimap2]
+<a id="__codelineno-251-38" name="__codelineno-251-38" href="#__codelineno-251-38"></a>        samtools_sort_index[samtools\nsort/index]
+<a id="__codelineno-251-39" name="__codelineno-251-39" href="#__codelineno-251-39"></a>        mosdepth[mosdepth]
+<a id="__codelineno-251-40" name="__codelineno-251-40" href="#__codelineno-251-40"></a>
+<a id="__codelineno-251-41" name="__codelineno-251-41" href="#__codelineno-251-41"></a>        fastq_in --&gt;|fastq| cat_fastq
+<a id="__codelineno-251-42" name="__codelineno-251-42" href="#__codelineno-251-42"></a>        ubam_in --&gt;|ubam| samtools_merge
+<a id="__codelineno-251-43" name="__codelineno-251-43" href="#__codelineno-251-43"></a>        bam_in --&gt;|bam| samtools_merge
+<a id="__codelineno-251-44" name="__codelineno-251-44" href="#__codelineno-251-44"></a>        cat_fastq --&gt;|fastq| minimap2_align
+<a id="__codelineno-251-45" name="__codelineno-251-45" href="#__codelineno-251-45"></a>        samtools_merge --&gt;|ubam| minimap2_align
+<a id="__codelineno-251-46" name="__codelineno-251-46" href="#__codelineno-251-46"></a>        minimap2_align --&gt;|bam| samtools_sort_index
+<a id="__codelineno-251-47" name="__codelineno-251-47" href="#__codelineno-251-47"></a>        samtools_merge --&gt;|bam| samtools_sort_index
+<a id="__codelineno-251-48" name="__codelineno-251-48" href="#__codelineno-251-48"></a>        samtools_sort_index --&gt;|bam| mosdepth
+<a id="__codelineno-251-49" name="__codelineno-251-49" href="#__codelineno-251-49"></a>    end
+<a id="__codelineno-251-50" name="__codelineno-251-50" href="#__codelineno-251-50"></a>
+<a id="__codelineno-251-51" name="__codelineno-251-51" href="#__codelineno-251-51"></a>    subgraph small_variants [Small variant calling]
+<a id="__codelineno-251-52" name="__codelineno-251-52" href="#__codelineno-251-52"></a>
+<a id="__codelineno-251-53" name="__codelineno-251-53" href="#__codelineno-251-53"></a>        clair3[Clair3]
+<a id="__codelineno-251-54" name="__codelineno-251-54" href="#__codelineno-251-54"></a>        deepvariant[Deepvariant]
+<a id="__codelineno-251-55" name="__codelineno-251-55" href="#__codelineno-251-55"></a>    end
+<a id="__codelineno-251-56" name="__codelineno-251-56" href="#__codelineno-251-56"></a>
+<a id="__codelineno-251-57" name="__codelineno-251-57" href="#__codelineno-251-57"></a>    subgraph cnv_calling [CNVs]
+<a id="__codelineno-251-58" name="__codelineno-251-58" href="#__codelineno-251-58"></a>
+<a id="__codelineno-251-59" name="__codelineno-251-59" href="#__codelineno-251-59"></a>        ontspectre_cnvcaller[ont-spectre CNVCaller]
+<a id="__codelineno-251-60" name="__codelineno-251-60" href="#__codelineno-251-60"></a>    end
+<a id="__codelineno-251-61" name="__codelineno-251-61" href="#__codelineno-251-61"></a>
+<a id="__codelineno-251-62" name="__codelineno-251-62" href="#__codelineno-251-62"></a>    subgraph tr_calling [Repeats]
+<a id="__codelineno-251-63" name="__codelineno-251-63" href="#__codelineno-251-63"></a>
+<a id="__codelineno-251-64" name="__codelineno-251-64" href="#__codelineno-251-64"></a>        longtr[LongTR]
+<a id="__codelineno-251-65" name="__codelineno-251-65" href="#__codelineno-251-65"></a>        straglr[Straglr]
+<a id="__codelineno-251-66" name="__codelineno-251-66" href="#__codelineno-251-66"></a>        trgt[TRGT]
+<a id="__codelineno-251-67" name="__codelineno-251-67" href="#__codelineno-251-67"></a>    end
+<a id="__codelineno-251-68" name="__codelineno-251-68" href="#__codelineno-251-68"></a>
+<a id="__codelineno-251-69" name="__codelineno-251-69" href="#__codelineno-251-69"></a>    subgraph phasing [Phasing]
+<a id="__codelineno-251-70" name="__codelineno-251-70" href="#__codelineno-251-70"></a>
+<a id="__codelineno-251-71" name="__codelineno-251-71" href="#__codelineno-251-71"></a>        whatshap_phase[WhatsHap Phase]
+<a id="__codelineno-251-72" name="__codelineno-251-72" href="#__codelineno-251-72"></a>        whatshap_haplotag[WhatsHap Haplotag]
+<a id="__codelineno-251-73" name="__codelineno-251-73" href="#__codelineno-251-73"></a>
+<a id="__codelineno-251-74" name="__codelineno-251-74" href="#__codelineno-251-74"></a>        whatshap_phase --&gt;|bam,snvvcf| whatshap_haplotag
+<a id="__codelineno-251-75" name="__codelineno-251-75" href="#__codelineno-251-75"></a>    end
+<a id="__codelineno-251-76" name="__codelineno-251-76" href="#__codelineno-251-76"></a>
+<a id="__codelineno-251-77" name="__codelineno-251-77" href="#__codelineno-251-77"></a>    subgraph structural_variants [Structural Variants]
+<a id="__codelineno-251-78" name="__codelineno-251-78" href="#__codelineno-251-78"></a>
+<a id="__codelineno-251-79" name="__codelineno-251-79" href="#__codelineno-251-79"></a>        sniffles[Sniffles]
+<a id="__codelineno-251-80" name="__codelineno-251-80" href="#__codelineno-251-80"></a>        cutesv[CuteSV]
+<a id="__codelineno-251-81" name="__codelineno-251-81" href="#__codelineno-251-81"></a>        jasminesv_callers[Jasmine merge callers]
+<a id="__codelineno-251-82" name="__codelineno-251-82" href="#__codelineno-251-82"></a>
+<a id="__codelineno-251-83" name="__codelineno-251-83" href="#__codelineno-251-83"></a>        sniffles --&gt;|svvcf,bam| jasminesv_callers
+<a id="__codelineno-251-84" name="__codelineno-251-84" href="#__codelineno-251-84"></a>        cutesv --&gt;|svvcf,bam| jasminesv_callers
+<a id="__codelineno-251-85" name="__codelineno-251-85" href="#__codelineno-251-85"></a>    end
+<a id="__codelineno-251-86" name="__codelineno-251-86" href="#__codelineno-251-86"></a>
+<a id="__codelineno-251-87" name="__codelineno-251-87" href="#__codelineno-251-87"></a>    subgraph jointcalling [Joint Calling]
+<a id="__codelineno-251-88" name="__codelineno-251-88" href="#__codelineno-251-88"></a>
+<a id="__codelineno-251-89" name="__codelineno-251-89" href="#__codelineno-251-89"></a>        jasminesv_samples[Jasmine merge samples]
+<a id="__codelineno-251-90" name="__codelineno-251-90" href="#__codelineno-251-90"></a>        glnexus[GLNexus]
+<a id="__codelineno-251-91" name="__codelineno-251-91" href="#__codelineno-251-91"></a>    end
+<a id="__codelineno-251-92" name="__codelineno-251-92" href="#__codelineno-251-92"></a>
+<a id="__codelineno-251-93" name="__codelineno-251-93" href="#__codelineno-251-93"></a>    subgraph annotation [Annotation]
+<a id="__codelineno-251-94" name="__codelineno-251-94" href="#__codelineno-251-94"></a>
+<a id="__codelineno-251-95" name="__codelineno-251-95" href="#__codelineno-251-95"></a>        vep[VEP]
+<a id="__codelineno-251-96" name="__codelineno-251-96" href="#__codelineno-251-96"></a>        snpeff[SnpEff]
+<a id="__codelineno-251-97" name="__codelineno-251-97" href="#__codelineno-251-97"></a>        annotsv[AnnotSV]
+<a id="__codelineno-251-98" name="__codelineno-251-98" href="#__codelineno-251-98"></a>    end
+<a id="__codelineno-251-99" name="__codelineno-251-99" href="#__codelineno-251-99"></a>
+<a id="__codelineno-251-100" name="__codelineno-251-100" href="#__codelineno-251-100"></a>    subgraph reports [Reports]
+<a id="__codelineno-251-101" name="__codelineno-251-101" href="#__codelineno-251-101"></a>
+<a id="__codelineno-251-102" name="__codelineno-251-102" href="#__codelineno-251-102"></a>        geneyx[Geneyx]
+<a id="__codelineno-251-103" name="__codelineno-251-103" href="#__codelineno-251-103"></a>        sv_report[SV Report]
+<a id="__codelineno-251-104" name="__codelineno-251-104" href="#__codelineno-251-104"></a>    end
+<a id="__codelineno-251-105" name="__codelineno-251-105" href="#__codelineno-251-105"></a>
+<a id="__codelineno-251-106" name="__codelineno-251-106" href="#__codelineno-251-106"></a>
+<a id="__codelineno-251-107" name="__codelineno-251-107" href="#__codelineno-251-107"></a>    %% Inter-section edges
+<a id="__codelineno-251-108" name="__codelineno-251-108" href="#__codelineno-251-108"></a>    samtools_sort_index --&gt;|bam| clair3
+<a id="__codelineno-251-109" name="__codelineno-251-109" href="#__codelineno-251-109"></a>    samtools_sort_index --&gt;|bam| deepvariant
+<a id="__codelineno-251-110" name="__codelineno-251-110" href="#__codelineno-251-110"></a>    samtools_sort_index --&gt;|bam| longtr
+<a id="__codelineno-251-111" name="__codelineno-251-111" href="#__codelineno-251-111"></a>    samtools_sort_index --&gt;|bam| straglr
+<a id="__codelineno-251-112" name="__codelineno-251-112" href="#__codelineno-251-112"></a>    samtools_sort_index --&gt;|bam| trgt
+<a id="__codelineno-251-113" name="__codelineno-251-113" href="#__codelineno-251-113"></a>
+<a id="__codelineno-251-114" name="__codelineno-251-114" href="#__codelineno-251-114"></a>    mosdepth --&gt;|other| ontspectre_cnvcaller
+<a id="__codelineno-251-115" name="__codelineno-251-115" href="#__codelineno-251-115"></a>
+<a id="__codelineno-251-116" name="__codelineno-251-116" href="#__codelineno-251-116"></a>    straglr --&gt;|other| geneyx
+<a id="__codelineno-251-117" name="__codelineno-251-117" href="#__codelineno-251-117"></a>
+<a id="__codelineno-251-118" name="__codelineno-251-118" href="#__codelineno-251-118"></a>    clair3 --&gt;|snvvcf| ontspectre_cnvcaller
+<a id="__codelineno-251-119" name="__codelineno-251-119" href="#__codelineno-251-119"></a>    deepvariant --&gt;|snvvcf| ontspectre_cnvcaller
+<a id="__codelineno-251-120" name="__codelineno-251-120" href="#__codelineno-251-120"></a>
+<a id="__codelineno-251-121" name="__codelineno-251-121" href="#__codelineno-251-121"></a>    clair3 --&gt;|bam,snvvcf| whatshap_phase
+<a id="__codelineno-251-122" name="__codelineno-251-122" href="#__codelineno-251-122"></a>    deepvariant --&gt;|bam,snvvcf| whatshap_phase
+<a id="__codelineno-251-123" name="__codelineno-251-123" href="#__codelineno-251-123"></a>
+<a id="__codelineno-251-124" name="__codelineno-251-124" href="#__codelineno-251-124"></a>    clair3 --&gt;|snvvcf| glnexus
+<a id="__codelineno-251-125" name="__codelineno-251-125" href="#__codelineno-251-125"></a>    deepvariant --&gt;|snvvcf| glnexus
+<a id="__codelineno-251-126" name="__codelineno-251-126" href="#__codelineno-251-126"></a>
+<a id="__codelineno-251-127" name="__codelineno-251-127" href="#__codelineno-251-127"></a>    clair3 --&gt;|snvvcf| vep
+<a id="__codelineno-251-128" name="__codelineno-251-128" href="#__codelineno-251-128"></a>    deepvariant --&gt;|snvvcf| vep
+<a id="__codelineno-251-129" name="__codelineno-251-129" href="#__codelineno-251-129"></a>
+<a id="__codelineno-251-130" name="__codelineno-251-130" href="#__codelineno-251-130"></a>    whatshap_haplotag --&gt;|bam| sniffles
+<a id="__codelineno-251-131" name="__codelineno-251-131" href="#__codelineno-251-131"></a>    whatshap_haplotag --&gt;|bam| cutesv
+<a id="__codelineno-251-132" name="__codelineno-251-132" href="#__codelineno-251-132"></a>    whatshap_haplotag --&gt;|bam| jasminesv_samples
+<a id="__codelineno-251-133" name="__codelineno-251-133" href="#__codelineno-251-133"></a>
+<a id="__codelineno-251-134" name="__codelineno-251-134" href="#__codelineno-251-134"></a>    ontspectre_cnvcaller --&gt;|other| geneyx
+<a id="__codelineno-251-135" name="__codelineno-251-135" href="#__codelineno-251-135"></a>
+<a id="__codelineno-251-136" name="__codelineno-251-136" href="#__codelineno-251-136"></a>    sniffles --&gt;|svvcf| jasminesv_samples
+<a id="__codelineno-251-137" name="__codelineno-251-137" href="#__codelineno-251-137"></a>    sniffles --&gt;|svvcf| vep
+<a id="__codelineno-251-138" name="__codelineno-251-138" href="#__codelineno-251-138"></a>    sniffles --&gt;|svvcf| snpeff
+<a id="__codelineno-251-139" name="__codelineno-251-139" href="#__codelineno-251-139"></a>    sniffles --&gt;|svvcf| annotsv
+<a id="__codelineno-251-140" name="__codelineno-251-140" href="#__codelineno-251-140"></a>    sniffles --&gt;|svvcf| geneyx
+<a id="__codelineno-251-141" name="__codelineno-251-141" href="#__codelineno-251-141"></a>
+<a id="__codelineno-251-142" name="__codelineno-251-142" href="#__codelineno-251-142"></a>    cutesv --&gt;|svvcf| jasminesv_samples
+<a id="__codelineno-251-143" name="__codelineno-251-143" href="#__codelineno-251-143"></a>    cutesv --&gt;|svvcf| vep
+<a id="__codelineno-251-144" name="__codelineno-251-144" href="#__codelineno-251-144"></a>    cutesv --&gt;|svvcf| snpeff
+<a id="__codelineno-251-145" name="__codelineno-251-145" href="#__codelineno-251-145"></a>    cutesv --&gt;|svvcf| annotsv
+<a id="__codelineno-251-146" name="__codelineno-251-146" href="#__codelineno-251-146"></a>    cutesv --&gt;|svvcf| geneyx
+<a id="__codelineno-251-147" name="__codelineno-251-147" href="#__codelineno-251-147"></a>
+<a id="__codelineno-251-148" name="__codelineno-251-148" href="#__codelineno-251-148"></a>    jasminesv_callers --&gt;|svvcf| jasminesv_samples
+<a id="__codelineno-251-149" name="__codelineno-251-149" href="#__codelineno-251-149"></a>    jasminesv_callers --&gt;|svvcf| vep
+<a id="__codelineno-251-150" name="__codelineno-251-150" href="#__codelineno-251-150"></a>    jasminesv_callers --&gt;|svvcf| snpeff
+<a id="__codelineno-251-151" name="__codelineno-251-151" href="#__codelineno-251-151"></a>    jasminesv_callers --&gt;|svvcf| annotsv
+<a id="__codelineno-251-152" name="__codelineno-251-152" href="#__codelineno-251-152"></a>    jasminesv_callers --&gt;|svvcf| geneyx
+<a id="__codelineno-251-153" name="__codelineno-251-153" href="#__codelineno-251-153"></a>    jasminesv_callers --&gt;|svvcf| sv_report
+<a id="__codelineno-251-154" name="__codelineno-251-154" href="#__codelineno-251-154"></a>
+<a id="__codelineno-251-155" name="__codelineno-251-155" href="#__codelineno-251-155"></a>    snpeff --&gt;|svvcf| sv_report
+<a id="__codelineno-251-156" name="__codelineno-251-156" href="#__codelineno-251-156"></a>    annotsv --&gt;|svvcf| sv_report
+<a id="__codelineno-251-157" name="__codelineno-251-157" href="#__codelineno-251-157"></a>
+<a id="__codelineno-251-158" name="__codelineno-251-158" href="#__codelineno-251-158"></a>    glnexus --&gt;|snvvcf| vep
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Convergent Offrow Exit Climb" src="../assets/renders/convergent_offrow_exit_climb.svg" /></p>
 
 
 
