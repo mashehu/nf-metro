@@ -1252,14 +1252,14 @@
 starting out, read the task-oriented <a href="../embedding/">Embedding guide</a> first - it
 explains which output to produce and how to size, theme, and drive a map - and
 come here for the exact attribute vocabulary and driver method signatures.</p>
-<div class="admonition warning">
-<p class="admonition-title">Experimental - pre-1.0, not yet stable</p>
-<p>The embed contract is new and still being shaped.  The <code>data-*</code> attribute
-names, the driver API, and the manifest schema may change without notice
-before the format is declared stable.  Pin to a specific nf-metro release
-if you depend on the exact surface.  The driver contract version
-(<code>DRIVER_CONTRACT_VERSION</code>) and manifest schema version
-(<code>MANIFEST_SCHEMA_VERSION</code>) are both <code>1.0</code> at this stage.</p>
+<div class="admonition note">
+<p class="admonition-title">Stable as of nf-metro 1.0</p>
+<p>The embed contract is a public, versioned surface. The <code>data-*</code> attribute
+names, the driver API, and the manifest schema are governed by the driver
+contract version (<code>DRIVER_CONTRACT_VERSION</code>) and manifest schema version
+(<code>MANIFEST_SCHEMA_VERSION</code>), both <code>1.0</code>. Changes follow <code>major.minor</code>
+semantics (see <a href="#versioning">Versioning</a>): additive changes bump the minor,
+breaking changes bump the major. Consumers must tolerate unknown fields.</p>
 </div>
 <p>An nf-metro SVG is a <strong>self-describing, driveable artifact</strong>.  A host page
 can:</p>
@@ -1533,9 +1533,9 @@ constants are:</p>
 <p>The schema version follows <code>major.minor</code> semantics: the minor part increments
 for additive (backward-compatible) changes; the major part increments for
 breaking changes.  Consumers must ignore unknown fields (additive tolerance).</p>
-<p>Until the contract is declared stable (version <code>2.0</code> or a dedicated
-stability notice), pin to a specific nf-metro release when building against
-this surface.</p>
+<p>This surface is stable as of nf-metro 1.0: within a major version the contract
+only grows in backward-compatible ways. Pin to a specific nf-metro release only
+if you depend on the exact bytes of the output.</p>
 
 
 

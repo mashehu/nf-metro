@@ -1302,13 +1302,13 @@
 
 
 <h1 id="embedding-guide">Embedding guide<a class="headerlink" href="#embedding-guide" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Experimental - pre-1.0, not yet stable</p>
-<p>The embedding surface (render flags, <code>--nfm-*</code> properties, the <code>data-*</code>
-contract, and the manifest schema) is new and still being shaped. Pin to a
-specific nf-metro release if you depend on the exact output. The manifest
-schema version (<code>MANIFEST_SCHEMA_VERSION</code>) and driver contract version
-(<code>DRIVER_CONTRACT_VERSION</code>) are both <code>1.0</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Stable as of nf-metro 1.0</p>
+<p>The embedding surface (the <code>--nfm-*</code> properties, the <code>data-*</code> contract, and
+the manifest schema) is a public, versioned surface. The manifest schema
+version (<code>MANIFEST_SCHEMA_VERSION</code>) and driver contract version
+(<code>DRIVER_CONTRACT_VERSION</code>) are both <code>1.0</code> and change under <code>major.minor</code>
+semantics; see <a href="#versioning-and-stability">Versioning and stability</a> below.</p>
 </div>
 <p>This guide is for someone putting a rendered nf-metro map into <strong>their own</strong>
 page or application: a docs site, an internal dashboard, a pipeline run viewer.
@@ -1567,9 +1567,10 @@ to write - see <a href="../live/">Live progress</a>.</p>
 <code>1.0</code> today. The stable surface keyed to those versions - the <code>data-*</code> attribute
 names, the manifest fields, the <code>0 0 w h</code> coordinate rule, and the driver method
 names - and the <code>major.minor</code> rules for changing it are specified under
-<a href="../embed/#versioning">Versioning</a> on the Embed contract page. <strong>Consumers must
-ignore unknown fields</strong>, and until a stability notice, pin to a specific
-nf-metro release.</p>
+<a href="../embed/#versioning">Versioning</a> on the Embed contract page. This surface is
+stable as of nf-metro 1.0: within a major version it only grows in
+backward-compatible ways, so <strong>consumers must ignore unknown fields</strong>. Pin to a
+specific nf-metro release only if you depend on the exact bytes of the output.</p>
 <h2 id="attribution">Attribution<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h2>
 <p>Rendered maps carry a small <code>created with nf-metro</code> watermark in the corner. It
 stays by default, <strong>including in <code>--bare</code> mode</strong>. Please keep it on embedded
