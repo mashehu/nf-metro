@@ -4077,93 +4077,94 @@
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>%%metro line: pseudo_salmon | Pseudo-aligner: Salmon, Quantification: Salmon | #e63946
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>%%metro line: pseudo_kallisto | Pseudo-aligner: Kallisto, Quantification: Kallisto | #7b2d3b
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>%%metro legend: bl
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>graph LR
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    subgraph preprocessing [Pre-processing]
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        cat_fastq[cat fastq]
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        fastqc_raw[FastQC]
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        infer_strandedness[infer strandedness]
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>        umi_tools_extract[UMI-tools extract]
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>        fastp[FastP]
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        trimgalore[Trim Galore!]
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>        fastqc_trimmed[FastQC]
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>        bbsplit[BBSplit]
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        sortmerna[SortMeRNA]
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>        cat_fastq --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastqc_raw
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        fastqc_raw --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| infer_strandedness
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        infer_strandedness --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| umi_tools_extract
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        umi_tools_extract --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastp
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        umi_tools_extract --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| trimgalore
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>        fastp --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastqc_trimmed
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>        trimgalore --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastqc_trimmed
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
-<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>        fastqc_trimmed --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| bbsplit
-<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        bbsplit --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| sortmerna
-<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>    end
-<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>
-<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    subgraph genome_align [Genome alignment &amp; quantification]
-<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>        star[STAR]
-<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>        hisat2_align[HISAT2]
-<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        rsem[RSEM]
-<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>        salmon_quant[Salmon]
-<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>        umi_tools_dedup[UMI-tools dedup]
-<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>
-<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>        star --&gt;|star_rsem| rsem
-<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        star --&gt;|star_salmon| umi_tools_dedup
-<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>        umi_tools_dedup --&gt;|star_salmon| salmon_quant
-<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>        hisat2_align --&gt;|hisat2| umi_tools_dedup
-<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>    end
-<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>
-<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>    subgraph postprocessing [Post-processing]
-<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>        samtools[SAMtools]
-<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>        picard[Picard]
-<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>        bedtools[BEDTools]
-<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>        bedgraph[bedGraphToBigWig]
-<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>        stringtie[StringTie]
-<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>
-<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>        samtools --&gt;|star_salmon,star_rsem,hisat2| picard
-<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>        picard --&gt;|star_salmon,star_rsem,hisat2| bedtools
-<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>        bedtools --&gt;|star_salmon,star_rsem,hisat2| bedgraph
-<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>        bedgraph --&gt;|star_salmon,star_rsem,hisat2| stringtie
-<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>    end
-<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>
-<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>    subgraph pseudo_align [Pseudo-alignment &amp; quantification]
-<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>        salmon_pseudo[Salmon]
-<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>        kallisto[Kallisto]
-<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>        multiqc_pseudo[MultiQC]
-<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>
-<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>        salmon_pseudo --&gt;|pseudo_salmon| multiqc_pseudo
-<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>        kallisto --&gt;|pseudo_kallisto| multiqc_pseudo
-<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>    end
-<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>
-<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>    subgraph qc_report [Quality control &amp; reporting]
-<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>        rseqc[RSeQC]
-<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>        preseq[Preseq]
-<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>        qualimap[Qualimap]
-<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>        dupradar[dupRadar]
-<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>        deseq2_pca[DESeq2 PCA]
-<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>        kraken2[Kraken2/Bracken]
-<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>        multiqc_final[MultiQC]
-<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>
-<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>        rseqc --&gt;|star_salmon,star_rsem,hisat2| preseq
-<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>        preseq --&gt;|star_salmon,star_rsem,hisat2| qualimap
-<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>        qualimap --&gt;|star_salmon,star_rsem,hisat2| dupradar
-<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>        dupradar --&gt;|star_salmon,star_rsem,hisat2| deseq2_pca
-<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>        deseq2_pca --&gt;|star_salmon,star_rsem,hisat2| kraken2
-<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>        kraken2 --&gt;|star_salmon,star_rsem,hisat2| multiqc_final
-<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>    end
-<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>
-<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>    %% Inter-section edges
-<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>    sortmerna --&gt;|star_salmon,star_rsem| star
-<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>    sortmerna --&gt;|hisat2| hisat2_align
-<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>    sortmerna --&gt;|pseudo_salmon| salmon_pseudo
-<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>    sortmerna --&gt;|pseudo_kallisto| kallisto
-<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>    salmon_quant --&gt;|star_salmon| samtools
-<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>    rsem --&gt;|star_rsem| samtools
-<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a>    umi_tools_dedup --&gt;|hisat2| samtools
-<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a>    stringtie --&gt;|star_salmon,star_rsem,hisat2| rseqc
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>%%metro logo_scale: 0.6
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>graph LR
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    subgraph preprocessing [Pre-processing]
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        cat_fastq[cat fastq]
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        fastqc_raw[FastQC]
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>        infer_strandedness[infer strandedness]
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>        umi_tools_extract[UMI-tools extract]
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        fastp[FastP]
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>        trimgalore[Trim Galore!]
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>        fastqc_trimmed[FastQC]
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        bbsplit[BBSplit]
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        sortmerna[SortMeRNA]
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        cat_fastq --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastqc_raw
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        fastqc_raw --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| infer_strandedness
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        infer_strandedness --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| umi_tools_extract
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        umi_tools_extract --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastp
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>        umi_tools_extract --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| trimgalore
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>        fastp --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastqc_trimmed
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>        trimgalore --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| fastqc_trimmed
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        fastqc_trimmed --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| bbsplit
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>        bbsplit --&gt;|star_salmon,star_rsem,hisat2,pseudo_salmon,pseudo_kallisto| sortmerna
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    end
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>    subgraph genome_align [Genome alignment &amp; quantification]
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>        star[STAR]
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        hisat2_align[HISAT2]
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>        rsem[RSEM]
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>        salmon_quant[Salmon]
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>        umi_tools_dedup[UMI-tools dedup]
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        star --&gt;|star_rsem| rsem
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>        star --&gt;|star_salmon| umi_tools_dedup
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>        umi_tools_dedup --&gt;|star_salmon| salmon_quant
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>        hisat2_align --&gt;|hisat2| umi_tools_dedup
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>    end
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>    subgraph postprocessing [Post-processing]
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>        samtools[SAMtools]
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>        picard[Picard]
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>        bedtools[BEDTools]
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>        bedgraph[bedGraphToBigWig]
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>        stringtie[StringTie]
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>        samtools --&gt;|star_salmon,star_rsem,hisat2| picard
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>        picard --&gt;|star_salmon,star_rsem,hisat2| bedtools
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>        bedtools --&gt;|star_salmon,star_rsem,hisat2| bedgraph
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>        bedgraph --&gt;|star_salmon,star_rsem,hisat2| stringtie
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>    end
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>    subgraph pseudo_align [Pseudo-alignment &amp; quantification]
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>        salmon_pseudo[Salmon]
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>        kallisto[Kallisto]
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>        multiqc_pseudo[MultiQC]
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>        salmon_pseudo --&gt;|pseudo_salmon| multiqc_pseudo
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>        kallisto --&gt;|pseudo_kallisto| multiqc_pseudo
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>    end
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>    subgraph qc_report [Quality control &amp; reporting]
+<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>        rseqc[RSeQC]
+<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>        preseq[Preseq]
+<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>        qualimap[Qualimap]
+<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>        dupradar[dupRadar]
+<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>        deseq2_pca[DESeq2 PCA]
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>        kraken2[Kraken2/Bracken]
+<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>        multiqc_final[MultiQC]
+<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>
+<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>        rseqc --&gt;|star_salmon,star_rsem,hisat2| preseq
+<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>        preseq --&gt;|star_salmon,star_rsem,hisat2| qualimap
+<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>        qualimap --&gt;|star_salmon,star_rsem,hisat2| dupradar
+<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>        dupradar --&gt;|star_salmon,star_rsem,hisat2| deseq2_pca
+<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>        deseq2_pca --&gt;|star_salmon,star_rsem,hisat2| kraken2
+<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>        kraken2 --&gt;|star_salmon,star_rsem,hisat2| multiqc_final
+<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>    end
+<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>
+<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>    %% Inter-section edges
+<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>    sortmerna --&gt;|star_salmon,star_rsem| star
+<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>    sortmerna --&gt;|hisat2| hisat2_align
+<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>    sortmerna --&gt;|pseudo_salmon| salmon_pseudo
+<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>    sortmerna --&gt;|pseudo_kallisto| kallisto
+<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>    salmon_quant --&gt;|star_salmon| samtools
+<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a>    rsem --&gt;|star_rsem| samtools
+<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a>    umi_tools_dedup --&gt;|hisat2| samtools
+<a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a>    stringtie --&gt;|star_salmon,star_rsem,hisat2| rseqc
 </code></pre></div>
 </details>
 <p><strong>Rendered output:</strong></p>
