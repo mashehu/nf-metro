@@ -1343,14 +1343,12 @@
 
 
 <h1 id="the-data-manifest">The data manifest<a class="headerlink" href="#the-data-manifest" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Experimental - pre-1.0, not yet stable</p>
-<p>The manifest is new and still being shaped: the schema, the
-<code>diagram-manifest</code> element id, and the <code>data-node-*</code> attribute names may
-change without notice before the format is declared stable. There is no
-backward-compatibility guarantee yet, so the <code>version</code> stays <code>1.0</code> (the
-first, not-yet-frozen schema) rather than incrementing per change. Pin to a
-specific nf-metro release if you depend on the exact bytes.</p>
+<div class="admonition note">
+<p class="admonition-title">Stable since 1.0</p>
+<p>The manifest schema, <code>diagram-manifest</code> element id, and <code>data-node-*</code>
+attribute names are stable as of nf-metro 1.0 and covered by semantic
+versioning. Incompatible schema changes will bump the <code>version</code> field and
+the nf-metro major version together.</p>
 </div>
 <p>Every SVG nf-metro renders is a <strong>self-describing, addressable artifact</strong>: a
 downstream tool can drive it - position overlays, restyle nodes, look up which
