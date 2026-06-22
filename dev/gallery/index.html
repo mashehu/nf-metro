@@ -1978,6 +1978,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#junction-fanout-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Junction Fanout Convergence
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3789,6 +3800,17 @@
     <span class="md-ellipsis">
       
         Clear Channel Target Aware Push
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#junction-fanout-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Junction Fanout Convergence
       
     </span>
   </a>
@@ -10742,6 +10764,51 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Clear Channel Target Aware Push" src="../assets/renders/clear_channel_target_aware_push.svg" /></p>
+<h3 id="junction-fanout-convergence">Junction Fanout Convergence<a class="headerlink" href="#junction-fanout-convergence" title="Permanent link">&para;</a></h3>
+<p>Three lines converge into one joint-calling entry port: two bypass the intervening sections and climb risers into the port while the third joins flat from the adjacent column. The flat shallow feeder takes the port-near slot on top of the climbing pair so the bundle turns into the port concentrically, instead of the flat line weaving across the risers at the corner.</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-246-1" name="__codelineno-246-1" href="#__codelineno-246-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/junction_fanout_convergence.mmd<span class="w"> </span>-o<span class="w"> </span>junction_fanout_convergence.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-247-1" name="__codelineno-247-1" href="#__codelineno-247-1"></a>%% Three lines converge into one LEFT entry port on a single-row grid: a and b
+<a id="__codelineno-247-2" name="__codelineno-247-2" href="#__codelineno-247-2"></a>%% bypass the intervening sections and climb risers into the port, while c joins
+<a id="__codelineno-247-3" name="__codelineno-247-3" href="#__codelineno-247-3"></a>%% flat from the adjacent column. The shallow feeder c must nest port-near on
+<a id="__codelineno-247-4" name="__codelineno-247-4" href="#__codelineno-247-4"></a>%% top of the climbing pair so the bundle turns concentrically rather than
+<a id="__codelineno-247-5" name="__codelineno-247-5" href="#__codelineno-247-5"></a>%% weaving c across the risers at the corner (#940).
+<a id="__codelineno-247-6" name="__codelineno-247-6" href="#__codelineno-247-6"></a>%%metro title: Junction Fan-out Convergence
+<a id="__codelineno-247-7" name="__codelineno-247-7" href="#__codelineno-247-7"></a>%%metro style: dark
+<a id="__codelineno-247-8" name="__codelineno-247-8" href="#__codelineno-247-8"></a>%%metro line: a | Line A | #e63946
+<a id="__codelineno-247-9" name="__codelineno-247-9" href="#__codelineno-247-9"></a>%%metro line: b | Line B | #f5c542
+<a id="__codelineno-247-10" name="__codelineno-247-10" href="#__codelineno-247-10"></a>%%metro line: c | Line C | #9d4edd
+<a id="__codelineno-247-11" name="__codelineno-247-11" href="#__codelineno-247-11"></a>%%metro grid: stepA | 0,0
+<a id="__codelineno-247-12" name="__codelineno-247-12" href="#__codelineno-247-12"></a>%%metro grid: stepB | 1,0
+<a id="__codelineno-247-13" name="__codelineno-247-13" href="#__codelineno-247-13"></a>%%metro grid: stepC | 2,0
+<a id="__codelineno-247-14" name="__codelineno-247-14" href="#__codelineno-247-14"></a>%%metro grid: joint | 3,0
+<a id="__codelineno-247-15" name="__codelineno-247-15" href="#__codelineno-247-15"></a>
+<a id="__codelineno-247-16" name="__codelineno-247-16" href="#__codelineno-247-16"></a>graph LR
+<a id="__codelineno-247-17" name="__codelineno-247-17" href="#__codelineno-247-17"></a>    subgraph stepA [Caller A]
+<a id="__codelineno-247-18" name="__codelineno-247-18" href="#__codelineno-247-18"></a>        sa[Call A]
+<a id="__codelineno-247-19" name="__codelineno-247-19" href="#__codelineno-247-19"></a>    end
+<a id="__codelineno-247-20" name="__codelineno-247-20" href="#__codelineno-247-20"></a>    subgraph stepB [Caller B]
+<a id="__codelineno-247-21" name="__codelineno-247-21" href="#__codelineno-247-21"></a>        sb[Call B]
+<a id="__codelineno-247-22" name="__codelineno-247-22" href="#__codelineno-247-22"></a>    end
+<a id="__codelineno-247-23" name="__codelineno-247-23" href="#__codelineno-247-23"></a>    subgraph stepC [Caller C]
+<a id="__codelineno-247-24" name="__codelineno-247-24" href="#__codelineno-247-24"></a>        sc[Call C]
+<a id="__codelineno-247-25" name="__codelineno-247-25" href="#__codelineno-247-25"></a>    end
+<a id="__codelineno-247-26" name="__codelineno-247-26" href="#__codelineno-247-26"></a>    subgraph joint [Joint Calling]
+<a id="__codelineno-247-27" name="__codelineno-247-27" href="#__codelineno-247-27"></a>        merge[Merge]
+<a id="__codelineno-247-28" name="__codelineno-247-28" href="#__codelineno-247-28"></a>        collect[Collect]
+<a id="__codelineno-247-29" name="__codelineno-247-29" href="#__codelineno-247-29"></a>    end
+<a id="__codelineno-247-30" name="__codelineno-247-30" href="#__codelineno-247-30"></a>
+<a id="__codelineno-247-31" name="__codelineno-247-31" href="#__codelineno-247-31"></a>    sa --&gt;|a| merge
+<a id="__codelineno-247-32" name="__codelineno-247-32" href="#__codelineno-247-32"></a>    sb --&gt;|b| merge
+<a id="__codelineno-247-33" name="__codelineno-247-33" href="#__codelineno-247-33"></a>    sc --&gt;|c| merge
+<a id="__codelineno-247-34" name="__codelineno-247-34" href="#__codelineno-247-34"></a>    merge --&gt;|a,b,c| collect
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Junction Fanout Convergence" src="../assets/renders/junction_fanout_convergence.svg" /></p>
 
 
 
