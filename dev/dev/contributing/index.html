@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/architecture/">
+        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/contributing/">
       
       
-        <link rel="prev" href="../../how-its-built/">
+        <link rel="prev" href="../testing/">
       
       
-        <link rel="next" href="../layout_pipeline/">
+        <link rel="next" href="../../releases/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Architecture - nf-metro</title>
+        <title>Contributing - nf-metro</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture" class="md-skip">
+        <a href="#contributing" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture
+              Contributing
             
           </span>
         </div>
@@ -584,37 +584,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -630,98 +603,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stages
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parse-srcnf_metroparser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parse (src/nf_metro/parser/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layout-srcnf_metrolayout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layout (src/nf_metro/layout/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-srcnf_metrorender" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Render (src/nf_metro/render/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference docs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -955,10 +836,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -974,6 +882,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-opening-a-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before opening a PR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-the-layout-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with the layout phases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-topology-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a topology test
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-layout-invariant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a layout invariant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-xfail-ratchet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The xfail ratchet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-routing-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a routing handler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#station-as-elbow-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Station-as-elbow constraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-and-ci-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit and CI conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filing-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filing issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2171,60 +2231,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stages" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stages
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parse-srcnf_metroparser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parse (src/nf_metro/parser/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layout-srcnf_metrolayout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layout (src/nf_metro/layout/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-srcnf_metrorender" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Render (src/nf_metro/render/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference docs
+        Setup
       
     </span>
   </a>
@@ -2232,10 +2242,120 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#running-checks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data model
+        Running checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-opening-a-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before opening a PR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-the-layout-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with the layout phases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-topology-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a topology test
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-layout-invariant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a layout invariant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-xfail-ratchet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The xfail ratchet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-routing-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a routing handler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#station-as-elbow-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Station-as-elbow constraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-and-ci-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit and CI conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filing-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filing issues
       
     </span>
   </a>
@@ -2262,105 +2382,109 @@
   
 
 
-<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
-<p>nf-metro turns a Mermaid <code>graph LR</code> definition (augmented with <code>%%metro</code>
-directives) into a metro-map-style SVG.  The pipeline has three stages:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Parse  -&gt;  Layout  -&gt;  Render
+<h1 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h1>
+<p>This page covers the development workflow for nf-metro: how to set up, run checks, add tests, and submit changes.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pinin4fjords/nf-metro
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>nf-metro
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
 </code></pre></div>
-<p>Each stage hands a single <code>MetroGraph</code> (defined in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/parser/model.py"><code>src/nf_metro/parser/model.py</code></a>)
-to the next.  The graph is mutated in place: parsing fills in stations,
-edges, lines, sections, and ports; layout writes coordinates onto those
-objects; rendering reads them.</p>
-<h2 id="stages">Stages<a class="headerlink" href="#stages" title="Permanent link">&para;</a></h2>
-<h3 id="parse-srcnf_metroparser">Parse (<code>src/nf_metro/parser/</code>)<a class="headerlink" href="#parse-srcnf_metroparser" title="Permanent link">&para;</a></h3>
-<p><code>parse_metro_mermaid</code> in <code>parser/mermaid.py</code> is a line-by-line regex
-parser.  It reads Mermaid subgraphs (sections), nodes (stations), and
-edges, plus the <code>%%metro</code> directive extensions.  After the line scan it
-runs a post-parse pass that auto-infers layout, then rewrites
-inter-section edges into port/junction chains via <code>_resolve_sections</code>.</p>
-<p>See <a href="../parser/">Parser</a> for the directive model and the
-parse-then-resolve flow.</p>
-<h3 id="layout-srcnf_metrolayout">Layout (<code>src/nf_metro/layout/</code>)<a class="headerlink" href="#layout-srcnf_metrolayout" title="Permanent link">&para;</a></h3>
-<p><code>compute_layout</code> in <code>layout/engine.py</code> assigns every station, port,
-junction, and section bbox an <code>(x, y)</code>.  It chains many small phases,
-split into an anchor-setting (structural) layer and a content-placement
-layer.  The phase implementations live in <code>layout/phases/</code>; the
-per-phase preconditions, postconditions, and invariants are documented
-in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>src/nf_metro/layout/CONTRACT.md</code></a>.</p>
-<p>Edge routing (horizontal runs plus 45-degree diagonal transitions, with
-L-shaped inter-section routing) lives in <code>layout/routing/</code>.</p>
-<p>See <a href="../layout_pipeline/">Layout pipeline</a> for the full phase-by-phase
-walkthrough and <a href="../routing/">Routing</a> for the route families.</p>
-<h3 id="render-srcnf_metrorender">Render (<code>src/nf_metro/render/</code>)<a class="headerlink" href="#render-srcnf_metrorender" title="Permanent link">&para;</a></h3>
-<p><code>render_svg</code> in <code>render/svg.py</code> draws section boxes, routed edges (with
-curved corners), pill-shaped station markers, labels, and the legend
-using the <code>drawsvg</code> library.  Visual properties come from a <code>Theme</code>
-(<code>render/style.py</code>); themes are registered in <code>themes/__init__.py</code>.
-<code>render/animate.py</code> adds travelling balls along the routed paths (the
-<code>--animate</code> CLI flag).</p>
-<h2 id="reference-docs">Reference docs<a class="headerlink" href="#reference-docs" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Topic</th>
-<th>Where</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Layout phase-by-phase</td>
-<td><a href="../layout_pipeline/">layout_pipeline.md</a></td>
-</tr>
-<tr>
-<td>Per-phase contract (preconditions/postconditions/invariants)</td>
-<td><a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>CONTRACT.md</code></a></td>
-</tr>
-<tr>
-<td>Edge routing families</td>
-<td><a href="../routing/">routing.md</a></td>
-</tr>
-<tr>
-<td>Routing gate-arm coverage matrix (auto-generated)</td>
-<td><a href="../routing_gate_coverage/">routing_gate_coverage.md</a></td>
-</tr>
-<tr>
-<td>Routing gate-arm triage process</td>
-<td><a href="../routing_gate_triage/">routing_gate_triage.md</a></td>
-</tr>
-<tr>
-<td>Parser and <code>%%metro</code> model</td>
-<td><a href="../parser/">parser.md</a></td>
-</tr>
-<tr>
-<td>SVG, HTML, bridges, manifest, animation</td>
-<td><a href="../render/">render.md</a></td>
-</tr>
-<tr>
-<td>Adding fixtures, tests, invariants</td>
-<td><a href="../testing/">testing.md</a></td>
-</tr>
-<tr>
-<td>Topology stress fixtures (inventory + known issues)</td>
-<td><a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/topologies/README.md"><code>examples/topologies/README.md</code></a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="data-model">Data model<a class="headerlink" href="#data-model" title="Permanent link">&para;</a></h2>
-<p>The central structure is <code>MetroGraph</code> (<code>parser/model.py</code>), holding:</p>
+<p>Required Python: 3.10+. Dependencies: <code>click</code>, <code>drawsvg</code>, <code>networkx</code>, <code>pillow</code>. Dev extras add <code>pytest</code>, <code>ruff</code>, <code>mypy</code>.</p>
+<h2 id="running-checks">Running checks<a class="headerlink" href="#running-checks" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># All tests</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pytest
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Single test file or case</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>pytest<span class="w"> </span>tests/test_topology_validation.py
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>pytest<span class="w"> </span>tests/test_parser.py::test_parse_title
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Lint (match CI exactly)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>ruff<span class="w"> </span>check<span class="w"> </span>src/<span class="w"> </span>tests/
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>ruff<span class="w"> </span>format<span class="w"> </span>--check<span class="w"> </span>src/<span class="w"> </span>tests/
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># Type checking</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>mypy<span class="w"> </span>src/
+</code></pre></div>
+<p>The topology validation suite parametrizes over every <code>.mmd</code> in <code>examples/topologies/</code> and runs the full layout oracle against each one. This is the most sensitive regression check.</p>
+<h2 id="before-opening-a-pr">Before opening a PR<a class="headerlink" href="#before-opening-a-pr" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Run <code>pytest</code> and <code>ruff format --check</code> - CI will run both.</li>
+<li>Render the gallery locally and eyeball any fixtures your change touches (see <a href="#visual-review">Visual review</a> below).</li>
+<li>If you added new behaviour, add a topology fixture or regression fixture that covers it.</li>
+<li>If you fixed a known bug that had an <code>xfail</code> marker, remove the marker from the test.</li>
+</ol>
+<h2 id="working-with-the-layout-phases">Working with the layout phases<a class="headerlink" href="#working-with-the-layout-phases" title="Permanent link">&para;</a></h2>
+<p>The layout engine runs as a sequence of ~40 numbered phases. Each phase reads the state left by the previous one and writes into it. The contracts between phases - what each one requires on entry and guarantees on exit - are documented in <a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>src/nf_metro/layout/CONTRACT.md</code></a>. Read the relevant section before modifying a phase; changes to coordinate assignment often have non-local effects.</p>
+<p>Phase guards in <code>src/nf_metro/layout/phases/guards.py</code> assert pre/postconditions at each phase boundary. When a guard fires, the phase name is in the error message, which localises the regression immediately. If you add a new invariant that a phase must preserve, add a guard for it here.</p>
+<h2 id="adding-a-topology-test">Adding a topology test<a class="headerlink" href="#adding-a-topology-test" title="Permanent link">&para;</a></h2>
+<p><code>examples/topologies/</code> holds <code>.mmd</code> fixtures, each isolating a specific graph topology (fan-out, fan-in, diamond, fold, etc.). <code>tests/test_topology_validation.py</code> parametrizes over every file in that directory and runs the full layout oracle against each one.</p>
+<p>To add a case:</p>
+<ol>
+<li>Write a minimal <code>.mmd</code> that exercises the topology.</li>
+<li>Drop it in <code>examples/topologies/</code>. No further wiring is needed; the parametrization picks it up automatically.</li>
+<li>Run <code>pytest tests/test_topology_validation.py</code> to confirm it passes (or fails, if you are pinning a known issue).</li>
+</ol>
+<p>If the fixture exercises a bug you have not fixed yet, use an <code>xfail</code> marker rather than skipping it. See the <a href="#the-xfail-ratchet">xfail pattern</a> below.</p>
+<h2 id="adding-a-layout-invariant">Adding a layout invariant<a class="headerlink" href="#adding-a-layout-invariant" title="Permanent link">&para;</a></h2>
+<p><code>tests/layout_validator.py</code> holds <code>check_*</code> functions that take a laid-out <code>MetroGraph</code> and return a list of <code>Violation</code> objects with <code>ERROR</code> or <code>WARNING</code> severity. <code>ERROR</code>s fail CI; <code>WARNING</code>s are reported but do not.</p>
+<p>To add a check:</p>
+<ol>
+<li>Write a new <code>check_&lt;thing&gt;</code> function returning a list of <code>Violation</code> objects.</li>
+<li>Call it from the relevant test - usually the topology suite in <code>test_topology_validation.py</code>, or a dedicated test if the check is narrow.</li>
+</ol>
+<p>Per-phase preconditions, postconditions, and invariants are tracked separately in <code>CONTRACT.md</code> and enforced by phase guards, not layout oracle checks.</p>
+<h2 id="the-xfail-ratchet">The xfail ratchet<a class="headerlink" href="#the-xfail-ratchet" title="Permanent link">&para;</a></h2>
+<p>When you find a bug that will take time to fix, do not ignore it. Write a test that checks the correct behaviour and mark it <code>xfail</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">xfail</span><span class="p">(</span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;issue #NNN: description of what should happen&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_something</span><span class="p">():</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>While the bug is present, <code>xfail</code> keeps CI green and the test documents what is wrong. When someone fixes the bug, the test flips to <code>XPASS</code> and CI turns red, prompting the developer to remove the <code>xfail</code> marker and lock in the correct behaviour. The floor cannot slip backwards by accident.</p>
+<p>The corollary: once a check is in, it stays in. Do not remove checks to make CI pass. If a check fires incorrectly, fix the check or the code; don't delete it.</p>
+<h2 id="adding-a-routing-handler">Adding a routing handler<a class="headerlink" href="#adding-a-routing-handler" title="Permanent link">&para;</a></h2>
+<p>The routing module uses a first-match dispatcher over handler families in <code>src/nf_metro/layout/routing/</code>. Each handler covers a specific combination of section orientation, entry/exit direction, and flow type. The full dispatch table is documented in <a href="../inter_section_dispatch/"><code>docs/dev/inter_section_dispatch.md</code></a>.</p>
+<p>To add a handler for a new case:</p>
+<ol>
+<li>Write a topology fixture that exercises it.</li>
+<li>Confirm the current dispatcher falls through to an error or produces wrong output.</li>
+<li>Add a handler in the appropriate module, or extend an existing one.</li>
+<li>Add an entry to the gate coverage matrix in <code>docs/dev/routing_gate_coverage.md</code> so the new arm is tracked.</li>
+</ol>
+<h2 id="visual-review">Visual review<a class="headerlink" href="#visual-review" title="Permanent link">&para;</a></h2>
+<p>Automated geometry checks verify that coordinates are correct. They cannot verify that the result looks right. For layout or rendering changes, visual review is essential.</p>
+<p><strong>Via CI (preferred):</strong> push to a PR. The workflow at <code>.github/workflows/pr-renders.yml</code> renders the gallery on both the PR branch and the base, builds a side-by-side before/after for every SVG that changed, and publishes the diff at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://pinin4fjords.github.io/nf-metro/_pr/&lt;PR_NUMBER&gt;/
+</code></pre></div>
+<p>Scroll through the before/afters and confirm nothing regressed.</p>
+<p><strong>Locally:</strong> render individual examples directly:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Activate the nf-metro dev environment if using micromamba</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">source</span><span class="w"> </span>~/.local/bin/mm-activate<span class="w"> </span>nf-metro
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Render an SVG (--no-chrome-css bakes concrete colours for cairosvg)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>python<span class="w"> </span>-m<span class="w"> </span>nf_metro<span class="w"> </span>render<span class="w"> </span>examples/rnaseq_sections.mmd<span class="w"> </span>-o<span class="w"> </span>/tmp/out.svg<span class="w"> </span>--no-chrome-css
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Convert to PNG for easier review</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import cairosvg; cairosvg.svg2png(url=&#39;/tmp/out.svg&#39;, write_to=&#39;/tmp/out.png&#39;, scale=2)&quot;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>open<span class="w"> </span>/tmp/out.png
+</code></pre></div>
+<p>To batch-render the full topology library:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>scripts/render_topologies.py
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># output goes to /tmp/nf_metro_topology_renders/</span>
+</code></pre></div>
+<h2 id="station-as-elbow-constraint">Station-as-elbow constraint<a class="headerlink" href="#station-as-elbow-constraint" title="Permanent link">&para;</a></h2>
+<p><strong>Never position a perpendicular port at the same coordinate as an internal station.</strong> This is a hard invariant enforced by <code>check_station_as_elbow</code> in <code>tests/layout_validator.py</code> (10px tolerance).</p>
 <ul>
-<li><code>lines</code> (<code>MetroLine</code>): coloured routes, with an optional <code>style</code>
-  (<code>solid</code> / <code>dashed</code> / <code>dotted</code>).</li>
-<li><code>stations</code> (<code>Station</code>): mutable dataclasses; layout writes <code>x</code>, <code>y</code>,
-  <code>layer</code>, <code>track</code> directly onto them.  <code>is_port</code> stations participate
-  in layout but are invisible at render time.</li>
-<li><code>edges</code> (<code>Edge</code>): directed, each tagged with a <code>line_id</code>.</li>
-<li><code>sections</code> (<code>Section</code>): subgraph groupings with a <code>direction</code>
-  (<code>LR</code> / <code>RL</code> / <code>TB</code>), grid position, and bbox.</li>
-<li><code>ports</code> (<code>Port</code>): synthetic entry/exit points on section boundaries,
-  created during <code>_resolve_sections</code>.</li>
+<li>TOP/BOTTOM ports on LR/RL sections must not share X with any internal station.</li>
+<li>LEFT/RIGHT ports on TB sections must not share Y with any internal station.</li>
 </ul>
+<p>Do not "fix" a routing kink by moving a port to match a station's coordinate. That makes a station the inflection point of a curve, which looks wrong. Accept a small offset between the port and the station and handle it in the routing path instead.</p>
+<h2 id="commit-and-ci-conventions">Commit and CI conventions<a class="headerlink" href="#commit-and-ci-conventions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use <code>[skip ci]</code> at the end of the commit subject for work-in-progress pushes. Omit it for the final commit before requesting review, and for any commit that fixes a CI failure.</li>
+<li>Do not write the literal <code>[skip ci]</code> marker in the commit body; GitHub Actions scans the full message.</li>
+</ul>
+<h2 id="filing-issues">Filing issues<a class="headerlink" href="#filing-issues" title="Permanent link">&para;</a></h2>
+<p>When you trip over a bug mid-task, file a detailed issue rather than trying to fix it immediately. Include: a minimal <code>.mmd</code> that reproduces the problem, what the output looks like versus what you expected, and which topology category it belongs to (if known). That record is what makes the bug fixable by someone with no context on the original task.</p>
 
 
 

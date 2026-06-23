@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/dev/architecture/">
+        <link rel="canonical" href="https://pinin4fjords.github.io/nf-metro/dev/how-its-built/">
       
       
-        <link rel="prev" href="../../how-its-built/">
+        <link rel="prev" href="../playground/">
       
       
-        <link rel="next" href="../layout_pipeline/">
+        <link rel="next" href="../dev/architecture/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Architecture - nf-metro</title>
+        <title>How it's built - nf-metro</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture" class="md-skip">
+        <a href="#how-nf-metro-is-built" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="nf-metro" class="md-header__button md-logo" aria-label="nf-metro" data-md-component="logo">
+    <a href=".." title="nf-metro" class="md-header__button md-logo" aria-label="nf-metro" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture
+              How it's built
             
           </span>
         </div>
@@ -206,7 +206,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="nf-metro" class="md-nav__button md-logo" aria-label="nf-metro" data-md-component="logo">
+    <a href=".." title="nf-metro" class="md-nav__button md-logo" aria-label="nf-metro" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -236,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -263,7 +263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/" class="md-nav__link">
+      <a href="../guide/" class="md-nav__link">
         
   
   
@@ -290,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../embedding/" class="md-nav__link">
+      <a href="../embedding/" class="md-nav__link">
         
   
   
@@ -317,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../embed/" class="md-nav__link">
+      <a href="../embed/" class="md-nav__link">
         
   
   
@@ -344,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../manifest/" class="md-nav__link">
+      <a href="../manifest/" class="md-nav__link">
         
   
   
@@ -371,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live/" class="md-nav__link">
+      <a href="../live/" class="md-nav__link">
         
   
   
@@ -398,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nextflow/" class="md-nav__link">
+      <a href="../nextflow/" class="md-nav__link">
         
   
   
@@ -425,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/" class="md-nav__link">
+      <a href="../pipelines/" class="md-nav__link">
         
   
   
@@ -452,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gallery/" class="md-nav__link">
+      <a href="../gallery/" class="md-nav__link">
         
   
   
@@ -479,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playground/" class="md-nav__link">
+      <a href="../playground/" class="md-nav__link">
         
   
   
@@ -503,87 +503,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how-its-built/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    How it's built
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Internals
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_12">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Internals
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
     
   
   
@@ -603,7 +522,7 @@
   <span class="md-ellipsis">
     
   
-    Architecture
+    How it's built
   
 
     
@@ -621,7 +540,7 @@
   <span class="md-ellipsis">
     
   
-    Architecture
+    How it's built
   
 
     
@@ -647,60 +566,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stages" class="md-nav__link">
+  <a href="#what-the-engine-actually-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stages
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parse-srcnf_metroparser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parse (src/nf_metro/parser/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layout-srcnf_metrolayout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layout (src/nf_metro/layout/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-srcnf_metrorender" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Render (src/nf_metro/render/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference docs
+        What the engine actually does
       
     </span>
   </a>
@@ -708,10 +577,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#the-four-validation-layers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data model
+        The four validation layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-mistakes-impossible-to-express" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making mistakes impossible to express
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-topology-fixture-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The topology fixture library
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-review-via-ci-render-diffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual review via CI render diffs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-guard-tier-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The guard tier system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-dispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing dispatch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-docs-cover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the docs cover
       
     </span>
   </a>
@@ -725,6 +660,85 @@
     </li>
   
 
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Internals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -734,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layout_pipeline/" class="md-nav__link">
+      <a href="../dev/layout_pipeline/" class="md-nav__link">
         
   
   
@@ -762,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routing/" class="md-nav__link">
+      <a href="../dev/routing/" class="md-nav__link">
         
   
   
@@ -790,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../inter_section_dispatch/" class="md-nav__link">
+      <a href="../dev/inter_section_dispatch/" class="md-nav__link">
         
   
   
@@ -818,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routing_gate_coverage/" class="md-nav__link">
+      <a href="../dev/routing_gate_coverage/" class="md-nav__link">
         
   
   
@@ -846,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routing_gate_triage/" class="md-nav__link">
+      <a href="../dev/routing_gate_triage/" class="md-nav__link">
         
   
   
@@ -874,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guard_tiers/" class="md-nav__link">
+      <a href="../dev/guard_tiers/" class="md-nav__link">
         
   
   
@@ -902,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../parser/" class="md-nav__link">
+      <a href="../dev/parser/" class="md-nav__link">
         
   
   
@@ -930,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/" class="md-nav__link">
+      <a href="../dev/testing/" class="md-nav__link">
         
   
   
@@ -958,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
+      <a href="../dev/contributing/" class="md-nav__link">
         
   
   
@@ -1045,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/" class="md-nav__link">
+      <a href="../releases/" class="md-nav__link">
         
   
   
@@ -1122,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.7.2/" class="md-nav__link">
+      <a href="../releases/0.7.2/" class="md-nav__link">
         
   
   
@@ -1150,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.7.1/" class="md-nav__link">
+      <a href="../releases/0.7.1/" class="md-nav__link">
         
   
   
@@ -1178,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.7.0/" class="md-nav__link">
+      <a href="../releases/0.7.0/" class="md-nav__link">
         
   
   
@@ -1263,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.6.1/" class="md-nav__link">
+      <a href="../releases/0.6.1/" class="md-nav__link">
         
   
   
@@ -1291,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.6.0/" class="md-nav__link">
+      <a href="../releases/0.6.0/" class="md-nav__link">
         
   
   
@@ -1376,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.5.4/" class="md-nav__link">
+      <a href="../releases/0.5.4/" class="md-nav__link">
         
   
   
@@ -1404,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.5.3/" class="md-nav__link">
+      <a href="../releases/0.5.3/" class="md-nav__link">
         
   
   
@@ -1432,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.5.2/" class="md-nav__link">
+      <a href="../releases/0.5.2/" class="md-nav__link">
         
   
   
@@ -1460,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.5.1/" class="md-nav__link">
+      <a href="../releases/0.5.1/" class="md-nav__link">
         
   
   
@@ -1488,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.5.0/" class="md-nav__link">
+      <a href="../releases/0.5.0/" class="md-nav__link">
         
   
   
@@ -1573,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.7/" class="md-nav__link">
+      <a href="../releases/0.4.7/" class="md-nav__link">
         
   
   
@@ -1601,7 +1615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.6/" class="md-nav__link">
+      <a href="../releases/0.4.6/" class="md-nav__link">
         
   
   
@@ -1629,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.5/" class="md-nav__link">
+      <a href="../releases/0.4.5/" class="md-nav__link">
         
   
   
@@ -1657,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.4/" class="md-nav__link">
+      <a href="../releases/0.4.4/" class="md-nav__link">
         
   
   
@@ -1685,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.3/" class="md-nav__link">
+      <a href="../releases/0.4.3/" class="md-nav__link">
         
   
   
@@ -1713,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.2/" class="md-nav__link">
+      <a href="../releases/0.4.2/" class="md-nav__link">
         
   
   
@@ -1741,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.1/" class="md-nav__link">
+      <a href="../releases/0.4.1/" class="md-nav__link">
         
   
   
@@ -1769,7 +1783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.4.0/" class="md-nav__link">
+      <a href="../releases/0.4.0/" class="md-nav__link">
         
   
   
@@ -1854,7 +1868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.3.0/" class="md-nav__link">
+      <a href="../releases/0.3.0/" class="md-nav__link">
         
   
   
@@ -1939,7 +1953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.2.2/" class="md-nav__link">
+      <a href="../releases/0.2.2/" class="md-nav__link">
         
   
   
@@ -1967,7 +1981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.2.1/" class="md-nav__link">
+      <a href="../releases/0.2.1/" class="md-nav__link">
         
   
   
@@ -1995,7 +2009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.2.0/" class="md-nav__link">
+      <a href="../releases/0.2.0/" class="md-nav__link">
         
   
   
@@ -2080,7 +2094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.1.1/" class="md-nav__link">
+      <a href="../releases/0.1.1/" class="md-nav__link">
         
   
   
@@ -2108,7 +2122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/0.1/" class="md-nav__link">
+      <a href="../releases/0.1/" class="md-nav__link">
         
   
   
@@ -2171,60 +2185,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stages" class="md-nav__link">
+  <a href="#what-the-engine-actually-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stages
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parse-srcnf_metroparser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parse (src/nf_metro/parser/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layout-srcnf_metrolayout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layout (src/nf_metro/layout/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-srcnf_metrorender" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Render (src/nf_metro/render/)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference docs
+        What the engine actually does
       
     </span>
   </a>
@@ -2232,10 +2196,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#the-four-validation-layers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data model
+        The four validation layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-mistakes-impossible-to-express" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making mistakes impossible to express
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-topology-fixture-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The topology fixture library
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-review-via-ci-render-diffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual review via CI render diffs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-guard-tier-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The guard tier system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-dispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing dispatch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-docs-cover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the docs cover
       
     </span>
   </a>
@@ -2262,105 +2292,102 @@
   
 
 
-<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
-<p>nf-metro turns a Mermaid <code>graph LR</code> definition (augmented with <code>%%metro</code>
-directives) into a metro-map-style SVG.  The pipeline has three stages:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Parse  -&gt;  Layout  -&gt;  Render
-</code></pre></div>
-<p>Each stage hands a single <code>MetroGraph</code> (defined in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/parser/model.py"><code>src/nf_metro/parser/model.py</code></a>)
-to the next.  The graph is mutated in place: parsing fills in stations,
-edges, lines, sections, and ports; layout writes coordinates onto those
-objects; rendering reads them.</p>
-<h2 id="stages">Stages<a class="headerlink" href="#stages" title="Permanent link">&para;</a></h2>
-<h3 id="parse-srcnf_metroparser">Parse (<code>src/nf_metro/parser/</code>)<a class="headerlink" href="#parse-srcnf_metroparser" title="Permanent link">&para;</a></h3>
-<p><code>parse_metro_mermaid</code> in <code>parser/mermaid.py</code> is a line-by-line regex
-parser.  It reads Mermaid subgraphs (sections), nodes (stations), and
-edges, plus the <code>%%metro</code> directive extensions.  After the line scan it
-runs a post-parse pass that auto-infers layout, then rewrites
-inter-section edges into port/junction chains via <code>_resolve_sections</code>.</p>
-<p>See <a href="../parser/">Parser</a> for the directive model and the
-parse-then-resolve flow.</p>
-<h3 id="layout-srcnf_metrolayout">Layout (<code>src/nf_metro/layout/</code>)<a class="headerlink" href="#layout-srcnf_metrolayout" title="Permanent link">&para;</a></h3>
-<p><code>compute_layout</code> in <code>layout/engine.py</code> assigns every station, port,
-junction, and section bbox an <code>(x, y)</code>.  It chains many small phases,
-split into an anchor-setting (structural) layer and a content-placement
-layer.  The phase implementations live in <code>layout/phases/</code>; the
-per-phase preconditions, postconditions, and invariants are documented
-in
-<a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>src/nf_metro/layout/CONTRACT.md</code></a>.</p>
-<p>Edge routing (horizontal runs plus 45-degree diagonal transitions, with
-L-shaped inter-section routing) lives in <code>layout/routing/</code>.</p>
-<p>See <a href="../layout_pipeline/">Layout pipeline</a> for the full phase-by-phase
-walkthrough and <a href="../routing/">Routing</a> for the route families.</p>
-<h3 id="render-srcnf_metrorender">Render (<code>src/nf_metro/render/</code>)<a class="headerlink" href="#render-srcnf_metrorender" title="Permanent link">&para;</a></h3>
-<p><code>render_svg</code> in <code>render/svg.py</code> draws section boxes, routed edges (with
-curved corners), pill-shaped station markers, labels, and the legend
-using the <code>drawsvg</code> library.  Visual properties come from a <code>Theme</code>
-(<code>render/style.py</code>); themes are registered in <code>themes/__init__.py</code>.
-<code>render/animate.py</code> adds travelling balls along the routed paths (the
-<code>--animate</code> CLI flag).</p>
-<h2 id="reference-docs">Reference docs<a class="headerlink" href="#reference-docs" title="Permanent link">&para;</a></h2>
+<h1 id="how-nf-metro-is-built">How nf-metro is built<a class="headerlink" href="#how-nf-metro-is-built" title="Permanent link">&para;</a></h1>
+<p>nf-metro is a layout engine, a rendering pipeline, and a test harness, assembled incrementally over several months. This page describes the engineering decisions behind it: why the validation layers exist, how the visual review loop works, and what the "ratchet" discipline means in practice. If you want to work on the codebase, this is the context.</p>
+<h2 id="what-the-engine-actually-does">What the engine actually does<a class="headerlink" href="#what-the-engine-actually-does" title="Permanent link">&para;</a></h2>
+<p>The task sounds simple: take a text description of a pipeline graph and produce a metro-map SVG. The hard part is that "metro map" is an aesthetic standard, not a mathematical one. A metro map isn't a graph layout in the academic sense (no force-directed placement, no crossing minimisation). It's a set of constraints that a human recognises as "right" - stations sit on straight track, not on corners; bundles of lines sweep round curves together; sections don't overlap; labels don't collide with routes. None of those constraints come for free.</p>
+<p>The engine solves this through a <a href="https://github.com/pinin4fjords/nf-metro/tree/main/src/nf_metro/layout/phases">sequence of ~40 numbered phases</a>, each responsible for a specific piece of the coordinate assignment problem. The phases run in strict order; each one reads the state left by the previous one and writes into it. The contracts between phases - what each phase requires to be true on entry and what it guarantees on exit - are documented in <a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>src/nf_metro/layout/CONTRACT.md</code></a>.</p>
+<p>Because the phases share mutable state and everything depends on everything else (moving a station for label clearance can compress a diagonal to an ugly angle; widening a section can push a neighbouring section out of its column), correctness is only verifiable at the end of the pipeline - not from reading any single phase.</p>
+<h2 id="the-four-validation-layers">The four validation layers<a class="headerlink" href="#the-four-validation-layers" title="Permanent link">&para;</a></h2>
+<p>The codebase has four complementary validation layers. They are complementary, not redundant: each catches bugs the others cannot see. These are described in detail in the <a href="testing.md#the-four-validation-layers">Testing docs</a>; the short version:</p>
 <table>
 <thead>
 <tr>
-<th>Topic</th>
-<th>Where</th>
+<th>Layer</th>
+<th>What it checks</th>
+<th>When</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Layout phase-by-phase</td>
-<td><a href="../layout_pipeline/">layout_pipeline.md</a></td>
+<td><strong>Layout oracle</strong></td>
+<td>Graph geometry after layout</td>
+<td>Every topology test</td>
 </tr>
 <tr>
-<td>Per-phase contract (preconditions/postconditions/invariants)</td>
-<td><a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>CONTRACT.md</code></a></td>
+<td><strong>Routing invariants</strong></td>
+<td>Edge waypoints as each route is computed</td>
+<td>Always-on</td>
 </tr>
 <tr>
-<td>Edge routing families</td>
-<td><a href="../routing/">routing.md</a></td>
+<td><strong>Phase guards</strong></td>
+<td>Pre/post-conditions at each phase boundary</td>
+<td>Always-on</td>
 </tr>
 <tr>
-<td>Routing gate-arm coverage matrix (auto-generated)</td>
-<td><a href="../routing_gate_coverage/">routing_gate_coverage.md</a></td>
-</tr>
-<tr>
-<td>Routing gate-arm triage process</td>
-<td><a href="../routing_gate_triage/">routing_gate_triage.md</a></td>
-</tr>
-<tr>
-<td>Parser and <code>%%metro</code> model</td>
-<td><a href="../parser/">parser.md</a></td>
-</tr>
-<tr>
-<td>SVG, HTML, bridges, manifest, animation</td>
-<td><a href="../render/">render.md</a></td>
-</tr>
-<tr>
-<td>Adding fixtures, tests, invariants</td>
-<td><a href="../testing/">testing.md</a></td>
-</tr>
-<tr>
-<td>Topology stress fixtures (inventory + known issues)</td>
-<td><a href="https://github.com/pinin4fjords/nf-metro/blob/main/examples/topologies/README.md"><code>examples/topologies/README.md</code></a></td>
+<td><strong>Render oracle</strong></td>
+<td>Finished SVG geometry</td>
+<td>Opt-in CLI flag; corpus gate</td>
 </tr>
 </tbody>
 </table>
-<h2 id="data-model">Data model<a class="headerlink" href="#data-model" title="Permanent link">&para;</a></h2>
-<p>The central structure is <code>MetroGraph</code> (<code>parser/model.py</code>), holding:</p>
+<p>The most important design principle across all four layers: <strong>checks only accumulate, and the bar only moves up</strong>. Once a check is in, it stays in. A regression is a red build, not a human noticing something looks off.</p>
+<p>A related pattern for known bugs: write the test for the correct behaviour, then mark it <code>xfail</code>. While the bug is present the build stays green. When someone fixes it, the test flips to <code>XPASS</code> and CI turns red, forcing the developer to retire the old expectation and lock in the correct behaviour. <a href="https://github.com/pinin4fjords/nf-metro/blob/main/tests/test_layout_invariants.py#L446-L456">Here is an example of that pattern in <code>tests/test_layout_invariants.py</code></a>.</p>
+<h2 id="making-mistakes-impossible-to-express">Making mistakes impossible to express<a class="headerlink" href="#making-mistakes-impossible-to-express" title="Permanent link">&para;</a></h2>
+<p>The strongest checks don't catch a bug; they eliminate the category of mistake entirely. Two examples:</p>
+<p><strong>Station-as-elbow.</strong> Metro maps don't put stations on corners; stations sit on straight track, with the curves in between. Early versions of the engine used station nodes as inflection points because it was convenient. After correcting this many times, <a href="https://github.com/pinin4fjords/nf-metro/blob/main/tests/layout_validator.py"><code>check_station_as_elbow</code></a> was added to the layout oracle. It fires as an <code>ERROR</code> on any fixture where a station is at a bend. This is the "scream" version: the mistake is still possible to write, but it fails CI immediately.</p>
+<p><strong>Concentric bundle corners.</strong> For a long time, every bend in the routing had its radius computed by hand at the point where the curve was drawn - direction, sign, and magnitude all chosen locally. Get the sign wrong and the bundle fans apart or crosses itself. The better fix was to pull all of it into one place: a route now describes the <a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/routing/bundle.py#L66-L109">centreline it wants to follow</a>, and a single builder fans the individual lines out as parallel offsets, working out every corner from the geometry. Nobody writes a radius by hand any more. The whole class of pinching and crossing bug stopped existing because there is no code left in which it can be written.</p>
+<h2 id="the-topology-fixture-library">The topology fixture library<a class="headerlink" href="#the-topology-fixture-library" title="Permanent link">&para;</a></h2>
+<p>The hardest part of testing a layout engine is that most bugs only appear in specific topologies. A test that only exercises one shape of graph will pass indefinitely while the engine fails on other shapes.</p>
+<p>The response is <a href="https://github.com/pinin4fjords/nf-metro/tree/main/examples/topologies"><code>examples/topologies/</code></a>: a library of ~38 <code>.mmd</code> fixtures, each isolating a specific graph topology (fan-out, fan-in, diamond, fold, mixed port sides, cross-column entries, etc.). <code>tests/test_topology_validation.py</code> parametrizes over every fixture in that directory and runs the full layout oracle against each one. Adding a <code>.mmd</code> to that directory enrolls it in the suite with no further wiring.</p>
+<p>When a new topology case is found to produce bad output, the workflow is:</p>
+<ol>
+<li>Write a minimal <code>.mmd</code> that reproduces it and drop it in <code>examples/topologies/</code>.</li>
+<li>Confirm the topology test now fails against the oracle.</li>
+<li>Fix the engine so the oracle passes.</li>
+<li>Leave the fixture in place as a regression guard.</li>
+</ol>
+<p>The topology library is also used by the visual review CI (see below).</p>
+<h2 id="visual-review-via-ci-render-diffs">Visual review via CI render diffs<a class="headerlink" href="#visual-review-via-ci-render-diffs" title="Permanent link">&para;</a></h2>
+<p>Automated geometry checks verify that coordinates are correct. They cannot verify that the result looks right. For that, the project uses a rendered diff in CI.</p>
+<p>Every pull request triggers <code>.github/workflows/pr-renders.yml</code>, which:</p>
+<ol>
+<li>Renders the full gallery on the PR branch.</li>
+<li>Checks out the base branch and renders the same gallery.</li>
+<li>Runs <code>scripts/build_render_diff.py</code> to build a side-by-side before/after page for every SVG that changed.</li>
+<li>Publishes the result at <code>https://pinin4fjords.github.io/nf-metro/_pr/&lt;PR_NUMBER&gt;/</code>.</li>
+</ol>
+<p>The diff page is a fast scan: scroll through the before/afters, look for anything that regressed, file an issue or iterate on the fix. Some bugs only show up this way - a layout that passes every geometric check can still look wrong to a human eye. A fan of routes that comes out lopsided, or a label that clips against a route, passes the oracle and still needs fixing. The render diff is the channel that puts that judgment back in the loop.</p>
+<p>The script exits <code>2</code> when there is no visual difference: a PR that intends to be neutral should produce a byte-identical gallery. Non-identical is expected for layout changes; byte-identical for refactors.</p>
+<h2 id="the-guard-tier-system">The guard tier system<a class="headerlink" href="#the-guard-tier-system" title="Permanent link">&para;</a></h2>
+<p>Not all phase guards are equal. The guard system has three tiers:</p>
 <ul>
-<li><code>lines</code> (<code>MetroLine</code>): coloured routes, with an optional <code>style</code>
-  (<code>solid</code> / <code>dashed</code> / <code>dotted</code>).</li>
-<li><code>stations</code> (<code>Station</code>): mutable dataclasses; layout writes <code>x</code>, <code>y</code>,
-  <code>layer</code>, <code>track</code> directly onto them.  <code>is_port</code> stations participate
-  in layout but are invisible at render time.</li>
-<li><code>edges</code> (<code>Edge</code>): directed, each tagged with a <code>line_id</code>.</li>
-<li><code>sections</code> (<code>Section</code>): subgraph groupings with a <code>direction</code>
-  (<code>LR</code> / <code>RL</code> / <code>TB</code>), grid position, and bbox.</li>
-<li><code>ports</code> (<code>Port</code>): synthetic entry/exit points on section boundaries,
-  created during <code>_resolve_sections</code>.</li>
+<li><strong>Tier A (always-on)</strong>: structural invariants that must hold in all valid graphs. A failure here is a hard bug.</li>
+<li><strong>Tier B (defensive)</strong>: guards that protect against known fragile transitions. Enabled but annotated.</li>
+<li><strong>Issue-pinned</strong>: guards that track a known defect against the corpus, marked <code>xfail</code>. When the issue is fixed, the test flips to <code>XPASS</code> and prompts removal of the pin.</li>
 </ul>
+<p>The full tier taxonomy and rationale is in <a href="guard_tiers.md"><code>docs/dev/guard_tiers.md</code></a>.</p>
+<h2 id="routing-dispatch">Routing dispatch<a class="headerlink" href="#routing-dispatch" title="Permanent link">&para;</a></h2>
+<p>The routing module uses a <a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/routing/core.py">first-match dispatcher</a> over a table of handler families. Each handler covers a specific combination of section orientation, entry/exit direction, and flow type. The dispatch table and the full handler inventory are documented in <a href="inter_section_dispatch.md"><code>docs/dev/inter_section_dispatch.md</code></a> and <a href="routing_gate_coverage.md"><code>docs/dev/routing_gate_coverage.md</code></a>.</p>
+<p>When adding a new routing case, the pattern is:</p>
+<ol>
+<li>Write a topology fixture that exercises the new case.</li>
+<li>Confirm it fails with the current dispatcher.</li>
+<li>Add a handler, or extend an existing one.</li>
+<li>Add a gate coverage entry so the new arm shows up in the coverage matrix.</li>
+</ol>
+<h2 id="what-the-docs-cover">What the docs cover<a class="headerlink" href="#what-the-docs-cover" title="Permanent link">&para;</a></h2>
+<p>The <code>docs/dev/</code> tree covers the internals in detail:</p>
+<ul>
+<li><a href="architecture.md"><code>architecture.md</code></a> - system overview and data flow</li>
+<li><a href="layout_pipeline.md"><code>layout_pipeline.md</code></a> - the phase sequence with entry/exit contracts</li>
+<li><a href="routing.md"><code>routing.md</code></a> - edge routing mechanics and the centreline/offset model</li>
+<li><a href="inter_section_dispatch.md"><code>inter_section_dispatch.md</code></a> - the dispatch table for inter-section routes</li>
+<li><a href="routing_gate_coverage.md"><code>routing_gate_coverage.md</code></a> - which handler arms are covered by corpus tests</li>
+<li><a href="parser.md"><code>parser.md</code></a> - the Lark grammar and post-parse rewrites</li>
+<li><a href="testing.md"><code>testing.md</code></a> - test structure and validation layers in detail</li>
+</ul>
+<p>The <code>CONTRACT.md</code> at <a href="https://github.com/pinin4fjords/nf-metro/blob/main/src/nf_metro/layout/CONTRACT.md"><code>src/nf_metro/layout/CONTRACT.md</code></a> is the per-phase lifecycle specification: what each phase receives, modifies, and guarantees.</p>
 
 
 
@@ -2416,10 +2443,10 @@ using the <code>drawsvg</code> library.  Visual properties come from a <code>The
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
