@@ -219,6 +219,14 @@
       {
         "name": "tb_left_exit_step",
         "mmd": "%%metro title: TB left-exit staircase into a lower right-entry (issue #671)\n%%metro line: a | Aligner A | #0570b0\n%%metro line: b | Aligner B | #2db572\n%%metro line: c | Aligner C | #f5c542\n%%metro line: d | Side | #e63946\n%%metro grid: src | 0,0\n%%metro grid: align | 1,0\n%%metro grid: blocker | 1,1\n%%metro grid: post | 0,2\n\ngraph LR\n    subgraph src [Source]\n        ingest[Ingest]\n    end\n    subgraph align [Align]\n        %%metro direction: TB\n        hub[Hub]\n        tail[Tail]\n        hub -->|a,b,c| tail\n    end\n    subgraph blocker [Side]\n        side[Side step]\n    end\n    subgraph post [Post]\n        collect[Collect]\n        report[Report]\n        collect -->|a,b,c| report\n    end\n\n    ingest -->|a,b,c| hub\n    ingest -->|d| side\n    tail -->|a,b,c| collect\n"
+      },
+      {
+        "name": "tb_convergence_straight_drop",
+        "mmd": "%%metro title: TB Convergence Straight Drop\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: work | 0,0\n\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        top[Top]\n        side[Side]\n        merge[Merge]\n        top -->|a| merge\n        side -->|b| merge\n    end\n"
+      },
+      {
+        "name": "tb_passthrough_continuation",
+        "mmd": "%%metro title: TB Passthrough Continuation\n%%metro style: dark\n%%metro line: r | R | #0570b0\n%%metro line: g | G | #2db572\n%%metro line: y | Y | #f5c542\n\n%%metro grid: work | 0,0\n\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        starN[StarN]\n        hisatN[HisatN]\n        leftchild[LeftChild]\n        merge[Merge]\n        tail[Tail]\n        starN -->|r| leftchild\n        starN -->|g| merge\n        hisatN -->|y| merge\n        merge -->|g| tail\n    end\n"
       }
     ]
   },
