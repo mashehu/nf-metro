@@ -2077,6 +2077,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#near-vertical-junction-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Near Vertical Junction Hook
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5227,6 +5238,17 @@
     <span class="md-ellipsis">
       
         Convergent Offrow Exit Climb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near-vertical-junction-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Near Vertical Junction Hook
       
     </span>
   </a>
@@ -12635,6 +12657,50 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Convergent Offrow Exit Climb" src="../assets/renders/convergent_offrow_exit_climb.svg" /></p>
+<h3 id="near-vertical-junction-hook">Near Vertical Junction Hook<a class="headerlink" href="#near-vertical-junction-hook" title="Permanent link">&para;</a></h3>
+<p>A fan-out junction overhanging a same-column RIGHT entry one row below. The two-line bundle drops straight down the junction's own column and turns once into the port, rather than leading out to a centred gap channel and hooking back: a hook's opposite-handed corners cannot nest a multi-line bundle. The destination section carries the matching line order so the bundle arrives in the order the section lays it out (#1018).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-264-1" name="__codelineno-264-1" href="#__codelineno-264-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/near_vertical_junction_hook.mmd<span class="w"> </span>-o<span class="w"> </span>near_vertical_junction_hook.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-265-1" name="__codelineno-265-1" href="#__codelineno-265-1"></a>%%metro title: Near-Vertical Junction Hook
+<a id="__codelineno-265-2" name="__codelineno-265-2" href="#__codelineno-265-2"></a>%%metro style: nfcore
+<a id="__codelineno-265-3" name="__codelineno-265-3" href="#__codelineno-265-3"></a>%%metro line: main | Main | #2db572
+<a id="__codelineno-265-4" name="__codelineno-265-4" href="#__codelineno-265-4"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-265-5" name="__codelineno-265-5" href="#__codelineno-265-5"></a>%%metro line: b | B | #7b2d3b
+<a id="__codelineno-265-6" name="__codelineno-265-6" href="#__codelineno-265-6"></a>%%metro grid: src | 0,0
+<a id="__codelineno-265-7" name="__codelineno-265-7" href="#__codelineno-265-7"></a>%%metro grid: gen | 1,0
+<a id="__codelineno-265-8" name="__codelineno-265-8" href="#__codelineno-265-8"></a>%%metro grid: pseudo | 0,1
+<a id="__codelineno-265-9" name="__codelineno-265-9" href="#__codelineno-265-9"></a>
+<a id="__codelineno-265-10" name="__codelineno-265-10" href="#__codelineno-265-10"></a>graph LR
+<a id="__codelineno-265-11" name="__codelineno-265-11" href="#__codelineno-265-11"></a>    subgraph src [Source]
+<a id="__codelineno-265-12" name="__codelineno-265-12" href="#__codelineno-265-12"></a>        s1[Step 1]
+<a id="__codelineno-265-13" name="__codelineno-265-13" href="#__codelineno-265-13"></a>        s2[Step 2]
+<a id="__codelineno-265-14" name="__codelineno-265-14" href="#__codelineno-265-14"></a>        s3[Step 3]
+<a id="__codelineno-265-15" name="__codelineno-265-15" href="#__codelineno-265-15"></a>        s1 --&gt;|main,a,b| s2
+<a id="__codelineno-265-16" name="__codelineno-265-16" href="#__codelineno-265-16"></a>        s2 --&gt;|main,a,b| s3
+<a id="__codelineno-265-17" name="__codelineno-265-17" href="#__codelineno-265-17"></a>    end
+<a id="__codelineno-265-18" name="__codelineno-265-18" href="#__codelineno-265-18"></a>
+<a id="__codelineno-265-19" name="__codelineno-265-19" href="#__codelineno-265-19"></a>    subgraph gen [Genome]
+<a id="__codelineno-265-20" name="__codelineno-265-20" href="#__codelineno-265-20"></a>        g1[Genome]
+<a id="__codelineno-265-21" name="__codelineno-265-21" href="#__codelineno-265-21"></a>    end
+<a id="__codelineno-265-22" name="__codelineno-265-22" href="#__codelineno-265-22"></a>
+<a id="__codelineno-265-23" name="__codelineno-265-23" href="#__codelineno-265-23"></a>    subgraph pseudo [Pseudo]
+<a id="__codelineno-265-24" name="__codelineno-265-24" href="#__codelineno-265-24"></a>        %%metro entry: right | a, b
+<a id="__codelineno-265-25" name="__codelineno-265-25" href="#__codelineno-265-25"></a>        p1[Pseudo 1]
+<a id="__codelineno-265-26" name="__codelineno-265-26" href="#__codelineno-265-26"></a>        p2[Pseudo 2]
+<a id="__codelineno-265-27" name="__codelineno-265-27" href="#__codelineno-265-27"></a>        p3[Pseudo 3]
+<a id="__codelineno-265-28" name="__codelineno-265-28" href="#__codelineno-265-28"></a>        p1 --&gt;|a,b| p2
+<a id="__codelineno-265-29" name="__codelineno-265-29" href="#__codelineno-265-29"></a>        p2 --&gt;|a,b| p3
+<a id="__codelineno-265-30" name="__codelineno-265-30" href="#__codelineno-265-30"></a>    end
+<a id="__codelineno-265-31" name="__codelineno-265-31" href="#__codelineno-265-31"></a>
+<a id="__codelineno-265-32" name="__codelineno-265-32" href="#__codelineno-265-32"></a>    s3 --&gt;|main| g1
+<a id="__codelineno-265-33" name="__codelineno-265-33" href="#__codelineno-265-33"></a>    s3 --&gt;|a,b| p1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Near Vertical Junction Hook" src="../assets/renders/near_vertical_junction_hook.svg" /></p>
 
 
 
