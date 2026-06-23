@@ -33,15 +33,15 @@
 <path d="M200.0,128.0 L250.0,128.0" stroke="#7b2d3b" stroke-width="3.0" stroke-linecap="round" class="metro-line-b" data-line-id="b" />
 <path d="M250.0,302.0 L200.0,302.0" stroke="#7b2d3b" stroke-width="3.0" stroke-linecap="round" class="metro-line-b" data-line-id="b" />
 <path d="M250.0,128.0 L260.0,128.0" stroke="#7b2d3b" stroke-width="3.0" stroke-linecap="round" class="metro-line-b" data-line-id="b" />
-<path d="M260.0,120.0 L260.0,292.0 Q260.0,302.0,250.0,302.0 L250.0,302.0" stroke="#7b2d3b" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-b" data-line-id="b" />
+<path d="M260.0,128.0 L266.0,128.0 Q276.0,128.0,276.0,138.0 L276.0,292.0 Q276.0,302.0,266.0,302.0 L250.0,302.0" stroke="#7b2d3b" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-b" data-line-id="b" />
 <path d="M80.0,124.0 L140.0,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
 <path d="M140.0,124.0 L200.0,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
 <path d="M200.0,306.0 L140.0,306.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
 <path d="M140.0,306.0 L80.0,306.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
 <path d="M200.0,124.0 L250.0,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
 <path d="M250.0,306.0 L200.0,306.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
-<path d="M250.0,124.0 L264.0,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
-<path d="M264.0,120.0 L264.0,292.0 Q264.0,306.0,250.0,306.0 L250.0,306.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-a" data-line-id="a" />
+<path d="M250.0,124.0 L260.0,124.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M260.0,124.0 L266.0,124.0 Q280.0,124.0,280.0,138.0 L280.0,292.0 Q280.0,306.0,266.0,306.0 L250.0,306.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-a" data-line-id="a" />
 <path d="M80.0,120.0 L140.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M140.0,120.0 L200.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
 <path d="M200.0,120.0 L250.0,120.0" stroke="#2db572" stroke-width="3.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
@@ -69,8 +69,10 @@
 <text x="200.0" y="139.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="s3" class="nf-metro-station-label">Step 3</text>
 <text x="80.0" y="317.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Pseudo 3</text>
 <text x="80.0" y="317.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="p3" class="nf-metro-station-label">Pseudo 3</text>
-<circle cx="264.0" cy="306.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="260.0" cy="302.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="280.0" cy="124.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="280.0" cy="306.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="276.0" cy="128.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="276.0" cy="302.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M250.0,115.0 L255.0,120.0 L250.0,125.0 L245.0,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
 <text x="250.0" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">src__exit_right_0 (right)</text>
 <path d="M330.0,115.0 L335.0,120.0 L330.0,125.0 L325.0,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
