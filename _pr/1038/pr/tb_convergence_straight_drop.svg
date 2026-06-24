@@ -18,10 +18,10 @@
 <circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="work" />
 <text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="work">1</text>
 <text x="57.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="work">Work</text>
-<path d="M149.5,120.0 L149.5,150.0 Q149.5,160.0,140.55572809000085,164.47213595499957 L98.44427190999916,185.52786404500043 Q89.5,190.0,89.5,200.0 L89.5,200.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-b" data-line-id="b" />
-<path d="M93.5,120.0 L93.5,200.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
-<rect x="88.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="top" data-station-lines="a" data-station-label="Top" data-section-id="work" data-section-name="Work" />
-<rect x="144.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="side" data-station-lines="b" data-station-label="Side" data-section-id="work" data-section-name="Work" />
+<path d="M153.5,120.0 L153.5,150.0 Q153.5,160.0,144.55572809000085,164.47213595499957 L102.44427190999916,185.52786404500043 Q93.5,190.0,93.5,200.0 L93.5,200.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-b" data-line-id="b" />
+<path d="M89.5,120.0 L89.5,200.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<rect x="84.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="top" data-station-lines="a" data-station-label="Top" data-section-id="work" data-section-name="Work" />
+<rect x="148.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="side" data-station-lines="b" data-station-label="Side" data-section-id="work" data-section-name="Work" />
 <rect x="84.5" y="195.0" width="14.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="merge" data-station-lines="a,b" data-station-label="Merge" data-section-id="work" data-section-name="Work" />
 <text x="82.5" y="120.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Top</text>
 <text x="82.5" y="120.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="top" class="nf-metro-station-label">Top</text>
@@ -29,8 +29,8 @@
 <text x="142.5" y="120.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="side" class="nf-metro-station-label">Side</text>
 <text x="81.0" y="200.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Merge</text>
 <text x="81.0" y="200.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="merge" class="nf-metro-station-label">Merge</text>
-<circle cx="149.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="89.5" cy="190.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="153.5" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="93.5" cy="190.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M20.0,120.0 L213.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="16.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
 <path d="M20.0,200.0 L213.5,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
