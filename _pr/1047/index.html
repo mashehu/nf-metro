@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Render diff - PR #1047</title>
+<style>
+  :root {
+    --bg: #1e1e2e;
+    --surface: #2a2a3c;
+    --border: #3a3a4c;
+    --text: #e0e0e0;
+    --muted: #888;
+    --accent: #4ec9b0;
+    --added: #2ea04370;
+    --removed: #da363470;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .summary {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .toc {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .toc h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .toc h3 {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .toc ul {
+    list-style: none;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .toc li {
+    margin-bottom: 0.25rem;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .toc a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+  .badge-changed { background: var(--border); }
+  .badge-added { background: var(--added); }
+  .badge-removed { background: var(--removed); }
+  .section-header {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .diff-entry {
+    margin-bottom: 3rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .diff-entry h3 {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .side {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .side:first-child {
+    border-right: 1px solid var(--border);
+  }
+  .side h4 {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .side img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .side-only {
+    padding: 1rem;
+  }
+  .side-only img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .empty {
+    color: var(--muted);
+    font-style: italic;
+    padding: 2rem;
+    text-align: center;
+  }
+  .toggle-bar {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .toggle-bar button {
+    background: var(--border);
+    color: var(--text);
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .toggle-bar button.active {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .intro {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .intro summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .intro p {
+    margin-top: 0.75rem;
+  }
+  .intro ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  .intro li {
+    margin-bottom: 0.25rem;
+  }
+  .intro code {
+    background: var(--border);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+  .intro a {
+    color: var(--accent);
+  }
+  .metrics {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .metrics h2 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--accent);
+  }
+  .metrics .caption {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+  .metrics table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.82rem;
+  }
+  .metrics th, .metrics td {
+    padding: 0.3rem 0.6rem;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .metrics th:first-child, .metrics td:first-child {
+    text-align: left;
+  }
+  .metrics th {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.7rem;
+  }
+  .metrics td a { color: var(--text); text-decoration: none; }
+  .metrics td a:hover { color: var(--accent); }
+  .m-flat { color: var(--muted); }
+  .m-better { color: #4ec9b0; font-weight: 600; }
+  .m-worse { color: #f38ba8; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Render diff - PR #1047</h1>
+<p class="summary">23 changed out of 168 total renders. Generated 2026-06-24 20:15 UTC.</p>
+<details class="intro">
+<summary>What is this page?</summary>
+<p>
+<a href="https://github.com/pinin4fjords/nf-metro">nf-metro</a>
+generates metro-map-style SVG diagrams from Mermaid graph definitions.
+This page is automatically generated for every pull request and shows
+<strong>only the renders that changed</strong> compared to the
+<code>main</code> branch.
+</p>
+<p>
+Use it to check that code changes produce the intended visual result
+without unexpected side-effects on other diagrams. Each entry shows
+the <strong>base</strong> (main) render on the left and the
+<strong>PR</strong> render on the right. Use the toggle buttons to
+switch between side-by-side, base-only, and PR-only views.
+</p>
+<p><strong>What to look for:</strong></p>
+<ul>
+<li>Intended improvements in the PR column</li>
+<li>Unintended regressions (overlapping lines, shifted labels,
+    broken routing) in diagrams you did not mean to change</li>
+<li>New renders (green <em>added</em> badge) or removed renders
+    (red <em>removed</em> badge)</li>
+</ul>
+</details>
+<div class="metrics">
+<h2>Layout-quality metrics</h2>
+<p class="caption">Advisory only &mdash; nothing gates on these. Lower is better; <span class="m-better">green</span> improved, <span class="m-worse">red</span> regressed.</p>
+<table>
+<tr><th>Render</th><th>Crossings</th><th>Near-horiz.</th><th>Lone diag.</th><th>Label strikes</th><th>Excess gaps</th><th>Wasted canvas</th></tr>
+<tr><td><a href="#04_directions">04_directions</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">34%</td></tr>
+<tr><td><a href="#rnaseq_auto_debug">rnaseq_auto_debug</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">21%</td></tr>
+<tr><td><a href="#rnaseq_sections_manual">rnaseq_sections_manual</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">2</td><td class="m-flat">17%</td></tr>
+<tr><td><a href="#fold_double">fold_double</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">32%</td></tr>
+<tr><td><a href="#fold_fan_across">fold_fan_across</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">32%</td></tr>
+<tr><td><a href="#fold_stacked_branch">fold_stacked_branch</a></td><td class="m-flat">2</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">29%</td></tr>
+<tr><td><a href="#junction_entry_reversed_fold">junction_entry_reversed_fold</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">63%</td></tr>
+<tr><td><a href="#lr_to_tb_top_drop_two_lines">lr_to_tb_top_drop_two_lines</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">60%</td></tr>
+<tr><td><a href="#lr_to_tb_top_two_lines">lr_to_tb_top_two_lines</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">59%</td></tr>
+<tr><td><a href="#reconverge_reversed_fold">reconverge_reversed_fold</a></td><td class="m-flat">2</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">29%</td></tr>
+<tr><td><a href="#tb_convergence_straight_drop">tb_convergence_straight_drop</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">1</td><td class="m-flat">68%</td></tr>
+<tr><td><a href="#tb_internal_diagonal">tb_internal_diagonal</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">55%</td></tr>
+<tr><td><a href="#tb_left_exit_step">tb_left_exit_step</a></td><td class="m-flat">3</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">46%</td></tr>
+<tr><td><a href="#tb_lr_exit_left">tb_lr_exit_left</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">51%</td></tr>
+<tr><td><a href="#tb_lr_exit_right">tb_lr_exit_right</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">58%</td></tr>
+<tr><td><a href="#tb_passthrough_continuation">tb_passthrough_continuation</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">2</td><td class="m-flat">62%</td></tr>
+<tr><td><a href="#tb_passthrough_trunk">tb_passthrough_trunk</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">55%</td></tr>
+<tr><td><a href="#tb_trunk_through_fan">tb_trunk_through_fan</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">1</td><td class="m-flat">63%</td></tr>
+<tr><td><a href="#longread_variant_calling">longread_variant_calling</a></td><td class="m-flat">19</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">1</td><td class="m-flat">19%</td></tr>
+<tr><td><a href="#rnaseq_auto">rnaseq_auto</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">21%</td></tr>
+<tr><td><a href="#rnaseq_sections">rnaseq_sections</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">2</td><td class="m-flat">17%</td></tr>
+<tr><td><a href="#tb_file_termini">tb_file_termini</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">1</td><td class="m-flat">48%</td></tr>
+<tr><td><a href="#pipeline_rnaseq_auto">pipeline_rnaseq_auto</a></td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">0</td><td class="m-flat">21%</td></tr>
+</table>
+</div>
+<div class="toc">
+<h2>Changed renders</h2>
+<h3><a href="#section-guide-examples">Guide Examples</a></h3>
+<ul>
+<li><a href="#04_directions">04_directions</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_auto_debug">rnaseq_auto_debug</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_sections_manual">rnaseq_sections_manual</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-fold-topologies">Fold Topologies</a></h3>
+<ul>
+<li><a href="#fold_double">fold_double</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#fold_fan_across">fold_fan_across</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#fold_stacked_branch">fold_stacked_branch</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#junction_entry_reversed_fold">junction_entry_reversed_fold</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_to_tb_top_drop_two_lines">lr_to_tb_top_drop_two_lines</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#lr_to_tb_top_two_lines">lr_to_tb_top_two_lines</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#reconverge_reversed_fold">reconverge_reversed_fold</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_convergence_straight_drop">tb_convergence_straight_drop</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_internal_diagonal">tb_internal_diagonal</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_left_exit_step">tb_left_exit_step</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_lr_exit_left">tb_lr_exit_left</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_lr_exit_right">tb_lr_exit_right</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_passthrough_continuation">tb_passthrough_continuation</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_passthrough_trunk">tb_passthrough_trunk</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_trunk_through_fan">tb_trunk_through_fan</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-main-examples">Main Examples</a></h3>
+<ul>
+<li><a href="#longread_variant_calling">longread_variant_calling</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_auto">rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#rnaseq_sections">rnaseq_sections</a><span class="badge badge-changed">changed</span></li>
+<li><a href="#tb_file_termini">tb_file_termini</a><span class="badge badge-changed">changed</span></li>
+</ul>
+<h3><a href="#section-nf-core-pipelines">nf-core Pipelines</a></h3>
+<ul>
+<li><a href="#pipeline_rnaseq_auto">pipeline_rnaseq_auto</a><span class="badge badge-changed">changed</span></li>
+</ul>
+</div>
+<h2 class="section-header" id="section-guide-examples">Guide Examples</h2>
+
+<div class="diff-entry" id="04_directions">
+<h3>04 Directions <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/04_directions.svg" alt="Base: 04_directions"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/04_directions.svg" alt="PR: 04_directions"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_auto_debug">
+<h3>Rnaseq Auto Debug <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto_debug.svg" alt="Base: rnaseq_auto_debug"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto_debug.svg" alt="PR: rnaseq_auto_debug"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_sections_manual">
+<h3>Rnaseq Sections Manual <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections_manual.svg" alt="Base: rnaseq_sections_manual"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections_manual.svg" alt="PR: rnaseq_sections_manual"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-fold-topologies">Fold Topologies</h2>
+
+<div class="diff-entry" id="fold_double">
+<h3>Fold Double <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/fold_double.svg" alt="Base: fold_double"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/fold_double.svg" alt="PR: fold_double"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="fold_fan_across">
+<h3>Fold Fan Across <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/fold_fan_across.svg" alt="Base: fold_fan_across"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/fold_fan_across.svg" alt="PR: fold_fan_across"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="fold_stacked_branch">
+<h3>Fold Stacked Branch <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/fold_stacked_branch.svg" alt="Base: fold_stacked_branch"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/fold_stacked_branch.svg" alt="PR: fold_stacked_branch"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="junction_entry_reversed_fold">
+<h3>Junction Entry Reversed Fold <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/junction_entry_reversed_fold.svg" alt="Base: junction_entry_reversed_fold"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/junction_entry_reversed_fold.svg" alt="PR: junction_entry_reversed_fold"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_drop_two_lines">
+<h3>Lr To Tb Top Drop Two Lines <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_to_tb_top_drop_two_lines.svg" alt="Base: lr_to_tb_top_drop_two_lines"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_to_tb_top_drop_two_lines.svg" alt="PR: lr_to_tb_top_drop_two_lines"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_two_lines">
+<h3>Lr To Tb Top Two Lines <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/lr_to_tb_top_two_lines.svg" alt="Base: lr_to_tb_top_two_lines"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/lr_to_tb_top_two_lines.svg" alt="PR: lr_to_tb_top_two_lines"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="reconverge_reversed_fold">
+<h3>Reconverge Reversed Fold <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/reconverge_reversed_fold.svg" alt="Base: reconverge_reversed_fold"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/reconverge_reversed_fold.svg" alt="PR: reconverge_reversed_fold"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_convergence_straight_drop">
+<h3>Tb Convergence Straight Drop <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_convergence_straight_drop.svg" alt="Base: tb_convergence_straight_drop"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_convergence_straight_drop.svg" alt="PR: tb_convergence_straight_drop"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_internal_diagonal">
+<h3>Tb Internal Diagonal <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_internal_diagonal.svg" alt="Base: tb_internal_diagonal"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_internal_diagonal.svg" alt="PR: tb_internal_diagonal"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_left_exit_step">
+<h3>Tb Left Exit Step <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_left_exit_step.svg" alt="Base: tb_left_exit_step"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_left_exit_step.svg" alt="PR: tb_left_exit_step"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_lr_exit_left">
+<h3>Tb Lr Exit Left <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_lr_exit_left.svg" alt="Base: tb_lr_exit_left"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_lr_exit_left.svg" alt="PR: tb_lr_exit_left"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_lr_exit_right">
+<h3>Tb Lr Exit Right <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_lr_exit_right.svg" alt="Base: tb_lr_exit_right"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_lr_exit_right.svg" alt="PR: tb_lr_exit_right"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_passthrough_continuation">
+<h3>Tb Passthrough Continuation <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_passthrough_continuation.svg" alt="Base: tb_passthrough_continuation"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_passthrough_continuation.svg" alt="PR: tb_passthrough_continuation"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_passthrough_trunk">
+<h3>Tb Passthrough Trunk <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_passthrough_trunk.svg" alt="Base: tb_passthrough_trunk"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_passthrough_trunk.svg" alt="PR: tb_passthrough_trunk"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_trunk_through_fan">
+<h3>Tb Trunk Through Fan <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_trunk_through_fan.svg" alt="Base: tb_trunk_through_fan"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_trunk_through_fan.svg" alt="PR: tb_trunk_through_fan"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-main-examples">Main Examples</h2>
+
+<div class="diff-entry" id="longread_variant_calling">
+<h3>Longread Variant Calling <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/longread_variant_calling.svg" alt="Base: longread_variant_calling"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/longread_variant_calling.svg" alt="PR: longread_variant_calling"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_auto">
+<h3>Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_auto.svg" alt="Base: rnaseq_auto"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_auto.svg" alt="PR: rnaseq_auto"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="rnaseq_sections">
+<h3>Rnaseq Sections <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/rnaseq_sections.svg" alt="Base: rnaseq_sections"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/rnaseq_sections.svg" alt="PR: rnaseq_sections"></div>
+</div>
+</div>
+
+<div class="diff-entry" id="tb_file_termini">
+<h3>Tb File Termini <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/tb_file_termini.svg" alt="Base: tb_file_termini"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/tb_file_termini.svg" alt="PR: tb_file_termini"></div>
+</div>
+</div>
+
+<h2 class="section-header" id="section-nf-core-pipelines">nf-core Pipelines</h2>
+
+<div class="diff-entry" id="pipeline_rnaseq_auto">
+<h3>Pipeline Rnaseq Auto <span class="badge badge-changed">changed</span></h3>
+<div class="toggle-bar"><button class="active" data-mode="side-by-side">Side by side</button><button data-mode="base">Base only</button><button data-mode="pr">PR only</button></div>
+<div class="comparison">
+<div class="side side-base"><h4>Base (main)</h4><img src="base/pipeline_rnaseq_auto.svg" alt="Base: pipeline_rnaseq_auto"></div>
+<div class="side side-pr"><h4>PR</h4><img src="pr/pipeline_rnaseq_auto.svg" alt="PR: pipeline_rnaseq_auto"></div>
+</div>
+</div>
+<script>
+document.querySelectorAll('.toggle-bar button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const entry = btn.closest('.diff-entry');
+    const mode = btn.dataset.mode;
+    const buttons = entry.querySelectorAll('.toggle-bar button');
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const comp = entry.querySelector('.comparison');
+    const sideBase = comp.querySelector('.side-base');
+    const sidePr = comp.querySelector('.side-pr');
+    if (mode === 'side-by-side') {
+      comp.style.gridTemplateColumns = '1fr 1fr';
+      sideBase.style.display = '';
+      sidePr.style.display = '';
+    } else if (mode === 'base') {
+      comp.style.gridTemplateColumns = '1fr';
+      sideBase.style.display = '';
+      sidePr.style.display = 'none';
+    } else if (mode === 'pr') {
+      comp.style.gridTemplateColumns = '1fr';
+      sideBase.style.display = 'none';
+      sidePr.style.display = '';
+    }
+  });
+});
+</script>
+</body>
+</html>
