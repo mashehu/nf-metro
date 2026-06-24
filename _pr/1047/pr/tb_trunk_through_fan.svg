@@ -18,13 +18,13 @@
 <circle cx="41.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="work" />
 <text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="work">1</text>
 <text x="57.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="work">Work</text>
-<path d="M106.0,120.0 L106.0,120.0 Q106.0,130.0,115.26739268223405,133.75705108739217 L170.73260731776594,156.24294891260783 Q180.0,160.0,180.0,170.0 L180.0,200.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-b" data-line-id="b" />
+<path d="M114.0,120.0 L114.0,120.0 Q114.0,130.0,123.26739268223405,133.75705108739217 L178.73260731776594,156.24294891260783 Q188.0,160.0,188.0,170.0 L188.0,200.0" stroke="#0570b0" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-b" data-line-id="b" />
 <path d="M110.0,120.0 L110.0,200.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
 <path d="M110.0,200.0 L110.0,240.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
-<rect x="101.0" y="115.0" width="14.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="hub" data-station-lines="a,b" data-station-label="Split" data-section-id="work" data-section-name="Work" />
+<rect x="105.0" y="115.0" width="14.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="hub" data-station-lines="a,b" data-station-label="Split" data-section-id="work" data-section-name="Work" />
 <rect x="105.0" y="195.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="main" data-station-lines="a" data-station-label="Main" data-section-id="work" data-section-name="Work" />
 <rect x="105.0" y="235.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="sink" data-station-lines="a" data-station-label="Collect" data-section-id="work" data-section-name="Work" />
-<rect x="175.0" y="195.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="branch" data-station-lines="b" data-station-label="Branch" data-section-id="work" data-section-name="Work" />
+<rect x="183.0" y="195.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="branch" data-station-lines="b" data-station-label="Branch" data-section-id="work" data-section-name="Work" />
 <text x="97.5" y="120.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Split</text>
 <text x="97.5" y="120.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="hub" class="nf-metro-station-label">Split</text>
 <text x="99.0" y="200.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Main</text>
@@ -33,8 +33,8 @@
 <text x="173.0" y="200.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="branch" class="nf-metro-station-label">Branch</text>
 <text x="99.0" y="240.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" text-anchor="end" dominant-baseline="central">Collect</text>
 <text x="99.0" y="240.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="end" dominant-baseline="central" data-station-id="sink" class="nf-metro-station-label">Collect</text>
-<circle cx="106.0" cy="130.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
-<circle cx="180.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="114.0" cy="130.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="188.0" cy="160.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
 <path d="M20.0,120.0 L244.0,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
 <text x="16.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
 <path d="M20.0,200.0 L244.0,200.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
