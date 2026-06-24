@@ -2339,10 +2339,12 @@ current tree</strong>: Tier A is the always-on render-path set, Tier B is the
 microseconds and needs no routing pass. Tier B holds everything that either
 needs the routed geometry or is materially more expensive; the most expensive
 members (<code>check_no_hanging_routes</code> ~470 us, the collinear-distinct checks
-~100 us) are routed-geometry sweeps. <strong>Tier C is empty on the current tree</strong>:
-every guard and check is reachable from <code>compute_layout</code> or the render
-chokepoint, none is a pure test oracle. The de-duplication that kept it empty
-is recorded under <a href="#consolidation">Consolidation</a>.</p>
+~100 us) are routed-geometry sweeps. <strong>Tier C holds one check</strong>,
+<code>check_seam_approach_equals_departure</code>: a seam oracle that TB/BT sections fail
+today (they draw the lane fan by reflection, not rotation), so it runs from the
+test suite rather than the runtime suite until #1041 migrates the section draw
+onto <code>lane_x</code>. Every other guard and check is reachable from <code>compute_layout</code>
+or the render chokepoint.</p>
 <h2 id="registries">Registries<a class="headerlink" href="#registries" title="Permanent link">&para;</a></h2>
 <p>The classification is data, not prose:</p>
 <ul>
@@ -2850,6 +2852,12 @@ regenerate with:</p>
 <td>B</td>
 <td style="text-align: right;">2.1</td>
 <td>via <code>_guard_*</code> wrapper</td>
+</tr>
+<tr>
+<td><code>check_seam_approach_equals_departure</code></td>
+<td>C</td>
+<td style="text-align: right;">-</td>
+<td>test suite only (<code>tests/test_seam_lane_x.py</code>)</td>
 </tr>
 </tbody>
 </table>
