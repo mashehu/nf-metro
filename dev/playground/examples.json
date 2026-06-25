@@ -227,6 +227,10 @@
       {
         "name": "tb_passthrough_continuation",
         "mmd": "%%metro title: TB Passthrough Continuation\n%%metro style: dark\n%%metro line: r | R | #0570b0\n%%metro line: g | G | #2db572\n%%metro line: y | Y | #f5c542\n\n%%metro grid: work | 0,0\n\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        starN[StarN]\n        hisatN[HisatN]\n        leftchild[LeftChild]\n        merge[Merge]\n        tail[Tail]\n        starN -->|r| leftchild\n        starN -->|g| merge\n        hisatN -->|y| merge\n        merge -->|g| tail\n    end\n"
+      },
+      {
+        "name": "tb_bottom_exit_fork_diamond",
+        "mmd": "%%metro line: alpha | Alpha | #e63946\n%%metro grid: source | 0,0\n%%metro grid: feed | 1,0\n%%metro grid: mid | 1,1\n%%metro grid: sink | 1,2\n\ngraph LR\n    subgraph source [Source]\n        s1[Start]\n    end\n    subgraph feed [Feed]\n        %%metro direction: TB\n        %%metro entry: right | alpha\n        %%metro exit: bottom | alpha\n        f1[Align]\n        f2[Sort]\n        f1 -->|alpha| f2\n    end\n    subgraph mid [Mid]\n        %%metro direction: TB\n        %%metro entry: top | alpha\n        m1[Filter]\n        m2[Classify]\n        m1 -->|alpha| m2\n    end\n    subgraph sink [Sink]\n        %%metro direction: TB\n        %%metro entry: top | alpha\n        sk1[Merge]\n        sk2[Report]\n        sk1 -->|alpha| sk2\n    end\n    s1 -->|alpha| f1\n    f2 -->|alpha| m1\n    f2 -->|alpha| sk1\n    m2 -->|alpha| sk1\n"
       }
     ]
   },
