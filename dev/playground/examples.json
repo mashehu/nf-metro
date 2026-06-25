@@ -339,6 +339,10 @@
         "mmd": "%%metro title: LR top-entry cross-column drop\n%%metro line: a | A | #e63946\n%%metro grid: work | 0,0\n%%metro grid: out_sec | 0,1\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        %%metro exit: bottom | a\n        w1[Demux]\n        w2[Merge]\n        w1 -->|a| w2\n    end\n    subgraph out_sec [Output]\n        %%metro direction: LR\n        %%metro entry: top | a\n        o1[Publish]\n        o2[Notify]\n        o1 -->|a| o2\n    end\n    w2 -->|a| o1\n"
       },
       {
+        "name": "lr_top_entry_cross_column_two_line",
+        "mmd": "%%metro title: TB perp exit into LR top-entry, two lines\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n%%metro grid: work | 0,0\n%%metro grid: out_sec | 0,1\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        %%metro exit: bottom | a,b\n        w1[Demux]\n        w2[Merge]\n        w1 -->|a,b| w2\n    end\n    subgraph out_sec [Output]\n        %%metro direction: LR\n        %%metro entry: top | a,b\n        o1[Publish]\n        o2[Notify]\n        o1 -->|a,b| o2\n    end\n    w2 -->|a,b| o1\n"
+      },
+      {
         "name": "tb_column_continuation_two_lines",
         "mmd": "%%metro title: TB Column Continuation Two Lines\n%%metro style: dark\n%%metro line: alpha | Alpha | #e63946\n%%metro line: beta | Beta | #0570b0\n%%metro grid: top_sec | 0,0\n%%metro grid: bot_sec | 0,1\n\ngraph LR\n    subgraph top_sec [Upper]\n        %%metro direction: TB\n        %%metro exit: bottom | alpha, beta\n        t1[Refine]\n        t2[Report]\n        t1 -->|alpha,beta| t2\n    end\n    subgraph bot_sec [Lower]\n        %%metro direction: TB\n        %%metro entry: top | alpha, beta\n        b1[Ingest]\n        b2[Clean]\n        b1 -->|alpha,beta| b2\n    end\n    t2 -->|alpha,beta| b1\n"
       },
