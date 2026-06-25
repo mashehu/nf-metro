@@ -335,6 +335,10 @@
         "mmd": "%%metro title: Cross-Column Top Entry\n%%metro style: dark\n%%metro line: l1 | Line 1 | #0570b0\n\ngraph LR\n    subgraph producer [Producer]\n        %%metro exit: right | l1\n        p1[Step P1]\n        p2[Step P2]\n        p1 -->|l1| p2\n    end\n\n    subgraph consumer [Consumer]\n        %%metro entry: top | l1\n        c1[Step C1]\n        c2[Step C2]\n        c1 -->|l1| c2\n    end\n\n    p2 -->|l1| c1\n"
       },
       {
+        "name": "lr_top_entry_cross_column",
+        "mmd": "%%metro title: LR top-entry cross-column drop\n%%metro line: a | A | #e63946\n%%metro grid: work | 0,0\n%%metro grid: out_sec | 0,1\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        %%metro exit: bottom | a\n        w1[Demux]\n        w2[Merge]\n        w1 -->|a| w2\n    end\n    subgraph out_sec [Output]\n        %%metro direction: LR\n        %%metro entry: top | a\n        o1[Publish]\n        o2[Notify]\n        o1 -->|a| o2\n    end\n    w2 -->|a| o1\n"
+      },
+      {
         "name": "bypass_gap2_rightward_overflow",
         "mmd": "%%metro title: Seven-line rightward bypass gap2 overflow clamp\n%%metro style: dark\n%%metro line: l1 | L1 | #e63946\n%%metro line: l2 | L2 | #0570b0\n%%metro line: l3 | L3 | #2db572\n%%metro line: l4 | L4 | #f4a261\n%%metro line: l5 | L5 | #9467bd\n%%metro line: l6 | L6 | #8c564b\n%%metro line: l7 | L7 | #17becf\n\n%%metro grid: src_sec | 0,0\n%%metro grid: mid_sec | 1,0\n%%metro grid: tgt_sec | 2,0\n\ngraph LR\n    subgraph src_sec [Source]\n        %%metro exit: right | l1, l2, l3, l4, l5, l6, l7\n        s1[Start]\n        s2[Out]\n        s1 -->|l1,l2,l3,l4,l5,l6,l7| s2\n    end\n\n    subgraph mid_sec [Middle]\n        m1[Mid]\n        m2[MidOut]\n        m1 -->|l1| m2\n    end\n\n    subgraph tgt_sec [Target]\n        %%metro entry: left | l1, l2, l3, l4, l5, l6, l7\n        t1[Process]\n        t2[End]\n        t1 -->|l1,l2,l3,l4,l5,l6,l7| t2\n    end\n\n    s2 -->|l1| m1\n    s2 -->|l1,l2,l3,l4,l5,l6,l7| t1\n"
       },
