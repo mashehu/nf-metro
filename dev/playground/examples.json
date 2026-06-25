@@ -96,6 +96,34 @@
         "mmd": "%%metro title: Single Section\n%%metro style: dark\n%%metro line: main | Main | #e63946\n\ngraph LR\n    subgraph only [Only Section]\n        a[Input]\n        b[Process]\n        c[Output]\n        a -->|main| b\n        b -->|main| c\n    end\n"
       },
       {
+        "name": "bt_chain",
+        "mmd": "%%metro title: BT Chain\n%%metro style: dark\n%%metro line: a | A | #e63946\n\ngraph LR\n    subgraph work [Work]\n        %%metro direction: BT\n        w1[First]\n        w2[Second]\n        w3[Third]\n        w1 -->|a| w2\n        w2 -->|a| w3\n    end\n"
+      },
+      {
+        "name": "bt_fork",
+        "mmd": "%%metro title: BT Fork\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\ngraph LR\n    subgraph work [Work]\n        %%metro direction: BT\n        hub[Demux]\n        left[Lane A]\n        right[Lane B]\n        hub -->|a,b| left\n        hub -->|a,b| right\n    end\n"
+      },
+      {
+        "name": "bt_perp_entry_below",
+        "mmd": "%%metro title: BT Fed From Below\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: top_sec | 0,0\n%%metro grid: bot_sec | 0,1\n\ngraph LR\n    subgraph top_sec [Upper]\n        %%metro direction: BT\n        %%metro entry: bottom | a,b\n        t1[Refine]\n        t2[Report]\n        t1 -->|a,b| t2\n    end\n\n    subgraph bot_sec [Lower]\n        %%metro direction: BT\n        b1[Ingest]\n        b2[Clean]\n        b1 -->|a,b| b2\n    end\n\n    b2 -->|a,b| t1\n"
+      },
+      {
+        "name": "bt_exit_top_above",
+        "mmd": "%%metro title: BT Exit Top Into Section Above\n%%metro style: dark\n%%metro line: a | A | #e63946\n\n%%metro grid: dst_sec | 0,0\n%%metro grid: work | 0,1\n\ngraph LR\n    subgraph dst_sec [Output]\n        %%metro direction: LR\n        %%metro entry: bottom | a\n        o1[Report]\n        o2[Archive]\n        o1 -->|a| o2\n    end\n\n    subgraph work [Work]\n        %%metro direction: BT\n        %%metro exit: top | a\n        w1[Process]\n        w2[Collect]\n        w1 -->|a| w2\n    end\n\n    w2 -->|a| o1\n"
+      },
+      {
+        "name": "bt_exit_top_above_2line",
+        "mmd": "%%metro title: BT Exit Top Into Section Above (2 lines)\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: dst_sec | 0,0\n%%metro grid: work | 0,1\n\ngraph LR\n    subgraph dst_sec [Output]\n        %%metro direction: LR\n        %%metro entry: bottom | a,b\n        o1[Report]\n        o2[Archive]\n        o1 -->|a,b| o2\n    end\n\n    subgraph work [Work]\n        %%metro direction: BT\n        %%metro exit: top | a,b\n        w1[Process]\n        w2[Collect]\n        w1 -->|a,b| w2\n    end\n\n    w2 -->|a,b| o1\n"
+      },
+      {
+        "name": "bt_to_lr",
+        "mmd": "%%metro title: BT Perp Exit Into LR\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: work | 0,0\n%%metro grid: out_sec | 1,0\n\ngraph LR\n    subgraph work [Work]\n        %%metro direction: BT\n        %%metro exit: top | a,b\n        w1[Demux]\n        w2[Merge]\n        w1 -->|a,b| w2\n    end\n\n    subgraph out_sec [Output]\n        %%metro direction: LR\n        %%metro entry: left | a,b\n        o1[Publish]\n        o2[Notify]\n        o1 -->|a,b| o2\n    end\n\n    w2 -->|a,b| o1\n"
+      },
+      {
+        "name": "bt_to_tb",
+        "mmd": "%%metro title: BT Into TB\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: up_sec | 0,0\n%%metro grid: down_sec | 1,0\n\ngraph LR\n    subgraph up_sec [Ascend]\n        %%metro direction: BT\n        %%metro exit: right | a,b\n        u1[Collect]\n        u2[Reduce]\n        u1 -->|a,b| u2\n    end\n\n    subgraph down_sec [Descend]\n        %%metro direction: TB\n        %%metro entry: left | a,b\n        d1[Split]\n        d2[Emit]\n        d1 -->|a,b| d2\n    end\n\n    u2 -->|a,b| d1\n"
+      },
+      {
         "name": "deep_linear",
         "mmd": "%%metro title: Deep Linear Chain\n%%metro style: dark\n%%metro line: main | Main | #e63946\n%%metro line: alt | Alternative | #2db572\n\ngraph LR\n    subgraph sec1 [Input]\n        s1a[Read]\n        s1b[Validate]\n        s1a -->|main,alt| s1b\n    end\n\n    subgraph sec2 [QC]\n        s2a[FastQC]\n        s2b[MultiQC]\n        s2a -->|main,alt| s2b\n    end\n\n    subgraph sec3 [Trim]\n        s3a[Trim]\n        s3b[Filter]\n        s3c[Check]\n        s3a -->|main| s3b\n        s3a -->|alt| s3b\n        s3b -->|main,alt| s3c\n    end\n\n    subgraph sec4 [Align]\n        s4a[Index]\n        s4b[Map]\n        s4c[Sort]\n        s4a -->|main,alt| s4b\n        s4b -->|main,alt| s4c\n    end\n\n    subgraph sec5 [Quant]\n        s5a[Count]\n        s5b[Normalize]\n        s5a -->|main,alt| s5b\n    end\n\n    subgraph sec6 [Analysis]\n        s6a[Diff Expr]\n        s6b[Pathway]\n        s6c[Annotate]\n        s6a -->|main,alt| s6b\n        s6b -->|main,alt| s6c\n    end\n\n    subgraph sec7 [Report]\n        s7a[Aggregate]\n        s7b[Report]\n        s7a -->|main,alt| s7b\n    end\n\n    s1b -->|main,alt| s2a\n    s2b -->|main,alt| s3a\n    s3c -->|main,alt| s4a\n    s4c -->|main,alt| s5a\n    s5b -->|main,alt| s6a\n    s6c -->|main,alt| s7a\n"
       },
