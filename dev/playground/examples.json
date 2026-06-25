@@ -626,6 +626,10 @@
       {
         "name": "tb_perp_exit_side_neighbour",
         "mmd": "%%metro title: TB perp-exit into a side LR neighbour\n%%metro line: a | A | #e63946\n%%metro grid: work | 0,0\n%%metro grid: out_sec | 1,0\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        %%metro exit: bottom | a\n        w1[Demux]\n        w2[Merge]\n        w1 -->|a| w2\n    end\n    subgraph out_sec [Output]\n        %%metro direction: LR\n        %%metro entry: left | a\n        o1[Publish]\n    end\n    w2 -->|a| o1\n"
+      },
+      {
+        "name": "tb_two_line_vert_seam",
+        "mmd": "%%metro title: TB into TB, horizontal seam\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n%%metro grid: up_sec | 0,0\n%%metro grid: down_sec | 1,0\ngraph LR\n    subgraph up_sec [Left]\n        %%metro direction: TB\n        %%metro exit: right | a,b\n        u1[Collect]\n        u2[Reduce]\n        u1 -->|a,b| u2\n    end\n    subgraph down_sec [Right]\n        %%metro direction: TB\n        %%metro entry: left | a,b\n        d1[Split]\n        d2[Emit]\n        d1 -->|a,b| d2\n    end\n    u2 -->|a,b| d1\n"
       }
     ]
   },

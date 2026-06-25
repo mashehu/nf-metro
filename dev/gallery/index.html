@@ -2165,6 +2165,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tb-two-line-vert-seam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tb Two Line Vert Seam
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5403,6 +5414,17 @@
     <span class="md-ellipsis">
       
         Tb Perp Exit Side Neighbour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tb-two-line-vert-seam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tb Two Line Vert Seam
       
     </span>
   </a>
@@ -13087,6 +13109,38 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Tb Perp Exit Side Neighbour" src="../assets/renders/tb_perp_exit_side_neighbour.svg" /></p>
+<h3 id="tb-two-line-vert-seam">Tb Two Line Vert Seam<a class="headerlink" href="#tb-two-line-vert-seam" title="Permanent link">&para;</a></h3>
+<p>A vertical-flow section's RIGHT exit feeds another vertical-flow section's LEFT entry with a two-line bundle. The entry sits a station gap above the trunk head so both lines enter horizontally then drop straight onto their trunk lanes, rather than the staggered line slanting into the trunk for want of drop room (#1054).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-280-1" name="__codelineno-280-1" href="#__codelineno-280-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/tb_two_line_vert_seam.mmd<span class="w"> </span>-o<span class="w"> </span>tb_two_line_vert_seam.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-281-1" name="__codelineno-281-1" href="#__codelineno-281-1"></a>%%metro title: TB into TB, horizontal seam
+<a id="__codelineno-281-2" name="__codelineno-281-2" href="#__codelineno-281-2"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-281-3" name="__codelineno-281-3" href="#__codelineno-281-3"></a>%%metro line: b | B | #0570b0
+<a id="__codelineno-281-4" name="__codelineno-281-4" href="#__codelineno-281-4"></a>%%metro grid: up_sec | 0,0
+<a id="__codelineno-281-5" name="__codelineno-281-5" href="#__codelineno-281-5"></a>%%metro grid: down_sec | 1,0
+<a id="__codelineno-281-6" name="__codelineno-281-6" href="#__codelineno-281-6"></a>graph LR
+<a id="__codelineno-281-7" name="__codelineno-281-7" href="#__codelineno-281-7"></a>    subgraph up_sec [Left]
+<a id="__codelineno-281-8" name="__codelineno-281-8" href="#__codelineno-281-8"></a>        %%metro direction: TB
+<a id="__codelineno-281-9" name="__codelineno-281-9" href="#__codelineno-281-9"></a>        %%metro exit: right | a,b
+<a id="__codelineno-281-10" name="__codelineno-281-10" href="#__codelineno-281-10"></a>        u1[Collect]
+<a id="__codelineno-281-11" name="__codelineno-281-11" href="#__codelineno-281-11"></a>        u2[Reduce]
+<a id="__codelineno-281-12" name="__codelineno-281-12" href="#__codelineno-281-12"></a>        u1 --&gt;|a,b| u2
+<a id="__codelineno-281-13" name="__codelineno-281-13" href="#__codelineno-281-13"></a>    end
+<a id="__codelineno-281-14" name="__codelineno-281-14" href="#__codelineno-281-14"></a>    subgraph down_sec [Right]
+<a id="__codelineno-281-15" name="__codelineno-281-15" href="#__codelineno-281-15"></a>        %%metro direction: TB
+<a id="__codelineno-281-16" name="__codelineno-281-16" href="#__codelineno-281-16"></a>        %%metro entry: left | a,b
+<a id="__codelineno-281-17" name="__codelineno-281-17" href="#__codelineno-281-17"></a>        d1[Split]
+<a id="__codelineno-281-18" name="__codelineno-281-18" href="#__codelineno-281-18"></a>        d2[Emit]
+<a id="__codelineno-281-19" name="__codelineno-281-19" href="#__codelineno-281-19"></a>        d1 --&gt;|a,b| d2
+<a id="__codelineno-281-20" name="__codelineno-281-20" href="#__codelineno-281-20"></a>    end
+<a id="__codelineno-281-21" name="__codelineno-281-21" href="#__codelineno-281-21"></a>    u2 --&gt;|a,b| d1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Tb Two Line Vert Seam" src="../assets/renders/tb_two_line_vert_seam.svg" /></p>
 
 
 
