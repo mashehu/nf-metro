@@ -2205,8 +2205,9 @@ mechanism that keeps the routes correct.</p>
   <code>same_col</code>, <code>cross_row</code>, and <code>needs_bypass</code> (a multi-column hop with an
   intervening section in the source <em>or</em> target row).</li>
 <li><strong>Exit side</strong> — whether the source is a LEFT/RIGHT exit port, a TOP/BOTTOM
-  perpendicular exit (<code>is_perp_exit</code>), a TB BOTTOM exit (<code>is_tb_bottom_exit</code>),
-  or a junction.</li>
+  perpendicular exit (<code>is_perp_exit</code>), a TB BOTTOM exit (<code>is_tb_bottom_exit</code>,
+  or <code>is_tb_perp_exit_to_side</code> when it feeds a not-below side entry), or a
+  junction.</li>
 <li><strong>Entry side</strong> — <code>entry_side</code> is the target entry port's side
   (LEFT/RIGHT/TOP/BOTTOM) or <code>None</code> when the target is a junction; <code>merge_ep</code>
   is the resolved entry-port station when the target is a merge junction.</li>
@@ -2233,72 +2234,78 @@ match, the <strong>standard L-shape</strong> is the fall-through.</p>
 </tr>
 <tr>
 <td>2</td>
+<td><code>TB perp-exit over</code></td>
+<td>BOTTOM exit on a TB/BT section feeding a side (LEFT/RIGHT) entry at or above the exit Y</td>
+<td><code>_route_perp_exit_over</code> (down-and-over). The exit sits on the section's bottom edge, so before the same-Y rule for the same graze reason as rule 1: a downward drop cannot reach a not-below side entry and a straight run rides the edge out through the corner.</td>
+</tr>
+<tr>
+<td>3</td>
 <td><code>same-Y straight</code></td>
 <td><code>same_y</code>, not <code>needs_bypass</code>, not a right-entry plough</td>
 <td>straight horizontal</td>
 </tr>
 <tr>
-<td>3</td>
+<td>4</td>
 <td><code>TB bottom exit</code></td>
 <td>BOTTOM exit on a TB/BT section, with station offsets</td>
-<td><code>_route_tb_bottom_exit</code></td>
+<td><code>_route_tb_bottom_exit</code> (drop / jog into a target below)</td>
 </tr>
 <tr>
-<td>4</td>
+<td>5</td>
 <td><code>TOP entry L-shape</code></td>
 <td><code>entry_side is TOP</code></td>
 <td><code>_route_top_entry_l_shape</code>. Before the same-X rule, which would drop straight in with no horizontal lead-in.</td>
 </tr>
 <tr>
-<td>5</td>
+<td>6</td>
 <td><code>same-X vertical drop</code></td>
 <td><code>same_x</code></td>
 <td>straight vertical</td>
 </tr>
 <tr>
-<td>6</td>
+<td>7</td>
 <td><code>bottom-exit junction</code></td>
 <td>source is a bottom-exit junction</td>
 <td><code>_route_bottom_exit_junction</code></td>
 </tr>
 <tr>
-<td>7</td>
+<td>8</td>
 <td><code>bypass family</code></td>
 <td><code>needs_bypass</code></td>
 <td><code>_route_bypass_family</code>: merge trunk/branch, LEFT-entry-one-row-below straight drop, RIGHT-entry wrap (gap-above or around-below), else the U-shaped bypass</td>
 </tr>
 <tr>
-<td>8</td>
+<td>9</td>
 <td><code>near-vertical same-col junction</code></td>
 <td>junction dropping almost straight into a same-column entry</td>
 <td><code>_route_near_vertical_junction</code></td>
 </tr>
 <tr>
-<td>9</td>
+<td>10</td>
 <td><code>RIGHT entry wrap</code></td>
 <td><code>entry_side is RIGHT</code> and travelling right</td>
 <td><code>_route_right_entry_wrap</code> (over the top / around the right side)</td>
 </tr>
 <tr>
-<td>10</td>
+<td>11</td>
 <td><code>LEFT entry wrap family</code></td>
 <td><code>entry_side is LEFT</code>, <code>dx &lt; 0</code>, <code>cross_row</code></td>
 <td><code>_route_left_entry_family</code>: inter-row gap wrap, or the corridor / around-below loop when that gap crosses a section</td>
 </tr>
 <tr>
-<td>11</td>
+<td>12</td>
 <td><code>serpentine LEFT exit -&gt; LEFT entry</code></td>
 <td>LEFT exit into a LEFT entry stacked in the same column</td>
 <td><code>_route_left_exit_left_entry_drop</code></td>
 </tr>
 <tr>
-<td>12</td>
+<td>13</td>
 <td><code>merge entry family</code></td>
 <td><code>merge_ep is not None</code></td>
 <td><code>_route_merge_entry_family</code>: straight (near-collinear), corridor / around-below (LEFT entry crossing a section), else L-shape into the entry port</td>
 </tr>
 <tr>
-<td>13</td>
+<td>14</td>
 <td><code>RIGHT entry plough -&gt; bypass</code></td>
 <td>a higher-row L-shape to a RIGHT entry that would plough an intervening same-row section</td>
 <td><code>_route_bypass</code></td>
@@ -2311,7 +2318,7 @@ match, the <strong>standard L-shape</strong> is the fall-through.</p>
 </tr>
 </tbody>
 </table>
-<p>The three rules whose handlers carry their own residual decisions (7, 10, 12)
+<p>The three rules whose handlers carry their own residual decisions (8, 11, 13)
 own that logic inside the named handler, so the top-level table stays a single
 declarative pass.</p>
 <h2 id="the-curve-guard-is-a-backstop">The curve guard is a backstop<a class="headerlink" href="#the-curve-guard-is-a-backstop" title="Permanent link">&para;</a></h2>

@@ -2110,6 +2110,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tb-perp-exit-side-neighbour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tb Perp Exit Side Neighbour
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5293,6 +5304,17 @@
     <span class="md-ellipsis">
       
         Near Vertical Junction Hook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tb-perp-exit-side-neighbour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tb Perp Exit Side Neighbour
       
     </span>
   </a>
@@ -12804,6 +12826,35 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Near Vertical Junction Hook" src="../assets/renders/near_vertical_junction_hook.svg" /></p>
+<h3 id="tb-perp-exit-side-neighbour">Tb Perp Exit Side Neighbour<a class="headerlink" href="#tb-perp-exit-side-neighbour" title="Permanent link">&para;</a></h3>
+<p>A vertical-flow section's BOTTOM exit feeds a side LR neighbour sharing the exit's Y. The connector leaves the port down into the inter-row corridor clear of the box, runs across, then turns up into the entry, rather than running straight along the section's bottom edge and out through the corner (#1052).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-270-1" name="__codelineno-270-1" href="#__codelineno-270-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/tb_perp_exit_side_neighbour.mmd<span class="w"> </span>-o<span class="w"> </span>tb_perp_exit_side_neighbour.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-271-1" name="__codelineno-271-1" href="#__codelineno-271-1"></a>%%metro title: TB perp-exit into a side LR neighbour
+<a id="__codelineno-271-2" name="__codelineno-271-2" href="#__codelineno-271-2"></a>%%metro line: a | A | #e63946
+<a id="__codelineno-271-3" name="__codelineno-271-3" href="#__codelineno-271-3"></a>%%metro grid: work | 0,0
+<a id="__codelineno-271-4" name="__codelineno-271-4" href="#__codelineno-271-4"></a>%%metro grid: out_sec | 1,0
+<a id="__codelineno-271-5" name="__codelineno-271-5" href="#__codelineno-271-5"></a>graph LR
+<a id="__codelineno-271-6" name="__codelineno-271-6" href="#__codelineno-271-6"></a>    subgraph work [Work]
+<a id="__codelineno-271-7" name="__codelineno-271-7" href="#__codelineno-271-7"></a>        %%metro direction: TB
+<a id="__codelineno-271-8" name="__codelineno-271-8" href="#__codelineno-271-8"></a>        %%metro exit: bottom | a
+<a id="__codelineno-271-9" name="__codelineno-271-9" href="#__codelineno-271-9"></a>        w1[Demux]
+<a id="__codelineno-271-10" name="__codelineno-271-10" href="#__codelineno-271-10"></a>        w2[Merge]
+<a id="__codelineno-271-11" name="__codelineno-271-11" href="#__codelineno-271-11"></a>        w1 --&gt;|a| w2
+<a id="__codelineno-271-12" name="__codelineno-271-12" href="#__codelineno-271-12"></a>    end
+<a id="__codelineno-271-13" name="__codelineno-271-13" href="#__codelineno-271-13"></a>    subgraph out_sec [Output]
+<a id="__codelineno-271-14" name="__codelineno-271-14" href="#__codelineno-271-14"></a>        %%metro direction: LR
+<a id="__codelineno-271-15" name="__codelineno-271-15" href="#__codelineno-271-15"></a>        %%metro entry: left | a
+<a id="__codelineno-271-16" name="__codelineno-271-16" href="#__codelineno-271-16"></a>        o1[Publish]
+<a id="__codelineno-271-17" name="__codelineno-271-17" href="#__codelineno-271-17"></a>    end
+<a id="__codelineno-271-18" name="__codelineno-271-18" href="#__codelineno-271-18"></a>    w2 --&gt;|a| o1
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Tb Perp Exit Side Neighbour" src="../assets/renders/tb_perp_exit_side_neighbour.svg" /></p>
 
 
 

@@ -606,6 +606,10 @@
       {
         "name": "near_vertical_junction_hook",
         "mmd": "%%metro title: Near-Vertical Junction Hook\n%%metro style: nfcore\n%%metro line: main | Main | #2db572\n%%metro line: a | A | #e63946\n%%metro line: b | B | #7b2d3b\n%%metro grid: src | 0,0\n%%metro grid: gen | 1,0\n%%metro grid: pseudo | 0,1\n\ngraph LR\n    subgraph src [Source]\n        s1[Step 1]\n        s2[Step 2]\n        s3[Step 3]\n        s1 -->|main,a,b| s2\n        s2 -->|main,a,b| s3\n    end\n\n    subgraph gen [Genome]\n        g1[Genome]\n    end\n\n    subgraph pseudo [Pseudo]\n        %%metro entry: right | a, b\n        p1[Pseudo 1]\n        p2[Pseudo 2]\n        p3[Pseudo 3]\n        p1 -->|a,b| p2\n        p2 -->|a,b| p3\n    end\n\n    s3 -->|main| g1\n    s3 -->|a,b| p1\n"
+      },
+      {
+        "name": "tb_perp_exit_side_neighbour",
+        "mmd": "%%metro title: TB perp-exit into a side LR neighbour\n%%metro line: a | A | #e63946\n%%metro grid: work | 0,0\n%%metro grid: out_sec | 1,0\ngraph LR\n    subgraph work [Work]\n        %%metro direction: TB\n        %%metro exit: bottom | a\n        w1[Demux]\n        w2[Merge]\n        w1 -->|a| w2\n    end\n    subgraph out_sec [Output]\n        %%metro direction: LR\n        %%metro entry: left | a\n        o1[Publish]\n    end\n    w2 -->|a| o1\n"
       }
     ]
   },
