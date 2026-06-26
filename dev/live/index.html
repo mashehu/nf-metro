@@ -465,6 +465,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#one-liner-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-liner (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-shell-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-shell alternative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overlay-styles" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2292,6 +2314,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#one-liner-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-liner (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-shell-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-shell alternative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overlay-styles" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2511,11 +2555,22 @@ your <strong>own</strong> application instead, see the <a href="../embedding/">E
 so it's the mode for iterating on a single pipeline - re-run and watch the same
 page - and it's the server the plugin's managed mode spawns. For many pipelines
 or runs side by side, use the dashboard in §2b instead.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nf-metro<span class="w"> </span>serve<span class="w"> </span>path/to/map.mmd<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
+<h3 id="one-liner-recommended">One-liner (recommended)<a class="headerlink" href="#one-liner-recommended" title="Permanent link">&para;</a></h3>
+<p>Pass the Nextflow command after <code>--</code> and <code>serve</code> handles everything: it wires
+<code>-with-weblog</code> automatically, opens your browser, and shuts itself down when the
+run finishes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nf-metro<span class="w"> </span>serve<span class="w"> </span>path/to/map.mmd<span class="w"> </span>--open<span class="w"> </span>--shutdown-after-complete<span class="w"> </span>--<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline
 </code></pre></div>
-<p>Then open <a href="http://localhost:8080/">http://localhost:8080/</a> and start the pipeline with its weblog
-pointed at the server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w"> </span>-with-weblog<span class="w"> </span>http://localhost:8080/events
+<h3 id="two-shell-alternative">Two-shell alternative<a class="headerlink" href="#two-shell-alternative" title="Permanent link">&para;</a></h3>
+<p>If you prefer to keep the server and the pipeline in separate terminals (useful
+when iterating across many re-runs with the server left running):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># shell 1 - the live server</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>nf-metro<span class="w"> </span>serve<span class="w"> </span>path/to/map.mmd<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># open http://localhost:8080/</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># shell 2 - the pipeline</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>nextflow<span class="w"> </span>run<span class="w"> </span>my/pipeline<span class="w"> </span>-with-weblog<span class="w"> </span>http://localhost:8080/events
 </code></pre></div>
 <p>Stations light up as tasks are submitted, run, and complete. A browser that
 connects mid-run receives the current state immediately, so you never see a
@@ -2543,6 +2598,18 @@ blank map.</p>
 <tr>
 <td><code>--overlay</code></td>
 <td>Status-overlay style: <code>ring</code> (default), <code>pulse</code>, <code>dot</code>, or <code>led</code>. Sets the style shown until a viewer picks another.</td>
+</tr>
+<tr>
+<td><code>--open</code></td>
+<td>Open the live page in the default browser when the server starts.</td>
+</tr>
+<tr>
+<td><code>--shutdown-after-complete</code></td>
+<td>Stop the server shortly after the run's <code>completed</code> or <code>error</code> event (or after the launched command exits).</td>
+</tr>
+<tr>
+<td><code>--shutdown-grace</code></td>
+<td>Seconds to keep the map up after the run finishes before shutting down (used with <code>--shutdown-after-complete</code>; default 5).</td>
 </tr>
 <tr>
 <td><code>--token</code></td>
@@ -2787,7 +2854,14 @@ but are not treated as failures since they may be intentional.</p>
 <p>The repository ships a self-contained demo under
 <a href="https://github.com/pinin4fjords/nf-metro/tree/main/examples/live"><code>examples/live/</code></a>:
 a toy workflow whose processes only <code>sleep</code>, a mapped map, and a process list
-for <code>check-mapping</code>. See its <code>README.md</code> to run it end to end.</p>
+for <code>check-mapping</code>. From the repo root:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nf-metro<span class="w"> </span>serve<span class="w"> </span>examples/live/pipeline.mmd<span class="w"> </span>--open<span class="w"> </span>--shutdown-after-complete<span class="w"> </span>--<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span>nextflow<span class="w"> </span>run<span class="w"> </span>examples/live/workflow/main.nf<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">              </span>-c<span class="w"> </span>examples/live/workflow/nextflow.config
+</code></pre></div>
+<p>Three coloured lines fan out after Trim Galore, run in parallel, then converge
+at MultiQC. The browser opens automatically and the server stops when the
+pipeline finishes.</p>
 
 
 
