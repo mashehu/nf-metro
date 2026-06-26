@@ -2253,6 +2253,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aligner-row-pinned-continuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aligner Row Pinned Continuation
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5579,6 +5590,17 @@
     <span class="md-ellipsis">
       
         Tb Two Line Vert Seam
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aligner-row-pinned-continuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aligner Row Pinned Continuation
       
     </span>
   </a>
@@ -13527,6 +13549,77 @@
 </details>
 <p><strong>Rendered output:</strong></p>
 <p><img alt="Tb Two Line Vert Seam" src="../assets/renders/tb_two_line_vert_seam.svg" /></p>
+<h3 id="aligner-row-pinned-continuation">Aligner Row Pinned Continuation<a class="headerlink" href="#aligner-row-pinned-continuation" title="Permanent link">&para;</a></h3>
+<p>Three sibling aligners feed one dedup hub that lands on the lead aligner's row, while one aligner's line continues on a track pinned to the section bottom by hidden continuation stations. The aligners stack on consecutive grid rows instead of the low-line aligner being dragged down to crowd its neighbour and strand the middle row (#1071).</p>
+<p><strong>CLI command:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-296-1" name="__codelineno-296-1" href="#__codelineno-296-1"></a>nf-metro<span class="w"> </span>render<span class="w"> </span>examples/topologies/aligner_row_pinned_continuation.mmd<span class="w"> </span>-o<span class="w"> </span>aligner_row_pinned_continuation.svg
+</code></pre></div>
+<details class="note">
+<summary>Mermaid source</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-297-1" name="__codelineno-297-1" href="#__codelineno-297-1"></a>%%metro title: Aligner row vs pinned continuation
+<a id="__codelineno-297-2" name="__codelineno-297-2" href="#__codelineno-297-2"></a>%%metro line: star_rsem | STAR/RSEM | #0570b0
+<a id="__codelineno-297-3" name="__codelineno-297-3" href="#__codelineno-297-3"></a>%%metro line: star_salmon | STAR/Salmon | #2db572
+<a id="__codelineno-297-4" name="__codelineno-297-4" href="#__codelineno-297-4"></a>%%metro line: hisat2 | HISAT2 | #f5c542
+<a id="__codelineno-297-5" name="__codelineno-297-5" href="#__codelineno-297-5"></a>%%metro line: bowtie2_salmon | Bowtie2/Salmon | #ff8c00
+<a id="__codelineno-297-6" name="__codelineno-297-6" href="#__codelineno-297-6"></a>
+<a id="__codelineno-297-7" name="__codelineno-297-7" href="#__codelineno-297-7"></a>graph LR
+<a id="__codelineno-297-8" name="__codelineno-297-8" href="#__codelineno-297-8"></a>    subgraph preproc [Pre-processing]
+<a id="__codelineno-297-9" name="__codelineno-297-9" href="#__codelineno-297-9"></a>        %%metro exit: right | star_salmon, star_rsem, hisat2, bowtie2_salmon
+<a id="__codelineno-297-10" name="__codelineno-297-10" href="#__codelineno-297-10"></a>        fastqc_filtered[FastQC]
+<a id="__codelineno-297-11" name="__codelineno-297-11" href="#__codelineno-297-11"></a>    end
+<a id="__codelineno-297-12" name="__codelineno-297-12" href="#__codelineno-297-12"></a>
+<a id="__codelineno-297-13" name="__codelineno-297-13" href="#__codelineno-297-13"></a>    subgraph genome_align [Genome alignment &amp; quantification]
+<a id="__codelineno-297-14" name="__codelineno-297-14" href="#__codelineno-297-14"></a>        %%metro entry: left | star_salmon, star_rsem, hisat2, bowtie2_salmon
+<a id="__codelineno-297-15" name="__codelineno-297-15" href="#__codelineno-297-15"></a>        %%metro exit: right | star_salmon, star_rsem
+<a id="__codelineno-297-16" name="__codelineno-297-16" href="#__codelineno-297-16"></a>        %%metro exit: right | hisat2
+<a id="__codelineno-297-17" name="__codelineno-297-17" href="#__codelineno-297-17"></a>        star[STAR]
+<a id="__codelineno-297-18" name="__codelineno-297-18" href="#__codelineno-297-18"></a>        hisat2_align[HISAT2]
+<a id="__codelineno-297-19" name="__codelineno-297-19" href="#__codelineno-297-19"></a>        bowtie2_align[Bowtie2]
+<a id="__codelineno-297-20" name="__codelineno-297-20" href="#__codelineno-297-20"></a>        rsem[RSEM]
+<a id="__codelineno-297-21" name="__codelineno-297-21" href="#__codelineno-297-21"></a>        salmon_quant[Salmon]
+<a id="__codelineno-297-22" name="__codelineno-297-22" href="#__codelineno-297-22"></a>        umi_tools_dedup[UMI-tools Dedup]
+<a id="__codelineno-297-23" name="__codelineno-297-23" href="#__codelineno-297-23"></a>        tximport_ga[tximport]
+<a id="__codelineno-297-24" name="__codelineno-297-24" href="#__codelineno-297-24"></a>        summarized_exp_ga[Sum. Exp.]
+<a id="__codelineno-297-25" name="__codelineno-297-25" href="#__codelineno-297-25"></a>        multiqc_bowtie2[MultiQC]
+<a id="__codelineno-297-26" name="__codelineno-297-26" href="#__codelineno-297-26"></a>        report_bowtie2[ ]
+<a id="__codelineno-297-27" name="__codelineno-297-27" href="#__codelineno-297-27"></a>        _h1[hidden]
+<a id="__codelineno-297-28" name="__codelineno-297-28" href="#__codelineno-297-28"></a>        _h2[hidden]
+<a id="__codelineno-297-29" name="__codelineno-297-29" href="#__codelineno-297-29"></a>        _h3[hidden]
+<a id="__codelineno-297-30" name="__codelineno-297-30" href="#__codelineno-297-30"></a>
+<a id="__codelineno-297-31" name="__codelineno-297-31" href="#__codelineno-297-31"></a>        star --&gt;|star_rsem,star_salmon| umi_tools_dedup
+<a id="__codelineno-297-32" name="__codelineno-297-32" href="#__codelineno-297-32"></a>        hisat2_align --&gt;|hisat2| umi_tools_dedup
+<a id="__codelineno-297-33" name="__codelineno-297-33" href="#__codelineno-297-33"></a>        bowtie2_align --&gt;|bowtie2_salmon| umi_tools_dedup
+<a id="__codelineno-297-34" name="__codelineno-297-34" href="#__codelineno-297-34"></a>        umi_tools_dedup --&gt;|star_rsem| rsem
+<a id="__codelineno-297-35" name="__codelineno-297-35" href="#__codelineno-297-35"></a>        umi_tools_dedup --&gt;|star_salmon| salmon_quant
+<a id="__codelineno-297-36" name="__codelineno-297-36" href="#__codelineno-297-36"></a>        umi_tools_dedup --&gt;|hisat2| _h1
+<a id="__codelineno-297-37" name="__codelineno-297-37" href="#__codelineno-297-37"></a>        _h1 --&gt;|hisat2| _h2
+<a id="__codelineno-297-38" name="__codelineno-297-38" href="#__codelineno-297-38"></a>        _h2 --&gt;|hisat2| _h3
+<a id="__codelineno-297-39" name="__codelineno-297-39" href="#__codelineno-297-39"></a>        salmon_quant --&gt;|star_salmon| tximport_ga
+<a id="__codelineno-297-40" name="__codelineno-297-40" href="#__codelineno-297-40"></a>        rsem --&gt;|star_rsem| tximport_ga
+<a id="__codelineno-297-41" name="__codelineno-297-41" href="#__codelineno-297-41"></a>        tximport_ga --&gt;|star_salmon,star_rsem| summarized_exp_ga
+<a id="__codelineno-297-42" name="__codelineno-297-42" href="#__codelineno-297-42"></a>        umi_tools_dedup --&gt;|bowtie2_salmon| salmon_quant
+<a id="__codelineno-297-43" name="__codelineno-297-43" href="#__codelineno-297-43"></a>        salmon_quant --&gt;|bowtie2_salmon| multiqc_bowtie2
+<a id="__codelineno-297-44" name="__codelineno-297-44" href="#__codelineno-297-44"></a>        multiqc_bowtie2 --&gt;|bowtie2_salmon| report_bowtie2
+<a id="__codelineno-297-45" name="__codelineno-297-45" href="#__codelineno-297-45"></a>    end
+<a id="__codelineno-297-46" name="__codelineno-297-46" href="#__codelineno-297-46"></a>
+<a id="__codelineno-297-47" name="__codelineno-297-47" href="#__codelineno-297-47"></a>    subgraph postproc [Post-processing]
+<a id="__codelineno-297-48" name="__codelineno-297-48" href="#__codelineno-297-48"></a>        %%metro direction: TB
+<a id="__codelineno-297-49" name="__codelineno-297-49" href="#__codelineno-297-49"></a>        %%metro entry: left | star_salmon, star_rsem, hisat2
+<a id="__codelineno-297-50" name="__codelineno-297-50" href="#__codelineno-297-50"></a>        samtools[SAMtools]
+<a id="__codelineno-297-51" name="__codelineno-297-51" href="#__codelineno-297-51"></a>        picard[Picard]
+<a id="__codelineno-297-52" name="__codelineno-297-52" href="#__codelineno-297-52"></a>
+<a id="__codelineno-297-53" name="__codelineno-297-53" href="#__codelineno-297-53"></a>        samtools --&gt;|star_salmon,star_rsem,hisat2| picard
+<a id="__codelineno-297-54" name="__codelineno-297-54" href="#__codelineno-297-54"></a>    end
+<a id="__codelineno-297-55" name="__codelineno-297-55" href="#__codelineno-297-55"></a>
+<a id="__codelineno-297-56" name="__codelineno-297-56" href="#__codelineno-297-56"></a>    fastqc_filtered --&gt;|star_salmon,star_rsem| star
+<a id="__codelineno-297-57" name="__codelineno-297-57" href="#__codelineno-297-57"></a>    fastqc_filtered --&gt;|hisat2| hisat2_align
+<a id="__codelineno-297-58" name="__codelineno-297-58" href="#__codelineno-297-58"></a>    fastqc_filtered --&gt;|bowtie2_salmon| bowtie2_align
+<a id="__codelineno-297-59" name="__codelineno-297-59" href="#__codelineno-297-59"></a>    summarized_exp_ga --&gt;|star_salmon,star_rsem| samtools
+<a id="__codelineno-297-60" name="__codelineno-297-60" href="#__codelineno-297-60"></a>    _h3 --&gt;|hisat2| samtools
+</code></pre></div>
+</details>
+<p><strong>Rendered output:</strong></p>
+<p><img alt="Aligner Row Pinned Continuation" src="../assets/renders/aligner_row_pinned_continuation.svg" /></p>
 
 
 
