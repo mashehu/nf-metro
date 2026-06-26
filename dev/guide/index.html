@@ -3163,6 +3163,14 @@
 <td>Tie a station to the Nextflow process(es) it represents, for live progress (see <a href="../live/">Live progress</a>). The regex matches the fully-qualified process name; repeat the directive to attach several patterns to one station. Pure metadata - it never affects the rendered map.</td>
 </tr>
 <tr>
+<td><code>%%metro auto_process: &lt;bool&gt;</code></td>
+<td>Give every station with no explicit <code>process:</code> directive its own id as a default process pattern, so a map whose station ids already name their processes lights up live with no per-station mapping (see <a href="../live/">Live progress</a>). Off by default; CLI equivalent <code>--auto-process</code>.</td>
+</tr>
+<tr>
+<td><code>%%metro process_scope: &lt;prefix&gt;</code></td>
+<td>Common fully-qualified-name prefix shared by the pipeline's processes (e.g. <code>NFCORE_RNASEQ:RNASEQ</code>). Each <code>process:</code> value is then the tail under this scope, matched literally and tolerant of intermediate subworkflow nesting (see <a href="../live/">Live progress</a>). CLI equivalent <code>--process-scope</code>.</td>
+</tr>
+<tr>
 <td><code>%%metro manifest: &lt;bool&gt;</code></td>
 <td>Embed the machine-readable data manifest (the <code>&lt;metadata&gt;</code> block and per-node <code>data-node-*</code> attributes) in the SVG. On by default; <code>%%metro manifest: false</code> (or <code>--no-manifest</code>) emits the drawn map only.</td>
 </tr>
