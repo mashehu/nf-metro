@@ -271,6 +271,10 @@
       {
         "name": "branch_fold_forward",
         "mmd": "%%metro title: Branch fold stays forward\n%%metro fold_threshold: 6\n%%metro line: main | Main | #0570b0\n%%metro line: side | Side | #e63946\n\ngraph LR\n    subgraph intake [Intake]\n        i0[ ]\n        i1[Trim]\n        i2[Filter]\n        i3[QC]\n        i0 -->|main,side| i1\n        i1 -->|main,side| i2\n        i2 -->|main,side| i3\n    end\n    subgraph genome [Genome]\n        %%metro entry: left | main\n        %%metro exit: right | main\n        g0[Align]\n        g1[Dedup]\n        g2[Quant]\n        g0 -->|main| g1\n        g1 -->|main| g2\n    end\n    subgraph aux [Aux]\n        %%metro entry: left | side\n        a0[Pseudo]\n        a1[Count]\n        a0 -->|side| a1\n    end\n    subgraph post [Post]\n        %%metro entry: left | main\n        %%metro exit: bottom | main\n        p0[Mark]\n        p1[Track]\n        p0 -->|main| p1\n    end\n    subgraph report [Report]\n        %%metro direction: RL\n        %%metro entry: top | main\n        r0[Collect]\n        r1[ ]\n        r0 -->|main| r1\n    end\n    i3 -->|main| g0\n    i3 -->|side| a0\n    g2 -->|main| p0\n    p1 -->|main| r0\n"
+      },
+      {
+        "name": "branch_fold_stability",
+        "mmd": "%%metro title: Branch-fold placement stability\n%%metro style: dark\n%%metro fold_threshold: 6\n%%metro line: survey | Survey | #0570b0\n%%metro line: align | Alignment | #2db572\n\ngraph LR\n    subgraph ingest [Ingest]\n        i1[Read]\n        i2[Validate]\n        i1 -->|survey,align| i2\n    end\n\n    subgraph survey [Survey]\n        s1[Sketch]\n        s2[Profile]\n        s3[Classify]\n        s4[Summarise]\n        s1 -->|survey| s2\n        s2 -->|survey| s3\n        s3 -->|survey| s4\n    end\n\n    subgraph align [Alignment]\n        a1[Index]\n        a2[Map]\n        a1 -->|align| a2\n    end\n\n    subgraph report [Report]\n        r1[Aggregate]\n        r2[Publish]\n        r1 -->|align| r2\n    end\n\n    i2 -->|survey| s1\n    i2 -->|align| a1\n    a2 -->|align| r1\n"
       }
     ]
   },
