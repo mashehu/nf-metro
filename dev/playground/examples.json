@@ -263,6 +263,10 @@
       {
         "name": "tb_bottom_exit_fork_diamond",
         "mmd": "%%metro line: alpha | Alpha | #e63946\n%%metro grid: source | 0,0\n%%metro grid: feed | 1,0\n%%metro grid: mid | 1,1\n%%metro grid: sink | 1,2\n\ngraph LR\n    subgraph source [Source]\n        s1[Start]\n    end\n    subgraph feed [Feed]\n        %%metro direction: TB\n        %%metro entry: right | alpha\n        %%metro exit: bottom | alpha\n        f1[Align]\n        f2[Sort]\n        f1 -->|alpha| f2\n    end\n    subgraph mid [Mid]\n        %%metro direction: TB\n        %%metro entry: top | alpha\n        m1[Filter]\n        m2[Classify]\n        m1 -->|alpha| m2\n    end\n    subgraph sink [Sink]\n        %%metro direction: TB\n        %%metro entry: top | alpha\n        sk1[Merge]\n        sk2[Report]\n        sk1 -->|alpha| sk2\n    end\n    s1 -->|alpha| f1\n    f2 -->|alpha| m1\n    f2 -->|alpha| sk1\n    m2 -->|alpha| sk1\n"
+      },
+      {
+        "name": "tb_bottom_exit_bundle_jog",
+        "mmd": "%%metro title: TB bottom-exit jog multi-line\n%%metro line: l1 | L1 | #e6194b\n%%metro line: l2 | L2 | #3cb44b\n%%metro line: l3 | L3 | #4363d8\n%%metro line: l4 | L4 | #f58231\n%%metro grid: up | 1,0\n%%metro grid: down | 0,1\n\ngraph TB\n    subgraph up [Up]\n        %%metro direction: TB\n        %%metro entry: top | l1, l2, l3, l4\n        %%metro exit: bottom | l1, l2, l3, l4\n        a[A]\n        b[B]\n        a -->|l1,l2,l3,l4| b\n    end\n    subgraph down [Down]\n        %%metro direction: RL\n        %%metro entry: top | l1, l2, l3, l4\n        cc[QC reporting node]\n        dd[D]\n        ee[E]\n        cc -->|l1,l2,l3,l4| dd\n        dd -->|l1,l2,l3,l4| ee\n    end\n    b -->|l1,l2,l3,l4| cc\n"
       }
     ]
   },
