@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1193" height="450" viewBox="0 0 1193 450">
+<defs>
+</defs>
+<style>.nf-metro-bg { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }
+.nf-metro-title { fill: var(--nfm-map-title-color, light-dark(#111111, #ffffff)); }
+.nf-metro-station-label { fill: var(--nfm-map-label-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-section-box { fill: var(--nfm-map-section-fill, light-dark(#ededed, #373737)); stroke: var(--nfm-map-section-stroke, light-dark(#e6e6e6, #595959)); }
+.nf-metro-section-label { fill: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
+.nf-metro-group-label { fill: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
+.nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
+.nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
+.nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
+.nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
+<rect x="0" y="0" width="1193" height="450" fill="#2b2b2b" class="nf-metro-bg" />
+<text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Merge Leftmost Sink Branch</text>
+<rect x="240.0" y="70.0" width="163.5" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="blocker" data-section-lines="a" />
+<circle cx="251.0" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="blocker" />
+<text x="251.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="blocker">2</text>
+<text x="267.0" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="blocker">Blocker</text>
+<rect x="503.5" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="step_a" data-section-lines="a" />
+<circle cx="514.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="step_a" />
+<text x="514.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="step_a">3</text>
+<text x="530.5" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="step_a">Step A</text>
+<rect x="763.5" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="step_b" data-section-lines="a" />
+<circle cx="774.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="step_b" />
+<text x="774.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="step_b">4</text>
+<text x="790.5" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="step_b">Step B</text>
+<rect x="973.5" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="extra" data-section-lines="a" />
+<circle cx="984.5" cy="55.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="extra" />
+<text x="984.5" y="55.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="extra">5</text>
+<text x="1000.5" y="55.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="extra">Extra</text>
+<rect x="30.0" y="248.0" width="160.0" height="100.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="sink" data-section-lines="a" />
+<circle cx="41.0" cy="233.0" r="11" fill="#333333" class="nf-metro-section-num-circle" data-section-id="sink" />
+<text x="41.0" y="233.0" font-size="12" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="sink">1</text>
+<text x="57.0" y="233.0" font-size="16.0" fill="#c8c8c8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="sink">Sink</text>
+<path d="M293.5,120.0 L353.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M553.5,120.0 L613.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M813.5,120.0 L873.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M1023.5,120.0 L1083.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M80.0,298.0 L140.0,298.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M353.5,120.0 L403.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M503.5,120.0 L553.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M613.5,120.0 L663.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M763.5,120.0 L813.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M30.0,298.0 L80.0,298.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M873.5,120.0 L923.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M973.5,120.0 L1023.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M403.5,120.0 L503.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M663.5,120.0 L673.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M673.5,120.0 L763.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M923.5,120.0 L933.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M933.5,120.0 L973.5,120.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M673.5,120.0 L673.5,120.0 Q683.5,120.0,683.5,130.0 L683.5,186.0 Q683.5,196.0,673.5,196.0 L663.5,196.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-a" data-line-id="a" />
+<path d="M933.5,120.0 L939.5,120.0 Q949.5,120.0,949.5,130.0 L949.5,186.0 Q949.5,196.0,939.5,196.0 L24.0,196.0 Q14.0,196.0,14.0,206.0 L14.0,288.0 Q14.0,298.0,24.0,298.0 L30.0,298.0" stroke="#e63946" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-a" data-line-id="a" />
+<rect x="288.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bl1" data-station-lines="a" data-station-label="Block Start" data-section-id="blocker" data-section-name="Blocker" />
+<rect x="348.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bl2" data-station-lines="a" data-station-label="Block End" data-section-id="blocker" data-section-name="Blocker" />
+<rect x="548.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="a1" data-station-lines="a" data-station-label="Process A" data-section-id="step_a" data-section-name="Step A" />
+<rect x="608.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="a2" data-station-lines="a" data-station-label="Out A" data-section-id="step_a" data-section-name="Step A" />
+<rect x="808.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="b1" data-station-lines="a" data-station-label="Process B" data-section-id="step_b" data-section-name="Step B" />
+<rect x="868.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="b2" data-station-lines="a" data-station-label="Out B" data-section-id="step_b" data-section-name="Step B" />
+<rect x="1018.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="e1" data-station-lines="a" data-station-label="Extra" data-section-id="extra" data-section-name="Extra" />
+<rect x="1078.5" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="e2" data-station-lines="a" data-station-label="Extra Out" data-section-id="extra" data-section-name="Extra" />
+<rect x="75.0" y="293.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="t1" data-station-lines="a" data-station-label="Collect" data-section-id="sink" data-section-name="Sink" />
+<rect x="135.0" y="293.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="t2" data-station-lines="a" data-station-label="Report" data-section-id="sink" data-section-name="Sink" />
+<text x="293.5" y="131.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="hanging">Block Start</text>
+<text x="293.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="bl1" class="nf-metro-station-label">Block Start</text>
+<text x="553.5" y="131.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="hanging">Process A</text>
+<text x="553.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="a1" class="nf-metro-station-label">Process A</text>
+<text x="813.5" y="131.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="hanging">Process B</text>
+<text x="813.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="b1" class="nf-metro-station-label">Process B</text>
+<text x="1023.5" y="131.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="hanging">Extra</text>
+<text x="1023.5" y="131.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="e1" class="nf-metro-station-label">Extra</text>
+<text x="80.0" y="309.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="hanging">Collect</text>
+<text x="80.0" y="309.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="hanging" data-station-id="t1" class="nf-metro-station-label">Collect</text>
+<text x="353.5" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="auto">Block End</text>
+<text x="353.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="bl2" class="nf-metro-station-label">Block End</text>
+<text x="613.5" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="auto">Out A</text>
+<text x="613.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="a2" class="nf-metro-station-label">Out A</text>
+<text x="873.5" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="auto">Out B</text>
+<text x="873.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="b2" class="nf-metro-station-label">Out B</text>
+<text x="1083.5" y="106.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="auto">Extra Out</text>
+<text x="1083.5" y="106.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="e2" class="nf-metro-station-label">Extra Out</text>
+<text x="140.0" y="284.0" font-size="13.0" fill="#2b2b2b" stroke="#2b2b2b" stroke-width="3.0" stroke-linejoin="round" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" aria-hidden="true" class="nf-metro-label-halo" text-anchor="middle" dominant-baseline="auto">Report</text>
+<text x="140.0" y="284.0" font-size="13.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="auto" data-station-id="t2" class="nf-metro-station-label">Report</text>
+<circle cx="683.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="683.5" cy="196.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="949.5" cy="120.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="949.5" cy="196.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="14.0" cy="196.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<circle cx="14.0" cy="298.0" r="3.0" fill="rgba(255, 200, 50, 0.6)" />
+<path d="M403.5,115.0 L408.5,120.0 L403.5,125.0 L398.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="403.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">blocker__exit_right_0 (right)</text>
+<path d="M663.5,115.0 L668.5,120.0 L663.5,125.0 L658.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="663.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">step_a__exit_right_1 (right)</text>
+<path d="M923.5,115.0 L928.5,120.0 L923.5,125.0 L918.5,120.0 Z" fill="rgba(80, 180, 255, 0.7)" stroke="none" />
+<text x="923.5" y="112.0" font-size="7" fill="rgba(80, 180, 255, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">step_b__exit_right_2 (right)</text>
+<path d="M503.5,115.0 L508.5,120.0 L503.5,125.0 L498.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="503.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">step_a__entry_left_3 (left)</text>
+<path d="M763.5,115.0 L768.5,120.0 L763.5,125.0 L758.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="763.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">step_b__entry_left_4 (left)</text>
+<path d="M30.0,293.0 L35.0,298.0 L30.0,303.0 L25.0,298.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="30.0" y="290.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">sink__entry_left_5 (left)</text>
+<path d="M973.5,115.0 L978.5,120.0 L973.5,125.0 L968.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="973.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">extra__entry_left_6 (left)</text>
+<path d="M673.5,115.0 L678.5,120.0 L673.5,125.0 L668.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="673.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_7 (?)</text>
+<path d="M933.5,115.0 L938.5,120.0 L933.5,125.0 L928.5,120.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="933.5" y="112.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__junction_8 (?)</text>
+<path d="M20.0,293.0 L25.0,298.0 L20.0,303.0 L15.0,298.0 Z" fill="rgba(255, 80, 80, 0.7)" stroke="none" />
+<text x="20.0" y="290.0" font-size="7" fill="rgba(255, 80, 80, 0.7)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle" dominant-baseline="auto">__merge_2 (?)</text>
+<path d="M215.0,50.0 L215.0,368.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="215.0" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 0|1</text>
+<path d="M453.5,50.0 L453.5,368.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="453.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 1|3</text>
+<path d="M713.5,50.0 L713.5,368.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="713.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 3|5</text>
+<path d="M948.5,50.0 L948.5,368.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="948.5" y="46.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">col 5|6</text>
+<path d="M10.0,209.0 L1153.5,209.0" stroke="rgba(255, 255, 0, 0.5)" stroke-width="1" stroke-dasharray="6,4" />
+<text x="6.0" y="209.0" font-size="7" fill="rgba(255, 255, 0, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0|1</text>
+<path d="M230.0,120.0 L413.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="226.0" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M493.5,120.0 L673.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="489.5" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M753.5,120.0 L933.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="749.5" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M963.5,120.0 L1143.5,120.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="959.5" y="120.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 0 grid</text>
+<path d="M20.0,298.0 L200.0,298.0" stroke="rgba(80, 255, 180, 0.5)" stroke-width="0.75" stroke-dasharray="4,6" />
+<text x="16.0" y="298.0" font-size="7" fill="rgba(80, 255, 180, 0.5)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">row 1 grid</text>
+<rect x="30.0" y="378.0" width="67.7" height="48.0" rx="6" ry="6" fill="rgba(0, 0, 0, 0.3)" class="nf-metro-legend-bg" />
+<path d="M42.0,402.0 L66.0,402.0" stroke="#e63946" stroke-width="3.0" stroke-linecap="round" />
+<text x="78.0" y="402.0" font-size="14.0" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">A</text>
+<text x="1163.0" y="442.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>
