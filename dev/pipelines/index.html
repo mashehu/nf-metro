@@ -114,6 +114,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
 .nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
 .nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
 .nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
 <rect x="0" y="0" width="1509" height="585" fill="#2b2b2b" class="nf-metro-bg" />
 <rect x="30.0" y="70.0" width="632.5" height="151.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocessing" data-section-lines="hisat2,pseudo_kallisto,pseudo_salmon,star_rsem,star_salmon" />
@@ -386,6 +387,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
 .nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
 .nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
 .nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
 <rect x="0" y="0" width="2321" height="934" fill="#2b2b2b" class="nf-metro-bg" />
 <rect x="22.0" y="50.0" width="1219.2562761231593" height="327.7361361375347" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocessing" data-section-lines="core" />
@@ -525,17 +527,17 @@
 <path d="M61.0,84.0 L61.0,92.0 L69.0,92.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
 <text x="55.0" y="101.2" font-size="7.666666666666667" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">FASTQ</text>
 </g>
-<rect x="126.47737367038067" y="175.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#ffffff" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="convert" data-station-lines="core" data-station-label="convert" data-section-id="preprocessing" data-section-name="Pre-processing" />
+<rect x="126.47737367038067" y="175.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#ffffff" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="convert" data-station-lines="core" data-station-label="convert" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="177.95474734076134" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastqc" data-station-lines="core" data-station-label="FastQC" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="229.432121011142" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="umi" data-station-lines="core" data-station-label="UMI" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="280.9094946815227" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="fastp" data-station-lines="core" data-station-label="FastP" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="332.38686835190333" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bbsplit" data-station-lines="core" data-station-label="BBsplit" data-section-id="preprocessing" data-section-name="Pre-processing" />
-<rect x="383.864242022284" y="175.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#2f7f74" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="mapping" data-station-lines="core" data-station-label="mapping" data-section-id="preprocessing" data-section-name="Pre-processing" />
-<rect x="547.0730044894381" y="175.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#ffffff" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="bam_convert" data-station-lines="core" data-station-label="convert" data-section-id="preprocessing" data-section-name="Pre-processing" />
-<rect x="547.0730044894381" y="215.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#2f7f74" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="markduplicates" data-station-lines="core" data-station-label="markduplicates" data-section-id="preprocessing" data-section-name="Pre-processing" />
+<rect x="383.864242022284" y="175.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#2f7f74" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="mapping" data-station-lines="core" data-station-label="mapping" data-section-id="preprocessing" data-section-name="Pre-processing" />
+<rect x="547.0730044894381" y="175.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#ffffff" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="bam_convert" data-station-lines="core" data-station-label="convert" data-section-id="preprocessing" data-section-name="Pre-processing" />
+<rect x="547.0730044894381" y="215.0" width="10.0" height="10.0" rx="0.0" ry="0.0" fill="#2f7f74" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="markduplicates" data-station-lines="core" data-station-label="markduplicates" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="774.6317669565922" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mosdepth" data-station-lines="core" data-station-label="mosdepth, samtools" data-section-id="preprocessing" data-section-name="Pre-processing" />
-<rect x="872.6317669565921" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#4CAF50" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="prepare_recal" data-station-lines="core" data-station-label="prepare recalibration" data-section-id="preprocessing" data-section-name="Pre-processing" />
-<rect x="970.6317669565922" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#4CAF50" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="applybqsr" data-station-lines="core" data-station-label="applybqsr" data-section-id="preprocessing" data-section-name="Pre-processing" />
+<rect x="872.6317669565921" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#4CAF50" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="prepare_recal" data-station-lines="core" data-station-label="prepare recalibration" data-section-id="preprocessing" data-section-name="Pre-processing" />
+<rect x="970.6317669565922" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#4CAF50" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="applybqsr" data-station-lines="core" data-station-label="applybqsr" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="1068.6317669565922" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mosdepth_qc" data-station-lines="core" data-station-label="mosdepth, samtools" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="1120.1091406269727" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="ngscheckmate" data-station-lines="core" data-station-label="NGSCheckmate" data-section-id="preprocessing" data-section-name="Pre-processing" />
 <rect x="453.864242022284" y="135.0" width="10.0" height="10.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="mapped_out" data-station-lines="core" data-station-label="mapped_out" data-section-id="preprocessing" data-section-name="Pre-processing" />
@@ -579,7 +581,7 @@
 <path d="M1076.6317669565922,124.0 L1076.6317669565922,132.0 L1084.6317669565922,132.0" fill="none" stroke="#333333" stroke-width="0.8999999999999999" />
 <text x="1070.6317669565922" y="141.2" font-size="9.583333333333334" fill="#000000" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em">CRAM</text>
 </g>
-<rect x="1373.006276123159" y="175.0" width="20.0" height="10.0" rx="5.0" ry="5.0" fill="#2b2b2b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="vc_anchor" data-station-lines="core" data-station-label="variant calling" data-section-id="variantcalling" data-section-name="Variant calling" />
+<rect x="1373.006276123159" y="175.0" width="20.0" height="10.0" rx="5.0" ry="5.0" fill="#2b2b2b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="vc_anchor" data-station-lines="core" data-station-label="variant calling" data-section-id="variantcalling" data-section-name="Variant calling" />
 <rect x="1429.4836497935398" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="bcftools" data-station-lines="core" data-station-label="bcftools" data-section-id="variantcalling" data-section-name="Variant calling" />
 <rect x="1480.9610234639204" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="samtools_vc" data-station-lines="core" data-station-label="samtools" data-section-id="variantcalling" data-section-name="Variant calling" />
 <rect x="1579.238397134301" y="175.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#333333" stroke-width="1.5" class="nf-metro-station" data-station-id="varlociraptor" data-station-lines="core" data-station-label="Varlociraptor" data-section-id="variantcalling" data-section-name="Variant calling" />
@@ -628,8 +630,8 @@
 <circle cx="183.47737367038067" cy="706.7953170128993" r="6.75" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="freebayes" data-line-id="pair_t" />
 <circle cx="234.95474734076132" cy="624.7953170128993" r="6.5" fill="#333333" stroke="#333333" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="haplotypecaller" data-line-id="germline" />
 <circle cx="234.95474734076132" cy="624.7953170128993" r="5.0" fill="#ffffff" stroke="#ffffff" stroke-width="0" class="nf-metro-rail-knob" data-station-id="haplotypecaller" data-line-id="germline" />
-<rect x="281.43212101114204" y="619.7953170128993" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#1b3a6b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="haplotyper" data-station-lines="germline" data-station-label="Sentieon Haplotyper" data-section-id="calling" data-section-name="Example analysis pathways" />
-<rect x="332.9094946815227" y="619.7953170128993" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#1b3a6b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station" data-station-id="dnascope" data-station-lines="germline" data-station-label="Sentieon DNAscope" data-section-id="calling" data-section-name="Example analysis pathways" />
+<rect x="281.43212101114204" y="619.7953170128993" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#1b3a6b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="haplotyper" data-station-lines="germline" data-station-label="Sentieon Haplotyper" data-section-id="calling" data-section-name="Example analysis pathways" />
+<rect x="332.9094946815227" y="619.7953170128993" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#1b3a6b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-station nf-metro-marker-stroke" data-station-id="dnascope" data-station-lines="germline" data-station-label="Sentieon DNAscope" data-section-id="calling" data-section-name="Example analysis pathways" />
 <path d="M389.38686835190333,664.7953170128993 L389.38686835190333,706.7953170128993" stroke="#f0f0f0" stroke-width="10.0" stroke-linecap="round" class="nf-metro-rail-connector" data-station-id="tnscope" data-station-lines="pair_n,pair_t,tumor_only" data-station-label="Sentieon TNscope" data-section-id="calling" data-section-name="Example analysis pathways" />
 <circle cx="389.38686835190333" cy="664.7953170128993" r="8.25" fill="#f0f0f0" stroke="#f0f0f0" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="tnscope" data-line-id="tumor_only" />
 <circle cx="389.38686835190333" cy="702.7953170128993" r="8.25" fill="#f0f0f0" stroke="#f0f0f0" stroke-width="0" class="nf-metro-rail-knob-outline" data-station-id="tnscope" data-line-id="pair_n" />
@@ -849,15 +851,15 @@
 <path d="M1873.136437029194,744.5900498686162 L1897.136437029194,744.5900498686162" stroke="#0570b0" stroke-width="3.0" stroke-linecap="round" />
 <path d="M1873.136437029194,747.5900498686162 L1897.136437029194,747.5900498686162" stroke="#d62728" stroke-width="3.0" stroke-linecap="round" />
 <text x="1909.136437029194" y="746.0900498686162" font-size="18.2" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Tumor-normal pair</text>
-<rect x="1879.136437029194" y="774.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#ffffff" stroke="#f0f0f0" stroke-width="1.5" />
+<rect x="1879.136437029194" y="774.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#ffffff" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-marker-stroke" />
 <text x="1909.136437029194" y="780.0900498686162" font-size="18.2" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Mandatory</text>
-<rect x="1879.136437029194" y="798.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#4CAF50" stroke="#f0f0f0" stroke-width="1.5" />
+<rect x="1879.136437029194" y="798.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#4CAF50" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-marker-stroke" />
 <text x="1909.136437029194" y="804.0900498686162" font-size="18.2" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Parabricks accelerated</text>
-<rect x="1879.136437029194" y="822.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#1b3a6b" stroke="#f0f0f0" stroke-width="1.5" />
+<rect x="1879.136437029194" y="822.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#1b3a6b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-marker-stroke" />
 <text x="1909.136437029194" y="828.0900498686162" font-size="18.2" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Sentieon accelerated</text>
-<rect x="1879.136437029194" y="846.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#2f7f74" stroke="#f0f0f0" stroke-width="1.5" />
+<rect x="1879.136437029194" y="846.0900498686162" width="12.0" height="12.0" rx="0.0" ry="0.0" fill="#2f7f74" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-marker-stroke" />
 <text x="1909.136437029194" y="852.0900498686162" font-size="18.2" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Parabricks &amp; Sentieon accelerated</text>
-<rect x="1874.936437029194" y="870.0900498686162" width="20.4" height="12.0" rx="6.0" ry="6.0" fill="#2b2b2b" stroke="#f0f0f0" stroke-width="1.5" />
+<rect x="1874.936437029194" y="870.0900498686162" width="20.4" height="12.0" rx="6.0" ry="6.0" fill="#2b2b2b" stroke="#f0f0f0" stroke-width="1.5" class="nf-metro-marker-stroke" />
 <text x="1909.136437029194" y="876.0900498686162" font-size="18.2" fill="#e0e0e0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Expanded in pathways panel</text>
 <text x="2291.0" y="926.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
 <text x="30.0" y="926.0" font-size="11" fill="rgba(200, 200, 200, 0.85)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="start">Adapted from: Fellows Yates, James A., et al. PeerJ 9 (2021)</text>
@@ -899,6 +901,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
 .nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
 .nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
 .nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
 <rect x="0" y="0" width="1345" height="492" fill="#2b2b2b" class="nf-metro-bg" />
 <rect x="22.0" y="70.0" width="324.0" height="186.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="input_processing" data-section-lines="peptide,protein,vcf" />
@@ -1091,6 +1094,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
 .nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
 .nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
 .nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
 <rect x="0" y="0" width="1062" height="376" fill="#2b2b2b" class="nf-metro-bg" />
 <rect x="22.0" y="70.0" width="324.0" height="140.0" rx="8" ry="8" fill="#373737" stroke="#595959" stroke-width="1.0" class="nf-metro-section-box" data-section-id="preprocessing" data-section-lines="bam,fastq" />
@@ -1228,6 +1232,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
 .nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
 .nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
 .nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
 <rect x="0" y="0" width="977" height="615" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/variantprioritization</text>
@@ -1378,6 +1383,7 @@
 .nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
 .nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
 .nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
 .nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
 <rect x="0" y="0" width="1761" height="927" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">nf-core/variantbenchmarking</text>
@@ -1757,6 +1763,7 @@ stats" data-section-id="stats" data-section-name="Variant Statistics" />
 .nf-metro-group-underline { stroke: var(--nfm-map-section-label-color, light-dark(#666666, #c8c8c8)); }
 .nf-metro-legend-bg { fill: var(--nfm-map-legend-bg, light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.3))); }
 .nf-metro-legend-text { fill: var(--nfm-map-legend-text-color, light-dark(#333333, #e0e0e0)); }
+.nf-metro-marker-stroke { stroke: var(--nfm-map-marker-stroke, light-dark(#333333, #f0f0f0)); }
 .nf-metro-label-halo { fill: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); stroke: var(--nfm-map-bg, light-dark(#f5f5f5, #2b2b2b)); }</style>
 <rect x="0" y="0" width="1443" height="455" fill="#2b2b2b" class="nf-metro-bg" />
 <text x="60.0" y="30.0" font-size="24.0" fill="#ffffff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">sanger-tol/genomeassembly</text>
