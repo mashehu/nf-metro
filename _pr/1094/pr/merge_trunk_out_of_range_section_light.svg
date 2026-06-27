@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1180" height="450" viewBox="0 0 1180 450">
+<defs>
+</defs>
+<style>.nf-metro-bg { fill: var(--nfm-bg, #f8f9fa); }
+.nf-metro-title { fill: var(--nfm-title-color, #160F26); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #242424); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #F3F3F4); stroke: var(--nfm-section-stroke, #D0CFD4); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(248, 249, 250, 0.9)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #242424); }</style>
+<rect x="0" y="0" width="1180" height="450" fill="#f8f9fa" class="nf-metro-bg" />
+<text x="60.0" y="30.0" font-size="26.0" fill="#160F26" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Merge Trunk Out-of-Range Section</text>
+<rect x="60.0" y="70.0" width="100.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="src_far" data-section-lines="main" />
+<circle cx="71.0" cy="55.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="src_far" />
+<text x="71.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="src_far">1</text>
+<text x="87.0" y="55.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="src_far">Source Far</text>
+<rect x="240.0" y="70.0" width="100.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="mid" data-section-lines="main" />
+<circle cx="251.0" cy="55.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="mid" />
+<text x="251.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="mid">2</text>
+<text x="267.0" y="55.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="mid">Mid</text>
+<rect x="420.0" y="70.0" width="100.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="src_near" data-section-lines="main" />
+<circle cx="431.0" cy="55.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="src_near" />
+<text x="431.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="src_near">3</text>
+<text x="447.0" y="55.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="src_near">Source Near</text>
+<rect x="570.0" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="sink" data-section-lines="main" />
+<circle cx="581.0" cy="55.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="sink" />
+<text x="581.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="sink">4</text>
+<text x="597.0" y="55.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="sink">Sink</text>
+<rect x="810.0" y="70.0" width="100.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="extra" data-section-lines="main" />
+<circle cx="821.0" cy="55.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="extra" />
+<text x="821.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="extra">5</text>
+<text x="837.0" y="55.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="extra">Extra</text>
+<rect x="990.0" y="248.0" width="130.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="other" data-section-lines="main" />
+<circle cx="1001.0" cy="363.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="other" />
+<text x="1001.0" y="363.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="other">6</text>
+<text x="1017.0" y="363.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="other">Other Row</text>
+<path d="M620.0,120.0 L680.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M290.0,120.0 L340.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M420.0,120.0 L470.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M110.0,120.0 L160.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M570.0,120.0 L620.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M470.0,120.0 L520.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M810.0,120.0 L860.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M860.0,120.0 L910.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M1028.0,248.0 L1028.0,288.0 Q1028.0,298.0,1038.0,298.0 L1058.0,298.0" stroke="#2db572" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M340.0,120.0 L420.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M160.0,120.0 L170.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M520.0,120.0 L530.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M910.0,120.0 L910.0,120.0 Q920.0,120.0,920.0,130.0 L920.0,186.0 Q920.0,196.0,930.0,196.0 L1018.0,196.0 Q1028.0,196.0,1028.0,206.0 L1028.0,248.0" stroke="#2db572" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M170.0,120.0 L186.0,120.0 Q196.0,120.0,196.0,130.0 L196.0,185.0 Q196.0,195.0,206.0,195.0 L541.0,195.0 Q551.0,195.0,551.0,185.0 L551.0,130.0 Q551.0,120.0,561.0,120.0 L570.0,120.0" stroke="#2db572" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M530.0,120.0 L540.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M540.0,120.0 L570.0,120.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" class="metro-line-main" data-line-id="main" />
+<path d="M170.0,120.0 L186.0,120.0 Q196.0,120.0,196.0,130.0 L196.0,181.0 Q196.0,195.0,210.0,195.0 L760.0,195.0 Q770.0,195.0,770.0,185.0 L770.0,130.0 Q770.0,120.0,780.0,120.0 L810.0,120.0" stroke="#2db572" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<path d="M529.0,120.0 L529.0,120.0 Q539.0,120.0,539.0,130.0 L539.0,185.0 Q539.0,195.0,549.0,195.0 L560.0,195.0" stroke="#2db572" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-main" data-line-id="main" />
+<rect x="105.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="far1" data-station-lines="main" data-station-label="Far" data-section-id="src_far" data-section-name="Source Far" />
+<rect x="285.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="m1" data-station-lines="main" data-station-label="Mid Step" data-section-id="mid" data-section-name="Mid" />
+<rect x="465.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="near1" data-station-lines="main" data-station-label="Near" data-section-id="src_near" data-section-name="Source Near" />
+<rect x="615.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="merge" data-station-lines="main" data-station-label="Merge" data-section-id="sink" data-section-name="Sink" />
+<rect x="675.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="report" data-station-lines="main" data-station-label="Report" data-section-id="sink" data-section-name="Sink" />
+<rect x="855.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="e1" data-station-lines="main" data-station-label="Extra Step" data-section-id="extra" data-section-name="Extra" />
+<rect x="1053.0" y="293.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="o1" data-station-lines="main" data-station-label="Other" data-section-id="other" data-section-name="Other Row" />
+<text x="620.0" y="131.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Merge</text>
+<text x="620.0" y="131.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="merge" class="nf-metro-station-label">Merge</text>
+<text x="110.0" y="131.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Far</text>
+<text x="110.0" y="131.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="far1" class="nf-metro-station-label">Far</text>
+<text x="290.0" y="131.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Mid Step</text>
+<text x="290.0" y="131.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="m1" class="nf-metro-station-label">Mid Step</text>
+<text x="470.0" y="131.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Near</text>
+<text x="470.0" y="131.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="near1" class="nf-metro-station-label">Near</text>
+<text x="860.0" y="131.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Extra Step</text>
+<text x="860.0" y="131.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="e1" class="nf-metro-station-label">Extra Step</text>
+<text x="1058.0" y="309.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Other</text>
+<text x="1058.0" y="309.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="o1" class="nf-metro-station-label">Other</text>
+<text x="680.0" y="106.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Report</text>
+<text x="680.0" y="106.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="report" class="nf-metro-station-label">Report</text>
+<rect x="60.0" y="378.0" width="95.2" height="48.0" rx="6" ry="6" fill="rgba(248, 249, 250, 0.9)" class="nf-metro-legend-bg" />
+<path d="M72.0,402.0 L96.0,402.0" stroke="#2db572" stroke-width="4.0" stroke-linecap="round" />
+<text x="108.0" y="402.0" font-size="16.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Main</text>
+<text x="1150.0" y="442.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="467" height="597" viewBox="0 0 467 597">
+<defs>
+</defs>
+<style>.nf-metro-bg { fill: var(--nfm-bg, #f8f9fa); }
+.nf-metro-title { fill: var(--nfm-title-color, #160F26); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #242424); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #F3F3F4); stroke: var(--nfm-section-stroke, #D0CFD4); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(248, 249, 250, 0.9)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #242424); }</style>
+<rect x="0" y="0" width="467" height="597" fill="#f8f9fa" class="nf-metro-bg" />
+<text x="60.0" y="30.0" font-size="26.0" fill="#160F26" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Self-Crossing Bridge</text>
+<rect x="30.0" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="top" data-section-lines="bus" />
+<circle cx="41.0" cy="55.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="top" />
+<text x="41.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="top">1</text>
+<text x="57.0" y="55.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="top">Top</text>
+<rect x="30.0" y="220.0" width="160.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="mid_src" data-section-lines="bus" />
+<circle cx="41.0" cy="205.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="mid_src" />
+<text x="41.0" y="205.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="mid_src">3</text>
+<text x="57.0" y="205.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="mid_src">Mid Source</text>
+<rect x="243.5" y="220.0" width="163.5" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="mid_sink" data-section-lines="bus" />
+<circle cx="254.5" cy="205.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="mid_sink" />
+<text x="254.5" y="205.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="mid_sink">4</text>
+<text x="270.5" y="205.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="mid_sink">Mid Sink</text>
+<rect x="30.0" y="370.0" width="163.5" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="bus_sink" data-section-lines="bus" />
+<circle cx="41.0" cy="355.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="bus_sink" />
+<text x="41.0" y="355.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="bus_sink">2</text>
+<text x="57.0" y="355.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="bus_sink">Bus Sink</text>
+<path d="M80.0,120.0 L140.0,120.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M80.0,270.0 L140.0,270.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M297.0,270.0 L357.0,270.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M83.5,420.0 L143.5,420.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M140.0,120.0 L190.0,120.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M30.0,420.0 L83.5,420.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M140.0,270.0 L190.0,270.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M243.5,270.0 L297.0,270.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M190.0,120.0 L196.0,120.0 Q206.0,120.0,206.0,130.0 L206.0,485.0 Q206.0,495.0,196.0,495.0 L24.0,495.0 Q14.0,495.0,14.0,485.0 L14.0,430.0 Q14.0,420.0,24.0,420.0 L30.0,420.0" stroke="#0570b0" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-bus" data-line-id="bus" />
+<path d="M190.0,270.0 L202.0,270.0 M210.0,270.0 L243.5,270.0" stroke="#0570b0" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-bus" data-line-id="bus" />
+<rect x="75.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="t1" data-station-lines="bus" data-station-label="Top In" data-section-id="top" data-section-name="Top" />
+<rect x="135.0" y="115.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="t2" data-station-lines="bus" data-station-label="Top Out" data-section-id="top" data-section-name="Top" />
+<rect x="75.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="m1" data-station-lines="bus" data-station-label="Mid In" data-section-id="mid_src" data-section-name="Mid Source" />
+<rect x="135.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="m2" data-station-lines="bus" data-station-label="Mid Out" data-section-id="mid_src" data-section-name="Mid Source" />
+<rect x="292.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="ms1" data-station-lines="bus" data-station-label="Mid Collect" data-section-id="mid_sink" data-section-name="Mid Sink" />
+<rect x="352.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="ms2" data-station-lines="bus" data-station-label="Mid Report" data-section-id="mid_sink" data-section-name="Mid Sink" />
+<rect x="78.5" y="415.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="b1" data-station-lines="bus" data-station-label="Bus Collect" data-section-id="bus_sink" data-section-name="Bus Sink" />
+<rect x="138.5" y="415.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="b2" data-station-lines="bus" data-station-label="Bus Report" data-section-id="bus_sink" data-section-name="Bus Sink" />
+<text x="80.0" y="131.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Top In</text>
+<text x="80.0" y="131.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="t1" class="nf-metro-station-label">Top In</text>
+<text x="80.0" y="281.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Mid In</text>
+<text x="80.0" y="281.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="m1" class="nf-metro-station-label">Mid In</text>
+<text x="297.0" y="281.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Mid Collect</text>
+<text x="297.0" y="281.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="ms1" class="nf-metro-station-label">Mid Collect</text>
+<text x="83.5" y="431.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Bus Collect</text>
+<text x="83.5" y="431.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="b1" class="nf-metro-station-label">Bus Collect</text>
+<text x="140.0" y="106.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Top Out</text>
+<text x="140.0" y="106.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="t2" class="nf-metro-station-label">Top Out</text>
+<text x="140.0" y="256.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Mid Out</text>
+<text x="140.0" y="256.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="m2" class="nf-metro-station-label">Mid Out</text>
+<text x="357.0" y="256.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Mid Report</text>
+<text x="357.0" y="256.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="ms2" class="nf-metro-station-label">Mid Report</text>
+<text x="143.5" y="406.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Bus Report</text>
+<text x="143.5" y="406.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="b2" class="nf-metro-station-label">Bus Report</text>
+<rect x="30.0" y="525.0" width="86.4" height="48.0" rx="6" ry="6" fill="rgba(248, 249, 250, 0.9)" class="nf-metro-legend-bg" />
+<path d="M42.0,549.0 L66.0,549.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" />
+<text x="78.0" y="549.0" font-size="16.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">Bus</text>
+<text x="437.0" y="589.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>

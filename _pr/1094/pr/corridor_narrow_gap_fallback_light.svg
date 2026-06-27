@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="626" height="653" viewBox="0 0 626 653">
+<defs>
+</defs>
+<style>.nf-metro-bg { fill: var(--nfm-bg, #f8f9fa); }
+.nf-metro-title { fill: var(--nfm-title-color, #160F26); }
+.nf-metro-station-label { fill: var(--nfm-label-color, #242424); }
+.nf-metro-section-box { fill: var(--nfm-section-fill, #F3F3F4); stroke: var(--nfm-section-stroke, #D0CFD4); }
+.nf-metro-section-label { fill: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-group-label { fill: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-group-underline { stroke: var(--nfm-section-label-color, #6c757d); }
+.nf-metro-legend-bg { fill: var(--nfm-legend-bg, rgba(248, 249, 250, 0.9)); }
+.nf-metro-legend-text { fill: var(--nfm-legend-text-color, #242424); }</style>
+<rect x="0" y="0" width="626" height="653" fill="#f8f9fa" class="nf-metro-bg" />
+<text x="60.0" y="30.0" font-size="26.0" fill="#160F26" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" class="nf-metro-title">Corridor Narrow Gap Fallback</text>
+<rect x="240.0" y="70.0" width="160.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="source" data-section-lines="a,b" />
+<circle cx="251.0" cy="55.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="source" />
+<text x="251.0" y="55.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="source">2</text>
+<text x="267.0" y="55.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="source">Source</text>
+<rect x="240.0" y="220.0" width="280.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="tall" data-section-lines="a" />
+<circle cx="251.0" cy="205.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="tall" />
+<text x="251.0" y="205.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="tall">3</text>
+<text x="267.0" y="205.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="tall">Tall Section</text>
+<rect x="30.0" y="398.0" width="160.0" height="100.0" rx="8" ry="8" fill="#F3F3F4" stroke="#D0CFD4" stroke-width="1.0" class="nf-metro-section-box" data-section-id="target" data-section-lines="a,b" />
+<circle cx="41.0" cy="383.0" r="11" fill="#2D273C" class="nf-metro-section-num-circle" data-section-id="target" />
+<text x="41.0" y="383.0" font-size="12" fill="#ffffff" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" dy="0.3em" data-section-id="target">1</text>
+<text x="57.0" y="383.0" font-size="17.0" fill="#6c757d" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" dy="0.3em" class="nf-metro-section-label" data-section-id="target">Target</text>
+<path d="M290.0,124.0 L350.0,124.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-b" data-line-id="b" />
+<path d="M80.0,452.0 L140.0,452.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-b" data-line-id="b" />
+<path d="M350.0,124.0 L400.0,124.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-b" data-line-id="b" />
+<path d="M30.0,452.0 L80.0,452.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" class="metro-line-b" data-line-id="b" />
+<path d="M400.0,124.0 L548.0,124.0 Q562.0,124.0,562.0,138.0 L562.0,509.0 Q562.0,523.0,548.0,523.0 L24.0,523.0 Q10.0,523.0,10.0,509.0 L10.0,466.0 Q10.0,452.0,24.0,452.0 L30.0,452.0" stroke="#0570b0" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-b" data-line-id="b" />
+<path d="M290.0,120.0 L350.0,120.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M290.0,270.0 L350.0,270.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M350.0,270.0 L410.0,270.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M410.0,270.0 L470.0,270.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M80.0,448.0 L140.0,448.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M350.0,120.0 L400.0,120.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M30.0,448.0 L80.0,448.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M470.0,270.0 L520.0,270.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" class="metro-line-a" data-line-id="a" />
+<path d="M400.0,120.0 L548.0,120.0 Q566.0,120.0,566.0,138.0 L566.0,509.0 Q566.0,527.0,548.0,527.0 L24.0,527.0 Q6.0,527.0,6.0,509.0 L6.0,466.0 Q6.0,448.0,24.0,448.0 L30.0,448.0" stroke="#e63946" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-a" data-line-id="a" />
+<path d="M520.0,270.0 L526.0,270.0 Q536.0,270.0,536.0,280.0 L536.0,336.0 Q536.0,346.0,526.0,346.0 L24.0,346.0 Q6.0,346.0,6.0,364.0 L6.0,430.0 Q6.0,448.0,24.0,448.0 L30.0,448.0" stroke="#e63946" stroke-width="4.0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="metro-line-a" data-line-id="a" />
+<rect x="285.0" y="115.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="s1" data-station-lines="a,b" data-station-label="Input" data-section-id="source" data-section-name="Source" />
+<rect x="345.0" y="115.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="s2" data-station-lines="a,b" data-station-label="Process" data-section-id="source" data-section-name="Source" />
+<rect x="285.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="k1" data-station-lines="a" data-station-label="Step A" data-section-id="tall" data-section-name="Tall Section" />
+<rect x="345.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="k2" data-station-lines="a" data-station-label="Step B" data-section-id="tall" data-section-name="Tall Section" />
+<rect x="405.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="k3" data-station-lines="a" data-station-label="Step C" data-section-id="tall" data-section-name="Tall Section" />
+<rect x="465.0" y="265.0" width="10.0" height="10.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="k4" data-station-lines="a" data-station-label="Step D" data-section-id="tall" data-section-name="Tall Section" />
+<rect x="75.0" y="443.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="t1" data-station-lines="a,b" data-station-label="Process" data-section-id="target" data-section-name="Target" />
+<rect x="135.0" y="443.0" width="10.0" height="14.0" rx="5.0" ry="5.0" fill="#ffffff" stroke="#2D273C" stroke-width="2.0" class="nf-metro-station" data-station-id="t2" data-station-lines="a,b" data-station-label="Output" data-section-id="target" data-section-name="Target" />
+<text x="290.0" y="135.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Input</text>
+<text x="290.0" y="135.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="s1" class="nf-metro-station-label">Input</text>
+<text x="290.0" y="281.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Step A</text>
+<text x="290.0" y="281.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="k1" class="nf-metro-station-label">Step A</text>
+<text x="80.0" y="463.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Process</text>
+<text x="80.0" y="463.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="t1" class="nf-metro-station-label">Process</text>
+<text x="350.0" y="106.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Process</text>
+<text x="350.0" y="106.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="s2" class="nf-metro-station-label">Process</text>
+<text x="350.0" y="256.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Step B</text>
+<text x="350.0" y="256.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="k2" class="nf-metro-station-label">Step B</text>
+<text x="140.0" y="434.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Output</text>
+<text x="140.0" y="434.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="t2" class="nf-metro-station-label">Output</text>
+<text x="410.0" y="281.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="hanging">Step C</text>
+<text x="410.0" y="281.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="hanging" data-station-id="k3" class="nf-metro-station-label">Step C</text>
+<text x="470.0" y="256.0" font-size="14.0" fill="#f8f9fa" stroke="#f8f9fa" stroke-width="3.0" stroke-linejoin="round" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" aria-hidden="true" text-anchor="middle" dominant-baseline="auto">Step D</text>
+<text x="470.0" y="256.0" font-size="14.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" dominant-baseline="auto" data-station-id="k4" class="nf-metro-station-label">Step D</text>
+<rect x="30.0" y="557.0" width="68.8" height="72.0" rx="6" ry="6" fill="rgba(248, 249, 250, 0.9)" class="nf-metro-legend-bg" />
+<path d="M42.0,581.0 L66.0,581.0" stroke="#e63946" stroke-width="4.0" stroke-linecap="round" />
+<text x="78.0" y="581.0" font-size="16.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">A</text>
+<path d="M42.0,605.0 L66.0,605.0" stroke="#0570b0" stroke-width="4.0" stroke-linecap="round" />
+<text x="78.0" y="605.0" font-size="16.0" fill="#242424" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" dy="0.3em" class="nf-metro-legend-text">B</text>
+<text x="596.0" y="645.0" font-size="8" fill="rgba(150, 150, 150, 0.6)" font-family="'Inter Variable', Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="end">created with nf-metro v0.7.2+dev</text>
+</svg>

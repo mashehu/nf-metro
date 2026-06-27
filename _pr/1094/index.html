@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Render diff - PR #1094</title>
+<style>
+  :root {
+    --bg: #1e1e2e;
+    --surface: #2a2a3c;
+    --border: #3a3a4c;
+    --text: #e0e0e0;
+    --muted: #888;
+    --accent: #4ec9b0;
+    --added: #2ea04370;
+    --removed: #da363470;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .summary {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .toc {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .toc h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .toc h3 {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .toc ul {
+    list-style: none;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .toc li {
+    margin-bottom: 0.25rem;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .toc a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+  .badge-changed { background: var(--border); }
+  .badge-added { background: var(--added); }
+  .badge-removed { background: var(--removed); }
+  .section-header {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .diff-entry {
+    margin-bottom: 3rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .diff-entry h3 {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .side {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .side:first-child {
+    border-right: 1px solid var(--border);
+  }
+  .side h4 {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .side img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .side-only {
+    padding: 1rem;
+  }
+  .side-only img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .empty {
+    color: var(--muted);
+    font-style: italic;
+    padding: 2rem;
+    text-align: center;
+  }
+  .toggle-bar {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .toggle-bar button {
+    background: var(--border);
+    color: var(--text);
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .toggle-bar button.active {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .intro {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .intro summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .intro p {
+    margin-top: 0.75rem;
+  }
+  .intro ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  .intro li {
+    margin-bottom: 0.25rem;
+  }
+  .intro code {
+    background: var(--border);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+  .intro a {
+    color: var(--accent);
+  }
+  .metrics {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .metrics h2 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--accent);
+  }
+  .metrics .caption {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+  .metrics table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.82rem;
+  }
+  .metrics th, .metrics td {
+    padding: 0.3rem 0.6rem;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .metrics th:first-child, .metrics td:first-child {
+    text-align: left;
+  }
+  .metrics th {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.7rem;
+  }
+  .metrics td a { color: var(--text); text-decoration: none; }
+  .metrics td a:hover { color: var(--accent); }
+  .m-flat { color: var(--muted); }
+  .m-better { color: #4ec9b0; font-weight: 600; }
+  .m-worse { color: #f38ba8; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Render diff - PR #1094</h1>
+<p class="summary">161 added out of 348 total renders. Generated 2026-06-27 15:08 UTC.</p>
+<details class="intro">
+<summary>What is this page?</summary>
+<p>
+<a href="https://github.com/pinin4fjords/nf-metro">nf-metro</a>
+generates metro-map-style SVG diagrams from Mermaid graph definitions.
+This page is automatically generated for every pull request and shows
+<strong>only the renders that changed</strong> compared to the
+<code>main</code> branch.
+</p>
+<p>
+Use it to check that code changes produce the intended visual result
+without unexpected side-effects on other diagrams. Each entry shows
+the <strong>base</strong> (main) render on the left and the
+<strong>PR</strong> render on the right. Use the toggle buttons to
+switch between side-by-side, base-only, and PR-only views.
+</p>
+<p><strong>What to look for:</strong></p>
+<ul>
+<li>Intended improvements in the PR column</li>
+<li>Unintended regressions (overlapping lines, shifted labels,
+    broken routing) in diagrams you did not mean to change</li>
+<li>New renders (green <em>added</em> badge) or removed renders
+    (red <em>removed</em> badge)</li>
+</ul>
+</details>
+
+<div class="toc">
+<h2>Changed renders</h2>
+<h3><a href="#section-other">Other</a></h3>
+<ul>
+<li><a href="#aligner_row_pinned_continuation_light">aligner_row_pinned_continuation_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#around_below_ep_col_gt0_light">around_below_ep_col_gt0_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#around_section_below_light">around_section_below_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#asymmetric_tree_light">asymmetric_tree_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bottom_row_climb_clear_corridor_light">bottom_row_climb_clear_corridor_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#branch_fold_forward_light">branch_fold_forward_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#branch_fold_stability_light">branch_fold_stability_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bt_chain_light">bt_chain_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bt_exit_top_above_2line_light">bt_exit_top_above_2line_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bt_exit_top_above_light">bt_exit_top_above_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bt_fork_light">bt_fork_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bt_perp_entry_below_light">bt_perp_entry_below_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bt_to_lr_light">bt_to_lr_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bt_to_tb_light">bt_to_tb_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bundle_terminator_continuation_light">bundle_terminator_continuation_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_fan_in_outer_slot_light">bypass_fan_in_outer_slot_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_gap2_rightward_overflow_light">bypass_gap2_rightward_overflow_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_label_rake_left_light">bypass_label_rake_left_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_label_rake_light">bypass_label_rake_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_label_rake_wide_light">bypass_label_rake_wide_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_leftward_far_side_entry_light">bypass_leftward_far_side_entry_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_leftward_overflow_light">bypass_leftward_overflow_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#bypass_v_tight_light">bypass_v_tight_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#clear_channel_target_aware_push_light">clear_channel_target_aware_push_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#compact_gap_peer_conflict_light">compact_gap_peer_conflict_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#compact_hidden_passthrough_light">compact_hidden_passthrough_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#complex_multipath_light">complex_multipath_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#convergence_stacked_sink_light">convergence_stacked_sink_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#convergent_offrow_exit_climb_light">convergent_offrow_exit_climb_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#corridor_narrow_gap_fallback_light">corridor_narrow_gap_fallback_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#cross_col_top_entry_light">cross_col_top_entry_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#cross_column_perp_drop_far_exit_light">cross_column_perp_drop_far_exit_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#cross_column_perp_drop_light">cross_column_perp_drop_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#cross_row_gap_wrap_light">cross_row_gap_wrap_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#cross_track_interchange_light">cross_track_interchange_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#deep_linear_light">deep_linear_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#diagonal_labels_light">diagonal_labels_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#differentialabundance_default_light">differentialabundance_default_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#differentialabundance_light">differentialabundance_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#directional_flow_light">directional_flow_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#disconnected_components_light">disconnected_components_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#disjoint_sameline_trunks_light">disjoint_sameline_trunks_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#divergent_fanout_split_light">divergent_fanout_split_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#dogleg_exempt_distinct_light">dogleg_exempt_distinct_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#dogleg_exempt_sameline_light">dogleg_exempt_sameline_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#dogleg_twoline_fanout_light">dogleg_twoline_fanout_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#exit_corner_offset_dogleg_light">exit_corner_offset_dogleg_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#fan_bypass_nesting_light">fan_bypass_nesting_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#file_icons_light">file_icons_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#fold_double_light">fold_double_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#fold_fan_across_light">fold_fan_across_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#fold_stacked_branch_light">fold_stacked_branch_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#funcprofiler_upstream_light">funcprofiler_upstream_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#genomeassembly_staggered_light">genomeassembly_staggered_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#genomic_pipeline_light">genomic_pipeline_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#group_labels_light">group_labels_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#header_nudge_light">header_nudge_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#header_side_rotated_light">header_side_rotated_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#inrow_skip_breeze_light">inrow_skip_breeze_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#inter_row_wrap_clearance_light">inter_row_wrap_clearance_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#interchange_lane_reorder_light">interchange_lane_reorder_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#junction_entry_align_light">junction_entry_align_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#junction_entry_collision_light">junction_entry_collision_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#junction_entry_reversed_fold_light">junction_entry_reversed_fold_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#junction_fanout_convergence_light">junction_fanout_convergence_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#left_entry_up_wrap_light">left_entry_up_wrap_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#left_exit_sink_below_light">left_exit_sink_below_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#legend_combo_light">legend_combo_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#legend_logo_placement_light">legend_logo_placement_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#line_spread_light">line_spread_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#longread_variant_calling_light">longread_variant_calling_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_perp_bottom_exit_perp_entry_light">lr_perp_bottom_exit_perp_entry_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_perp_bottom_exit_side_entry_light">lr_perp_bottom_exit_side_entry_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_perp_top_exit_perp_entry_diverging_light">lr_perp_top_exit_perp_entry_diverging_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_perp_top_exit_perp_entry_light">lr_perp_top_exit_perp_entry_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_perp_top_exit_side_entry_light">lr_perp_top_exit_side_entry_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_to_tb_top_cross_col_light">lr_to_tb_top_cross_col_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_to_tb_top_drop_light">lr_to_tb_top_drop_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_to_tb_top_drop_two_lines_light">lr_to_tb_top_drop_two_lines_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_to_tb_top_near_vertical_light">lr_to_tb_top_near_vertical_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_to_tb_top_two_lines_light">lr_to_tb_top_two_lines_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_top_entry_cross_column_light">lr_top_entry_cross_column_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#lr_top_entry_cross_column_two_line_light">lr_top_entry_cross_column_two_line_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#marker_styles_light">marker_styles_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_around_below_leftmost_light">merge_around_below_leftmost_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_bottom_row_bypass_light">merge_bottom_row_bypass_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_leftmost_sink_branch_light">merge_leftmost_sink_branch_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_offrow_continuation_light">merge_offrow_continuation_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_port_above_approach_light">merge_port_above_approach_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_pullaway_light">merge_pullaway_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_right_entry_light">merge_right_entry_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_trunk_out_of_range_section_light">merge_trunk_out_of_range_section_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#merge_trunk_over_low_section_light">merge_trunk_over_low_section_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#mismatched_tracks_light">mismatched_tracks_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#mixed_port_sides_light">mixed_port_sides_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#multi_line_bundle_light">multi_line_bundle_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#multicarrier_offrow_exit_climb_light">multicarrier_offrow_exit_climb_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#near_vertical_junction_hook_light">near_vertical_junction_hook_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#off_track_convergence_light">off_track_convergence_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#off_track_convergence_multiline_light">off_track_convergence_multiline_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#off_track_input_above_consumer_light">off_track_input_above_consumer_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#off_track_outputs_light">off_track_outputs_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#parallel_independent_light">parallel_independent_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#peeloff_extra_line_consumer_light">peeloff_extra_line_consumer_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#peeloff_riser_respace_light">peeloff_riser_respace_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#pipeline_epitopeprediction_light">pipeline_epitopeprediction_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#pipeline_genomeassembly_light">pipeline_genomeassembly_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#pipeline_hlatyping_light">pipeline_hlatyping_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#pipeline_rnaseq_auto_light">pipeline_rnaseq_auto_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#pipeline_sarek_metro_light">pipeline_sarek_metro_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#pipeline_variantbenchmarking_light">pipeline_variantbenchmarking_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#pipeline_variantprioritization_light">pipeline_variantprioritization_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#post_convergence_trunk_light">post_convergence_trunk_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#rail_inter_section_light">rail_inter_section_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#rail_offtrack_io_light">rail_offtrack_io_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#rail_offtrack_plain_io_light">rail_offtrack_plain_io_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#reconverge_reversed_fold_light">reconverge_reversed_fold_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#right_entry_from_above_far_light">right_entry_from_above_far_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#right_entry_from_above_light">right_entry_from_above_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#right_entry_gap_above_empty_row_light">right_entry_gap_above_empty_row_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#right_entry_wrap_no_fan_light">right_entry_wrap_no_fan_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#rl_entry_runway_light">rl_entry_runway_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#rnaseq_auto_light">rnaseq_auto_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#rnaseq_lite_light">rnaseq_lite_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#rnaseq_sections_light">rnaseq_sections_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#route_around_intervening_light">route_around_intervening_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#sarek_metro_light">sarek_metro_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#section_diamond_light">section_diamond_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#self_crossing_bridge_light">self_crossing_bridge_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#simple_pipeline_light">simple_pipeline_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#single_section_light">single_section_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#stacked_left_exit_drop_light">stacked_left_exit_drop_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#stacked_lr_serpentine_light">stacked_lr_serpentine_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#symmetric_diamond_beside_wide_fan_light">symmetric_diamond_beside_wide_fan_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_bottom_entry_flow_start_light">tb_bottom_entry_flow_start_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_bottom_exit_bundle_jog_light">tb_bottom_exit_bundle_jog_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_bottom_exit_fork_diamond_light">tb_bottom_exit_fork_diamond_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_column_continuation_two_lines_light">tb_column_continuation_two_lines_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_convergence_straight_drop_light">tb_convergence_straight_drop_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_file_termini_light">tb_file_termini_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_internal_diagonal_light">tb_internal_diagonal_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_left_exit_step_light">tb_left_exit_step_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_lr_exit_left_light">tb_lr_exit_left_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_lr_exit_right_light">tb_lr_exit_right_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_passthrough_continuation_light">tb_passthrough_continuation_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_passthrough_trunk_light">tb_passthrough_trunk_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_perp_exit_side_neighbour_light">tb_perp_exit_side_neighbour_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_right_entry_stack_light">tb_right_entry_stack_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_trunk_through_fan_light">tb_trunk_through_fan_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#tb_two_line_vert_seam_light">tb_two_line_vert_seam_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#terminal_symmetric_fan_light">terminal_symmetric_fan_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#terminus_join_light">terminus_join_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#top_entry_header_clash_light">top_entry_header_clash_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#trunk_through_fan_light">trunk_through_fan_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#uneven_diamond_light">uneven_diamond_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#upward_bypass_light">upward_bypass_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#variant_calling_light">variant_calling_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#wide_fan_in_light">wide_fan_in_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#wide_fan_out_light">wide_fan_out_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#wide_label_fan_light">wide_label_fan_light</a><span class="badge badge-added">added</span></li>
+<li><a href="#wrapped_label_trunk_light">wrapped_label_trunk_light</a><span class="badge badge-added">added</span></li>
+</ul>
+</div>
+<h2 class="section-header" id="section-other">Other</h2>
+
+<div class="diff-entry" id="aligner_row_pinned_continuation_light">
+<h3>Aligner Row Pinned Continuation Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/aligner_row_pinned_continuation_light.svg" alt="PR: aligner_row_pinned_continuation_light"></div>
+</div>
+
+<div class="diff-entry" id="around_below_ep_col_gt0_light">
+<h3>Around Below Ep Col Gt0 Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/around_below_ep_col_gt0_light.svg" alt="PR: around_below_ep_col_gt0_light"></div>
+</div>
+
+<div class="diff-entry" id="around_section_below_light">
+<h3>Around Section Below Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/around_section_below_light.svg" alt="PR: around_section_below_light"></div>
+</div>
+
+<div class="diff-entry" id="asymmetric_tree_light">
+<h3>Asymmetric Tree Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/asymmetric_tree_light.svg" alt="PR: asymmetric_tree_light"></div>
+</div>
+
+<div class="diff-entry" id="bottom_row_climb_clear_corridor_light">
+<h3>Bottom Row Climb Clear Corridor Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bottom_row_climb_clear_corridor_light.svg" alt="PR: bottom_row_climb_clear_corridor_light"></div>
+</div>
+
+<div class="diff-entry" id="branch_fold_forward_light">
+<h3>Branch Fold Forward Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/branch_fold_forward_light.svg" alt="PR: branch_fold_forward_light"></div>
+</div>
+
+<div class="diff-entry" id="branch_fold_stability_light">
+<h3>Branch Fold Stability Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/branch_fold_stability_light.svg" alt="PR: branch_fold_stability_light"></div>
+</div>
+
+<div class="diff-entry" id="bt_chain_light">
+<h3>Bt Chain Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bt_chain_light.svg" alt="PR: bt_chain_light"></div>
+</div>
+
+<div class="diff-entry" id="bt_exit_top_above_2line_light">
+<h3>Bt Exit Top Above 2Line Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bt_exit_top_above_2line_light.svg" alt="PR: bt_exit_top_above_2line_light"></div>
+</div>
+
+<div class="diff-entry" id="bt_exit_top_above_light">
+<h3>Bt Exit Top Above Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bt_exit_top_above_light.svg" alt="PR: bt_exit_top_above_light"></div>
+</div>
+
+<div class="diff-entry" id="bt_fork_light">
+<h3>Bt Fork Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bt_fork_light.svg" alt="PR: bt_fork_light"></div>
+</div>
+
+<div class="diff-entry" id="bt_perp_entry_below_light">
+<h3>Bt Perp Entry Below Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bt_perp_entry_below_light.svg" alt="PR: bt_perp_entry_below_light"></div>
+</div>
+
+<div class="diff-entry" id="bt_to_lr_light">
+<h3>Bt To Lr Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bt_to_lr_light.svg" alt="PR: bt_to_lr_light"></div>
+</div>
+
+<div class="diff-entry" id="bt_to_tb_light">
+<h3>Bt To Tb Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bt_to_tb_light.svg" alt="PR: bt_to_tb_light"></div>
+</div>
+
+<div class="diff-entry" id="bundle_terminator_continuation_light">
+<h3>Bundle Terminator Continuation Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bundle_terminator_continuation_light.svg" alt="PR: bundle_terminator_continuation_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_fan_in_outer_slot_light">
+<h3>Bypass Fan In Outer Slot Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_fan_in_outer_slot_light.svg" alt="PR: bypass_fan_in_outer_slot_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_gap2_rightward_overflow_light">
+<h3>Bypass Gap2 Rightward Overflow Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_gap2_rightward_overflow_light.svg" alt="PR: bypass_gap2_rightward_overflow_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_label_rake_left_light">
+<h3>Bypass Label Rake Left Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_label_rake_left_light.svg" alt="PR: bypass_label_rake_left_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_label_rake_light">
+<h3>Bypass Label Rake Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_label_rake_light.svg" alt="PR: bypass_label_rake_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_label_rake_wide_light">
+<h3>Bypass Label Rake Wide Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_label_rake_wide_light.svg" alt="PR: bypass_label_rake_wide_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_leftward_far_side_entry_light">
+<h3>Bypass Leftward Far Side Entry Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_leftward_far_side_entry_light.svg" alt="PR: bypass_leftward_far_side_entry_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_leftward_overflow_light">
+<h3>Bypass Leftward Overflow Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_leftward_overflow_light.svg" alt="PR: bypass_leftward_overflow_light"></div>
+</div>
+
+<div class="diff-entry" id="bypass_v_tight_light">
+<h3>Bypass V Tight Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/bypass_v_tight_light.svg" alt="PR: bypass_v_tight_light"></div>
+</div>
+
+<div class="diff-entry" id="clear_channel_target_aware_push_light">
+<h3>Clear Channel Target Aware Push Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/clear_channel_target_aware_push_light.svg" alt="PR: clear_channel_target_aware_push_light"></div>
+</div>
+
+<div class="diff-entry" id="compact_gap_peer_conflict_light">
+<h3>Compact Gap Peer Conflict Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/compact_gap_peer_conflict_light.svg" alt="PR: compact_gap_peer_conflict_light"></div>
+</div>
+
+<div class="diff-entry" id="compact_hidden_passthrough_light">
+<h3>Compact Hidden Passthrough Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/compact_hidden_passthrough_light.svg" alt="PR: compact_hidden_passthrough_light"></div>
+</div>
+
+<div class="diff-entry" id="complex_multipath_light">
+<h3>Complex Multipath Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/complex_multipath_light.svg" alt="PR: complex_multipath_light"></div>
+</div>
+
+<div class="diff-entry" id="convergence_stacked_sink_light">
+<h3>Convergence Stacked Sink Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/convergence_stacked_sink_light.svg" alt="PR: convergence_stacked_sink_light"></div>
+</div>
+
+<div class="diff-entry" id="convergent_offrow_exit_climb_light">
+<h3>Convergent Offrow Exit Climb Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/convergent_offrow_exit_climb_light.svg" alt="PR: convergent_offrow_exit_climb_light"></div>
+</div>
+
+<div class="diff-entry" id="corridor_narrow_gap_fallback_light">
+<h3>Corridor Narrow Gap Fallback Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/corridor_narrow_gap_fallback_light.svg" alt="PR: corridor_narrow_gap_fallback_light"></div>
+</div>
+
+<div class="diff-entry" id="cross_col_top_entry_light">
+<h3>Cross Col Top Entry Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/cross_col_top_entry_light.svg" alt="PR: cross_col_top_entry_light"></div>
+</div>
+
+<div class="diff-entry" id="cross_column_perp_drop_far_exit_light">
+<h3>Cross Column Perp Drop Far Exit Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/cross_column_perp_drop_far_exit_light.svg" alt="PR: cross_column_perp_drop_far_exit_light"></div>
+</div>
+
+<div class="diff-entry" id="cross_column_perp_drop_light">
+<h3>Cross Column Perp Drop Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/cross_column_perp_drop_light.svg" alt="PR: cross_column_perp_drop_light"></div>
+</div>
+
+<div class="diff-entry" id="cross_row_gap_wrap_light">
+<h3>Cross Row Gap Wrap Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/cross_row_gap_wrap_light.svg" alt="PR: cross_row_gap_wrap_light"></div>
+</div>
+
+<div class="diff-entry" id="cross_track_interchange_light">
+<h3>Cross Track Interchange Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/cross_track_interchange_light.svg" alt="PR: cross_track_interchange_light"></div>
+</div>
+
+<div class="diff-entry" id="deep_linear_light">
+<h3>Deep Linear Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/deep_linear_light.svg" alt="PR: deep_linear_light"></div>
+</div>
+
+<div class="diff-entry" id="diagonal_labels_light">
+<h3>Diagonal Labels Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/diagonal_labels_light.svg" alt="PR: diagonal_labels_light"></div>
+</div>
+
+<div class="diff-entry" id="differentialabundance_default_light">
+<h3>Differentialabundance Default Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/differentialabundance_default_light.svg" alt="PR: differentialabundance_default_light"></div>
+</div>
+
+<div class="diff-entry" id="differentialabundance_light">
+<h3>Differentialabundance Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/differentialabundance_light.svg" alt="PR: differentialabundance_light"></div>
+</div>
+
+<div class="diff-entry" id="directional_flow_light">
+<h3>Directional Flow Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/directional_flow_light.svg" alt="PR: directional_flow_light"></div>
+</div>
+
+<div class="diff-entry" id="disconnected_components_light">
+<h3>Disconnected Components Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/disconnected_components_light.svg" alt="PR: disconnected_components_light"></div>
+</div>
+
+<div class="diff-entry" id="disjoint_sameline_trunks_light">
+<h3>Disjoint Sameline Trunks Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/disjoint_sameline_trunks_light.svg" alt="PR: disjoint_sameline_trunks_light"></div>
+</div>
+
+<div class="diff-entry" id="divergent_fanout_split_light">
+<h3>Divergent Fanout Split Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/divergent_fanout_split_light.svg" alt="PR: divergent_fanout_split_light"></div>
+</div>
+
+<div class="diff-entry" id="dogleg_exempt_distinct_light">
+<h3>Dogleg Exempt Distinct Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/dogleg_exempt_distinct_light.svg" alt="PR: dogleg_exempt_distinct_light"></div>
+</div>
+
+<div class="diff-entry" id="dogleg_exempt_sameline_light">
+<h3>Dogleg Exempt Sameline Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/dogleg_exempt_sameline_light.svg" alt="PR: dogleg_exempt_sameline_light"></div>
+</div>
+
+<div class="diff-entry" id="dogleg_twoline_fanout_light">
+<h3>Dogleg Twoline Fanout Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/dogleg_twoline_fanout_light.svg" alt="PR: dogleg_twoline_fanout_light"></div>
+</div>
+
+<div class="diff-entry" id="exit_corner_offset_dogleg_light">
+<h3>Exit Corner Offset Dogleg Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/exit_corner_offset_dogleg_light.svg" alt="PR: exit_corner_offset_dogleg_light"></div>
+</div>
+
+<div class="diff-entry" id="fan_bypass_nesting_light">
+<h3>Fan Bypass Nesting Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/fan_bypass_nesting_light.svg" alt="PR: fan_bypass_nesting_light"></div>
+</div>
+
+<div class="diff-entry" id="file_icons_light">
+<h3>File Icons Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/file_icons_light.svg" alt="PR: file_icons_light"></div>
+</div>
+
+<div class="diff-entry" id="fold_double_light">
+<h3>Fold Double Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/fold_double_light.svg" alt="PR: fold_double_light"></div>
+</div>
+
+<div class="diff-entry" id="fold_fan_across_light">
+<h3>Fold Fan Across Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/fold_fan_across_light.svg" alt="PR: fold_fan_across_light"></div>
+</div>
+
+<div class="diff-entry" id="fold_stacked_branch_light">
+<h3>Fold Stacked Branch Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/fold_stacked_branch_light.svg" alt="PR: fold_stacked_branch_light"></div>
+</div>
+
+<div class="diff-entry" id="funcprofiler_upstream_light">
+<h3>Funcprofiler Upstream Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/funcprofiler_upstream_light.svg" alt="PR: funcprofiler_upstream_light"></div>
+</div>
+
+<div class="diff-entry" id="genomeassembly_staggered_light">
+<h3>Genomeassembly Staggered Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/genomeassembly_staggered_light.svg" alt="PR: genomeassembly_staggered_light"></div>
+</div>
+
+<div class="diff-entry" id="genomic_pipeline_light">
+<h3>Genomic Pipeline Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/genomic_pipeline_light.svg" alt="PR: genomic_pipeline_light"></div>
+</div>
+
+<div class="diff-entry" id="group_labels_light">
+<h3>Group Labels Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/group_labels_light.svg" alt="PR: group_labels_light"></div>
+</div>
+
+<div class="diff-entry" id="header_nudge_light">
+<h3>Header Nudge Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/header_nudge_light.svg" alt="PR: header_nudge_light"></div>
+</div>
+
+<div class="diff-entry" id="header_side_rotated_light">
+<h3>Header Side Rotated Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/header_side_rotated_light.svg" alt="PR: header_side_rotated_light"></div>
+</div>
+
+<div class="diff-entry" id="inrow_skip_breeze_light">
+<h3>Inrow Skip Breeze Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/inrow_skip_breeze_light.svg" alt="PR: inrow_skip_breeze_light"></div>
+</div>
+
+<div class="diff-entry" id="inter_row_wrap_clearance_light">
+<h3>Inter Row Wrap Clearance Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/inter_row_wrap_clearance_light.svg" alt="PR: inter_row_wrap_clearance_light"></div>
+</div>
+
+<div class="diff-entry" id="interchange_lane_reorder_light">
+<h3>Interchange Lane Reorder Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/interchange_lane_reorder_light.svg" alt="PR: interchange_lane_reorder_light"></div>
+</div>
+
+<div class="diff-entry" id="junction_entry_align_light">
+<h3>Junction Entry Align Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/junction_entry_align_light.svg" alt="PR: junction_entry_align_light"></div>
+</div>
+
+<div class="diff-entry" id="junction_entry_collision_light">
+<h3>Junction Entry Collision Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/junction_entry_collision_light.svg" alt="PR: junction_entry_collision_light"></div>
+</div>
+
+<div class="diff-entry" id="junction_entry_reversed_fold_light">
+<h3>Junction Entry Reversed Fold Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/junction_entry_reversed_fold_light.svg" alt="PR: junction_entry_reversed_fold_light"></div>
+</div>
+
+<div class="diff-entry" id="junction_fanout_convergence_light">
+<h3>Junction Fanout Convergence Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/junction_fanout_convergence_light.svg" alt="PR: junction_fanout_convergence_light"></div>
+</div>
+
+<div class="diff-entry" id="left_entry_up_wrap_light">
+<h3>Left Entry Up Wrap Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/left_entry_up_wrap_light.svg" alt="PR: left_entry_up_wrap_light"></div>
+</div>
+
+<div class="diff-entry" id="left_exit_sink_below_light">
+<h3>Left Exit Sink Below Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/left_exit_sink_below_light.svg" alt="PR: left_exit_sink_below_light"></div>
+</div>
+
+<div class="diff-entry" id="legend_combo_light">
+<h3>Legend Combo Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/legend_combo_light.svg" alt="PR: legend_combo_light"></div>
+</div>
+
+<div class="diff-entry" id="legend_logo_placement_light">
+<h3>Legend Logo Placement Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/legend_logo_placement_light.svg" alt="PR: legend_logo_placement_light"></div>
+</div>
+
+<div class="diff-entry" id="line_spread_light">
+<h3>Line Spread Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/line_spread_light.svg" alt="PR: line_spread_light"></div>
+</div>
+
+<div class="diff-entry" id="longread_variant_calling_light">
+<h3>Longread Variant Calling Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/longread_variant_calling_light.svg" alt="PR: longread_variant_calling_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_perp_bottom_exit_perp_entry_light">
+<h3>Lr Perp Bottom Exit Perp Entry Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_perp_bottom_exit_perp_entry_light.svg" alt="PR: lr_perp_bottom_exit_perp_entry_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_perp_bottom_exit_side_entry_light">
+<h3>Lr Perp Bottom Exit Side Entry Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_perp_bottom_exit_side_entry_light.svg" alt="PR: lr_perp_bottom_exit_side_entry_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_perp_top_exit_perp_entry_diverging_light">
+<h3>Lr Perp Top Exit Perp Entry Diverging Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_perp_top_exit_perp_entry_diverging_light.svg" alt="PR: lr_perp_top_exit_perp_entry_diverging_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_perp_top_exit_perp_entry_light">
+<h3>Lr Perp Top Exit Perp Entry Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_perp_top_exit_perp_entry_light.svg" alt="PR: lr_perp_top_exit_perp_entry_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_perp_top_exit_side_entry_light">
+<h3>Lr Perp Top Exit Side Entry Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_perp_top_exit_side_entry_light.svg" alt="PR: lr_perp_top_exit_side_entry_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_cross_col_light">
+<h3>Lr To Tb Top Cross Col Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_to_tb_top_cross_col_light.svg" alt="PR: lr_to_tb_top_cross_col_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_drop_light">
+<h3>Lr To Tb Top Drop Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_to_tb_top_drop_light.svg" alt="PR: lr_to_tb_top_drop_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_drop_two_lines_light">
+<h3>Lr To Tb Top Drop Two Lines Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_to_tb_top_drop_two_lines_light.svg" alt="PR: lr_to_tb_top_drop_two_lines_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_near_vertical_light">
+<h3>Lr To Tb Top Near Vertical Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_to_tb_top_near_vertical_light.svg" alt="PR: lr_to_tb_top_near_vertical_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_to_tb_top_two_lines_light">
+<h3>Lr To Tb Top Two Lines Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_to_tb_top_two_lines_light.svg" alt="PR: lr_to_tb_top_two_lines_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_top_entry_cross_column_light">
+<h3>Lr Top Entry Cross Column Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_top_entry_cross_column_light.svg" alt="PR: lr_top_entry_cross_column_light"></div>
+</div>
+
+<div class="diff-entry" id="lr_top_entry_cross_column_two_line_light">
+<h3>Lr Top Entry Cross Column Two Line Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/lr_top_entry_cross_column_two_line_light.svg" alt="PR: lr_top_entry_cross_column_two_line_light"></div>
+</div>
+
+<div class="diff-entry" id="marker_styles_light">
+<h3>Marker Styles Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/marker_styles_light.svg" alt="PR: marker_styles_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_around_below_leftmost_light">
+<h3>Merge Around Below Leftmost Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_around_below_leftmost_light.svg" alt="PR: merge_around_below_leftmost_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_bottom_row_bypass_light">
+<h3>Merge Bottom Row Bypass Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_bottom_row_bypass_light.svg" alt="PR: merge_bottom_row_bypass_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_leftmost_sink_branch_light">
+<h3>Merge Leftmost Sink Branch Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_leftmost_sink_branch_light.svg" alt="PR: merge_leftmost_sink_branch_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_offrow_continuation_light">
+<h3>Merge Offrow Continuation Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_offrow_continuation_light.svg" alt="PR: merge_offrow_continuation_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_port_above_approach_light">
+<h3>Merge Port Above Approach Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_port_above_approach_light.svg" alt="PR: merge_port_above_approach_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_pullaway_light">
+<h3>Merge Pullaway Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_pullaway_light.svg" alt="PR: merge_pullaway_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_right_entry_light">
+<h3>Merge Right Entry Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_right_entry_light.svg" alt="PR: merge_right_entry_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_trunk_out_of_range_section_light">
+<h3>Merge Trunk Out Of Range Section Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_trunk_out_of_range_section_light.svg" alt="PR: merge_trunk_out_of_range_section_light"></div>
+</div>
+
+<div class="diff-entry" id="merge_trunk_over_low_section_light">
+<h3>Merge Trunk Over Low Section Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/merge_trunk_over_low_section_light.svg" alt="PR: merge_trunk_over_low_section_light"></div>
+</div>
+
+<div class="diff-entry" id="mismatched_tracks_light">
+<h3>Mismatched Tracks Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/mismatched_tracks_light.svg" alt="PR: mismatched_tracks_light"></div>
+</div>
+
+<div class="diff-entry" id="mixed_port_sides_light">
+<h3>Mixed Port Sides Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/mixed_port_sides_light.svg" alt="PR: mixed_port_sides_light"></div>
+</div>
+
+<div class="diff-entry" id="multi_line_bundle_light">
+<h3>Multi Line Bundle Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/multi_line_bundle_light.svg" alt="PR: multi_line_bundle_light"></div>
+</div>
+
+<div class="diff-entry" id="multicarrier_offrow_exit_climb_light">
+<h3>Multicarrier Offrow Exit Climb Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/multicarrier_offrow_exit_climb_light.svg" alt="PR: multicarrier_offrow_exit_climb_light"></div>
+</div>
+
+<div class="diff-entry" id="near_vertical_junction_hook_light">
+<h3>Near Vertical Junction Hook Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/near_vertical_junction_hook_light.svg" alt="PR: near_vertical_junction_hook_light"></div>
+</div>
+
+<div class="diff-entry" id="off_track_convergence_light">
+<h3>Off Track Convergence Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/off_track_convergence_light.svg" alt="PR: off_track_convergence_light"></div>
+</div>
+
+<div class="diff-entry" id="off_track_convergence_multiline_light">
+<h3>Off Track Convergence Multiline Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/off_track_convergence_multiline_light.svg" alt="PR: off_track_convergence_multiline_light"></div>
+</div>
+
+<div class="diff-entry" id="off_track_input_above_consumer_light">
+<h3>Off Track Input Above Consumer Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/off_track_input_above_consumer_light.svg" alt="PR: off_track_input_above_consumer_light"></div>
+</div>
+
+<div class="diff-entry" id="off_track_outputs_light">
+<h3>Off Track Outputs Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/off_track_outputs_light.svg" alt="PR: off_track_outputs_light"></div>
+</div>
+
+<div class="diff-entry" id="parallel_independent_light">
+<h3>Parallel Independent Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/parallel_independent_light.svg" alt="PR: parallel_independent_light"></div>
+</div>
+
+<div class="diff-entry" id="peeloff_extra_line_consumer_light">
+<h3>Peeloff Extra Line Consumer Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/peeloff_extra_line_consumer_light.svg" alt="PR: peeloff_extra_line_consumer_light"></div>
+</div>
+
+<div class="diff-entry" id="peeloff_riser_respace_light">
+<h3>Peeloff Riser Respace Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/peeloff_riser_respace_light.svg" alt="PR: peeloff_riser_respace_light"></div>
+</div>
+
+<div class="diff-entry" id="pipeline_epitopeprediction_light">
+<h3>Pipeline Epitopeprediction Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_epitopeprediction_light.svg" alt="PR: pipeline_epitopeprediction_light"></div>
+</div>
+
+<div class="diff-entry" id="pipeline_genomeassembly_light">
+<h3>Pipeline Genomeassembly Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_genomeassembly_light.svg" alt="PR: pipeline_genomeassembly_light"></div>
+</div>
+
+<div class="diff-entry" id="pipeline_hlatyping_light">
+<h3>Pipeline Hlatyping Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_hlatyping_light.svg" alt="PR: pipeline_hlatyping_light"></div>
+</div>
+
+<div class="diff-entry" id="pipeline_rnaseq_auto_light">
+<h3>Pipeline Rnaseq Auto Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_rnaseq_auto_light.svg" alt="PR: pipeline_rnaseq_auto_light"></div>
+</div>
+
+<div class="diff-entry" id="pipeline_sarek_metro_light">
+<h3>Pipeline Sarek Metro Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_sarek_metro_light.svg" alt="PR: pipeline_sarek_metro_light"></div>
+</div>
+
+<div class="diff-entry" id="pipeline_variantbenchmarking_light">
+<h3>Pipeline Variantbenchmarking Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_variantbenchmarking_light.svg" alt="PR: pipeline_variantbenchmarking_light"></div>
+</div>
+
+<div class="diff-entry" id="pipeline_variantprioritization_light">
+<h3>Pipeline Variantprioritization Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/pipeline_variantprioritization_light.svg" alt="PR: pipeline_variantprioritization_light"></div>
+</div>
+
+<div class="diff-entry" id="post_convergence_trunk_light">
+<h3>Post Convergence Trunk Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/post_convergence_trunk_light.svg" alt="PR: post_convergence_trunk_light"></div>
+</div>
+
+<div class="diff-entry" id="rail_inter_section_light">
+<h3>Rail Inter Section Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/rail_inter_section_light.svg" alt="PR: rail_inter_section_light"></div>
+</div>
+
+<div class="diff-entry" id="rail_offtrack_io_light">
+<h3>Rail Offtrack Io Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/rail_offtrack_io_light.svg" alt="PR: rail_offtrack_io_light"></div>
+</div>
+
+<div class="diff-entry" id="rail_offtrack_plain_io_light">
+<h3>Rail Offtrack Plain Io Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/rail_offtrack_plain_io_light.svg" alt="PR: rail_offtrack_plain_io_light"></div>
+</div>
+
+<div class="diff-entry" id="reconverge_reversed_fold_light">
+<h3>Reconverge Reversed Fold Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/reconverge_reversed_fold_light.svg" alt="PR: reconverge_reversed_fold_light"></div>
+</div>
+
+<div class="diff-entry" id="right_entry_from_above_far_light">
+<h3>Right Entry From Above Far Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/right_entry_from_above_far_light.svg" alt="PR: right_entry_from_above_far_light"></div>
+</div>
+
+<div class="diff-entry" id="right_entry_from_above_light">
+<h3>Right Entry From Above Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/right_entry_from_above_light.svg" alt="PR: right_entry_from_above_light"></div>
+</div>
+
+<div class="diff-entry" id="right_entry_gap_above_empty_row_light">
+<h3>Right Entry Gap Above Empty Row Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/right_entry_gap_above_empty_row_light.svg" alt="PR: right_entry_gap_above_empty_row_light"></div>
+</div>
+
+<div class="diff-entry" id="right_entry_wrap_no_fan_light">
+<h3>Right Entry Wrap No Fan Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/right_entry_wrap_no_fan_light.svg" alt="PR: right_entry_wrap_no_fan_light"></div>
+</div>
+
+<div class="diff-entry" id="rl_entry_runway_light">
+<h3>Rl Entry Runway Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/rl_entry_runway_light.svg" alt="PR: rl_entry_runway_light"></div>
+</div>
+
+<div class="diff-entry" id="rnaseq_auto_light">
+<h3>Rnaseq Auto Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/rnaseq_auto_light.svg" alt="PR: rnaseq_auto_light"></div>
+</div>
+
+<div class="diff-entry" id="rnaseq_lite_light">
+<h3>Rnaseq Lite Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/rnaseq_lite_light.svg" alt="PR: rnaseq_lite_light"></div>
+</div>
+
+<div class="diff-entry" id="rnaseq_sections_light">
+<h3>Rnaseq Sections Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/rnaseq_sections_light.svg" alt="PR: rnaseq_sections_light"></div>
+</div>
+
+<div class="diff-entry" id="route_around_intervening_light">
+<h3>Route Around Intervening Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/route_around_intervening_light.svg" alt="PR: route_around_intervening_light"></div>
+</div>
+
+<div class="diff-entry" id="sarek_metro_light">
+<h3>Sarek Metro Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/sarek_metro_light.svg" alt="PR: sarek_metro_light"></div>
+</div>
+
+<div class="diff-entry" id="section_diamond_light">
+<h3>Section Diamond Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/section_diamond_light.svg" alt="PR: section_diamond_light"></div>
+</div>
+
+<div class="diff-entry" id="self_crossing_bridge_light">
+<h3>Self Crossing Bridge Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/self_crossing_bridge_light.svg" alt="PR: self_crossing_bridge_light"></div>
+</div>
+
+<div class="diff-entry" id="simple_pipeline_light">
+<h3>Simple Pipeline Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/simple_pipeline_light.svg" alt="PR: simple_pipeline_light"></div>
+</div>
+
+<div class="diff-entry" id="single_section_light">
+<h3>Single Section Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/single_section_light.svg" alt="PR: single_section_light"></div>
+</div>
+
+<div class="diff-entry" id="stacked_left_exit_drop_light">
+<h3>Stacked Left Exit Drop Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/stacked_left_exit_drop_light.svg" alt="PR: stacked_left_exit_drop_light"></div>
+</div>
+
+<div class="diff-entry" id="stacked_lr_serpentine_light">
+<h3>Stacked Lr Serpentine Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/stacked_lr_serpentine_light.svg" alt="PR: stacked_lr_serpentine_light"></div>
+</div>
+
+<div class="diff-entry" id="symmetric_diamond_beside_wide_fan_light">
+<h3>Symmetric Diamond Beside Wide Fan Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/symmetric_diamond_beside_wide_fan_light.svg" alt="PR: symmetric_diamond_beside_wide_fan_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_bottom_entry_flow_start_light">
+<h3>Tb Bottom Entry Flow Start Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_bottom_entry_flow_start_light.svg" alt="PR: tb_bottom_entry_flow_start_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_bottom_exit_bundle_jog_light">
+<h3>Tb Bottom Exit Bundle Jog Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_bottom_exit_bundle_jog_light.svg" alt="PR: tb_bottom_exit_bundle_jog_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_bottom_exit_fork_diamond_light">
+<h3>Tb Bottom Exit Fork Diamond Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_bottom_exit_fork_diamond_light.svg" alt="PR: tb_bottom_exit_fork_diamond_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_column_continuation_two_lines_light">
+<h3>Tb Column Continuation Two Lines Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_column_continuation_two_lines_light.svg" alt="PR: tb_column_continuation_two_lines_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_convergence_straight_drop_light">
+<h3>Tb Convergence Straight Drop Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_convergence_straight_drop_light.svg" alt="PR: tb_convergence_straight_drop_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_file_termini_light">
+<h3>Tb File Termini Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_file_termini_light.svg" alt="PR: tb_file_termini_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_internal_diagonal_light">
+<h3>Tb Internal Diagonal Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_internal_diagonal_light.svg" alt="PR: tb_internal_diagonal_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_left_exit_step_light">
+<h3>Tb Left Exit Step Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_left_exit_step_light.svg" alt="PR: tb_left_exit_step_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_lr_exit_left_light">
+<h3>Tb Lr Exit Left Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_lr_exit_left_light.svg" alt="PR: tb_lr_exit_left_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_lr_exit_right_light">
+<h3>Tb Lr Exit Right Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_lr_exit_right_light.svg" alt="PR: tb_lr_exit_right_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_passthrough_continuation_light">
+<h3>Tb Passthrough Continuation Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_passthrough_continuation_light.svg" alt="PR: tb_passthrough_continuation_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_passthrough_trunk_light">
+<h3>Tb Passthrough Trunk Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_passthrough_trunk_light.svg" alt="PR: tb_passthrough_trunk_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_perp_exit_side_neighbour_light">
+<h3>Tb Perp Exit Side Neighbour Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_perp_exit_side_neighbour_light.svg" alt="PR: tb_perp_exit_side_neighbour_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_right_entry_stack_light">
+<h3>Tb Right Entry Stack Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_right_entry_stack_light.svg" alt="PR: tb_right_entry_stack_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_trunk_through_fan_light">
+<h3>Tb Trunk Through Fan Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_trunk_through_fan_light.svg" alt="PR: tb_trunk_through_fan_light"></div>
+</div>
+
+<div class="diff-entry" id="tb_two_line_vert_seam_light">
+<h3>Tb Two Line Vert Seam Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/tb_two_line_vert_seam_light.svg" alt="PR: tb_two_line_vert_seam_light"></div>
+</div>
+
+<div class="diff-entry" id="terminal_symmetric_fan_light">
+<h3>Terminal Symmetric Fan Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/terminal_symmetric_fan_light.svg" alt="PR: terminal_symmetric_fan_light"></div>
+</div>
+
+<div class="diff-entry" id="terminus_join_light">
+<h3>Terminus Join Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/terminus_join_light.svg" alt="PR: terminus_join_light"></div>
+</div>
+
+<div class="diff-entry" id="top_entry_header_clash_light">
+<h3>Top Entry Header Clash Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/top_entry_header_clash_light.svg" alt="PR: top_entry_header_clash_light"></div>
+</div>
+
+<div class="diff-entry" id="trunk_through_fan_light">
+<h3>Trunk Through Fan Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/trunk_through_fan_light.svg" alt="PR: trunk_through_fan_light"></div>
+</div>
+
+<div class="diff-entry" id="uneven_diamond_light">
+<h3>Uneven Diamond Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/uneven_diamond_light.svg" alt="PR: uneven_diamond_light"></div>
+</div>
+
+<div class="diff-entry" id="upward_bypass_light">
+<h3>Upward Bypass Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/upward_bypass_light.svg" alt="PR: upward_bypass_light"></div>
+</div>
+
+<div class="diff-entry" id="variant_calling_light">
+<h3>Variant Calling Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/variant_calling_light.svg" alt="PR: variant_calling_light"></div>
+</div>
+
+<div class="diff-entry" id="wide_fan_in_light">
+<h3>Wide Fan In Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/wide_fan_in_light.svg" alt="PR: wide_fan_in_light"></div>
+</div>
+
+<div class="diff-entry" id="wide_fan_out_light">
+<h3>Wide Fan Out Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/wide_fan_out_light.svg" alt="PR: wide_fan_out_light"></div>
+</div>
+
+<div class="diff-entry" id="wide_label_fan_light">
+<h3>Wide Label Fan Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/wide_label_fan_light.svg" alt="PR: wide_label_fan_light"></div>
+</div>
+
+<div class="diff-entry" id="wrapped_label_trunk_light">
+<h3>Wrapped Label Trunk Light <span class="badge badge-added">added</span></h3>
+<div class="side-only"><h4>New in PR</h4><img src="pr/wrapped_label_trunk_light.svg" alt="PR: wrapped_label_trunk_light"></div>
+</div>
+<script>
+document.querySelectorAll('.toggle-bar button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const entry = btn.closest('.diff-entry');
+    const mode = btn.dataset.mode;
+    const buttons = entry.querySelectorAll('.toggle-bar button');
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const comp = entry.querySelector('.comparison');
+    const sideBase = comp.querySelector('.side-base');
+    const sidePr = comp.querySelector('.side-pr');
+    if (mode === 'side-by-side') {
+      comp.style.gridTemplateColumns = '1fr 1fr';
+      sideBase.style.display = '';
+      sidePr.style.display = '';
+    } else if (mode === 'base') {
+      comp.style.gridTemplateColumns = '1fr';
+      sideBase.style.display = '';
+      sidePr.style.display = 'none';
+    } else if (mode === 'pr') {
+      comp.style.gridTemplateColumns = '1fr';
+      sideBase.style.display = 'none';
+      sidePr.style.display = '';
+    }
+  });
+});
+</script>
+</body>
+</html>
