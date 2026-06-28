@@ -1,6 +1,6 @@
 [
   {
-    "label": "Main examples",
+    "label": "Gallery",
     "entries": [
       {
         "name": "simple_pipeline",
@@ -85,12 +85,7 @@
       {
         "name": "disconnected_components",
         "mmd": "%%metro title: Disconnected Components\n%%metro style: dark\n%%metro line: main | Main Pipeline | #e63946\n%%metro line: aux | Auxiliary Report | #0570b0\n\ngraph LR\n    subgraph ingest [Ingest]\n        in1[Read Input]\n        in2[Validate]\n        in1 -->|main| in2\n    end\n\n    subgraph process [Process]\n        pr1[Align]\n        pr2[Filter]\n        pr1 -->|main| pr2\n    end\n\n    subgraph results [Results]\n        re1[Summarise]\n        re2[Publish]\n        re1 -->|main| re2\n    end\n\n    subgraph wide_report [Standalone QC Report]\n        w1[Collect]\n        w2[Aggregate]\n        w3[Annotate]\n        w4[Normalise]\n        w5[Visualise]\n        w6[Export]\n        w1 -->|aux| w2\n        w2 -->|aux| w3\n        w3 -->|aux| w4\n        w4 -->|aux| w5\n        w5 -->|aux| w6\n    end\n\n    in2 -->|main| pr1\n    pr2 -->|main| re1\n"
-      }
-    ]
-  },
-  {
-    "label": "Simple topologies",
-    "entries": [
+      },
       {
         "name": "single_section",
         "mmd": "%%metro title: Single Section\n%%metro style: dark\n%%metro line: main | Main | #e63946\n\ngraph LR\n    subgraph only [Only Section]\n        a[Input]\n        b[Process]\n        c[Output]\n        a -->|main| b\n        b -->|main| c\n    end\n"
@@ -134,12 +129,7 @@
       {
         "name": "parallel_independent",
         "mmd": "%%metro title: Parallel Independent\n%%metro style: dark\n%%metro line: dna | DNA Pipeline | #e63946\n%%metro line: rna | RNA Pipeline | #0570b0\n\ngraph LR\n    subgraph dna_input [DNA Input]\n        di1[Read DNA]\n        di2[QC DNA]\n        di1 -->|dna| di2\n    end\n\n    subgraph dna_process [DNA Process]\n        dp1[Align DNA]\n        dp2[Call Variants]\n        dp1 -->|dna| dp2\n    end\n\n    subgraph rna_input [RNA Input]\n        ri1[Read RNA]\n        ri2[QC RNA]\n        ri1 -->|rna| ri2\n    end\n\n    subgraph rna_process [RNA Process]\n        rp1[Align RNA]\n        rp2[Quantify]\n        rp1 -->|rna| rp2\n    end\n\n    di2 -->|dna| dp1\n    ri2 -->|rna| rp1\n"
-      }
-    ]
-  },
-  {
-    "label": "Fan-out and fan-in",
-    "entries": [
+      },
       {
         "name": "wide_fan_out",
         "mmd": "%%metro title: Wide Fan-Out\n%%metro style: dark\n%%metro line: alpha | Alpha | #e63946\n%%metro line: beta | Beta | #2db572\n%%metro line: gamma | Gamma | #0570b0\n%%metro line: delta | Delta | #f5c542\n\ngraph LR\n    subgraph source [Source]\n        input[Input]\n        process[Process]\n        input -->|alpha,beta,gamma,delta| process\n    end\n\n    subgraph target_a [Target A]\n        a1[Step A1]\n        a2[Step A2]\n        a1 -->|alpha| a2\n    end\n\n    subgraph target_b [Target B]\n        b1[Step B1]\n        b2[Step B2]\n        b1 -->|beta| b2\n    end\n\n    subgraph target_c [Target C]\n        c1[Step C1]\n        c2[Step C2]\n        c1 -->|gamma| c2\n    end\n\n    subgraph target_d [Target D]\n        d1[Step D1]\n        d2[Step D2]\n        d1 -->|delta| d2\n    end\n\n    process -->|alpha| a1\n    process -->|beta| b1\n    process -->|gamma| c1\n    process -->|delta| d1\n"
@@ -179,12 +169,7 @@
       {
         "name": "funcprofiler_upstream",
         "mmd": "%%metro title: nf-core/funcprofiler (upstream)\n%%metro style: dark\n%%metro line: qc | Preprocessing & QC | #4CAF50\n%%metro line: concat | Merge & Concat | #2196F3\n%%metro line: db | Database Prep | #607D8B\n%%metro line: humann3 | HUMAnN v3 | #FF9800\n%%metro line: humann4 | HUMAnN v4 | #FF5722\n%%metro line: fmhfunprofiler | FMH FunProfiler | #E91E63\n%%metro line: rgi | RGI | #CDDC39\n%%metro line: mifaser | mifaser | #00BCD4\n%%metro line: diamond | DIAMOND | #9C27B0\n%%metro line: eggnog | eggNOG-mapper | #3F51B5\n%%metro line: multiqc | Reporting | #795548\n%%metro compact_offsets: true\n\ngraph LR\n    subgraph input[Input]\n        input_short([Short Reads])\n        input_dbs([Input Databases])\n        sr_qc(Preprocess)\n        merge(MERGE_RUNS)\n    end\n\n    subgraph profiling[Functional Profiling]\n        humann3(HUMAnN v3)\n        humann4(HUMAnN v4)\n        fmhfunprofiler(FMH FunProfiler)\n        RGI(RGI)\n        mifaser(mifaser)\n        diamond(DIAMOND)\n        eggnog_mapper(eggNOG-mapper)\n    end\n\n    subgraph QC[Quality Check]\n        multiqc(MultiQC)\n    end\n\n    subgraph Output[Output]\n        output([Results Directory])\n    end\n\n    %% DB Prep\n    input_dbs -->|db| humann3\n    input_dbs -->|db| humann4\n    input_dbs -->|db| fmhfunprofiler\n    input_dbs -->|db| RGI\n    input_dbs -->|db| mifaser\n    input_dbs -->|db| diamond\n    input_dbs -->|db| eggnog_mapper\n\n    %% Preprocessing\n    input_short -->|qc| sr_qc\n    sr_qc -->|concat| merge\n\n    %% Profiling split\n    merge -->|humann3| humann3\n    merge -->|humann4| humann4\n    merge -->|fmhfunprofiler| fmhfunprofiler\n    merge -->|rgi| RGI\n    merge -->|mifaser| mifaser\n    merge -->|diamond| diamond\n    merge -->|eggnog| eggnog_mapper\n\n    %% Reporting\n    sr_qc -->|multiqc| multiqc\n    humann3 -->|multiqc| multiqc\n    humann4 -->|multiqc| multiqc\n    fmhfunprofiler -->|multiqc| multiqc\n    RGI -->|multiqc| multiqc\n    mifaser -->|multiqc| multiqc\n    diamond -->|multiqc| multiqc\n    eggnog_mapper -->|multiqc| multiqc\n\n    %% Output\n    multiqc -->|multiqc| output\n    humann3 -->|humann3| output\n    humann4 -->|humann4| output\n    fmhfunprofiler -->|fmhfunprofiler| output\n    RGI -->|rgi| output\n    mifaser -->|mifaser| output\n    diamond -->|diamond| output\n    eggnog_mapper -->|eggnog| output\n"
-      }
-    ]
-  },
-  {
-    "label": "Branching and multipath",
-    "entries": [
+      },
       {
         "name": "asymmetric_tree",
         "mmd": "%%metro title: Asymmetric Tree\n%%metro style: dark\n%%metro line: short | Short Branch | #e63946\n%%metro line: medium | Medium Branch | #2db572\n%%metro line: long | Long Branch | #0570b0\n\ngraph LR\n    subgraph root [Root]\n        input[Input]\n        dispatch[Dispatch]\n        input -->|short,medium,long| dispatch\n    end\n\n    subgraph branch_short [Short]\n        s1[Quick]\n        s2[Result]\n        s1 -->|short| s2\n    end\n\n    subgraph branch_med_1 [Medium Step 1]\n        m1[Medium A]\n        m2[Medium B]\n        m1 -->|medium| m2\n    end\n\n    subgraph branch_med_2 [Medium Step 2]\n        m3[Medium C]\n        m4[Medium D]\n        m3 -->|medium| m4\n    end\n\n    subgraph branch_long_1 [Long Step 1]\n        l1[Long A]\n        l2[Long B]\n        l1 -->|long| l2\n    end\n\n    subgraph branch_long_2 [Long Step 2]\n        l3[Long C]\n        l4[Long D]\n        l3 -->|long| l4\n    end\n\n    subgraph branch_long_3 [Long Step 3]\n        l5[Long E]\n        l6[Long F]\n        l5 -->|long| l6\n    end\n\n    dispatch -->|short| s1\n    dispatch -->|medium| m1\n    dispatch -->|long| l1\n    m2 -->|medium| m3\n    l2 -->|long| l3\n    l4 -->|long| l5\n"
@@ -192,12 +177,7 @@
       {
         "name": "complex_multipath",
         "mmd": "%%metro title: Complex Multipath\n%%metro style: dark\n%%metro line: fast | Fast Path | #e63946\n%%metro line: standard | Standard Path | #2db572\n%%metro line: detailed | Detailed Analysis | #0570b0\n%%metro line: legacy | Legacy Path | #f5c542\n\ngraph LR\n    subgraph input_sec [Input]\n        raw[Raw Data]\n        validate[Validate]\n        raw -->|fast,standard,detailed,legacy| validate\n    end\n\n    subgraph fast_track [Fast Track]\n        quick_align[Quick Align]\n        quick_quant[Quick Quant]\n        quick_align -->|fast| quick_quant\n    end\n\n    subgraph full_preprocess [Full Pre-process]\n        trim[Trim]\n        filter[Filter]\n        qc_check[QC Check]\n        trim -->|standard,detailed,legacy| filter\n        filter -->|standard,detailed,legacy| qc_check\n    end\n\n    subgraph standard_analysis [Standard Analysis]\n        align[Align]\n        quant[Quantify]\n        align -->|standard,legacy| quant\n    end\n\n    subgraph deep_analysis [Deep Analysis]\n        hq_align[HQ Align]\n        dedup[Dedup]\n        hq_quant[HQ Quantify]\n        hq_align -->|detailed| dedup\n        dedup -->|detailed| hq_quant\n    end\n\n    subgraph output_sec [Output]\n        aggregate[Aggregate]\n        report[Report]\n        aggregate -->|fast,standard,detailed,legacy| report\n    end\n\n    validate -->|fast| quick_align\n    validate -->|standard,detailed,legacy| trim\n    qc_check -->|standard,legacy| align\n    qc_check -->|detailed| hq_align\n    quick_quant -->|fast| aggregate\n    quant -->|standard,legacy| aggregate\n    hq_quant -->|detailed| aggregate\n"
-      }
-    ]
-  },
-  {
-    "label": "Multi-line bundles",
-    "entries": [
+      },
       {
         "name": "interchange_lane_reorder",
         "mmd": "%%metro title: Interchange lane reorder\n%%metro style: dark\n%%metro line: top | Top | #d62728\n%%metro line: mid | Mid | #2db572\n%%metro line: bot | Bot | #f5c542\n\ngraph LR\n    subgraph s [Parallel lanes]\n        top_in[ ]\n        mid_in[ ]\n        bot_in[ ]\n        hub[Shared step]\n        mid_step[Mid step]\n        top_out[ ]\n        mid_out[ ]\n        bot_out[ ]\n        top_in -->|top| hub\n        bot_in -->|bot| hub\n        mid_in -->|mid| mid_step\n        hub -->|top| top_out\n        hub -->|bot| bot_out\n        mid_step -->|mid| mid_out\n    end\n"
@@ -209,12 +189,7 @@
       {
         "name": "mixed_port_sides",
         "mmd": "%%metro title: Mixed Port Sides\n%%metro style: dark\n%%metro line: horizontal | Horizontal Flow | #e63946\n%%metro line: vertical | Vertical Flow | #0570b0\n\ngraph LR\n    subgraph origin [Origin]\n        start[Start]\n        fork[Fork]\n        start -->|horizontal,vertical| fork\n    end\n\n    subgraph right_sec [Right Section]\n        r1[Right A]\n        r2[Right B]\n        r1 -->|horizontal| r2\n    end\n\n    subgraph bottom_sec [Bottom Section]\n        b1[Bottom A]\n        b2[Bottom B]\n        b1 -->|vertical| b2\n    end\n\n    fork -->|horizontal| r1\n    fork -->|vertical| b1\n"
-      }
-    ]
-  },
-  {
-    "label": "Realistic pipelines",
-    "entries": [
+      },
       {
         "name": "rnaseq_lite",
         "mmd": "%%metro title: RNA-seq Lite\n%%metro style: dark\n%%metro line: star | STAR + Salmon | #2db572\n%%metro line: hisat | HISAT2 | #f5c542\n%%metro line: pseudo | Pseudo-alignment | #e63946\n\ngraph LR\n    subgraph preprocessing [Pre-processing]\n        input[Input]\n        fastqc_raw[FastQC]\n        fastp[FastP]\n        trimgalore[Trim Galore!]\n        fastqc_trim[FastQC]\n        filter[SortMeRNA]\n        fastqc_filt[FastQC]\n\n        input -->|star,hisat,pseudo| fastqc_raw\n        fastqc_raw -->|star,hisat,pseudo| fastp\n        fastqc_raw -->|star,hisat,pseudo| trimgalore\n        fastp -->|star,hisat,pseudo| fastqc_trim\n        trimgalore -->|star,hisat,pseudo| fastqc_trim\n        fastqc_trim -->|star,hisat,pseudo| filter\n        filter -->|star,hisat,pseudo| fastqc_filt\n    end\n\n    subgraph genome_align [Genome alignment]\n        star_align[STAR]\n        hisat_align[HISAT2]\n        umi_dedup[UMI-tools dedup]\n        salmon_quant[Salmon]\n        rsem_quant[featureCounts]\n\n        star_align -->|star| umi_dedup\n        hisat_align -->|hisat| umi_dedup\n        umi_dedup -->|star| salmon_quant\n        umi_dedup -->|hisat| rsem_quant\n    end\n\n    subgraph pseudo_align [Pseudo-alignment]\n        salmon_pseudo[Salmon]\n        tximport[tximport]\n        summarized_exp[Sum. Exp.]\n\n        salmon_pseudo -->|pseudo| tximport\n        tximport -->|pseudo| summarized_exp\n    end\n\n    subgraph postprocessing [Post-processing]\n        samtools[SAMtools]\n        picard[Picard]\n        bedtools[BEDTools]\n        bigwig[bedGraphToBigWig]\n\n        samtools -->|star,hisat| picard\n        picard -->|star,hisat| bedtools\n        bedtools -->|star,hisat| bigwig\n    end\n\n    subgraph qc_report [QC & Reporting]\n        rseqc[RSeQC]\n        dupradar[dupRadar]\n        featurecounts[featureCounts]\n        multiqc[MultiQC]\n\n        rseqc -->|star,hisat| dupradar\n        dupradar -->|star,hisat| featurecounts\n        featurecounts -->|star,hisat| multiqc\n    end\n\n    fastqc_filt -->|star| star_align\n    fastqc_filt -->|hisat| hisat_align\n    fastqc_filt -->|pseudo| salmon_pseudo\n    salmon_quant -->|star| samtools\n    rsem_quant -->|hisat| samtools\n    bigwig -->|star,hisat| rseqc\n"
@@ -222,12 +197,7 @@
       {
         "name": "variant_calling",
         "mmd": "%%metro title: Variant Calling Pipeline\n%%metro style: dark\n%%metro line: wgs | Whole Genome | #2db572\n%%metro line: wes | Whole Exome | #0570b0\n%%metro line: panel | Targeted Panel | #f5c542\n%%metro line: rna_var | RNA Variants | #e63946\n\ngraph LR\n    subgraph input_qc [Input & QC]\n        input[Input]\n        fastqc[FastQC]\n        fastp[FastP]\n        trimgalore[Trim Galore!]\n        fastqc_trim[FastQC]\n\n        input -->|wgs,wes,panel,rna_var| fastqc\n        fastqc -->|wgs,wes,panel,rna_var| fastp\n        fastqc -->|wgs,wes,panel,rna_var| trimgalore\n        fastp -->|wgs,wes,panel,rna_var| fastqc_trim\n        trimgalore -->|wgs,wes,panel,rna_var| fastqc_trim\n    end\n\n    subgraph alignment [Alignment]\n        bwa[BWA-MEM2]\n        star_align[STAR]\n        samtools[SAMtools sort]\n        markdup[MarkDuplicates]\n        bqsr[BQSR]\n\n        bwa -->|wgs,wes,panel| samtools\n        star_align -->|rna_var| samtools\n        samtools -->|wgs,wes,panel,rna_var| markdup\n        markdup -->|wgs,wes,panel,rna_var| bqsr\n    end\n\n    subgraph dna_calling [DNA Variant Calling]\n        haplotypecaller[HaplotypeCaller]\n        deepvariant[DeepVariant]\n        strelka[Strelka2]\n        merge_vcf[Merge VCFs]\n\n        haplotypecaller -->|wgs| merge_vcf\n        deepvariant -->|wes| merge_vcf\n        strelka -->|panel| merge_vcf\n    end\n\n    subgraph rna_calling [RNA Variant Calling]\n        splitncigar[SplitNCigar]\n        rna_hc[HaplotypeCaller]\n        rna_filter[FilterVariants]\n\n        splitncigar -->|rna_var| rna_hc\n        rna_hc -->|rna_var| rna_filter\n    end\n\n    subgraph annotation [Annotation & Filtering]\n        vep[VEP]\n        snpsift[SnpSift]\n        filter_pass[Filter PASS]\n\n        vep -->|wgs,wes,panel,rna_var| snpsift\n        snpsift -->|wgs,wes,panel,rna_var| filter_pass\n    end\n\n    subgraph reporting [Reporting]\n        bcftools_stats[bcftools stats]\n        multiqc[MultiQC]\n\n        bcftools_stats -->|wgs,wes,panel,rna_var| multiqc\n    end\n\n    fastqc_trim -->|wgs,wes,panel| bwa\n    fastqc_trim -->|rna_var| star_align\n    bqsr -->|wgs| haplotypecaller\n    bqsr -->|wes| deepvariant\n    bqsr -->|panel| strelka\n    bqsr -->|rna_var| splitncigar\n    merge_vcf -->|wgs,wes,panel| vep\n    rna_filter -->|rna_var| vep\n    filter_pass -->|wgs,wes,panel,rna_var| bcftools_stats\n"
-      }
-    ]
-  },
-  {
-    "label": "Fold topologies",
-    "entries": [
+      },
       {
         "name": "fold_fan_across",
         "mmd": "%%metro title: Proteomics Quantification Pipeline\n%%metro style: dark\n%%metro line: tmt | TMT Labeling | #e63946\n%%metro line: lfq | Label-Free | #457b9d\n%%metro line: dia | DIA | #2a9d8f\n\ngraph LR\n    subgraph sample_prep [Sample Preparation]\n        sp_input[Input]\n        sp_validate[Validate]\n        sp_extract[Extract]\n        sp_tag[Tag]\n        sp_filt_a[Filter A]\n        sp_filt_b[Filter B]\n        sp_merge[Merge]\n        sp_filter[QC Filter]\n        sp_qc[Final QC]\n\n        sp_input -->|tmt,lfq,dia| sp_validate\n        sp_validate -->|tmt,lfq,dia| sp_extract\n        sp_extract -->|tmt,lfq,dia| sp_tag\n        sp_tag -->|tmt,lfq,dia| sp_filt_a\n        sp_tag -->|tmt,lfq,dia| sp_filt_b\n        sp_filt_a -->|tmt,lfq,dia| sp_merge\n        sp_filt_b -->|tmt,lfq,dia| sp_merge\n        sp_merge -->|tmt,lfq,dia| sp_filter\n        sp_filter -->|tmt,lfq,dia| sp_qc\n    end\n\n    subgraph tmt_quant [TMT Quantification]\n        tmt_label[Label]\n        tmt_frac[Fractionate]\n        tmt_pool[Pool]\n        tmt_quant_ms[Quantify]\n        tmt_check[Check]\n\n        tmt_label -->|tmt| tmt_frac\n        tmt_frac -->|tmt| tmt_pool\n        tmt_pool -->|tmt| tmt_quant_ms\n        tmt_quant_ms -->|tmt| tmt_check\n    end\n\n    subgraph lfq_quant [Label-Free Quantification]\n        lfq_align[Align]\n        lfq_quant_ms[Quantify]\n        lfq_norm[Normalize]\n\n        lfq_align -->|lfq| lfq_quant_ms\n        lfq_quant_ms -->|lfq| lfq_norm\n    end\n\n    subgraph dia_quant [DIA Quantification]\n        dia_window[Window]\n        dia_extract[Extract]\n        dia_quant_ms[Quantify]\n\n        dia_window -->|dia| dia_extract\n        dia_extract -->|dia| dia_quant_ms\n    end\n\n    subgraph normalize [Normalization]\n        norm_input[Input]\n        norm_calc[Calculate]\n        norm_apply[Apply]\n\n        norm_input -->|tmt,lfq,dia| norm_calc\n        norm_calc -->|tmt,lfq,dia| norm_apply\n    end\n\n    subgraph stat_analysis [Statistical Analysis]\n        stat_merge[Merge]\n        diff_expr[Diff. Expression]\n        pathway[Pathway]\n        volcano[Volcano Plot]\n\n        stat_merge -->|tmt,lfq,dia| diff_expr\n        diff_expr -->|tmt,lfq,dia| pathway\n        pathway -->|tmt,lfq,dia| volcano\n    end\n\n    subgraph reporting [Reporting]\n        report_agg[Aggregate]\n        report_mqc[MultiQC]\n        report_final[Report]\n\n        report_agg -->|tmt,lfq,dia| report_mqc\n        report_mqc -->|tmt,lfq,dia| report_final\n    end\n\n    sp_qc -->|tmt| tmt_label\n    sp_qc -->|lfq| lfq_align\n    sp_qc -->|dia| dia_window\n    tmt_check -->|tmt| norm_input\n    lfq_norm -->|lfq| norm_input\n    dia_quant_ms -->|dia| norm_input\n    norm_apply -->|tmt,lfq,dia| stat_merge\n    volcano -->|tmt,lfq,dia| report_agg\n"
@@ -279,12 +249,7 @@
       {
         "name": "branch_fold_stability",
         "mmd": "%%metro title: Branch-fold placement stability\n%%metro style: dark\n%%metro fold_threshold: 6\n%%metro line: survey | Survey | #0570b0\n%%metro line: align | Alignment | #2db572\n\ngraph LR\n    subgraph ingest [Ingest]\n        i1[Read]\n        i2[Validate]\n        i1 -->|survey,align| i2\n    end\n\n    subgraph survey [Survey]\n        s1[Sketch]\n        s2[Profile]\n        s3[Classify]\n        s4[Summarise]\n        s1 -->|survey| s2\n        s2 -->|survey| s3\n        s3 -->|survey| s4\n    end\n\n    subgraph align [Alignment]\n        a1[Index]\n        a2[Map]\n        a1 -->|align| a2\n    end\n\n    subgraph report [Report]\n        r1[Aggregate]\n        r2[Publish]\n        r1 -->|align| r2\n    end\n\n    i2 -->|survey| s1\n    i2 -->|align| a1\n    a2 -->|align| r1\n"
-      }
-    ]
-  },
-  {
-    "label": "Offset and bypass",
-    "entries": [
+      },
       {
         "name": "bypass_fan_in_outer_slot",
         "mmd": "%%metro title: Bypass Fan-in Outer Slot\n%%metro style: dark\n%%metro line: dna | DNA | #e63946\n%%metro line: meth | Methylation | #0570b0\n%%metro line: rna | RNA | #2db572\n%%metro line: atac | ATAC | #f5c542\n%%metro line: qc | QC | #ff8c00\n\ngraph LR\n    subgraph ingest [Ingest]\n        samplesheet[Samplesheet]\n        demux[Demultiplex]\n        samplesheet -->|dna,meth,rna,atac,qc| demux\n    end\n\n    subgraph trim [Trim & QC]\n        fastp[Fastp]\n        screen[Contam Screen]\n        fastp -->|dna,meth,rna,atac,qc| screen\n    end\n\n    subgraph hub [Branch Hub]\n        dispatch[Dispatch]\n    end\n\n    subgraph align_right [Alignment]\n        bwa[BWA-MEM]\n        markdup[MarkDup]\n        bwa -->|dna,meth| markdup\n    end\n\n    subgraph quant_bottom [Quantification]\n        salmon[Salmon]\n        tximport[Tximport]\n        salmon -->|rna| tximport\n    end\n\n    subgraph peaks_bottom [Peak Calling]\n        macs[MACS2]\n        macs -->|atac| macs2anno[Annotate Peaks]\n    end\n\n    subgraph integrate [Integration]\n        mofa[MOFA Factor Model]\n        report[MultiQC Report]\n        mofa -->|dna,meth,rna,atac| report\n    end\n\n    demux -->|dna,meth,rna,atac,qc| fastp\n    screen -->|dna,meth,rna,atac,qc| dispatch\n\n    dispatch -->|dna,meth| bwa\n    dispatch -->|rna| salmon\n    dispatch -->|atac| macs\n\n    markdup -->|dna,meth| mofa\n    tximport -->|rna| mofa\n    macs2anno -->|atac| mofa\n\n    screen -->|qc| report\n"
@@ -368,12 +333,7 @@
       {
         "name": "inter_row_wrap_clearance",
         "mmd": "%%metro title: Inter-row wrap clearance\n%%metro style: dark\n%%metro center_ports: true\n%%metro line: l1 | Line 1 | #0570b0\n%%metro line: l2 | Line 2 | #d62728\n%%metro line: l3 | Line 3 | #756bb1\n%%metro grid: top | 0,0\n%%metro grid: bottom | 0,1\n\ngraph LR\n    subgraph top [Top section]\n        %%metro exit: right | l1, l2, l3\n        a_in[ ]\n        a1[Step A1]\n        a2[Step A2]\n        a3[Step A3]\n        a_in -->|l1,l2,l3| a1\n        a1 -->|l1,l2,l3| a2\n        a2 -->|l1,l2,l3| a3\n    end\n\n    subgraph bottom [Bottom section]\n        %%metro entry: left | l1, l2, l3\n        b_in[ ]\n        b1[Step B1]\n        b2[Step B2]\n        b_in -->|l1,l2,l3| b1\n        b1 -->|l1,l2,l3| b2\n    end\n\n    a3 -->|l1,l2,l3| b_in\n"
-      }
-    ]
-  },
-  {
-    "label": "Routing-gate coverage fixtures",
-    "entries": [
+      },
       {
         "name": "junction_entry_reversed_fold",
         "mmd": "%%metro title: Junction Entry Reversed Fold\n%%metro style: dark\n%%metro line: alpha | Alpha | #e63946\n%%metro line: beta | Beta | #2db572\n%%metro grid: tb | 0,0\n%%metro grid: src | 1,0\n%%metro grid: dst_a | 2,0\n%%metro grid: dst_b | 3,0\n\ngraph LR\n    subgraph tb [Bridge]\n        %%metro direction: TB\n        %%metro exit: right | alpha,beta\n        tb1[Mark]\n        tb2[Recal]\n        tb1 -->|alpha,beta| tb2\n    end\n\n    subgraph src [Source]\n        %%metro entry: left | alpha,beta\n        %%metro exit: right | alpha,beta\n        s_hub[Hub]\n    end\n\n    subgraph dst_a [Dest Alpha]\n        %%metro entry: left | alpha\n        da1[Process A]\n        da2[Output A]\n        da1 -->|alpha| da2\n    end\n\n    subgraph dst_b [Dest Beta]\n        %%metro entry: left | beta\n        db1[Process B]\n        db2[Output B]\n        db1 -->|beta| db2\n    end\n\n    tb2 -->|alpha,beta| s_hub\n    s_hub -->|alpha| da1\n    s_hub -->|beta| db1\n"
@@ -445,12 +405,7 @@
       {
         "name": "around_below_ep_col_gt0",
         "mmd": "%%metro title: Around Section Below Ep Col\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: source | 3,0\n%%metro grid: middle | 2,1\n%%metro grid: target | 1,2\n\ngraph LR\n    subgraph source [Source]\n        s1[Input]\n        s2[Output]\n        s1 -->|a,b| s2\n    end\n\n    subgraph middle [Middle Row]\n        m1[Process]\n        m2[Output]\n        m1 -->|a| m2\n    end\n\n    subgraph target [Target]\n        %%metro entry: left | a, b\n        t1[Process]\n        t2[Output]\n        t1 -->|a,b| t2\n    end\n\n    s2 -->|a,b| t1\n    s2 -->|a| m1\n"
-      }
-    ]
-  },
-  {
-    "label": "Section-boundary routing discipline",
-    "entries": [
+      },
       {
         "name": "stacked_left_exit_drop",
         "mmd": "%%metro title: Stacked Left Exit Drop\n%%metro style: dark\n%%metro line: a | A | #e63946\n\n%%metro grid: sec1 | 0,0\n%%metro grid: sec2 | 0,1\n\ngraph LR\n    subgraph sec1 [Section 1]\n        %%metro direction: RL\n        %%metro exit: left | a\n        s1[Start]\n        s2[Step]\n        s1 -->|a| s2\n    end\n\n    subgraph sec2 [Section 2]\n        %%metro entry: left | a\n        t1[Final]\n        t2[Done]\n        t1 -->|a| t2\n    end\n\n    s2 -->|a| t1\n"
@@ -470,12 +425,7 @@
       {
         "name": "merge_around_below_leftmost",
         "mmd": "%%metro title: Merge Around Below Leftmost\n%%metro style: nfcore\n%%metro line: a | A | #e63946\n%%metro grid: src1  | 1,0\n%%metro grid: src2  | 2,0\n%%metro grid: extra | 3,0\n%%metro grid: tgt   | 0,1\n\ngraph LR\n    subgraph src1 [Source 1]\n        a1[Step A]\n        a2[Out A]\n        a1 -->|a| a2\n    end\n\n    subgraph src2 [Source 2]\n        b1[Step B]\n        b2[Out B]\n        b1 -->|a| b2\n    end\n\n    subgraph extra [Extra]\n        %%metro entry: left | a\n        e1[Extra Step]\n        e2[Extra Out]\n        e1 -->|a| e2\n    end\n\n    subgraph tgt [Target]\n        %%metro entry: left | a\n        t1[Combine]\n        t2[Result]\n        t1 -->|a| t2\n    end\n\n    a2 -->|a| e1\n    a2 -->|a| t1\n    b2 -->|a| e1\n    b2 -->|a| t1\n"
-      }
-    ]
-  },
-  {
-    "label": "Complex auto-layout regression isolation",
-    "entries": [
+      },
       {
         "name": "route_around_intervening",
         "mmd": "%%metro title: Route Around Intervening\n%%metro style: dark\n%%metro line: trunk | Trunk | #0570b0\n%%metro line: skip | Skip | #e63946\n\n%%metro grid: source | 0,0\n%%metro grid: middle | 1,0\n%%metro grid: target | 2,0\n\ngraph LR\n    subgraph source [Source]\n        s1[Input]\n        s2[Output]\n        s1 -->|trunk,skip| s2\n    end\n\n    subgraph middle [Middle]\n        m1[Process]\n        m2[Output]\n        m1 -->|trunk| m2\n    end\n\n    subgraph target [Target]\n        t1[Collect]\n        t2[Report]\n        t1 -->|trunk,skip| t2\n    end\n\n    s2 -->|trunk| m1\n    m2 -->|trunk| t1\n    s2 -->|skip| t1\n"
@@ -547,12 +497,7 @@
       {
         "name": "peeloff_extra_line_consumer",
         "mmd": "%%metro title: Peel-off Extra Line Consumer\n%%metro style: dark\n%%metro line: l1 | Line 1 | #e63946\n%%metro line: l2 | Line 2 | #2db572\n%%metro line: l3 | Line 3 | #0570b0\n%%metro line: l4 | Line 4 | #f5c542\n%%metro line: l5 | Line 5 | #9b59b6\n%%metro grid: src_a | 0,0\n%%metro grid: src_b | 1,0\n%%metro grid: mid | 2,0\n%%metro grid: dst | 3,0\n\ngraph LR\n    subgraph src_a [Source A]\n        %%metro exit: right | l1,l2\n        sa_in[Input A]\n        sa_out[Output A]\n        sa_in -->|l1,l2| sa_out\n    end\n\n    subgraph src_b [Source B]\n        %%metro entry: left | l3,l4\n        %%metro exit: right | l3,l4\n        sb_in[Input B]\n        sb_out[Output B]\n        sb_in -->|l3,l4| sb_out\n    end\n\n    subgraph mid [Mid]\n        m1[Mid Process]\n    end\n\n    subgraph dst [Destination]\n        %%metro entry: left | l1,l2,l3,l4\n        d1[Process D1]\n        d2[Process D2]\n        d3[Process D3]\n        d1 -->|l1,l2,l3,l4| d2\n        d2 -->|l5| d3\n    end\n\n    sa_out -->|l1,l2| d1\n    sb_out -->|l3,l4| d1\n"
-      }
-    ]
-  },
-  {
-    "label": "LR section feeding a TB section's TOP entry",
-    "entries": [
+      },
       {
         "name": "lr_to_tb_top_drop",
         "mmd": "%%metro title: LR to TB Top Drop\n%%metro style: dark\n%%metro line: a | A | #e63946\n\n%%metro grid: src_sec | 0,0\n%%metro grid: tgt_sec | 0,1\n\ngraph LR\n    subgraph src_sec [Source]\n        %%metro direction: LR\n        s1[Start]\n        s2[End]\n        s1 -->|a| s2\n    end\n\n    subgraph tgt_sec [Target]\n        %%metro direction: TB\n        %%metro entry: top | a\n        %%metro exit: right | a\n        t1[Process]\n        t2[Result]\n        t1 -->|a| t2\n    end\n\n    s2 -->|a| t1\n"
@@ -572,12 +517,7 @@
       {
         "name": "lr_to_tb_top_two_lines",
         "mmd": "%%metro title: LR to TB Top Two Lines\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n%%metro grid: src_sec | 0,0\n%%metro grid: tgt_sec | 0,1\ngraph LR\n    subgraph src_sec [Source]\n        %%metro direction: LR\n        %%metro exit: right | a,b\n        s1[Start]\n        s2[End]\n        s1 -->|a,b| s2\n    end\n    subgraph tgt_sec [Target]\n        %%metro direction: TB\n        %%metro entry: top | a,b\n        %%metro exit: right | a,b\n        t1[Process]\n        t2[Result]\n        t1 -->|a,b| t2\n    end\n    s2 -->|a,b| t1\n"
-      }
-    ]
-  },
-  {
-    "label": "Section header relocated clear of a top-entry drop",
-    "entries": [
+      },
       {
         "name": "top_entry_header_clash",
         "mmd": "%%metro title: Top Entry Header Clash\n%%metro style: dark\n%%metro line: a | A | #e63946\n\n%%metro grid: src_sec | 0,0\n%%metro grid: tgt_sec | 0,1\n\ngraph LR\n    subgraph src_sec [Read QC]\n        %%metro direction: LR\n        s1[Trim]\n        s2[Filter]\n        s1 -->|a| s2\n    end\n\n    subgraph tgt_sec [Alignment and Sorting]\n        %%metro direction: TB\n        %%metro entry: top | a\n        %%metro exit: right | a\n        t1[Map Reads]\n        t2[Sort BAM]\n        t1 -->|a| t2\n    end\n\n    s2 -->|a| t1\n"
@@ -589,12 +529,7 @@
       {
         "name": "header_nudge",
         "mmd": "%%metro title: Header Nudged Past Trunk\n%%metro style: dark\n%%metro line: a | A | #e63946\n\n%%metro grid: src_sec | 0,0\n%%metro grid: tgt_sec | 0,1\n%%metro grid: snk_sec | 0,2\n\ngraph LR\n    subgraph src_sec [Up]\n        %%metro direction: TB\n        %%metro exit: bottom | a\n        s1[One]\n    end\n\n    subgraph tgt_sec [Alignment Sorting Markdup Stage]\n        %%metro direction: TB\n        %%metro entry: top | a\n        %%metro exit: bottom | a\n        t1[Two]\n        t2[Three]\n        t1 -->|a| t2\n    end\n\n    subgraph snk_sec [Down]\n        %%metro direction: TB\n        %%metro entry: top | a\n        k1[Four]\n    end\n\n    s1 -->|a| t1\n    t2 -->|a| k1\n"
-      }
-    ]
-  },
-  {
-    "label": "Multi-line perpendicular exit that does not drop straight down",
-    "entries": [
+      },
       {
         "name": "lr_perp_top_exit_side_entry",
         "mmd": "%%metro title: LR Perp Top Exit into Side Entry\n%%metro style: dark\n%%metro line: a | Line A | #e63946\n%%metro line: b | Line B | #0570b0\n\ngraph LR\n    subgraph src [Source]\n        s1[Start]\n    end\n\n    subgraph mid [Middle]\n        %%metro exit: top | a, b\n        m1[Step 1]\n        m2[Step 2]\n        m1 -->|a,b| m2\n    end\n\n    subgraph dst [Destination]\n        d1[Finish]\n    end\n\n    s1 -->|a,b| m1\n    m2 -->|a,b| d1\n"
