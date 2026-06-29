@@ -215,6 +215,10 @@
         "mmd": "%%metro title: BT Into TB\n%%metro style: dark\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: up_sec | 0,0\n%%metro grid: down_sec | 1,0\n\ngraph LR\n    subgraph up_sec [Ascend]\n        %%metro direction: BT\n        %%metro exit: right | a,b\n        u1[Collect]\n        u2[Reduce]\n        u1 -->|a,b| u2\n    end\n\n    subgraph down_sec [Descend]\n        %%metro direction: TB\n        %%metro entry: left | a,b\n        d1[Split]\n        d2[Emit]\n        d1 -->|a,b| d2\n    end\n\n    u2 -->|a,b| d1\n"
       },
       {
+        "name": "tb_fork_lane_transpose",
+        "mmd": "%%metro title: TB Fork Lane Transpose\n%%metro style: dark\n%%metro file: vcf_out | VCF\n%%metro line: main | Main | #2db572\n%%metro line: qc | QC | #0570b0\n\ngraph LR\n    subgraph prep [Prep]\n        in0[ ]\n        align[Align]\n        in0 -->|main| align\n    end\n    subgraph calling [Calling]\n        %%metro direction: TB\n        caller1[Caller A]\n        caller2[Caller B]\n        stats[Stats]\n        vcf_out[ ]\n        caller1 -->|main| stats\n        caller2 -->|main| stats\n        stats -->|main| vcf_out\n    end\n    subgraph report [Report]\n        mqc[MultiQC]\n    end\n    align -->|main| caller1\n    align -->|main| caller2\n    stats -->|qc| mqc\n"
+      },
+      {
         "name": "tb_passthrough_trunk",
         "mmd": "%%metro title: TB pass-through trunk\n%%metro style: dark\n%%metro line: rna | RNA-seq | #1f9e89\n%%metro line: affy | Affymetrix | #e6550d\n%%metro line: mq | MaxQuant | #0570b0\n\n%%metro file: bundle_zip | ZIP | Bundle\n\ngraph LR\n    subgraph analysis [Analysis]\n        align[Align]\n        call[Call]\n        align -->|rna,affy,mq| call\n    end\n\n    subgraph reporting [Reporting]\n        %%metro direction: TB\n        %%metro entry: left | rna, affy, mq\n        collect[Collect]\n        annotate[Annotate]\n        package[Package]\n        bundle_zip[ ]\n\n        collect -->|rna,affy,mq| annotate\n        annotate -->|rna,affy,mq| package\n        package -->|rna,affy,mq| bundle_zip\n    end\n\n    call -->|rna,affy,mq| collect\n"
       },
