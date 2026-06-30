@@ -155,6 +155,10 @@
         "mmd": "%%metro title: Terminal Fan\n%%metro style: dark\n%%metro center_ports: true\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: source | 0,0\n%%metro grid: reporting | 1,0\n\ngraph LR\n    subgraph source [Source]\n        s1[Input]\n        s2[Process]\n        s1 -->|a,b| s2\n    end\n\n    subgraph reporting [Reporting]\n        %%metro entry: left | a, b\n        shiny[Shiny]\n        multiqc[MultiQC]\n        quarto[Quarto]\n    end\n\n    s2 -->|a,b| shiny\n    s2 -->|a,b| multiqc\n    s2 -->|a,b| quarto\n"
       },
       {
+        "name": "internal_source_equal_sibling_2fan",
+        "mmd": "%%metro title: Internal-source equal-sibling 2-fan\n%%metro center_ports: true\n\ngraph LR\n    subgraph run_folder [Run Folder]\n        rundir_in[ ]\n        checkqc[CheckQC]\n        rundirparser[Rundirparser]\n        rundir_in -->|run_folder| checkqc\n        rundir_in -->|run_folder| rundirparser\n    end\n    subgraph sink [Aggregate]\n        out[MultiQC]\n        checkqc -->|run_folder| out\n        rundirparser -->|run_folder| out\n    end\n"
+      },
+      {
         "name": "trunk_through_fan",
         "mmd": "%%metro title: Trunk Through Fan\n%%metro style: dark\n%%metro center_ports: true\n%%metro line: a | A | #e63946\n%%metro line: b | B | #0570b0\n\n%%metro grid: source | 0,0\n%%metro grid: middle | 1,0\n%%metro grid: sink | 2,0\n\ngraph LR\n    subgraph source [Source]\n        s1[Input]\n        s2[Prepare]\n        s1 -->|a,b| s2\n    end\n\n    subgraph middle [Middle]\n        %%metro entry: left | a, b\n        %%metro exit: right | a, b\n        split[Split]\n        up[Path Up]\n        down[Path Down]\n        join[Join]\n        split -->|a,b| up\n        split -->|a,b| down\n        up -->|a,b| join\n        down -->|a,b| join\n    end\n\n    subgraph sink [Sink]\n        %%metro entry: left | a, b\n        report[Report]\n    end\n\n    s2 -->|a,b| split\n    join -->|a,b| report\n"
       },
