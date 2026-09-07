@@ -699,6 +699,41 @@ def _shared_terminal_axis(
     )
 
 
+def _shared_terminal_landing_drops_exit_turn(
+    primary_reason: ConvergenceTrunkReason,
+    trunk_axis: ConvergenceTrunkAxis,
+    primary_landing: ConvergenceLanding | None,
+) -> bool:
+    """Whether seating the shared-terminal carrier would strand its exit turn.
+
+    :func:`_settle_shared_source_openings` fuses the carrier's opening descent
+    onto the trunk source flank before emission.  When the carrier's source
+    endpoint lies between that flank and the opening column, the fusion flips
+    the lead-in into the descent, stranding the carrier's exit turn, so emission
+    draws it the wrong way off its section and the primary trunk member no
+    longer covers its planned axis.  The convergence declines ownership in that
+    case rather than emit that route.  Only the ``X`` axis is checked because
+    that settlement pass acts on ``X`` trunks alone.
+
+    The between-test reads the planned axis rather than the carrier's exit-turn
+    annotation so it holds on a re-routed, settled graph, where the emitted
+    dogleg survives but its exit-turn metadata does not.  ``primary_landing`` is
+    ``None`` when the trunk is an outgoing continuation rather than a landed
+    feeder, which only happens for reasons other than ``SHARED_TERMINAL_APPROACH``.
+    """
+    if primary_reason is not ConvergenceTrunkReason.SHARED_TERMINAL_APPROACH:
+        return False
+    if primary_landing is None or trunk_axis.axis is not DemandAxis.X:
+        return False
+    opening = primary_landing.opening_turn_coordinate
+    source_endpoint = trunk_axis.source_endpoint_coordinate
+    if opening is None or source_endpoint is None:
+        return False
+    source_flank_longitudinal = _trunk_segments(trunk_axis)[1][0][0]
+    low, high = sorted((source_flank_longitudinal, opening))
+    return low + COORD_TOLERANCE < source_endpoint < high - COORD_TOLERANCE
+
+
 def _required_shared_terminal_axis(
     routes: tuple[RoutedPath, ...],
     target_point: tuple[float, float],
@@ -976,9 +1011,18 @@ def _build_planned_convergence(
     )
     landings = [replace(item, order=rank) for rank, item in enumerate(landings)]
 
+    landing_by_member = {item.member_id: item for item in landings}
+    if _shared_terminal_landing_drops_exit_turn(
+        primary_reason,
+        trunk_axis,
+        landing_by_member.get(primary_member_id),
+    ):
+        raise ConvergenceOwnershipConflict(
+            "convergence landing conflicts with an upstream exit turn"
+        )
+
     continuations: list[ConvergenceContinuation] = []
     ownership: list[ConvergenceEndpointOwnership] = []
-    landing_by_member = {item.member_id: item for item in landings}
     for edge_key, member_id in zip(edges, member_ids, strict=True):
         if edge_key.target == view.junction_id:
             landing = landing_by_member[member_id]
@@ -1012,7 +1056,7 @@ def _build_planned_convergence(
             edge = ctx.edge_by_key[(edge_key.source, edge_key.target, edge_key.line_id)]
             continuation_route = _trial_route(edge, ctx)
             trial_routes[edge_key] = continuation_route
-        start_point = (
+        axis_start_point = (
             _axis_source_point(trunk_axis)
             if primary_reason
             in {
@@ -1046,7 +1090,9 @@ def _build_planned_convergence(
             (
                 item
                 for item in endpoint_carriers
-                if point_to_polyline_distance(start_point, trial_routes[item].points)
+                if point_to_polyline_distance(
+                    axis_start_point, trial_routes[item].points
+                )
                 <= COORD_TOLERANCE
             ),
             (
@@ -1071,7 +1117,7 @@ def _build_planned_convergence(
             carrier_edge is not None
             and covered_by is not None
             and point_to_polyline_distance(
-                start_point, trial_routes[carrier_edge].points
+                axis_start_point, trial_routes[carrier_edge].points
             )
             > COORD_TOLERANCE
             and not (
@@ -1082,6 +1128,7 @@ def _build_planned_convergence(
             raise UnsupportedConvergenceError(
                 "covered continuation is absent from its carrier"
             )
+        start_point = axis_start_point if covered_by is not None else hop_start_point
         continuations.append(
             ConvergenceContinuation(
                 member_id,
