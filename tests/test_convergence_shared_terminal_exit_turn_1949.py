@@ -54,9 +54,10 @@ def _graph():
 
 
 def test_carrier_exit_turn_forces_legacy_decline(monkeypatch):
-    """Defect 2: the convergence declines ownership rather than strand the
+    """Defect 2: the convergence declines rather than strand the carrier's exit turn.
 
-    carrier's exit turn, and the resulting layout has no validator errors."""
+    The resulting layout has no validator errors.
+    """
     reasons: list[str] = []
     original = convergences._legacy_plan
 
@@ -73,14 +74,12 @@ def test_carrier_exit_turn_forces_legacy_decline(monkeypatch):
 
 
 def test_uncovered_continuation_starts_at_its_own_hop(monkeypatch):
-    """Defect 1: an uncovered shared-terminal continuation's start point is the
+    """Defect 1: an uncovered shared-terminal continuation starts at its own hop.
 
-    start of its own emitted hop (the merge junction), not the shared axis
-    source.
-
-    Defect 2's guard is disabled so the convergence stays fused and the
-    continuation is actually planned; otherwise the plan declines to ``LEGACY``
-    before this code path is reached.
+    Its start point is the start of its own emitted hop (the merge junction),
+    not the shared axis source. Defect 2's guard is disabled so the convergence
+    stays fused and the continuation is actually planned; otherwise the plan
+    declines to ``LEGACY`` before this code path is reached.
     """
     monkeypatch.setattr(
         convergences, "_shared_terminal_landing_drops_exit_turn", lambda *a, **k: False
