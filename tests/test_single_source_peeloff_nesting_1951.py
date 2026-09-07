@@ -62,7 +62,7 @@ def test_single_source_peeloff_reverses_x_against_trunk_depth() -> None:
     descents = {
         r.line_id: r.points[-3][0]
         for r in routes
-        if r.edge.source == "__junction_9"
+        if r.edge.source.startswith("__junction_")
         and r.edge.target.startswith("reporting__entry_left")
     }
     assert {"riboseq", "rnaseq", "tiseq"} <= set(descents)

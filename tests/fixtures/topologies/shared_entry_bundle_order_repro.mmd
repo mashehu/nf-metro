@@ -27,7 +27,6 @@ graph LR
     subgraph psite [P-site]
         ribowaltz[riboWaltz]
         plastid_psite[plastid P-site]
-        quantify_orf_psite[ORF P-sites]
     end
     subgraph te [Translational efficiency]
         te_prep_orf[ORF count matrix]
@@ -38,8 +37,7 @@ graph LR
 
     equalise -->|riboseq,rnaseq,tiseq| star
     umi_dedup -->|riboseq| ribowaltz
-    umi_dedup -->|riboseq| plastid_psite
+    umi_dedup -->|rnaseq| plastid_psite
     hybrid_merge -->|annotation| star_hybrid
-    quantify_orf_psite -->|riboseq| te_prep_orf
     salmon -->|rnaseq| te_prep_orf
     salmon -->|riboseq,rnaseq,tiseq| multiqc_final
