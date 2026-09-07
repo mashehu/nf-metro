@@ -50,6 +50,7 @@ from nf_metro.parser.grammar import (
 from nf_metro.parser.model import (
     UNANNOTATED_LINE_ID,
     Edge,
+    LineSpread,
     MetroGraph,
     Section,
     Station,
@@ -371,8 +372,11 @@ def _infer_layout(
 
     # A sectionless graph needs an implicit section to host the bypass detours
     # its skip-lines would otherwise draw straight through the markers they skip;
-    # that detour routing is gated on a section existing.
-    if not graph.sections:
+    # that detour routing is gated on a section existing. Centered line-spread
+    # is exempt: it balances every line about the trunk midline, so a skip-line
+    # already clears the markers it passes and a section instead collapses the
+    # balanced exclusive runs back onto the trunk.
+    if not graph.sections and graph.line_spread is not LineSpread.CENTERED:
         _create_implicit_section(graph)
 
     authored_capture = capture_authored_routes(graph)
