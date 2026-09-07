@@ -699,6 +699,39 @@ def _shared_terminal_axis(
     )
 
 
+def _shared_terminal_landing_drops_exit_turn(
+    primary_reason: ConvergenceTrunkReason,
+    trunk_axis: ConvergenceTrunkAxis,
+    primary_landing: ConvergenceLanding | None,
+    carrier_route: RoutedPath,
+) -> bool:
+    """Whether seating the shared-terminal carrier would strand its exit turn.
+
+    :func:`_settle_shared_source_openings` fuses a same-source opening descent
+    onto the trunk source flank before emission.  When the carrier's opening
+    descent is its own exit turn and the flank names a different column, that
+    fusion pulls the descent off the exit axis, so emission draws the carrier
+    running the wrong way off its section.  The convergence declines ownership
+    in that case rather than emit that route; only the ``X`` axis is checked
+    because that settlement pass acts on ``X`` trunks alone.
+
+    ``primary_landing`` is ``None`` when the trunk is an outgoing continuation
+    rather than a landed feeder, which only happens for reasons other than
+    ``SHARED_TERMINAL_APPROACH``.
+    """
+    if primary_reason is not ConvergenceTrunkReason.SHARED_TERMINAL_APPROACH:
+        return False
+    if primary_landing is None or trunk_axis.axis is not DemandAxis.X:
+        return False
+    if _exit_turn_geometry(carrier_route) is None:
+        return False
+    opening = primary_landing.opening_turn_coordinate
+    if opening is None:
+        return False
+    source_flank_longitudinal = _trunk_segments(trunk_axis)[1][0][0]
+    return abs(opening - source_flank_longitudinal) > COORD_TOLERANCE
+
+
 def _required_shared_terminal_axis(
     routes: tuple[RoutedPath, ...],
     target_point: tuple[float, float],
@@ -976,9 +1009,19 @@ def _build_planned_convergence(
     )
     landings = [replace(item, order=rank) for rank, item in enumerate(landings)]
 
+    landing_by_member = {item.member_id: item for item in landings}
+    if _shared_terminal_landing_drops_exit_turn(
+        primary_reason,
+        trunk_axis,
+        landing_by_member.get(primary_member_id),
+        trial_routes[trunk_edge_key],
+    ):
+        raise ConvergenceOwnershipConflict(
+            "convergence landing conflicts with an upstream exit turn"
+        )
+
     continuations: list[ConvergenceContinuation] = []
     ownership: list[ConvergenceEndpointOwnership] = []
-    landing_by_member = {item.member_id: item for item in landings}
     for edge_key, member_id in zip(edges, member_ids, strict=True):
         if edge_key.target == view.junction_id:
             landing = landing_by_member[member_id]
@@ -1012,7 +1055,7 @@ def _build_planned_convergence(
             edge = ctx.edge_by_key[(edge_key.source, edge_key.target, edge_key.line_id)]
             continuation_route = _trial_route(edge, ctx)
             trial_routes[edge_key] = continuation_route
-        start_point = (
+        axis_start_point = (
             _axis_source_point(trunk_axis)
             if primary_reason
             in {
@@ -1046,7 +1089,9 @@ def _build_planned_convergence(
             (
                 item
                 for item in endpoint_carriers
-                if point_to_polyline_distance(start_point, trial_routes[item].points)
+                if point_to_polyline_distance(
+                    axis_start_point, trial_routes[item].points
+                )
                 <= COORD_TOLERANCE
             ),
             (
@@ -1071,7 +1116,7 @@ def _build_planned_convergence(
             carrier_edge is not None
             and covered_by is not None
             and point_to_polyline_distance(
-                start_point, trial_routes[carrier_edge].points
+                axis_start_point, trial_routes[carrier_edge].points
             )
             > COORD_TOLERANCE
             and not (
@@ -1082,6 +1127,7 @@ def _build_planned_convergence(
             raise UnsupportedConvergenceError(
                 "covered continuation is absent from its carrier"
             )
+        start_point = axis_start_point if covered_by is not None else hop_start_point
         continuations.append(
             ConvergenceContinuation(
                 member_id,
