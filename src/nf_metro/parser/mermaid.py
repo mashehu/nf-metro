@@ -366,11 +366,13 @@ def _infer_layout(
     )
 
     # Populate graph.interchanges before expansion so auto-detected and
-    # author-written interchanges share the expansion path. Sectionless graphs
-    # run it too; a hub found there needs an implicit section to host the detour
-    # its skip-lines would otherwise draw straight through the skipped markers.
+    # author-written interchanges share the expansion path.
     infer_interchanges(graph)
-    if not graph.sections and graph.interchanges:
+
+    # A sectionless graph needs an implicit section to host the bypass detours
+    # its skip-lines would otherwise draw straight through the markers they skip;
+    # that detour routing is gated on a section existing.
+    if not graph.sections:
         _create_implicit_section(graph)
 
     authored_capture = capture_authored_routes(graph)
