@@ -1418,9 +1418,10 @@ def _off_track_lift_step(
     An off-track icon is offset from its anchor along the section's cross axis
     (:func:`section_cross_axis`): Y for an LR/RL trunk, X for a TB/BT one.
 
-    A vertical-flow (TB/BT) section offsets along X by the resolved column
-    pitch; a TB section suppresses diagonal labels, so that pitch is never
-    widened and needs no base-pitch reduction.
+    A vertical-flow (TB/BT) section offsets along X by the section's resolved
+    column pitch -- the same pitch the spread loop may have widened to clear
+    label overlaps and that the fan branches are placed on -- so the spur stays
+    symmetric with those branches.
 
     A horizontal-flow section offsets along Y by ``y_spacing``.  When it is a
     single horizontal trunk (no parallel tracks) the diagonal-label band that

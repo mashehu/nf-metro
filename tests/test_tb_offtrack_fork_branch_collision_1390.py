@@ -54,3 +54,22 @@ def test_tb_offtrack_output_not_wedged_in_trunk_branch_gap():
         f"off-track output {OFF_TRACK!r} at x={off_x} is wedged between trunk "
         f"x={trunk_x} and branch column x={branch_x}, under the branch diagonal"
     )
+
+
+def test_tb_offtrack_spur_pitch_matches_fork_branch():
+    """The spur offsets from the trunk by the same widened pitch as the branch.
+
+    Wide labels drive the section's column pitch past the base value; the fork
+    branch tracks that widened pitch and the off-track spur must match it, so
+    the two sit symmetric about the trunk rather than at an uneven grid.
+    """
+    graph = parse_metro_mermaid_file(FIXTURE)
+    engine.compute_layout(graph, validate=True)
+
+    trunk_x = graph.stations[TRUNK].x
+    branch_offset = abs(graph.stations[BRANCH].x - trunk_x)
+    spur_offset = abs(graph.stations[OFF_TRACK].x - trunk_x)
+    assert abs(spur_offset - branch_offset) < 1.0, (
+        f"off-track spur offset {spur_offset} from trunk differs from fork "
+        f"branch offset {branch_offset}; the spur ignored the widened pitch"
+    )
