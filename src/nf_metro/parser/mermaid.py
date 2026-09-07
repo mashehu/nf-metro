@@ -372,10 +372,15 @@ def _infer_layout(
 
     # A sectionless graph needs an implicit section to host the bypass detours
     # its skip-lines would otherwise draw straight through the markers they skip;
-    # that detour routing is gated on a section existing. Centered line-spread
-    # is exempt: it balances every line about the trunk midline, so a skip-line
-    # already clears the markers it passes and a section instead collapses the
-    # balanced exclusive runs back onto the trunk.
+    # that detour routing is gated on a section existing. Centered line-spread is
+    # exempt because sectioning it breaks the centered-balance guard on cross-line
+    # fork/weave geometry: an above-centre exclusive line run that is correctly
+    # offset from the trunk while the graph stays flat collapses onto the trunk
+    # once the graph is sectioned, tripping the guard's minimum-offset invariant
+    # (see tests/test_centered_tracks.py::test_fork_weave_layout_each_line_run_on
+    # _correct_side). This exemption does not make centered mode immune to the
+    # skip-line marker-crossing this section otherwise guards against; that gap is
+    # tracked in a follow-up issue.
     if not graph.sections and graph.line_spread is not LineSpread.CENTERED:
         _create_implicit_section(graph)
 
