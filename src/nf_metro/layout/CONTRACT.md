@@ -296,8 +296,9 @@ the 6.13 cascade), `graph._placement_ref_y` /
 `graph._placement_ref_bbox_top` (frozen before 6.1/6.11, read via `_ref_y` /
 `_ref_bbox_top`), `graph._base_y_spacing` (recorded before the spread loop
 when `y_spacing` is auto-resolved), `graph._resolved_x_spacing` (the
-resolved column pitch recorded before layout, read as the cross-axis off-track
-step for vertical-flow sections), `graph._resolved_y_spacing` (the row
+resolved column pitch, refreshed on every spread-loop pass so it tracks the
+widened `x_spacing` that pass uses, read as the cross-axis off-track step for
+vertical-flow sections), `graph._resolved_y_spacing` (the row
 pitch the spacing search settled on, recorded post-layout once that search
 finishes, after the stage pipeline and the spread loop, and read by no layout
 stage), and `graph.post_layout_half_grid_station_ids` (the half-pitch spine

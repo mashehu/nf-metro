@@ -1285,12 +1285,51 @@ def _off_track_output_below(graph: MetroGraph) -> set[str]:
         if baseline is None:
             continue
         cross, fan_sign, baseline_signed = baseline
-        if (
+        producer_on_branch = (
             fan_sign * getattr(anchor_st, cross) - baseline_signed
             > _DOWNWARD_BRANCH_SLOP
+        )
+        if producer_on_branch or _lift_side_holds_fork_branch(
+            graph, anchor_id, off_id, cross, fan_sign, baseline_signed
         ):
             below.add(off_id)
     return below
+
+
+def _lift_side_holds_fork_branch(
+    graph: MetroGraph,
+    producer_id: str,
+    sink_id: str,
+    cross: str,
+    fan_sign: float,
+    baseline_signed: float,
+) -> bool:
+    """Whether a fork branch occupies the sink's default lift side.
+
+    A producer on the trunk baseline lifts its off-track output to the lift
+    side (opposite the lane fan, :func:`_off_track_lift_sign`).  When one of the
+    producer's on-track successors has itself fanned to that lift side while the
+    fan side stays clear, seating the output there wedges it between the trunk
+    and the branch column -- and under the branch's onward diagonal.  Dropping
+    the output to the clear fan side keeps it out of that gap.
+    """
+    junction_ids = graph.junction_ids
+    sink_section = graph.stations[sink_id].section_id
+    lift_side = fan_side = False
+    for edge in graph.edges_from(producer_id):
+        sib = graph.stations.get(edge.target)
+        if sib is None or edge.target in (sink_id, producer_id):
+            continue
+        if sib.is_port or sib.off_track or sib.is_hidden:
+            continue
+        if edge.target in junction_ids or sib.section_id != sink_section:
+            continue
+        offset = fan_sign * getattr(sib, cross) - baseline_signed
+        if offset < -_DOWNWARD_BRANCH_SLOP:
+            lift_side = True
+        elif offset > _DOWNWARD_BRANCH_SLOP:
+            fan_side = True
+    return lift_side and not fan_side
 
 
 def _off_track_groups(
@@ -1379,9 +1418,10 @@ def _off_track_lift_step(
     An off-track icon is offset from its anchor along the section's cross axis
     (:func:`section_cross_axis`): Y for an LR/RL trunk, X for a TB/BT one.
 
-    A vertical-flow (TB/BT) section offsets along X by the resolved column
-    pitch; a TB section suppresses diagonal labels, so that pitch is never
-    widened and needs no base-pitch reduction.
+    A vertical-flow (TB/BT) section offsets along X by the section's resolved
+    column pitch -- the same pitch the spread loop may have widened to clear
+    label overlaps and that the fan branches are placed on -- so the spur stays
+    symmetric with those branches.
 
     A horizontal-flow section offsets along Y by ``y_spacing``.  When it is a
     single horizontal trunk (no parallel tracks) the diagonal-label band that
