@@ -129,10 +129,23 @@ ROUTABLE_CORPUS = tuple(
     if "nextflow" not in path.parts and "invalid" not in path.parts
 )
 
+# A convergence whose shared-terminal carrier would strand its own exit turn
+# fails closed to the compatibility emitter: no planned geometry draws it
+# correctly, so the retreat is the intended outcome, not a planner gap.
+EXPECTED_CONVERGENCE_DECLINES = frozenset(
+    {
+        (
+            "convergence_shared_terminal_exit_turn.mmd",
+            "convergence landing conflicts with an upstream exit turn",
+        ),
+    }
+)
+
 
 def test_every_corpus_convergence_is_planned_not_left_to_compatibility() -> None:
     """No map in the corpus reaches emission with a convergence the planner
-    declined.
+    declined, save the fail-closed retreats named in
+    :data:`EXPECTED_CONVERGENCE_DECLINES`.
 
     A ``legacy_reason`` names a decision the planner could not make, which sends
     the whole route system to the compatibility emitter instead of to geometry
@@ -154,7 +167,10 @@ def test_every_corpus_convergence_is_planned_not_left_to_compatibility() -> None
             if item.legacy_reason is not None
             or item.disposition is ConvergenceDisposition.LEGACY
         )
-    assert declined == []
+    unexpected = [
+        item for item in declined if item not in EXPECTED_CONVERGENCE_DECLINES
+    ]
+    assert unexpected == []
 
 
 @pytest.mark.parametrize(

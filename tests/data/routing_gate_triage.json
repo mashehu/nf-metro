@@ -371,6 +371,10 @@
   "note": "A landing enters `ordered` only because _landing_cross_segment admitted it, and laning moves that run rather than removing it, so the read that names the landing as a resident always finds a segment. The gate guards the Optional that read returns.",
   "status": "defensive"
  },
+ "convergences.py::if _shared_terminal_landing_drops_exit_turn(::#1": {
+  "note": "The shared-terminal convergence declines ownership when seating its carrier would strand the carrier's own exit turn (issue #1949). tests/fixtures/topologies/convergence_shared_terminal_exit_turn.mmd takes the decline arm, but the gate sweep globs tests/fixtures/ non-recursively, so the fixture under its topologies/ subdirectory is not evaluated here; the render-diff and the dedicated regression tests own it instead.",
+  "status": "needs-review"
+ },
  "convergences.py::if any(::#3": {
   "note": "_packed_lane's decline arm: packing a run onto the pitch of its nearest bundle neighbour would seat it inside a *second* neighbour's pitch. Reachable -- 3-lane bundles exist in the corpus (_packed_lane sees len(neighbours)==2 on examples/guide/03b_fan_in_merge.mmd) -- but no fixture makes the candidate breach the far lane. Wants a fixture.",
   "status": "needs-review"
