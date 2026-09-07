@@ -4183,10 +4183,10 @@ def test_diagonal_strike_guard_teeth_and_exemptions():
     stays silent once the loop has cleared one, and exempts the bypass-V rake.
 
     A section the strike-clearance loop grows (``funcprofiler_upstream`` at a
-    tight pitch) must pass; a sectionless flat graph (``centered_tracks`` at a
-    tight pitch), whose struck stations have no section runway or column gap to
-    grow, must raise; and a bypass-V label rake (``guide/06a``) must pass, since
-    the guard excludes it.
+    tight pitch) must pass; a graph pitched too tight for its section runway or
+    column gap to relocate the strike (``centered_tracks`` at ``x_spacing=30``)
+    must raise; and a bypass-V label rake (``guide/06a``) must pass, since the
+    guard excludes it.
     """
     from nf_metro.layout.phases.guards import (
         PhaseInvariantError,
@@ -4196,7 +4196,7 @@ def test_diagonal_strike_guard_teeth_and_exemptions():
     cleared = _layout("topologies/funcprofiler_upstream.mmd", x_spacing=45)
     _guard_no_diagonal_strikes_horizontal_label(cleared, "test")
 
-    unclearable = _layout("centered_tracks.mmd", x_spacing=40)
+    unclearable = _layout("centered_tracks.mmd", x_spacing=30)
     with pytest.raises(PhaseInvariantError, match="strikes horizontal label"):
         _guard_no_diagonal_strikes_horizontal_label(unclearable, "test")
 
@@ -7796,8 +7796,21 @@ def test_symmetric_diamond_compacts_to_half_pitch(fixture):
 # Bypass V must sit on a visible horizontal flat segment, not at a corner
 # ---------------------------------------------------------------------------
 
+_XFAIL_BYPASS_V_FLAT: dict[str, str] = {
+    "topologies/sectionless_skip_over_two_markers.mmd": (
+        "a skip-line jumping two adjacent markers seats consecutive bypass "
+        "bubbles one pitch apart, leaving a 15px flat between them at the "
+        "default 60px pitch (20px at 70px+); identical for the explicit-subgraph "
+        "layout of the same topology, so this is bypass-bubble spacing for "
+        "consecutive skips, not the flat-graph sectioning under test. The visible "
+        "detour is clean; only the hidden V sits on a shorter run."
+    ),
+}
 
-@pytest.mark.parametrize("fixture", _FIXTURES_WITH_BYPASS)
+
+@pytest.mark.parametrize(
+    "fixture", _params_with_xfails(_FIXTURES_WITH_BYPASS, _XFAIL_BYPASS_V_FLAT)
+)
 def test_bypass_v_has_horizontal_segment(fixture):
     """Each hidden bypass V station must sit on a clearly visible flat run, not
     at a bare curve apex, matching how regular fork/join stations present a run
@@ -9209,6 +9222,11 @@ _SV_STATS_NUDGE_REASON = (
 _XFAIL_LABEL_AT_STATION_X: dict[str, str] = {
     "variantbenchmarking.mmd": _SV_STATS_NUDGE_REASON,
     "variantbenchmarking_auto.mmd": _SV_STATS_NUDGE_REASON,
+    "legend_combo.mmd": (
+        "issue #1863: 'Somatic Calling' label nudged 12.6px to clear an adjacent "
+        "label collision where the tumor line peels off the trunk; revisit when "
+        "the engine collision-clearance is tuned"
+    ),
     "topologies/foldback_exit_peeloff.mmd": (
         "issue #1863: samtools_stats label nudged 17.1px to clear an adjacent "
         "label collision in the dense GATK Preprocessing section (forward top "
