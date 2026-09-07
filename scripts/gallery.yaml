@@ -2376,6 +2376,7 @@ render_only:
     - regressions/tb_offtrack_fork_branch_collision_1390
     - topologies/convergence_handedness_repro
     - topologies/novel_transcripts_repro
+    - topologies/shared_entry_bundle_order_repro
     - topologies/twoline_fanout_up
     - hash_seed_determinism/seed_15
     - hash_seed_determinism/seed_41

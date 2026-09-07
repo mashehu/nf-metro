@@ -11,6 +11,8 @@ slots ``peeloff_target_slots`` (the guards' oracle) earns.
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from nf_metro.layout.engine import compute_layout
 from nf_metro.layout.routing import compute_station_offsets, route_edges
 from nf_metro.layout.routing.invariants import (
@@ -20,57 +22,18 @@ from nf_metro.layout.routing.invariants import (
 )
 from nf_metro.parser.mermaid import parse_metro_mermaid
 
-REPRO = """\
-%%metro title: Repro
-%%metro line: riboseq | Ribo-seq | #e6007e
-%%metro line: rnaseq | Matched RNA-seq | #2db572
-%%metro line: tiseq | TI-seq | #2b6cb0
-%%metro line: annotation | Hybrid annotation | #94a3b8 | dashed
-
-%%metro grid: preprocessing, alignment, novel_transcripts | 0,0
-%%metro grid: orf_calling, psite, te, reporting | 0,1
-%%metro center_ports: true
-%%metro x_spacing: 70
-
-graph LR
-    subgraph preprocessing [Read pre-processing]
-        equalise[Equalise read lengths]
-    end
-    subgraph alignment [Alignment]
-        star[STAR]
-        umi_dedup[UMI-tools dedup]
-        salmon[Salmon]
-    end
-    subgraph novel_transcripts [Transcript discovery]
-        hybrid_merge[Merge GTF]
-    end
-    subgraph orf_calling [ORF calling]
-        star_hybrid[STAR hybrid]
-    end
-    subgraph psite [P-site]
-        ribowaltz[riboWaltz]
-        plastid_psite[plastid P-site]
-        quantify_orf_psite[ORF P-sites]
-    end
-    subgraph te [Translational efficiency]
-        te_prep_orf[ORF count matrix]
-    end
-    subgraph reporting [Reporting]
-        multiqc_final[MultiQC]
-    end
-
-    equalise -->|riboseq,rnaseq,tiseq| star
-    umi_dedup -->|riboseq| ribowaltz
-    umi_dedup -->|riboseq| plastid_psite
-    hybrid_merge -->|annotation| star_hybrid
-    quantify_orf_psite -->|riboseq| te_prep_orf
-    salmon -->|rnaseq| te_prep_orf
-    salmon -->|riboseq,rnaseq,tiseq| multiqc_final
-"""
+REPO_ROOT = Path(__file__).resolve().parent.parent
+FIXTURE = (
+    REPO_ROOT
+    / "tests"
+    / "fixtures"
+    / "topologies"
+    / "shared_entry_bundle_order_repro.mmd"
+)
 
 
 def _route():
-    graph = parse_metro_mermaid(REPRO)
+    graph = parse_metro_mermaid(FIXTURE.read_text())
     compute_layout(graph)
     offsets = compute_station_offsets(graph)
     routes = route_edges(graph, station_offsets=offsets)
