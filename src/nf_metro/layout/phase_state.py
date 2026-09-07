@@ -244,9 +244,12 @@ PHASE_FIELD_REGISTRY: dict[str, PhaseFieldSpec] = {
         reader_stages=("5.2", "6.6"),
         enforcement=FieldEnforcement.FALLBACK,
         why=(
-            "resolved column pitch recorded before layout; a vertical-flow (TB/BT) "
-            "section's off-track band is offset by this cross-axis pitch, read with "
-            "a None/getattr fallback to X_SPACING when it is unset"
+            "resolved column pitch, refreshed on every spread-loop pass so it "
+            "tracks the widened x_spacing that pass places branches on (unlike "
+            "_base_y_spacing, which is frozen once at the base value); a "
+            "vertical-flow (TB/BT) section's off-track band is offset by this "
+            "cross-axis pitch, read with a None/getattr fallback to X_SPACING "
+            "when it is unset"
         ),
     ),
     "_resolved_y_spacing": PhaseFieldSpec(
