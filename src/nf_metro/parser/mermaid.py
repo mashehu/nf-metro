@@ -376,11 +376,11 @@ def _infer_layout(
     # exempt because sectioning it breaks the centered-balance guard on cross-line
     # fork/weave geometry: an above-centre exclusive line run that is correctly
     # offset from the trunk while the graph stays flat collapses onto the trunk
-    # once the graph is sectioned, tripping the guard's minimum-offset invariant
-    # (see tests/test_centered_tracks.py::test_fork_weave_layout_each_line_run_on
-    # _correct_side). This exemption does not make centered mode immune to the
-    # skip-line marker-crossing this section otherwise guards against; that gap is
-    # tracked in a follow-up issue.
+    # once the graph is sectioned, tripping the guard's minimum-offset invariant.
+    # tests/test_centered_tracks.py exercises this via
+    # test_fork_weave_layout_each_line_run_on_correct_side. This exemption does not
+    # make centered mode immune to the skip-line marker-crossing this section
+    # otherwise guards against; that gap is tracked in issue #1957.
     if not graph.sections and graph.line_spread is not LineSpread.CENTERED:
         _create_implicit_section(graph)
 

@@ -6,7 +6,11 @@ from pathlib import Path
 
 import pytest
 
-from nf_metro.layout.constants import LABEL_OFFSET, LABEL_OVERLAP_TOL
+from nf_metro.layout.constants import (
+    DESCENDER_CLEARANCE,
+    LABEL_OFFSET,
+    LABEL_OVERLAP_TOL,
+)
 from nf_metro.layout.engine import compute_layout
 from nf_metro.layout.geometry import segment_intersects_bbox as _segment_intersects_bbox
 from nf_metro.layout.labels import (
@@ -264,7 +268,7 @@ class TestWrappedLabelTrunkLift:
         graph.add_station(Station(id="star", label="STAR", x=40, y=200))
         graph.add_edge(Edge(source="star", target="sort", line_id="align"))
 
-        base_y = 200 - LABEL_OFFSET - 3.0  # station.y - safe_above - DESCENDER
+        base_y = 200 - LABEL_OFFSET - DESCENDER_CLEARANCE
         placement = LabelPlacement(
             station_id="sort", text="Samtools\nsort", x=100, y=base_y - 40, above=True
         )
