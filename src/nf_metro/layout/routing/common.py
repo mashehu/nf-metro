@@ -1086,6 +1086,23 @@ def port_peeloff_tail(rp: RoutedPath) -> PeeloffTail | None:
     )
 
 
+def x_follows_trunk_direction(vertical_sign: int, trunk_sign: int) -> bool:
+    """Whether approach-X order follows (not reverses) trunk-depth order.
+
+    The first H-to-V turn decides this independently of the port-Y transpose: a
+    downward approach off a rightward trunk reverses the order, an upward one
+    keeps it.
+    """
+    return -vertical_sign == trunk_sign
+
+
+def tail_overlap(per_line: dict[str, PeeloffTail]) -> float:
+    """Length of the destination-facing horizontal corridor every tail shares."""
+    return min(t.x_hi for t in per_line.values()) - max(
+        t.x_lo for t in per_line.values()
+    )
+
+
 class PortPeeloffBundle(NamedTuple):
     """One concentric bundle of lines peeling off a shared trunk into a port.
 
@@ -1933,9 +1950,7 @@ def iter_port_peeloff_bundles(
         n = len(per_line)
         if n < 2:
             continue
-        overlap_lo = max(t.x_lo for t in per_line.values())
-        overlap_hi = min(t.x_hi for t in per_line.values())
-        if overlap_hi - overlap_lo < min_common_suffix - COORD_TOLERANCE:
+        if tail_overlap(per_line) < min_common_suffix - COORD_TOLERANCE:
             continue
         trunk_ys = sorted(t.trunk_y for t in per_line.values())
         if trunk_ys[-1] - trunk_ys[0] <= COORD_TOLERANCE:
@@ -1991,7 +2006,7 @@ def peeloff_target_slots(
     )
     y_slots = sorted(t.port_y for t in per_line.values())
     ranked = sorted(per_line, key=lambda lid: per_line[lid].trunk_y)
-    x_follows_trunk = -bundle.vertical_sign == bundle.trunk_sign
+    x_follows_trunk = x_follows_trunk_direction(bundle.vertical_sign, bundle.trunk_sign)
     y_follows_trunk = bundle.port_lead_sign == bundle.trunk_sign
     return {
         lid: PeeloffSlot(
