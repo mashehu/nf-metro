@@ -697,7 +697,6 @@ def _compute_layout_scaled(
             )
     if x_spacing is None:
         x_spacing = default_x_spacing
-    graph._resolved_x_spacing = x_spacing
 
     # Optionally reorder lines by section span before layout.
     # Must happen here (on the full graph) before section subgraphs are
@@ -717,6 +716,10 @@ def _compute_layout_scaled(
     # so a single pass runs.
     max_iters = _MAX_SPREAD_ITERS if (auto_x or auto_y) else 1
     for attempt in range(max_iters):
+        # Each pass may widen x_spacing to clear label overlaps; keep the
+        # recorded resolve in step so placement that reads it (off-track spurs)
+        # tracks the same widened pitch the fan branches are placed on.
+        graph._resolved_x_spacing = x_spacing
         _layout_once(
             graph,
             x_spacing=x_spacing,
