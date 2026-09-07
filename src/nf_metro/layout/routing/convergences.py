@@ -703,33 +703,35 @@ def _shared_terminal_landing_drops_exit_turn(
     primary_reason: ConvergenceTrunkReason,
     trunk_axis: ConvergenceTrunkAxis,
     primary_landing: ConvergenceLanding | None,
-    carrier_route: RoutedPath,
 ) -> bool:
     """Whether seating the shared-terminal carrier would strand its exit turn.
 
-    :func:`_settle_shared_source_openings` fuses a same-source opening descent
-    onto the trunk source flank before emission.  When the carrier's opening
-    descent is its own exit turn and the flank names a different column, that
-    fusion pulls the descent off the exit axis, so emission draws the carrier
-    running the wrong way off its section.  The convergence declines ownership
-    in that case rather than emit that route; only the ``X`` axis is checked
-    because that settlement pass acts on ``X`` trunks alone.
+    :func:`_settle_shared_source_openings` fuses the carrier's opening descent
+    onto the trunk source flank before emission.  When the carrier's source
+    endpoint lies between that flank and the opening column, the fusion flips
+    the lead-in into the descent, stranding the carrier's exit turn, so emission
+    draws it the wrong way off its section and the primary trunk member no
+    longer covers its planned axis.  The convergence declines ownership in that
+    case rather than emit that route.  Only the ``X`` axis is checked because
+    that settlement pass acts on ``X`` trunks alone.
 
-    ``primary_landing`` is ``None`` when the trunk is an outgoing continuation
-    rather than a landed feeder, which only happens for reasons other than
-    ``SHARED_TERMINAL_APPROACH``.
+    The between-test reads the planned axis rather than the carrier's exit-turn
+    annotation so it holds on a re-routed, settled graph, where the emitted
+    dogleg survives but its exit-turn metadata does not.  ``primary_landing`` is
+    ``None`` when the trunk is an outgoing continuation rather than a landed
+    feeder, which only happens for reasons other than ``SHARED_TERMINAL_APPROACH``.
     """
     if primary_reason is not ConvergenceTrunkReason.SHARED_TERMINAL_APPROACH:
         return False
     if primary_landing is None or trunk_axis.axis is not DemandAxis.X:
         return False
-    if _exit_turn_geometry(carrier_route) is None:
-        return False
     opening = primary_landing.opening_turn_coordinate
-    if opening is None:
+    source_endpoint = trunk_axis.source_endpoint_coordinate
+    if opening is None or source_endpoint is None:
         return False
     source_flank_longitudinal = _trunk_segments(trunk_axis)[1][0][0]
-    return abs(opening - source_flank_longitudinal) > COORD_TOLERANCE
+    low, high = sorted((source_flank_longitudinal, opening))
+    return low + COORD_TOLERANCE < source_endpoint < high - COORD_TOLERANCE
 
 
 def _required_shared_terminal_axis(
@@ -1014,7 +1016,6 @@ def _build_planned_convergence(
         primary_reason,
         trunk_axis,
         landing_by_member.get(primary_member_id),
-        trial_routes[trunk_edge_key],
     ):
         raise ConvergenceOwnershipConflict(
             "convergence landing conflicts with an upstream exit turn"
