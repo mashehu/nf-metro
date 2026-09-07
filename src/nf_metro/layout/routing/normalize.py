@@ -2460,6 +2460,55 @@ def _cross_row_convergence_channel_order(
     return ordered
 
 
+def _concentric_peeloff_line_order(
+    cluster: list[tuple[RoutedPath, _VChannel]],
+    port: Port,
+    curve_radius: float,
+) -> list[str] | None:
+    """Outer-to-inner order a concentric peel-off band's turn shape earns.
+
+    Distinct lines peeling off one shared trunk into a side entry port nest
+    crossing-free only when the trunk's half-turn is honoured: whether
+    approach-X follows or reverses trunk-depth order is fixed by the turn signs,
+    not by descent length or declaration order.  This reproduces the ordering
+    :func:`peeloff_target_slots` (the render guards' oracle) enforces, so the
+    seated band lands on the slots those guards check.  ``None`` for any cluster
+    that is not one such coherent bundle leaves the descent-length heuristic to
+    place it.
+    """
+    tail_by_line: dict[str, PeeloffTail] = {}
+    for route, _channel in cluster:
+        tail = port_peeloff_tail(route)
+        if tail is None:
+            return None
+        tail_by_line.setdefault(route.line_id, tail)
+    if len(tail_by_line) < 2:
+        return None
+    signs = {
+        (tail.trunk_sign, tail.vertical_sign, tail.port_lead_sign)
+        for tail in tail_by_line.values()
+    }
+    if len(signs) != 1:
+        return None
+    trunk_sign, vertical_sign, _port_lead_sign = next(iter(signs))
+    trunk_ys = [tail.trunk_y for tail in tail_by_line.values()]
+    if max(trunk_ys) - min(trunk_ys) <= COORD_TOLERANCE:
+        return None  # no distinct trunk depths to order by
+    # A destination-facing corridor shorter than two curve radii is below the
+    # guards' peel-off recognition floor: ordering it here could disagree with a
+    # heuristic placement the guards never check, so defer to that placement.
+    overlap = min(tail.x_hi for tail in tail_by_line.values()) - max(
+        tail.x_lo for tail in tail_by_line.values()
+    )
+    if overlap < 2 * curve_radius - COORD_TOLERANCE:
+        return None
+    ranked = sorted(tail_by_line, key=lambda lid: tail_by_line[lid].trunk_y)
+    x_follows_trunk = -vertical_sign == trunk_sign
+    if x_follows_trunk == (port.side is PortSide.LEFT):
+        return ranked
+    return list(reversed(ranked))
+
+
 def _stack_distinct_port_descents(
     cluster: list[tuple[RoutedPath, _VChannel]],
     port: Port,
@@ -2470,14 +2519,16 @@ def _stack_distinct_port_descents(
     """Re-seat one cluster of distinct-line port descents.
 
     Lines are placed one ``OFFSET_STEP`` apart from the cluster's outer edge
-    inward, ordered longest-descent-first so the feeder that turns down furthest
-    from the port nests outermost.  Each feeder reaches its channel by a
-    horizontal traverse at its turn-down Y before dropping in; seating the
+    inward.  A coherent peel-off band whose turn shape fixes its concentric
+    order (:func:`_concentric_peeloff_line_order`) takes that order.  Otherwise
+    the fallback orders longest-descent-first so the feeder that turns down
+    furthest from the port nests outermost: each feeder reaches its channel by a
+    horizontal traverse at its turn-down Y before dropping in, and seating the
     longest descent (whose turn spans the widest Y range) on the outer lane
-    keeps every traverse clear of the other feeders' descents, so the
-    convergent lanes stay parallel rather than crossing (#1326). Ordinary calls
-    leave already-separated descents alone; an explicit ``line_order`` reseats
-    a classified convergence onto that order.
+    keeps every traverse clear of the other feeders' descents, so the convergent
+    lanes stay parallel rather than crossing (#1326).  Ordinary calls leave
+    already-separated descents alone; an explicit ``line_order`` reseats a
+    classified convergence onto that order.
     """
     if any(
         _planner_owns_channel(channel)
@@ -2496,8 +2547,10 @@ def _stack_distinct_port_descents(
         return
     offs = ctx.station_offsets or {}
     span = {lid: max(ch.y_hi - ch.y_lo for ch in chs) for lid, chs in by_line.items()}
-    ordered = line_order or sorted(
-        by_line, key=lambda lid: (-span[lid], offs.get((port.id, lid), 0.0))
+    ordered = (
+        line_order
+        or _concentric_peeloff_line_order(cluster, port, ctx.curve_radius)
+        or sorted(by_line, key=lambda lid: (-span[lid], offs.get((port.id, lid), 0.0)))
     )
     xs = [ch.x for _rp, ch in cluster]
     step = ctx.offset_step
