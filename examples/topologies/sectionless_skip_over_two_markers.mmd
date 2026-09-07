@@ -1,0 +1,10 @@
+%%metro title: Sectionless skip over two markers
+%%metro line: generic | Analysis | #79706E
+%%metro line: align | Alignment | #54A24B
+graph LR
+    a["a"] -->|generic| hub["hub"]
+    hub -->|generic| m0["m0"]
+    m0 -->|generic| m1["m1"]
+    m1 -->|generic| m2["m2"]
+    m2 -->|generic| z["z"]
+    hub -->|align| m2
